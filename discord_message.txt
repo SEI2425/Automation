@@ -1,1 +1,3 @@
-PilaPila News está configurado. Este archivo se actualizará automáticamente cada mañana con el boletín del día.
+**PilaPila News** - prueba del sistema
+
+Esto es una prueba del envio automatico via GitHub Actions. Si ves este mensaje, todo el flujo funciona: la nube escribe el archivo, GitHub Actions lo envia a Discord.
