@@ -1,0 +1,39 @@
+name: PilaPila News - enviar a Discord
+
+on:
+  push:
+    paths:
+      - "discord_message.txt"
+  workflow_dispatch: {}
+
+jobs:
+  send:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Enviar mensaje a Discord
+        env:
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+        run: |
+          set -e
+          if [ -z "$DISCORD_WEBHOOK_URL" ]; then
+            echo "Falta el secreto DISCORD_WEBHOOK_URL en este repositorio (Settings > Secrets and variables > Actions)."
+            exit 1
+          fi
+          MSG_FILE="discord_message.txt"
+          if [ ! -f "$MSG_FILE" ]; then
+            echo "No existe $MSG_FILE, nada que enviar."
+            exit 0
+          fi
+          python3 - "$MSG_FILE" <<'PYEOF'
+          import json, sys
+          with open(sys.argv[1], "r", encoding="utf-8") as f:
+              content = f.read()
+          with open("/tmp/payload.json", "w", encoding="utf-8") as f:
+              json.dump({"content": content}, f)
+          PYEOF
+          curl -sS -w "\nHTTP_STATUS:%{http_code}\n" -X POST "$DISCORD_WEBHOOK_URL" \
+            -H "Content-Type: application/json" \
+            --data-binary @/tmp/payload.json
