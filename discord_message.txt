@@ -1,3 +1,14 @@
-**PilaPila News** - prueba del sistema
+Hola! Esto es lo mas interesante de hoy en IA y programacion.
 
-Esto es una prueba del envio automatico via GitHub Actions. Si ves este mensaje, todo el flujo funciona: la nube escribe el archivo, GitHub Actions lo envia a Discord.
+**Noticias IA:**
+- **Plugin4Shell**: vulnerabilidad critica que permite ejecutar codigo malicioso sin clics en Claude Code, Codex, Copilot y Gemini CLI. [Leer mas](https://cybersecuritynews.com/plugin4shell-zero-click-rce/)
+- **FireSat**: satelites con IA que detectan incendios forestales en menos de 20 minutos. [Leer mas](https://spectrum.ieee.org/ai-wildfire-detection)
+- OpenAI lanzo **Astra (GPT-6)**, su modelo mas potente hasta ahora. [Leer mas](https://techcrunch.com/2026/09/03/openai-launches-astra-its-powerful-and-controversial-new-model/)
+
+**Para programar gratis:**
+- **CS50x**, el curso de Harvard, gratis y a tu ritmo. [Empezar](https://cs50.harvard.edu/x/)
+- **Learn Git Branching**, entiende Git jugando visualmente. [Probar](https://learngitbranching.js.org/)
+
+**Tip del dia:** lee el error completo antes de buscar la solucion en internet. [Por que](https://developer.mozilla.org/en-US/docs/Learn_web_development/Howto/Tools_and_setup/What_went_wrong)
+
+Prueba el test diario aqui: https://claude.ai/artifact/QPV3pQu5GtD1VbxhRhrTB1
