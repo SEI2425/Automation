@@ -1,14 +1,14 @@
 Hola! Esto es lo mas interesante de hoy en IA y programacion.
 
 **Noticias IA:**
-- **Plugin4Shell**: vulnerabilidad critica que permite ejecutar codigo malicioso sin clics en Claude Code, Codex, Copilot y Gemini CLI. [Leer mas](https://cybersecuritynews.com/plugin4shell-zero-click-rce/)
-- **FireSat**: satelites con IA que detectan incendios forestales en menos de 20 minutos. [Leer mas](https://spectrum.ieee.org/ai-wildfire-detection)
-- OpenAI lanzo **Astra (GPT-6)**, su modelo mas potente hasta ahora. [Leer mas](https://techcrunch.com/2026/09/03/openai-launches-astra-its-powerful-and-controversial-new-model/)
+- Investigadores hackearon OpenAI usando el modelo Claude Opus 5 y llegaron hasta su repositorio interno de codigo. [Leer mas](<https://techcrunch.com/2026/09/18/researchers-used-anthropics-claude-to-hack-into-openai/>)
+- Un robot con IA ya arranca malas hierbas sin herbicidas en granjas de Holanda, Belgica y Francia. [Leer mas](<https://igrownews.com/odd-bot-latest-news/>)
+- Una victima en Irlanda del Norte perdio 250.000 libras en una estafa con un video falso de IA de un famoso. [Leer mas](<https://www.resultsense.com/news/2026-09-08-psni-deepfake-investment-fraud/>)
 
 **Para programar gratis:**
-- **CS50x**, el curso de Harvard, gratis y a tu ritmo. [Empezar](https://cs50.harvard.edu/x/)
-- **Learn Git Branching**, entiende Git jugando visualmente. [Probar](https://learngitbranching.js.org/)
+- The Odin Project: curriculo completo y gratis de desarrollo web. [Empezar](<https://www.theodinproject.com/>)
+- Codewars: mejora tu logica resolviendo katas de codigo. [Probar](<https://www.codewars.com/>)
 
-**Tip del dia:** lee el error completo antes de buscar la solucion en internet. [Por que](https://developer.mozilla.org/en-US/docs/Learn_web_development/Howto/Tools_and_setup/What_went_wrong)
+**Tip del dia:** cuando te atasques con un bug, explicaselo en voz alta a algo (o alguien): es el truco del "pato de goma". [Por que](<https://www.freecodecamp.org/news/rubber-duck-debugging/>)
 
-Prueba el test diario aqui: https://claude.ai/artifact/QPV3pQu5GtD1VbxhRhrTB1
+Prueba el test diario aqui: <https://claude.ai/artifact/QPV3pQu5GtD1VbxhRhrTB1>
