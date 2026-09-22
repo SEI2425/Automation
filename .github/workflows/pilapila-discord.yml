@@ -13,6 +13,24 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Configurar Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Instalar dependencias del renderizador
+        working-directory: render
+        run: npm install
+
+      - name: Instalar Chromium para Playwright
+        working-directory: render
+        run: npx playwright install --with-deps chromium
+
+      - name: Generar la tarjeta del dia
+        working-directory: render
+        run: node render-card.js
+        continue-on-error: true
+
       - name: Enviar mensaje a Discord
         env:
           DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
@@ -27,13 +45,17 @@ jobs:
             echo "No existe $MSG_FILE, nada que enviar."
             exit 0
           fi
-          python3 - "$MSG_FILE" <<'PYEOF'
-          import json, sys
-          with open(sys.argv[1], "r", encoding="utf-8") as f:
-              content = f.read()
-          with open("/tmp/payload.json", "w", encoding="utf-8") as f:
-              json.dump({"content": content}, f)
-          PYEOF
-          curl -sS -w "\nHTTP_STATUS:%{http_code}\n" -X POST "$DISCORD_WEBHOOK_URL" \
-            -H "Content-Type: application/json" \
-            --data-binary @/tmp/payload.json
+
+          if [ -f "render/card.png" ]; then
+            echo "Tarjeta encontrada, se envia con imagen."
+            jq -n --rawfile content "$MSG_FILE" '{content: $content, embeds: [{image: {url: "attachment://card.png"}}]}' > /tmp/payload.json
+            curl -sS -w "\nHTTP_STATUS:%{http_code}\n" -X POST "$DISCORD_WEBHOOK_URL" \
+              -F "payload_json=</tmp/payload.json;type=application/json" \
+              -F "files[0]=@render/card.png;type=image/png"
+          else
+            echo "No se genero card.png, se envia solo texto."
+            jq -n --rawfile content "$MSG_FILE" '{content: $content}' > /tmp/payload.json
+            curl -sS -w "\nHTTP_STATUS:%{http_code}\n" -X POST "$DISCORD_WEBHOOK_URL" \
+              -H "Content-Type: application/json" \
+              --data-binary @/tmp/payload.json
+          fi
