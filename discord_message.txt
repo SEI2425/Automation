@@ -1,3 +1,14 @@
-Prueba con imagen: asi se veria el boletin de PilaPila News de aqui en adelante, con una tarjeta generada automaticamente cada dia.
+Hola! Esto es lo mas interesante de hoy en IA y programacion.
 
-Entra cuando quieras, sin cuenta de Claude: [Abrir PilaPila News](<https://sei2425.github.io/Automation/>)
+**Noticias IA:**
+- Google lanza Gemini 3.8 Flash, su modelo rapido de bajo coste. [Leer mas](<https://blog.google/technology/ai/>)
+- Investigadores documentan una vulnerabilidad critica en un plugin popular de agentes de IA, ya con parche disponible. [Leer mas](<https://www.bleepingcomputer.com/>)
+- Anthropic amplia el contexto disponible en Claude para analizar documentos largos sin trocearlos. [Leer mas](<https://www.anthropic.com/news>)
+
+**Para programar gratis:**
+- freeCodeCamp amplia su curriculo gratuito de estructuras de datos y algoritmos. [Ver curso](<https://www.freecodecamp.org/learn/>)
+- Learn Git Branching: simulador visual para entender ramas y rebase de verdad. [Probar](<https://learngitbranching.js.org/>)
+
+**Tip del dia:** antes de optimizar algo, mide donde esta realmente el cuello de botella. [Por que](<https://developer.mozilla.org/en-US/docs/Learn/Performance>)
+
+Entra a la web cuando quieras, sin cuenta de Claude: [Abrir PilaPila News](<https://sei2425.github.io/Automation/>)
