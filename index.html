@@ -551,6 +551,18 @@
   }
   function cssVar(name){ return getComputedStyle(document.documentElement).getPropertyValue(name).trim(); }
 
+  function shuffleChoice(options, correctIndex){
+    var idxs = options.map(function(_, i){ return i; });
+    for (var i = idxs.length - 1; i > 0; i--){
+      var j = Math.floor(Math.random() * (i + 1));
+      var tmp = idxs[i]; idxs[i] = idxs[j]; idxs[j] = tmp;
+    }
+    return {
+      options: idxs.map(function(i){ return options[i]; }),
+      correct: idxs.indexOf(correctIndex)
+    };
+  }
+
   /* ---------------- sesión (login con Discord) ---------------- */
 
   var sessionToken = null;
@@ -700,6 +712,9 @@
   }
 
   function renderQuestionCard(entry, idx, total, onAnswered){
+    var shuffled = shuffleChoice(entry.options, entry.correct);
+    entry = Object.assign({}, entry, { options: shuffled.options, correct: shuffled.correct });
+
     var card = el("div", "card quiz-card");
     card.style.setProperty("--tilt", (idx % 2 === 0 ? "-0.55deg" : "0.5deg"));
     var eyebrow = el("div", "eyebrow");
@@ -776,6 +791,7 @@
         if (answeredToday >= questions.length){
           markDailyDone();
           if (correctToday === questions.length) launchConfetti();
+          Array.prototype.forEach.call(quizList.querySelectorAll(".opt-btn"), function(btn){ btn.disabled = true; });
         }
       });
       if (alreadyDone){
@@ -959,6 +975,11 @@
   }
 
   function buildQuizForm(questions, title, tagText, scoreKey){
+    questions = questions.map(function(item){
+      var shuffled = shuffleChoice(item.opts, item.correct);
+      return Object.assign({}, item, { opts: shuffled.options, correct: shuffled.correct });
+    });
+
     var form = document.createElement("form");
     form.className = "card";
     form.appendChild(el("h3", null, title));
