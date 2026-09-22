@@ -1,97 +1,17 @@
 {
   "date": "2026-09-22",
   "questions": [
-    {
-      "type": "identify",
-      "lang": "Python",
-      "question": "¿Qué imprime este código?",
-      "code": "def f(n):\n    return n if n < 2 else f(n-1) + f(n-2)\n\nprint(f(7))",
-      "options": ["8", "13", "21", "7"],
-      "correct": 1,
-      "hint": "Es la sucesión de Fibonacci.",
-      "explanation": "f(7) = f(6)+f(5) = 8+5 = 13."
-    },
-    {
-      "type": "complete",
-      "lang": "TypeScript",
-      "question": "Completa el tipo para que la función solo acepte 'admin' o 'user'.",
-      "code": "function setRole(role: ____) {\n  console.log(role);\n}\n\nsetRole(\"admin\"); // ok\nsetRole(\"guest\"); // debe fallar al compilar",
-      "options": ["string", "\"admin\" | \"user\"", "any", "\"admin\" & \"user\""],
-      "correct": 1,
-      "hint": "Necesitas un tipo de unión con los valores literales exactos.",
-      "explanation": "\"admin\" | \"user\" solo admite esos dos valores; cualquier otro string falla al compilar."
-    },
-    {
-      "type": "identify",
-      "lang": "Git",
-      "question": "¿Qué hace este comando?",
-      "code": "git rebase -i HEAD~3",
-      "options": [
-        "Elimina los últimos 3 commits sin avisar",
-        "Abre un editor para reescribir, combinar o reordenar los últimos 3 commits",
-        "Crea 3 ramas nuevas",
-        "Sube los últimos 3 commits al remoto"
-      ],
-      "correct": 1,
-      "hint": "El -i es de 'interactive'.",
-      "explanation": "El rebase interactivo abre una lista editable de los últimos 3 commits para reescribir historial local."
-    },
-    {
-      "type": "identify",
-      "lang": "SQL",
-      "question": "¿Qué devuelve esta consulta?",
-      "code": "SELECT name FROM users\nWHERE id NOT IN (SELECT user_id FROM orders);",
-      "options": [
-        "Los usuarios que sí han hecho algún pedido",
-        "Los usuarios que nunca han hecho un pedido",
-        "Todos los pedidos sin usuario asociado",
-        "Un error de sintaxis"
-      ],
-      "correct": 1,
-      "hint": "NOT IN con una subconsulta es una forma clásica de encontrar 'los que no están'.",
-      "explanation": "La subconsulta lista los user_id con pedidos; NOT IN se queda con los usuarios que no aparecen ahí."
-    },
-    {
-      "type": "identify",
-      "lang": "JavaScript",
-      "question": "¿Qué imprime este código?",
-      "code": "console.log([1, 2, 3].reduce((acc, n) => acc + n, 10));",
-      "options": ["6", "16", "10", "Error"],
-      "correct": 1,
-      "hint": "El segundo argumento de reduce es el valor inicial del acumulador.",
-      "explanation": "Empieza en 10 y suma 1+2+3: 10+1+2+3 = 16."
-    }
+    {"type":"identify","lang":"Python","question":"Que contiene la variable total despues de ejecutar este codigo?","code":"total = sum(x for x in range(10) if x % 3 == 0)","options":["18","45","10","Error de sintaxis"],"correct":0,"hint":"range(10) genera 0..9; filtra primero los multiplos de 3 y luego sumalos.","explanation":"Los multiplos de 3 entre 0 y 9 son 0, 3, 6 y 9. La expresion generadora los suma antes de que sum() devuelva el resultado final: 0+3+6+9 = 18."},
+    {"type":"complete","lang":"JavaScript","question":"Que falta para insertar todos los elementos de arr1 dentro de arr2?","code":"const arr1 = [1, 2, 3];\nconst arr2 = [0, ____, 4];\nconsole.log(arr2); // [0, 1, 2, 3, 4]","options":["...arr1","arr1","arr1[]","*arr1"],"correct":0,"hint":"Es el operador que 'esparce' los elementos de un array dentro de otro.","explanation":"El operador spread (...) copia cada elemento de arr1 de forma individual dentro del nuevo array, en vez de anidar arr1 como un unico elemento."},
+    {"type":"identify","lang":"SQL","question":"Que hace esta consulta SQL?","code":"SELECT a.name, b.title FROM authors a INNER JOIN books b ON a.id = b.author_id;","options":["Combina las filas de ambas tablas donde coincide el id del autor","Lista los autores que no tienen ningun libro","Elimina los autores duplicados de la tabla","Cuenta cuantos libros tiene cada autor"],"correct":0,"hint":"INNER JOIN solo devuelve filas que tienen coincidencia en ambas tablas.","explanation":"INNER JOIN une authors y books usando la condicion ON, devolviendo solo las combinaciones donde el id del autor coincide en las dos tablas, con el nombre del autor y el titulo de su libro."},
+    {"type":"identify","lang":"Git","question":"Que consigue esta secuencia de comandos?","code":"git stash\ngit checkout otra-rama\n# ... trabajas en otra-rama ...\ngit checkout rama-original\ngit stash pop","options":["Guarda temporalmente cambios sin confirmar para cambiar de rama y los recupera despues","Borra permanentemente los cambios sin confirmar","Crea una nueva rama a partir del stash","Fusiona rama-original con otra-rama"],"correct":0,"hint":"stash significa 'guardar en un cajon' de forma temporal.","explanation":"git stash guarda los cambios no confirmados sin necesidad de hacer commit, permitiendo cambiar de rama con el area de trabajo limpia; git stash pop los recupera cuando vuelves a la rama original."},
+    {"type":"complete","lang":"HTML/CSS","question":"Que valor falta para centrar los elementos tambien en horizontal?","code":".container {\n  display: flex;\n  justify-content: ____;\n  align-items: center;\n}","options":["center","flex-start","stretch","baseline"],"correct":0,"hint":"justify-content controla la alineacion en el eje principal (horizontal por defecto en flex).","explanation":"En un contenedor flex, justify-content: center centra los elementos en el eje horizontal, mientras que align-items: center ya los centra en el eje vertical."}
   ],
   "tips": [
-    {
-      "text": "Antes de optimizar algo, mide dónde está realmente el cuello de botella.",
-      "explanation": "Optimizar a ciegas suele mejorar la parte equivocada y complicar el código sin ganar velocidad real.",
-      "link": "https://developer.mozilla.org/en-US/docs/Learn/Performance",
-      "linkLabel": "Introducción a medir rendimiento (MDN)"
-    },
-    {
-      "text": "En TypeScript, evita 'any' salvo que de verdad no puedas tipar algo.",
-      "explanation": "'any' desactiva todas las comprobaciones de tipos en ese punto, así que renuncias a la principal ventaja del lenguaje.",
-      "link": "https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#any",
-      "linkLabel": "El tipo any en la guía oficial"
-    },
-    {
-      "text": "Haz commits pequeños y frecuentes en lugar de uno enorme al final del día.",
-      "explanation": "Los commits pequeños son más fáciles de revisar, revertir y entender meses después.",
-      "link": "https://cbea.ms/git-commit/",
-      "linkLabel": "Cómo escribir un buen commit"
-    },
-    {
-      "text": "Aprende a leer un EXPLAIN antes de añadir un índice a ciegas.",
-      "explanation": "Un índice mal puesto ralentiza las escrituras sin acelerar la consulta que te preocupa; el plan de ejecución te dice qué pasa de verdad.",
-      "link": "https://use-the-index-luke.com/",
-      "linkLabel": "Use The Index, Luke"
-    },
-    {
-      "text": "En SQL, evita SELECT * en código de producción.",
-      "explanation": "Traer columnas que no usas gasta ancho de banda y hace que un cambio de esquema rompa cosas en sitios inesperados.",
-      "link": "https://www.sqlstyle.guide/",
-      "linkLabel": "SQL Style Guide"
-    }
+    {"text":"Cuando te atasques con un bug, explicaselo en voz alta a algo o alguien, linea por linea.","explanation":"Es la tecnica del 'pato de goma': verbalizar el codigo obliga a pensar de forma mas ordenada y lenta que leerlo en silencio, y muchas veces encuentras el error a mitad de la explicacion, antes de terminarla.","link":"https://www.freecodecamp.org/news/rubber-duck-debugging/","linkLabel":"freeCodeCamp: que es el rubber duck debugging"},
+    {"text":"Haz commits pequenos y frecuentes en Git, no uno enorme al final del dia.","explanation":"Los commits pequenos son mas faciles de entender, revisar y deshacer si algo sale mal, y reducen mucho los conflictos al fusionar cambios con otras personas. Ademas facilitan usar herramientas como git bisect para encontrar en que commit exacto se introdujo un fallo.","link":"https://sethrobertson.github.io/GitBestPractices/","linkLabel":"Git Best Practices"},
+    {"text":"Aplica el principio DRY (no te repitas): si copias y pegas el mismo codigo tres veces, convierte lo en una funcion.","explanation":"Cuando la misma logica esta duplicada en varios sitios, cualquier cambio o correccion futura hay que repetirla en cada copia, y es facil olvidar alguna. Extraer esa logica a una funcion o componente reutilizable reduce los bugs y hace el codigo mas facil de mantener.","link":"https://www.geeksforgeeks.org/software-engineering/dont-repeat-yourselfdry-in-software-development/","linkLabel":"GeeksforGeeks: principio DRY"},
+    {"text":"Escribe algunas pruebas (tests) desde el principio del proyecto, aunque sean pocas.","explanation":"Los tests detectan errores justo cuando los introduces, no meses despues en produccion, y te dan la confianza para modificar el codigo sin miedo a romper algo que ya funcionaba. Arreglar un fallo detectado por un test en el momento es mucho mas barato que arreglarlo mas tarde.","link":"https://www.techtarget.com/searchsoftwarequality/answer/Is-unit-testing-an-important-aspect-of-software-development","linkLabel":"TechTarget: por que importan los tests unitarios"},
+    {"text":"Dedica tiempo a leer codigo escrito por otras personas, no solo a escribir el tuyo.","explanation":"La mayoria de programadores pasan mas tiempo leyendo codigo existente que escribiendo codigo nuevo, y leer proyectos de otros te expone a formas distintas de resolver el mismo problema y a buenas practicas que quiza no conocias. Es tambien una habilidad clave para trabajar en equipo.","link":"https://www.fluentcpp.com/2018/06/05/10-techniques-that-will-make-you-understand-other-peoples-code-better/","linkLabel":"Fluent C++: como entender codigo ajeno"}
   ]
 }
