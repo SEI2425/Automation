@@ -1,35 +1,15 @@
 {
   "date": "2026-09-22",
   "items": [
-    {
-      "tag": "Lanzamiento",
-      "title": "Google lanza Gemini 3.8 Flash, su modelo rápido de bajo coste",
-      "url": "https://blog.google/technology/ai/",
-      "summary": "Pensado para tareas de alto volumen (clasificación, extracción de datos, agentes ligeros) manteniendo el coste por token bajo."
-    },
-    {
-      "tag": "Impacto",
-      "title": "Investigadores documentan una vulnerabilidad crítica en un plugin popular de agentes de IA",
-      "url": "https://www.bleepingcomputer.com/",
-      "summary": "Permitía ejecución de código si el agente procesaba contenido no confiable sin las validaciones adecuadas; ya hay parche disponible."
-    },
-    {
-      "tag": "Lanzamiento",
-      "title": "Anthropic amplía el contexto disponible en Claude para tareas de análisis de documentos largos",
-      "url": "https://www.anthropic.com/news",
-      "summary": "El objetivo declarado es reducir la necesidad de trocear documentos extensos antes de analizarlos."
-    },
-    {
-      "tag": "Curso",
-      "title": "freeCodeCamp amplía su currículo gratuito de estructuras de datos y algoritmos",
-      "url": "https://www.freecodecamp.org/learn/",
-      "summary": "Certificación gratuita con ejercicios prácticos, pensada para quien viene de un bootcamp o es autodidacta."
-    },
-    {
-      "tag": "Interactivo",
-      "title": "Learn Git Branching sigue siendo la forma más visual de entender ramas y rebase",
-      "url": "https://learngitbranching.js.org/",
-      "summary": "Un simulador interactivo en el navegador que convierte comandos de Git en un grafo que se puede ver moverse."
-    }
+    {"tag":"Impacto","title":"Investigadores hackean OpenAI usando Claude Opus 5","url":"https://techcrunch.com/2026/09/18/researchers-used-anthropics-claude-to-hack-into-openai/","summary":"Un equipo de la startup de seguridad Hacktron encadeno una vulnerabilidad en Discourse con un fallo de inicio de sesion unico de OpenAI para tomar el control de cuentas de ChatGPT y Codex de empleados, llegando hasta un repositorio interno de codigo. Usaron el modelo Claude Opus 5 de Anthropic para automatizar buena parte del ataque -algo que la version anterior, Opus 4.8, no logro- y todo el proceso tardo menos de 72 horas. OpenAI corrigio el fallo y pago 6500 dolares de recompensa a los investigadores, que solo demostraron el acceso con un pull request inofensivo."},
+    {"tag":"Impacto","title":"Robots con IA arrancan malas hierbas sin herbicidas en granjas europeas","url":"https://igrownews.com/odd-bot-latest-news/","summary":"El robot Maverick de la empresa neerlandesa Odd.Bot usa vision por IA y reconocimiento de profundidad en 3D para identificar y arrancar malas hierbas una a una, con precision milimetrica y sin usar quimicos. Ya opera en decenas de campos de cultivos como zanahoria, cebolla y achicoria en Holanda, Belgica y Francia, funcionando de forma autonoma dia y noche. La ultima actualizacion anade mas bateria, geovallado y monitorizacion remota, y la empresa ya ofrece el modulo de deteccion a otros fabricantes de maquinaria agricola."},
+    {"tag":"Impacto","title":"Un video falso con IA de un famoso cuesta 250.000 libras a una victima en Irlanda del Norte","url":"https://www.resultsense.com/news/2026-09-08-psni-deepfake-investment-fraud/","summary":"La policia de Irlanda del Norte (PSNI) alerto tras confirmar que una persona perdio 250.000 libras en una estafa de inversion que arranco con un video generado por IA de una personalidad conocida del mundo financiero. Tras una primera inversion pequena, los estafadores contactaron a la victima por WhatsApp, le pidieron acceso remoto a su ordenador y la animaron a pedir prestamos para seguir invirtiendo. La PSNI recuerda que un anuncio o supuesto respaldo de una celebridad, por muy real que parezca el video, nunca es prueba de que una inversion sea legitima."},
+    {"tag":"Impacto","title":"AbbVie amplia su apuesta por la IA para descubrir nuevos farmacos","url":"https://news.abbvie.com/2026-09-21-AbbVie-and-Iambic-Announce-Collaboration-to-Accelerate-AI-driven-Drug-Discovery","summary":"La farmaceutica AbbVie anuncio una colaboracion plurianual con la startup Iambic para acelerar el descubrimiento de moleculas terapeuticas en inmunologia, neurociencia y oncologia. Usaran la plataforma de IA de Iambic, que incluye los modelos Enchant y NeuralPLexer, para predecir mejor como se comportaran los candidatos a farmaco antes de llegar a fase clinica, con el objetivo de mejorar la velocidad y la tasa de exito del proceso."},
+    {"tag":"Lanzamiento","title":"StepFun lanza Step 5 Preview, un modelo chino de 600.000 millones de parametros","url":"https://www.marktechpost.com/2026/09/20/stepfun-launches-step-5-preview/","summary":"La empresa china StepFun presento Step 5 Preview, un modelo de tipo mezcla de expertos con 600.000 millones de parametros totales (27.000 millones activos por token) y una ventana de contexto de un millon de tokens, pensado para tareas agenticas largas como programar o analizar datos. Ya esta disponible por API a 1 dolar por millon de tokens de entrada, y sus pesos se abriran el 15 de octubre."},
+    {"tag":"Curso","title":"The Odin Project: curriculo completo y gratuito de desarrollo web","url":"https://www.theodinproject.com/","summary":"The Odin Project es un curriculo de codigo abierto que te lleva desde cero hasta desarrollador full-stack, con rutas en JavaScript o Ruby on Rails. Combina lecciones teoricas con decenas de proyectos practicos que vas construyendo tu mismo, y no hace falta crear cuenta para acceder a las lecciones."},
+    {"tag":"Interactivo","title":"Khan Academy: aprende JavaScript dibujando y animando en el navegador","url":"https://www.khanacademy.org/computing/computer-programming/programming","summary":"Este curso interactivo de Khan Academy ensena las bases de JavaScript haciendo que dibujes formas y crees animaciones directamente en el navegador, con retroalimentacion visual inmediata. Es gratis, no requiere instalar nada y esta pensado como primer contacto con la programacion para quien nunca ha escrito una linea de codigo."},
+    {"tag":"Interactivo","title":"Codewars: mejora tu logica resolviendo katas de codigo","url":"https://www.codewars.com/","summary":"Codewars ofrece miles de retos cortos de programacion (katas) en mas de 55 lenguajes, ordenados por dificultad, que resuelves directamente en el navegador con pruebas automaticas. Despues de resolver cada kata puedes comparar tu solucion con la de otros usuarios, lo que ayuda mucho a aprender formas mas limpias de escribir codigo."},
+    {"tag":"Curso","title":"freeCodeCamp: certificacion gratuita de JavaScript, algoritmos y estructuras de datos","url":"https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/","summary":"Este modulo gratuito de freeCodeCamp ensena JavaScript desde variables y bucles hasta programacion orientada a objetos y algoritmos clasicos, con cientos de ejercicios de codigo evaluados automaticamente. Al terminar los proyectos finales obtienes una certificacion gratuita verificable."},
+    {"tag":"Curso","title":"MDN Learn web development: guia gratuita de HTML, CSS y JavaScript","url":"https://developer.mozilla.org/en-US/docs/Learn_web_development","summary":"MDN, la documentacion oficial de Mozilla, ofrece una ruta de aprendizaje estructurada y gratuita para dominar HTML, CSS y JavaScript desde cero, con modulos que incluyen ejercicios practicos y evaluaciones. Es una referencia usada tanto por principiantes como por desarrolladores profesionales que necesitan consultar la sintaxis correcta."}
   ]
 }
