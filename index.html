@@ -311,7 +311,7 @@
   <div class="tabs" role="tablist">
     <button class="tab-btn" role="tab" data-tab="hoy" aria-selected="true">Hoy</button>
     <button class="tab-btn" role="tab" data-tab="tips" aria-selected="false">Tips</button>
-    <button class="tab-btn" role="tab" data-tab="noticias" aria-selected="false">Noticias</button>
+    <button class="tab-btn" role="tab" data-tab="noticias" aria-selected="false">Novedades</button>
     <button class="tab-btn" role="tab" data-tab="temario" aria-selected="false">Temario</button>
     <button class="tab-btn" role="tab" data-tab="tests" aria-selected="false">Tests</button>
   </div>
@@ -332,6 +332,7 @@
   </section>
 
   <section class="tab-panel" id="panel-noticias" role="tabpanel" hidden>
+    <div class="chip-row" id="novedades-chips"></div>
     <div id="news-list"></div>
   </section>
 
@@ -818,26 +819,52 @@
     });
   }
 
-  /* ---------------- "Noticias" tab ---------------- */
+  /* ---------------- "Novedades" tab ---------------- */
 
-  async function renderNoticias(){
+  var NOVEDADES_CATS = [
+    { id:"noticias", label:"Noticias", match:function(tag){ return tag === "Impacto"; } },
+    { id:"actualizaciones", label:"Actualizaciones", match:function(tag){ return tag === "Lanzamiento"; } },
+    { id:"recursos", label:"Recursos", match:function(tag){ return tag === "Curso" || tag === "Interactivo"; } }
+  ];
+  var activeNovedadesCat = "noticias";
+  var novedadesAllDays = null;
+
+  function renderNovedadesChips(){
+    var chips = document.getElementById("novedades-chips");
+    chips.innerHTML = "";
+    NOVEDADES_CATS.forEach(function(cat){
+      var b = el("button", "chip", cat.label);
+      b.type = "button";
+      b.setAttribute("aria-pressed", String(cat.id === activeNovedadesCat));
+      b.addEventListener("click", function(){
+        activeNovedadesCat = cat.id;
+        renderNovedadesChips();
+        renderNovedadesList();
+      });
+      chips.appendChild(b);
+    });
+  }
+
+  function renderNovedadesList(){
     var list = document.getElementById("news-list");
     list.innerHTML = "";
-    var index = await fetchJson(REPO_RAW_BASE + "/data/index.json");
-    var dates = (index && index.length) ? index.slice(-30).reverse() : [];
 
-    if (!dates.length){
+    if (!novedadesAllDays || !novedadesAllDays.length){
       list.appendChild(el("div", "card empty-state",
         "Todavía no hay boletines guardados aquí. En cuanto se publique el primero, aparecerá también en esta pestaña."));
       return;
     }
 
-    for (var i = 0; i < dates.length; i++){
-      var day = await fetchJson(REPO_RAW_BASE + "/data/news/" + dates[i] + ".json");
-      if (!day) continue;
+    var cat = NOVEDADES_CATS.find(function(c){ return c.id === activeNovedadesCat; });
+    var anyShown = false;
+
+    novedadesAllDays.forEach(function(day){
+      var items = (day.items || []).filter(function(item){ return cat.match(item.tag); });
+      if (!items.length) return;
+      anyShown = true;
       var wrap = el("div", "card news-day");
-      wrap.appendChild(el("span", "news-date", day.date || dates[i]));
-      (day.items || []).forEach(function(item){
+      wrap.appendChild(el("span", "news-date", day.date));
+      items.forEach(function(item){
         var row = el("div", "news-item");
         if (item.tag) row.appendChild(el("span", "tag", item.tag));
         var a = el("a", null, item.title || item.url);
@@ -849,7 +876,25 @@
         wrap.appendChild(row);
       });
       list.appendChild(wrap);
+    });
+
+    if (!anyShown){
+      list.appendChild(el("div", "card empty-state", "Todavía no hay nada guardado en esta categoría."));
     }
+  }
+
+  async function renderNoticias(){
+    renderNovedadesChips();
+    if (novedadesAllDays === null){
+      var index = await fetchJson(REPO_RAW_BASE + "/data/index.json");
+      var dates = (index && index.length) ? index.slice(-30).reverse() : [];
+      novedadesAllDays = [];
+      for (var i = 0; i < dates.length; i++){
+        var day = await fetchJson(REPO_RAW_BASE + "/data/news/" + dates[i] + ".json");
+        if (day) novedadesAllDays.push({ date: day.date || dates[i], items: day.items || [] });
+      }
+    }
+    renderNovedadesList();
   }
 
   /* ---------------- "Temario" tab ---------------- */
