@@ -93,7 +93,7 @@
   .masthead-title{ font-size:2.1rem; line-height:1; }
   .masthead-sub{ color:var(--ink-muted); font-size:.92rem; margin-top:6px; max-width:40ch; }
 
-  .account{ display:flex; flex-direction:column; align-items:flex-end; gap:8px; }
+  .account{ display:flex; flex-direction:column; align-items:center; gap:8px; }
   .stamp{
     flex:0 0 auto; width:78px; height:78px; border-radius:50%;
     border:3px solid var(--accent); outline:1px solid color-mix(in srgb, var(--accent) 45%, transparent);
@@ -102,7 +102,7 @@
   }
   .stamp b{ font-size:1.6rem; }
   .stamp span{ font-size:.58rem; letter-spacing:.06em; text-transform:uppercase; margin-top:2px; }
-  .account-status{ font-size:.72rem; color:var(--ink-muted); text-align:right; max-width:140px; }
+  .account-status{ font-size:.72rem; color:var(--ink-muted); text-align:center; max-width:140px; }
   .account-status b{ color:var(--ink); }
   .btn{
     font:inherit; font-weight:600; font-size:.85rem; padding:9px 16px; border-radius:8px;
@@ -171,6 +171,9 @@
     font-size:.85rem; color:var(--ink-muted); margin-bottom:16px;
   }
   .login-nudge a{ font-weight:600; }
+
+  .login-gate{ max-width:440px; margin:60px auto; text-align:center; }
+  .login-gate .btn{ width:100%; padding:12px 16px; font-size:.9rem; }
 
   .tips-title{ margin:32px 0 4px; font-size:1.1rem; }
   .tip-row{ display:flex; gap:13px; padding:15px 0; border-top:1px dashed var(--line); }
@@ -308,48 +311,50 @@
     </div>
   </div>
 
-  <div class="tabs" role="tablist">
-    <button class="tab-btn" role="tab" data-tab="hoy" aria-selected="true">Hoy</button>
-    <button class="tab-btn" role="tab" data-tab="tips" aria-selected="false">Tips</button>
-    <button class="tab-btn" role="tab" data-tab="noticias" aria-selected="false">Novedades</button>
-    <button class="tab-btn" role="tab" data-tab="temario" aria-selected="false">Temario</button>
-    <button class="tab-btn" role="tab" data-tab="tests" aria-selected="false">Tests</button>
+  <section class="card login-gate" id="login-gate">
+    <h2 style="margin:0 0 8px;font-size:1.2rem;">Inicia sesión para continuar</h2>
+    <p style="margin:0 0 16px;color:var(--ink-muted);font-size:.9rem;">PilaPila News necesita que inicies sesión con tu cuenta de Discord para mostrarte el contenido y guardar tu progreso.</p>
+    <button type="button" class="btn" id="gate-login-btn">Iniciar sesión con Discord</button>
+  </section>
+
+  <div id="app-content" hidden>
+    <div class="tabs" role="tablist">
+      <button class="tab-btn" role="tab" data-tab="hoy" aria-selected="true">Hoy</button>
+      <button class="tab-btn" role="tab" data-tab="tips" aria-selected="false">Tips</button>
+      <button class="tab-btn" role="tab" data-tab="noticias" aria-selected="false">Novedades</button>
+      <button class="tab-btn" role="tab" data-tab="temario" aria-selected="false">Temario</button>
+      <button class="tab-btn" role="tab" data-tab="tests" aria-selected="false">Tests</button>
+    </div>
+
+    <section class="tab-panel" id="panel-hoy" role="tabpanel">
+      <div class="quiz-intro">
+        <h2 style="margin:0 0 4px;font-size:1.3rem;">Pon a prueba tus conocimientos</h2>
+        <p style="margin:0;color:var(--ink-muted);font-size:.9rem;">5 preguntas de código de hoy, en distintos lenguajes.</p>
+      </div>
+      <div id="quiz-list"></div>
+    </section>
+
+    <section class="tab-panel" id="panel-tips" role="tabpanel" hidden>
+      <div id="tips-wrap"></div>
+    </section>
+
+    <section class="tab-panel" id="panel-noticias" role="tabpanel" hidden>
+      <div class="chip-row" id="novedades-chips"></div>
+      <div id="news-list"></div>
+    </section>
+
+    <section class="tab-panel" id="panel-temario" role="tabpanel" hidden>
+      <div class="chip-row" id="temario-chips"></div>
+      <div id="temario-panel"></div>
+    </section>
+
+    <section class="tab-panel" id="panel-tests" role="tabpanel" hidden>
+      <div class="chip-row" id="test-chips"></div>
+      <div id="test-area"></div>
+    </section>
+
+    <p class="foot-note">Se actualiza cada día con noticias nuevas, 5 preguntas y 5 tips distintos.</p>
   </div>
-
-  <section class="tab-panel" id="panel-hoy" role="tabpanel">
-    <div class="quiz-intro">
-      <h2 style="margin:0 0 4px;font-size:1.3rem;">Pon a prueba tus conocimientos</h2>
-      <p style="margin:0;color:var(--ink-muted);font-size:.9rem;">5 preguntas de código de hoy, en distintos lenguajes.</p>
-    </div>
-    <div id="login-nudge-hoy" class="login-nudge" hidden>
-      Estás viendo esto sin iniciar sesión: puedes responder, pero tu racha no se guardará. <a href="#" id="login-link-hoy">Inicia sesión con Discord</a> para que se sincronice.
-    </div>
-    <div id="quiz-list"></div>
-  </section>
-
-  <section class="tab-panel" id="panel-tips" role="tabpanel" hidden>
-    <div id="tips-wrap"></div>
-  </section>
-
-  <section class="tab-panel" id="panel-noticias" role="tabpanel" hidden>
-    <div class="chip-row" id="novedades-chips"></div>
-    <div id="news-list"></div>
-  </section>
-
-  <section class="tab-panel" id="panel-temario" role="tabpanel" hidden>
-    <div class="chip-row" id="temario-chips"></div>
-    <div id="temario-panel"></div>
-  </section>
-
-  <section class="tab-panel" id="panel-tests" role="tabpanel" hidden>
-    <div id="login-nudge-tests" class="login-nudge" hidden>
-      Sin iniciar sesión, tus resultados de test no se guardarán entre visitas. <a href="#" id="login-link-tests">Inicia sesión con Discord</a> para guardarlos.
-    </div>
-    <div class="chip-row" id="test-chips"></div>
-    <div id="test-area"></div>
-  </section>
-
-  <p class="foot-note">Se actualiza cada día con noticias nuevas, 5 preguntas y 5 tips distintos.</p>
 </div>
 
 <script>
@@ -585,10 +590,12 @@
   }
 
   function renderAccountArea(){
+    var accountBox = document.querySelector(".account");
     var area = document.getElementById("account-area");
     area.innerHTML = "";
     if (me){
-      area.appendChild(el("div", "account-status", null)).innerHTML = "Sesión: <b>" + escapeHtml(me.username) + "</b>";
+      accountBox.hidden = false;
+      area.appendChild(el("div", "account-status", null)).innerHTML = "<b>" + escapeHtml(me.username) + "</b>";
       var out = el("button", "btn-ghost", "Cerrar sesión");
       out.type = "button";
       out.addEventListener("click", function(){
@@ -598,13 +605,8 @@
       });
       area.appendChild(out);
     } else {
-      var btn = el("button", "btn", "Iniciar sesión con Discord");
-      btn.type = "button";
-      btn.addEventListener("click", function(){ window.location.href = WORKER_BASE + "/login"; });
-      area.appendChild(btn);
+      accountBox.hidden = true;
     }
-    document.getElementById("login-nudge-hoy").hidden = !!me;
-    document.getElementById("login-nudge-tests").hidden = !!me;
   }
   function escapeHtml(s){
     var d = document.createElement("div");
@@ -612,14 +614,8 @@
     return d.innerHTML;
   }
 
-  ["login-link-hoy","login-link-tests"].forEach(function(id){
-    document.addEventListener("DOMContentLoaded", function(){
-      var link = document.getElementById(id);
-      if (link) link.addEventListener("click", function(ev){
-        ev.preventDefault();
-        window.location.href = WORKER_BASE + "/login";
-      });
-    });
+  document.getElementById("gate-login-btn").addEventListener("click", function(){
+    window.location.href = WORKER_BASE + "/login";
   });
 
   /* ---------------- progreso (racha + resultados de tests) ---------------- */
@@ -1168,16 +1164,29 @@
 
   async function boot(){
     initSessionFromHash();
-    setupTabs();
     setupThemeToggle();
     renderDateline();
+
+    me = await loadMe();
+    renderAccountArea();
+
+    var gate = document.getElementById("login-gate");
+    var appContent = document.getElementById("app-content");
+
+    if (!me){
+      gate.hidden = false;
+      appContent.hidden = true;
+      return;
+    }
+
+    gate.hidden = true;
+    appContent.hidden = false;
+
+    setupTabs();
     renderTemarioChips();
     renderTemarioPanel();
     renderTestChips();
     renderTestArea();
-
-    me = await loadMe();
-    renderAccountArea();
 
     progress = await loadProgress();
     await reconcileStreak();
