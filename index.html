@@ -1,0 +1,1154 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>PilaPila News</title>
+<link rel="icon" href="pilapila.png">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;700&display=swap">
+<style>
+  :root{
+    --ground:#F4F5FC; --surface:#FFFFFF; --surface-2:#EAEBFA;
+    --ink:#12142B; --ink-muted:#5B5F82;
+    --accent:#5E58ED; --accent-ink:#FFFFFF; --accent2:#1B7FAE;
+    --danger:#D6473F; --line:#E1E3F5;
+    --code-bg:#10101F; --code-text:#E7ECFF;
+    --shadow:0 1px 2px rgba(18,20,43,.07), 0 8px 24px -12px rgba(18,20,43,.20);
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --ground:#0C0C24; --surface:#14162E; --surface-2:#1C1F3B;
+      --ink:#F0F0FC; --ink-muted:#9498C2;
+      --accent:#7C78FC; --accent-ink:#0C0C24; --accent2:#4FC1F0;
+      --danger:#FF6B6B; --line:#262A4A;
+      --code-bg:#08081A; --code-text:#DCE3FF;
+      --shadow:0 1px 2px rgba(0,0,0,.4), 0 12px 28px -14px rgba(0,0,0,.6);
+    }
+  }
+  :root[data-theme="dark"]{
+    --ground:#0C0C24; --surface:#14162E; --surface-2:#1C1F3B;
+    --ink:#F0F0FC; --ink-muted:#9498C2;
+    --accent:#7C78FC; --accent-ink:#0C0C24; --accent2:#4FC1F0;
+    --danger:#FF6B6B; --line:#262A4A;
+    --code-bg:#08081A; --code-text:#DCE3FF;
+    --shadow:0 1px 2px rgba(0,0,0,.4), 0 12px 28px -14px rgba(0,0,0,.6);
+  }
+
+  *{box-sizing:border-box;}
+  html,body{ margin:0; }
+  body{
+    background:
+      radial-gradient(color-mix(in srgb, var(--ink) 5%, transparent) 1px, transparent 1.3px) 0 0/14px 14px,
+      var(--ground);
+    color:var(--ink);
+    font-family:'Manrope',system-ui,sans-serif;
+    padding-inline:16px;
+    padding-block:24px 48px;
+  }
+  h1,h2,h3{
+    font-family:'Manrope',system-ui,sans-serif;
+    font-weight:700;
+    text-wrap:balance;
+    letter-spacing:-0.02em;
+    margin:0;
+  }
+  code, .mono{ font-family:'IBM Plex Mono',ui-monospace,monospace; }
+  a{ color:var(--accent2); }
+  img{ max-width:100%; }
+  [hidden]{ display:none !important; }
+  .wrap{ max-width:840px; margin-inline:auto; }
+
+  /* ---------- theme toggle ---------- */
+  .theme-toggle{
+    position:fixed; top:calc(12px + env(safe-area-inset-top, 0px)); right:16px; z-index:20;
+    width:38px; height:38px; border-radius:50%; cursor:pointer;
+    background:var(--surface); border:1px solid var(--line); color:var(--ink);
+    display:flex; align-items:center; justify-content:center; box-shadow:var(--shadow);
+  }
+  .theme-toggle svg{ width:19px; height:19px; }
+  .theme-toggle .icon-moon{ display:none; }
+  :root[data-theme="dark"] .theme-toggle .icon-sun{ display:none; }
+  :root[data-theme="dark"] .theme-toggle .icon-moon{ display:block; }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]) .theme-toggle .icon-sun{ display:none; }
+    :root:not([data-theme="light"]) .theme-toggle .icon-moon{ display:block; }
+  }
+
+  /* ---------- masthead ---------- */
+  .masthead{ margin-bottom:22px; }
+  .masthead-top{
+    display:flex; align-items:flex-end; justify-content:space-between;
+    gap:16px; flex-wrap:wrap; padding-bottom:10px;
+  }
+  .masthead-brand{ display:flex; align-items:center; gap:12px; }
+  .masthead-mascot{
+    flex:0 0 auto; width:48px; height:48px; border-radius:10px; overflow:hidden;
+    background:var(--surface-2);
+  }
+  .masthead-mascot img{ width:100%; height:100%; object-fit:contain; display:block; }
+  .masthead-dateline{
+    font-weight:600; text-transform:uppercase;
+    color:var(--accent2); font-size:.7rem; margin:0 0 4px; letter-spacing:.08em;
+  }
+  .masthead-title{ font-size:2.1rem; line-height:1; }
+  .masthead-sub{ color:var(--ink-muted); font-size:.92rem; margin-top:6px; max-width:40ch; }
+
+  .account{ display:flex; flex-direction:column; align-items:flex-end; gap:8px; }
+  .stamp{
+    flex:0 0 auto; width:78px; height:78px; border-radius:50%;
+    border:3px solid var(--accent); outline:1px solid color-mix(in srgb, var(--accent) 45%, transparent);
+    outline-offset:3px; display:flex; flex-direction:column; align-items:center; justify-content:center;
+    transform:rotate(-7deg); color:var(--accent); font-weight:800; line-height:1;
+  }
+  .stamp b{ font-size:1.6rem; }
+  .stamp span{ font-size:.58rem; letter-spacing:.06em; text-transform:uppercase; margin-top:2px; }
+  .account-status{ font-size:.72rem; color:var(--ink-muted); text-align:right; max-width:140px; }
+  .account-status b{ color:var(--ink); }
+  .btn{
+    font:inherit; font-weight:600; font-size:.85rem; padding:9px 16px; border-radius:8px;
+    background:var(--accent); color:var(--accent-ink); border:none; cursor:pointer;
+  }
+  .btn:hover{ opacity:.9; }
+  .btn-ghost{
+    font:inherit; font-weight:600; font-size:.78rem; padding:6px 12px; border-radius:7px;
+    background:none; color:var(--ink-muted); border:1px solid var(--line); cursor:pointer;
+  }
+
+  /* ---------- tabs ---------- */
+  .tabs{ display:flex; gap:4px; border-bottom:1px solid var(--line); margin-bottom:20px; overflow-x:auto; }
+  .tab-btn{
+    font:inherit; font-weight:600; font-size:.88rem;
+    background:none; border:none; color:var(--ink-muted);
+    padding:10px 14px; cursor:pointer; white-space:nowrap;
+    border-bottom:2px solid transparent; margin-bottom:-1px;
+  }
+  .tab-btn:hover{ color:var(--ink); }
+  .tab-btn[aria-selected="true"]{ color:var(--ink); border-bottom-color:var(--accent); }
+  .tab-panel[hidden]{ display:none; }
+
+  /* ---------- cards ---------- */
+  .card{
+    background:var(--surface); border:1px solid var(--line); border-radius:10px;
+    padding:18px; box-shadow:var(--shadow); margin-bottom:16px;
+  }
+  .eyebrow{
+    font-size:.72rem; letter-spacing:.08em; text-transform:uppercase;
+    color:var(--accent2); font-weight:600; margin-bottom:6px; display:flex; gap:8px; align-items:center;
+  }
+  .eyebrow .type-pill{
+    background:var(--surface-2); color:var(--ink-muted); padding:1px 7px; border-radius:999px;
+    font-size:.66rem; letter-spacing:.02em;
+  }
+  .code-block{
+    background:var(--code-bg); color:var(--code-text);
+    border-radius:8px; padding:14px 16px; overflow-x:auto;
+    font-size:.86rem; line-height:1.55; margin-block:12px;
+  }
+  .code-block pre{ margin:0; white-space:pre; }
+
+  .options{ display:flex; flex-direction:column; gap:8px; margin-top:10px; }
+  .opt-btn{
+    font:inherit; text-align:left; background:var(--surface-2); color:var(--ink);
+    border:1px solid var(--line); border-radius:8px; padding:10px 14px; cursor:pointer;
+  }
+  .opt-btn:hover{ border-color:var(--accent2); }
+  .opt-btn.correct{ border-color:var(--accent2); background:color-mix(in srgb, var(--accent2) 16%, var(--surface)); }
+  .opt-btn.incorrect{ border-color:var(--danger); background:color-mix(in srgb, var(--danger) 14%, var(--surface)); }
+  .opt-btn:disabled{ cursor:default; opacity:.85; }
+  .explanation{
+    margin-top:12px; padding:12px 14px; border-left:3px solid var(--accent);
+    background:var(--surface-2); border-radius:0 8px 8px 0; font-size:.9rem;
+  }
+  .hint-btn{
+    font:inherit; font-size:.78rem; font-weight:600; background:none; border:none;
+    color:var(--accent2); cursor:pointer; padding:0; margin:2px 0 4px; text-decoration:underline;
+  }
+  .hint-text{ font-size:.85rem; color:var(--ink-muted); margin:0 0 8px; }
+
+  .quiz-intro{ margin-bottom:18px; }
+  .login-nudge{
+    padding:12px 14px; border-radius:8px; background:var(--surface-2); border:1px dashed var(--line);
+    font-size:.85rem; color:var(--ink-muted); margin-bottom:16px;
+  }
+  .login-nudge a{ font-weight:600; }
+
+  .tips-title{ margin:32px 0 4px; font-size:1.1rem; }
+  .tip-row{ display:flex; gap:13px; padding:15px 0; border-top:1px dashed var(--line); }
+  .tip-row:first-of-type{ border-top:none; }
+  .tip-num{
+    flex:0 0 auto; width:26px; height:26px; margin-top:1px; border-radius:6px;
+    background:var(--accent); color:var(--accent-ink); font-weight:700; font-size:.85rem;
+    display:flex; align-items:center; justify-content:center;
+  }
+  .tip-body p{ margin:0 0 4px; font-size:.93rem; font-weight:600; }
+  .tip-body .tip-explain{ font-size:.85rem; color:var(--ink-muted); margin:0 0 6px; }
+  .tip-body a{ font-size:.82rem; font-weight:600; }
+
+  .quiz-card{
+    position:relative; border-style:dashed; border-color:color-mix(in srgb, var(--ink) 22%, var(--line));
+    border-radius:3px 14px 3px 14px; transform:rotate(var(--tilt, 0deg)); margin-top:14px;
+  }
+  .quiz-card::before{
+    content:""; position:absolute; top:-9px; left:26px; width:52px; height:17px;
+    background:color-mix(in srgb, var(--accent) 55%, transparent);
+    transform:rotate(-4deg); border-radius:2px;
+  }
+  #quiz-list > div:nth-child(even).quiz-card::before{ left:auto; right:26px; transform:rotate(4deg); }
+
+  /* ---------- chips ---------- */
+  .chip-row{ display:flex; gap:8px; flex-wrap:wrap; margin-bottom:16px; }
+  .chip{
+    font:inherit; font-size:.84rem; font-weight:600; padding:7px 14px; border-radius:999px;
+    border:1px solid var(--line); background:var(--surface); color:var(--ink); cursor:pointer;
+  }
+  .chip[aria-pressed="true"]{
+    background:var(--chip-color, var(--accent)); color:#fff; border-color:var(--chip-color, var(--accent));
+  }
+
+  /* ---------- temario ---------- */
+  .lang-panel{ border-top:3px solid var(--lang-color, var(--accent2)); }
+  .lang-panel-head{ display:flex; align-items:center; gap:10px; }
+  .lang-badge{
+    flex:0 0 auto; width:34px; height:34px; border-radius:8px;
+    background:color-mix(in srgb, var(--lang-color, var(--accent2)) 16%, var(--surface-2));
+    color:var(--lang-color, var(--accent2));
+    display:flex; align-items:center; justify-content:center;
+    font-family:'IBM Plex Mono',monospace; font-weight:700; font-size:.78rem;
+  }
+  .lang-blurb{ color:var(--ink-muted); font-size:.86rem; margin:10px 0 10px; }
+  .lang-topics{ margin:0; padding-left:18px; font-size:.88rem; display:flex; flex-direction:column; gap:6px; }
+  .lang-fact{
+    margin-top:10px; font-size:.84rem; padding-top:10px; border-top:1px dashed var(--line); color:var(--ink-muted);
+  }
+
+  /* ---------- tests ---------- */
+  .quiz-q{ margin-bottom:18px; padding:8px 10px; margin-inline:-10px; border-radius:8px; }
+  .quiz-q.is-wrong{ background:color-mix(in srgb, var(--danger) 8%, transparent); }
+  .quiz-q-head{ display:flex; align-items:flex-start; gap:8px; }
+  .quiz-q-head p{ font-weight:600; margin:0 0 8px; flex:1; }
+  .quiz-opt{ display:flex; gap:8px; align-items:flex-start; padding:6px 8px; border-radius:6px; font-size:.9rem; }
+  .quiz-opt input{ margin-top:3px; }
+  .quiz-opt.correct{ background:color-mix(in srgb, var(--accent2) 16%, transparent); }
+  .quiz-opt.incorrect{ background:color-mix(in srgb, var(--danger) 14%, transparent); }
+  .info-badge{
+    flex:0 0 auto; width:20px; height:20px; margin-top:1px; border-radius:50%;
+    border:1px solid var(--line); background:var(--surface-2); color:var(--ink-muted);
+    font-weight:700; display:flex; align-items:center; justify-content:center; cursor:help; position:relative; padding:0;
+  }
+  .info-badge:hover, .info-badge:focus-visible{ color:var(--accent2); border-color:var(--accent2); }
+  .info-badge .tooltip{
+    display:none; position:absolute; top:calc(100% + 8px); right:0; width:230px;
+    background:var(--ink); color:var(--ground); font-size:.78rem; font-weight:500; line-height:1.45;
+    padding:10px 12px; border-radius:8px; text-align:left; z-index:10; box-shadow:var(--shadow);
+  }
+  .info-badge:hover .tooltip, .info-badge:focus-visible .tooltip{ display:block; }
+  .score-banner{
+    padding:14px 16px; border-radius:8px; background:var(--surface-2);
+    border:1px solid var(--line); font-weight:600; margin-bottom:16px;
+  }
+  .ai-source-note{ font-size:.78rem; color:var(--ink-muted); margin-top:14px; }
+
+  /* ---------- news ---------- */
+  .news-day{ margin-bottom:18px; }
+  .news-date{
+    font-family:'IBM Plex Mono',monospace; font-size:.78rem; color:var(--ink-muted);
+    margin-bottom:8px; display:block;
+  }
+  .news-item{ padding:10px 0; border-top:1px solid var(--line); }
+  .news-item:first-of-type{ border-top:none; }
+  .news-item .tag{
+    display:inline-block; font-size:.64rem; font-weight:700; letter-spacing:.04em; text-transform:uppercase;
+    color:var(--accent2); background:var(--surface-2); padding:1px 7px; border-radius:5px; margin-right:6px; vertical-align:middle;
+  }
+  .news-item a{ font-weight:600; text-decoration:none; }
+  .news-item a:hover{ text-decoration:underline; }
+  .news-item p{ font-size:.87rem; color:var(--ink-muted); margin:4px 0 0; }
+  .empty-state{ color:var(--ink-muted); font-size:.9rem; text-align:center; padding:28px 12px; }
+
+  .foot-note{ text-align:center; color:var(--ink-muted); font-size:.78rem; margin-top:32px; }
+
+  /* ---------- confetti ---------- */
+  .confetti-piece{
+    position:fixed; top:-14px; width:8px; height:14px; opacity:.9;
+    pointer-events:none; z-index:9999; animation:confetti-fall linear forwards;
+  }
+  @keyframes confetti-fall{ to{ transform:translateY(110vh) rotate(var(--rot, 720deg)); opacity:.3; } }
+</style>
+</head>
+<body>
+
+<button type="button" class="theme-toggle" id="theme-toggle" aria-label="Cambiar entre modo claro y oscuro" aria-pressed="false">
+  <svg class="icon-sun" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <circle cx="12" cy="12" r="4.2" stroke="currentColor" stroke-width="1.8"/>
+    <path stroke="currentColor" stroke-width="1.8" stroke-linecap="round" d="M12 2.5v2.2M12 19.3v2.2M21.5 12h-2.2M4.7 12H2.5M18.4 5.6l-1.6 1.6M7.2 16.8l-1.6 1.6M18.4 18.4l-1.6-1.6M7.2 7.2 5.6 5.6"/>
+  </svg>
+  <svg class="icon-moon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <path stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" d="M20 14.2A8.3 8.3 0 1 1 9.8 4a6.6 6.6 0 0 0 10.2 10.2Z"/>
+  </svg>
+</button>
+
+<div class="wrap">
+  <div class="masthead">
+    <div class="masthead-top">
+      <div class="masthead-brand">
+        <div class="masthead-mascot"><img src="pilapila.png" alt="Logo de PilaPila News"></div>
+        <div>
+          <p class="masthead-dateline" id="masthead-dateline">Edición de hoy</p>
+          <h1 class="masthead-title">PilaPila News</h1>
+          <p class="masthead-sub">Noticias de IA y programación, temario por lenguaje y un quiz de código nuevo cada día.</p>
+        </div>
+      </div>
+      <div class="account">
+        <div class="stamp" id="streak-stamp">
+          <b id="streak-count">0</b>
+          <span>racha</span>
+        </div>
+        <div id="account-area"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="tabs" role="tablist">
+    <button class="tab-btn" role="tab" data-tab="hoy" aria-selected="true">Hoy</button>
+    <button class="tab-btn" role="tab" data-tab="tips" aria-selected="false">Tips</button>
+    <button class="tab-btn" role="tab" data-tab="noticias" aria-selected="false">Noticias</button>
+    <button class="tab-btn" role="tab" data-tab="temario" aria-selected="false">Temario</button>
+    <button class="tab-btn" role="tab" data-tab="tests" aria-selected="false">Tests</button>
+  </div>
+
+  <section class="tab-panel" id="panel-hoy" role="tabpanel">
+    <div class="quiz-intro">
+      <h2 style="margin:0 0 4px;font-size:1.3rem;">Pon a prueba tus conocimientos</h2>
+      <p style="margin:0;color:var(--ink-muted);font-size:.9rem;">5 preguntas de código de hoy, en distintos lenguajes.</p>
+    </div>
+    <div id="login-nudge-hoy" class="login-nudge" hidden>
+      Estás viendo esto sin iniciar sesión: puedes responder, pero tu racha no se guardará. <a href="#" id="login-link-hoy">Inicia sesión con Discord</a> para que se sincronice.
+    </div>
+    <div id="quiz-list"></div>
+  </section>
+
+  <section class="tab-panel" id="panel-tips" role="tabpanel" hidden>
+    <div id="tips-wrap"></div>
+  </section>
+
+  <section class="tab-panel" id="panel-noticias" role="tabpanel" hidden>
+    <div id="news-list"></div>
+  </section>
+
+  <section class="tab-panel" id="panel-temario" role="tabpanel" hidden>
+    <div class="chip-row" id="temario-chips"></div>
+    <div id="temario-panel"></div>
+  </section>
+
+  <section class="tab-panel" id="panel-tests" role="tabpanel" hidden>
+    <div id="login-nudge-tests" class="login-nudge" hidden>
+      Sin iniciar sesión, tus resultados de test no se guardarán entre visitas. <a href="#" id="login-link-tests">Inicia sesión con Discord</a> para guardarlos.
+    </div>
+    <div class="chip-row" id="test-chips"></div>
+    <div id="test-area"></div>
+  </section>
+
+  <p class="foot-note">Se actualiza cada día con noticias nuevas, 5 preguntas y 5 tips distintos.</p>
+</div>
+
+<script>
+(function(){
+  "use strict";
+
+  var WORKER_BASE = "https://dry-dust-11b6.unakkconpatas.workers.dev";
+  var REPO_RAW_BASE = "https://raw.githubusercontent.com/SEI2425/Automation/main";
+
+  /* ---------------- content bank (temario + 10 lenguajes verificados) ---------------- */
+
+  var LANGS = [
+    { id:"python", name:"Python", short:"PY", color:"#C9622E", blurb:"El lenguaje generalista que domina ciencia de datos, backend y automatización — legible casi como pseudocódigo.",
+      topics:["Sintaxis y tipos básicos","Estructuras de datos (listas, dicts, sets)","Funciones y comprensiones","Programación orientada a objetos","Manejo de errores (try/except)","Entornos virtuales y pip","Librerías clave: NumPy, Pandas, FastAPI"],
+      fact:"Python debe su nombre al grupo de comedia Monty Python, no a la serpiente — Guido van Rossum era fan." },
+    { id:"javascript", name:"JavaScript", short:"JS", color:"#B8901E", blurb:"El único lenguaje que corre de forma nativa en todos los navegadores; hoy también domina el backend con Node.js.",
+      topics:["Variables y scope (let/const)","Funciones flecha y closures","Promesas y async/await","El DOM y eventos","Fetch y APIs REST","Módulos ES","Frameworks: React, Vue, Svelte"],
+      fact:"JavaScript se creó en solo 10 días en 1995, obra de Brendan Eich en Netscape." },
+    { id:"typescript", name:"TypeScript", short:"TS", color:"#2C5C99", blurb:"Superconjunto de JavaScript que añade tipos estáticos opcionales — atrapa errores antes de ejecutar el código, no después.",
+      topics:["Tipos básicos y anotaciones","Interfaces y tipos personalizados","Genéricos","Tipos de unión e intersección","tsconfig y el compilador","Tipado de props en frameworks","Utility types (Partial, Pick, Omit)"],
+      fact:"TypeScript lo creó Microsoft en 2012, liderado por Anders Hejlsberg — el mismo creador de C# y Delphi." },
+    { id:"java", name:"Java", short:"JV", color:"#A13D3D", blurb:"El lenguaje de \"escribe una vez, ejecuta en cualquier lugar\" — columna vertebral de banca, sistemas empresariales y buena parte de Android.",
+      topics:["Sintaxis y tipos básicos","Programación orientada a objetos","Colecciones (List, Map, Set)","Manejo de excepciones","Streams y programación funcional","Gestión de dependencias (Maven/Gradle)","La JVM y el recolector de basura"],
+      fact:"Java iba a llamarse \"Oak\" (roble), pero ya existía esa marca registrada, así que lo rebautizaron en una cafetería." },
+    { id:"kotlin", name:"Kotlin", short:"KT", color:"#7B4FA0", blurb:"El lenguaje oficial de Android desde 2019 — interopera al 100% con Java pero con sintaxis más concisa y segura frente a nulos.",
+      topics:["Sintaxis básica e inferencia de tipos","Null safety (tipos anulables con ?)","Data classes","Funciones de extensión","Coroutines (concurrencia)","Interoperabilidad con Java","Jetpack Compose"],
+      fact:"Kotlin debe su nombre a una isla cerca de San Petersburgo, en homenaje a cómo Java tomó su nombre de la isla de Java." },
+    { id:"sql", name:"SQL", short:"SQL", color:"#2E8B8B", blurb:"El lenguaje declarativo para hablar con bases de datos relacionales — lo usas sin saberlo cada vez que envías un formulario.",
+      topics:["SELECT, WHERE y ORDER BY","JOINs (INNER, LEFT, RIGHT)","Agregaciones: GROUP BY y HAVING","Subconsultas","Índices y rendimiento","Transacciones (ACID)","Diseño de esquemas"],
+      fact:"SQL iba a llamarse SEQUEL, pero tuvo que cambiar de nombre por un conflicto de marca registrada." },
+    { id:"git", name:"Git", short:"GIT", color:"#A03D6B", blurb:"El sistema de control de versiones que usa casi toda la industria — y el que más dolores de cabeza da al principio.",
+      topics:["init, add, commit","Branching y merge","Rebase vs merge","Resolver conflictos","git stash y cherry-pick","Trabajar con remotos (push/pull/fetch)","Pull requests y revisión de código"],
+      fact:"Linus Torvalds creó Git en 2005 en solo unas semanas, tras una disputa por la herramienta que usaba antes el kernel de Linux." },
+    { id:"htmlcss", name:"HTML & CSS", short:"WEB", color:"#6B8F71", blurb:"La estructura y la piel de toda la web — nada se renderiza en un navegador sin pasar por aquí.",
+      topics:["Semántica HTML5","El modelo de caja (box model)","Flexbox","CSS Grid","Selectores y especificidad","Responsive design y media queries","Variables CSS y temas"],
+      fact:"CSS existe desde 1996, pero hasta 2017 no hubo un estándar (Grid) pensado para maquetar en dos dimensiones." },
+    { id:"bash", name:"Bash", short:"SH", color:"#7A5C3E", blurb:"El idioma nativo de la terminal — automatiza en segundos lo que a golpe de clic llevaría minutos.",
+      topics:["Navegación y permisos (cd, ls, chmod)","Pipes y redirecciones","Variables y scripts","grep, sed y awk","Bucles y condicionales","Cron y automatización","SSH y gestión remota"],
+      fact:"El '#!' inicial de un script se llama shebang: viene de 'hash' + 'bang', los apodos de # y !." },
+    { id:"ia", name:"IA & Prompting", short:"IA", color:"#4B4E8F", blurb:"Diseñar instrucciones para modelos de lenguaje es ya una habilidad técnica en sí misma, con patrones y errores propios.",
+      topics:["Prompting basado en roles","Few-shot vs zero-shot","Cadena de pensamiento (chain-of-thought)","RAG (retrieval-augmented generation)","Function calling y uso de herramientas","Ventanas de contexto y tokens","Evaluación y alucinaciones"],
+      fact:"El término 'prompt engineering' casi no existía antes de 2022; en menos de dos años pasó de curiosidad a puesto de trabajo remunerado." }
+  ];
+
+  var TESTS = {
+    python: [
+      { q:"¿Qué imprime print(3 // 2)?", opts:["1.5","1","2","Error"], correct:1,
+        explanation:"// es división entera: descarta la parte decimal de 3/2 (1.5) y se queda con 1." },
+      { q:"¿Qué estructura garantiza claves únicas y acceso rápido por clave?", opts:["list","tuple","dict","str"], correct:2,
+        explanation:"Un dict guarda pares clave-valor y no permite claves repetidas, con acceso casi instantáneo por clave." },
+      { q:"¿Qué bloque se ejecuta siempre, haya o no excepción?", opts:["except","else","finally","raise"], correct:2,
+        explanation:"finally se ejecuta pase lo que pase, se haya lanzado una excepción o no." },
+      { q:"¿Qué produce [x*2 for x in range(5) if x%2==0]?", opts:["[0,2,4,6,8]","[0,4,8]","[2,4]","Error de sintaxis"], correct:1,
+        explanation:"Solo se quedan los pares de range(5) (0,2,4) y cada uno se multiplica por 2: [0,4,8]." }
+    ],
+    javascript: [
+      { q:"¿Qué devuelve typeof null?", opts:["\"null\"","\"undefined\"","\"object\"","\"number\""], correct:2,
+        explanation:"Es un error histórico del lenguaje: typeof null devuelve \"object\" desde los inicios de JavaScript." },
+      { q:"¿Qué diferencia hay entre let y var?", opts:["Ninguna","let tiene scope de bloque, var de función","var es más moderno","let no se puede reasignar"], correct:1,
+        explanation:"let respeta el bloque {} donde se declara; var 'se escapa' del bloque y solo respeta la función." },
+      { q:"¿Qué hace .map() sobre un array?", opts:["Modifica el array original","Devuelve un nuevo array transformado","Filtra elementos","Ordena el array"], correct:1,
+        explanation:"map() crea un array nuevo aplicando una función a cada elemento; nunca modifica el original." },
+      { q:"¿Qué es una Promise que nunca se resuelve ni rechaza?", opts:["Un error de sintaxis","Cuelga silenciosamente el await que la espera","Lanza excepción a los 5s","Node la cancela sola"], correct:1,
+        explanation:"Sin resolve ni reject, cualquier await de esa promesa se queda esperando para siempre sin avisar." }
+    ],
+    typescript: [
+      { q:"¿Qué añade TypeScript sobre JavaScript?", opts:["Un motor de ejecución más rápido","Tipado estático opcional revisado en tiempo de compilación","Un nuevo tipo de bucle","Ejecución en el servidor"], correct:1,
+        explanation:"TypeScript compila a JavaScript normal; su valor está en revisar los tipos antes de ejecutar el código." },
+      { q:"¿Qué hace 'interface' en TypeScript?", opts:["Ejecuta código en paralelo","Define la forma que debe tener un objeto, sin generar código en tiempo de ejecución","Crea una clase abstracta obligatoria","Importa un módulo externo"], correct:1,
+        explanation:"Una interface describe la forma de un objeto solo a nivel de tipos; desaparece al compilar a JavaScript." },
+      { q:"¿Qué tipo representa 'string O number'?", opts:["string & number","string | number","string + number","string number"], correct:1,
+        explanation:"El símbolo | define un tipo de unión: el valor puede ser de cualquiera de los tipos listados." },
+      { q:"¿Qué archivo configura cómo compila TypeScript un proyecto?", opts:["package.json","tsconfig.json","babel.config.js","webpack.config.js"], correct:1,
+        explanation:"tsconfig.json define las opciones del compilador: versión de salida, rutas, nivel de estrictez, etc." }
+    ],
+    java: [
+      { q:"¿Qué palabra clave se usa para heredar de una clase en Java?", opts:["implements","extends","inherits","super"], correct:1,
+        explanation:"extends indica que una clase hereda de otra; implements se usa para interfaces." },
+      { q:"¿Qué estructura de Java no permite elementos duplicados?", opts:["List","Set","Map","Array"], correct:1,
+        explanation:"Un Set garantiza que cada elemento aparezca como mucho una vez, a diferencia de una List." },
+      { q:"¿Qué bloque se usa para capturar excepciones en Java?", opts:["try/catch","if/else","do/while","switch/case"], correct:0,
+        explanation:"try/catch permite intentar un bloque de código y capturar la excepción si algo falla." },
+      { q:"¿Dónde se ejecuta el bytecode compilado de Java?", opts:["Directamente en el procesador","En la JVM (máquina virtual de Java)","En el navegador","En un contenedor Docker obligatoriamente"], correct:1,
+        explanation:"Java compila a bytecode, que corre sobre la JVM — por eso el mismo programa funciona en distintos sistemas." }
+    ],
+    kotlin: [
+      { q:"¿Qué símbolo marca un tipo como 'anulable' (puede ser null) en Kotlin?", opts:["!","?","#","*"], correct:1,
+        explanation:"Añadir ? al tipo (por ejemplo String?) indica que la variable puede contener null." },
+      { q:"¿Qué es una 'data class' en Kotlin?", opts:["Una clase que solo puede tener métodos estáticos","Una clase pensada para guardar datos, que genera automáticamente equals, hashCode y toString","Una clase que no se puede instanciar","Una interfaz especial para bases de datos"], correct:1,
+        explanation:"Marcar una clase como data genera automáticamente métodos útiles para comparar e imprimir sus datos." },
+      { q:"¿Para qué se usan las coroutines en Kotlin?", opts:["Para definir constantes","Para manejar concurrencia de forma ligera y secuencial en apariencia","Para compilar el código más rápido","Para estilizar interfaces"], correct:1,
+        explanation:"Las coroutines permiten escribir código asíncrono que se lee como si fuera secuencial, sin bloquear el hilo." }
+    ],
+    sql: [
+      { q:"¿Qué cláusula filtra filas antes de agrupar?", opts:["HAVING","WHERE","GROUP BY","ORDER BY"], correct:1,
+        explanation:"WHERE filtra filas individuales antes de que GROUP BY las agrupe; HAVING filtra después, sobre grupos." },
+      { q:"¿Qué JOIN devuelve todas las filas de la izquierda aunque no haya coincidencia?", opts:["INNER JOIN","RIGHT JOIN","LEFT JOIN","CROSS JOIN"], correct:2,
+        explanation:"LEFT JOIN conserva todas las filas de la tabla izquierda, poniendo NULL cuando no hay coincidencia." },
+      { q:"¿Qué garantiza la 'A' de ACID?", opts:["Atomicidad: todo o nada","Disponibilidad","Velocidad","Compresión"], correct:0,
+        explanation:"Atomicidad significa que una transacción se aplica entera o no se aplica en absoluto." },
+      { q:"¿Para qué sirve un índice en una tabla?", opts:["Para borrar duplicados","Para acelerar búsquedas a costa de espacio y escritura","Para forzar tipos de datos","Para cifrar la columna"], correct:1,
+        explanation:"Un índice acelera las búsquedas por esa columna, pero ocupa espacio extra y ralentiza un poco las escrituras." }
+    ],
+    git: [
+      { q:"¿Qué hace git stash?", opts:["Elimina el último commit","Guarda cambios sin confirmar para recuperarlos después","Crea una rama nueva","Sube cambios al remoto"], correct:1,
+        explanation:"stash guarda tus cambios sin confirmar en un cajón aparte, dejando la carpeta limpia hasta que los recuperes." },
+      { q:"¿Diferencia principal entre merge y rebase?", opts:["Son lo mismo","rebase reescribe historial para dejarlo lineal, merge conserva ambas historias","merge solo existe en GitHub","rebase borra commits"], correct:1,
+        explanation:"rebase reaplica tus commits sobre otra base dejando un historial lineal; merge une ambas ramas conservando su historia." },
+      { q:"¿Qué comando trae cambios del remoto sin fusionarlos automáticamente?", opts:["git pull","git fetch","git push","git clone"], correct:1,
+        explanation:"fetch descarga los cambios del remoto pero no los mezcla; pull es, de hecho, fetch + merge." },
+      { q:"¿Qué identifica un commit de forma única?", opts:["Su mensaje","Su hash SHA","El nombre de la rama","La fecha"], correct:1,
+        explanation:"Cada commit tiene un hash SHA único generado a partir de su contenido." }
+    ],
+    htmlcss: [
+      { q:"¿Qué propiedad crea un layout nativo en dos dimensiones?", opts:["float","display: flex","display: grid","position: absolute"], correct:2,
+        explanation:"Grid maqueta filas y columnas a la vez de forma nativa; flex solo trabaja bien en una dimensión." },
+      { q:"¿Etiqueta semánticamente correcta para el menú principal?", opts:["<div class=\"nav\">","<nav>","<menu-bar>","<header-nav>"], correct:1,
+        explanation:"<nav> es la etiqueta HTML5 pensada específicamente para bloques de navegación." },
+      { q:"¿Qué decide qué regla CSS gana entre dos selectores en conflicto?", opts:["El orden alfabético","La especificidad del selector","El tamaño del archivo","El navegador al azar"], correct:1,
+        explanation:"CSS calcula la especificidad de cada selector (ID > clase > etiqueta) para decidir cuál gana." }
+    ],
+    bash: [
+      { q:"¿Qué hace el operador | entre dos comandos?", opts:["Los ejecuta en paralelo","Pasa la salida del primero como entrada del segundo","Compara ambos comandos","Los comenta"], correct:1,
+        explanation:"El pipe conecta la salida estándar del primer comando con la entrada estándar del segundo." },
+      { q:"¿Qué hace chmod +x script.sh?", opts:["Lo ejecuta inmediatamente","Lo hace ejecutable","Lo borra","Lo comprime"], correct:1,
+        explanation:"+x añade el permiso de ejecución; sin él, el sistema rechaza ejecutar el archivo." },
+      { q:"¿Para qué se usa grep?", opts:["Editar archivos","Buscar texto que coincide con un patrón","Comprimir carpetas","Listar procesos"], correct:1,
+        explanation:"grep busca líneas que coincidan con un patrón de texto dentro de uno o varios archivos." }
+    ],
+    ia: [
+      { q:"¿Qué es RAG (retrieval-augmented generation)?", opts:["Un modelo que solo genera imágenes","Combinar recuperación de documentos externos con generación de texto","Una red neuronal convolucional","Un algoritmo de compresión"], correct:1,
+        explanation:"RAG busca información relevante en una fuente externa y se la da al modelo antes de generar la respuesta." },
+      { q:"¿Qué significa 'few-shot prompting'?", opts:["Dar al modelo pocos ejemplos dentro del prompt antes de pedirle la tarea","Limitar el modelo a pocas palabras","Usar un modelo pequeño","Ejecutar el prompt varias veces"], correct:0,
+        explanation:"Few-shot significa incluir unos pocos ejemplos resueltos en el propio prompt para guiar el formato de la respuesta." },
+      { q:"¿Qué es una 'alucinación' en un modelo de lenguaje?", opts:["Un error de la interfaz","Cuando el modelo genera información convincente pero falsa","Cuando tarda mucho en responder","Un tipo de ataque de seguridad"], correct:1,
+        explanation:"Una alucinación es contenido que el modelo presenta con seguridad pero que no es cierto." }
+    ]
+  };
+
+  /* Bancos locales de reserva (por si el archivo del día todavía no existe) */
+  var QUESTION_BANK = [
+    { type:"identify", lang:"Python", question:"¿Qué imprime este código?",
+      code:"def f(n):\n    return n if n < 2 else f(n-1) + f(n-2)\n\nprint(f(6))",
+      options:["5","8","13","6"], correct:1,
+      hint:"Es la sucesión de Fibonacci.",
+      explanation:"f(6) = f(5)+f(4) = 5+3 = 8." },
+    { type:"complete", lang:"Python", question:"Completa para que total termine valiendo 15.",
+      code:"total = 0\nfor n in range(1, 6):\n    total ____ n\nprint(total)  # 15",
+      options:["= n","+= n","- n","* n"], correct:1,
+      hint:"Necesitas acumular, no sobrescribir.",
+      explanation:"+= n suma n en cada iteración: 1+2+3+4+5 = 15." },
+    { type:"identify", lang:"JavaScript", question:"¿Qué imprime console.log al final?",
+      code:"function counter() {\n  let n = 0;\n  return () => ++n;\n}\nconst c = counter();\nc(); c();\nconsole.log(c());",
+      options:["undefined","1","3","NaN"], correct:2,
+      hint:"El closure recuerda n entre llamadas.",
+      explanation:"Tras 3 llamadas a c(), n vale 3." },
+    { type:"identify", lang:"SQL", question:"¿Qué devuelve esta consulta?",
+      code:"SELECT department, COUNT(*)\nFROM employees\nGROUP BY department\nHAVING COUNT(*) > 5;",
+      options:["Todos los empleados de cada departamento","Los departamentos con más de 5 empleados y su recuento","Solo los primeros 5 empleados de cada departamento","Un error de sintaxis"], correct:1,
+      hint:"HAVING filtra grupos, no filas.",
+      explanation:"HAVING filtra grupos ya formados por GROUP BY." },
+    { type:"identify", lang:"Git", question:"¿Qué flujo describen estos comandos?",
+      code:"git checkout -b feature/login\ngit add .\ngit commit -m \"Añade login\"\ngit push -u origin feature/login",
+      options:["Borra la rama feature/login","Crea una rama, confirma cambios y la sube al remoto","Fusiona feature/login con main","Revierte el último commit"], correct:1,
+      hint:"-b crea Y cambia a una rama nueva.",
+      explanation:"checkout -b crea la rama, commit confirma, push -u la sube y vincula." }
+  ];
+  var TIPS_BANK = [
+    { text:"Nombra tus variables por lo que representan, no por lo corto que se escriban.",
+      explanation:"Un nombre como 'x' obliga a releer el código; 'total_pedidos' lo dice de un vistazo.",
+      link:"https://developer.mozilla.org/en-US/docs/MDN/Writing_guidelines/Writing_style_guide/Code_style_guide", linkLabel:"Guía de estilo de código (MDN)" },
+    { text:"Usa control de versiones desde el primer día, aunque trabajes sola.",
+      explanation:"Git te deja volver atrás cuando algo se rompe y experimentar sin miedo a perder trabajo.",
+      link:"https://git-scm.com/book/en/v2/Getting-Started-About-Version-Control", linkLabel:"Qué es el control de versiones" },
+    { text:"Escribe mensajes de commit que expliquen el porqué del cambio.",
+      explanation:"'Fix bug' no ayuda a nadie dentro de seis meses. Un buen mensaje dice qué problema resolvía.",
+      link:"https://cbea.ms/git-commit/", linkLabel:"Cómo escribir un buen mensaje de commit" },
+    { text:"Si copias y pegas el mismo bloque por tercera vez, extráelo en una función.",
+      explanation:"Repetir lógica significa que, si hay que corregirla, tendrás que acordarte de cambiarla en todos los sitios.",
+      link:"https://en.wikipedia.org/wiki/Don%27t_repeat_yourself", linkLabel:"El principio DRY" },
+    { text:"Aprende bien la diferencia entre == y === en JavaScript.",
+      explanation:"== convierte los tipos antes de comparar, lo que produce sorpresas; === no convierte nada.",
+      link:"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Equality", linkLabel:"Igualdad en JavaScript (MDN)" }
+  ];
+
+  /* ---------------- helpers ---------------- */
+
+  function todayKey(){ return new Date().toISOString().slice(0,10); }
+  function el(tag, cls, text){
+    var e = document.createElement(tag);
+    if(cls) e.className = cls;
+    if(text != null) e.textContent = text;
+    return e;
+  }
+  function cssVar(name){ return getComputedStyle(document.documentElement).getPropertyValue(name).trim(); }
+
+  /* ---------------- sesión (login con Discord) ---------------- */
+
+  var sessionToken = null;
+  var me = null;
+
+  function initSessionFromHash(){
+    var hash = window.location.hash || "";
+    var match = hash.match(/token=([^&]+)/);
+    if (match){
+      sessionToken = decodeURIComponent(match[1]);
+      try{ localStorage.setItem("pilapila_token", sessionToken); }catch(e){}
+      history.replaceState(null, "", window.location.pathname + window.location.search);
+    } else {
+      try{ sessionToken = localStorage.getItem("pilapila_token"); }catch(e){ sessionToken = null; }
+    }
+  }
+
+  async function apiFetch(path, opts){
+    opts = opts || {};
+    opts.headers = opts.headers || {};
+    if (sessionToken) opts.headers["Authorization"] = "Bearer " + sessionToken;
+    var resp = await fetch(WORKER_BASE + path, opts);
+    if (resp.status === 401){
+      sessionToken = null;
+      try{ localStorage.removeItem("pilapila_token"); }catch(e){}
+    }
+    return resp;
+  }
+
+  async function loadMe(){
+    if (!sessionToken) return null;
+    try{
+      var resp = await apiFetch("/api/me");
+      if (!resp.ok) return null;
+      return await resp.json();
+    }catch(e){ return null; }
+  }
+
+  function renderAccountArea(){
+    var area = document.getElementById("account-area");
+    area.innerHTML = "";
+    if (me){
+      area.appendChild(el("div", "account-status", null)).innerHTML = "Sesión: <b>" + escapeHtml(me.username) + "</b>";
+      var out = el("button", "btn-ghost", "Cerrar sesión");
+      out.type = "button";
+      out.addEventListener("click", function(){
+        sessionToken = null;
+        try{ localStorage.removeItem("pilapila_token"); }catch(e){}
+        window.location.reload();
+      });
+      area.appendChild(out);
+    } else {
+      var btn = el("button", "btn", "Iniciar sesión con Discord");
+      btn.type = "button";
+      btn.addEventListener("click", function(){ window.location.href = WORKER_BASE + "/login"; });
+      area.appendChild(btn);
+    }
+    document.getElementById("login-nudge-hoy").hidden = !!me;
+    document.getElementById("login-nudge-tests").hidden = !!me;
+  }
+  function escapeHtml(s){
+    var d = document.createElement("div");
+    d.textContent = s;
+    return d.innerHTML;
+  }
+
+  ["login-link-hoy","login-link-tests"].forEach(function(id){
+    document.addEventListener("DOMContentLoaded", function(){
+      var link = document.getElementById(id);
+      if (link) link.addEventListener("click", function(ev){
+        ev.preventDefault();
+        window.location.href = WORKER_BASE + "/login";
+      });
+    });
+  });
+
+  /* ---------------- progreso (racha + resultados de tests) ---------------- */
+
+  function localProgress(){
+    try{
+      var raw = localStorage.getItem("pilapila_progress_local");
+      return raw ? JSON.parse(raw) : { streak:0, lastCompletedDate:null, history:[], testScores:{} };
+    }catch(e){ return { streak:0, lastCompletedDate:null, history:[], testScores:{} }; }
+  }
+  function saveLocalProgress(p){
+    try{ localStorage.setItem("pilapila_progress_local", JSON.stringify(p)); }catch(e){}
+  }
+
+  async function loadProgress(){
+    if (sessionToken){
+      try{
+        var resp = await apiFetch("/api/progress");
+        if (resp.ok){
+          var data = await resp.json();
+          if (data) return data;
+        }
+      }catch(e){}
+    }
+    return localProgress();
+  }
+
+  async function saveProgress(p){
+    if (sessionToken){
+      try{
+        await apiFetch("/api/progress", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(p),
+        });
+        return;
+      }catch(e){}
+    }
+    saveLocalProgress(p);
+  }
+
+  var progress = { streak:0, lastCompletedDate:null, history:[], testScores:{} };
+
+  async function reconcileStreak(){
+    var today = todayKey();
+    var yesterday = new Date(Date.now() - 864e5).toISOString().slice(0,10);
+    if (progress.lastCompletedDate && progress.lastCompletedDate !== today && progress.lastCompletedDate !== yesterday && (progress.streak || 0) !== 0){
+      progress.streak = 0;
+      await saveProgress(progress);
+    }
+  }
+
+  function renderStreak(){
+    document.getElementById("streak-count").textContent = progress.streak || 0;
+  }
+
+  var answeredToday = 0;
+
+  async function markDailyDone(){
+    var key = todayKey();
+    if (progress.lastCompletedDate === key) return;
+    var yesterday = new Date(Date.now() - 864e5).toISOString().slice(0,10);
+    progress.streak = (progress.lastCompletedDate === yesterday) ? (progress.streak||0) + 1 : 1;
+    progress.lastCompletedDate = key;
+    progress.history = (progress.history || []).concat([key]).slice(-60);
+    renderStreak();
+    await saveProgress(progress);
+  }
+
+  /* ---------------- "Hoy" tab ---------------- */
+
+  async function fetchJson(url){
+    try{
+      var resp = await fetch(url, { cache: "no-store" });
+      if (!resp.ok) return null;
+      return await resp.json();
+    }catch(e){ return null; }
+  }
+
+  async function loadDailyEntry(){
+    return fetchJson(REPO_RAW_BASE + "/data/daily/" + todayKey() + ".json");
+  }
+
+  function renderQuestionCard(entry, idx, total, onAnswered){
+    var card = el("div", "card quiz-card");
+    card.style.setProperty("--tilt", (idx % 2 === 0 ? "-0.55deg" : "0.5deg"));
+    var eyebrow = el("div", "eyebrow");
+    eyebrow.appendChild(document.createTextNode(entry.lang + " · pregunta " + (idx+1) + "/" + total));
+    var pill = el("span", "type-pill", entry.type === "complete" ? "completa el código" : "identifica el código");
+    eyebrow.appendChild(pill);
+    card.appendChild(eyebrow);
+
+    card.appendChild(el("h3", null, entry.question));
+
+    var codeBlock = el("div", "code-block");
+    var pre = document.createElement("pre");
+    pre.className = "mono";
+    pre.textContent = entry.code;
+    codeBlock.appendChild(pre);
+    card.appendChild(codeBlock);
+
+    var hintText = el("p", "hint-text", entry.hint);
+    hintText.hidden = true;
+    var hintBtn = el("button", "hint-btn", "Ver pista");
+    hintBtn.type = "button";
+    hintBtn.addEventListener("click", function(){
+      hintText.hidden = !hintText.hidden;
+      hintBtn.textContent = hintText.hidden ? "Ver pista" : "Ocultar pista";
+    });
+    card.appendChild(hintBtn);
+    card.appendChild(hintText);
+
+    var optsWrap = el("div", "options");
+    var explanation = el("div", "explanation");
+    explanation.hidden = true;
+    explanation.textContent = entry.explanation;
+
+    entry.options.forEach(function(optText, oi){
+      var b = el("button", "opt-btn", optText);
+      b.type = "button";
+      b.addEventListener("click", function(){
+        Array.prototype.forEach.call(optsWrap.children, function(btn){ btn.disabled = true; });
+        var isRight = oi === entry.correct;
+        try{
+          if (isRight){ b.classList.add("correct"); }
+          else {
+            b.classList.add("incorrect");
+            var correctBtn = optsWrap.children[entry.correct];
+            if (correctBtn) correctBtn.classList.add("correct");
+          }
+          explanation.hidden = false;
+        }catch(e){}
+        onAnswered(isRight);
+      });
+      optsWrap.appendChild(b);
+    });
+
+    card.appendChild(optsWrap);
+    card.appendChild(explanation);
+    return card;
+  }
+
+  async function renderHoy(){
+    var stored = await loadDailyEntry();
+    var questions = (stored && stored.questions && stored.questions.length) ? stored.questions : QUESTION_BANK;
+
+    var quizList = document.getElementById("quiz-list");
+    quizList.innerHTML = "";
+
+    var alreadyDone = progress.lastCompletedDate === todayKey();
+    answeredToday = alreadyDone ? questions.length : 0;
+    var correctToday = 0;
+
+    questions.forEach(function(q, idx){
+      var card = renderQuestionCard(q, idx, questions.length, function(isRight){
+        answeredToday++;
+        if (isRight) correctToday++;
+        if (answeredToday >= questions.length){
+          markDailyDone();
+          if (correctToday === questions.length) launchConfetti();
+        }
+      });
+      if (alreadyDone){
+        Array.prototype.forEach.call(card.querySelectorAll(".opt-btn"), function(btn){ btn.disabled = true; });
+      }
+      quizList.appendChild(card);
+    });
+  }
+
+  /* ---------------- "Tips" tab ---------------- */
+
+  async function renderTips(){
+    var stored = await loadDailyEntry();
+    var tips = (stored && stored.tips && stored.tips.length) ? stored.tips : TIPS_BANK;
+
+    var tipsWrap = document.getElementById("tips-wrap");
+    tipsWrap.innerHTML = "";
+    tipsWrap.appendChild(el("h3", "tips-title", "Tips de hoy, explicados"));
+    tips.forEach(function(tip, ti){
+      var row = el("div", "tip-row");
+      var num = el("span", "tip-num", String(ti + 1));
+      num.style.transform = "rotate(" + (ti % 2 === 0 ? "-4deg" : "3deg") + ")";
+      row.appendChild(num);
+      var card = el("div", "tip-body");
+      card.appendChild(el("p", null, tip.text));
+      card.appendChild(el("p", "tip-explain", tip.explanation));
+      if (tip.link){
+        var a = document.createElement("a");
+        a.href = tip.link;
+        a.target = "_blank";
+        a.rel = "noopener noreferrer";
+        a.textContent = (tip.linkLabel || "Saber más") + " →";
+        card.appendChild(a);
+      }
+      row.appendChild(card);
+      tipsWrap.appendChild(row);
+    });
+  }
+
+  /* ---------------- "Noticias" tab ---------------- */
+
+  async function renderNoticias(){
+    var list = document.getElementById("news-list");
+    list.innerHTML = "";
+    var index = await fetchJson(REPO_RAW_BASE + "/data/index.json");
+    var dates = (index && index.length) ? index.slice(-30).reverse() : [];
+
+    if (!dates.length){
+      list.appendChild(el("div", "card empty-state",
+        "Todavía no hay boletines guardados aquí. En cuanto se publique el primero, aparecerá también en esta pestaña."));
+      return;
+    }
+
+    for (var i = 0; i < dates.length; i++){
+      var day = await fetchJson(REPO_RAW_BASE + "/data/news/" + dates[i] + ".json");
+      if (!day) continue;
+      var wrap = el("div", "card news-day");
+      wrap.appendChild(el("span", "news-date", day.date || dates[i]));
+      (day.items || []).forEach(function(item){
+        var row = el("div", "news-item");
+        if (item.tag) row.appendChild(el("span", "tag", item.tag));
+        var a = el("a", null, item.title || item.url);
+        a.href = item.url || "#";
+        a.target = "_blank";
+        a.rel = "noopener noreferrer";
+        row.appendChild(a);
+        if (item.summary) row.appendChild(el("p", null, item.summary));
+        wrap.appendChild(row);
+      });
+      list.appendChild(wrap);
+    }
+  }
+
+  /* ---------------- "Temario" tab ---------------- */
+
+  var activeTemarioLang = null;
+
+  function renderTemarioChips(){
+    var chips = document.getElementById("temario-chips");
+    chips.innerHTML = "";
+    LANGS.forEach(function(lang){
+      var b = el("button", "chip", lang.name);
+      b.type = "button";
+      b.style.setProperty("--chip-color", lang.color);
+      b.setAttribute("aria-pressed", String(lang.id === activeTemarioLang));
+      b.addEventListener("click", function(){
+        activeTemarioLang = lang.id;
+        renderTemarioChips();
+        renderTemarioPanel();
+      });
+      chips.appendChild(b);
+    });
+  }
+
+  function renderTemarioPanel(){
+    var panel = document.getElementById("temario-panel");
+    panel.innerHTML = "";
+    if (!activeTemarioLang){
+      panel.appendChild(el("div", "card empty-state", "Elige un lenguaje para ver su temario y un dato curioso."));
+      return;
+    }
+    var lang = LANGS.find(function(l){ return l.id === activeTemarioLang; });
+    var card = el("div", "card lang-panel");
+    card.style.setProperty("--lang-color", lang.color);
+    var head = el("div", "lang-panel-head");
+    head.appendChild(el("span", "lang-badge", lang.short));
+    head.appendChild(el("h3", null, lang.name));
+    card.appendChild(head);
+    card.appendChild(el("p", "lang-blurb", lang.blurb));
+    var ul = document.createElement("ul");
+    ul.className = "lang-topics";
+    lang.topics.forEach(function(t){ ul.appendChild(el("li", null, t)); });
+    card.appendChild(ul);
+    card.appendChild(el("p", "lang-fact", "Dato curioso: " + lang.fact));
+    panel.appendChild(card);
+  }
+
+  /* ---------------- "Tests" tab ---------------- */
+
+  var activeTestLang = null;
+
+  function renderTestChips(){
+    var chips = document.getElementById("test-chips");
+    chips.innerHTML = "";
+    LANGS.forEach(function(lang){
+      var b = el("button", "chip", lang.name);
+      b.type = "button";
+      b.style.setProperty("--chip-color", lang.color);
+      b.setAttribute("aria-pressed", String(lang.id === activeTestLang));
+      b.addEventListener("click", function(){
+        activeTestLang = lang.id;
+        renderTestChips();
+        renderTestArea();
+      });
+      chips.appendChild(b);
+    });
+  }
+
+  function buildQuizForm(questions, title, tagText, scoreKey){
+    var form = document.createElement("form");
+    form.className = "card";
+    form.appendChild(el("h3", null, title));
+    if (tagText) form.appendChild(el("p", "ai-source-note", tagText));
+
+    questions.forEach(function(item, qi){
+      var qWrap = el("div", "quiz-q");
+      var head = el("div", "quiz-q-head");
+      head.appendChild(el("p", null, (qi+1) + ". " + item.q));
+      qWrap.appendChild(head);
+      item.opts.forEach(function(optText, oi){
+        var label = document.createElement("label");
+        label.className = "quiz-opt";
+        var input = document.createElement("input");
+        input.type = "radio";
+        input.name = "q" + qi;
+        input.value = String(oi);
+        label.appendChild(input);
+        label.appendChild(el("span", null, optText));
+        qWrap.appendChild(label);
+      });
+      form.appendChild(qWrap);
+    });
+
+    var submit = el("button", "btn", "Corregir");
+    submit.type = "submit";
+    form.appendChild(submit);
+
+    form.addEventListener("submit", async function(ev){
+      ev.preventDefault();
+      var score = 0;
+      var qWraps = Array.prototype.slice.call(form.querySelectorAll(".quiz-q"));
+
+      questions.forEach(function(item, qi){
+        var chosen = form.querySelector('input[name="q' + qi + '"]:checked');
+        var chosenVal = chosen ? Number(chosen.value) : -1;
+        var isCorrect = chosenVal === item.correct;
+        if (isCorrect) score++;
+
+        try{
+          var qWrap = qWraps[qi];
+          Array.prototype.forEach.call(qWrap.querySelectorAll("input"), function(inp){ inp.disabled = true; });
+          var labels = Array.prototype.slice.call(qWrap.querySelectorAll(".quiz-opt"));
+          if (labels[item.correct]) labels[item.correct].classList.add("correct");
+          if (!isCorrect){
+            qWrap.classList.add("is-wrong");
+            if (chosen && labels[chosenVal]) labels[chosenVal].classList.add("incorrect");
+            var badge = el("button", "info-badge", "i");
+            badge.type = "button";
+            badge.setAttribute("aria-label", "Por qué es correcta la otra opción");
+            var tip = el("span", "tooltip", "Correcta: “" + item.opts[item.correct] + "”. " + (item.explanation || ""));
+            badge.appendChild(tip);
+            var head = qWrap.querySelector(".quiz-q-head");
+            if (head) head.appendChild(badge);
+          }
+        }catch(e){}
+      });
+
+      var banner = el("div", "score-banner", "Resultado: " + score + " / " + questions.length + " correctas.");
+      form.parentNode.insertBefore(banner, form);
+      submit.disabled = true;
+      banner.scrollIntoView({ behavior:"smooth", block:"center" });
+      if (score === questions.length) launchConfetti();
+
+      progress.testScores = progress.testScores || {};
+      progress.testScores[scoreKey] = { score: score, total: questions.length, date: todayKey(), completedAt: Date.now() };
+      await saveProgress(progress);
+    });
+
+    return form;
+  }
+
+  var RETAKE_COOLDOWN_MS = 24 * 60 * 60 * 1000;
+
+  function formatRemaining(ms){
+    var totalMin = Math.max(1, Math.ceil(ms / 60000));
+    var h = Math.floor(totalMin / 60);
+    var m = totalMin % 60;
+    if (h > 0) return h + " h " + m + " min";
+    return m + " min";
+  }
+
+  function renderGatedTest(questions, title, tagText, scoreKey){
+    var wrap = document.createElement("div");
+    var entry = (progress.testScores && progress.testScores[scoreKey]) || null;
+
+    function showForm(){
+      wrap.innerHTML = "";
+      wrap.appendChild(buildQuizForm(questions, title, tagText, scoreKey));
+    }
+
+    if (!entry){
+      showForm();
+      return wrap;
+    }
+
+    var elapsed = entry.completedAt ? (Date.now() - entry.completedAt) : RETAKE_COOLDOWN_MS;
+    var locked = elapsed < RETAKE_COOLDOWN_MS;
+
+    var card = el("div", "card");
+    card.appendChild(el("h3", null, title));
+    if (tagText) card.appendChild(el("p", "ai-source-note", tagText));
+    card.appendChild(el("div", "score-banner",
+      "Tu último resultado: " + entry.score + " / " + entry.total + " correctas" +
+      (entry.date ? " (" + entry.date + ")" : "") + "."));
+
+    if (locked){
+      card.appendChild(el("p", "ai-source-note", "Podrás repetir este test en " + formatRemaining(RETAKE_COOLDOWN_MS - elapsed) + "."));
+      var lockedBtn = el("button", "btn", "Repetir test");
+      lockedBtn.type = "button";
+      lockedBtn.disabled = true;
+      card.appendChild(lockedBtn);
+    } else {
+      var retakeBtn = el("button", "btn", "Repetir test");
+      retakeBtn.type = "button";
+      retakeBtn.addEventListener("click", showForm);
+      card.appendChild(retakeBtn);
+    }
+
+    wrap.appendChild(card);
+    return wrap;
+  }
+
+  function renderTestArea(){
+    var area = document.getElementById("test-area");
+    area.innerHTML = "";
+    if (!activeTestLang){
+      area.appendChild(el("div", "card empty-state", "Elige un lenguaje para hacer un test rápido."));
+      return;
+    }
+    var lang = LANGS.find(function(l){ return l.id === activeTestLang; });
+    area.appendChild(renderGatedTest(TESTS[lang.id], "Test de " + lang.name, "Preguntas verificadas a mano.", lang.id));
+  }
+
+  /* ---------------- confeti ---------------- */
+
+  function launchConfetti(){
+    try{
+      if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    }catch(e){}
+    var colors = [cssVar("--accent"), cssVar("--accent2"), cssVar("--danger"), "#ffffff"].filter(Boolean);
+    if (!colors.length) colors = ["#5E58ED", "#1B7FAE", "#D6473F"];
+    for (var i = 0; i < 54; i++){
+      var piece = document.createElement("div");
+      piece.className = "confetti-piece";
+      piece.style.background = colors[i % colors.length];
+      piece.style.left = (Math.random() * 100) + "vw";
+      piece.style.borderRadius = (Math.random() > 0.5) ? "2px" : "50%";
+      var duration = 1.8 + Math.random() * 1.4;
+      piece.style.animationDuration = duration + "s";
+      piece.style.animationDelay = (Math.random() * 0.3) + "s";
+      piece.style.setProperty("--rot", (Math.random() > 0.5 ? 1 : -1) * (360 * (2 + Math.random() * 2)) + "deg");
+      document.body.appendChild(piece);
+      (function(node, ms){ setTimeout(function(){ node.remove(); }, ms); })(piece, (duration + 0.3) * 1000 + 200);
+    }
+  }
+
+  /* ---------------- tema ---------------- */
+
+  function setupThemeToggle(){
+    var btn = document.getElementById("theme-toggle");
+    var root = document.documentElement;
+    var saved = null;
+    try{ saved = localStorage.getItem("pilapila_theme"); }catch(e){}
+    if (saved === "light" || saved === "dark"){
+      root.setAttribute("data-theme", saved);
+      btn.setAttribute("aria-pressed", String(saved === "dark"));
+    }
+    btn.addEventListener("click", function(){
+      var prefersDark = false;
+      try{ prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches; }catch(e){}
+      var current = root.getAttribute("data-theme") || (prefersDark ? "dark" : "light");
+      var next = current === "dark" ? "light" : "dark";
+      root.setAttribute("data-theme", next);
+      btn.setAttribute("aria-pressed", String(next === "dark"));
+      try{ localStorage.setItem("pilapila_theme", next); }catch(e){}
+    });
+  }
+
+  function renderDateline(){
+    try{
+      var fmt = new Intl.DateTimeFormat("es-ES", { weekday:"long", day:"numeric", month:"long" });
+      var text = fmt.format(new Date());
+      text = "Edición de hoy · " + text.charAt(0).toUpperCase() + text.slice(1);
+      document.getElementById("masthead-dateline").textContent = text;
+    }catch(e){}
+  }
+
+  function setupTabs(){
+    var btns = Array.prototype.slice.call(document.querySelectorAll(".tab-btn"));
+    btns.forEach(function(btn){
+      btn.addEventListener("click", function(){
+        btns.forEach(function(b){ b.setAttribute("aria-selected", "false"); });
+        btn.setAttribute("aria-selected", "true");
+        ["hoy","tips","noticias","temario","tests"].forEach(function(name){
+          document.getElementById("panel-" + name).hidden = (name !== btn.dataset.tab);
+        });
+      });
+    });
+  }
+
+  /* ---------------- boot ---------------- */
+
+  async function boot(){
+    initSessionFromHash();
+    setupTabs();
+    setupThemeToggle();
+    renderDateline();
+    renderTemarioChips();
+    renderTemarioPanel();
+    renderTestChips();
+    renderTestArea();
+
+    me = await loadMe();
+    renderAccountArea();
+
+    progress = await loadProgress();
+    await reconcileStreak();
+    renderStreak();
+
+    await renderHoy();
+    await renderTips();
+    await renderNoticias();
+  }
+
+  if (document.readyState === "loading"){
+    document.addEventListener("DOMContentLoaded", boot);
+  } else {
+    boot();
+  }
+})();
+</script>
+</body>
+</html>
