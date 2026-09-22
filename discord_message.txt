@@ -1,14 +1,5 @@
-Hola! Esto es lo mas interesante de hoy en IA y programacion.
+Prueba: a partir de hoy PilaPila News vive tambien en su propia web, sin necesitar cuenta de Claude para nada.
 
-**Noticias IA:**
-- Investigadores hackearon OpenAI usando el modelo Claude Opus 5 y llegaron hasta su repositorio interno de codigo. [Leer mas](<https://techcrunch.com/2026/09/18/researchers-used-anthropics-claude-to-hack-into-openai/>)
-- Un robot con IA ya arranca malas hierbas sin herbicidas en granjas de Holanda, Belgica y Francia. [Leer mas](<https://igrownews.com/odd-bot-latest-news/>)
-- Una victima en Irlanda del Norte perdio 250.000 libras en una estafa con un video falso de IA de un famoso. [Leer mas](<https://www.resultsense.com/news/2026-09-08-psni-deepfake-investment-fraud/>)
+Puedes entrar cuando quieras, ver el quiz del dia, las noticias, el temario y los tests por lenguaje aqui: [Abrir PilaPila News](<https://sei2425.github.io/Automation/>)
 
-**Para programar gratis:**
-- The Odin Project: curriculo completo y gratis de desarrollo web. [Empezar](<https://www.theodinproject.com/>)
-- Codewars: mejora tu logica resolviendo katas de codigo. [Probar](<https://www.codewars.com/>)
-
-**Tip del dia:** cuando te atasques con un bug, explicaselo en voz alta a algo (o alguien): es el truco del "pato de goma". [Por que](<https://www.freecodecamp.org/news/rubber-duck-debugging/>)
-
-Prueba el test diario aqui: <https://claude.ai/artifact/QPV3pQu5GtD1VbxhRhrTB1>
+Si entras con tu cuenta de Discord, tu racha y tus resultados se guardan y te siguen entre dispositivos.
