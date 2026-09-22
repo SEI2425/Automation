@@ -1,5 +1,3 @@
-Prueba: a partir de hoy PilaPila News vive tambien en su propia web, sin necesitar cuenta de Claude para nada.
+Prueba con imagen: asi se veria el boletin de PilaPila News de aqui en adelante, con una tarjeta generada automaticamente cada dia.
 
-Puedes entrar cuando quieras, ver el quiz del dia, las noticias, el temario y los tests por lenguaje aqui: [Abrir PilaPila News](<https://sei2425.github.io/Automation/>)
-
-Si entras con tu cuenta de Discord, tu racha y tus resultados se guardan y te siguen entre dispositivos.
+Entra cuando quieras, sin cuenta de Claude: [Abrir PilaPila News](<https://sei2425.github.io/Automation/>)
