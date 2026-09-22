@@ -1,0 +1,207 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;800&family=IBM+Plex+Mono:wght@500;600;700&display=swap">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --bg-pattern: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Ctext x='0' y='24' font-family='monospace' font-size='13' fill='rgba(124,120,252,0.09)'%3E01001101 0110%3C/text%3E%3Ctext x='40' y='58' font-family='monospace' font-size='13' fill='rgba(79,193,240,0.08)'%3E10 01011010 01%3C/text%3E%3Ctext x='10' y='92' font-family='monospace' font-size='13' fill='rgba(124,120,252,0.08)'%3E0010110 111001%3C/text%3E%3Ctext x='30' y='126' font-family='monospace' font-size='13' fill='rgba(79,193,240,0.07)'%3E0111 000110100101%3C/text%3E%3Ctext x='0' y='160' font-family='monospace' font-size='13' fill='rgba(124,120,252,0.08)'%3E1101001 000110101%3C/text%3E%3Ctext x='40' y='194' font-family='monospace' font-size='13' fill='rgba(79,193,240,0.07)'%3E0011 0110 10011001%3C/text%3E%3C/svg%3E");
+  }
+  html, body {
+    width: 1200px;
+    height: 630px;
+    background-color: #0C0C24;
+    background-image: var(--bg-pattern);
+    background-repeat: repeat;
+    font-family: 'Manrope', system-ui, sans-serif;
+    color: #F0F0FC;
+    overflow: hidden;
+  }
+  .card {
+    width: 1200px;
+    height: 630px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* -------- masthead -------- */
+  .masthead {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px 48px;
+    border-bottom: 3px solid #7C78FC;
+    background: #10122A;
+  }
+  .masthead-brand { display: flex; align-items: center; gap: 16px; }
+  .logo {
+    width: 52px; height: 52px; border-radius: 12px;
+    background: #1C1F3B; display: flex; align-items: center; justify-content: center; overflow: hidden;
+  }
+  .logo img { width: 100%; height: 100%; object-fit: contain; }
+  .brand-title { font-weight: 800; font-size: 30px; letter-spacing: -0.02em; }
+  .masthead-right {
+    font-family: 'IBM Plex Mono', monospace;
+    text-align: right;
+  }
+  .dateline {
+    font-weight: 600; font-size: 15px; color: #4FC1F0;
+    text-transform: uppercase; letter-spacing: 0.06em;
+  }
+  .edition-num {
+    font-size: 12px; color: #ADB1E0; margin-top: 4px;
+  }
+
+  /* -------- body: two columns -------- */
+  .body {
+    flex: 1;
+    display: flex;
+  }
+  .col-news {
+    flex: 0 0 66%;
+    padding: 32px 40px;
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid #262A4A;
+  }
+  .section-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #C7CAEF;
+    margin-bottom: 18px;
+  }
+  .news-list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    flex: 1;
+  }
+  .news-box {
+    border: 1px solid #262A4A;
+    border-radius: 10px;
+    background: #14162E;
+    padding: 16px 18px;
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+  }
+  .news-index {
+    flex: 0 0 auto;
+    width: 26px; height: 26px;
+    border-radius: 6px;
+    background: #7C78FC;
+    color: #0C0C24;
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: 700;
+    font-size: 14px;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .news-box-body { flex: 1; }
+  .tag {
+    display: inline-block;
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: 700;
+    font-size: 11px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #0C0C24;
+    background: #7C78FC;
+    padding: 3px 9px;
+    border-radius: 5px;
+    margin-bottom: 8px;
+  }
+  .news-title {
+    font-size: 21px;
+    font-weight: 700;
+    line-height: 1.28;
+  }
+
+  .col-side {
+    flex: 0 0 34%;
+    padding: 32px 36px;
+    display: flex;
+    flex-direction: column;
+    background-color: #100F26;
+    background-image: var(--bg-pattern);
+    background-repeat: repeat;
+  }
+  .tip-box {
+    border: 1px solid #274456;
+    background: #12233A;
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .tip-icon {
+    width: 32px; height: 32px; border-radius: 8px;
+    background: #4FC1F0; color: #0C0C24;
+    font-weight: 800; font-size: 15px;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .tip-text {
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1.42;
+    color: #DCE3FF;
+  }
+  .mascot-wrap {
+    display: flex;
+    justify-content: center;
+    margin-top: 28px;
+  }
+  .mascot-wrap img {
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+  }
+  .side-spacer { flex: 1; }
+  .side-footer {
+    border-top: 1px solid #262A4A;
+    padding-top: 16px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 13px;
+    color: #9498C2;
+    letter-spacing: 0.02em;
+  }
+  .side-footer b { color: #F0F0FC; }
+</style>
+</head>
+<body>
+  <div class="card">
+    <div class="masthead">
+      <div class="masthead-brand">
+        <div class="logo"><img src="__LOGO_SRC__" alt=""></div>
+        <div class="brand-title">PilaPila News</div>
+      </div>
+      <div class="masthead-right">
+        <div class="dateline">__DATELINE__</div>
+        <div class="edition-num">EDICION DIARIA</div>
+      </div>
+    </div>
+    <div class="body">
+      <div class="col-news">
+        <div class="section-label">Noticias de hoy</div>
+        <div class="news-list">
+          __NEWS_ITEMS__
+        </div>
+      </div>
+      <div class="col-side">
+        <div class="section-label">Tip del dia</div>
+        <div class="tip-box">
+          <div class="tip-icon">T</div>
+          <div class="tip-text">__TIP_TEXT__</div>
+        </div>
+        <div class="mascot-wrap"><img src="__MASCOT_SRC__" alt=""></div>
+        <div class="side-spacer"></div>
+        <div class="side-footer">Boletin diario de <b>IA y programacion</b></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
