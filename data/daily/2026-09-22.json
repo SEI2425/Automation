@@ -1,0 +1,97 @@
+{
+  "date": "2026-09-22",
+  "questions": [
+    {
+      "type": "identify",
+      "lang": "Python",
+      "question": "¿Qué imprime este código?",
+      "code": "def f(n):\n    return n if n < 2 else f(n-1) + f(n-2)\n\nprint(f(7))",
+      "options": ["8", "13", "21", "7"],
+      "correct": 1,
+      "hint": "Es la sucesión de Fibonacci.",
+      "explanation": "f(7) = f(6)+f(5) = 8+5 = 13."
+    },
+    {
+      "type": "complete",
+      "lang": "TypeScript",
+      "question": "Completa el tipo para que la función solo acepte 'admin' o 'user'.",
+      "code": "function setRole(role: ____) {\n  console.log(role);\n}\n\nsetRole(\"admin\"); // ok\nsetRole(\"guest\"); // debe fallar al compilar",
+      "options": ["string", "\"admin\" | \"user\"", "any", "\"admin\" & \"user\""],
+      "correct": 1,
+      "hint": "Necesitas un tipo de unión con los valores literales exactos.",
+      "explanation": "\"admin\" | \"user\" solo admite esos dos valores; cualquier otro string falla al compilar."
+    },
+    {
+      "type": "identify",
+      "lang": "Git",
+      "question": "¿Qué hace este comando?",
+      "code": "git rebase -i HEAD~3",
+      "options": [
+        "Elimina los últimos 3 commits sin avisar",
+        "Abre un editor para reescribir, combinar o reordenar los últimos 3 commits",
+        "Crea 3 ramas nuevas",
+        "Sube los últimos 3 commits al remoto"
+      ],
+      "correct": 1,
+      "hint": "El -i es de 'interactive'.",
+      "explanation": "El rebase interactivo abre una lista editable de los últimos 3 commits para reescribir historial local."
+    },
+    {
+      "type": "identify",
+      "lang": "SQL",
+      "question": "¿Qué devuelve esta consulta?",
+      "code": "SELECT name FROM users\nWHERE id NOT IN (SELECT user_id FROM orders);",
+      "options": [
+        "Los usuarios que sí han hecho algún pedido",
+        "Los usuarios que nunca han hecho un pedido",
+        "Todos los pedidos sin usuario asociado",
+        "Un error de sintaxis"
+      ],
+      "correct": 1,
+      "hint": "NOT IN con una subconsulta es una forma clásica de encontrar 'los que no están'.",
+      "explanation": "La subconsulta lista los user_id con pedidos; NOT IN se queda con los usuarios que no aparecen ahí."
+    },
+    {
+      "type": "identify",
+      "lang": "JavaScript",
+      "question": "¿Qué imprime este código?",
+      "code": "console.log([1, 2, 3].reduce((acc, n) => acc + n, 10));",
+      "options": ["6", "16", "10", "Error"],
+      "correct": 1,
+      "hint": "El segundo argumento de reduce es el valor inicial del acumulador.",
+      "explanation": "Empieza en 10 y suma 1+2+3: 10+1+2+3 = 16."
+    }
+  ],
+  "tips": [
+    {
+      "text": "Antes de optimizar algo, mide dónde está realmente el cuello de botella.",
+      "explanation": "Optimizar a ciegas suele mejorar la parte equivocada y complicar el código sin ganar velocidad real.",
+      "link": "https://developer.mozilla.org/en-US/docs/Learn/Performance",
+      "linkLabel": "Introducción a medir rendimiento (MDN)"
+    },
+    {
+      "text": "En TypeScript, evita 'any' salvo que de verdad no puedas tipar algo.",
+      "explanation": "'any' desactiva todas las comprobaciones de tipos en ese punto, así que renuncias a la principal ventaja del lenguaje.",
+      "link": "https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#any",
+      "linkLabel": "El tipo any en la guía oficial"
+    },
+    {
+      "text": "Haz commits pequeños y frecuentes en lugar de uno enorme al final del día.",
+      "explanation": "Los commits pequeños son más fáciles de revisar, revertir y entender meses después.",
+      "link": "https://cbea.ms/git-commit/",
+      "linkLabel": "Cómo escribir un buen commit"
+    },
+    {
+      "text": "Aprende a leer un EXPLAIN antes de añadir un índice a ciegas.",
+      "explanation": "Un índice mal puesto ralentiza las escrituras sin acelerar la consulta que te preocupa; el plan de ejecución te dice qué pasa de verdad.",
+      "link": "https://use-the-index-luke.com/",
+      "linkLabel": "Use The Index, Luke"
+    },
+    {
+      "text": "En SQL, evita SELECT * en código de producción.",
+      "explanation": "Traer columnas que no usas gasta ancho de banda y hace que un cambio de esquema rompa cosas en sitios inesperados.",
+      "link": "https://www.sqlstyle.guide/",
+      "linkLabel": "SQL Style Guide"
+    }
+  ]
+}
