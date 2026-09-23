@@ -1,3 +1,3 @@
-Hoy hay de todo: desde un hackeo real a OpenAI hecho con Claude hasta un robot que arranca malas hierbas sin químicos. Lo tienes todo resumido en la imagen, y el resto (recursos, tips y el quiz de hoy) en la web.
+Ya está lista la edición de hoy de PilaPila News: las noticias del día están en la imagen, y el resto —recursos, tips y el quiz completo— te espera en la web.
 
 [Abrir PilaPila News](<https://sei2425.github.io/Automation/>)
