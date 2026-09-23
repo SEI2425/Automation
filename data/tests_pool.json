@@ -1,0 +1,32 @@
+{
+  "python": [
+    { "q": "¿Qué imprime este código?", "opts": ["('a', 1)", "[('a', 1)]", "{'a': 1}", "Error"], "correct": 1, "explanation": "list(zip(['a'], [1])) empareja los elementos de ambas listas en tuplas y las mete en una lista: [('a', 1)]." }
+  ],
+  "javascript": [
+    { "q": "¿Qué devuelve [1,2,3].includes(2)?", "opts": ["true", "false", "1", "undefined"], "correct": 0, "explanation": "includes() comprueba si un valor existe en el array y devuelve un booleano; 2 sí está en [1,2,3]." }
+  ],
+  "typescript": [
+    { "q": "¿Qué hace 'readonly' delante de una propiedad de una interface?", "opts": ["La hace privada", "Impide reasignarla después de crear el objeto", "La convierte en opcional", "La convierte en estática"], "correct": 1, "explanation": "readonly marca la propiedad como de solo lectura: se puede leer pero no reasignar tras la inicialización." }
+  ],
+  "java": [
+    { "q": "¿Qué palabra clave evita que una clase se pueda heredar?", "opts": ["static", "final", "private", "abstract"], "correct": 1, "explanation": "Una clase marcada como final no puede ser extendida por ninguna otra clase." }
+  ],
+  "kotlin": [
+    { "q": "¿Qué hace el operador '!!' sobre una variable anulable?", "opts": ["La convierte en no anulable, lanzando excepción si es null", "La declara como constante", "La compara con null", "Le asigna null"], "correct": 0, "explanation": "El operador !! afirma que el valor no es null; si en realidad lo es, lanza una NullPointerException." }
+  ],
+  "sql": [
+    { "q": "¿Qué hace UNION frente a UNION ALL?", "opts": ["UNION elimina duplicados, UNION ALL los conserva", "Son exactamente lo mismo", "UNION ALL es más lento y elimina duplicados", "UNION solo funciona con una tabla"], "correct": 0, "explanation": "UNION combina resultados y quita filas duplicadas; UNION ALL los combina sin comprobar duplicados, por eso es más rápido." }
+  ],
+  "git": [
+    { "q": "¿Para qué sirve un archivo .gitignore?", "opts": ["Para listar archivos que Git no debe rastrear", "Para configurar el editor por defecto", "Para firmar los commits", "Para definir ramas protegidas"], "correct": 0, "explanation": ".gitignore lista patrones de archivos o carpetas que Git debe ignorar y no incluir en el control de versiones." }
+  ],
+  "htmlcss": [
+    { "q": "¿Qué hace la propiedad 'position: sticky'?", "opts": ["Fija el elemento siempre en la misma posición de la pantalla", "El elemento se comporta como relative hasta cierto punto de scroll y luego se queda fijo", "Elimina el elemento del flujo del documento por completo", "Solo funciona dentro de un grid"], "correct": 1, "explanation": "sticky combina relative y fixed: el elemento se mueve con la página hasta que alcanza el umbral definido (por ejemplo top:0), y entonces se queda fijo." }
+  ],
+  "bash": [
+    { "q": "¿Qué hace el comando 'chmod +x script.sh'?", "opts": ["Ejecuta el script inmediatamente", "Le da permiso de ejecución al archivo", "Lo comprime", "Cambia su dueño"], "correct": 1, "explanation": "chmod +x añade el permiso de ejecución al archivo, necesario para poder correrlo directamente como ./script.sh." }
+  ],
+  "ia": [
+    { "q": "¿Qué es la 'ventana de contexto' de un modelo de lenguaje?", "opts": ["La cantidad de texto (en tokens) que el modelo puede tener en cuenta a la vez", "El tiempo que tarda en responder", "El número de parámetros del modelo", "La resolución de las imágenes que puede procesar"], "correct": 0, "explanation": "La ventana de contexto es el límite de tokens (texto de entrada + salida) que el modelo puede procesar en una sola conversación o llamada." }
+  ]
+}
