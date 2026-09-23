@@ -1,0 +1,12 @@
+{
+  "python": ["El símbolo del emoji de Python, dos serpientes entrelazadas, no forma parte del logo oficial: el logo real son dos serpientes estilizadas de colores azul y amarillo, sin cabeza definida, a propósito."],
+  "javascript": ["A pesar del nombre, JavaScript no tiene relación técnica con Java: el nombre fue una decisión de marketing de Netscape para aprovechar la popularidad de Java en 1995."],
+  "typescript": ["TypeScript no reemplaza a JavaScript en ningún momento: todo programa TypeScript se compila (transpila) a JavaScript plano antes de ejecutarse en el navegador o en Node."],
+  "java": ["La mascota de Java, Duke, fue diseñada en 1992 para un proyecto anterior llamado Oak, antes incluso de que existiera el lenguaje Java tal como lo conocemos."],
+  "kotlin": ["Kotlin es interoperable al 100% con Java: se puede llamar código Java desde Kotlin y código Kotlin desde Java dentro del mismo proyecto sin conversión manual."],
+  "sql": ["El estándar SQL lo mantiene ISO, pero en la práctica cada motor (PostgreSQL, MySQL, SQL Server...) añade extensiones propias, por lo que el SQL 100% portable entre motores es más raro de lo que parece."],
+  "git": ["Git guarda cada versión de un archivo completo (no solo las diferencias) internamente, pero los comprime y deduplica para que el repositorio no crezca tanto como parecería."],
+  "htmlcss": ["El primer sitio web de la historia, publicado por Tim Berners-Lee en 1991, seguía online y accesible en su URL original décadas después, solo con HTML básico y sin una sola línea de CSS."],
+  "bash": ["Bash significa 'Bourne Again SHell', un juego de palabras porque es una reimplementación mejorada de la shell 'sh' original de Stephen Bourne de 1977."],
+  "ia": ["El término 'inteligencia artificial' se acuñó en 1956 en la conferencia de Dartmouth, más de medio siglo antes de que la mayoría de las técnicas actuales de deep learning fueran siquiera viables computacionalmente."]
+}
