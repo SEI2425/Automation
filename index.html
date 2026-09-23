@@ -551,6 +551,37 @@
   }
   function cssVar(name){ return getComputedStyle(document.documentElement).getPropertyValue(name).trim(); }
 
+  function hashString(s){
+    var h = 2166136261;
+    for (var i = 0; i < s.length; i++){
+      h ^= s.charCodeAt(i);
+      h = Math.imul(h, 16777619);
+    }
+    return h >>> 0;
+  }
+  function mulberry32(seed){
+    return function(){
+      seed |= 0; seed = (seed + 0x6D2B79F5) | 0;
+      var t = Math.imul(seed ^ (seed >>> 15), 1 | seed);
+      t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
+      return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+    };
+  }
+  function seededShuffle(arr, seed){
+    var rand = mulberry32(seed);
+    var copy = arr.slice();
+    for (var i = copy.length - 1; i > 0; i--){
+      var j = Math.floor(rand() * (i + 1));
+      var tmp = copy[i]; copy[i] = copy[j]; copy[j] = tmp;
+    }
+    return copy;
+  }
+  function seededPick(pool, n, seedStr){
+    if (!pool.length) return [];
+    var shuffled = seededShuffle(pool, hashString(seedStr));
+    return shuffled.slice(0, Math.min(n, shuffled.length));
+  }
+
   function shuffleChoice(options, correctIndex){
     var idxs = options.map(function(_, i){ return i; });
     for (var i = idxs.length - 1; i > 0; i--){
@@ -709,6 +740,22 @@
 
   async function loadDailyEntry(){
     return fetchJson(REPO_RAW_BASE + "/data/daily/" + todayKey() + ".json");
+  }
+
+  var testsPool = null;
+  var factsPool = null;
+
+  async function loadTestsPool(){
+    if (testsPool === null){
+      testsPool = (await fetchJson(REPO_RAW_BASE + "/data/tests_pool.json")) || {};
+    }
+    return testsPool;
+  }
+  async function loadFactsPool(){
+    if (factsPool === null){
+      factsPool = (await fetchJson(REPO_RAW_BASE + "/data/facts_pool.json")) || {};
+    }
+    return factsPool;
   }
 
   function renderQuestionCard(entry, idx, total, onAnswered){
@@ -930,7 +977,7 @@
     });
   }
 
-  function renderTemarioPanel(){
+  async function renderTemarioPanel(){
     var panel = document.getElementById("temario-panel");
     panel.innerHTML = "";
     if (!activeTemarioLang){
@@ -938,6 +985,10 @@
       return;
     }
     var lang = LANGS.find(function(l){ return l.id === activeTemarioLang; });
+    var facts = await loadFactsPool();
+    var factPool = [lang.fact].concat(facts[lang.id] || []);
+    var todaysFact = seededPick(factPool, 1, todayKey() + "|fact|" + lang.id)[0] || lang.fact;
+
     var card = el("div", "card lang-panel");
     card.style.setProperty("--lang-color", lang.color);
     var head = el("div", "lang-panel-head");
@@ -949,7 +1000,7 @@
     ul.className = "lang-topics";
     lang.topics.forEach(function(t){ ul.appendChild(el("li", null, t)); });
     card.appendChild(ul);
-    card.appendChild(el("p", "lang-fact", "Dato curioso: " + lang.fact));
+    card.appendChild(el("p", "lang-fact", "Dato curioso: " + todaysFact));
     panel.appendChild(card);
   }
 
@@ -1103,7 +1154,9 @@
     return wrap;
   }
 
-  function renderTestArea(){
+  var TEST_QUESTIONS_PER_DAY = 4;
+
+  async function renderTestArea(){
     var area = document.getElementById("test-area");
     area.innerHTML = "";
     if (!activeTestLang){
@@ -1111,7 +1164,11 @@
       return;
     }
     var lang = LANGS.find(function(l){ return l.id === activeTestLang; });
-    area.appendChild(renderGatedTest(TESTS[lang.id], "Test de " + lang.name, "Preguntas verificadas a mano.", lang.id));
+    var pool = await loadTestsPool();
+    var combined = (TESTS[lang.id] || []).concat(pool[lang.id] || []);
+    var todaysQuestions = seededPick(combined, TEST_QUESTIONS_PER_DAY, todayKey() + "|test|" + lang.id);
+    if (!todaysQuestions.length) todaysQuestions = TESTS[lang.id] || [];
+    area.appendChild(renderGatedTest(todaysQuestions, "Test de " + lang.name, "Preguntas de hoy, distintas cada día.", lang.id));
   }
 
   /* ---------------- confeti ---------------- */
