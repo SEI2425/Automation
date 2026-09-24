@@ -1,32 +1,42 @@
 {
   "python": [
-    { "q": "¿Qué imprime este código?", "opts": ["('a', 1)", "[('a', 1)]", "{'a': 1}", "Error"], "correct": 1, "explanation": "list(zip(['a'], [1])) empareja los elementos de ambas listas en tuplas y las mete en una lista: [('a', 1)]." }
+    { "q": "¿Qué imprime este código?", "opts": ["('a', 1)", "[('a', 1)]", "{'a': 1}", "Error"], "correct": 1, "explanation": "list(zip(['a'], [1])) empareja los elementos de ambas listas en tuplas y las mete en una lista: [('a', 1)]." },
+    { "q": "¿Qué devuelve sorted([3, 1, 2], reverse=True)?", "opts": ["[1, 2, 3]", "[3, 2, 1]", "[2, 1, 3]", "Error"], "correct": 1, "explanation": "sorted() con reverse=True ordena la lista de mayor a menor, dando [3, 2, 1]." }
   ],
   "javascript": [
-    { "q": "¿Qué devuelve [1,2,3].includes(2)?", "opts": ["true", "false", "1", "undefined"], "correct": 0, "explanation": "includes() comprueba si un valor existe en el array y devuelve un booleano; 2 sí está en [1,2,3]." }
+    { "q": "¿Qué devuelve [1,2,3].includes(2)?", "opts": ["true", "false", "1", "undefined"], "correct": 0, "explanation": "includes() comprueba si un valor existe en el array y devuelve un booleano; 2 sí está en [1,2,3]." },
+    { "q": "¿Qué imprime console.log(typeof NaN)?", "opts": ["'number'", "'NaN'", "'undefined'", "'object'"], "correct": 0, "explanation": "NaN es, técnicamente, un valor de tipo number en JavaScript, aunque su nombre signifique 'Not a Number'." }
   ],
   "typescript": [
-    { "q": "¿Qué hace 'readonly' delante de una propiedad de una interface?", "opts": ["La hace privada", "Impide reasignarla después de crear el objeto", "La convierte en opcional", "La convierte en estática"], "correct": 1, "explanation": "readonly marca la propiedad como de solo lectura: se puede leer pero no reasignar tras la inicialización." }
+    { "q": "¿Qué hace 'readonly' delante de una propiedad de una interface?", "opts": ["La hace privada", "Impide reasignarla después de crear el objeto", "La convierte en opcional", "La convierte en estática"], "correct": 1, "explanation": "readonly marca la propiedad como de solo lectura: se puede leer pero no reasignar tras la inicialización." },
+    { "q": "¿Qué hace el tipo utilitario Partial<T>?", "opts": ["Convierte todas las propiedades de T en opcionales", "Elimina las propiedades de T", "Hace que T sea de solo lectura", "Convierte T en un array"], "correct": 0, "explanation": "Partial<T> genera un nuevo tipo con todas las propiedades de T marcadas como opcionales." }
   ],
   "java": [
-    { "q": "¿Qué palabra clave evita que una clase se pueda heredar?", "opts": ["static", "final", "private", "abstract"], "correct": 1, "explanation": "Una clase marcada como final no puede ser extendida por ninguna otra clase." }
+    { "q": "¿Qué palabra clave evita que una clase se pueda heredar?", "opts": ["static", "final", "private", "abstract"], "correct": 1, "explanation": "Una clase marcada como final no puede ser extendida por ninguna otra clase." },
+    { "q": "¿Qué palabra clave declara un bloque que se ejecuta siempre, haya o no una excepción en try/catch?", "opts": ["catch", "finally", "throw", "except"], "correct": 1, "explanation": "El bloque finally se ejecuta siempre tras try/catch, haya habido excepción o no; se usa mucho para liberar recursos." }
   ],
   "kotlin": [
-    { "q": "¿Qué hace el operador '!!' sobre una variable anulable?", "opts": ["La convierte en no anulable, lanzando excepción si es null", "La declara como constante", "La compara con null", "Le asigna null"], "correct": 0, "explanation": "El operador !! afirma que el valor no es null; si en realidad lo es, lanza una NullPointerException." }
+    { "q": "¿Qué hace el operador '!!' sobre una variable anulable?", "opts": ["La convierte en no anulable, lanzando excepción si es null", "La declara como constante", "La compara con null", "Le asigna null"], "correct": 0, "explanation": "El operador !! afirma que el valor no es null; si en realidad lo es, lanza una NullPointerException." },
+    { "q": "¿Qué palabra clave declara en Kotlin una variable que no se puede reasignar?", "opts": ["var", "val", "let", "const"], "correct": 1, "explanation": "val declara una referencia de asignación única (inmutable); var permite reasignar el valor más adelante." }
   ],
   "sql": [
-    { "q": "¿Qué hace UNION frente a UNION ALL?", "opts": ["UNION elimina duplicados, UNION ALL los conserva", "Son exactamente lo mismo", "UNION ALL es más lento y elimina duplicados", "UNION solo funciona con una tabla"], "correct": 0, "explanation": "UNION combina resultados y quita filas duplicadas; UNION ALL los combina sin comprobar duplicados, por eso es más rápido." }
+    { "q": "¿Qué hace UNION frente a UNION ALL?", "opts": ["UNION elimina duplicados, UNION ALL los conserva", "Son exactamente lo mismo", "UNION ALL es más lento y elimina duplicados", "UNION solo funciona con una tabla"], "correct": 0, "explanation": "UNION combina resultados y quita filas duplicadas; UNION ALL los combina sin comprobar duplicados, por eso es más rápido." },
+    { "q": "¿Qué hace la cláusula LIMIT 5 al final de una consulta?", "opts": ["Filtra solo las filas con valor 5", "Restringe el resultado a un máximo de 5 filas", "Agrupa los resultados en bloques de 5", "Elimina las 5 primeras filas"], "correct": 1, "explanation": "LIMIT restringe el número de filas que devuelve la consulta, útil para paginar resultados o ver solo una muestra." }
   ],
   "git": [
-    { "q": "¿Para qué sirve un archivo .gitignore?", "opts": ["Para listar archivos que Git no debe rastrear", "Para configurar el editor por defecto", "Para firmar los commits", "Para definir ramas protegidas"], "correct": 0, "explanation": ".gitignore lista patrones de archivos o carpetas que Git debe ignorar y no incluir en el control de versiones." }
+    { "q": "¿Para qué sirve un archivo .gitignore?", "opts": ["Para listar archivos que Git no debe rastrear", "Para configurar el editor por defecto", "Para firmar los commits", "Para definir ramas protegidas"], "correct": 0, "explanation": ".gitignore lista patrones de archivos o carpetas que Git debe ignorar y no incluir en el control de versiones." },
+    { "q": "¿Qué hace 'git log --oneline'?", "opts": ["Muestra el historial de commits en una sola línea resumida por commit", "Combina todos los commits en uno solo", "Elimina el historial de commits", "Muestra solo el último commit"], "correct": 0, "explanation": "git log --oneline muestra cada commit en una línea con su hash abreviado y su mensaje, ideal para revisar el historial de un vistazo." }
   ],
   "htmlcss": [
-    { "q": "¿Qué hace la propiedad 'position: sticky'?", "opts": ["Fija el elemento siempre en la misma posición de la pantalla", "El elemento se comporta como relative hasta cierto punto de scroll y luego se queda fijo", "Elimina el elemento del flujo del documento por completo", "Solo funciona dentro de un grid"], "correct": 1, "explanation": "sticky combina relative y fixed: el elemento se mueve con la página hasta que alcanza el umbral definido (por ejemplo top:0), y entonces se queda fijo." }
+    { "q": "¿Qué hace la propiedad 'position: sticky'?", "opts": ["Fija el elemento siempre en la misma posición de la pantalla", "El elemento se comporta como relative hasta cierto punto de scroll y luego se queda fijo", "Elimina el elemento del flujo del documento por completo", "Solo funciona dentro de un grid"], "correct": 1, "explanation": "sticky combina relative y fixed: el elemento se mueve con la página hasta que alcanza el umbral definido (por ejemplo top:0), y entonces se queda fijo." },
+    { "q": "¿Qué controla la propiedad CSS 'z-index'?", "opts": ["El orden de apilamiento: qué elemento se ve por encima de otro", "El tamaño del elemento", "El color de fondo", "La velocidad de una animación"], "correct": 0, "explanation": "z-index controla en qué orden se superponen los elementos posicionados: un valor más alto se dibuja por encima de uno más bajo." }
   ],
   "bash": [
-    { "q": "¿Qué hace el comando 'chmod +x script.sh'?", "opts": ["Ejecuta el script inmediatamente", "Le da permiso de ejecución al archivo", "Lo comprime", "Cambia su dueño"], "correct": 1, "explanation": "chmod +x añade el permiso de ejecución al archivo, necesario para poder correrlo directamente como ./script.sh." }
+    { "q": "¿Qué hace el comando 'chmod +x script.sh'?", "opts": ["Ejecuta el script inmediatamente", "Le da permiso de ejecución al archivo", "Lo comprime", "Cambia su dueño"], "correct": 1, "explanation": "chmod +x añade el permiso de ejecución al archivo, necesario para poder correrlo directamente como ./script.sh." },
+    { "q": "¿Qué hace el operador && entre dos comandos, como en 'mkdir carpeta && cd carpeta'?", "opts": ["Ejecuta el segundo comando solo si el primero terminó con éxito", "Ejecuta ambos comandos en paralelo", "Ejecuta el segundo comando solo si el primero falló", "Combina la salida de ambos comandos en un archivo"], "correct": 0, "explanation": "&& encadena comandos de forma condicional: el segundo solo se ejecuta si el primero devolvió un código de salida 0 (éxito)." }
   ],
   "ia": [
-    { "q": "¿Qué es la 'ventana de contexto' de un modelo de lenguaje?", "opts": ["La cantidad de texto (en tokens) que el modelo puede tener en cuenta a la vez", "El tiempo que tarda en responder", "El número de parámetros del modelo", "La resolución de las imágenes que puede procesar"], "correct": 0, "explanation": "La ventana de contexto es el límite de tokens (texto de entrada + salida) que el modelo puede procesar en una sola conversación o llamada." }
+    { "q": "¿Qué es la 'ventana de contexto' de un modelo de lenguaje?", "opts": ["La cantidad de texto (en tokens) que el modelo puede tener en cuenta a la vez", "El tiempo que tarda en responder", "El número de parámetros del modelo", "La resolución de las imágenes que puede procesar"], "correct": 0, "explanation": "La ventana de contexto es el límite de tokens (texto de entrada + salida) que el modelo puede procesar en una sola conversación o llamada." },
+    { "q": "¿Qué significa que un modelo de lenguaje 'alucine'?", "opts": ["Que genere información falsa o inventada con apariencia de ser correcta", "Que se quede sin memoria RAM", "Que tarde demasiado en responder", "Que solo pueda generar imágenes"], "correct": 0, "explanation": "Una 'alucinación' ocurre cuando el modelo genera datos, citas o hechos que no son reales, pero los presenta con la misma confianza que la información correcta." }
   ]
 }

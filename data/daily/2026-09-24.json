@@ -1,0 +1,87 @@
+{
+  "date": "2026-09-24",
+  "questions": [
+    {
+      "type": "identify",
+      "lang": "Python",
+      "question": "¿Qué contiene la variable result después de ejecutar este código?",
+      "code": "data = {\"a\": 1, \"b\": 2, \"c\": 3}\nresult = {k: v for k, v in data.items() if v > 1}",
+      "options": ["{'a': 1}", "{'b': 2, 'c': 3}", "{'b': 2}", "Error de sintaxis"],
+      "correct": 1,
+      "hint": "Fíjate en la condición del filtro: solo se quedan los pares donde el valor es mayor que 1.",
+      "explanation": "La comprensión de diccionario recorre data.items() y solo conserva los pares cuyo valor v es mayor que 1, es decir 'b':2 y 'c':3."
+    },
+    {
+      "type": "complete",
+      "lang": "JavaScript",
+      "question": "¿Qué operador falta para evitar un error si profile es null?",
+      "code": "const user = { profile: null };\nconst city = user.profile____.city;\nconsole.log(city);",
+      "options": ["?.", ".", "!.", "??"],
+      "correct": 0,
+      "hint": "Es el operador de encadenamiento opcional, que corta la cadena si algo es null o undefined.",
+      "explanation": "user.profile?.city usa optional chaining: si profile es null, la expresión completa devuelve undefined en vez de lanzar un error."
+    },
+    {
+      "type": "identify",
+      "lang": "TypeScript",
+      "question": "¿Qué ocurre al intentar compilar este código?",
+      "code": "type Status = \"loading\" | \"success\" | \"error\";\nlet s: Status = \"done\";",
+      "options": ["Compila sin problemas", "Error de compilación porque \"done\" no es un valor válido de Status", "Se convierte automáticamente a \"loading\"", "Solo falla en tiempo de ejecución, no al compilar"],
+      "correct": 1,
+      "hint": "Status es un tipo unión: solo acepta exactamente esos tres valores como texto literal.",
+      "explanation": "Como Status solo admite los literales \"loading\", \"success\" o \"error\", asignar \"done\" produce un error de compilación en TypeScript."
+    },
+    {
+      "type": "identify",
+      "lang": "Java",
+      "question": "¿Qué contiene la variable sum al terminar?",
+      "code": "List<Integer> nums = List.of(1, 2, 3, 4, 5);\nint sum = nums.stream().filter(n -> n % 2 != 0).mapToInt(Integer::intValue).sum();",
+      "options": ["9", "15", "6", "5"],
+      "correct": 0,
+      "hint": "El filtro se queda solo con los números impares antes de sumarlos.",
+      "explanation": "filter(n -> n % 2 != 0) deja solo los impares (1, 3, 5), y sum() los suma: 1+3+5 = 9."
+    },
+    {
+      "type": "complete",
+      "lang": "HTML/CSS",
+      "question": "¿Qué unidad falta para crear tres columnas de igual ancho?",
+      "code": ".grid {\n  display: grid;\n  grid-template-columns: repeat(3, ____);\n}",
+      "options": ["1fr", "100px solid", "auto-fit", "3"],
+      "correct": 0,
+      "hint": "La unidad fr reparte el espacio disponible en fracciones iguales.",
+      "explanation": "repeat(3, 1fr) crea tres columnas que se reparten el espacio disponible en partes iguales gracias a la unidad fr de CSS Grid."
+    }
+  ],
+  "tips": [
+    {
+      "text": "Escribe mensajes de commit que expliquen el porqué del cambio, no solo qué archivo tocaste.",
+      "explanation": "Un commit como 'arregla el calculo del descuento porque no contaba impuestos' te ahorra minutos a ti mismo dentro de seis meses, cuando ya no recuerdes el contexto. El historial de Git es documentacion, no solo una copia de seguridad.",
+      "link": "https://cbea.ms/git-commit/",
+      "linkLabel": "How to Write a Git Commit Message"
+    },
+    {
+      "text": "No aceptes código sugerido por una IA sin entenderlo tú antes de usarlo.",
+      "explanation": "Una IA puede generar código que funciona pero con errores sutiles, dependencias innecesarias o fallos de seguridad que no se ven a simple vista. Si no entiendes una línea, es la señal de que aún no puedes hacerte responsable de ese código.",
+      "link": "https://docs.github.com/en/copilot/using-github-copilot/best-practices-for-using-github-copilot",
+      "linkLabel": "GitHub: buenas prácticas al usar Copilot"
+    },
+    {
+      "text": "Aprende los atajos de teclado de tu editor de código.",
+      "explanation": "Cada vez que sueltas el teclado para coger el raton pierdes unos segundos; multiplicado por cientos de veces al dia, eso son horas reales a la semana. Los atajos para moverte entre lineas, renombrar variables o abrir archivos son de lo que mas tiempo ahorra a la larga.",
+      "link": "https://code.visualstudio.com/docs/getstarted/keybindings",
+      "linkLabel": "VS Code: atajos de teclado"
+    },
+    {
+      "text": "Cuando un programa falle, lee la traza de error (stack trace) de abajo hacia arriba.",
+      "explanation": "La ultima linea de una traza suele describir el tipo de error, pero la causa real casi siempre esta mas abajo del todo, en la funcion mas profunda donde empezo el problema. Leerla de arriba a abajo hace que te fijes primero en el sintoma y no en la causa.",
+      "link": "https://realpython.com/python-traceback/",
+      "linkLabel": "Real Python: como leer un traceback"
+    },
+    {
+      "text": "Cuando termines un ejercicio, intenta resolverlo otra vez de una forma distinta.",
+      "explanation": "Resolver el mismo problema con un bucle y luego con una funcion recursiva, o con un bucle for y luego con una comprension, te obliga a comparar estructuras de datos y a entender por que unas son mas claras o mas rapidas que otras. Es una de las formas mas rapidas de pasar de 'funciona' a 'lo entiendo de verdad'.",
+      "link": "https://exercism.org/docs/using/solving-exercises",
+      "linkLabel": "Exercism: como aprovechar los ejercicios"
+    }
+  ]
+}

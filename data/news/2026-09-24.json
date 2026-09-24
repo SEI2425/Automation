@@ -1,0 +1,65 @@
+{
+  "date": "2026-09-24",
+  "items": [
+    {
+      "tag": "Impacto",
+      "title": "Demandan a Anthropic, OpenAI, Google y SpaceXAI por pactar frenar el desarrollo de IA",
+      "url": "https://www.cnn.com/2026/09/19/business/ai-slowdown-lawsuit-antitrust",
+      "summary": "Una demanda colectiva presentada en un tribunal federal de California acusa a Anthropic, OpenAI, Google y SpaceXAI de coordinarse ilegalmente para ralentizar el desarrollo de sus modelos de IA, despues de que sus directivos respondieran publicamente y el mismo dia a un ensayo del CEO de Anthropic pidiendo frenar el ritmo por seguridad. Los demandantes, suscriptores de pago de ChatGPT, Claude, Grok y Gemini, alegan que ese acuerdo colectivo viola las leyes antimonopolio, aunque no cuestionan que cada empresa decida frenar su propio desarrollo por separado."
+    },
+    {
+      "tag": "Impacto",
+      "title": "Un ensayo clinico en tres paises muestra que la IA mejora el diagnostico de los medicos",
+      "url": "https://www.nature.com/articles/s41746-026-03111-5",
+      "summary": "Un ensayo aleatorizado con 249 medicos de Kenia, Indonesia y los Paises Bajos comprobo que dar acceso a GPT-4o durante casos clinicos simulados mejoraba la puntuacion de razonamiento clinico un 18% en Kenia, un 10,7% en Indonesia y un 7,2% en los Paises Bajos. El mayor beneficio se dio en sistemas de salud con menos especialistas, y los mejores resultados los lograron los medicos que combinaron su propio criterio con la IA, no la IA sola."
+    },
+    {
+      "tag": "Impacto",
+      "title": "El FBI alerta de que estafadores usan voces clonadas con IA para hacerse pasar por policias",
+      "url": "https://www.theregister.com/cyber-crime/2026/09/18/fbi-fake-cop-and-government-impersonation-scams-cost-victims-16b/",
+      "summary": "El FBI informo de que las estafas de suplantacion de policias y funcionarios han costado mas de 1.600 millones de dolares desde enero de 2025, con cerca de 61.000 denuncias y una perdida media de mas de 26.000 dolares por victima. Los estafadores usan herramientas de clonacion de voz con IA para sonar mas creibles por telefono, exigiendo pagos para retirar cargos falsos y amenazando con arrestos si la victima no colabora."
+    },
+    {
+      "tag": "Impacto",
+      "title": "Datos privados de farmaceuticas mejoran los modelos de IA que predicen la forma de las proteinas",
+      "url": "https://www.nature.com/articles/d41586-026-02882-x",
+      "summary": "Un nuevo sistema de IA entrenado con mas de 20.000 estructuras de proteinas aportadas por varias farmaceuticas supera a los modelos similares a AlphaFold que solo usan datos publicos. El hallazgo sugiere que los datos experimentales privados de la industria farmaceutica, hasta ahora guardados en secreto, pueden acelerar de forma significativa el descubrimiento de nuevos farmacos."
+    },
+    {
+      "tag": "Lanzamiento",
+      "title": "xAI lanza Grok 4.7, su modelo mas potente para programar",
+      "url": "https://www.androidheadlines.com/2026/09/grok-4-7-ai-launch-coding-upgrades-pricing.html",
+      "summary": "xAI presento Grok 4.7, con 2,1 billones de parametros (un 40% mas que Grok 4.6) y una ventana de contexto de 500.000 tokens, centrado en programacion, tareas agenticas y trabajo de conocimiento profesional. La empresa incorporo datos de SpaceX (telemetria de Starlink, registros de fabricacion e ingenieria) para que el modelo razone mejor sobre sistemas fisicos, y ya esta disponible en Cursor, Grok Build y su API."
+    },
+    {
+      "tag": "Interactivo",
+      "title": "Kotlin Koans: ejercicios interactivos oficiales para aprender Kotlin",
+      "url": "https://play.kotlinlang.org/koans/overview",
+      "summary": "Kotlin Koans es una coleccion oficial de JetBrains de pequenos ejercicios, cada uno planteado como una prueba que falla y que debes hacer pasar corrigiendo el codigo. Se resuelven directamente en el navegador, sin instalar nada, y cubren desde la sintaxis basica hasta caracteristicas propias de Kotlin como los datos nulos y las funciones de extension."
+    },
+    {
+      "tag": "Interactivo",
+      "title": "JavaScript30: crea 30 proyectos con JavaScript puro en 30 dias, gratis",
+      "url": "https://javascript30.com/",
+      "summary": "JavaScript30, creado por el profesor Wes Bos, es un reto gratuito de 30 dias en el que construyes pequenos proyectos reales (relojes, juegos, validadores de formularios) usando solo JavaScript, HTML y CSS, sin frameworks ni librerias. Incluye 30 videos, los archivos de partida de cada dia y las soluciones completas para comparar tu codigo."
+    },
+    {
+      "tag": "Curso",
+      "title": "CS50 SQL: el curso gratuito de bases de datos de Harvard",
+      "url": "https://cs50.harvard.edu/sql/",
+      "summary": "CS50's Introduction to Databases with SQL es el curso gratuito de Harvard sobre bases de datos relacionales, con clases en video y problem sets semanales, sin necesidad de ser estudiante de la universidad. Ensena desde consultas basicas en SQLite hasta normalizacion de datos, vistas y una introduccion a PostgreSQL y MySQL."
+    },
+    {
+      "tag": "Curso",
+      "title": "Automate the Boring Stuff with Python: aprende Python automatizando tareas reales",
+      "url": "https://automatetheboringstuff.com/",
+      "summary": "Este libro gratuito de Al Sweigart, disponible integramente online, ensena Python desde cero para automatizar tareas tediosas: rellenar hojas de calculo, extraer datos de PDFs, rellenar formularios web o mover y renombrar archivos automaticamente. No requiere experiencia previa y se puede leer completo sin registrarse."
+    },
+    {
+      "tag": "Interactivo",
+      "title": "Git Immersion: aprende Git paso a paso con ejercicios guiados",
+      "url": "https://gitimmersion.com/",
+      "summary": "Git Immersion es un tutorial gratuito organizado en labs progresivos que te hacen practicar comandos reales de Git en tu propia terminal, desde crear un repositorio hasta trabajar con ramas remotas. Cada leccion explica el porque de cada comando antes de pedirte que lo ejecutes, en vez de solo listar la sintaxis."
+    }
+  ]
+}
