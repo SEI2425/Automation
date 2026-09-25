@@ -1,1 +1,1 @@
-La entrega de hoy de PilaPila News ya esta lista: noticias de IA, recursos gratis para programar y un tip explicado, todo en la imagen y en la web. Echale un vistazo completo aqui: [Abrir PilaPila News](<https://sei2425.github.io/Automation/>)
+Boletin de hoy publicado: la imagen resume lo mas importante y en la web tienes las 10 noticias completas, los 5 tips explicados, las preguntas del dia y el temario por lenguaje. Dale un vistazo cuando puedas: [Abrir PilaPila News](<https://sei2425.github.io/Automation/>)

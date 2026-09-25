@@ -1,0 +1,87 @@
+{
+  "date": "2026-09-25",
+  "questions": [
+    {
+      "type": "identify",
+      "lang": "Python",
+      "question": "¿Que contiene la variable result despues de ejecutar este codigo?",
+      "code": "words = [\"kiwi\", \"fig\", \"banana\"]\nresult = sorted(words, key=len)",
+      "options": ["['fig', 'kiwi', 'banana']", "['banana', 'kiwi', 'fig']", "['kiwi', 'fig', 'banana']", "Error de sintaxis"],
+      "correct": 0,
+      "hint": "Ordena por longitud de la palabra, no alfabeticamente.",
+      "explanation": "sorted() con key=len ordena las palabras segun su longitud; fig tiene 3 letras, kiwi 4 y banana 6, asi que quedan en ese orden."
+    },
+    {
+      "type": "complete",
+      "lang": "JavaScript",
+      "question": "¿Que metodo falta para duplicar cada elemento del array?",
+      "code": "const arr = [1, 2, 3];\nconst doubled = arr.____(n => n * 2);\nconsole.log(doubled); // [2, 4, 6]",
+      "options": ["map", "forEach", "filter", "find"],
+      "correct": 0,
+      "hint": "Necesitas un metodo que devuelva un nuevo array con cada elemento transformado.",
+      "explanation": "map() transforma cada elemento aplicando la funcion y devuelve un nuevo array con los resultados; forEach no devuelve nada util para esto."
+    },
+    {
+      "type": "identify",
+      "lang": "SQL",
+      "question": "¿Que devuelve esta consulta?",
+      "code": "SELECT product, price FROM items WHERE price BETWEEN 10 AND 20;",
+      "options": ["Los productos con precio exactamente 10 o 20", "Los productos con precio entre 10 y 20, incluidos ambos", "Los productos con precio menor que 10", "Todos los productos ordenados por precio"],
+      "correct": 1,
+      "hint": "BETWEEN incluye los dos valores limite, no los excluye.",
+      "explanation": "BETWEEN 10 AND 20 selecciona valores dentro de ese rango, incluyendo los limites 10 y 20."
+    },
+    {
+      "type": "complete",
+      "lang": "Git",
+      "question": "¿Que flag falta para anadir el archivo al ultimo commit sin crear uno nuevo?",
+      "code": "git commit -m \"primera version\"\n# te das cuenta de que olvidaste un archivo\ngit add archivo_olvidado.txt\ngit commit --____",
+      "options": ["amend", "squash", "force", "merge"],
+      "correct": 0,
+      "hint": "Es el flag que te permite corregir el ultimo commit en lugar de crear otro.",
+      "explanation": "git commit --amend modifica el ultimo commit, permitiendo anadir cambios olvidados o corregir el mensaje sin crear un commit adicional."
+    },
+    {
+      "type": "identify",
+      "lang": "Bash",
+      "question": "¿Que hace este comando?",
+      "code": "ls -la | wc -l",
+      "options": ["Cuenta cuantas lineas (aproximadamente archivos y carpetas) hay en el directorio actual", "Elimina todos los archivos ocultos", "Comprime el directorio actual", "Muestra el tamano total del directorio"],
+      "correct": 0,
+      "hint": "wc -l cuenta lineas de la entrada que recibe por la tuberia (|).",
+      "explanation": "ls -la lista todos los archivos y carpetas (incluidos los ocultos) con detalle, y wc -l cuenta cuantas lineas produce esa salida, dando aproximadamente el numero de entradas."
+    }
+  ],
+  "tips": [
+    {
+      "text": "No anadas funcionalidad ni arquitectura que todavia no necesitas (principio YAGNI).",
+      "explanation": "Construir capas de abstraccion o configuraciones pensadas para casos futuros que quiza nunca lleguen suele complicar el codigo sin necesidad y hacerlo mas dificil de mantener. Es mas facil ampliar codigo simple cuando de verdad haga falta que desmontar una arquitectura sobredimensionada.",
+      "link": "https://martinfowler.com/bliki/Yagni.html",
+      "linkLabel": "Martin Fowler: Yagni"
+    },
+    {
+      "text": "Cuando pidas ayuda en un foro, incluye un ejemplo minimo que reproduzca el error.",
+      "explanation": "Un fragmento corto y autocontenido que cualquiera pueda copiar y ejecutar permite que otros vean el problema en segundos, en vez de tener que adivinarlo leyendo un proyecto entero. Es tambien un ejercicio util para ti: muchas veces, al reducir el problema a lo minimo, encuentras la causa antes de terminar de escribir la pregunta.",
+      "link": "https://stackoverflow.com/help/minimal-reproducible-example",
+      "linkLabel": "Stack Overflow: como crear un ejemplo minimo reproducible"
+    },
+    {
+      "text": "Configura un formateador automatico de codigo (como Prettier o Black) en tu editor.",
+      "explanation": "Un formateador aplica un estilo consistente cada vez que guardas el archivo, eliminando discusiones sobre espacios, comillas o indentacion en revisiones de codigo. Ademas hace que cualquier archivo del proyecto se vea igual sin importar quien lo haya escrito.",
+      "link": "https://prettier.io/docs/en/why-prettier",
+      "linkLabel": "Prettier: por que usar un formateador"
+    },
+    {
+      "text": "Usa un entorno virtual (como venv en Python) para las dependencias de cada proyecto.",
+      "explanation": "Sin un entorno aislado, las librerias de distintos proyectos se mezclan en el mismo sistema y una actualizacion en uno puede romper otro sin que entiendas por que. Un entorno virtual guarda las dependencias de cada proyecto por separado, evitando el clasico 'en mi maquina funciona'.",
+      "link": "https://docs.python.org/3/tutorial/venv.html",
+      "linkLabel": "Documentacion oficial de Python: entornos virtuales"
+    },
+    {
+      "text": "Usa 'git blame' para entender por que una linea de codigo quedo escrita asi.",
+      "explanation": "git blame muestra en que commit se anadio o modifico cada linea, con su mensaje asociado, lo que a menudo explica una decision extrana antes de que la borres pensando que es un error. Es mucho mas fiable que preguntar a alguien que quiza ni recuerde por que lo escribio asi.",
+      "link": "https://git-scm.com/docs/git-blame",
+      "linkLabel": "Git SCM: documentacion de git blame"
+    }
+  ]
+}
