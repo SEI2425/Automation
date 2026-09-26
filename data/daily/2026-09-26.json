@@ -1,0 +1,112 @@
+{
+  "date": "2026-09-26",
+  "questions": [
+    {
+      "type": "identify",
+      "lang": "Python",
+      "question": "¿Que imprime este codigo?",
+      "code": "texto = \"Hola Mundo\"\nprint(texto[::-1])",
+      "options": [
+        "odnuM aloH",
+        "Hola Mundo",
+        "H",
+        "Error de sintaxis"
+      ],
+      "correct": 0,
+      "hint": "El paso -1 en el slicing recorre la cadena de derecha a izquierda.",
+      "explanation": "texto[::-1] usa slicing con paso -1, lo que recorre la cadena desde el final hasta el principio y la invierte por completo."
+    },
+    {
+      "type": "identify",
+      "lang": "JavaScript",
+      "question": "¿Que imprime este codigo?",
+      "code": "function saludar({ nombre = \"invitado\" } = {}) {\n  return `Hola, ${nombre}`;\n}\nconsole.log(saludar());",
+      "options": [
+        "Hola, invitado",
+        "Hola, undefined",
+        "Error",
+        "Hola, "
+      ],
+      "correct": 0,
+      "hint": "Fijate en los valores por defecto dentro de la desestructuracion del parametro.",
+      "explanation": "El {} por defecto evita el error al no pasar ningun argumento, y como ese objeto no trae 'nombre', se usa su valor por defecto 'invitado'."
+    },
+    {
+      "type": "identify",
+      "lang": "SQL",
+      "question": "¿Que devuelve esta consulta?",
+      "code": "SELECT c.name FROM customers c LEFT JOIN orders o ON c.id = o.customer_id WHERE o.id IS NULL;",
+      "options": [
+        "Los clientes que nunca han hecho un pedido",
+        "Los clientes con al menos un pedido",
+        "Todos los pedidos sin cliente asignado",
+        "El numero total de pedidos por cliente"
+      ],
+      "correct": 0,
+      "hint": "LEFT JOIN mantiene todas las filas de customers, incluso sin coincidencia en orders.",
+      "explanation": "LEFT JOIN conserva todos los clientes aunque no tengan pedidos asociados; al filtrar por o.id IS NULL solo quedan los que no encontraron ninguna coincidencia en orders."
+    },
+    {
+      "type": "complete",
+      "lang": "Git",
+      "question": "¿Que comando falta para subir la etiqueta (tag) al repositorio remoto?",
+      "code": "git tag -a v1.0 -m \"primera version estable\"\ngit ____ origin v1.0",
+      "options": [
+        "push",
+        "tag",
+        "fetch",
+        "clone"
+      ],
+      "correct": 0,
+      "hint": "Es el mismo comando que usas para subir commits, pero apuntando a una etiqueta en vez de a una rama.",
+      "explanation": "git push origin v1.0 envia esa etiqueta especifica al remoto; por defecto, git push no sube las etiquetas de forma automatica."
+    },
+    {
+      "type": "complete",
+      "lang": "HTML/CSS",
+      "question": "¿Que valor falta para que el cambio de color tarde medio segundo en hacerse visible?",
+      "code": ".boton {\n  background: blue;\n  transition: background ____;\n}\n.boton:hover {\n  background: red;\n}",
+      "options": [
+        "0.5s",
+        "50",
+        "half",
+        "0.5"
+      ],
+      "correct": 0,
+      "hint": "Las duraciones en CSS siempre necesitan una unidad, como s (segundos) o ms (milisegundos).",
+      "explanation": "La propiedad transition necesita una duracion con unidad de tiempo; 0.5s equivale a medio segundo, mientras que un numero sin unidad no es valido."
+    }
+  ],
+  "tips": [
+    {
+      "text": "Crea una rama nueva para cada cambio en Git en lugar de trabajar directamente sobre main.",
+      "explanation": "Trabajar siempre en ramas separadas mantiene main estable y libre de codigo roto, y permite que otras personas revisen tus cambios mediante un pull request antes de fusionarlos. Ademas, si algo sale mal, es mucho mas facil deshacer una rama aislada que revertir cambios mezclados directamente en la rama principal.",
+      "link": "https://www.atlassian.com/git/tutorials/comparing-workflows/feature-branch-workflow",
+      "linkLabel": "Atlassian: Git Feature Branch Workflow"
+    },
+    {
+      "text": "Usa las herramientas de desarrollador del navegador (DevTools) en lugar de depender solo de console.log.",
+      "explanation": "El inspector te deja modificar HTML y CSS en vivo y ver el resultado al instante, y la pestana de red y el depurador de JavaScript muestran informacion que un simple console.log nunca revela, como peticiones fallidas o el valor exacto de una variable en cualquier punto del codigo.",
+      "link": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Howto/Tools_and_setup/What_are_browser_developer_tools",
+      "linkLabel": "MDN: que son las herramientas de desarrollador del navegador"
+    },
+    {
+      "text": "Antes de escribir codigo, resuelve el problema en pseudocodigo o en papel.",
+      "explanation": "Escribir la logica en lenguaje sencillo, sin preocuparte por la sintaxis, ayuda a detectar fallos de diseno en el algoritmo antes de invertir tiempo escribiendo codigo real. Es mucho mas barato corregir un plan mal pensado en una linea de texto que reescribir varias funciones ya programadas.",
+      "link": "https://www.codecademy.com/article/pseudocode-and-flowchart-complete-beginners-guide",
+      "linkLabel": "Codecademy: guia de pseudocodigo para principiantes"
+    },
+    {
+      "text": "Aprende que es la complejidad Big O antes de obsesionarte con microoptimizar tu codigo.",
+      "explanation": "Big O te dice como se comportara tu codigo cuando los datos crezcan mucho, lo que ayuda a identificar cuellos de botella reales en vez de perder horas afinando detalles que apenas afectan al rendimiento. Entender esto tambien es clave en entrevistas tecnicas, donde suele ser de lo primero que se evalua.",
+      "link": "https://www.freecodecamp.org/news/big-o-notation-why-it-matters-and-why-it-doesnt-1674cfa8a23c/",
+      "linkLabel": "freeCodeCamp: Big O, por que importa y por que no"
+    },
+    {
+      "text": "Automatiza las tareas repetitivas con un script en lugar de repetirlas a mano cada vez.",
+      "explanation": "Cada vez que repites manualmente los mismos pasos, como renombrar archivos o revisar registros, aumentan las posibilidades de cometer un error humano que un script nunca cometeria. Ademas, el tiempo invertido en automatizar una tarea se recupera rapido si esa tarea se repite con frecuencia.",
+      "link": "https://opensource.com/business/15/6/automate-time-consuming-tasks",
+      "linkLabel": "Opensource.com: tareas que puedes automatizar con codigo"
+    }
+  ]
+}

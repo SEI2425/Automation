@@ -1,0 +1,65 @@
+{
+  "date": "2026-09-26",
+  "items": [
+    {
+      "tag": "Impacto",
+      "title": "Un sistema de IA de Anthropic descubre un mecanismo genetico desconocido similar a CRISPR",
+      "url": "https://www.infobae.com/tecno/2026/09/25/claude-hallo-un-sistema-enzimatico-parecido-a-crispr-pero-anthropic-no-sabe-para-que-sirve/",
+      "summary": "Anthropic puso a cerca de 950 agentes de su modelo Claude a revisar mas de 200.000 secuencias de ADN de virus que infectan bacterias durante 21 horas, un trabajo que normalmente tardaria semanas o meses. El sistema descubierto, bautizado ART, combina una enzima, un gen vecino de funcion desconocida y una serie de repeticiones de ADN con una estructura parecida a CRISPR. Anthropic reconoce que todavia no sabe exactamente para que sirve ni si podra usarse para edicion genetica."
+    },
+    {
+      "tag": "Impacto",
+      "title": "Bernie Sanders y Greg Casar proponen prohibir por ley la superinteligencia artificial en EEUU",
+      "url": "https://www.nbcnews.com/politics/congress/bernie-sanders-greg-casar-propose-ai-superintelligence-ban-20-year-jai-rcna599460",
+      "summary": "El senador Bernie Sanders y el representante Greg Casar presentaron el 23 de septiembre una ley para prohibir de forma permanente el desarrollo de sistemas de IA que superen el rendimiento cognitivo humano en la mayoria de tareas, y para pausar el desarrollo de IA avanzada hasta que exista supervision federal real. La propuesta crearia un Departamento de Inteligencia Artificial a nivel de gabinete y castigaria el incumplimiento con la disolucion de la empresa responsable y hasta 20 anos de carcel, la misma pena que por fabricar armas nucleares de forma ilegal."
+    },
+    {
+      "tag": "Impacto",
+      "title": "Mas de un 40% de los despidos registrados en 2026 en EEUU citan la IA o la automatizacion como causa",
+      "url": "https://www.ibtimes.co.uk/ai-layoffs-2026-impact-1816503",
+      "summary": "Un seguimiento de despidos masivos en Estados Unidos durante 2026 encontro que un 41% de los eventos de despido citan explicitamente la inteligencia artificial, la automatizacion o el aprendizaje automatico como motivo, afectando a mas de 179.000 personas en 213 empresas. Hasta el 25 de septiembre se habian registrado 519 despidos masivos en el ano, con una media de unos 840 empleos perdidos por dia. El propio Sam Altman, de OpenAI, admitio que parte de esos despidos son en realidad empresas que atribuyen a la IA recortes que habrian hecho igualmente, aunque tambien hay un desplazamiento real causado por la tecnologia."
+    },
+    {
+      "tag": "Lanzamiento",
+      "title": "Meta presenta Muse Charm, un dispositivo dedicado para su agente de IA personal",
+      "url": "https://www.cnbc.com/2026/09/23/mark-zuckerberg-1299-meta-vr-glasses-ai-agent.html",
+      "summary": "Mark Zuckerberg presento en la conferencia Meta Connect el Muse Charm, un pequeno dispositivo del tamano de un reloj inteligente, con pantalla de unas 2 pulgadas, pensado para usar el agente de IA Muse sin depender del movil. El aparato, con un aspecto similar a un Tamagotchi, sale a la venta en diciembre y su precio aun no se ha anunciado. Es la primera vez que una gran empresa tecnologica lanza un dispositivo fisico dedicado exclusivamente a un asistente de IA personal."
+    },
+    {
+      "tag": "Lanzamiento",
+      "title": "OpenAI recorta a la mitad el precio de sus modelos GPT-6 Sol y Luna",
+      "url": "https://finance.yahoo.com/technology/ai/articles/openai-cuts-gpt-6-sol-111351382.html",
+      "summary": "OpenAI actualizo sus modelos GPT-6 Sol y Luna el 23 de septiembre bajando sus precios de API a la mitad o menos de lo que costaba la serie anterior 5.6, una rebaja que la empresa asegura que es permanente y no una promocion temporal. GPT-6 Sol pasa a costar 2 dolares por millon de tokens de entrada frente a los 4 dolares anteriores, y Luna baja a 0,10 dolares frente a 0,20. La empresa tambien ofrece un descuento del 90% en las lecturas de tokens en cache, abaratando el uso intensivo de estos modelos para desarrolladores."
+    },
+    {
+      "tag": "Interactivo",
+      "title": "CodingBat: ejercicios de Java corregidos al instante en el navegador",
+      "url": "https://codingbat.com/java",
+      "summary": "CodingBat, creado por un profesor de Stanford, ofrece cientos de ejercicios cortos de Java (y tambien de Python) organizados por dificultad, que se resuelven y corrigen directamente en el navegador sin instalar nada. No hace falta registrarse y cada ejercicio da retroalimentacion inmediata sobre si tu solucion es correcta."
+    },
+    {
+      "tag": "Interactivo",
+      "title": "Flexbox Froggy: aprende CSS Flexbox llevando ranas a su nenufar",
+      "url": "https://flexboxfroggy.com/",
+      "summary": "Flexbox Froggy es un juego gratuito con 24 niveles en el que escribes propiedades reales de CSS Flexbox, como justify-content o align-items, para mover ranas hasta su hoja de nenufar correspondiente. Es una forma muy visual de entender un concepto que suele costar bastante solo leyendo documentacion."
+    },
+    {
+      "tag": "Interactivo",
+      "title": "Oh My Git!: aprende Git jugando con una visualizacion en tiempo real del repositorio",
+      "url": "https://ohmygit.org/",
+      "summary": "Oh My Git! es un juego gratuito y de codigo abierto que convierte cada comando de Git en una accion dentro de una historia con niveles, mostrando en tiempo real como cambia el arbol de commits y ramas. Se puede jugar escribiendo comandos reales en una terminal integrada o arrastrando tarjetas, y funciona en Linux, macOS y Windows."
+    },
+    {
+      "tag": "Interactivo",
+      "title": "TypeScript Exercises: ejercicios interactivos para dominar el sistema de tipos",
+      "url": "https://typescript-exercises.github.io/",
+      "summary": "Este proyecto de codigo abierto ofrece una serie de ejercicios interactivos que se resuelven directamente en el navegador, cubriendo desde tipado basico hasta genericos y tipos mapeados avanzados. Su principio central es evitar el tipo 'any' a toda costa, lo que obliga a entender de verdad como funciona el sistema de tipos de TypeScript."
+    },
+    {
+      "tag": "Curso",
+      "title": "Elements of AI: el curso gratuito de la Universidad de Helsinki sobre los fundamentos de la IA",
+      "url": "https://www.elementsofai.com/",
+      "summary": "Elements of AI es un curso gratuito creado por la Universidad de Helsinki y MinnaLearn que explica que es la inteligencia artificial, que puede y no puede hacer, y como afecta a la vida cotidiana, sin necesidad de matematicas ni programacion previas. Mas de un millon de personas en 170 paises lo han completado, y esta traducido a 26 idiomas."
+    }
+  ]
+}

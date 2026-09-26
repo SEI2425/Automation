@@ -1,1 +1,1 @@
-Boletin de hoy publicado: la imagen resume lo mas importante y en la web tienes las 10 noticias completas, los 5 tips explicados, las preguntas del dia y el temario por lenguaje. Dale un vistazo cuando puedas: [Abrir PilaPila News](<https://sei2425.github.io/Automation/>)
+Hoy Claude, de Anthropic, descubrio un mecanismo genetico parecido a CRISPR, una de las noticias del dia. La imagen de arriba trae lo mas destacado, y en la web tienes las 10 noticias, los tips y las preguntas completas. [Abrir PilaPila News](<https://sei2425.github.io/Automation/>)
