@@ -1,0 +1,112 @@
+{
+  "date": "2026-09-27",
+  "questions": [
+    {
+      "type": "identify",
+      "lang": "Python",
+      "question": "¿Que imprime este codigo?",
+      "code": "def foo(a, b=[]):\n    b.append(a)\n    return b\n\nprint(foo(1))\nprint(foo(2))",
+      "options": [
+        "[1]\n[2]",
+        "[1]\n[1, 2]",
+        "[2]\n[1, 2]",
+        "Error"
+      ],
+      "correct": 1,
+      "hint": "Los argumentos por defecto mutables en Python se crean una sola vez, no en cada llamada.",
+      "explanation": "b=[] se crea una unica vez al definir la funcion, asi que la misma lista se reutiliza entre llamadas: la primera vez queda [1], y la segunda anade 2 sobre esa misma lista, quedando [1, 2]."
+    },
+    {
+      "type": "complete",
+      "lang": "JavaScript",
+      "question": "¿Qué falta para imprimir un objeto con solo las propiedades b y c?",
+      "code": "const obj = { a: 1, b: 2, c: 3 };\nconst { a, ...resto } = obj;\nconsole.log(____);",
+      "options": [
+        "resto",
+        "obj",
+        "a",
+        "...obj"
+      ],
+      "correct": 0,
+      "hint": "El operador rest (...) dentro de una desestructuracion agrupa las propiedades restantes en un nuevo objeto.",
+      "explanation": "resto agrupa mediante rest destructuring todas las propiedades de obj excepto a, dando como resultado { b: 2, c: 3 }."
+    },
+    {
+      "type": "identify",
+      "lang": "TypeScript",
+      "question": "¿Qué imprime este código?",
+      "code": "enum Color { Red, Green, Blue }\nlet c: Color = Color.Green;\nconsole.log(c);",
+      "options": [
+        "Green",
+        "1",
+        "0",
+        "Error de compilación"
+      ],
+      "correct": 1,
+      "hint": "Los enums en TypeScript son, por defecto, numericos y empiezan en 0.",
+      "explanation": "Los enums numericos en TypeScript asignan valores automaticos empezando en 0: Red=0, Green=1, Blue=2; al imprimir un valor de un enum numerico se muestra el numero, no el nombre."
+    },
+    {
+      "type": "complete",
+      "lang": "Java",
+      "question": "¿Qué método falta para encadenar otro texto usando StringBuilder?",
+      "code": "public class Main {\n    public static void main(String[] args) {\n        StringBuilder sb = new StringBuilder();\n        sb.append(\"Hola\").____(\" Mundo\");\n        System.out.println(sb);\n    }\n}",
+      "options": [
+        "append",
+        "concat",
+        "add",
+        "plus"
+      ],
+      "correct": 0,
+      "hint": "Es el mismo método que ya se usó justo antes en la línea.",
+      "explanation": "StringBuilder.append() devuelve el propio StringBuilder, lo que permite encadenar varias llamadas append() seguidas para construir la cadena 'Hola Mundo'."
+    },
+    {
+      "type": "identify",
+      "lang": "Kotlin",
+      "question": "¿Qué imprime este código?",
+      "code": "val nombre: String? = null\nval resultado = nombre?.length ?: -1\nprintln(resultado)",
+      "options": [
+        "-1",
+        "0",
+        "null",
+        "Error de compilación"
+      ],
+      "correct": 0,
+      "hint": "El operador ?: (elvis) da un valor por defecto cuando la expresión de la izquierda es null.",
+      "explanation": "nombre?.length devuelve null porque nombre es null, y el operador elvis (?:) sustituye ese null por -1, que es lo que finalmente se imprime."
+    }
+  ],
+  "tips": [
+    {
+      "text": "Revisa tus propios cambios con 'git diff' antes de hacer un commit.",
+      "explanation": "Ver exactamente que lineas has cambiado antes de confirmarlas ayuda a detectar prints de depuracion olvidados, codigo comentado o cambios que no querias incluir. Es un habito rapido que evita que errores tontos entren en el historial del proyecto.",
+      "link": "https://git-scm.com/docs/git-diff",
+      "linkLabel": "Git SCM: documentacion de git diff"
+    },
+    {
+      "text": "Escribe un README que explique como instalar y ejecutar tu proyecto.",
+      "explanation": "Un README claro ahorra tiempo a cualquiera que descubra tu proyecto, incluido tu yo del futuro dentro de unos meses, cuando ya no recuerdes los pasos exactos para ponerlo en marcha. Es lo primero que ve alguien al abrir un repositorio.",
+      "link": "https://www.freecodecamp.org/news/how-to-write-a-good-readme-file/",
+      "linkLabel": "freeCodeCamp: como escribir un buen README"
+    },
+    {
+      "text": "Usa 'git bisect' para encontrar automaticamente el commit exacto que introdujo un bug.",
+      "explanation": "En lugar de revisar el historial commit por commit a mano, git bisect hace una busqueda binaria automatica: le indicas un commit bueno y uno malo, y el sistema te va proponiendo commits intermedios hasta senalar exactamente cual rompio algo.",
+      "link": "https://git-scm.com/docs/git-bisect",
+      "linkLabel": "Git SCM: documentacion de git bisect"
+    },
+    {
+      "text": "Limita el alcance (scope) de tus variables: declaralas lo mas cerca posible de donde se usan.",
+      "explanation": "Una variable declarada justo antes de usarla, y no al principio de una funcion larga, es mas facil de rastrear y reduce el riesgo de que otra parte del codigo la modifique por error sin que te des cuenta. Ayuda mucho a la hora de depurar.",
+      "link": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let",
+      "linkLabel": "MDN: la palabra clave let y el alcance de bloque"
+    },
+    {
+      "text": "Pide que alguien revise tu codigo (code review) antes de fusionar cambios importantes.",
+      "explanation": "Otra persona suele detectar errores, casos limite o decisiones confusas que tu, al haber escrito el codigo, ya no ves con claridad. Ademas, el code review reparte el conocimiento del proyecto entre todo el equipo, en vez de que dependa de una sola persona.",
+      "link": "https://google.github.io/eng-practices/review/reviewer/",
+      "linkLabel": "Google: guia de buenas practicas para revisar codigo"
+    }
+  ]
+}

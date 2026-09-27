@@ -43,6 +43,17 @@
       ],
       "correct": 1,
       "explanation": "append() anade su argumento como un unico elemento nuevo sin aplanarlo; por eso [4, 5] cuenta como un solo elemento y la lista pasa de 3 a 4 elementos."
+    },
+    {
+      "q": "¿Qué diferencia hay entre 'is' y '==' en Python?",
+      "opts": [
+        "'is' compara si son el mismo objeto en memoria; '==' compara si tienen el mismo valor",
+        "Son exactamente lo mismo",
+        "'is' solo funciona con números",
+        "'==' compara identidad y 'is' compara valores"
+      ],
+      "correct": 0,
+      "explanation": "'is' comprueba si dos referencias apuntan al mismo objeto en memoria (identidad), mientras que '==' comprueba si los valores son iguales, aunque sean objetos distintos."
     }
   ],
   "javascript": [
@@ -89,6 +100,17 @@
       ],
       "correct": 1,
       "explanation": "sort() sin comparador convierte los elementos a texto y los ordena alfabeticamente, por eso 10 aparece antes que 2 en el resultado."
+    },
+    {
+      "q": "¿Qué imprime este código?\nconsole.log(0 == '0');\nconsole.log(0 === '0');",
+      "opts": [
+        "true\nfalse",
+        "false\ntrue",
+        "true\ntrue",
+        "false\nfalse"
+      ],
+      "correct": 0,
+      "explanation": "== permite coerción de tipos, así que 0 y '0' se consideran iguales; === compara también el tipo, y como uno es number y el otro string, da false."
     }
   ],
   "typescript": [
@@ -135,6 +157,17 @@
       ],
       "correct": 0,
       "explanation": "Al especificar explicitamente identidad<string>, T queda fijado como string, por lo que pasar el numero 42 produce un error de tipos en tiempo de compilacion."
+    },
+    {
+      "q": "¿Qué diferencia hay entre los tipos 'any' y 'unknown' en TypeScript?",
+      "opts": [
+        "Son idénticos",
+        "'unknown' obliga a comprobar o afirmar el tipo antes de operar con el valor; 'any' desactiva por completo la comprobación de tipos",
+        "'any' es más seguro que 'unknown'",
+        "'unknown' solo se puede usar con números"
+      ],
+      "correct": 1,
+      "explanation": "'any' elimina toda verificación de tipos sobre ese valor, mientras que 'unknown' obliga a comprobar o convertir el tipo (con un type guard o una aserción) antes de poder usarlo, lo que lo hace más seguro."
     }
   ],
   "java": [
@@ -181,6 +214,17 @@
       ],
       "correct": 1,
       "explanation": "Integer.parseInt convierte el texto '5' al numero entero 5, que luego se suma aritmeticamente con 5, dando 10 en vez de concatenar texto."
+    },
+    {
+      "q": "¿Qué diferencia hay entre usar '==' y '.equals()' para comparar dos objetos String en Java?",
+      "opts": [
+        "'==' compara si son el mismo objeto en memoria; '.equals()' compara el contenido de las cadenas",
+        "Son exactamente lo mismo en Java",
+        "'.equals()' solo funciona con números",
+        "'==' siempre compara contenido en Java"
+      ],
+      "correct": 0,
+      "explanation": "En Java, '==' entre objetos compara referencias (si apuntan al mismo objeto en memoria), mientras que '.equals()' está sobrescrito en la clase String para comparar el contenido real de los caracteres."
     }
   ],
   "kotlin": [
@@ -227,6 +271,17 @@
       ],
       "correct": 1,
       "explanation": "when sin argumento evalua las condiciones en orden; como x (7) no es menor que 5 pero si menor que 10, se ejecuta la rama 'medio'."
+    },
+    {
+      "q": "¿Para qué se usan las funciones de extensión (extension functions) en Kotlin?",
+      "opts": [
+        "Para añadir nuevos métodos a una clase existente sin heredar de ella ni modificar su código fuente",
+        "Para crear clases privadas",
+        "Para declarar variables globales",
+        "Para conectar con bases de datos remotas"
+      ],
+      "correct": 0,
+      "explanation": "Una función de extensión permite añadir un método nuevo a una clase ya existente, incluso de una librería externa, sin tener que heredar de ella ni tocar su código original."
     }
   ],
   "sql": [
@@ -273,6 +328,17 @@
       ],
       "correct": 0,
       "explanation": "CASE WHEN funciona como un condicional dentro del SELECT: evalua la condicion para cada fila y devuelve un valor u otro en una columna calculada."
+    },
+    {
+      "q": "¿Qué hace la función COALESCE(columna, 'valor_por_defecto') en una consulta SQL?",
+      "opts": [
+        "Devuelve el valor de columna si no es NULL, o 'valor_por_defecto' si lo es",
+        "Elimina los valores NULL de la tabla",
+        "Cuenta cuántos valores NULL hay",
+        "Convierte todos los valores en NULL"
+      ],
+      "correct": 0,
+      "explanation": "COALESCE devuelve el primer valor no nulo de la lista de argumentos; es muy usado para sustituir valores NULL por un valor por defecto en el resultado."
     }
   ],
   "git": [
@@ -319,6 +385,17 @@
       ],
       "correct": 0,
       "explanation": "git revert crea un commit nuevo que aplica el cambio inverso al commit indicado, preservando el historial completo, a diferencia de git reset que si lo reescribe."
+    },
+    {
+      "q": "¿Qué hace 'git cherry-pick <hash>'?",
+      "opts": [
+        "Aplica los cambios de un commit específico de otra rama sobre la rama actual, creando un nuevo commit",
+        "Elimina un commit del historial",
+        "Combina dos ramas completas",
+        "Crea una etiqueta en ese commit"
+      ],
+      "correct": 0,
+      "explanation": "git cherry-pick toma los cambios introducidos por un commit concreto de cualquier rama y los aplica como un nuevo commit sobre la rama en la que estás, sin traer el resto del historial de esa rama."
     }
   ],
   "htmlcss": [
@@ -365,6 +442,17 @@
       ],
       "correct": 0,
       "explanation": "La media query max-width:600px aplica esos estilos unicamente cuando el ancho de la ventana del navegador es igual o menor a 600 pixeles, tipico en diseno responsive."
+    },
+    {
+      "q": "¿Qué son las variables CSS (custom properties), como en '--color-principal: blue;'?",
+      "opts": [
+        "Valores reutilizables que se definen una vez y se usan en varias reglas con var(--color-principal)",
+        "Una forma de declarar funciones en CSS",
+        "Solo funcionan dentro de JavaScript",
+        "Sirven para importar otros archivos CSS"
+      ],
+      "correct": 0,
+      "explanation": "Las variables CSS permiten definir un valor una sola vez (por ejemplo un color) y reutilizarlo en cualquier parte de la hoja de estilos con var(--nombre), facilitando cambios globales de diseño."
     }
   ],
   "bash": [
@@ -411,6 +499,17 @@
       ],
       "correct": 0,
       "explanation": "> crea o sobrescribe el archivo con 'hola', y >> anade 'mundo' al final sin borrar lo anterior, por lo que cat muestra ambas lineas en orden."
+    },
+    {
+      "q": "¿Qué hace 'echo $(date)' en Bash?",
+      "opts": [
+        "Ejecuta el comando date y sustituye $(...) por el resultado de ese comando",
+        "Imprime literalmente el texto 'date'",
+        "Borra la variable date",
+        "Solo funciona dentro de un script, no en la terminal"
+      ],
+      "correct": 0,
+      "explanation": "$(comando) es sustitución de comandos: Bash ejecuta primero ese comando y reemplaza $(...) por su salida antes de ejecutar el resto de la línea, así que echo termina imprimiendo la fecha actual."
     }
   ],
   "ia": [
@@ -457,6 +556,17 @@
       ],
       "correct": 0,
       "explanation": "Los modelos de lenguaje dividen el texto en tokens antes de procesarlo, y tanto el limite de contexto como el coste de uso se miden en esa unidad."
+    },
+    {
+      "q": "¿Qué es RAG (Retrieval-Augmented Generation) en el contexto de los modelos de lenguaje?",
+      "opts": [
+        "Una técnica que busca información relevante en una fuente externa y se la da al modelo como contexto antes de generar la respuesta",
+        "Un tipo de red neuronal para procesar imágenes",
+        "El nombre de un modelo de OpenAI",
+        "Un método para comprimir el tamaño del modelo"
+      ],
+      "correct": 0,
+      "explanation": "RAG combina un sistema de búsqueda (por ejemplo sobre documentos propios) con un modelo de lenguaje: primero recupera información relevante y luego se la pasa al modelo como contexto, para que responda con datos más actualizados o específicos que los de su entrenamiento."
     }
   ]
 }
