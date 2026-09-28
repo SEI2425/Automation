@@ -54,6 +54,17 @@
       ],
       "correct": 0,
       "explanation": "'is' comprueba si dos referencias apuntan al mismo objeto en memoria (identidad), mientras que '==' comprueba si los valores son iguales, aunque sean objetos distintos."
+    },
+    {
+      "q": "¿Para que sirve la sentencia 'with' al abrir un archivo en Python?",
+      "opts": [
+        "Para abrir el archivo en modo binario siempre",
+        "Para asegurar que el archivo se cierre automaticamente al terminar el bloque, incluso si hay un error",
+        "Para ejecutar el archivo como un script",
+        "Para leer el archivo linea por linea mas rapido"
+      ],
+      "correct": 1,
+      "explanation": "'with' crea un gestor de contexto que llama automaticamente a close() del archivo al salir del bloque, incluso ante una excepcion, evitando fugas de recursos."
     }
   ],
   "javascript": [
@@ -111,6 +122,17 @@
       ],
       "correct": 0,
       "explanation": "== permite coerción de tipos, así que 0 y '0' se consideran iguales; === compara también el tipo, y como uno es number y el otro string, da false."
+    },
+    {
+      "q": "¿Que imprime console.log(typeof function(){})?",
+      "opts": [
+        "'function'",
+        "'object'",
+        "'undefined'",
+        "'method'"
+      ],
+      "correct": 0,
+      "explanation": "En JavaScript, typeof de una funcion siempre devuelve 'function', aunque las funciones internamente sean un tipo especial de objeto."
     }
   ],
   "typescript": [
@@ -168,6 +190,17 @@
       ],
       "correct": 1,
       "explanation": "'any' elimina toda verificación de tipos sobre ese valor, mientras que 'unknown' obliga a comprobar o convertir el tipo (con un type guard o una aserción) antes de poder usarlo, lo que lo hace más seguro."
+    },
+    {
+      "q": "¿Que hace el tipo utilitario Record<K, T>?",
+      "opts": [
+        "Crea un tipo objeto con claves de tipo K y valores de tipo T",
+        "Convierte T en un array de K",
+        "Hace todas las propiedades opcionales",
+        "Elimina las propiedades de tipo K"
+      ],
+      "correct": 0,
+      "explanation": "Record<K, T> construye un tipo de objeto donde cada clave es del tipo K y cada valor del tipo T, util para mapear tipos de forma segura."
     }
   ],
   "java": [
@@ -225,6 +258,17 @@
       ],
       "correct": 0,
       "explanation": "En Java, '==' entre objetos compara referencias (si apuntan al mismo objeto en memoria), mientras que '.equals()' está sobrescrito en la clase String para comparar el contenido real de los caracteres."
+    },
+    {
+      "q": "¿Que es una interfaz funcional en Java (como las usadas con expresiones lambda)?",
+      "opts": [
+        "Una interfaz que declara exactamente un metodo abstracto",
+        "Una clase abstracta con metodos estaticos",
+        "Una interfaz sin metodos",
+        "Un tipo exclusivo de las colecciones"
+      ],
+      "correct": 0,
+      "explanation": "Una interfaz funcional tiene un unico metodo abstracto, lo que permite implementarla de forma compacta usando una expresion lambda en lugar de una clase anonima completa."
     }
   ],
   "kotlin": [
@@ -282,6 +326,17 @@
       ],
       "correct": 0,
       "explanation": "Una función de extensión permite añadir un método nuevo a una clase ya existente, incluso de una librería externa, sin tener que heredar de ella ni tocar su código original."
+    },
+    {
+      "q": "¿Que hace la funcion 'let' aplicada a un objeto en Kotlin, como en 'valor?.let { ... }'?",
+      "opts": [
+        "Ejecuta el bloque solo si valor no es null, pasandolo como parametro implicito 'it'",
+        "Declara una nueva variable global",
+        "Convierte el valor en String",
+        "Crea una copia inmutable del objeto"
+      ],
+      "correct": 0,
+      "explanation": "'let' ejecuta el bloque lambda usando el objeto como argumento (accesible como 'it'), y combinado con el operador '?.' solo se ejecuta si el valor no es null, evitando comprobaciones explicitas."
     }
   ],
   "sql": [
@@ -339,6 +394,17 @@
       ],
       "correct": 0,
       "explanation": "COALESCE devuelve el primer valor no nulo de la lista de argumentos; es muy usado para sustituir valores NULL por un valor por defecto en el resultado."
+    },
+    {
+      "q": "¿Que hace una transaccion con COMMIT y ROLLBACK en SQL?",
+      "opts": [
+        "COMMIT confirma los cambios de forma permanente; ROLLBACK los deshace si algo salio mal",
+        "Ambos hacen lo mismo: guardar los cambios",
+        "COMMIT borra la tabla; ROLLBACK la recupera",
+        "Solo funcionan con sentencias SELECT"
+      ],
+      "correct": 0,
+      "explanation": "En una transaccion, COMMIT guarda de forma permanente todos los cambios realizados, mientras que ROLLBACK deshace esos cambios si ocurre un error, devolviendo la base de datos a su estado anterior."
     }
   ],
   "git": [
@@ -396,6 +462,17 @@
       ],
       "correct": 0,
       "explanation": "git cherry-pick toma los cambios introducidos por un commit concreto de cualquier rama y los aplica como un nuevo commit sobre la rama en la que estás, sin traer el resto del historial de esa rama."
+    },
+    {
+      "q": "¿Que diferencia hay entre 'git merge' y 'git rebase' a la hora de integrar una rama?",
+      "opts": [
+        "merge crea un commit de fusion que preserva el historial de ambas ramas; rebase reescribe los commits de una rama para aplicarlos sobre la otra, generando un historial lineal",
+        "Son exactamente lo mismo",
+        "merge borra la rama original; rebase la conserva siempre",
+        "rebase solo funciona con ramas remotas"
+      ],
+      "correct": 0,
+      "explanation": "git merge combina las dos ramas creando un commit de fusion que mantiene el historial tal cual ocurrio; git rebase mueve los commits de una rama para que parezca que se crearon sobre el ultimo commit de la otra, dejando un historial mas lineal pero reescribiendo el historial original."
     }
   ],
   "htmlcss": [
@@ -453,6 +530,17 @@
       ],
       "correct": 0,
       "explanation": "Las variables CSS permiten definir un valor una sola vez (por ejemplo un color) y reutilizarlo en cualquier parte de la hoja de estilos con var(--nombre), facilitando cambios globales de diseño."
+    },
+    {
+      "q": "¿Para que sirve la propiedad CSS object-fit: cover en una imagen o video?",
+      "opts": [
+        "Recorta el contenido para que llene todo el contenedor manteniendo su proporcion, sin deformarse",
+        "Estira el contenido para llenar el contenedor, aunque se deforme",
+        "Oculta el contenido si no cabe en el contenedor",
+        "Solo afecta el color de fondo"
+      ],
+      "correct": 0,
+      "explanation": "object-fit: cover hace que la imagen o video llene todo el espacio del contenedor recortando lo que sobra, pero manteniendo su relacion de aspecto original sin estirarla ni deformarla."
     }
   ],
   "bash": [
@@ -510,6 +598,17 @@
       ],
       "correct": 0,
       "explanation": "$(comando) es sustitución de comandos: Bash ejecuta primero ese comando y reemplaza $(...) por su salida antes de ejecutar el resto de la línea, así que echo termina imprimiendo la fecha actual."
+    },
+    {
+      "q": "¿Que hace la variable especial $? justo despues de ejecutar un comando en Bash?",
+      "opts": [
+        "Contiene el codigo de salida del ultimo comando ejecutado (0 significa exito)",
+        "Contiene el nombre del ultimo comando ejecutado",
+        "Cuenta cuantos argumentos se pasaron al script",
+        "Detiene la ejecucion del script"
+      ],
+      "correct": 0,
+      "explanation": "$? guarda el codigo de salida (exit status) del comando anterior; por convencion, 0 significa que se ejecuto correctamente y cualquier otro numero indica algun tipo de error."
     }
   ],
   "ia": [
@@ -567,6 +666,17 @@
       ],
       "correct": 0,
       "explanation": "RAG combina un sistema de búsqueda (por ejemplo sobre documentos propios) con un modelo de lenguaje: primero recupera información relevante y luego se la pasa al modelo como contexto, para que responda con datos más actualizados o específicos que los de su entrenamiento."
+    },
+    {
+      "q": "¿Que es un modelo 'multimodal' en el contexto de la inteligencia artificial?",
+      "opts": [
+        "Un modelo capaz de procesar y combinar distintos tipos de datos, como texto, imagenes o audio, en lugar de uno solo",
+        "Un modelo que solo funciona en varios idiomas",
+        "Un modelo que se ejecuta en varios servidores a la vez",
+        "Un modelo que se entrena varias veces con los mismos datos"
+      ],
+      "correct": 0,
+      "explanation": "Un modelo multimodal puede recibir y/o generar mas de un tipo de informacion (por ejemplo texto e imagenes a la vez), a diferencia de un modelo que solo trabaja con un unico tipo de dato."
     }
   ]
 }

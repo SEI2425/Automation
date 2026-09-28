@@ -4,69 +4,79 @@
     "El módulo estándar 'this' de Python (al ejecutar import this) imprime el Zen de Python, un poema con los principios de diseño del lenguaje, como un huevo de pascua oficial.",
     "El operador morsa (:=), introducido en Python 3.8, permite asignar una variable dentro de una expresión, como en la condición de un bucle while.",
     "Guido van Rossum eligio el nombre 'Python' en homenaje al grupo de comedia britanico Monty Python, no a la serpiente, porque queria un nombre corto y con gracia para su lenguaje.",
-    "Python 2 dejo de recibir soporte oficial el 1 de enero de 2020, casi veinte anos despues de su lanzamiento en el ano 2000, lo que obligo a gran parte del ecosistema a migrar definitivamente a Python 3."
+    "Python 2 dejo de recibir soporte oficial el 1 de enero de 2020, casi veinte anos despues de su lanzamiento en el ano 2000, lo que obligo a gran parte del ecosistema a migrar definitivamente a Python 3.",
+    "El modulo 'dataclasses', introducido en Python 3.7, genera automaticamente metodos como __init__ y __repr__ para clases que solo almacenan datos, evitando escribir ese codigo repetitivo a mano."
   ],
   "javascript": [
     "A pesar del nombre, JavaScript no tiene relación técnica con Java: el nombre fue una decisión de marketing de Netscape para aprovechar la popularidad de Java en 1995.",
     "JavaScript fue creado por Brendan Eich en solo diez días en 1995, mientras trabajaba en Netscape, y su primer nombre interno fue 'Mocha'.",
     "JSON, uno de los formatos de datos más usados en la web, significa 'JavaScript Object Notation' y se basa en la sintaxis de los objetos literales de JavaScript, aunque hoy lo usan prácticamente todos los lenguajes.",
     "Desde 2015, JavaScript sigue un estandar oficial llamado ECMAScript que publica una nueva version cada ano (ES6, ES7...), lo que explica por que aparecen nuevas funciones del lenguaje de forma regular.",
-    "Node.js, creado por Ryan Dahl en 2009, permitio por primera vez ejecutar JavaScript fuera del navegador, en el servidor, lo que convirtio a JavaScript en un lenguaje capaz de cubrir tanto el frontend como el backend."
+    "Node.js, creado por Ryan Dahl en 2009, permitio por primera vez ejecutar JavaScript fuera del navegador, en el servidor, lo que convirtio a JavaScript en un lenguaje capaz de cubrir tanto el frontend como el backend.",
+    "El metodo Array.prototype.flat() se anadio a JavaScript en 2019 (ES2019) para aplanar arrays anidados sin necesidad de librerias externas como Lodash."
   ],
   "typescript": [
     "TypeScript no reemplaza a JavaScript en ningún momento: todo programa TypeScript se compila (transpila) a JavaScript plano antes de ejecutarse en el navegador o en Node.",
     "TypeScript fue anunciado públicamente por Microsoft en 2012, con Anders Hejlsberg, el creador de C#, como uno de sus principales diseñadores.",
     "Frameworks como Angular y Deno están escritos en TypeScript o lo usan como lenguaje principal de desarrollo, algo poco habitual para un lenguaje que nace como una capa sobre otro.",
     "Los archivos de TypeScript usan la extension .ts, pero cuando mezclan TypeScript con JSX (como en componentes de React) se guardan con la extension .tsx.",
-    "TypeScript incluye inferencia de tipos: aunque no anotes explicitamente el tipo de una variable, el compilador suele deducirlo automaticamente a partir del valor que le asignas."
+    "TypeScript incluye inferencia de tipos: aunque no anotes explicitamente el tipo de una variable, el compilador suele deducirlo automaticamente a partir del valor que le asignas.",
+    "TypeScript permite combinar tipos con el operador de union (|) y el de interseccion (&); por ejemplo, 'type A = Persona & Empleado' combina las propiedades de ambos tipos en uno solo."
   ],
   "java": [
     "La mascota de Java, Duke, fue diseñada en 1992 para un proyecto anterior llamado Oak, antes incluso de que existiera el lenguaje Java tal como lo conocemos.",
     "Java se llamó originalmente 'Oak', en honor a un roble que había frente a la oficina de James Gosling, antes de renombrarse por un conflicto de marca registrada.",
     "Java se ejecuta sobre una máquina virtual (JVM) que compila el código a bytecode, lo que permite que el mismo programa compilado funcione igual en Windows, macOS o Linux: el lema original era 'write once, run anywhere'.",
     "A diferencia de C++, Java no permite sobrecargar operadores (como + o ==) para tipos personalizados, una decision de diseno deliberada de sus creadores para mantener el lenguaje mas simple y predecible.",
-    "Desde Java 9, publicado en 2017, Oracle adopto un ciclo de lanzamiento de una nueva version cada seis meses, un ritmo mucho mas rapido que el de las versiones anteriores, que a veces tardaban anos en llegar."
+    "Desde Java 9, publicado en 2017, Oracle adopto un ciclo de lanzamiento de una nueva version cada seis meses, un ritmo mucho mas rapido que el de las versiones anteriores, que a veces tardaban anos en llegar.",
+    "Java introdujo las expresiones lambda y la API de Streams en la version 8, publicada en 2014, lo que permitio un estilo de programacion mucho mas funcional dentro del lenguaje."
   ],
   "kotlin": [
     "Kotlin es interoperable al 100% con Java: se puede llamar código Java desde Kotlin y código Kotlin desde Java dentro del mismo proyecto sin conversión manual.",
     "Kotlin recibe su nombre de la isla Kotlin, cerca de San Petersburgo (Rusia), donde JetBrains tiene una de sus oficinas.",
     "Google eligió Kotlin en 2019 como el lenguaje preferido para el desarrollo de aplicaciones Android, por delante de Java, aunque ambos siguen siendo totalmente compatibles entre sí.",
     "Ademas de compilar a bytecode de la JVM para Android, Kotlin tambien puede compilar a JavaScript y a binarios nativos, lo que permite compartir el mismo codigo entre Android, web y iOS.",
-    "El sistema de tipos de Kotlin distingue entre tipos anulables y no anulables, lo que permite al compilador detectar en tiempo de compilacion muchos posibles errores de puntero nulo que en Java solo aparecerian al ejecutar el programa."
+    "El sistema de tipos de Kotlin distingue entre tipos anulables y no anulables, lo que permite al compilador detectar en tiempo de compilacion muchos posibles errores de puntero nulo que en Java solo aparecerian al ejecutar el programa.",
+    "Kotlin admite funciones de orden superior, que reciben otras funciones como parametros o las devuelven como resultado, un estilo tomado de la programacion funcional que tambien existe en JavaScript o Python."
   ],
   "sql": [
     "El estándar SQL lo mantiene ISO, pero en la práctica cada motor (PostgreSQL, MySQL, SQL Server...) añade extensiones propias, por lo que el SQL 100% portable entre motores es más raro de lo que parece.",
     "SQL se pronuncia oficialmente 'ese-cu-ele', no 'sequel', aunque el nombre original del lenguaje en IBM durante los años setenta era precisamente SEQUEL.",
     "El modelo relacional en el que se basa SQL fue propuesto por Edgar F. Codd en 1970 en un artículo de investigación de IBM, casi una década antes de que existiera un producto comercial de base de datos relacional.",
     "En SQL, NULL no significa cero ni vacio: significa 'valor desconocido', por eso una comparacion como NULL = NULL no da como resultado verdadero, sino tambien NULL.",
-    "MySQL, uno de los motores de bases de datos SQL mas usados del mundo, fue creado en 1995 por la empresa sueca MySQL AB y hoy pertenece a Oracle, tras la compra de Sun Microsystems en 2010."
+    "MySQL, uno de los motores de bases de datos SQL mas usados del mundo, fue creado en 1995 por la empresa sueca MySQL AB y hoy pertenece a Oracle, tras la compra de Sun Microsystems en 2010.",
+    "Muchos motores SQL modernos, como PostgreSQL, soportan consultas recursivas mediante 'WITH RECURSIVE', utiles para trabajar con datos jerarquicos como arboles de categorias u organigramas."
   ],
   "git": [
     "Git guarda cada versión de un archivo completo (no solo las diferencias) internamente, pero los comprime y deduplica para que el repositorio no crezca tanto como parecería.",
     "Git fue creado por Linus Torvalds en 2005, en solo unas semanas, para gestionar el desarrollo del propio kernel de Linux tras un conflicto de licencias con la herramienta que usaban antes.",
     "Git y GitHub son cosas distintas: Git es el sistema de control de versiones que funciona sin internet en tu propio ordenador, y GitHub es solo una de varias plataformas (junto a GitLab o Bitbucket) que alojan repositorios Git en la nube.",
     "Cada commit de Git se identifica con un hash SHA-1 calculado a partir de su contenido, asi que cambiar un solo caracter en un archivo cambia por completo el hash del commit.",
-    "El propio codigo fuente del kernel de Linux se gestiona con Git desde su creacion en 2005, y sigue siendo, decadas despues, uno de los repositorios con mas colaboradores y commits del mundo."
+    "El propio codigo fuente del kernel de Linux se gestiona con Git desde su creacion en 2005, y sigue siendo, decadas despues, uno de los repositorios con mas colaboradores y commits del mundo.",
+    "Git organiza internamente sus commits como una estructura en arbol donde cada uno guarda un hash que depende de su contenido y del hash de su commit padre, lo que hace casi imposible alterar el historial sin que se note."
   ],
   "htmlcss": [
     "El primer sitio web de la historia, publicado por Tim Berners-Lee en 1991, seguía online y accesible en su URL original décadas después, solo con HTML básico y sin una sola línea de CSS.",
     "CSS fue propuesto en 1994 por Håkon Wium Lie, cuando trabajaba junto a Tim Berners-Lee en el CERN, para separar el diseño visual del contenido HTML.",
     "La propiedad CSS 'box-sizing: border-box' cambia cómo se calcula el ancho total de un elemento para que el padding y el borde se incluyan dentro del ancho definido, en lugar de sumarse por fuera.",
     "Las etiquetas HTML <marquee> y <blink>, muy comunes en paginas web de los anos noventa para hacer texto que se movia o parpadeaba, son obsoletas y los navegadores modernos ya no las soportan de forma estandar.",
-    "HTML5 no se convirtio en recomendacion oficial del W3C hasta octubre de 2014, aunque la mayoria de los navegadores ya llevaban varios anos implementando sus caracteristicas antes de esa fecha formal."
+    "HTML5 no se convirtio en recomendacion oficial del W3C hasta octubre de 2014, aunque la mayoria de los navegadores ya llevaban varios anos implementando sus caracteristicas antes de esa fecha formal.",
+    "CSS Grid permite nombrar areas de la cuadricula con 'grid-template-areas', escribiendo el diseno visual del layout directamente como texto dentro de la hoja de estilos."
   ],
   "bash": [
     "Bash significa 'Bourne Again SHell', un juego de palabras porque es una reimplementación mejorada de la shell 'sh' original de Stephen Bourne de 1977.",
     "El símbolo '#!' al inicio de un script (como #!/bin/bash) se llama 'shebang' y le indica al sistema qué intérprete debe usar para ejecutar el archivo.",
     "En muchos sistemas Linux, /bin/sh no es en realidad un enlace a bash sino a una shell más ligera (como dash), lo que puede hacer que un script falle si usa funciones exclusivas de bash.",
     "La terminal de Bash guarda en un archivo de historial (normalmente ~/.bash_history) casi todos los comandos que escribes, por eso escribir contrasenas directamente en la terminal no es tan privado como parece.",
-    "Apple sustituyo Bash por Zsh como shell por defecto en macOS Catalina (2019), principalmente por motivos de licencia, tras anos en los que Bash habia sido la shell predeterminada del sistema."
+    "Apple sustituyo Bash por Zsh como shell por defecto en macOS Catalina (2019), principalmente por motivos de licencia, tras anos en los que Bash habia sido la shell predeterminada del sistema.",
+    "El comando 'alias' en Bash permite crear atajos personalizados para comandos largos o frecuentes, como \"alias ll='ls -la'\", y suele guardarse en archivos como ~/.bashrc para que persista entre sesiones."
   ],
   "ia": [
     "El término 'inteligencia artificial' se acuñó en 1956 en la conferencia de Dartmouth, más de medio siglo antes de que la mayoría de las técnicas actuales de deep learning fueran siquiera viables computacionalmente.",
     "Las redes neuronales artificiales datan de 1958, con el perceptrón de Frank Rosenblatt, mucho antes de que existiera la potencia de cálculo necesaria para aprovecharlas de verdad.",
     "El término 'aprendizaje profundo' (deep learning) se popularizó recién en los años 2000, aunque las redes neuronales con varias capas ya se estudiaban desde los años setenta y ochenta.",
     "En 2016, AlphaGo, la IA de DeepMind, derroto al campeon mundial de Go Lee Sedol, un logro que la mayoria de expertos creia que tardaria al menos una decada mas en alcanzarse por la enorme cantidad de jugadas posibles en ese juego.",
-    "El Test de Turing, propuesto por Alan Turing en 1950, planteaba que una maquina podria considerarse inteligente si una persona no pudiera distinguir sus respuestas de las de otro ser humano en una conversacion por texto."
+    "El Test de Turing, propuesto por Alan Turing en 1950, planteaba que una maquina podria considerarse inteligente si una persona no pudiera distinguir sus respuestas de las de otro ser humano en una conversacion por texto.",
+    "El termino 'prompt engineering' se popularizo a partir de 2022 con la llegada de modelos como GPT-3 y ChatGPT, y se refiere a disenar cuidadosamente las instrucciones que se dan a un modelo de lenguaje para obtener mejores respuestas."
   ]
 }

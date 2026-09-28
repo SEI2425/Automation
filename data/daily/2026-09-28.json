@@ -1,0 +1,112 @@
+{
+  "date": "2026-09-28",
+  "questions": [
+    {
+      "type": "identify",
+      "lang": "Python",
+      "question": "¿Que contiene la lista impresa por este codigo?",
+      "code": "nums = [3, 1, 4, 1, 5, 9]\nprint(nums[-2:])",
+      "options": [
+        "[9]",
+        "[5, 9]",
+        "[1, 9]",
+        "[1, 5, 9]"
+      ],
+      "correct": 1,
+      "hint": "Los indices negativos cuentan posiciones desde el final de la lista.",
+      "explanation": "nums[-2:] toma desde la posicion -2 (el valor 5) hasta el final de la lista, incluyendo tambien el ultimo elemento (9), por lo que el resultado es [5, 9]."
+    },
+    {
+      "type": "complete",
+      "lang": "JavaScript",
+      "question": "¿Que metodo falta para obtener tanto el indice como el valor de cada elemento?",
+      "code": "const arr = ['a', 'b', 'c'];\nfor (const [index, value] of arr.____()) {\n  console.log(index, value);\n}",
+      "options": [
+        "entries",
+        "keys",
+        "values",
+        "map"
+      ],
+      "correct": 0,
+      "hint": "Necesitas un metodo que devuelva pares [indice, valor] que se puedan desestructurar.",
+      "explanation": "arr.entries() devuelve un iterador de pares [indice, valor] para cada elemento del array, lo que permite desestructurarlos directamente en el bucle for...of; keys() solo da los indices y values() solo los valores."
+    },
+    {
+      "type": "identify",
+      "lang": "SQL",
+      "question": "¿Que devuelve esta consulta?",
+      "code": "SELECT department, AVG(salary) AS avg_salary\nFROM employees\nGROUP BY department\nORDER BY avg_salary DESC\nLIMIT 1;",
+      "options": [
+        "El departamento con el salario promedio mas alto, junto a ese promedio",
+        "Todos los departamentos ordenados de menor a mayor salario",
+        "El empleado con el salario mas alto de la empresa",
+        "El numero total de empleados por departamento"
+      ],
+      "correct": 0,
+      "hint": "GROUP BY agrupa por departamento, y ORDER BY ... DESC LIMIT 1 se queda solo con el primero tras ordenar de mayor a menor.",
+      "explanation": "GROUP BY department agrupa las filas por departamento y AVG(salary) calcula el salario promedio de cada grupo; ORDER BY avg_salary DESC ordena esos promedios de mayor a menor, y LIMIT 1 deja solo el departamento con el promedio mas alto."
+    },
+    {
+      "type": "identify",
+      "lang": "Bash",
+      "question": "¿Que hace este bucle de Bash?",
+      "code": "for file in *.txt; do\n  mv \"$file\" \"${file%.txt}.bak\"\ndone",
+      "options": [
+        "Copia cada archivo .txt a uno nuevo con extension .bak, sin borrar el original",
+        "Renombra cada archivo .txt cambiando su extension a .bak",
+        "Elimina todos los archivos .txt del directorio",
+        "Junta todos los archivos .txt en un solo archivo .bak"
+      ],
+      "correct": 1,
+      "hint": "mv renombra o mueve archivos, y ${file%.txt} quita la extension .txt del nombre.",
+      "explanation": "El bucle recorre cada archivo .txt del directorio, y mv lo renombra usando ${file%.txt}.bak, que elimina el sufijo .txt del nombre original y le anade .bak en su lugar."
+    },
+    {
+      "type": "complete",
+      "lang": "HTML/CSS",
+      "question": "¿Que atributo falta para describir el contenido de la imagen a lectores de pantalla?",
+      "code": "<img src=\"foto.jpg\" ____=\"Perro corriendo en la playa\">",
+      "options": [
+        "alt",
+        "title",
+        "longdesc",
+        "aria-label"
+      ],
+      "correct": 0,
+      "hint": "Es el atributo estandar de accesibilidad que tambien se muestra si la imagen no llega a cargar.",
+      "explanation": "El atributo alt proporciona un texto alternativo que describe la imagen para lectores de pantalla y que el navegador muestra si la imagen no se puede cargar; es el atributo estandar y obligatorio por buenas practicas de accesibilidad en HTML."
+    }
+  ],
+  "tips": [
+    {
+      "text": "Comenta el porque de una decision en tu codigo, no lo que ya se ve leyendo las lineas.",
+      "explanation": "Un comentario que repite lo que el codigo ya dice (como '// suma dos numeros' sobre una linea que suma dos numeros) no aporta nada, y ademas puede quedar desactualizado si el codigo cambia. Es mucho mas util explicar decisiones que no son obvias, como por que se eligio ese algoritmo o que caso especial estas evitando.",
+      "link": "https://www.jackfranklin.co.uk/blog/code-comments-why-not-how/",
+      "linkLabel": "Jack Franklin: comentarios de codigo, el por que no el como"
+    },
+    {
+      "text": "Si una funcion hace mas de una cosa, divide su logica en funciones mas pequenas que hagan solo una cada una.",
+      "explanation": "Una funcion que hace una sola cosa es mas facil de leer, de probar y de reutilizar en otras partes del programa. Cuando una funcion crece y mezcla varias responsabilidades, cualquier cambio se vuelve mas arriesgado porque puede afectar a partes que no tienen relacion entre si.",
+      "link": "https://dev.to/56_kode/the-golden-rule-of-clean-code-functions-should-do-one-thing-3lf7",
+      "linkLabel": "DEV Community: las funciones deben hacer una sola cosa"
+    },
+    {
+      "text": "Usa la busqueda inversa del historial de tu terminal (Ctrl+R) en vez de reescribir comandos largos que ya ejecutaste antes.",
+      "explanation": "Ctrl+R abre una busqueda interactiva en el historial de la terminal: escribes parte de un comando anterior y aparece la ultima vez que lo usaste, listo para ejecutar o editar. Ahorra bastante tiempo frente a escribir de nuevo comandos largos con muchas opciones o rutas.",
+      "link": "https://digitash.com/linux/use-ctrl-r-reverse-history-search-linux-bash-terminal/",
+      "linkLabel": "Digitash: busqueda inversa en el historial de Bash"
+    },
+    {
+      "text": "Antes de seguir un tutorial de programacion al pie de la letra, comprueba cuando se publico.",
+      "explanation": "Las herramientas, versiones de lenguajes y buenas practicas cambian rapido, y un tutorial de hace varios anos puede recomendar metodos ya obsoletos o inseguros sin que lo parezca a simple vista. Revisar la fecha (o la version del lenguaje que usa) evita perder tiempo aprendiendo una forma de hacer las cosas que ya nadie usa.",
+      "link": "https://dev.to/rickdelpo1/13-reasons-why-dev-tutorials-can-be-misleading-2bfn",
+      "linkLabel": "DEV Community: por que algunos tutoriales de programacion enganan"
+    },
+    {
+      "text": "No tengas miedo de preguntar en foros como Stack Overflow: la mayoria de dudas de principiante ya se han resuelto antes.",
+      "explanation": "Casi cualquier error o duda que te parezca vergonzosa ya se la ha encontrado otra persona antes, y buscarla suele ahorrarte horas de bloqueo. Cuando no encuentres la respuesta, preguntar con un ejemplo claro y el error completo es una habilidad tan importante como escribir el propio codigo.",
+      "link": "https://www.dataschool.io/how-to-ask-for-coding-help-online/",
+      "linkLabel": "Data School: como pedir ayuda de programacion online"
+    }
+  ]
+}
