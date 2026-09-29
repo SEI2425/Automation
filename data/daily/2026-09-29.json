@@ -1,0 +1,92 @@
+{
+  "date": "2026-09-29",
+  "questions": [
+    {
+      "type": "identify",
+      "lang": "Python",
+      "question": "¿Que imprime este codigo?",
+      "code": "def suma(*args):\n    return sum(args)\n\nprint(suma(1, 2, 3, 4))",
+      "options": ["10", "(1, 2, 3, 4)", "Error", "None"],
+      "correct": 0,
+      "hint": "*args recoge todos los argumentos posicionales en una tupla que luego puedes recorrer o sumar.",
+      "explanation": "*args permite que la funcion reciba cualquier cantidad de argumentos posicionales, agrupandolos en una tupla; sum(args) los suma todos, dando 1+2+3+4 = 10."
+    },
+    {
+      "type": "complete",
+      "lang": "JavaScript",
+      "question": "¿Que metodo falta para comprobar si un valor es un array?",
+      "code": "function esArray(valor) {\n  return Array.____(valor);\n}\nconsole.log(esArray([1, 2, 3]));",
+      "options": ["isArray", "of", "from", "includes"],
+      "correct": 0,
+      "hint": "Es un metodo estatico de Array pensado exactamente para comprobar si un valor es un array.",
+      "explanation": "Array.isArray() comprueba si el valor pasado es realmente un array y devuelve true o false; con [1,2,3] devuelve true."
+    },
+    {
+      "type": "identify",
+      "lang": "TypeScript",
+      "question": "¿Que imprime este codigo?",
+      "code": "function describir(valor: string | number) {\n  if (typeof valor === \"string\") {\n    return valor.toUpperCase();\n  }\n  return valor.toFixed(2);\n}\nconsole.log(describir(3.14159));",
+      "options": ["3.14", "3.14159", "Error de compilacion", "NaN"],
+      "correct": 0,
+      "hint": "typeof valor === 'string' descarta la rama del texto; fijate en que hace el codigo con un numero.",
+      "explanation": "Como 3.14159 es un numero, la comprobacion typeof valor === 'string' es falsa y se ejecuta valor.toFixed(2), que redondea a dos decimales y devuelve el texto '3.14'."
+    },
+    {
+      "type": "complete",
+      "lang": "Git",
+      "question": "¿Que comando falta para reescribir de forma interactiva los ultimos 3 commits?",
+      "code": "git checkout feature\ngit ____ -i HEAD~3\n# se abre un editor para elegir que hacer con los ultimos 3 commits",
+      "options": ["rebase", "merge", "reset", "cherry-pick"],
+      "correct": 0,
+      "hint": "Es el comando que permite reescribir el historial reciente de forma interactiva.",
+      "explanation": "git rebase -i HEAD~3 abre un editor con los ultimos 3 commits, permitiendo reordenarlos, combinarlos (squash) o editarlos antes de reescribir el historial."
+    },
+    {
+      "type": "identify",
+      "lang": "SQL",
+      "question": "¿Que devuelve esta consulta?",
+      "code": "SELECT name, salary,\n       ROW_NUMBER() OVER (ORDER BY salary DESC) AS puesto\nFROM employees;",
+      "options": [
+        "Asigna a cada empleado un numero de posicion segun su salario, de mayor a menor",
+        "Elimina los empleados duplicados por salario",
+        "Calcula el salario promedio de la empresa",
+        "Agrupa los empleados por salario"
+      ],
+      "correct": 0,
+      "hint": "ROW_NUMBER() OVER (...) es una funcion de ventana que numera las filas segun el orden indicado, sin agrupar ni eliminar filas.",
+      "explanation": "ROW_NUMBER() OVER (ORDER BY salary DESC) asigna un numero secuencial a cada fila segun el orden de salario descendente, dando la posicion de cada empleado sin fusionar ni eliminar filas."
+    }
+  ],
+  "tips": [
+    {
+      "text": "Fija las versiones de tus dependencias con un archivo de bloqueo (lockfile).",
+      "explanation": "Sin un lockfile, dos instalaciones del mismo proyecto pueden acabar usando versiones ligeramente distintas de una libreria, lo que provoca el clasico 'en mi maquina funciona' cuando un cambio menor de una dependencia rompe algo en otra maquina. Herramientas como npm, pip o Cargo generan automaticamente este archivo para fijar exactamente que version se instala cada vez.",
+      "link": "https://docs.npmjs.com/cli/v10/configuring-npm/package-lock-json",
+      "linkLabel": "npm Docs: package-lock.json"
+    },
+    {
+      "text": "Antes de actualizar una libreria a una version mayor, lee su registro de cambios (changelog).",
+      "explanation": "Las versiones mayores suelen incluir cambios que rompen compatibilidad con el codigo anterior, y actualizar a ciegas puede dejar tu proyecto roto sin previo aviso. Dedicar unos minutos a leer el changelog te permite anticipar que partes de tu codigo necesitaras ajustar antes de actualizar.",
+      "link": "https://keepachangelog.com/en/1.1.0/",
+      "linkLabel": "Keep a Changelog"
+    },
+    {
+      "text": "Prefiere escribir funciones puras (sin efectos secundarios) siempre que puedas.",
+      "explanation": "Una funcion pura siempre devuelve el mismo resultado para los mismos argumentos y no modifica nada fuera de si misma, lo que la hace mucho mas facil de probar, depurar y reutilizar en otras partes del programa. Cuando una funcion depende de variables externas o las modifica, su comportamiento se vuelve mucho mas dificil de predecir.",
+      "link": "https://developer.mozilla.org/en-US/docs/Glossary/Pure_function",
+      "linkLabel": "MDN: funcion pura"
+    },
+    {
+      "text": "Si llevas mas de 30 minutos atascado en el mismo error, levantate y descansa un momento antes de seguir.",
+      "explanation": "Mirar el mismo codigo sin avanzar suele hacer que te centres cada vez mas en la misma hipotesis equivocada, mientras que un descanso corto permite que la mente procese el problema de otra forma y a menudo revela una solucion obvia al volver. Es una tecnica reconocida en estudios sobre resolucion de problemas, no solo una excusa para distraerse.",
+      "link": "https://en.wikipedia.org/wiki/Incubation_(psychology)",
+      "linkLabel": "Incubacion (psicologia) - Wikipedia"
+    },
+    {
+      "text": "Anade anotaciones de tipos (type hints) a tu codigo Python aunque el lenguaje no te obligue a usarlas.",
+      "explanation": "Los type hints le indican a tu editor y a herramientas como mypy que tipo de dato espera cada funcion, lo que permite detectar errores de tipos antes de ejecutar el programa y hace que el autocompletado del editor sea mucho mas util. No cambian como se ejecuta el codigo, pero documentan la intencion de forma que cualquiera, incluido tu yo futuro, la entienda de un vistazo.",
+      "link": "https://docs.python.org/3/library/typing.html",
+      "linkLabel": "Documentacion oficial de Python: typing"
+    }
+  ]
+}

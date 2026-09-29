@@ -65,6 +65,17 @@
       ],
       "correct": 1,
       "explanation": "'with' crea un gestor de contexto que llama automaticamente a close() del archivo al salir del bloque, incluso ante una excepcion, evitando fugas de recursos."
+    },
+    {
+      "q": "¿Que imprime `print(f'{3 + 4 = }')` en Python 3.8 o superior?",
+      "opts": [
+        "3 + 4 = 7",
+        "7",
+        "Error de sintaxis",
+        "3 + 4"
+      ],
+      "correct": 0,
+      "explanation": "Desde Python 3.8, el especificador '=' dentro de una f-string imprime tanto la expresion literal como su resultado, util para depurar rapido sin escribir print() aparte."
     }
   ],
   "javascript": [
@@ -133,6 +144,17 @@
       ],
       "correct": 0,
       "explanation": "En JavaScript, typeof de una funcion siempre devuelve 'function', aunque las funciones internamente sean un tipo especial de objeto."
+    },
+    {
+      "q": "¿Que imprime este codigo?\nfunction contador() {\n  let n = 0;\n  return () => ++n;\n}\nconst inc = contador();\nconsole.log(inc());\nconsole.log(inc());",
+      "opts": [
+        "1\n2",
+        "1\n1",
+        "0\n1",
+        "Error"
+      ],
+      "correct": 0,
+      "explanation": "La funcion interna forma un closure que retiene acceso a la variable n de contador() entre llamadas, asi que cada llamada a inc() incrementa la misma variable: primero da 1, luego 2."
     }
   ],
   "typescript": [
@@ -201,6 +223,17 @@
       ],
       "correct": 0,
       "explanation": "Record<K, T> construye un tipo de objeto donde cada clave es del tipo K y cada valor del tipo T, util para mapear tipos de forma segura."
+    },
+    {
+      "q": "¿Que hace el operador 'satisfies' introducido en TypeScript 4.9, como en 'const config = {...} satisfies Config'?",
+      "opts": [
+        "Comprueba que el valor cumple el tipo indicado sin perder la inferencia del tipo literal original",
+        "Convierte el valor al tipo Config en tiempo de ejecucion",
+        "Declara una variable de solo lectura",
+        "Elimina las propiedades que no estan en Config"
+      ],
+      "correct": 0,
+      "explanation": "'satisfies' valida que un valor cumple con un tipo dado, pero a diferencia de una anotacion de tipo normal, conserva el tipo literal mas especifico inferido para ese valor, lo que mantiene un mejor autocompletado."
     }
   ],
   "java": [
@@ -269,6 +302,17 @@
       ],
       "correct": 0,
       "explanation": "Una interfaz funcional tiene un unico metodo abstracto, lo que permite implementarla de forma compacta usando una expresion lambda en lugar de una clase anonima completa."
+    },
+    {
+      "q": "¿Que hace `try (BufferedReader br = new BufferedReader(new FileReader(\"a.txt\"))) { ... }` en Java?",
+      "opts": [
+        "Cierra automaticamente el recurso (br) al salir del bloque, incluso si hay una excepcion",
+        "Abre el archivo en modo escritura",
+        "Ejecuta el bloque solo si el archivo existe",
+        "Evita que el programa lance excepciones"
+      ],
+      "correct": 0,
+      "explanation": "El 'try-with-resources' cierra automaticamente cualquier recurso declarado entre parentesis que implemente AutoCloseable al salir del bloque, haya o no una excepcion, evitando fugas de recursos como archivos abiertos."
     }
   ],
   "kotlin": [
@@ -337,6 +381,17 @@
       ],
       "correct": 0,
       "explanation": "'let' ejecuta el bloque lambda usando el objeto como argumento (accesible como 'it'), y combinado con el operador '?.' solo se ejecuta si el valor no es null, evitando comprobaciones explicitas."
+    },
+    {
+      "q": "¿Para que se usan las 'sealed class' en Kotlin?",
+      "opts": [
+        "Para restringir las subclases posibles de una clase a un conjunto conocido y cerrado, definido en el mismo archivo o modulo",
+        "Para declarar clases inmutables",
+        "Para evitar la herencia por completo",
+        "Para crear clases privadas dentro de una funcion"
+      ],
+      "correct": 0,
+      "explanation": "Una sealed class limita que clases pueden heredar de ella a las definidas en el mismo archivo o modulo, lo que permite al compilador comprobar que un 'when' cubre todos los casos posibles sin necesitar una rama 'else'."
     }
   ],
   "sql": [
@@ -405,6 +460,17 @@
       ],
       "correct": 0,
       "explanation": "En una transaccion, COMMIT guarda de forma permanente todos los cambios realizados, mientras que ROLLBACK deshace esos cambios si ocurre un error, devolviendo la base de datos a su estado anterior."
+    },
+    {
+      "q": "¿Que hace la clausula EXISTS en `SELECT name FROM customers c WHERE EXISTS (SELECT 1 FROM orders o WHERE o.customer_id = c.id);`?",
+      "opts": [
+        "Devuelve los clientes para los que la subconsulta encuentra al menos una fila coincidente",
+        "Cuenta cuantas filas devuelve la subconsulta",
+        "Elimina los clientes sin pedidos",
+        "Combina las dos tablas en una sola"
+      ],
+      "correct": 0,
+      "explanation": "EXISTS devuelve verdadero si la subconsulta encuentra al menos una fila que cumpla la condicion, sin importar cuantas; aqui selecciona los clientes que tienen al menos un pedido asociado."
     }
   ],
   "git": [
@@ -473,6 +539,17 @@
       ],
       "correct": 0,
       "explanation": "git merge combina las dos ramas creando un commit de fusion que mantiene el historial tal cual ocurrio; git rebase mueve los commits de una rama para que parezca que se crearon sobre el ultimo commit de la otra, dejando un historial mas lineal pero reescribiendo el historial original."
+    },
+    {
+      "q": "¿Para que sirve el comando 'git reflog'?",
+      "opts": [
+        "Muestra un historial local de todos los movimientos de HEAD, incluidos commits eliminados o resets, para poder recuperarlos",
+        "Elimina el historial de commits antiguos",
+        "Sincroniza automaticamente con el repositorio remoto",
+        "Muestra solo los commits fusionados"
+      ],
+      "correct": 0,
+      "explanation": "git reflog guarda un registro local de cada movimiento de HEAD (commits, resets, checkouts...), lo que permite recuperar commits que parecian perdidos tras un reset --hard o un rebase mal hecho."
     }
   ],
   "htmlcss": [
@@ -541,6 +618,17 @@
       ],
       "correct": 0,
       "explanation": "object-fit: cover hace que la imagen o video llene todo el espacio del contenedor recortando lo que sobra, pero manteniendo su relacion de aspecto original sin estirarla ni deformarla."
+    },
+    {
+      "q": "¿Que hace la funcion CSS `clamp(1rem, 2vw, 3rem)` aplicada a un tamano de fuente?",
+      "opts": [
+        "Establece un tamano que crece con el ancho de la ventana (2vw), pero nunca baja de 1rem ni supera 3rem",
+        "Fija siempre el tamano en 2vw sin limites",
+        "Elige aleatoriamente uno de los tres valores",
+        "Solo funciona con colores, no con tamanos"
+      ],
+      "correct": 0,
+      "explanation": "clamp(minimo, preferido, maximo) usa el valor preferido (aqui 2vw, que depende del ancho de la ventana) pero lo limita para que nunca sea menor que el minimo ni mayor que el maximo indicados."
     }
   ],
   "bash": [
@@ -609,6 +697,17 @@
       ],
       "correct": 0,
       "explanation": "$? guarda el codigo de salida (exit status) del comando anterior; por convencion, 0 significa que se ejecuto correctamente y cualquier otro numero indica algun tipo de error."
+    },
+    {
+      "q": "¿Que hace 'set -e' al principio de un script de Bash?",
+      "opts": [
+        "Hace que el script se detenga inmediatamente si cualquier comando devuelve un error",
+        "Activa el modo de depuracion mostrando cada comando",
+        "Ejecuta el script en segundo plano",
+        "Ignora los errores de los comandos"
+      ],
+      "correct": 0,
+      "explanation": "set -e (modo errexit) hace que el script termine de inmediato en cuanto un comando devuelve un codigo de salida distinto de 0, evitando que el script siga ejecutandose tras un fallo silencioso."
     }
   ],
   "ia": [
@@ -677,6 +776,17 @@
       ],
       "correct": 0,
       "explanation": "Un modelo multimodal puede recibir y/o generar mas de un tipo de informacion (por ejemplo texto e imagenes a la vez), a diferencia de un modelo que solo trabaja con un unico tipo de dato."
+    },
+    {
+      "q": "¿Que controla el parametro 'temperature' al generar texto con un modelo de lenguaje?",
+      "opts": [
+        "El grado de aleatoriedad o creatividad de las respuestas: valores bajos las hacen mas predecibles, valores altos mas variadas",
+        "La velocidad de respuesta del modelo",
+        "El numero maximo de tokens que puede generar",
+        "El idioma en el que responde el modelo"
+      ],
+      "correct": 0,
+      "explanation": "El parametro temperature reescala las probabilidades que el modelo asigna a cada posible siguiente token: valores bajos concentran la eleccion en las opciones mas probables (respuestas mas deterministas), y valores altos reparten mas probabilidad entre opciones menos probables (respuestas mas variadas)."
     }
   ]
 }
