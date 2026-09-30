@@ -76,6 +76,17 @@
       ],
       "correct": 0,
       "explanation": "Desde Python 3.8, el especificador '=' dentro de una f-string imprime tanto la expresion literal como su resultado, util para depurar rapido sin escribir print() aparte."
+    },
+    {
+      "q": "¿Que devuelve `list(enumerate(['a', 'b', 'c']))`?",
+      "opts": [
+        "[('a', 0), ('b', 1), ('c', 2)]",
+        "[(0, 'a'), (1, 'b'), (2, 'c')]",
+        "['a', 'b', 'c']",
+        "Error"
+      ],
+      "correct": 1,
+      "explanation": "enumerate() empareja cada elemento con su indice de posicion, generando tuplas (indice, elemento) en ese orden."
     }
   ],
   "javascript": [
@@ -155,6 +166,17 @@
       ],
       "correct": 0,
       "explanation": "La funcion interna forma un closure que retiene acceso a la variable n de contador() entre llamadas, asi que cada llamada a inc() incrementa la misma variable: primero da 1, luego 2."
+    },
+    {
+      "q": "¿Que imprime console.log(typeof null)?",
+      "opts": [
+        "'object'",
+        "'null'",
+        "'undefined'",
+        "'number'"
+      ],
+      "correct": 0,
+      "explanation": "Debido a un error historico en el diseno original de JavaScript, typeof null devuelve 'object' en lugar de 'null', un comportamiento extrano que se mantiene por compatibilidad con codigo antiguo."
     }
   ],
   "typescript": [
@@ -234,6 +256,17 @@
       ],
       "correct": 0,
       "explanation": "'satisfies' valida que un valor cumple con un tipo dado, pero a diferencia de una anotacion de tipo normal, conserva el tipo literal mas especifico inferido para ese valor, lo que mantiene un mejor autocompletado."
+    },
+    {
+      "q": "¿Que hace el tipo utilitario 'Omit<T, K>' en TypeScript?",
+      "opts": [
+        "Crea un tipo igual a T pero sin las propiedades listadas en K",
+        "Anade nuevas propiedades a T",
+        "Convierte todas las propiedades de T en opcionales",
+        "Elimina el tipo T por completo"
+      ],
+      "correct": 0,
+      "explanation": "Omit<T, K> construye un nuevo tipo a partir de T excluyendo las propiedades indicadas en K, util cuando se necesita casi la misma forma de un tipo pero sin algunos campos."
     }
   ],
   "java": [
@@ -313,6 +346,17 @@
       ],
       "correct": 0,
       "explanation": "El 'try-with-resources' cierra automaticamente cualquier recurso declarado entre parentesis que implemente AutoCloseable al salir del bloque, haya o no una excepcion, evitando fugas de recursos como archivos abiertos."
+    },
+    {
+      "q": "¿Que hace la palabra clave 'super' dentro del constructor de una subclase en Java?",
+      "opts": [
+        "Llama al constructor de la clase padre",
+        "Declara un metodo estatico",
+        "Crea una nueva instancia de la subclase",
+        "Elimina la herencia de la clase"
+      ],
+      "correct": 0,
+      "explanation": "super(...) invoca explicitamente el constructor de la clase padre desde el constructor de la subclase, y debe ser la primera instruccion del constructor si se usa."
     }
   ],
   "kotlin": [
@@ -392,6 +436,17 @@
       ],
       "correct": 0,
       "explanation": "Una sealed class limita que clases pueden heredar de ella a las definidas en el mismo archivo o modulo, lo que permite al compilador comprobar que un 'when' cubre todos los casos posibles sin necesitar una rama 'else'."
+    },
+    {
+      "q": "¿Que hace la funcion 'apply' aplicada a un objeto, como en 'Persona().apply { nombre = \"Ana\" }'?",
+      "opts": [
+        "Ejecuta el bloque configurando el objeto y devuelve el propio objeto ya modificado",
+        "Crea una copia del objeto sin modificar el original",
+        "Convierte el objeto en una cadena de texto",
+        "Elimina las propiedades del objeto"
+      ],
+      "correct": 0,
+      "explanation": "'apply' ejecuta el bloque lambda usando el objeto como receptor implicito (this), lo que permite configurar varias propiedades seguidas, y al final devuelve el mismo objeto ya modificado."
     }
   ],
   "sql": [
@@ -471,6 +526,17 @@
       ],
       "correct": 0,
       "explanation": "EXISTS devuelve verdadero si la subconsulta encuentra al menos una fila que cumpla la condicion, sin importar cuantas; aqui selecciona los clientes que tienen al menos un pedido asociado."
+    },
+    {
+      "q": "¿Que diferencia hay entre una clave primaria (PRIMARY KEY) y un indice (INDEX) normal en una tabla?",
+      "opts": [
+        "La clave primaria identifica de forma unica cada fila y no permite valores NULL ni duplicados; un indice normal solo acelera busquedas y permite duplicados",
+        "Son exactamente lo mismo",
+        "Un indice normal impide insertar datos duplicados igual que la clave primaria",
+        "La clave primaria solo sirve para ordenar resultados"
+      ],
+      "correct": 0,
+      "explanation": "Una PRIMARY KEY combina unicidad e integridad (no admite NULL ni valores repetidos) y suele generar automaticamente un indice, mientras que un INDEX normal solo existe para acelerar las busquedas y puede tener valores duplicados."
     }
   ],
   "git": [
@@ -550,6 +616,17 @@
       ],
       "correct": 0,
       "explanation": "git reflog guarda un registro local de cada movimiento de HEAD (commits, resets, checkouts...), lo que permite recuperar commits que parecian perdidos tras un reset --hard o un rebase mal hecho."
+    },
+    {
+      "q": "¿Que hace el comando 'git stash list'?",
+      "opts": [
+        "Muestra todos los cambios guardados temporalmente con git stash, sin aplicarlos",
+        "Elimina todos los stashes guardados",
+        "Aplica el ultimo stash guardado",
+        "Crea un nuevo stash vacio"
+      ],
+      "correct": 0,
+      "explanation": "'git stash list' muestra todos los conjuntos de cambios guardados temporalmente con git stash, identificados como stash@{0}, stash@{1}, etc, sin modificarlos ni aplicarlos todavia."
     }
   ],
   "htmlcss": [
@@ -629,6 +706,17 @@
       ],
       "correct": 0,
       "explanation": "clamp(minimo, preferido, maximo) usa el valor preferido (aqui 2vw, que depende del ancho de la ventana) pero lo limita para que nunca sea menor que el minimo ni mayor que el maximo indicados."
+    },
+    {
+      "q": "¿Que hace la pseudoclase CSS ':nth-child(2n)'?",
+      "opts": [
+        "Selecciona los elementos hijos en posicion par dentro de su contenedor",
+        "Selecciona solo el segundo hijo",
+        "Selecciona todos los hijos impares",
+        "Solo funciona dentro de una tabla"
+      ],
+      "correct": 0,
+      "explanation": "':nth-child(2n)' selecciona los elementos cuya posicion entre sus hermanos es multiplo de 2 (el 2, 4, 6...), un patron muy usado para dar estilos alternos como en filas de una tabla."
     }
   ],
   "bash": [
@@ -708,6 +796,17 @@
       ],
       "correct": 0,
       "explanation": "set -e (modo errexit) hace que el script termine de inmediato en cuanto un comando devuelve un codigo de salida distinto de 0, evitando que el script siga ejecutandose tras un fallo silencioso."
+    },
+    {
+      "q": "¿Que hace el comando 'trap \"echo Adios\" EXIT' al principio de un script de Bash?",
+      "opts": [
+        "Ejecuta el comando indicado justo antes de que el script termine, ocurra un error o no",
+        "Cancela la ejecucion del script inmediatamente",
+        "Solo se ejecuta si el script recibe la senal Ctrl+C",
+        "Ignora cualquier senal de interrupcion"
+      ],
+      "correct": 0,
+      "explanation": "'trap' asocia un comando a una senal; usando EXIT, ese comando se ejecuta automaticamente cuando el script termina, sin importar si fue por llegar al final, por un error o por una interrupcion, lo que es muy util para limpiar archivos temporales."
     }
   ],
   "ia": [
@@ -787,6 +886,17 @@
       ],
       "correct": 0,
       "explanation": "El parametro temperature reescala las probabilidades que el modelo asigna a cada posible siguiente token: valores bajos concentran la eleccion en las opciones mas probables (respuestas mas deterministas), y valores altos reparten mas probabilidad entre opciones menos probables (respuestas mas variadas)."
+    },
+    {
+      "q": "¿Que es un 'modelo de mezcla de expertos' (Mixture of Experts, MoE) en el contexto de los modelos de lenguaje?",
+      "opts": [
+        "Una arquitectura que divide el modelo en varias subredes 'expertas' y activa solo unas pocas para cada entrada, en lugar de todo el modelo",
+        "Un modelo entrenado por varios expertos humanos a la vez",
+        "Un modelo que solo puede responder preguntas de un tema concreto",
+        "Un metodo para comprimir el tamano de las imagenes generadas"
+      ],
+      "correct": 0,
+      "explanation": "En una arquitectura de mezcla de expertos, el modelo esta formado por varias subredes especializadas, y un mecanismo de enrutado decide para cada token que expertos activar, lo que permite modelos con muchos mas parametros totales sin que el coste de calcular cada respuesta crezca al mismo ritmo."
     }
   ]
 }
