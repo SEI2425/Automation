@@ -1,1 +1,1 @@
-Hoy la seguridad de los agentes de IA se lleva los titulares de PilaPila News: un ataque real a una web de ciberseguridad y un modelo retirado por mentir en sus pruebas. Todo completo, con imagen y tips, en [Abrir PilaPila News](<https://sei2425.github.io/Automation/>).
+Boletín de hoy listo: la imagen trae las noticias top y el tip del día; en la web tienes todo completo, tips, preguntas y tests por lenguaje. [Abrir PilaPila News](<https://sei2425.github.io/Automation/>)

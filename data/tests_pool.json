@@ -87,6 +87,17 @@
       ],
       "correct": 1,
       "explanation": "enumerate() empareja cada elemento con su indice de posicion, generando tuplas (indice, elemento) en ese orden."
+    },
+    {
+      "q": "¿Qué devuelve `'-'.join(['2026', '10', '01'])`?",
+      "opts": [
+        "'2026-10-01'",
+        "['2026','10','01']",
+        "'20261001'",
+        "Error"
+      ],
+      "correct": 0,
+      "explanation": "'separador'.join(lista) une los elementos de la lista en una sola cadena de texto, colocando el separador indicado entre cada uno; aquí concatena los tres elementos con guiones entre medio."
     }
   ],
   "javascript": [
@@ -177,6 +188,17 @@
       ],
       "correct": 0,
       "explanation": "Debido a un error historico en el diseno original de JavaScript, typeof null devuelve 'object' en lugar de 'null', un comportamiento extrano que se mantiene por compatibilidad con codigo antiguo."
+    },
+    {
+      "q": "¿Qué imprime console.log(typeof [])?",
+      "opts": [
+        "'array'",
+        "'object'",
+        "'list'",
+        "'undefined'"
+      ],
+      "correct": 1,
+      "explanation": "En JavaScript los arrays son un tipo especial de objeto, por lo que typeof de un array devuelve 'object', no 'array'; para comprobar si algo es un array se usa Array.isArray()."
     }
   ],
   "typescript": [
@@ -267,6 +289,17 @@
       ],
       "correct": 0,
       "explanation": "Omit<T, K> construye un nuevo tipo a partir de T excluyendo las propiedades indicadas en K, util cuando se necesita casi la misma forma de un tipo pero sin algunos campos."
+    },
+    {
+      "q": "¿Qué hace el modificador 'private' en una propiedad de una clase de TypeScript?",
+      "opts": [
+        "Impide acceder a esa propiedad fuera de la propia clase",
+        "La convierte en opcional",
+        "La hace de solo lectura",
+        "La convierte en estática"
+      ],
+      "correct": 0,
+      "explanation": "'private' restringe el acceso a esa propiedad o método solo al interior de la clase donde se declara; intentar acceder desde fuera produce un error de compilación, aunque en el JavaScript generado el dato sigue siendo técnicamente accesible."
     }
   ],
   "java": [
@@ -357,6 +390,17 @@
       ],
       "correct": 0,
       "explanation": "super(...) invoca explicitamente el constructor de la clase padre desde el constructor de la subclase, y debe ser la primera instruccion del constructor si se usa."
+    },
+    {
+      "q": "¿Qué palabra clave se usa en Java para que una clase implemente una interfaz?",
+      "opts": [
+        "extends",
+        "implements",
+        "interface",
+        "inherits"
+      ],
+      "correct": 1,
+      "explanation": "Una clase usa la palabra clave 'implements' para indicar que proporciona el código de los métodos declarados en una interfaz; 'extends' se reserva para la herencia entre clases (o entre interfaces)."
     }
   ],
   "kotlin": [
@@ -447,6 +491,17 @@
       ],
       "correct": 0,
       "explanation": "'apply' ejecuta el bloque lambda usando el objeto como receptor implicito (this), lo que permite configurar varias propiedades seguidas, y al final devuelve el mismo objeto ya modificado."
+    },
+    {
+      "q": "¿Para qué sirve la palabra clave 'object' al declarar `object Config { val version = \"1.0\" }` en Kotlin?",
+      "opts": [
+        "Crea un singleton: una única instancia accesible como Config.version",
+        "Declara una interfaz",
+        "Crea una clase abstracta",
+        "Declara una variable mutable global"
+      ],
+      "correct": 0,
+      "explanation": "La declaración 'object' en Kotlin crea directamente un singleton: una única instancia de esa clase, inicializada de forma perezosa y accesible globalmente a través de su nombre, sin necesidad de instanciarla ni gestionar manualmente una única copia."
     }
   ],
   "sql": [
@@ -537,6 +592,17 @@
       ],
       "correct": 0,
       "explanation": "Una PRIMARY KEY combina unicidad e integridad (no admite NULL ni valores repetidos) y suele generar automaticamente un indice, mientras que un INDEX normal solo existe para acelerar las busquedas y puede tener valores duplicados."
+    },
+    {
+      "q": "¿Qué hace la sentencia `ALTER TABLE empleados ADD COLUMN email VARCHAR(100);`?",
+      "opts": [
+        "Añade una nueva columna llamada email a la tabla empleados ya existente",
+        "Crea una tabla nueva llamada empleados",
+        "Elimina la columna email de la tabla",
+        "Cambia el tipo de dato de todas las columnas"
+      ],
+      "correct": 0,
+      "explanation": "ALTER TABLE modifica la estructura de una tabla ya creada; en este caso, ADD COLUMN agrega una nueva columna llamada email de tipo texto con un máximo de 100 caracteres a la tabla empleados."
     }
   ],
   "git": [
@@ -627,6 +693,17 @@
       ],
       "correct": 0,
       "explanation": "'git stash list' muestra todos los conjuntos de cambios guardados temporalmente con git stash, identificados como stash@{0}, stash@{1}, etc, sin modificarlos ni aplicarlos todavia."
+    },
+    {
+      "q": "¿Qué diferencia hay entre 'git reset --soft' y 'git reset --hard' al volver a un commit anterior?",
+      "opts": [
+        "--soft conserva los cambios en el área de staging; --hard los descarta por completo, incluidos los del directorio de trabajo",
+        "Son exactamente lo mismo",
+        "--hard solo afecta a archivos ya confirmados; --soft afecta a todos",
+        "--soft elimina el historial; --hard lo conserva"
+      ],
+      "correct": 0,
+      "explanation": "git reset --soft mueve el puntero HEAD pero deja los cambios de esos commits listos en el área de staging; git reset --hard mueve HEAD y además descarta cualquier cambio en el staging y en el directorio de trabajo, perdiendo ese trabajo si no estaba guardado en otro sitio."
     }
   ],
   "htmlcss": [
@@ -717,6 +794,17 @@
       ],
       "correct": 0,
       "explanation": "':nth-child(2n)' selecciona los elementos cuya posicion entre sus hermanos es multiplo de 2 (el 2, 4, 6...), un patron muy usado para dar estilos alternos como en filas de una tabla."
+    },
+    {
+      "q": "¿Qué hace la propiedad CSS `aspect-ratio: 16 / 9;` aplicada a un elemento?",
+      "opts": [
+        "Obliga al elemento a mantener esa proporción entre ancho y alto aunque cambie el tamaño de pantalla",
+        "Cambia el color de fondo del elemento",
+        "Solo afecta a elementos de tipo video",
+        "Elimina el elemento si no cabe en el contenedor"
+      ],
+      "correct": 0,
+      "explanation": "aspect-ratio fija la relación entre el ancho y el alto de un elemento (en este caso 16 entre 9, típica de vídeo), por lo que el navegador calcula automáticamente una de las dos dimensiones para mantener esa proporción."
     }
   ],
   "bash": [
@@ -807,6 +895,17 @@
       ],
       "correct": 0,
       "explanation": "'trap' asocia un comando a una senal; usando EXIT, ese comando se ejecuta automaticamente cuando el script termina, sin importar si fue por llegar al final, por un error o por una interrupcion, lo que es muy util para limpiar archivos temporales."
+    },
+    {
+      "q": "¿Qué hace el comando `du -sh carpeta/` en una terminal?",
+      "opts": [
+        "Muestra el tamaño total de la carpeta en un formato legible (KB, MB, GB)",
+        "Elimina la carpeta y su contenido",
+        "Cuenta cuántos archivos hay dentro de la carpeta",
+        "Comprime la carpeta en un archivo .tar"
+      ],
+      "correct": 0,
+      "explanation": "du (disk usage) calcula el espacio ocupado por archivos y carpetas; la opción -s resume el total en una sola línea en vez de detallar cada subcarpeta, y -h ('human-readable') muestra el tamaño en unidades legibles como KB o MB en lugar de bytes."
     }
   ],
   "ia": [
@@ -897,6 +996,17 @@
       ],
       "correct": 0,
       "explanation": "En una arquitectura de mezcla de expertos, el modelo esta formado por varias subredes especializadas, y un mecanismo de enrutado decide para cada token que expertos activar, lo que permite modelos con muchos mas parametros totales sin que el coste de calcular cada respuesta crezca al mismo ritmo."
+    },
+    {
+      "q": "¿Qué es el 'aprendizaje por refuerzo' (reinforcement learning) en inteligencia artificial?",
+      "opts": [
+        "Un método en el que un agente aprende a tomar decisiones recibiendo recompensas o penalizaciones según el resultado de sus acciones",
+        "Un método que solo funciona con imágenes",
+        "Entrenar un modelo copiando exactamente las respuestas de otro modelo",
+        "Un sinónimo de aprendizaje supervisado"
+      ],
+      "correct": 0,
+      "explanation": "En el aprendizaje por refuerzo, un agente interactúa con un entorno y aprende, mediante prueba y error, qué acciones maximizan una recompensa acumulada a largo plazo, en lugar de aprender a partir de ejemplos ya etiquetados como en el aprendizaje supervisado."
     }
   ]
 }

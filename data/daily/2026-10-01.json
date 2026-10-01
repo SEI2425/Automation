@@ -1,0 +1,112 @@
+{
+  "date": "2026-10-01",
+  "questions": [
+    {
+      "type": "identify",
+      "lang": "Python",
+      "question": "¿Qué imprime este código?",
+      "code": "def func(n, memo={}):\n    if n in memo:\n        return memo[n]\n    if n <= 1:\n        return n\n    memo[n] = func(n-1, memo) + func(n-2, memo)\n    return memo[n]\n\nprint(func(6))",
+      "options": [
+        "6",
+        "8",
+        "13",
+        "Error de recursión"
+      ],
+      "correct": 1,
+      "hint": "Es una implementación de Fibonacci con memoización usando un diccionario.",
+      "explanation": "La función calcula el número de Fibonacci de forma recursiva guardando resultados ya calculados en memo; la secuencia es 0,1,1,2,3,5,8, por lo que fib(6) vale 8."
+    },
+    {
+      "type": "complete",
+      "lang": "JavaScript",
+      "question": "¿Qué falta para quedarte solo con los valores únicos del array?",
+      "code": "const nums = [1, 2, 2, 3, 4, 4, 5];\nconst unicos = [...new ____(nums)];\nconsole.log(unicos); // [1, 2, 3, 4, 5]",
+      "options": [
+        "Set",
+        "Map",
+        "Array",
+        "Object"
+      ],
+      "correct": 0,
+      "hint": "Es una estructura de datos que no permite valores duplicados.",
+      "explanation": "new Set(nums) crea un conjunto que elimina automáticamente los duplicados, y el operador spread (...) lo convierte de nuevo en un array con los valores únicos."
+    },
+    {
+      "type": "identify",
+      "lang": "Kotlin",
+      "question": "¿Qué imprime este código?",
+      "code": "data class Punto(val x: Int, val y: Int)\n\nval p1 = Punto(1, 2)\nval p2 = Punto(1, 2)\nprintln(p1 == p2)",
+      "options": [
+        "true",
+        "false",
+        "Error de compilación",
+        "Lanza una excepción"
+      ],
+      "correct": 0,
+      "hint": "Las data class generan automáticamente un método equals basado en sus propiedades.",
+      "explanation": "Al ser una data class, Kotlin genera automáticamente equals() comparando el valor de las propiedades x e y, no la referencia en memoria; como ambos puntos tienen los mismos valores, el resultado es true."
+    },
+    {
+      "type": "complete",
+      "lang": "Bash",
+      "question": "¿Qué falta para comprobar que el usuario no escribió nada?",
+      "code": "#!/bin/bash\nread -p \"Introduce tu nombre: \" nombre\nif [ ____ \"$nombre\" ]; then\n  echo \"No escribiste nada\"\nfi",
+      "options": [
+        "-z",
+        "-n",
+        "-e",
+        "-f"
+      ],
+      "correct": 0,
+      "hint": "Es el operador que comprueba si una cadena está vacía (longitud cero).",
+      "explanation": "El operador -z devuelve verdadero si la cadena tiene longitud cero, es decir, si el usuario no escribió nada antes de pulsar Enter."
+    },
+    {
+      "type": "identify",
+      "lang": "SQL",
+      "question": "¿Qué devuelve esta consulta?",
+      "code": "SELECT department,\n       salary,\n       RANK() OVER (PARTITION BY department ORDER BY salary DESC) AS puesto\nFROM employees;",
+      "options": [
+        "Asigna un puesto a cada empleado según su salario, reiniciando el conteo en cada departamento",
+        "Calcula el salario promedio de cada departamento",
+        "Elimina los departamentos con menos de dos empleados",
+        "Ordena los departamentos alfabéticamente"
+      ],
+      "correct": 0,
+      "hint": "PARTITION BY reinicia el cálculo para cada grupo, a diferencia de usar solo ORDER BY.",
+      "explanation": "RANK() OVER (PARTITION BY department ORDER BY salary DESC) numera a los empleados por salario descendente, pero PARTITION BY hace que esa numeración se reinicie de forma independiente en cada departamento."
+    }
+  ],
+  "tips": [
+    {
+      "text": "No ignores los warnings del compilador o del linter, aunque el programa funcione igual.",
+      "explanation": "Un warning no detiene la ejecución, pero suele señalar una variable sin usar, un tipo incompatible o un comportamiento no intencionado que más adelante puede convertirse en un bug difícil de rastrear. Tratar los warnings como errores a corregir mantiene el código mucho más fiable con el tiempo.",
+      "link": "https://pvs-studio.com/en/blog/terms/0080/",
+      "linkLabel": "PVS-Studio: por qué importan los warnings del compilador"
+    },
+    {
+      "text": "Prueba tu código con casos límite (una lista vacía, el número cero, un texto muy largo), no solo con el caso normal.",
+      "explanation": "La mayoría de bugs en producción aparecen en los bordes de un problema, no en el camino feliz que es más fácil de imaginar al escribir la función. Pensar de antemano en esos casos extremos ahorra mucho tiempo de depuración después, y también cierra puertas que un atacante podría aprovechar.",
+      "link": "https://www.testdevlab.com/blog/what-are-edge-cases",
+      "linkLabel": "TestDevLab: qué son los casos límite y por qué importan"
+    },
+    {
+      "text": "Usa nombres de rama descriptivos en Git, como feature/login-google o fix/error-pago, en lugar de 'cambios' o 'prueba'.",
+      "explanation": "Un nombre de rama claro le dice a cualquiera, incluido tu yo futuro, qué contiene esa rama sin tener que abrir ningún commit, y facilita mucho revisar el historial de un proyecto con varias personas trabajando a la vez.",
+      "link": "https://conventionalbranch.org/",
+      "linkLabel": "Conventional Branch: convención de nombres de rama en Git"
+    },
+    {
+      "text": "Si una función recibe varios parámetros booleanos seguidos, como crear(usuario, true, false, true), es señal de que debería dividirse.",
+      "explanation": "Una llamada así obliga a quien la lee a recordar qué significa cada booleano sin ninguna pista, lo que es una fuente común de errores. Separar esa lógica en funciones con nombres claros, o usar un objeto de opciones con nombres, hace el código mucho más fácil de entender a simple vista.",
+      "link": "https://martinfowler.com/bliki/FlagArgument.html",
+      "linkLabel": "Martin Fowler: Flag Argument, un síntoma de mal diseño"
+    },
+    {
+      "text": "Aprende a usar la consola interactiva (REPL) de tu lenguaje para probar fragmentos sueltos de código sin crear un archivo entero.",
+      "explanation": "Herramientas como el intérprete de Python o la consola del navegador permiten probar una idea en segundos, en lugar de crear un archivo, ejecutarlo y borrarlo después. Es una forma rápida de comprobar cómo se comporta una función antes de usarla en un proyecto real.",
+      "link": "https://realpython.com/python-repl/",
+      "linkLabel": "Real Python: cómo usar el REPL para probar código rápido"
+    }
+  ]
+}

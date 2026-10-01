@@ -1,0 +1,65 @@
+{
+  "date": "2026-10-01",
+  "items": [
+    {
+      "tag": "Impacto",
+      "title": "La Agencia Espanola de Proteccion de Datos registra la primera brecha causada por un agente de IA autonomo en Espana",
+      "url": "https://www.aepd.es/prensa-y-comunicacion/blog/primera-notiviacion-brecha-datos-personales-causada-por-ataque-ejecutado-mediante-agente-ia",
+      "summary": "La AEPD recibio la primera notificacion en Espana de una brecha de datos personales ejecutada por un agente de inteligencia artificial que actuo de forma autonoma: busco vulnerabilidades, inicio sesion por si mismo y accedio a facturas y datos personales sin que un humano dirigiera cada paso. El organismo no identifico la empresa afectada ni el modelo usado, pero pidio a empresas y responsables de tratamiento que incluyan expresamente los ataques asistidos por IA en sus analisis de riesgo, ya que la automatizacion cambia la velocidad y el alcance posible de una brecha."
+    },
+    {
+      "tag": "Impacto",
+      "title": "Un agricultor chino pierde unas 10 hectareas de sesamo tras seguir el consejo de pesticidas de un chatbot de IA",
+      "url": "https://www.techradar.com/pro/farmer-ends-up-killing-25-acres-of-his-crops-after-trusting-ai-on-herbicide-advice",
+      "summary": "Un agricultor de 67 anos en Chuzhou, China, que llevaba tiempo usando un chatbot de IA para pedir consejo sobre fertilizantes y calendarios de siembra, siguio tambien su recomendacion de una mezcla de herbicida e insecticida para combatir malas hierbas en su campo de sesamo. Al dia siguiente toda la plantacion, unas 10 hectareas, habia muerto: la IA genero una respuesta convincente pero sin entender realmente la quimica ni la sensibilidad del cultivo, y el agricultor ahora advierte a otros de verificar este tipo de consejo con un experto antes de aplicarlo."
+    },
+    {
+      "tag": "Impacto",
+      "title": "Healthwatch England alerta de que los asistentes de IA del NHS confunden medicamentos y diagnosticos en los historiales",
+      "url": "https://thenextweb.com/news/nhs-ai-scribes-errors-healthwatch-mhra",
+      "summary": "El organismo de supervision del NHS britanico confirmo que al menos 27 asistentes de IA usados para transcribir consultas medicas estan generando errores en los historiales: a un paciente le aparecio un diagnostico real de dano nervioso porque el asistente perdio la palabra 'null' del resultado original, y otro anoto que un medico recomendo continuar un farmaco que nunca se habia recetado ni mencionado. Ninguno de esos 27 sistemas esta regulado como producto sanitario, y en varios casos fueron los propios pacientes quienes detectaron el error antes que el personal medico."
+    },
+    {
+      "tag": "Impacto",
+      "title": "La FTC de EEUU abre una investigacion a OpenAI, Anthropic y la organizacion METR pese al pacto voluntario de seguridad de la Casa Blanca",
+      "url": "https://www.axios.com/2026/09/30/ftc-openai-anthropic-ai-safety-investigation",
+      "summary": "Horas despues de que varios directivos de IA firmaran en la Casa Blanca un acuerdo voluntario de autorregulacion impulsado por Trump, la Comision Federal de Comercio de Estados Unidos abrio una investigacion formal sobre los riesgos de seguridad de los modelos de frontera, dirigida a empresas como OpenAI y Anthropic y tambien a METR, la organizacion sin animo de lucro que evalua esos modelos. La agencia enviara requerimientos de informacion, similares a citaciones judiciales, en las proximas semanas, mostrando el contraste entre el enfoque voluntario de la Casa Blanca y una postura mas dura del propio gobierno estadounidense."
+    },
+    {
+      "tag": "Lanzamiento",
+      "title": "Google lanza Gemini 4 Argon, su modelo mas avanzado, empezando por ciberdefensores de confianza",
+      "url": "https://www.cnbc.com/2026/09/30/google-gemini-4-argon-ai.html",
+      "summary": "Google presento Gemini 4 Argon, que segun la empresa marca un nuevo record en ingenieria de software en el mundo real y empata con GPT-6 Astra y Grok 4.7 en pruebas de ciberseguridad. El lanzamiento se hace por fases: los primeros en recibir acceso son los 'ciberdefensores de confianza' del programa Fairwind de Google, que reciben el modelo sin las barreras de seguridad habituales para poder detectar, validar y corregir vulnerabilidades de software de forma autonoma, con hasta un millon de tokens de salida para tareas largas de varios pasos."
+    },
+    {
+      "tag": "Curso",
+      "title": "Google's Python Class: el curso gratuito de Google para aprender Python",
+      "url": "https://developers.google.com/edu/python",
+      "summary": "Este curso gratuito, creado por Google a partir de su propio programa interno de formacion intensiva de dos dias, ensena Python cubriendo cadenas de texto, listas, diccionarios y expresiones regulares. Incluye material escrito, videos de las clases y ejercicios de codigo con sus soluciones, pensado para quien ya tiene algo de experiencia programando en otro lenguaje."
+    },
+    {
+      "tag": "Interactivo",
+      "title": "Edabit: mas de 10.000 retos de programacion cortos con correccion automatica",
+      "url": "https://edabit.com/challenges",
+      "summary": "Edabit ofrece mas de 10.000 retos de programacion cortos en ocho lenguajes distintos, incluidos Python, JavaScript y Java, organizados desde el nivel muy facil hasta experto. Cada reto se resuelve directamente en el navegador con correccion automatica al instante, y un sistema de experiencia y niveles anima a resolver uno tras otro sin perder la motivacion."
+    },
+    {
+      "tag": "Curso",
+      "title": "CS50's Web Programming with Python and JavaScript: el curso gratuito de Harvard sobre desarrollo web",
+      "url": "https://cs50.harvard.edu/web/",
+      "summary": "Este curso gratuito de Harvard, continuacion de CS50x, ensena a construir aplicaciones web completas combinando Python, JavaScript, el framework Django, SQL y APIs REST. Incluye clases en video, proyectos practicos como una red social o una tienda de comercio electronico, y un certificado gratuito para quien complete todo el curso."
+    },
+    {
+      "tag": "Interactivo",
+      "title": "Exercism: practica Kotlin con ejercicios interactivos y mentoria gratuita",
+      "url": "https://exercism.org/tracks/kotlin",
+      "summary": "Este recorrido gratuito de Exercism ofrece decenas de ejercicios de Kotlin ordenados por dificultad, con pruebas automaticas que revisan tu solucion al instante nada mas enviarla. Ademas, como en el resto de la plataforma, puedes pedir mentoria gratuita de programadores voluntarios que comentan tu codigo y sugieren formas mas idiomaticas de resolver cada ejercicio."
+    },
+    {
+      "tag": "Curso",
+      "title": "TypeScript Deep Dive: el libro gratuito para dominar el sistema de tipos de TypeScript",
+      "url": "https://basarat.gitbook.io/typescript/",
+      "summary": "Este libro gratuito y de codigo abierto, escrito por Basarat Ali Syed, explica en profundidad el sistema de tipos de TypeScript, desde los conceptos basicos hasta patrones avanzados, con cientos de ejemplos de codigo comentados. Se lee integramente online sin registrarse, y se ha convertido en una referencia habitual para quien ya conoce JavaScript y quiere entender TypeScript a fondo, no solo usarlo por encima."
+    }
+  ]
+}
