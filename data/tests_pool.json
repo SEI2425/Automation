@@ -98,6 +98,17 @@
       ],
       "correct": 0,
       "explanation": "'separador'.join(lista) une los elementos de la lista en una sola cadena de texto, colocando el separador indicado entre cada uno; aquí concatena los tres elementos con guiones entre medio."
+    },
+    {
+      "q": "¿Qué valor toma 'b' tras ejecutar `a, *b, c = [1, 2, 3, 4, 5]`?",
+      "opts": [
+        "[2, 3, 4]",
+        "[1, 2, 3, 4]",
+        "[2, 3, 4, 5]",
+        "Error de sintaxis"
+      ],
+      "correct": 0,
+      "explanation": "El operador * en el desempaquetado recoge en una lista todos los elementos que sobran entre el primero (a) y el último (c), es decir [2, 3, 4]."
     }
   ],
   "javascript": [
@@ -199,6 +210,17 @@
       ],
       "correct": 1,
       "explanation": "En JavaScript los arrays son un tipo especial de objeto, por lo que typeof de un array devuelve 'object', no 'array'; para comprobar si algo es un array se usa Array.isArray()."
+    },
+    {
+      "q": "¿Qué imprime este código?\nconst obj = Object.freeze({ x: 1 });\nobj.x = 2;\nconsole.log(obj.x);",
+      "opts": [
+        "1",
+        "2",
+        "undefined",
+        "Lanza un error siempre"
+      ],
+      "correct": 0,
+      "explanation": "Object.freeze() impide modificar las propiedades del objeto; en modo no estricto la asignación se ignora silenciosamente, por lo que obj.x sigue valiendo 1."
     }
   ],
   "typescript": [
@@ -300,6 +322,17 @@
       ],
       "correct": 0,
       "explanation": "'private' restringe el acceso a esa propiedad o método solo al interior de la clase donde se declara; intentar acceder desde fuera produce un error de compilación, aunque en el JavaScript generado el dato sigue siendo técnicamente accesible."
+    },
+    {
+      "q": "¿Qué tipo representa en TypeScript una función que nunca retorna normalmente, por ejemplo porque siempre lanza una excepción?",
+      "opts": [
+        "never",
+        "void",
+        "undefined",
+        "unknown"
+      ],
+      "correct": 0,
+      "explanation": "El tipo 'never' se usa para funciones que nunca terminan de forma normal, ya sea porque siempre lanzan una excepción o entran en un bucle infinito; es distinto de 'void', que sí retorna pero sin un valor útil."
     }
   ],
   "java": [
@@ -401,6 +434,17 @@
       ],
       "correct": 1,
       "explanation": "Una clase usa la palabra clave 'implements' para indicar que proporciona el código de los métodos declarados en una interfaz; 'extends' se reserva para la herencia entre clases (o entre interfaces)."
+    },
+    {
+      "q": "¿Qué introduce la palabra clave 'record' en Java (desde Java 16)?",
+      "opts": [
+        "Una forma compacta de declarar una clase inmutable que solo almacena datos, generando automáticamente constructor, getters, equals, hashCode y toString",
+        "Un tipo de bucle optimizado",
+        "Una forma de declarar constantes",
+        "Un modificador de acceso"
+      ],
+      "correct": 0,
+      "explanation": "Un 'record' en Java genera automáticamente el constructor, los métodos de acceso, equals(), hashCode() y toString() a partir de sus componentes, de forma similar a las data class de Kotlin, pensado para clases que solo transportan datos inmutables."
     }
   ],
   "kotlin": [
@@ -502,6 +546,17 @@
       ],
       "correct": 0,
       "explanation": "La declaración 'object' en Kotlin crea directamente un singleton: una única instancia de esa clase, inicializada de forma perezosa y accesible globalmente a través de su nombre, sin necesidad de instanciarla ni gestionar manualmente una única copia."
+    },
+    {
+      "q": "¿Para qué sirve un 'companion object' dentro de una clase en Kotlin?",
+      "opts": [
+        "Para declarar miembros (propiedades o funciones) asociados a la clase en sí, de forma similar a los miembros 'static' en Java",
+        "Para crear una subclase automática",
+        "Para declarar una clase privada",
+        "Para convertir la clase en inmutable"
+      ],
+      "correct": 0,
+      "explanation": "Un companion object permite declarar propiedades y funciones ligadas a la clase misma en lugar de a una instancia concreta, cubriendo un caso de uso similar al de los miembros static en Java, pero siendo en realidad un objeto singleton asociado a la clase."
     }
   ],
   "sql": [
@@ -603,6 +658,17 @@
       ],
       "correct": 0,
       "explanation": "ALTER TABLE modifica la estructura de una tabla ya creada; en este caso, ADD COLUMN agrega una nueva columna llamada email de tipo texto con un máximo de 100 caracteres a la tabla empleados."
+    },
+    {
+      "q": "¿Qué hace un 'self join', como en `SELECT e1.name, e2.name FROM employees e1 JOIN employees e2 ON e1.manager_id = e2.id;`?",
+      "opts": [
+        "Une una tabla consigo misma, aquí para relacionar cada empleado con el nombre de su propio jefe",
+        "Elimina las filas duplicadas de la tabla",
+        "Combina dos tablas distintas sin relación",
+        "Cuenta cuántos empleados tienen jefe"
+      ],
+      "correct": 0,
+      "explanation": "Un self join relaciona una tabla con una copia de sí misma usando alias distintos (e1 y e2); aquí sirve para obtener, junto al nombre de cada empleado, el nombre de la persona que aparece como su jefe en la misma tabla."
     }
   ],
   "git": [
@@ -704,6 +770,17 @@
       ],
       "correct": 0,
       "explanation": "git reset --soft mueve el puntero HEAD pero deja los cambios de esos commits listos en el área de staging; git reset --hard mueve HEAD y además descarta cualquier cambio en el staging y en el directorio de trabajo, perdiendo ese trabajo si no estaba guardado en otro sitio."
+    },
+    {
+      "q": "¿Qué significa que Git esté en estado de 'HEAD separada' (detached HEAD)?",
+      "opts": [
+        "Que HEAD apunta directamente a un commit concreto en lugar de a una rama, por lo que los nuevos commits pueden perderse si no se crea una rama",
+        "Que el repositorio está dañado y no se puede usar",
+        "Que se ha eliminado la rama main por error",
+        "Que hay un conflicto de fusión sin resolver"
+      ],
+      "correct": 0,
+      "explanation": "En estado de HEAD separada, HEAD apunta directamente a un commit en lugar de al puntero de una rama; si se hacen nuevos commits ahí y luego se cambia de rama sin crear una rama que los contenga, esos commits pueden quedar inaccesibles y acabar eliminados por el recolector de basura de Git."
     }
   ],
   "htmlcss": [
@@ -805,6 +882,17 @@
       ],
       "correct": 0,
       "explanation": "aspect-ratio fija la relación entre el ancho y el alto de un elemento (en este caso 16 entre 9, típica de vídeo), por lo que el navegador calcula automáticamente una de las dos dimensiones para mantener esa proporción."
+    },
+    {
+      "q": "¿Qué miden las unidades CSS 'vh' y 'vw'?",
+      "opts": [
+        "Un porcentaje de la altura (vh) y el ancho (vw) de la ventana visible del navegador",
+        "El tamaño de la fuente del elemento padre",
+        "Un porcentaje del tamaño de la imagen de fondo",
+        "Solo funcionan dentro de un grid"
+      ],
+      "correct": 0,
+      "explanation": "1vh equivale al 1% de la altura de la ventana visible (viewport) y 1vw al 1% de su ancho, lo que permite crear tamaños que se adaptan directamente al tamaño de la pantalla sin depender del elemento padre."
     }
   ],
   "bash": [
@@ -906,6 +994,17 @@
       ],
       "correct": 0,
       "explanation": "du (disk usage) calcula el espacio ocupado por archivos y carpetas; la opción -s resume el total en una sola línea en vez de detallar cada subcarpeta, y -h ('human-readable') muestra el tamaño en unidades legibles como KB o MB en lugar de bytes."
+    },
+    {
+      "q": "¿Qué hace este fragmento de un script de Bash?\ncat <<EOF\nHola\nMundo\nEOF",
+      "opts": [
+        "Imprime un bloque de texto multilínea (un 'here-document') tal cual, hasta encontrar la marca EOF",
+        "Ejecuta un archivo llamado EOF",
+        "Crea un archivo llamado EOF",
+        "Elimina todas las líneas vacías"
+      ],
+      "correct": 0,
+      "explanation": "La sintaxis <<EOF ... EOF crea un 'here-document': todo el texto entre las dos marcas EOF se trata como entrada estándar del comando (aquí cat), lo que permite escribir bloques de texto multilínea directamente en el script sin usar comillas."
     }
   ],
   "ia": [
@@ -1007,6 +1106,17 @@
       ],
       "correct": 0,
       "explanation": "En el aprendizaje por refuerzo, un agente interactúa con un entorno y aprende, mediante prueba y error, qué acciones maximizan una recompensa acumulada a largo plazo, en lugar de aprender a partir de ejemplos ya etiquetados como en el aprendizaje supervisado."
+    },
+    {
+      "q": "¿Qué novedad introdujo la arquitectura 'Transformer', presentada en el artículo 'Attention Is All You Need' (2017)?",
+      "opts": [
+        "Un mecanismo de atención que permite procesar todas las palabras de una secuencia a la vez, en lugar de una por una como las redes recurrentes anteriores",
+        "Un método para comprimir imágenes antes de enviarlas a la red",
+        "Una forma de entrenar modelos sin usar ningún dato",
+        "Un tipo de memoria física para GPUs"
+      ],
+      "correct": 0,
+      "explanation": "La arquitectura Transformer sustituyó el procesamiento secuencial de las redes recurrentes (RNN) por un mecanismo de atención que relaciona todas las palabras de una secuencia entre sí en paralelo, lo que permitió entrenar modelos de lenguaje mucho más grandes y rápido; es la base de casi todos los modelos de lenguaje actuales."
     }
   ]
 }

@@ -1,0 +1,65 @@
+{
+  "date": "2026-10-02",
+  "items": [
+    {
+      "tag": "Impacto",
+      "title": "Un tribunal de Tokio reconoce por primera vez el derecho de un actor sobre su propia voz frente a un clon de IA",
+      "url": "https://www.washingtontimes.com/news/2026/oct/1/japanese-court-grants-legal-protection-human-voices-ai-clone-case/",
+      "summary": "El Tribunal de Distrito de Tokio dio la razón al actor de doblaje Kenjiro Tsuda, conocido por poner voz a Kento Nanami en el anime Jujutsu Kaisen, tras demandar a una cuenta anónima de TikTok que usó un clon de IA de su voz grave en más de 180 videos sobre leyendas urbanas, con más de 200.000 seguidores. La jueza Aya Takahashi declaró que la voz humana es un símbolo de la personalidad individual, igual que el retrato de alguien, en la primera resolución japonesa que reconoce ese derecho frente a la IA. La sentencia sienta un precedente que aliviaba una preocupación creciente entre actores de doblaje por el uso no autorizado de clones de su voz en redes sociales."
+    },
+    {
+      "tag": "Impacto",
+      "title": "Un sistema de IA de la UCLA que usa luz detecta videos deepfake con casi un 98% de precisión",
+      "url": "https://www.sciencedaily.com/releases/2026/09/260929053534.htm",
+      "summary": "Investigadores de la UCLA desarrollaron un procesador óptico-neuronal que usa la propagación física de la luz para analizar más de una docena de videos a la vez, en lugar de procesarlos uno por uno como los sistemas digitales convencionales. El sistema detecta videos generados con IA con casi un 98% de precisión, consume mucha menos energía que los métodos actuales y resiste mejor los intentos de manipulación, lo que podría convertirlo en una herramienta práctica para frenar la avalancha creciente de video generado por IA."
+    },
+    {
+      "tag": "Impacto",
+      "title": "El gobierno de EEUU lanza America.gov, un chatbot de IA para unificar casi 29.000 webs federales",
+      "url": "https://www.hstoday.us/subject-matter-areas/ai-and-advanced-tech/trump-launches-america-gov-with-ai-style-chatbot-as-single-gateway-to-federal-services/",
+      "summary": "El 29 de septiembre, el gobierno de Estados Unidos activó America.gov, un portal con un chatbot que combina los modelos Gemini de Google y Grok de xAI para responder preguntas en lenguaje natural sobre pasaportes, Medicare, pensiones y prestaciones de veteranos, basándose solo en fuentes oficiales, en lugar de tener que navegar por casi 29.000 páginas web federales distintas. Por ahora el chatbot solo explica los pasos a seguir sin completar trámites: la renovación de pasaporte y la inscripción en Medicare directamente desde el chat llegarán más adelante, con las solicitudes de pasaporte previstas para diciembre de 2026."
+    },
+    {
+      "tag": "Impacto",
+      "title": "La ley de responsabilidad y transparencia en IA de Connecticut entra en vigor el 1 de octubre",
+      "url": "https://natlawreview.com/article/sb-5-preparing-connecticuts-artificial-intelligence-responsibility-and-transparency",
+      "summary": "Connecticut, uno de los pocos estados de EEUU con una ley integral sobre inteligencia artificial, empieza a aplicar desde el 1 de octubre de 2026 sus primeras obligaciones: las empresas ya no pueden usar el haber confiado en una herramienta automatizada de decisiones de empleo como defensa ante una denuncia por discriminación, y quienes hagan despidos masivos deben declarar al Departamento de Trabajo si la IA tuvo algo que ver. El resto de obligaciones de la ley, que también regula chatbots de consumo, contenido generado por IA y plataformas usadas por menores, se irán activando de forma escalonada hasta enero de 2028."
+    },
+    {
+      "tag": "Lanzamiento",
+      "title": "OpenAI lleva GPT-Rosalind, su modelo para investigación en ciencias de la vida, a disponibilidad general",
+      "url": "https://help.openai.com/en/articles/20001193-gpt-rosalind-for-life-sciences-research",
+      "summary": "Tras salir de su fase de vista previa el 11 de septiembre, OpenAI anunció que GPT-Rosalind, su modelo especializado en investigación de ciencias de la vida, ya está disponible globalmente para organizaciones elegibles con acuerdos Enterprise o Business a través de un programa de acceso de confianza, integrado en ChatGPT Enterprise, Codex y la API. Los precios públicos, que entran en vigor el 5 de octubre, son de 5 dólares por millón de tokens de entrada, 0,50 dólares por tokens en caché y 25 dólares por millón de tokens de salida."
+    },
+    {
+      "tag": "Curso",
+      "title": "Google's Machine Learning Crash Course: el curso gratuito de Google sobre los fundamentos del aprendizaje automático",
+      "url": "https://developers.google.com/machine-learning/crash-course",
+      "summary": "Este curso gratuito de Google, reconstruido por completo en 2024, enseña los fundamentos del aprendizaje automático en unas 15 horas de estudio, con videos animados, más de 130 preguntas prácticas y ejercicios de código que se ejecutan directamente en Colab. Incluye también un módulo de introducción a los grandes modelos de lenguaje y buenas prácticas de IA responsable, pensado para quien ya tiene nociones básicas de programación."
+    },
+    {
+      "tag": "Interactivo",
+      "title": "Linux Journey: aprende Linux y la terminal con lecciones interactivas gratuitas",
+      "url": "https://labex.io/linuxjourney",
+      "summary": "Linux Journey es un recorrido gratuito y de código abierto que enseña el sistema operativo Linux y la terminal con lecciones cortas organizadas por niveles, desde los comandos más básicos hasta la administración de usuarios y permisos. Cada lección se puede practicar al momento en un entorno Linux real dentro del navegador, sin necesidad de instalar nada ni crear una cuenta."
+    },
+    {
+      "tag": "Interactivo",
+      "title": "GitHub Skills: cursos interactivos gratuitos de Git y GitHub trabajando en repositorios reales",
+      "url": "https://skills.github.com/",
+      "summary": "GitHub Skills ofrece cursos interactivos y gratuitos que se completan trabajando en repositorios reales de GitHub, con validación automática mediante GitHub Actions a medida que avanzas. Hay rutas para dar tus primeros pasos con Git y GitHub, abrir tu primer pull request, contribuir a un proyecto de código abierto o publicar una página con GitHub Pages, todo dentro de la propia plataforma."
+    },
+    {
+      "tag": "Interactivo",
+      "title": "Exercism: practica Java con ejercicios interactivos y mentoría gratuita",
+      "url": "https://exercism.org/tracks/java",
+      "summary": "Este recorrido gratuito de Exercism ofrece decenas de ejercicios de Java ordenados por dificultad, con pruebas automáticas que revisan tu solución al instante nada más enviarla. Como en el resto de la plataforma, también puedes pedir mentoría gratuita de programadores voluntarios que comentan tu código y sugieren formas más idiomáticas de resolverlo."
+    },
+    {
+      "tag": "Curso",
+      "title": "Learn HTML de Codecademy: el curso gratuito para dar tus primeros pasos en desarrollo web",
+      "url": "https://www.codecademy.com/learn/learn-html",
+      "summary": "Este curso gratuito de Codecademy enseña los fundamentos de HTML, el lenguaje que da estructura a las páginas web, con lecciones cortas y ejercicios de código que se corrigen al instante dentro del propio navegador. Más de 2,5 millones de personas se han inscrito ya en el curso, pensado como primer paso antes de aprender CSS para dar estilo a esas páginas."
+    }
+  ]
+}

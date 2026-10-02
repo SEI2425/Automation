@@ -1,0 +1,87 @@
+{
+  "date": "2026-10-02",
+  "questions": [
+    {
+      "type": "identify",
+      "lang": "Python",
+      "question": "¿Qué imprime este código?",
+      "code": "def gen():\n    yield 1\n    yield 2\n    yield 3\n\ng = gen()\nprint(next(g), next(g))",
+      "options": ["1 2", "1 1", "3 2", "Error"],
+      "correct": 0,
+      "hint": "next() avanza el generador un paso cada vez que se llama.",
+      "explanation": "Cada llamada a next(g) reanuda la función generadora desde el último yield; la primera devuelve 1 y la segunda 2, por lo que se imprime '1 2'."
+    },
+    {
+      "type": "complete",
+      "lang": "JavaScript",
+      "question": "¿Qué método falta para obtener el valor resuelto de la promesa?",
+      "code": "const promesa = new Promise((resolve) => resolve(42));\npromesa.____(valor => console.log(valor));",
+      "options": ["then", "catch", "finally", "resolve"],
+      "correct": 0,
+      "hint": "Es el método que se ejecuta cuando la promesa se resuelve con éxito.",
+      "explanation": "then() registra una función que se ejecuta con el valor resuelto de la promesa cuando esta se cumple con éxito."
+    },
+    {
+      "type": "identify",
+      "lang": "SQL",
+      "question": "¿Qué devuelve esta consulta?",
+      "code": "SELECT name FROM products\nWHERE price > (SELECT AVG(price) FROM products);",
+      "options": ["Los productos con un precio por encima de la media de todos los productos", "Los productos con el precio más alto de la tabla", "El precio medio de todos los productos", "Los productos ordenados por precio"],
+      "correct": 0,
+      "hint": "La subconsulta calcula un único valor: el precio medio.",
+      "explanation": "La subconsulta SELECT AVG(price) calcula el precio medio de todos los productos, y la consulta externa selecciona solo los que superan ese valor."
+    },
+    {
+      "type": "complete",
+      "lang": "Java",
+      "question": "¿Qué método falta para convertir el array en un stream?",
+      "code": "int[] nums = {3, 7, 2, 9};\nint max = Arrays.____(nums).max().getAsInt();",
+      "options": ["stream", "sort", "asList", "copyOf"],
+      "correct": 0,
+      "hint": "Es el método estático de Arrays que convierte un array primitivo en un IntStream.",
+      "explanation": "Arrays.stream(nums) convierte el array en un IntStream, sobre el que se puede llamar max() para obtener el valor máximo envuelto en un OptionalInt."
+    },
+    {
+      "type": "identify",
+      "lang": "HTML/CSS",
+      "question": "¿Qué elemento queda en negrita?",
+      "code": "<ul>\n  <li>Uno</li>\n  <li>Dos</li>\n  <li>Tres</li>\n</ul>\n\n<style>\nli:first-of-type {\n  font-weight: bold;\n}\n</style>",
+      "options": ["Solo 'Uno'", "Solo 'Dos'", "Todos los elementos de la lista", "Solo 'Tres'"],
+      "correct": 0,
+      "hint": "first-of-type selecciona el primer elemento de ese tipo entre sus hermanos.",
+      "explanation": "li:first-of-type selecciona el primer elemento <li> dentro de su contenedor, que en este caso es 'Uno', dejando el resto sin ese estilo."
+    }
+  ],
+  "tips": [
+    {
+      "text": "Antes de instalar una librería externa para algo sencillo, comprueba si ya existe en la biblioteca estándar del lenguaje.",
+      "explanation": "Añadir una dependencia externa aumenta el riesgo de seguridad, el tamaño del proyecto y el mantenimiento a largo plazo. Muchas tareas comunes, como manejar fechas o leer JSON, ya están resueltas en la biblioteca estándar sin necesidad de instalar nada.",
+      "link": "https://docs.python.org/3/library/index.html",
+      "linkLabel": "Documentación oficial de Python: biblioteca estándar"
+    },
+    {
+      "text": "Usa breakpoints condicionales en el depurador en lugar de pausar la ejecución en cada vuelta de un bucle.",
+      "explanation": "Un breakpoint condicional solo detiene el programa cuando se cumple una expresión concreta, por ejemplo cuando una variable supera cierto valor, lo que ahorra pulsar 'continuar' decenas de veces para llegar al caso que realmente te interesa revisar.",
+      "link": "https://code.visualstudio.com/docs/debugtest/debugging",
+      "linkLabel": "VS Code: guía de depuración"
+    },
+    {
+      "text": "Marca el trabajo pendiente en tu código con comentarios TODO, no confíes solo en tu memoria.",
+      "explanation": "Un comentario TODO deja constancia explícita de que algo quedó sin terminar, de forma que se pueda buscar fácilmente en todo el proyecto; Google recomienda incluir siempre una referencia (como un enlace a un ticket) junto al TODO para que cualquiera entienda el contexto sin tener que preguntar.",
+      "link": "https://google.github.io/styleguide/pyguide.html",
+      "linkLabel": "Google Python Style Guide: comentarios TODO"
+    },
+    {
+      "text": "Antes de añadir una librería externa a tu proyecto, revisa cuándo se actualizó por última vez y si sigue mantenida.",
+      "explanation": "Una librería sin actualizaciones recientes ni mantenedores activos puede acumular vulnerabilidades de seguridad sin que nadie las corrija, y quedarte atado a ella más adelante puede obligarte a reescribir código si deja de funcionar con versiones nuevas del lenguaje.",
+      "link": "https://best.openssf.org/Concise-Guide-for-Evaluating-Open-Source-Software.html",
+      "linkLabel": "OpenSSF: guía para evaluar software de código abierto"
+    },
+    {
+      "text": "Usa un gestor de paquetes (como npm, pip o cargo) en lugar de descargar e instalar librerías a mano.",
+      "explanation": "Un gestor de paquetes instala automáticamente las dependencias que esa librería necesita a su vez, resuelve conflictos de versión y deja registrado todo en un archivo que cualquiera puede usar para instalar exactamente lo mismo. Hacerlo a mano es lento y fácil de hacer mal, sobre todo cuando el proyecto crece.",
+      "link": "https://docs.npmjs.com/about-npm",
+      "linkLabel": "npm Docs: qué es npm"
+    }
+  ]
+}
