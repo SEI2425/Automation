@@ -109,6 +109,12 @@
       ],
       "correct": 0,
       "explanation": "El operador * en el desempaquetado recoge en una lista todos los elementos que sobran entre el primero (a) y el último (c), es decir [2, 3, 4]."
+    },
+    {
+      "q": "¿Qué devuelve `list(range(10, 0, -2))`?",
+      "opts": ["[10, 8, 6, 4, 2]", "[10, 8, 6, 4, 2, 0]", "[0, 2, 4, 6, 8, 10]", "Error"],
+      "correct": 0,
+      "explanation": "range(10, 0, -2) genera valores desde 10 hasta (sin incluir) 0, bajando de 2 en 2: 10, 8, 6, 4 y 2."
     }
   ],
   "javascript": [
@@ -221,6 +227,12 @@
       ],
       "correct": 0,
       "explanation": "Object.freeze() impide modificar las propiedades del objeto; en modo no estricto la asignación se ignora silenciosamente, por lo que obj.x sigue valiendo 1."
+    },
+    {
+      "q": "¿Qué imprime `console.log([1, 2, 3].join('-'))`?",
+      "opts": ["'1-2-3'", "[1,2,3]", "'1,2,3'", "Error"],
+      "correct": 0,
+      "explanation": "join('-') convierte el array en una cadena de texto, uniendo sus elementos con el separador indicado entre cada uno."
     }
   ],
   "typescript": [
@@ -333,6 +345,12 @@
       ],
       "correct": 0,
       "explanation": "El tipo 'never' se usa para funciones que nunca terminan de forma normal, ya sea porque siempre lanzan una excepción o entran en un bucle infinito; es distinto de 'void', que sí retorna pero sin un valor útil."
+    },
+    {
+      "q": "¿Qué hace el tipo utilitario Required<T>?",
+      "opts": ["Convierte todas las propiedades opcionales de T en obligatorias", "Hace que T sea de solo lectura", "Elimina las propiedades opcionales de T", "Convierte T en un array"],
+      "correct": 0,
+      "explanation": "Required<T> genera un nuevo tipo a partir de T donde todas las propiedades, incluidas las marcadas como opcionales (?), pasan a ser obligatorias."
     }
   ],
   "java": [
@@ -445,6 +463,12 @@
       ],
       "correct": 0,
       "explanation": "Un 'record' en Java genera automáticamente el constructor, los métodos de acceso, equals(), hashCode() y toString() a partir de sus componentes, de forma similar a las data class de Kotlin, pensado para clases que solo transportan datos inmutables."
+    },
+    {
+      "q": "¿Qué hace la palabra clave 'static' aplicada a un método en Java?",
+      "opts": ["El método pertenece a la clase en sí, y se puede llamar sin crear una instancia", "El método se vuelve privado automáticamente", "El método no puede recibir parámetros", "El método se ejecuta solo una vez en todo el programa"],
+      "correct": 0,
+      "explanation": "Un método static pertenece a la clase y no a una instancia concreta, por lo que se puede invocar directamente con NombreClase.metodo() sin necesidad de crear un objeto."
     }
   ],
   "kotlin": [
@@ -557,6 +581,12 @@
       ],
       "correct": 0,
       "explanation": "Un companion object permite declarar propiedades y funciones ligadas a la clase misma en lugar de a una instancia concreta, cubriendo un caso de uso similar al de los miembros static en Java, pero siendo en realidad un objeto singleton asociado a la clase."
+    },
+    {
+      "q": "¿Qué hace la función 'also' aplicada a un objeto, como en 'lista.also { println(it.size) }'?",
+      "opts": ["Ejecuta el bloque con el objeto como argumento 'it' y después devuelve el propio objeto sin modificarlo", "Modifica el objeto y devuelve un nuevo tipo", "Convierte el objeto en una cadena de texto", "Elimina el objeto de la memoria"],
+      "correct": 0,
+      "explanation": "'also' ejecuta el bloque lambda recibiendo el objeto como 'it', típicamente para efectos secundarios como logging, y después devuelve el mismo objeto original sin alterarlo, permitiendo encadenar más operaciones."
     }
   ],
   "sql": [
@@ -669,6 +699,12 @@
       ],
       "correct": 0,
       "explanation": "Un self join relaciona una tabla con una copia de sí misma usando alias distintos (e1 y e2); aquí sirve para obtener, junto al nombre de cada empleado, el nombre de la persona que aparece como su jefe en la misma tabla."
+    },
+    {
+      "q": "¿Qué hace la cláusula GROUP BY cuando se usa junto con varias columnas, como en 'GROUP BY department, year'?",
+      "opts": ["Agrupa las filas por cada combinación única de department y year", "Ordena los resultados primero por department y luego por year", "Filtra las filas donde department o year sean nulos", "Elimina las columnas department y year del resultado"],
+      "correct": 0,
+      "explanation": "GROUP BY con varias columnas crea un grupo distinto para cada combinación única de los valores de esas columnas, por ejemplo un grupo para cada departamento en cada año."
     }
   ],
   "git": [
@@ -781,6 +817,12 @@
       ],
       "correct": 0,
       "explanation": "En estado de HEAD separada, HEAD apunta directamente a un commit en lugar de al puntero de una rama; si se hacen nuevos commits ahí y luego se cambia de rama sin crear una rama que los contenga, esos commits pueden quedar inaccesibles y acabar eliminados por el recolector de basura de Git."
+    },
+    {
+      "q": "¿Qué hace el comando 'git blame archivo.txt'?",
+      "opts": ["Muestra, línea por línea, qué commit y qué autor modificaron por última vez cada línea del archivo", "Elimina el archivo del historial completo", "Combina el archivo con la versión de otra rama", "Bloquea el archivo para que nadie más pueda editarlo"],
+      "correct": 0,
+      "explanation": "git blame recorre el archivo línea por línea y muestra el commit, el autor y la fecha en que se modificó por última vez cada una, útil para entender el origen de un cambio concreto."
     }
   ],
   "htmlcss": [
@@ -893,6 +935,12 @@
       ],
       "correct": 0,
       "explanation": "1vh equivale al 1% de la altura de la ventana visible (viewport) y 1vw al 1% de su ancho, lo que permite crear tamaños que se adaptan directamente al tamaño de la pantalla sin depender del elemento padre."
+    },
+    {
+      "q": "¿Qué hace la pseudo-clase CSS ':not(.activo)' aplicada a un selector, como en 'li:not(.activo) { opacity: 0.5; }'?",
+      "opts": ["Selecciona todos los elementos li que NO tengan la clase 'activo'", "Selecciona únicamente los elementos con la clase 'activo'", "Elimina la clase 'activo' de todos los elementos li", "Solo funciona dentro de un formulario"],
+      "correct": 0,
+      "explanation": "La pseudo-clase :not() selecciona los elementos que no cumplen el selector indicado entre paréntesis; aquí aplica el estilo a todos los li que no tengan la clase 'activo'."
     }
   ],
   "bash": [
@@ -1005,6 +1053,12 @@
       ],
       "correct": 0,
       "explanation": "La sintaxis <<EOF ... EOF crea un 'here-document': todo el texto entre las dos marcas EOF se trata como entrada estándar del comando (aquí cat), lo que permite escribir bloques de texto multilínea directamente en el script sin usar comillas."
+    },
+    {
+      "q": "¿Qué hace el operador de tubería (pipe) en 'command1 | command2'?",
+      "opts": ["Envía la salida estándar de command1 como entrada estándar de command2", "Ejecuta ambos comandos en paralelo sin relación entre ellos", "Ejecuta command2 solo si command1 falla", "Guarda la salida de command1 en un archivo llamado command2"],
+      "correct": 0,
+      "explanation": "El operador | conecta la salida estándar (stdout) del primer comando con la entrada estándar (stdin) del segundo, permitiendo encadenar comandos para procesar datos por pasos."
     }
   ],
   "ia": [
@@ -1117,6 +1171,12 @@
       ],
       "correct": 0,
       "explanation": "La arquitectura Transformer sustituyó el procesamiento secuencial de las redes recurrentes (RNN) por un mecanismo de atención que relaciona todas las palabras de una secuencia entre sí en paralelo, lo que permitió entrenar modelos de lenguaje mucho más grandes y rápido; es la base de casi todos los modelos de lenguaje actuales."
+    },
+    {
+      "q": "¿Qué es el 'aprendizaje por transferencia' (transfer learning) en inteligencia artificial?",
+      "opts": ["Reutilizar el conocimiento aprendido por un modelo en una tarea para aplicarlo o adaptarlo a una tarea distinta pero relacionada", "Transferir un modelo de un servidor a otro sin perder precisión", "Entrenar dos modelos a la vez para que compitan entre sí", "Un método para traducir modelos entre distintos lenguajes de programación"],
+      "correct": 0,
+      "explanation": "El aprendizaje por transferencia consiste en partir de un modelo ya entrenado en una tarea (o con datos generales) y reutilizar ese conocimiento como punto de partida para una tarea distinta, en lugar de entrenar un modelo nuevo desde cero."
     }
   ]
 }

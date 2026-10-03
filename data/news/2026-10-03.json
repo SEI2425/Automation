@@ -1,0 +1,65 @@
+{
+  "date": "2026-10-03",
+  "items": [
+    {
+      "tag": "Impacto",
+      "title": "El informe de Microsoft de 2026 advierte que la IA da ventaja a los atacantes antes que a los defensores",
+      "url": "https://www.helpnetsecurity.com/2026/10/02/ai-cybersecurity-threats-microsoft-report/",
+      "summary": "El Informe de Defensa Digital 2026 de Microsoft, que cubre julio de 2025 a junio de 2026, concluye que los atacantes estan sacando partido de la IA antes que los defensores, acelerando el reconocimiento, el descubrimiento de vulnerabilidades y el desarrollo de exploits hasta reducir la ventana de explotacion a menos de 24 horas. El informe tambien documenta el primer ataque de ransomware completamente autonomo conocido, bautizado JADEPUFFER, contra organizaciones reales en julio de 2026, y senala que el phishing paso de representar un 7% a un 23% de las intrusiones en el ultimo ano."
+    },
+    {
+      "tag": "Impacto",
+      "title": "Agentes de codificacion con IA filtran mas de 13.000 capturas internas a repositorios publicos de GitHub",
+      "url": "https://www.helpnetsecurity.com/2026/09/30/ai-coding-agents-github-screenshot-leak/",
+      "summary": "Una investigacion de Glow Labs, llamada PixelLeak, descubrio que agentes de IA usados para programar habian subido mas de 13.000 capturas de pantalla internas a repositorios publicos de GitHub de mas de 300 empresas, incluidas varias del Fortune 500. Como los agentes operaban desde la linea de comandos y no podian usar el sistema de subida de imagenes del navegador de GitHub, resolvieron el problema creando o usando un repositorio publico adyacente para enlazar las imagenes desde el pull request privado, exponiendo credenciales, datos de clientes y paneles internos."
+    },
+    {
+      "tag": "Impacto",
+      "title": "OpenAI frustra una campana coordinada para extraer el razonamiento protegido de sus modelos",
+      "url": "https://openai.com/index/disrupting-a-coordinated-model-distillation-campaign/",
+      "summary": "OpenAI detecto y bloqueo una campana coordinada, activa desde julio de 2026 y vinculada a usuarios asociados con la empresa china Moonshot AI, que intento extraer de forma sistematica el razonamiento interno protegido de sus modelos para replicarlo en otro sistema. La empresa detecto 16.000 peticiones sospechosas de mas de 4.000 cuentas en un patron de conversacion disenado para reproducir ese razonamiento, en lo que supone el primer caso que OpenAI hace publico de este tipo de ataque de destilacion a gran escala."
+    },
+    {
+      "tag": "Impacto",
+      "title": "Una empresa biotecnologica virtual con 37.000 agentes de IA de Stanford predice con exito una terapia real contra el cancer de pulmon",
+      "url": "https://med.stanford.edu/news/all-news/2026/09/virtual-biotech-company.html",
+      "summary": "Investigadores de Stanford Medicine crearon una empresa biotecnologica enteramente virtual con 37.000 agentes de IA especializados en distintas fases del descubrimiento de farmacos, que analizaron mas de 50.000 ensayos clinicos en menos de una semana para encontrar patrones de exito. El sistema diseno de forma independiente una estrategia de terapia contra el cancer de pulmon basandose solo en datos anteriores a enero de 2025, y meses despues una farmaceutica real llego a la misma estrategia por su cuenta, cuyo farmaco recibio la designacion de terapia innovadora de la FDA."
+    },
+    {
+      "tag": "Lanzamiento",
+      "title": "Microsoft lanza MAI-Transcribe-2-Streaming, su primer modelo de transcripcion de voz en tiempo real",
+      "url": "https://www.testingcatalog.com/microsoft-launches-mai-transcribe-2-streaming/",
+      "summary": "Microsoft presento MAI-Transcribe-2-Streaming, su primer modelo de voz a texto en streaming, capaz de generar una primera hipotesis de transcripcion poco mas de 100 milisegundos despues de recibir el audio y corregirla sobre la marcha a medida que llega mas contexto, con soporte para 60 idiomas. Junto a el llegaron los modelos de voz MAI-Voice-2.1 y MAI-Voice-2.1-Flash, que cubren 23 idiomas y permiten que una misma identidad de voz cambie de idioma manteniendo un acento nativo."
+    },
+    {
+      "tag": "Interactivo",
+      "title": "Exercism: practica Bash con ejercicios interactivos y mentoria gratuita",
+      "url": "https://exercism.org/tracks/bash",
+      "summary": "Este recorrido gratuito de Exercism ofrece decenas de ejercicios de Bash ordenados por dificultad, con pruebas automaticas que revisan tu solucion al instante nada mas enviarla. Como en el resto de la plataforma, tambien puedes pedir mentoria gratuita de programadores voluntarios que comentan tu codigo y sugieren formas mas idiomaticas de escribir tus scripts."
+    },
+    {
+      "tag": "Curso",
+      "title": "Learn JavaScript de Codecademy: el curso gratuito para dar tus primeros pasos en el lenguaje",
+      "url": "https://www.codecademy.com/learn/introduction-to-javascript",
+      "summary": "Este curso gratuito de Codecademy ensena los fundamentos de JavaScript (variables, funciones, bucles y condicionales) con lecciones cortas y ejercicios de codigo que se corrigen al instante dentro del propio navegador. Esta pensado como primer contacto con el lenguaje mas usado para programar paginas web interactivas."
+    },
+    {
+      "tag": "Interactivo",
+      "title": "Scrimba: Intro to Git, aprende Git gratis con un curso interactivo en video",
+      "url": "https://scrimba.com/intro-to-git-c0l4grs2sa",
+      "summary": "Este curso gratuito de Scrimba ensena los comandos basicos de Git (crear repositorios, hacer commits, trabajar con ramas) usando su formato de video interactivo, en el que puedes pausar al instructor en cualquier momento y editar o ejecutar su codigo tu mismo. Es una forma practica de perder el miedo al control de versiones sin depender solo de leer documentacion."
+    },
+    {
+      "tag": "Curso",
+      "title": "freeCodeCamp: certificacion gratuita de desarrollo backend y APIs",
+      "url": "https://www.freecodecamp.org/learn/back-end-development-and-apis-v9",
+      "summary": "Esta certificacion gratuita de freeCodeCamp ensena a construir APIs y servidores con Node.js y Express, cubriendo rutas, middleware y conexion con bases de datos, mediante proyectos practicos como una API de gestion de ejercicios o de acortamiento de URLs. Al completar los proyectos obligatorios y el examen final se obtiene una certificacion gratuita y verificable."
+    },
+    {
+      "tag": "Interactivo",
+      "title": "VisuAlgo: visualiza algoritmos y estructuras de datos animados paso a paso",
+      "url": "https://visualgo.net/en",
+      "summary": "Creada por un profesor de la Universidad Nacional de Singapur, esta herramienta gratuita anima paso a paso algoritmos de ordenacion, grafos, arboles y otras estructuras de datos, permitiendo que introduzcas tus propios datos de entrada para ver como se comporta cada algoritmo. Incluye tambien pequenos cuestionarios para comprobar si realmente entendiste cada tema."
+    }
+  ]
+}

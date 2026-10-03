@@ -1,0 +1,87 @@
+{
+  "date": "2026-10-03",
+  "questions": [
+    {
+      "type": "identify",
+      "lang": "Python",
+      "question": "¿Que contiene result despues de ejecutar este codigo?",
+      "code": "data = [(\"a\", 3), (\"b\", 1), (\"c\", 2)]\nresult = sorted(data, key=lambda x: x[1])\nprint(result)",
+      "options": ["[('b', 1), ('c', 2), ('a', 3)]", "[('a', 3), ('b', 1), ('c', 2)]", "[('c', 2), ('b', 1), ('a', 3)]", "Error de sintaxis"],
+      "correct": 0,
+      "hint": "key=lambda x: x[1] ordena por el segundo elemento de cada tupla.",
+      "explanation": "sorted() con key=lambda x: x[1] ordena las tuplas segun su segundo valor de menor a mayor: 1, 2 y 3, dando ese orden."
+    },
+    {
+      "type": "complete",
+      "lang": "TypeScript",
+      "question": "¿Que falta para que colores sea una tupla de solo lectura con esos valores literales exactos?",
+      "code": "const colores = [\"rojo\", \"verde\", \"azul\"] ____;\n// colores pasa a ser de tipo readonly [\"rojo\", \"verde\", \"azul\"]",
+      "options": ["as const", "as readonly", ": const", "as Array"],
+      "correct": 0,
+      "hint": "Es una aserción que convierte el array en un tipo de solo lectura con valores literales exactos.",
+      "explanation": "'as const' le indica a TypeScript que trate el array como una tupla de solo lectura con los valores literales exactos, en lugar de inferirlo como string[]."
+    },
+    {
+      "type": "identify",
+      "lang": "Git",
+      "question": "¿Que muestra este comando?",
+      "code": "git log --author=\"Ana\" --oneline",
+      "options": ["El historial de commits hechos por Ana, resumido en una linea cada uno", "Todos los commits ordenados por fecha de Ana a la actualidad", "Elimina los commits que no sean de Ana", "Crea una nueva rama con el nombre de Ana"],
+      "correct": 0,
+      "hint": "--author filtra los commits por quien los hizo.",
+      "explanation": "--author=\"Ana\" filtra el historial mostrando solo los commits cuyo autor coincide con ese nombre, y --oneline los resume en una linea cada uno."
+    },
+    {
+      "type": "identify",
+      "lang": "Kotlin",
+      "question": "¿Que imprime este codigo?",
+      "code": "val lista = mutableListOf(1, 2, 3)\nlista += 4\nprintln(lista)",
+      "options": ["[1, 2, 3, 4]", "[4, 1, 2, 3]", "[1, 2, 3]", "Error de compilación"],
+      "correct": 0,
+      "hint": "El operador += sobre una lista mutable anade el elemento al final.",
+      "explanation": "Al usar += sobre una MutableList, Kotlin traduce esa operacion en una llamada a add(), anadiendo 4 al final de la lista."
+    },
+    {
+      "type": "identify",
+      "lang": "Bash",
+      "question": "¿Que imprime este comando?",
+      "code": "nombre=\"\"\necho \"Hola, ${nombre:-Invitado}\"",
+      "options": ["Hola, Invitado", "Hola, ", "Error", "Hola, nombre"],
+      "correct": 0,
+      "hint": "El modificador ':-' se activa tanto si la variable no existe como si esta vacia.",
+      "explanation": "La sintaxis ${variable:-valor} usa 'valor' por defecto no solo cuando la variable no esta definida, sino tambien cuando esta definida pero vacia, como ocurre aqui con nombre=\"\"."
+    }
+  ],
+  "tips": [
+    {
+      "text": "Nunca confies solo en la validacion del lado del cliente: valida y sanitiza siempre los datos tambien en el servidor.",
+      "explanation": "Cualquier validacion que hagas en JavaScript dentro del navegador puede saltarsela quien desactive JavaScript o use un proxy, asi que un atacante puede enviar datos directamente al servidor sin pasar por tus comprobaciones. La validacion en el cliente mejora la experiencia de uso, pero la seguridad real solo la garantiza la validacion hecha en el servidor.",
+      "link": "https://cheatsheetseries.owasp.org/cheatsheets/Input_Validation_Cheat_Sheet.html",
+      "linkLabel": "OWASP: guia de validacion de entradas"
+    },
+    {
+      "text": "Si subes por error una contrasena o una clave de API a un commit de Git, no basta con borrarla en el siguiente commit: rota esa credencial de inmediato.",
+      "explanation": "Aunque elimines el dato sensible en un commit posterior, sigue existiendo en el historial del repositorio y es recuperable por cualquiera que tenga acceso a el, incluso tras reescribir el historial, en clones o forks ya hechos. Revocar y generar una credencial nueva es la unica forma de dejarla inservible para quien ya la haya visto.",
+      "link": "https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/removing-sensitive-data-from-a-repository",
+      "linkLabel": "GitHub: como eliminar datos sensibles de un repositorio"
+    },
+    {
+      "text": "Cuando encuentres un bug, escribe primero un test que lo reproduzca y falle antes de arreglar el codigo.",
+      "explanation": "Un test que falla porque reproduce el error te confirma, cuando por fin pase, que realmente has arreglado el problema y no solo lo has escondido. Ademas, ese mismo test queda protegiendo el codigo para siempre, avisandote si alguien vuelve a introducir el mismo fallo en el futuro.",
+      "link": "https://martinfowler.com/articles/testing-culture.html",
+      "linkLabel": "Martin Fowler: cultura de pruebas unitarias"
+    },
+    {
+      "text": "Antes de optimizar tu codigo, usa un profiler para medir donde se pasa realmente el tiempo, en lugar de adivinarlo.",
+      "explanation": "La intuicion sobre que parte de un programa es lenta suele equivocarse: un profiler mide cuantas veces se llama a cada funcion y cuanto tiempo consume realmente cada una, senalando el cuello de botella real en lugar de aquel que parece sospechoso a simple vista. Optimizar sin medir antes suele ser esfuerzo perdido en la parte equivocada del codigo.",
+      "link": "https://realpython.com/ref/stdlib/cprofile/",
+      "linkLabel": "Real Python: el modulo cProfile"
+    },
+    {
+      "text": "Si una funcion tiene muchos 'if' anidados unos dentro de otros, usa clausulas de guarda (devuelve pronto en los casos especiales) para aplanar el flujo principal.",
+      "explanation": "Comprobar primero los casos especiales y salir de la funcion con un 'return' temprano deja el camino normal al mismo nivel de indentacion, sin enterrarlo dentro de varios bloques if anidados. Esto hace que cualquiera, incluido tu yo futuro, entienda de un vistazo que hace la funcion en el caso habitual.",
+      "link": "https://refactoring.guru/replace-nested-conditional-with-guard-clauses",
+      "linkLabel": "Refactoring Guru: sustituir condicionales anidados por clausulas de guarda"
+    }
+  ]
+}

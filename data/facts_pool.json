@@ -9,7 +9,8 @@
     "Python tiene una clausula 'else' en los bucles for y while que se ejecuta solo si el bucle termina sin encontrarse un 'break', una caracteristica poco conocida y ausente en la mayoria de otros lenguajes.",
     "Python permite intercambiar el valor de dos variables sin usar ninguna variable temporal, escribiendo simplemente 'a, b = b, a'.",
     "El Global Interpreter Lock (GIL) de CPython impide que varios hilos ejecuten bytecode de Python al mismo tiempo dentro de un mismo proceso, aunque desde Python 3.13 existe una compilación experimental sin GIL (free-threading) para aprovechar mejor varios núcleos.",
-    "Python se publicó por primera vez en febrero de 1991, creado por Guido van Rossum mientras trabajaba en el Centro Nacional de Matemática e Informática (CWI) de los Países Bajos."
+    "Python se publicó por primera vez en febrero de 1991, creado por Guido van Rossum mientras trabajaba en el Centro Nacional de Matemática e Informática (CWI) de los Países Bajos.",
+    "Python permite encadenar comparaciones como '1 < x < 10', que se evalúa de forma equivalente a '1 < x and x < 10', algo que la mayoría de lenguajes no permiten de forma nativa."
   ],
   "javascript": [
     "A pesar del nombre, JavaScript no tiene relación técnica con Java: el nombre fue una decisión de marketing de Netscape para aprovechar la popularidad de Java en 1995.",
@@ -21,7 +22,8 @@
     "TC39 es el comite tecnico responsable de estandarizar JavaScript (ECMAScript); cualquier persona puede proponer una nueva caracteristica del lenguaje a traves de su proceso publico de propuestas en GitHub.",
     "El motor V8 de Google, que impulsa tanto Chrome como Node.js, compila JavaScript directamente a codigo maquina en lugar de interpretarlo linea por linea, lo que en su dia supuso un salto enorme de rendimiento para el lenguaje.",
     "JavaScript no tuvo una forma nativa de declarar clases hasta ECMAScript 2015 (ES6): antes, la herencia se simulaba manualmente usando funciones constructoras y prototipos.",
-    "Desde la especificación ECMAScript 2019, el método sort() de los arrays está obligado a ser estable, es decir, a mantener el orden relativo de los elementos iguales; antes de esa fecha, el comportamiento podía variar entre motores de JavaScript."
+    "Desde la especificación ECMAScript 2019, el método sort() de los arrays está obligado a ser estable, es decir, a mantener el orden relativo de los elementos iguales; antes de esa fecha, el comportamiento podía variar entre motores de JavaScript.",
+    "El método Array.prototype.at(), que permite usar índices negativos para acceder a elementos desde el final de un array como arr.at(-1), se añadió a JavaScript recién en 2022 (ES2022)."
   ],
   "typescript": [
     "TypeScript no reemplaza a JavaScript en ningún momento: todo programa TypeScript se compila (transpila) a JavaScript plano antes de ejecutarse en el navegador o en Node.",
@@ -33,7 +35,8 @@
     "Anders Hejlsberg, el principal disenador de TypeScript en Microsoft, tambien creo antes Turbo Pascal y Delphi, dos de los entornos de desarrollo mas influyentes de los anos ochenta y noventa.",
     "TypeScript introdujo en su version 4.1 (2020) los tipos de plantilla literal, que permiten construir tipos de texto combinando cadenas literales, utiles para validar formatos concretos (como un identificador con un prefijo fijo) ya en tiempo de compilacion.",
     "TypeScript incorpora genéricos, que permiten escribir una función o clase que funciona con distintos tipos manteniendo la seguridad de tipos, como en 'function primero<T>(lista: T[]): T { return lista[0]; }'.",
-    "TypeScript tiene un modo 'strict' que activa a la vez varias comprobaciones de tipos exigentes (como noImplicitAny o strictNullChecks), y se puede habilitar por completo con una sola opción en el archivo tsconfig.json."
+    "TypeScript tiene un modo 'strict' que activa a la vez varias comprobaciones de tipos exigentes (como noImplicitAny o strictNullChecks), y se puede habilitar por completo con una sola opción en el archivo tsconfig.json.",
+    "TypeScript permite escribir archivos de declaración (.d.ts) que describen los tipos de una librería escrita en JavaScript puro sin reescribirla, lo que ha permitido que miles de paquetes de npm tengan soporte de tipos gracias al repositorio comunitario DefinitelyTyped."
   ],
   "java": [
     "La mascota de Java, Duke, fue diseñada en 1992 para un proyecto anterior llamado Oak, antes incluso de que existiera el lenguaje Java tal como lo conocemos.",
@@ -45,7 +48,8 @@
     "Java se presento publicamente en 1995 en la conferencia SunWorld, aunque su primera version estable (JDK 1.0) no se lanzo hasta enero de 1996, varios meses despues del anuncio inicial.",
     "Java lleva anos entre los lenguajes mas usados del mundo segun el indice TIOBE, y sigue siendo, junto a Kotlin, el lenguaje principal para desarrollar aplicaciones Android desde la creacion del sistema operativo en 2008.",
     "El Java Platform Module System (JPMS), introducido en Java 9 (2017) mediante el llamado Proyecto Jigsaw, permitió por primera vez dividir el propio JDK en módulos, reduciendo el tamaño mínimo de un entorno de ejecución de Java.",
-    "James Gosling empezó a desarrollar lo que acabaría siendo Java en 1991, dentro del proyecto Green de Sun Microsystems, pensado originalmente para electrodomésticos y dispositivos interactivos, no para internet."
+    "James Gosling empezó a desarrollar lo que acabaría siendo Java en 1991, dentro del proyecto Green de Sun Microsystems, pensado originalmente para electrodomésticos y dispositivos interactivos, no para internet.",
+    "Java fue uno de los primeros lenguajes mainstream en incluir un recolector de basura (garbage collector) automático de serie desde su primera versión en 1995, liberando a los programadores de gestionar manualmente la memoria como en C o C++."
   ],
   "kotlin": [
     "Kotlin es interoperable al 100% con Java: se puede llamar código Java desde Kotlin y código Kotlin desde Java dentro del mismo proyecto sin conversión manual.",
@@ -57,7 +61,8 @@
     "Kotlin Multiplatform permite compartir la misma logica de negocio entre Android, iOS, web y backend usando un unico codigo fuente, aunque cada plataforma sigue necesitando su propia interfaz de usuario nativa.",
     "Kotlin fue creado por JetBrains, la misma empresa que desarrolla el entorno IntelliJ IDEA, y su primera version estable (1.0) no se publico hasta febrero de 2016, seis anos despues de que el proyecto empezara internamente en 2010.",
     "Kotlin introdujo las coroutines como característica estable en la versión 1.3 (2018), una forma de escribir código asíncrono que se lee como código secuencial normal, sin anidar callbacks.",
-    "Kotlin permite declarar funciones directamente en un archivo, fuera de cualquier clase, a diferencia de Java, que obliga a que todo método viva dentro de una clase."
+    "Kotlin permite declarar funciones directamente en un archivo, fuera de cualquier clase, a diferencia de Java, que obliga a que todo método viva dentro de una clase.",
+    "Kotlin permite declarar funciones de infijo (infix functions) que se pueden llamar sin punto ni paréntesis, como en '1 to \"uno\"', algo que se usa internamente para construir pares (Pair) de forma más legible."
   ],
   "sql": [
     "El estándar SQL lo mantiene ISO, pero en la práctica cada motor (PostgreSQL, MySQL, SQL Server...) añade extensiones propias, por lo que el SQL 100% portable entre motores es más raro de lo que parece.",
@@ -69,7 +74,8 @@
     "El estandar SQL:1999 fue el primero en incorporar consultas recursivas y soporte para tipos definidos por el usuario, ampliando mucho las capacidades del lenguaje original de los anos setenta.",
     "PostgreSQL, uno de los motores de bases de datos relacionales mas usados, nacio en la Universidad de California en Berkeley en 1986 como sucesor de un proyecto anterior llamado Ingres, lo que lo convierte en uno de los sistemas de bases de datos de codigo abierto mas antiguos que siguen en desarrollo activo.",
     "El motor SQLite, uno de los más usados del mundo, no funciona como un servidor independiente: toda la base de datos vive en un único archivo binario portátil, y está integrado por defecto en sistemas como Android, iOS y la mayoría de navegadores web.",
-    "Oracle Database, uno de los motores SQL más usados en empresas, se lanzó en 1979 como el primer producto comercial del mercado en implementar el lenguaje SQL."
+    "Oracle Database, uno de los motores SQL más usados en empresas, se lanzó en 1979 como el primer producto comercial del mercado en implementar el lenguaje SQL.",
+    "El estándar SQL:2016 fue el primero en incorporar soporte oficial para JSON dentro de las consultas, permitiendo a motores como PostgreSQL o MySQL almacenar y consultar datos semiestructurados sin abandonar el modelo relacional."
   ],
   "git": [
     "Git guarda cada versión de un archivo completo (no solo las diferencias) internamente, pero los comprime y deduplica para que el repositorio no crezca tanto como parecería.",
@@ -81,7 +87,8 @@
     "Git usa desde su creacion en 2005 el algoritmo SHA-1 para identificar el contenido de cada commit, pero desde 2017 esta en marcha una transicion gradual hacia SHA-256 para mejorar su seguridad criptografica.",
     "Segun el propio Linus Torvalds, 'git' es un termino britanico informal para referirse a una persona desagradable, y el mismo bromeo diciendo que tiene la costumbre de nombrar sus proyectos en su propio honor.",
     "El archivo .gitattributes permite indicarle a Git cómo tratar ciertos archivos, por ejemplo forzando el fin de línea LF en vez de CRLF o marcando un archivo como binario para que Git no intente mostrar sus diferencias como texto.",
-    "Git organiza los archivos del proyecto en tres áreas distintas: el directorio de trabajo, el área de preparación (staging o index) y el repositorio, lo que permite elegir con precisión qué cambios entran en cada commit."
+    "Git organiza los archivos del proyecto en tres áreas distintas: el directorio de trabajo, el área de preparación (staging o index) y el repositorio, lo que permite elegir con precisión qué cambios entran en cada commit.",
+    "Git permite firmar commits y etiquetas criptográficamente con GPG o SSH, lo que permite verificar que un commit realmente proviene de quien dice haberlo creado y no ha sido modificado después de firmarse."
   ],
   "htmlcss": [
     "El primer sitio web de la historia, publicado por Tim Berners-Lee en 1991, seguía online y accesible en su URL original décadas después, solo con HTML básico y sin una sola línea de CSS.",
@@ -93,7 +100,8 @@
     "El atributo 'loading=\"lazy\"' en las etiquetas <img>, soportado de forma nativa por los navegadores desde 2019, retrasa la carga de imagenes fuera de pantalla sin necesidad de JavaScript.",
     "Durante los anos noventa y principios de los 2000, la etiqueta <table> se uso habitualmente no solo para tablas de datos sino tambien para maquetar paginas web enteras, una practica abandonada tras la llegada de CSS y de layouts como Flexbox y Grid.",
     "El atributo HTML 'contenteditable=\"true\"' convierte cualquier elemento, no solo los campos de formulario, en un área de texto editable directamente por el usuario, sin necesidad de JavaScript adicional para activarlo.",
-    "El DOCTYPE de HTML5, simplemente '<!DOCTYPE html>', es mucho más corto que los doctypes de XHTML o HTML 4.01, que exigían escribir una URL completa a una definición de tipo de documento."
+    "El DOCTYPE de HTML5, simplemente '<!DOCTYPE html>', es mucho más corto que los doctypes de XHTML o HTML 4.01, que exigían escribir una URL completa a una definición de tipo de documento.",
+    "La propiedad CSS 'backdrop-filter', que permite aplicar efectos como desenfoque al fondo detrás de un elemento (el típico 'vidrio esmerilado'), llegó primero a Safari y Chrome, y no se activó por defecto en Firefox hasta 2022."
   ],
   "bash": [
     "Bash significa 'Bourne Again SHell', un juego de palabras porque es una reimplementación mejorada de la shell 'sh' original de Stephen Bourne de 1977.",
@@ -105,7 +113,8 @@
     "El comando 'history' de Bash permite reejecutar cualquier comando anterior escribiendo '!' seguido de su numero en la lista, como '!42', sin necesidad de volver a escribirlo completo.",
     "El comando 'yes' de Unix, que por defecto imprime la letra 'y' de forma infinita hasta que se interrumpe, nacio como una utilidad para responder automaticamente a comandos que piden confirmacion repetida, como borrar muchos archivos con la opcion -i.",
     "El comando 'tee', llamado así por la pieza de fontanería en forma de T, permite mostrar la salida de un comando en pantalla y guardarla al mismo tiempo en un archivo, en lugar de tener que elegir entre una cosa u otra.",
-    "Bash fue escrito por Brian Fox en 1989 para el proyecto GNU, como una reimplementación libre de la shell 'sh' original pensada para sustituir herramientas Unix propietarias."
+    "Bash fue escrito por Brian Fox en 1989 para el proyecto GNU, como una reimplementación libre de la shell 'sh' original pensada para sustituir herramientas Unix propietarias.",
+    "El comando 'read' en Bash permite leer una línea de entrada del usuario y guardarla en una o varias variables, como en 'read nombre edad', lo que facilita crear pequeños scripts interactivos sin herramientas externas."
   ],
   "ia": [
     "El término 'inteligencia artificial' se acuñó en 1956 en la conferencia de Dartmouth, más de medio siglo antes de que la mayoría de las técnicas actuales de deep learning fueran siquiera viables computacionalmente.",
@@ -117,6 +126,7 @@
     "Los 'embeddings' representan palabras o frases como vectores numericos en un espacio donde los terminos con significados similares quedan geometricamente cerca, una tecnica clave detras de la busqueda semantica moderna.",
     "El termino 'red neuronal convolucional' (CNN), clave en el reconocimiento de imagenes, se popularizo con el modelo LeNet-5 de Yann LeCun en 1998, disenado originalmente para reconocer digitos escritos a mano en cheques bancarios.",
     "El término 'red neuronal' se inspira vagamente en el funcionamiento de las neuronas biológicas, pero las redes neuronales artificiales son modelos matemáticos muy simplificados que no intentan replicar cómo funciona realmente un cerebro.",
-    "Las siglas GPT, como en ChatGPT, significan 'Generative Pre-trained Transformer' (transformador generativo preentrenado), un nombre que describe directamente la arquitectura y el método de entrenamiento del modelo."
+    "Las siglas GPT, como en ChatGPT, significan 'Generative Pre-trained Transformer' (transformador generativo preentrenado), un nombre que describe directamente la arquitectura y el método de entrenamiento del modelo.",
+    "El término 'red neuronal recurrente' (RNN), diseñada para procesar secuencias como texto o audio manteniendo una memoria interna entre pasos, fue la arquitectura dominante en el procesamiento de lenguaje natural durante años, hasta que los Transformers la desplazaron casi por completo a partir de 2017."
   ]
 }
