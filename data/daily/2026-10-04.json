@@ -1,0 +1,92 @@
+{
+  "date": "2026-10-04",
+  "questions": [
+    {
+      "type": "identify",
+      "lang": "Python",
+      "question": "¿Que imprime este codigo?",
+      "code": "nums = [1, 2, 3, 4, 5]\nprint(nums[1:4])",
+      "options": ["[2, 3, 4]", "[1, 2, 3, 4]", "[2, 3, 4, 5]", "[1, 2, 3]"],
+      "correct": 0,
+      "hint": "El slicing excluye el indice final.",
+      "explanation": "nums[1:4] toma los elementos desde el indice 1 hasta el indice 3 (el indice 4 no se incluye), es decir [2, 3, 4]."
+    },
+    {
+      "type": "complete",
+      "lang": "TypeScript",
+      "question": "Completa el hueco con el tipo de retorno correcto de la funcion.",
+      "code": "function sumar(a: number, b: number): ____ {\n  return a + b;\n}",
+      "options": ["number", "string", "void", "any[]"],
+      "correct": 0,
+      "hint": "La funcion devuelve el resultado de sumar dos numeros.",
+      "explanation": "Como a + b es una operacion entre dos valores number, el tipo de retorno correcto es number."
+    },
+    {
+      "type": "identify",
+      "lang": "Java",
+      "question": "¿Que imprime este codigo?",
+      "code": "int x = 7;\nint y = 2;\nSystem.out.println(x / y);\nSystem.out.println(x % y);",
+      "options": ["3\n1", "3.5\n1", "3\n0", "4\n1"],
+      "correct": 0,
+      "hint": "La division entre dos int en Java descarta la parte decimal.",
+      "explanation": "7 / 2 con enteros en Java da 3 (division entera, se trunca), y 7 % 2 (el resto de esa division) da 1."
+    },
+    {
+      "type": "complete",
+      "lang": "Git",
+      "question": "¿Que opcion completa el comando para corregir el mensaje del ultimo commit sin crear uno nuevo?",
+      "code": "git add archivo.txt\ngit commit -m \"primer intento\"\n# te das cuenta de que el mensaje tiene un error y no lo has subido (push) todavia\ngit commit ____ -m \"mensaje corregido\"",
+      "options": ["--amend", "--fixup", "--squash", "--force"],
+      "correct": 0,
+      "hint": "Hay una opcion pensada justamente para modificar el commit mas reciente.",
+      "explanation": "git commit --amend reemplaza el ultimo commit (incluido su mensaje) por uno nuevo, siempre que todavia no lo hayas subido a un repositorio compartido."
+    },
+    {
+      "type": "identify",
+      "lang": "HTML/CSS",
+      "question": "¿Que hace este campo de un formulario HTML?",
+      "code": "<input type=\"email\" required placeholder=\"tu@correo.com\">",
+      "options": [
+        "Exige un valor con formato de correo electronico antes de poder enviar el formulario",
+        "Solo acepta numeros en el campo",
+        "Oculta el texto escrito como si fuera una contrasena",
+        "Rellena automaticamente el campo con el correo guardado del navegador sin pedir permiso"
+      ],
+      "correct": 0,
+      "hint": "Fijate en los atributos type y required juntos.",
+      "explanation": "type=\"email\" hace que el navegador valide que el texto tenga forma de correo electronico, y required impide enviar el formulario si el campo esta vacio."
+    }
+  ],
+  "tips": [
+    {
+      "text": "Usa nombres de variables y funciones descriptivos, evita abreviaturas crípticas como 'x', 'tmp2' o 'datos_final_v3'.",
+      "explanation": "Un nombre claro deja ver de inmediato para que sirve algo, mientras que una abreviatura obliga a releer el codigo entero para recordarlo. Esto importa mas de lo que parece: vas a leer tu propio codigo muchas mas veces de las que lo escribes, a veces meses despues de haberlo olvidado.",
+      "link": "https://github.com/kettanaito/naming-cheatsheet",
+      "linkLabel": "Naming Cheatsheet (GitHub)"
+    },
+    {
+      "text": "Si un test falla de forma intermitente (a veces pasa, a veces no), no lo ignores ni lo repitas hasta que pase: investiga la causa.",
+      "explanation": "Un test 'flaky' suele esconder una condicion de carrera, una dependencia del orden de ejecucion o un recurso compartido mal gestionado. Acostumbrarse a repetir el test hasta que pase destruye la confianza en toda la suite, porque dejas de saber si un fallo real es un bug o 'cosas que pasan'.",
+      "link": "https://martinfowler.com/articles/nonDeterminism.html",
+      "linkLabel": "Martin Fowler: Eradicating Non-Determinism in Tests"
+    },
+    {
+      "text": "Usa un gestor de contraseñas en lugar de memorizarlas o reutilizar la misma en varios sitios.",
+      "explanation": "Reutilizar contraseñas significa que, si una sola web sufre una filtracion, un atacante puede probar esa misma clave en tus demas cuentas, incluidas las de tus proyectos y repositorios. Un gestor de contraseñas genera y guarda una clave distinta y fuerte para cada sitio sin que tengas que recordarlas todas.",
+      "link": "https://www.ncsc.gov.uk/collection/top-tips-for-staying-secure-online/password-managers",
+      "linkLabel": "NCSC: Password managers"
+    },
+    {
+      "text": "Antes de anadir un indice a una tabla para que una consulta SQL vaya mas rapido, mira su plan de ejecucion con EXPLAIN.",
+      "explanation": "EXPLAIN te muestra como va a resolver realmente el motor de base de datos tu consulta: que tablas recorre entera, que indices usa y en que orden. Sin esa informacion es facil anadir un indice que no sirve para nada, o incluso que ralentiza las escrituras sin mejorar las lecturas.",
+      "link": "https://www.postgresql.org/docs/current/using-explain.html",
+      "linkLabel": "PostgreSQL: Using EXPLAIN"
+    },
+    {
+      "text": "Antes de usar una libreria externa en tu proyecto, revisa sus 'issues' abiertos en GitHub.",
+      "explanation": "Los issues abiertos te muestran de primera mano los problemas reales que otras personas ya encontraron, como bugs conocidos o funciones que no funcionan como esperas. Es una forma rapida de evitar sorpresas que la documentacion oficial, mas optimista, no siempre menciona.",
+      "link": "https://docs.github.com/en/issues/tracking-your-work-with-issues/about-issues",
+      "linkLabel": "GitHub Docs: About issues"
+    }
+  ]
+}

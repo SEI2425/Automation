@@ -112,9 +112,25 @@
     },
     {
       "q": "¿Qué devuelve `list(range(10, 0, -2))`?",
-      "opts": ["[10, 8, 6, 4, 2]", "[10, 8, 6, 4, 2, 0]", "[0, 2, 4, 6, 8, 10]", "Error"],
+      "opts": [
+        "[10, 8, 6, 4, 2]",
+        "[10, 8, 6, 4, 2, 0]",
+        "[0, 2, 4, 6, 8, 10]",
+        "Error"
+      ],
       "correct": 0,
       "explanation": "range(10, 0, -2) genera valores desde 10 hasta (sin incluir) 0, bajando de 2 en 2: 10, 8, 6, 4 y 2."
+    },
+    {
+      "q": "¿Que hace el decorador @staticmethod en un metodo dentro de una clase de Python?",
+      "opts": [
+        "Permite llamar al metodo sin crear una instancia de la clase y sin acceso automatico a self",
+        "Hace que el metodo se ejecute automaticamente al crear la instancia",
+        "Convierte el metodo en una propiedad de solo lectura",
+        "Impide que el metodo se pueda sobrescribir en una subclase"
+      ],
+      "correct": 0,
+      "explanation": "@staticmethod define un metodo que no recibe self ni cls automaticamente, por lo que se puede llamar directamente desde la clase sin necesidad de crear un objeto."
     }
   ],
   "javascript": [
@@ -230,9 +246,25 @@
     },
     {
       "q": "¿Qué imprime `console.log([1, 2, 3].join('-'))`?",
-      "opts": ["'1-2-3'", "[1,2,3]", "'1,2,3'", "Error"],
+      "opts": [
+        "'1-2-3'",
+        "[1,2,3]",
+        "'1,2,3'",
+        "Error"
+      ],
       "correct": 0,
       "explanation": "join('-') convierte el array en una cadena de texto, uniendo sus elementos con el separador indicado entre cada uno."
+    },
+    {
+      "q": "¿Que devuelve `const user = {}; console.log(user.perfil?.nombre);` en JavaScript?",
+      "opts": [
+        "undefined, sin lanzar ningun error",
+        "Lanza un error porque 'perfil' no existe",
+        "null",
+        "Un string vacio ''"
+      ],
+      "correct": 0,
+      "explanation": "El operador de encadenamiento opcional ?. evita el error al acceder a una propiedad de algo que no existe y devuelve undefined en lugar de lanzar una excepcion."
     }
   ],
   "typescript": [
@@ -348,9 +380,25 @@
     },
     {
       "q": "¿Qué hace el tipo utilitario Required<T>?",
-      "opts": ["Convierte todas las propiedades opcionales de T en obligatorias", "Hace que T sea de solo lectura", "Elimina las propiedades opcionales de T", "Convierte T en un array"],
+      "opts": [
+        "Convierte todas las propiedades opcionales de T en obligatorias",
+        "Hace que T sea de solo lectura",
+        "Elimina las propiedades opcionales de T",
+        "Convierte T en un array"
+      ],
       "correct": 0,
       "explanation": "Required<T> genera un nuevo tipo a partir de T donde todas las propiedades, incluidas las marcadas como opcionales (?), pasan a ser obligatorias."
+    },
+    {
+      "q": "¿Que hace el operador 'keyof' aplicado a un tipo, como en `type Claves = keyof Persona;`?",
+      "opts": [
+        "Crea un tipo union con los nombres de todas las propiedades de 'Persona' como strings literales",
+        "Devuelve la cantidad de propiedades que tiene 'Persona'",
+        "Elimina todas las propiedades opcionales de 'Persona'",
+        "Convierte todas las propiedades de 'Persona' en funciones"
+      ],
+      "correct": 0,
+      "explanation": "'keyof' genera un tipo union formado por los nombres (como strings literales) de todas las propiedades del tipo indicado, util para funciones genericas que acceden a propiedades dinamicamente."
     }
   ],
   "java": [
@@ -466,9 +514,25 @@
     },
     {
       "q": "¿Qué hace la palabra clave 'static' aplicada a un método en Java?",
-      "opts": ["El método pertenece a la clase en sí, y se puede llamar sin crear una instancia", "El método se vuelve privado automáticamente", "El método no puede recibir parámetros", "El método se ejecuta solo una vez en todo el programa"],
+      "opts": [
+        "El método pertenece a la clase en sí, y se puede llamar sin crear una instancia",
+        "El método se vuelve privado automáticamente",
+        "El método no puede recibir parámetros",
+        "El método se ejecuta solo una vez en todo el programa"
+      ],
       "correct": 0,
       "explanation": "Un método static pertenece a la clase y no a una instancia concreta, por lo que se puede invocar directamente con NombreClase.metodo() sin necesidad de crear un objeto."
+    },
+    {
+      "q": "¿Que hace la palabra clave 'instanceof' en una expresion como `if (obj instanceof String s) { ... }` (Java 16+)?",
+      "opts": [
+        "Comprueba si 'obj' es de tipo String y, si lo es, lo asigna automaticamente a una nueva variable 's' de ese tipo",
+        "Convierte cualquier objeto en un String sin comprobar su tipo",
+        "Lanza una excepcion si 'obj' no es exactamente de tipo String",
+        "Compara 'obj' con el String 's' caracter por caracter"
+      ],
+      "correct": 0,
+      "explanation": "Desde Java 16, el patron de 'instanceof' permite comprobar el tipo y declarar una variable (patron) ya convertida a ese tipo en un solo paso, evitando el cast manual posterior."
     }
   ],
   "kotlin": [
@@ -584,9 +648,25 @@
     },
     {
       "q": "¿Qué hace la función 'also' aplicada a un objeto, como en 'lista.also { println(it.size) }'?",
-      "opts": ["Ejecuta el bloque con el objeto como argumento 'it' y después devuelve el propio objeto sin modificarlo", "Modifica el objeto y devuelve un nuevo tipo", "Convierte el objeto en una cadena de texto", "Elimina el objeto de la memoria"],
+      "opts": [
+        "Ejecuta el bloque con el objeto como argumento 'it' y después devuelve el propio objeto sin modificarlo",
+        "Modifica el objeto y devuelve un nuevo tipo",
+        "Convierte el objeto en una cadena de texto",
+        "Elimina el objeto de la memoria"
+      ],
       "correct": 0,
       "explanation": "'also' ejecuta el bloque lambda recibiendo el objeto como 'it', típicamente para efectos secundarios como logging, y después devuelve el mismo objeto original sin alterarlo, permitiendo encadenar más operaciones."
+    },
+    {
+      "q": "¿Para que sirve la delegacion 'by lazy' al declarar una propiedad en Kotlin, como en `val datos by lazy { cargarDatos() }`?",
+      "opts": [
+        "Para que el valor se calcule solo la primera vez que se accede a la propiedad, y se reutilice despues",
+        "Para que la propiedad se recalcule cada vez que se lee",
+        "Para declarar una propiedad que nunca puede cambiar de valor una vez leida por primera vez",
+        "Para ejecutar la funcion 'cargarDatos' inmediatamente al declarar la propiedad"
+      ],
+      "correct": 0,
+      "explanation": "'by lazy' retrasa la ejecucion del bloque hasta que la propiedad se usa por primera vez, guarda el resultado en cache y devuelve ese mismo valor en los accesos siguientes sin volver a ejecutarlo."
     }
   ],
   "sql": [
@@ -702,9 +782,25 @@
     },
     {
       "q": "¿Qué hace la cláusula GROUP BY cuando se usa junto con varias columnas, como en 'GROUP BY department, year'?",
-      "opts": ["Agrupa las filas por cada combinación única de department y year", "Ordena los resultados primero por department y luego por year", "Filtra las filas donde department o year sean nulos", "Elimina las columnas department y year del resultado"],
+      "opts": [
+        "Agrupa las filas por cada combinación única de department y year",
+        "Ordena los resultados primero por department y luego por year",
+        "Filtra las filas donde department o year sean nulos",
+        "Elimina las columnas department y year del resultado"
+      ],
       "correct": 0,
       "explanation": "GROUP BY con varias columnas crea un grupo distinto para cada combinación única de los valores de esas columnas, por ejemplo un grupo para cada departamento en cada año."
+    },
+    {
+      "q": "¿Que diferencia hay entre las clausulas WHERE y HAVING en una consulta SQL con GROUP BY?",
+      "opts": [
+        "WHERE filtra las filas antes de agrupar, y HAVING filtra los grupos despues de aplicar funciones de agregacion",
+        "WHERE y HAVING hacen exactamente lo mismo y son intercambiables",
+        "HAVING solo se puede usar en sentencias INSERT",
+        "WHERE filtra columnas y HAVING filtra tablas"
+      ],
+      "correct": 0,
+      "explanation": "WHERE actua sobre las filas individuales antes de que se agrupen con GROUP BY, mientras que HAVING filtra los grupos resultantes, normalmente usando condiciones sobre funciones de agregacion como COUNT o SUM."
     }
   ],
   "git": [
@@ -820,9 +916,25 @@
     },
     {
       "q": "¿Qué hace el comando 'git blame archivo.txt'?",
-      "opts": ["Muestra, línea por línea, qué commit y qué autor modificaron por última vez cada línea del archivo", "Elimina el archivo del historial completo", "Combina el archivo con la versión de otra rama", "Bloquea el archivo para que nadie más pueda editarlo"],
+      "opts": [
+        "Muestra, línea por línea, qué commit y qué autor modificaron por última vez cada línea del archivo",
+        "Elimina el archivo del historial completo",
+        "Combina el archivo con la versión de otra rama",
+        "Bloquea el archivo para que nadie más pueda editarlo"
+      ],
       "correct": 0,
       "explanation": "git blame recorre el archivo línea por línea y muestra el commit, el autor y la fecha en que se modificó por última vez cada una, útil para entender el origen de un cambio concreto."
+    },
+    {
+      "q": "¿Para que sirve el comando 'git worktree add ../otra-carpeta rama-x'?",
+      "opts": [
+        "Para tener una segunda carpeta de trabajo con otra rama del mismo repositorio sin necesidad de clonarlo de nuevo",
+        "Para eliminar permanentemente una rama del repositorio",
+        "Para combinar dos ramas en una sola de forma automatica",
+        "Para crear una copia de seguridad comprimida de todo el repositorio"
+      ],
+      "correct": 0,
+      "explanation": "'git worktree' permite abrir varias copias de trabajo del mismo repositorio en carpetas distintas, cada una apuntando a una rama diferente, sin clonar el repositorio ni cambiar de rama en las otras copias."
     }
   ],
   "htmlcss": [
@@ -938,9 +1050,25 @@
     },
     {
       "q": "¿Qué hace la pseudo-clase CSS ':not(.activo)' aplicada a un selector, como en 'li:not(.activo) { opacity: 0.5; }'?",
-      "opts": ["Selecciona todos los elementos li que NO tengan la clase 'activo'", "Selecciona únicamente los elementos con la clase 'activo'", "Elimina la clase 'activo' de todos los elementos li", "Solo funciona dentro de un formulario"],
+      "opts": [
+        "Selecciona todos los elementos li que NO tengan la clase 'activo'",
+        "Selecciona únicamente los elementos con la clase 'activo'",
+        "Elimina la clase 'activo' de todos los elementos li",
+        "Solo funciona dentro de un formulario"
+      ],
       "correct": 0,
       "explanation": "La pseudo-clase :not() selecciona los elementos que no cumplen el selector indicado entre paréntesis; aquí aplica el estilo a todos los li que no tengan la clase 'activo'."
+    },
+    {
+      "q": "¿Que hacen los pseudo-elementos CSS '::before' y '::after' aplicados a un elemento, como en `.aviso::before { content: '⚠ '; }`?",
+      "opts": [
+        "Insertan contenido generado antes o despues del contenido real del elemento, sin anadir una etiqueta HTML nueva",
+        "Cambian el color del texto antes o despues de que el usuario haga scroll",
+        "Ocultan el elemento antes o despues de que cargue la pagina",
+        "Solo funcionan dentro de elementos de tipo formulario"
+      ],
+      "correct": 0,
+      "explanation": "'::before' y '::after' crean contenido visual generado por CSS que se inserta justo antes o despues del contenido real de un elemento, sin anadir mas etiquetas al HTML; se suelen usar junto con la propiedad 'content'."
     }
   ],
   "bash": [
@@ -1056,9 +1184,25 @@
     },
     {
       "q": "¿Qué hace el operador de tubería (pipe) en 'command1 | command2'?",
-      "opts": ["Envía la salida estándar de command1 como entrada estándar de command2", "Ejecuta ambos comandos en paralelo sin relación entre ellos", "Ejecuta command2 solo si command1 falla", "Guarda la salida de command1 en un archivo llamado command2"],
+      "opts": [
+        "Envía la salida estándar de command1 como entrada estándar de command2",
+        "Ejecuta ambos comandos en paralelo sin relación entre ellos",
+        "Ejecuta command2 solo si command1 falla",
+        "Guarda la salida de command1 en un archivo llamado command2"
+      ],
       "correct": 0,
       "explanation": "El operador | conecta la salida estándar (stdout) del primer comando con la entrada estándar (stdin) del segundo, permitiendo encadenar comandos para procesar datos por pasos."
+    },
+    {
+      "q": "¿Que hace la palabra clave 'local' delante de una variable dentro de una funcion de Bash, como en `local contador=0`?",
+      "opts": [
+        "Limita el alcance de la variable a esa funcion, para que no sobrescriba una variable global con el mismo nombre",
+        "Hace que la variable sea accesible desde cualquier otro script",
+        "Convierte la variable en una constante que no se puede modificar",
+        "Ejecuta la variable como si fuera un comando"
+      ],
+      "correct": 0,
+      "explanation": "'local' declara una variable cuyo alcance se limita a la funcion donde se define, evitando que afecte o sea afectada por una variable global del mismo nombre fuera de la funcion."
     }
   ],
   "ia": [
@@ -1174,9 +1318,25 @@
     },
     {
       "q": "¿Qué es el 'aprendizaje por transferencia' (transfer learning) en inteligencia artificial?",
-      "opts": ["Reutilizar el conocimiento aprendido por un modelo en una tarea para aplicarlo o adaptarlo a una tarea distinta pero relacionada", "Transferir un modelo de un servidor a otro sin perder precisión", "Entrenar dos modelos a la vez para que compitan entre sí", "Un método para traducir modelos entre distintos lenguajes de programación"],
+      "opts": [
+        "Reutilizar el conocimiento aprendido por un modelo en una tarea para aplicarlo o adaptarlo a una tarea distinta pero relacionada",
+        "Transferir un modelo de un servidor a otro sin perder precisión",
+        "Entrenar dos modelos a la vez para que compitan entre sí",
+        "Un método para traducir modelos entre distintos lenguajes de programación"
+      ],
       "correct": 0,
       "explanation": "El aprendizaje por transferencia consiste en partir de un modelo ya entrenado en una tarea (o con datos generales) y reutilizar ese conocimiento como punto de partida para una tarea distinta, en lugar de entrenar un modelo nuevo desde cero."
+    },
+    {
+      "q": "¿Que caracteriza a un 'agente' de inteligencia artificial, a diferencia de un simple chatbot que solo responde preguntas?",
+      "opts": [
+        "Puede tomar decisiones y ejecutar acciones por si mismo (como usar herramientas o navegar paginas web) para completar una tarea, no solo generar texto",
+        "Solo puede funcionar sin conexion a internet",
+        "Siempre es mas lento que un chatbot normal porque usa mas parametros",
+        "Unicamente se usa para traducir texto entre idiomas"
+      ],
+      "correct": 0,
+      "explanation": "Un agente de IA no se limita a responder: planifica pasos, usa herramientas externas (como buscar en la web, ejecutar codigo o acceder a archivos) y ejecuta acciones de forma mas o menos autonoma para alcanzar un objetivo, lo que tambien explica los riesgos de seguridad recientes con agentes que actuan sin supervision."
     }
   ]
 }
