@@ -131,6 +131,17 @@
       ],
       "correct": 0,
       "explanation": "@staticmethod define un metodo que no recibe self ni cls automaticamente, por lo que se puede llamar directamente desde la clase sin necesidad de crear un objeto."
+    },
+    {
+      "q": "¿Qué devuelve `any([0, '', None, 5])`?",
+      "opts": [
+        "True",
+        "False",
+        "5",
+        "Error"
+      ],
+      "correct": 0,
+      "explanation": "any() devuelve True si al menos un elemento del iterable es verdadero (truthy); 0, '' y None son falsy, pero 5 es truthy, así que el resultado es True."
     }
   ],
   "javascript": [
@@ -265,6 +276,17 @@
       ],
       "correct": 0,
       "explanation": "El operador de encadenamiento opcional ?. evita el error al acceder a una propiedad de algo que no existe y devuelve undefined en lugar de lanzar una excepcion."
+    },
+    {
+      "q": "¿Qué imprime `console.log(1 + '1')`?",
+      "opts": [
+        "'11'",
+        "2",
+        "NaN",
+        "Error"
+      ],
+      "correct": 0,
+      "explanation": "Cuando uno de los operandos del + es un string, JavaScript convierte el número a texto y concatena, por lo que 1 + '1' da la cadena '11' en lugar de sumar numéricamente."
     }
   ],
   "typescript": [
@@ -399,6 +421,17 @@
       ],
       "correct": 0,
       "explanation": "'keyof' genera un tipo union formado por los nombres (como strings literales) de todas las propiedades del tipo indicado, util para funciones genericas que acceden a propiedades dinamicamente."
+    },
+    {
+      "q": "¿Qué hace el tipo utilitario `Pick<T, K>`?",
+      "opts": [
+        "Crea un nuevo tipo con solo las propiedades indicadas en K, tomadas de T",
+        "Elimina del tipo T las propiedades indicadas en K",
+        "Convierte el tipo T en un array",
+        "Hace que todas las propiedades de T sean de solo lectura"
+      ],
+      "correct": 0,
+      "explanation": "Pick<T, K> construye un nuevo tipo seleccionando únicamente las propiedades listadas en K dentro de T, útil cuando solo necesitas un subconjunto concreto de campos de un tipo más grande."
     }
   ],
   "java": [
@@ -533,6 +566,17 @@
       ],
       "correct": 0,
       "explanation": "Desde Java 16, el patron de 'instanceof' permite comprobar el tipo y declarar una variable (patron) ya convertida a ese tipo en un solo paso, evitando el cast manual posterior."
+    },
+    {
+      "q": "¿Para qué sirve la palabra clave 'enum' en Java?",
+      "opts": [
+        "Para declarar un conjunto fijo y conocido de constantes con nombre",
+        "Para declarar una variable que puede cambiar de tipo",
+        "Para crear una clase que no se puede instanciar nunca",
+        "Para marcar un método como obsoleto"
+      ],
+      "correct": 0,
+      "explanation": "Un enum declara un tipo cuyos valores posibles son un conjunto fijo y conocido de constantes con nombre (por ejemplo los días de la semana), lo que evita usar números o textos sueltos para representar esas opciones."
     }
   ],
   "kotlin": [
@@ -667,6 +711,17 @@
       ],
       "correct": 0,
       "explanation": "'by lazy' retrasa la ejecucion del bloque hasta que la propiedad se usa por primera vez, guarda el resultado en cache y devuelve ese mismo valor en los accesos siguientes sin volver a ejecutarlo."
+    },
+    {
+      "q": "¿Qué hace la función 'run' aplicada a un bloque, como en `val resultado = run { ... }`?",
+      "opts": [
+        "Ejecuta el bloque de código y devuelve el valor de su última expresión",
+        "Repite el bloque de código de forma infinita",
+        "Ejecuta el bloque en un hilo (thread) separado",
+        "Convierte el bloque en una función con nombre"
+      ],
+      "correct": 0,
+      "explanation": "'run' ejecuta el bloque lambda y devuelve como resultado el valor de su última expresión, lo que permite agrupar varias instrucciones y calcular un valor sin necesidad de declarar una función aparte."
     }
   ],
   "sql": [
@@ -801,6 +856,17 @@
       ],
       "correct": 0,
       "explanation": "WHERE actua sobre las filas individuales antes de que se agrupen con GROUP BY, mientras que HAVING filtra los grupos resultantes, normalmente usando condiciones sobre funciones de agregacion como COUNT o SUM."
+    },
+    {
+      "q": "¿Para qué sirve la cláusula 'WITH' al definir una CTE (Common Table Expression), como en `WITH ventas_altas AS (SELECT * FROM ventas WHERE total > 1000) SELECT * FROM ventas_altas;`?",
+      "opts": [
+        "Define un resultado temporal con nombre que se puede usar dentro de la misma consulta, como si fuera una tabla",
+        "Crea una tabla permanente en la base de datos",
+        "Elimina las filas duplicadas del resultado final",
+        "Solo funciona dentro de sentencias INSERT"
+      ],
+      "correct": 0,
+      "explanation": "Una CTE definida con WITH crea un conjunto de resultados temporal y con nombre, válido solo durante esa consulta, que se puede referenciar como si fuera una tabla más, ayudando a dividir consultas complejas en partes más legibles."
     }
   ],
   "git": [
@@ -935,6 +1001,17 @@
       ],
       "correct": 0,
       "explanation": "'git worktree' permite abrir varias copias de trabajo del mismo repositorio en carpetas distintas, cada una apuntando a una rama diferente, sin clonar el repositorio ni cambiar de rama en las otras copias."
+    },
+    {
+      "q": "¿Qué muestra el comando 'git shortlog -sn'?",
+      "opts": [
+        "Un resumen de cuántos commits ha hecho cada autor, ordenado de mayor a menor",
+        "La lista completa de archivos modificados en el último commit",
+        "Solo los commits de la rama actual sin fusionar",
+        "El contenido completo de cada commit, uno por uno"
+      ],
+      "correct": 0,
+      "explanation": "'git shortlog -sn' agrupa los commits por autor, muestra solo el número total de cada uno (-s) y los ordena de mayor a menor cantidad (-n), una forma rápida de ver quién ha contribuido más a un repositorio."
     }
   ],
   "htmlcss": [
@@ -1069,6 +1146,17 @@
       ],
       "correct": 0,
       "explanation": "'::before' y '::after' crean contenido visual generado por CSS que se inserta justo antes o despues del contenido real de un elemento, sin anadir mas etiquetas al HTML; se suelen usar junto con la propiedad 'content'."
+    },
+    {
+      "q": "¿Qué hace la propiedad CSS 'gap' dentro de un contenedor flex o grid, como en `.contenedor { display: flex; gap: 16px; }`?",
+      "opts": [
+        "Define el espacio entre los elementos del contenedor, sin añadir margen individual a cada uno",
+        "Define el espacio entre el contenedor y el borde de la ventana",
+        "Cambia el tamaño de la fuente de los elementos hijos",
+        "Solo funciona dentro de una tabla HTML"
+      ],
+      "correct": 0,
+      "explanation": "'gap' añade un espacio uniforme entre los elementos de un contenedor flex o grid sin tener que poner margin en cada hijo por separado, evitando además el margen extra no deseado en el primer o último elemento."
     }
   ],
   "bash": [
@@ -1203,6 +1291,17 @@
       ],
       "correct": 0,
       "explanation": "'local' declara una variable cuyo alcance se limita a la funcion donde se define, evitando que afecte o sea afectada por una variable global del mismo nombre fuera de la funcion."
+    },
+    {
+      "q": "¿Qué hace la expansión de llaves (brace expansion) en Bash, como en `echo archivo{1,2,3}.txt`?",
+      "opts": [
+        "Genera varias cadenas de texto combinando cada valor entre llaves, aquí archivo1.txt, archivo2.txt y archivo3.txt",
+        "Crea una carpeta llamada 'archivo' con tres subcarpetas",
+        "Solo imprime el texto literal 'archivo{1,2,3}.txt'",
+        "Elimina los archivos archivo1.txt, archivo2.txt y archivo3.txt"
+      ],
+      "correct": 0,
+      "explanation": "La expansión de llaves genera una cadena distinta por cada valor separado por comas dentro de las llaves, combinándolo con el texto que lo rodea; aquí produce archivo1.txt, archivo2.txt y archivo3.txt como tres argumentos distintos para echo."
     }
   ],
   "ia": [
@@ -1337,6 +1436,17 @@
       ],
       "correct": 0,
       "explanation": "Un agente de IA no se limita a responder: planifica pasos, usa herramientas externas (como buscar en la web, ejecutar codigo o acceder a archivos) y ejecuta acciones de forma mas o menos autonoma para alcanzar un objetivo, lo que tambien explica los riesgos de seguridad recientes con agentes que actuan sin supervision."
+    },
+    {
+      "q": "¿Qué es el 'prompt injection' en el contexto de la seguridad de los modelos de lenguaje?",
+      "opts": [
+        "Una técnica en la que instrucciones maliciosas escondidas en el texto de entrada o en contenido externo intentan manipular el comportamiento del modelo contra sus instrucciones originales",
+        "Un método para inyectar código directamente en los parámetros del modelo durante el entrenamiento",
+        "Un fallo de hardware que afecta a las GPUs usadas para entrenar modelos",
+        "Una técnica para comprimir prompts muy largos antes de enviarlos al modelo"
+      ],
+      "correct": 0,
+      "explanation": "El prompt injection consiste en ocultar instrucciones dentro del texto que recibe el modelo (por ejemplo en un documento, una página web o un comentario) con la intención de que el modelo las obedezca en lugar de seguir las instrucciones legítimas de quien lo está usando."
     }
   ]
 }

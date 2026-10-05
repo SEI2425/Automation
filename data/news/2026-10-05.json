@@ -1,0 +1,65 @@
+{
+  "date": "2026-10-05",
+  "items": [
+    {
+      "tag": "Impacto",
+      "title": "Insilico Medicine diseña con IA un fármaco contra la leucemia y el linfoma que recorta años de desarrollo",
+      "url": "https://www.eurekalert.org/news-releases/1144360",
+      "summary": "El laboratorio de Insilico Medicine en Abu Dabi usó su plataforma de IA Chemistry42 para diseñar moléculas PROTAC capaces de eliminar por completo la proteína BTK, que impulsa el crecimiento de ciertas leucemias y linfomas, en lugar de solo bloquearla temporalmente como hacen los fármacos actuales. Los dos candidatos resultantes mostraron actividad picomolar y biodisponibilidad oral en ratones, y la empresa asegura que su proceso con IA selecciona candidatos en 12 a 18 meses frente a los 2,5 a 4 años habituales con métodos tradicionales."
+    },
+    {
+      "tag": "Impacto",
+      "title": "El ayuntamiento de Nueva York obliga bajo juramento a OpenAI, Anthropic, Google y Meta a testificar sobre los riesgos de sus modelos de IA",
+      "url": "https://council.nyc.gov/press/2026/09/28/3266/",
+      "summary": "Los 51 miembros del ayuntamiento neoyorquino celebraron una audiencia extraordinaria el 5 de octubre en la que directivos de OpenAI, Anthropic, Google y Meta testificaron bajo juramento por primera vez, tras advertencias previas de que serían citados judicialmente si no acudían; SpaceXAI fue directamente obligada mediante una citación. La sesión examina diez propuestas legislativas, entre ellas exigir validación externa antes de desplegar un sistema de IA en la ciudad, mecanismos de apagado de emergencia, multas de 25.000 dólares por infracción y el derecho de los ciudadanos a demandar directamente a estas empresas."
+    },
+    {
+      "tag": "Impacto",
+      "title": "Un estudio revela que 138 parlamentarias europeas fueron víctimas de deepfakes sexuales generados con IA",
+      "url": "https://www.elespanol.com/mujer/protagonistas/20261003/escandalo-deepfakes-sacude-europa-paginas-estilo-wikipedia-desnudan-ia-parlamentarias/1003744406564_0.html",
+      "summary": "Una investigación sobre 5.872 parlamentarios europeos encontró que 138 mujeres de 22 países, frente a solo 9 hombres, aparecían en deepfakes pornográficos generados con aplicaciones de IA que 'desnudan' fotos reales, difundidos en páginas con apariencia de enciclopedia. El grupo Greens/EFA del Parlamento Europeo exige ya aplicar sin demora la prohibición de estas herramientas de 'nudificación', que entra en vigor el 2 de diciembre, y reforzar la protección legal contra la violencia digital."
+    },
+    {
+      "tag": "Impacto",
+      "title": "Google lanza Guided Vision, un asistente de IA en Gemini Live que describe el entorno en tiempo real a personas ciegas",
+      "url": "https://www.unite.ai/google-brings-real-time-visual-assistance-to-blind-users-on-android/",
+      "summary": "La nueva función, disponible ya en Android, permite compartir la cámara durante una sesión de Gemini Live para recibir descripciones habladas del entorno, localizar objetos, leer texto y recibir instrucciones para reencuadrar la cámara si Google necesita ver mejor algo. Se desarrolló junto a la comunidad ciega y con baja visión, con más de mil probadores de confianza de la organización Aira que ayudaron a perfeccionar el modelo durante decenas de miles de horas."
+    },
+    {
+      "tag": "Lanzamiento",
+      "title": "Google DeepMind lanza SynthID Bio para marcar con una firma invisible las proteínas diseñadas por IA",
+      "url": "https://www.helpnetsecurity.com/2026/10/01/synthid-bio-watermark/",
+      "summary": "Esta nueva técnica de código abierto esconde una firma imperceptible en la secuencia de aminoácidos y en la estructura 3D de una proteína diseñada por IA, sin afectar su estabilidad ni su función, según confirmaron pruebas de laboratorio. Busca cerrar una brecha de seguridad real: hoy el software que examina los pedidos de síntesis de ADN no puede distinguir una proteína natural de una diseñada por IA, lo que podría facilitar la creación indetectada de toxinas u otros usos peligrosos."
+    },
+    {
+      "tag": "Interactivo",
+      "title": "W3Schools: tutorial interactivo de Python con editor en el navegador",
+      "url": "https://www.w3schools.com/python/",
+      "summary": "Este tutorial gratuito cubre Python desde variables y bucles hasta clases y módulos, con un editor 'Try it Yourself' en cada página donde escribes y ejecutas tu propio código sin instalar nada. Cada capítulo termina con un breve cuestionario de autoevaluación para comprobar si entendiste el concepto antes de seguir."
+    },
+    {
+      "tag": "Curso",
+      "title": "Python for Everybody: el curso gratuito del Dr. Chuck para aprender Python desde cero",
+      "url": "https://www.py4e.com/",
+      "summary": "Creado por Charles Severance, profesor de la Universidad de Michigan, este curso gratuito incluye videoclases, un libro completo y ejercicios pensados para quien nunca ha programado antes. Es uno de los materiales introductorios de Python más usados del mundo, disponible integramente online sin coste ni registro obligatorio."
+    },
+    {
+      "tag": "Interactivo",
+      "title": "CodinGame: aprende a programar resolviendo retos y duelos de código multijugador",
+      "url": "https://www.codingame.com/start",
+      "summary": "Esta plataforma gratuita convierte el aprendizaje de la programación en un juego: resuelves puzzles de lógica escribiendo código real en el lenguaje que prefieras, o te enfrentas a otros programadores en duelos cortos llamados 'clash of code' con corrección automática al instante. Cubre decenas de lenguajes, desde Python y JavaScript hasta Java o Kotlin."
+    },
+    {
+      "tag": "Interactivo",
+      "title": "Project Euler: cientos de problemas matemáticos gratuitos que se resuelven escribiendo tu propio programa",
+      "url": "https://projecteuler.net/",
+      "summary": "Esta colección gratuita plantea problemas de matemáticas y lógica pensados para resolverse escribiendo un programa en el lenguaje que elijas, no a mano; solo envías la respuesta numérica final, lo que obliga a pensar en algoritmos eficientes y no solo en que el código compile. Lleva activa desde 2001 y sigue sumando problemas nuevos con el tiempo."
+    },
+    {
+      "tag": "Curso",
+      "title": "Kotlin Bootcamp for Programmers: el curso gratuito de Google en Udacity",
+      "url": "https://www.udacity.com/course/kotlin-bootcamp-for-programmers--ud9011",
+      "summary": "Creado por expertos de Kotlin en Google, este curso gratuito y a tu propio ritmo enseña clases, funciones, lambdas y genéricos en Kotlin mediante video y ejercicios prácticos. Está pensado para quien ya sabe programar en otro lenguaje orientado a objetos, como Java o C#, y quiere pasar a Kotlin rápido."
+    }
+  ]
+}

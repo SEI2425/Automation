@@ -1,0 +1,92 @@
+{
+  "date": "2026-10-05",
+  "questions": [
+    {
+      "type": "identify",
+      "lang": "Python",
+      "question": "¿Qué imprime este código?",
+      "code": "nums = {1, 2, 3}\nnums.add(2)\nnums.add(4)\nprint(len(nums))",
+      "options": ["3", "4", "5", "Error"],
+      "correct": 1,
+      "hint": "Un set (conjunto) nunca guarda valores duplicados.",
+      "explanation": "nums es un set, que no admite duplicados: add(2) no cambia nada porque 2 ya estaba, y add(4) sí añade un elemento nuevo, dejando el conjunto con 4 elementos: {1, 2, 3, 4}."
+    },
+    {
+      "type": "identify",
+      "lang": "JavaScript",
+      "question": "¿Qué imprime este código?",
+      "code": "const [a, b = 10] = [5];\nconsole.log(a, b);",
+      "options": ["5 10", "5 undefined", "undefined 10", "Error"],
+      "correct": 0,
+      "hint": "El array [5] solo tiene un elemento, así que b no recibe ningún valor del array.",
+      "explanation": "La desestructuración asigna a a el primer valor del array (5); como el array no tiene segundo elemento, b usa su valor por defecto (10) en vez de quedar undefined."
+    },
+    {
+      "type": "complete",
+      "lang": "Java",
+      "question": "¿Qué operador falta para que sum acumule la suma de todos los elementos del array?",
+      "code": "int[] arr = {4, 8, 15};\nint sum = 0;\nfor (int n : arr) {\n    sum ____ n;\n}\nSystem.out.println(sum);",
+      "options": ["+=", "=", "==", "+"],
+      "correct": 0,
+      "hint": "Necesitas sumar n al valor que sum ya tenía, no sustituirlo.",
+      "explanation": "sum += n equivale a sum = sum + n, por lo que en cada vuelta del bucle se suma el elemento actual al total acumulado, dando 4+8+15 = 27 al terminar."
+    },
+    {
+      "type": "identify",
+      "lang": "Git",
+      "question": "¿Qué hace este comando?",
+      "code": "git log --graph --oneline --all",
+      "options": [
+        "Muestra el historial de commits de todas las ramas con un gráfico de cómo se bifurcan y se fusionan",
+        "Elimina las ramas que no se han fusionado todavía",
+        "Combina automáticamente todas las ramas en una sola",
+        "Muestra solo los archivos modificados en el último commit"
+      ],
+      "correct": 0,
+      "hint": "--graph dibuja la topología de ramas, --all incluye todas las ramas, no solo la actual.",
+      "explanation": "git log --graph --oneline --all dibuja con caracteres ASCII cómo se bifurcan y se vuelven a unir los commits de todas las ramas del repositorio, cada uno resumido en una línea."
+    },
+    {
+      "type": "complete",
+      "lang": "SQL",
+      "question": "¿Qué palabra falta para que la consulta solo actualice productos de electrónica que además tengan stock?",
+      "code": "UPDATE products\nSET price = price * 1.10\nWHERE category = 'electronics' ____ stock > 0;",
+      "options": ["AND", "OR", "WHERE", "HAVING"],
+      "correct": 0,
+      "hint": "Necesitas que se cumplan las dos condiciones a la vez, no basta con que se cumpla una de ellas.",
+      "explanation": "AND exige que ambas condiciones sean verdaderas a la vez, por lo que solo se actualiza el precio de los productos de electrónica que además tengan stock mayor que cero."
+    }
+  ],
+  "tips": [
+    {
+      "text": "Evita los 'números mágicos' en tu código: usa constantes con nombre en vez de escribir números sueltos sin explicación.",
+      "explanation": "Un número suelto como 86400 no dice nada por sí mismo, mientras que una constante llamada SEGUNDOS_POR_DIA explica de inmediato su significado y evita errores si ese valor hay que cambiarlo en varios sitios del código.",
+      "link": "https://refactoring.guru/replace-magic-number-with-symbolic-constant",
+      "linkLabel": "Refactoring Guru: sustituir números mágicos por constantes"
+    },
+    {
+      "text": "Si usas Git moderno, prueba 'git switch' para cambiar de rama y 'git restore' para descartar cambios, en lugar de usar 'git checkout' para todo.",
+      "explanation": "git checkout acumuló con los años demasiadas funciones distintas (cambiar de rama, descartar cambios, crear ramas...), lo que lo hacía fácil de usar mal por error; switch y restore dividen esas tareas en comandos más claros y específicos.",
+      "link": "https://git-scm.com/docs/git-switch",
+      "linkLabel": "Git SCM: documentación de git switch"
+    },
+    {
+      "text": "Antes de usar async/await a ciegas, asegúrate de entender la diferencia entre código síncrono y asíncrono.",
+      "explanation": "El código asíncrono no espera a que termine una tarea lenta (como una petición de red) antes de seguir ejecutando el resto del programa; si no entiendes eso, es fácil escribir código que intenta usar un resultado antes de que exista.",
+      "link": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Async_JS/Introducing",
+      "linkLabel": "MDN: introducción a la programación asíncrona"
+    },
+    {
+      "text": "Usa la función de renombrar símbolo (rename symbol) de tu editor en lugar de buscar y reemplazar el nombre de una variable a mano.",
+      "explanation": "Un buscar y reemplazar normal puede cambiar texto que coincide por casualidad en otro contexto, como un comentario o un nombre parecido, mientras que renombrar símbolo entiende el código y solo cambia las referencias reales a esa variable o función.",
+      "link": "https://code.visualstudio.com/docs/editor/refactoring",
+      "linkLabel": "VS Code: guía de refactorización"
+    },
+    {
+      "text": "Nunca dejes contraseñas, tokens ni datos personales escritos en los logs de tu aplicación.",
+      "explanation": "Los archivos de registro suelen guardarse durante mucho tiempo y los revisa más gente de la que crees, como herramientas de monitorización u otros equipos, así que un secreto escrito ahí por error queda expuesto igual que si lo subieras a un repositorio público.",
+      "link": "https://cheatsheetseries.owasp.org/cheatsheets/Logging_Cheat_Sheet.html",
+      "linkLabel": "OWASP: guía de buenas prácticas de logging"
+    }
+  ]
+}
