@@ -1,1 +1,1 @@
-Boletin de hoy listo: la imagen trae las 3 noticias top y el tip del dia, y en la web esta todo completo, con tests y temario que no paran de crecer. Echale un vistazo cuando puedas: [Abrir PilaPila News](<https://sei2425.github.io/Automation/>)
+Nueva ronda de PilaPila News lista: noticias de IA, recursos gratis para programar y un reto de código del día. La imagen de arriba trae lo más destacado; el resto, con temario y tests por lenguaje, está completo en la web: [Abrir PilaPila News](<https://sei2425.github.io/Automation/>)

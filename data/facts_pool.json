@@ -12,7 +12,8 @@
     "Python se publicó por primera vez en febrero de 1991, creado por Guido van Rossum mientras trabajaba en el Centro Nacional de Matemática e Informática (CWI) de los Países Bajos.",
     "Python permite encadenar comparaciones como '1 < x < 10', que se evalúa de forma equivalente a '1 < x and x < 10', algo que la mayoría de lenguajes no permiten de forma nativa.",
     "El operador de division entera '//' en Python redondea siempre hacia menos infinito, no hacia cero, por lo que -7 // 2 da -4 y no -3.",
-    "El nombre del instalador de paquetes 'pip' es un acrónimo recursivo que, según la versión más citada, significa 'Pip Installs Packages'."
+    "El nombre del instalador de paquetes 'pip' es un acrónimo recursivo que, según la versión más citada, significa 'Pip Installs Packages'.",
+    "Además del conteo de referencias, CPython incluye un recolector de basura generacional que detecta y libera ciclos de referencias (objetos que se apuntan entre sí) que el conteo de referencias por sí solo no puede resolver."
   ],
   "javascript": [
     "A pesar del nombre, JavaScript no tiene relación técnica con Java: el nombre fue una decisión de marketing de Netscape para aprovechar la popularidad de Java en 1995.",
@@ -27,7 +28,8 @@
     "Desde la especificación ECMAScript 2019, el método sort() de los arrays está obligado a ser estable, es decir, a mantener el orden relativo de los elementos iguales; antes de esa fecha, el comportamiento podía variar entre motores de JavaScript.",
     "El método Array.prototype.at(), que permite usar índices negativos para acceder a elementos desde el final de un array como arr.at(-1), se añadió a JavaScript recién en 2022 (ES2022).",
     "El metodo Array.prototype.includes(), anadido en ES2016, puede detectar NaN dentro de un array devolviendo true, algo que el metodo indexOf() no es capaz de hacer.",
-    "La propiedad 'globalThis', añadida en ES2020, ofrece una forma estándar de acceder al objeto global sin importar si el código corre en un navegador (window) o en Node.js (global)."
+    "La propiedad 'globalThis', añadida en ES2020, ofrece una forma estándar de acceder al objeto global sin importar si el código corre en un navegador (window) o en Node.js (global).",
+    "El operador de encadenamiento opcional (?.) y el operador de fusión nula (??) se añadieron juntos a JavaScript en la misma especificación, ECMAScript 2020 (ES2020)."
   ],
   "typescript": [
     "TypeScript no reemplaza a JavaScript en ningún momento: todo programa TypeScript se compila (transpila) a JavaScript plano antes de ejecutarse en el navegador o en Node.",
@@ -42,7 +44,8 @@
     "TypeScript tiene un modo 'strict' que activa a la vez varias comprobaciones de tipos exigentes (como noImplicitAny o strictNullChecks), y se puede habilitar por completo con una sola opción en el archivo tsconfig.json.",
     "TypeScript permite escribir archivos de declaración (.d.ts) que describen los tipos de una librería escrita en JavaScript puro sin reescribirla, lo que ha permitido que miles de paquetes de npm tengan soporte de tipos gracias al repositorio comunitario DefinitelyTyped.",
     "TypeScript se transpila a JavaScript puro mediante un proceso llamado 'erasure de tipos': toda la informacion de tipos desaparece del codigo final y no existe en tiempo de ejecucion.",
-    "TypeScript 5.0, publicado en 2023, convirtió los decoradores en una característica estándar del lenguaje en lugar de depender de una bandera experimental del compilador."
+    "TypeScript 5.0, publicado en 2023, convirtió los decoradores en una característica estándar del lenguaje en lugar de depender de una bandera experimental del compilador.",
+    "Visual Studio Code, uno de los editores donde TypeScript brilla gracias a su autocompletado y detección de errores en tiempo real, está escrito en gran parte en TypeScript."
   ],
   "java": [
     "La mascota de Java, Duke, fue diseñada en 1992 para un proyecto anterior llamado Oak, antes incluso de que existiera el lenguaje Java tal como lo conocemos.",
@@ -57,7 +60,8 @@
     "James Gosling empezó a desarrollar lo que acabaría siendo Java en 1991, dentro del proyecto Green de Sun Microsystems, pensado originalmente para electrodomésticos y dispositivos interactivos, no para internet.",
     "Java fue uno de los primeros lenguajes mainstream en incluir un recolector de basura (garbage collector) automático de serie desde su primera versión en 1995, liberando a los programadores de gestionar manualmente la memoria como en C o C++.",
     "El recolector de basura G1 (Garbage First), convertido en predeterminado en Java 9, reemplazo al antiguo Parallel GC para reducir las pausas en aplicaciones con mucha memoria.",
-    "Java 21, publicada en 2023, introdujo los 'virtual threads' del Proyecto Loom, hilos ligeros gestionados por la JVM que permiten manejar millones de tareas concurrentes sin el coste de los hilos tradicionales del sistema operativo."
+    "Java 21, publicada en 2023, introdujo los 'virtual threads' del Proyecto Loom, hilos ligeros gestionados por la JVM que permiten manejar millones de tareas concurrentes sin el coste de los hilos tradicionales del sistema operativo.",
+    "Java 17, publicada en 2021 como versión LTS (de soporte a largo plazo), introdujo las 'sealed classes', que permiten restringir de forma explícita qué clases pueden extender o implementar un tipo determinado."
   ],
   "kotlin": [
     "Kotlin es interoperable al 100% con Java: se puede llamar código Java desde Kotlin y código Kotlin desde Java dentro del mismo proyecto sin conversión manual.",
@@ -72,7 +76,8 @@
     "Kotlin permite declarar funciones directamente en un archivo, fuera de cualquier clase, a diferencia de Java, que obliga a que todo método viva dentro de una clase.",
     "Kotlin permite declarar funciones de infijo (infix functions) que se pueden llamar sin punto ni paréntesis, como en '1 to \"uno\"', algo que se usa internamente para construir pares (Pair) de forma más legible.",
     "Kotlin permite declarar argumentos con nombre (named arguments) al llamar a una funcion, lo que deja escribirlos en cualquier orden, como en 'crearUsuario(edad = 30, nombre = \"Ana\")'.",
-    "Kotlin 1.9 incluyó en fase beta K2, un nuevo compilador reescrito desde cero para mejorar mucho la velocidad de compilación, que se convirtió en el compilador por defecto con el lanzamiento de Kotlin 2.0 en 2024."
+    "Kotlin 1.9 incluyó en fase beta K2, un nuevo compilador reescrito desde cero para mejorar mucho la velocidad de compilación, que se convirtió en el compilador por defecto con el lanzamiento de Kotlin 2.0 en 2024.",
+    "Kotlin ofrece las 'value classes' (antes llamadas inline classes) para crear envoltorios de un único valor con comprobación de tipos, sin el coste en memoria de crear un objeto adicional en tiempo de ejecución."
   ],
   "sql": [
     "El estándar SQL lo mantiene ISO, pero en la práctica cada motor (PostgreSQL, MySQL, SQL Server...) añade extensiones propias, por lo que el SQL 100% portable entre motores es más raro de lo que parece.",
@@ -87,7 +92,8 @@
     "Oracle Database, uno de los motores SQL más usados en empresas, se lanzó en 1979 como el primer producto comercial del mercado en implementar el lenguaje SQL.",
     "El estándar SQL:2016 fue el primero en incorporar soporte oficial para JSON dentro de las consultas, permitiendo a motores como PostgreSQL o MySQL almacenar y consultar datos semiestructurados sin abandonar el modelo relacional.",
     "El estandar SQL:2003 fue el primero en incorporar funciones de ventana (window functions) como ROW_NUMBER() u OVER(), hoy disponibles en la mayoria de motores modernos.",
-    "El estándar SQL:2023 incorporó soporte oficial para consultas de grafos de propiedades (SQL/PGQ), permitiendo escribir patrones de grafos directamente dentro de una consulta SQL normal."
+    "El estándar SQL:2023 incorporó soporte oficial para consultas de grafos de propiedades (SQL/PGQ), permitiendo escribir patrones de grafos directamente dentro de una consulta SQL normal.",
+    "Microsoft SQL Server y Sybase SQL Server comparten un origen común: nacieron de una colaboración entre Microsoft, Sybase y Ashton-Tate en 1988, antes de que las empresas se separaran y desarrollaran el motor por caminos distintos."
   ],
   "git": [
     "Git guarda cada versión de un archivo completo (no solo las diferencias) internamente, pero los comprime y deduplica para que el repositorio no crezca tanto como parecería.",
@@ -102,7 +108,8 @@
     "Git organiza los archivos del proyecto en tres áreas distintas: el directorio de trabajo, el área de preparación (staging o index) y el repositorio, lo que permite elegir con precisión qué cambios entran en cada commit.",
     "Git permite firmar commits y etiquetas criptográficamente con GPG o SSH, lo que permite verificar que un commit realmente proviene de quien dice haberlo creado y no ha sido modificado después de firmarse.",
     "El nombre de la rama por defecto en Git era historicamente 'master', pero desde 2020 muchas plataformas como GitHub usan 'main' como nombre predeterminado para las ramas nuevas.",
-    "Git almacena internamente sus objetos (commits, árboles, blobs) comprimidos con el mismo algoritmo DEFLATE que usa el formato ZIP, guardados dentro de la carpeta .git/objects."
+    "Git almacena internamente sus objetos (commits, árboles, blobs) comprimidos con el mismo algoritmo DEFLATE que usa el formato ZIP, guardados dentro de la carpeta .git/objects.",
+    "Git guarda internamente el contenido de cada archivo como un objeto 'blob' identificado por su hash, no asociado a un nombre de archivo, lo que permite en muchos casos recuperar versiones anteriores de un archivo aunque ya no exista en el commit actual."
   ],
   "htmlcss": [
     "El primer sitio web de la historia, publicado por Tim Berners-Lee en 1991, seguía online y accesible en su URL original décadas después, solo con HTML básico y sin una sola línea de CSS.",
@@ -117,7 +124,8 @@
     "El DOCTYPE de HTML5, simplemente '<!DOCTYPE html>', es mucho más corto que los doctypes de XHTML o HTML 4.01, que exigían escribir una URL completa a una definición de tipo de documento.",
     "La propiedad CSS 'backdrop-filter', que permite aplicar efectos como desenfoque al fondo detrás de un elemento (el típico 'vidrio esmerilado'), llegó primero a Safari y Chrome, y no se activó por defecto en Firefox hasta 2022.",
     "La primera version de CSS, publicada en 1996, no incluia ningun sistema de diseno en columnas o cuadriculas: Flexbox no llego hasta 2009 y CSS Grid hasta 2017.",
-    "La propiedad CSS 'accent-color', soportada por los navegadores desde 2022, permite cambiar el color de checkboxes, radio buttons y barras de progreso nativas sin tener que rehacerlos a mano con imágenes o JavaScript."
+    "La propiedad CSS 'accent-color', soportada por los navegadores desde 2022, permite cambiar el color de checkboxes, radio buttons y barras de progreso nativas sin tener que rehacerlos a mano con imágenes o JavaScript.",
+    "La propiedad CSS 'scroll-snap-type', soportada ampliamente desde 2019, permite crear carruseles y galerías que se 'encajan' automáticamente en cada elemento al hacer scroll, sin necesidad de JavaScript."
   ],
   "bash": [
     "Bash significa 'Bourne Again SHell', un juego de palabras porque es una reimplementación mejorada de la shell 'sh' original de Stephen Bourne de 1977.",
@@ -132,7 +140,8 @@
     "Bash fue escrito por Brian Fox en 1989 para el proyecto GNU, como una reimplementación libre de la shell 'sh' original pensada para sustituir herramientas Unix propietarias.",
     "El comando 'read' en Bash permite leer una línea de entrada del usuario y guardarla en una o varias variables, como en 'read nombre edad', lo que facilita crear pequeños scripts interactivos sin herramientas externas.",
     "El comando 'xargs' en Bash convierte la salida de otro comando en argumentos para ejecutar un nuevo comando, algo muy usado junto con 'find' para procesar muchos archivos a la vez.",
-    "El comando 'seq', usado para generar secuencias de números como 'seq 1 5', no forma parte del estándar POSIX, por lo que no está garantizado en todos los sistemas tipo Unix."
+    "El comando 'seq', usado para generar secuencias de números como 'seq 1 5', no forma parte del estándar POSIX, por lo que no está garantizado en todos los sistemas tipo Unix.",
+    "El comando 'wc' (word count) no solo cuenta líneas con la opción -l: con -w cuenta palabras y con -c cuenta bytes, y se combina constantemente con tuberías para analizar la salida de otros comandos."
   ],
   "ia": [
     "El término 'inteligencia artificial' se acuñó en 1956 en la conferencia de Dartmouth, más de medio siglo antes de que la mayoría de las técnicas actuales de deep learning fueran siquiera viables computacionalmente.",
@@ -147,6 +156,7 @@
     "Las siglas GPT, como en ChatGPT, significan 'Generative Pre-trained Transformer' (transformador generativo preentrenado), un nombre que describe directamente la arquitectura y el método de entrenamiento del modelo.",
     "El término 'red neuronal recurrente' (RNN), diseñada para procesar secuencias como texto o audio manteniendo una memoria interna entre pasos, fue la arquitectura dominante en el procesamiento de lenguaje natural durante años, hasta que los Transformers la desplazaron casi por completo a partir de 2017.",
     "El primer chatbot de la historia, llamado ELIZA, fue creado en 1966 por Joseph Weizenbaum en el MIT y simulaba ser una psicoterapeuta repitiendo preguntas con reglas simples, sin ningun tipo de aprendizaje automatico.",
-    "El concepto de 'red generativa antagónica' (GAN), publicado por Ian Goodfellow en 2014, enfrenta a dos redes neuronales entre sí (una generadora y otra discriminadora) y fue clave en los primeros avances de imágenes sintéticas realistas, antes de los modelos de difusión actuales."
+    "El concepto de 'red generativa antagónica' (GAN), publicado por Ian Goodfellow en 2014, enfrenta a dos redes neuronales entre sí (una generadora y otra discriminadora) y fue clave en los primeros avances de imágenes sintéticas realistas, antes de los modelos de difusión actuales.",
+    "El término 'IA generativa' se popularizó a partir de 2022 para distinguir los modelos capaces de crear contenido nuevo (texto, imágenes, audio) de los sistemas de IA anteriores, centrados sobre todo en clasificar o predecir a partir de datos ya existentes."
   ]
 }

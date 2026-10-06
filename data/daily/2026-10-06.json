@@ -1,0 +1,87 @@
+{
+  "date": "2026-10-06",
+  "questions": [
+    {
+      "type": "identify",
+      "lang": "Python",
+      "question": "¿Qué imprime este código?",
+      "code": "x = [1, 2, 3]\ny = x\ny.append(4)\nprint(x)",
+      "options": ["[1, 2, 3, 4]", "[1, 2, 3]", "Error", "[4]"],
+      "correct": 0,
+      "hint": "y = x no crea una copia de la lista, apunta al mismo objeto en memoria.",
+      "explanation": "Las listas son mutables y 'y = x' asigna la misma referencia que x, así que modificar y mediante append() también modifica x, porque ambas variables apuntan al mismo objeto en memoria."
+    },
+    {
+      "type": "complete",
+      "lang": "JavaScript",
+      "question": "¿Qué método falta para obtener el primer elemento mayor que 8?",
+      "code": "const arr = [5, 10, 15];\nconst found = arr.____(n => n > 8);\nconsole.log(found); // 10",
+      "options": ["find", "filter", "some", "map"],
+      "correct": 0,
+      "hint": "Necesitas el método que devuelve el primer elemento que cumple la condición, no un array entero.",
+      "explanation": "find() devuelve el primer elemento del array que cumple la condición dada; filter() devolvería un array completo con todas las coincidencias en vez de un único valor."
+    },
+    {
+      "type": "identify",
+      "lang": "Java",
+      "question": "¿Qué imprime este código?",
+      "code": "String a = \"hola\";\nString b = \"hola\";\nString c = new String(\"hola\");\nSystem.out.println(a == b);\nSystem.out.println(a == c);",
+      "options": ["true\nfalse", "false\ntrue", "true\ntrue", "false\nfalse"],
+      "correct": 0,
+      "hint": "Los literales de texto se reutilizan desde el pool de Strings; new String() crea un objeto nuevo en memoria.",
+      "explanation": "a y b son literales que Java reutiliza automáticamente del pool de strings, por lo que == los compara como el mismo objeto (true); c se crea explícitamente con new String(), un objeto distinto en memoria, por lo que a == c da false aunque el contenido sea igual."
+    },
+    {
+      "type": "complete",
+      "lang": "Git",
+      "question": "¿Qué modo de reset falta para que los cambios queden en el directorio de trabajo sin confirmar?",
+      "code": "git commit -m \"primer cambio\"\ngit commit -m \"segundo cambio\"\ngit commit -m \"tercer cambio\"\ngit reset --____ HEAD~2\n# queda solo el primer commit, con los cambios de los otros dos en el area de trabajo sin confirmar",
+      "options": ["mixed", "hard", "soft", "merge"],
+      "correct": 0,
+      "hint": "Es el modo que deja los cambios en el directorio de trabajo pero sin pasar por el área de staging.",
+      "explanation": "git reset --mixed (el modo por defecto) mueve HEAD al commit indicado y deshace el staging, pero conserva los cambios en el directorio de trabajo sin confirmar; --soft los dejaría ya en el área de staging, y --hard los eliminaría por completo."
+    },
+    {
+      "type": "identify",
+      "lang": "HTML/CSS",
+      "question": "¿De qué color queda el texto?",
+      "code": "<div class=\"caja\">\n  <p>Texto</p>\n</div>\n\n<style>\n.caja p {\n  color: red;\n}\n.caja > p {\n  color: blue;\n}\n</style>",
+      "options": ["Azul, porque ante un empate de especificidad gana la regla que aparece después", "Rojo, porque el selector descendiente tiene más prioridad", "Ambos colores se combinan y el texto se ve morado", "Ninguno: CSS no sabe resolver el conflicto y no aplica ningún color"],
+      "correct": 0,
+      "hint": "Ambos selectores tienen la misma especificidad (una clase más un elemento); cuando hay empate, decide el orden en la hoja de estilos.",
+      "explanation": "'.caja p' (descendiente) y '.caja > p' (hijo directo) tienen la misma especificidad, así que ante un empate CSS aplica la regla que aparece más tarde en el código: el texto queda azul."
+    }
+  ],
+  "tips": [
+    {
+      "text": "Configura un archivo .gitignore desde el primer commit de tu proyecto.",
+      "explanation": "Si no lo haces desde el principio, es fácil acabar subiendo por accidente carpetas como node_modules o archivos de configuración local, lo que hincha el repositorio y puede filtrar datos que no querías compartir. Añadirlo tarde obliga además a limpiar esos archivos del historial, algo mucho más tedioso que prevenirlo desde el inicio.",
+      "link": "https://docs.github.com/en/get-started/getting-started-with-git/ignoring-files",
+      "linkLabel": "GitHub Docs: ignorar archivos con .gitignore"
+    },
+    {
+      "text": "Activa las actualizaciones de seguridad automáticas de tus dependencias, como Dependabot en GitHub.",
+      "explanation": "Las librerías externas que usas pueden descubrir una vulnerabilidad meses después de que empezaste a usarlas, y si no te enteras, tu proyecto queda expuesto sin que hagas nada mal directamente. Una herramienta que vigila esto por ti avisa o incluso abre el parche automáticamente, en vez de depender de que revises manualmente cada dependencia de vez en cuando.",
+      "link": "https://docs.github.com/en/code-security/dependabot/dependabot-security-updates/about-dependabot-security-updates",
+      "linkLabel": "GitHub Docs: actualizaciones de seguridad de Dependabot"
+    },
+    {
+      "text": "En JavaScript, usa console.table() para depurar arrays de objetos en vez de console.log.",
+      "explanation": "console.log imprime un array de objetos como un bloque de texto difícil de leer de un vistazo, mientras que console.table() lo muestra como una tabla con una columna por cada propiedad, lo que hace mucho más fácil comparar varios elementos a la vez. Es especialmente útil cuando depuras listas de datos, como resultados de una API.",
+      "link": "https://developer.mozilla.org/en-US/docs/Web/API/console/table",
+      "linkLabel": "MDN: console.table()"
+    },
+    {
+      "text": "Evita las variables globales mutables: guarda el estado de tu programa dentro de funciones o clases.",
+      "explanation": "Una variable global que cualquier parte del programa puede modificar hace que el comportamiento de tu código dependa de en qué orden se ejecutan las cosas, lo que es muy difícil de depurar y de probar. Encapsular ese estado dentro de una función o una clase deja claro quién puede cambiarlo y cuándo, en vez de tener que revisar el proyecto entero para entender su valor en cada momento.",
+      "link": "https://thevaluable.dev/global-variable-explained/",
+      "linkLabel": "The Valuable Dev: por qué las variables globales generan tanto rechazo"
+    },
+    {
+      "text": "Antes de ejecutar un comando destructivo como rm -rf, DROP TABLE o git push --force, comprueba primero qué va a borrar exactamente.",
+      "explanation": "Estos comandos no piden confirmación y pueden destruir en segundos horas de trabajo o datos de producción que no se pueden recuperar. Revisar la ruta con ls, probar antes en un entorno de prueba o usar una opción de simulación (dry-run) cuando exista cuesta unos segundos y evita un desastre irreversible.",
+      "link": "https://ostechnix.com/dangerous-linux-commands-beginners/",
+      "linkLabel": "OSTechNix: comandos peligrosos de Linux que los principiantes deben evitar"
+    }
+  ]
+}

@@ -142,6 +142,17 @@
       ],
       "correct": 0,
       "explanation": "any() devuelve True si al menos un elemento del iterable es verdadero (truthy); 0, '' y None son falsy, pero 5 es truthy, así que el resultado es True."
+    },
+    {
+      "q": "¿Qué devuelve `{'a': 1}.get('b', 0)`?",
+      "opts": [
+        "0",
+        "None",
+        "KeyError",
+        "'b'"
+      ],
+      "correct": 0,
+      "explanation": "get() devuelve el valor por defecto indicado como segundo argumento cuando la clave no existe, en lugar de lanzar KeyError como lo haría acceder con corchetes."
     }
   ],
   "javascript": [
@@ -287,6 +298,17 @@
       ],
       "correct": 0,
       "explanation": "Cuando uno de los operandos del + es un string, JavaScript convierte el número a texto y concatena, por lo que 1 + '1' da la cadena '11' en lugar de sumar numéricamente."
+    },
+    {
+      "q": "¿Qué imprime este código?\nfor (var i = 0; i < 3; i++) {\n  setTimeout(() => console.log(i), 0);\n}",
+      "opts": [
+        "0 1 2",
+        "3 3 3",
+        "0 0 0",
+        "Error"
+      ],
+      "correct": 1,
+      "explanation": "var tiene ámbito de función, no de bloque, así que las tres funciones de setTimeout comparten la misma variable i; cuando finalmente se ejecutan, tras terminar el bucle, i ya vale 3, por eso se imprime '3 3 3' en vez del valor esperado en cada iteración."
     }
   ],
   "typescript": [
@@ -432,6 +454,17 @@
       ],
       "correct": 0,
       "explanation": "Pick<T, K> construye un nuevo tipo seleccionando únicamente las propiedades listadas en K dentro de T, útil cuando solo necesitas un subconjunto concreto de campos de un tipo más grande."
+    },
+    {
+      "q": "¿Qué permite declarar `interface Diccionario { [clave: string]: number; }`?",
+      "opts": [
+        "Un objeto con cualquier cantidad de propiedades de tipo string cuyo valor sea siempre number",
+        "Un array de números",
+        "Una función que recibe un string y devuelve un number",
+        "Una propiedad obligatoria llamada 'clave'"
+      ],
+      "correct": 0,
+      "explanation": "Una firma de índice como [clave: string]: number permite que el objeto tenga cualquier número de propiedades con nombres de tipo string, siempre que todos sus valores sean del tipo number indicado."
     }
   ],
   "java": [
@@ -577,6 +610,17 @@
       ],
       "correct": 0,
       "explanation": "Un enum declara un tipo cuyos valores posibles son un conjunto fijo y conocido de constantes con nombre (por ejemplo los días de la semana), lo que evita usar números o textos sueltos para representar esas opciones."
+    },
+    {
+      "q": "¿Qué permite el 'autoboxing' en Java, como en `Integer n = 5;`?",
+      "opts": [
+        "Convertir automáticamente entre un tipo primitivo (como int) y su clase envoltorio (como Integer)",
+        "Declarar una variable sin indicar su tipo",
+        "Convertir un String en un número automáticamente",
+        "Ejecutar un método automáticamente al crear el objeto"
+      ],
+      "correct": 0,
+      "explanation": "El autoboxing convierte automáticamente un valor primitivo (int) en su clase envoltorio correspondiente (Integer) cuando es necesario, y el 'unboxing' hace la conversión inversa, sin que el programador tenga que llamar manualmente a métodos de conversión."
     }
   ],
   "kotlin": [
@@ -722,6 +766,17 @@
       ],
       "correct": 0,
       "explanation": "'run' ejecuta el bloque lambda y devuelve como resultado el valor de su última expresión, lo que permite agrupar varias instrucciones y calcular un valor sin necesidad de declarar una función aparte."
+    },
+    {
+      "q": "¿Qué permite esta línea de Kotlin?\nval (nombre, edad) = Pair(\"Ana\", 30)",
+      "opts": [
+        "Asignar cada componente de un objeto (como un Pair) a variables separadas en una sola línea",
+        "Crear una lista con dos elementos",
+        "Declarar una función con dos parámetros",
+        "Convertir el Pair en un Map"
+      ],
+      "correct": 0,
+      "explanation": "La declaración por desestructuración asigna automáticamente cada componente de un objeto (aquí el 'first' y 'second' de un Pair) a variables individuales, siempre que la clase tenga definidas las funciones component1(), component2(), etc."
     }
   ],
   "sql": [
@@ -867,6 +922,17 @@
       ],
       "correct": 0,
       "explanation": "Una CTE definida con WITH crea un conjunto de resultados temporal y con nombre, válido solo durante esa consulta, que se puede referenciar como si fuera una tabla más, ayudando a dividir consultas complejas en partes más legibles."
+    },
+    {
+      "q": "¿Qué devuelve `SELECT name FROM customers WHERE name LIKE 'A%';`?",
+      "opts": [
+        "Los clientes cuyo nombre empieza por la letra A",
+        "Los clientes cuyo nombre contiene la letra A en cualquier posición",
+        "Los clientes cuyo nombre termina en A",
+        "Los clientes cuyo nombre es exactamente 'A'"
+      ],
+      "correct": 0,
+      "explanation": "El operador LIKE con el patrón 'A%' busca textos que empiecen por 'A', donde el símbolo % representa cualquier secuencia de caracteres (incluida ninguna) a continuación."
     }
   ],
   "git": [
@@ -1012,6 +1078,17 @@
       ],
       "correct": 0,
       "explanation": "'git shortlog -sn' agrupa los commits por autor, muestra solo el número total de cada uno (-s) y los ordena de mayor a menor cantidad (-n), una forma rápida de ver quién ha contribuido más a un repositorio."
+    },
+    {
+      "q": "¿Qué diferencia hay entre 'git diff' y 'git diff --staged'?",
+      "opts": [
+        "git diff muestra los cambios sin añadir al área de staging; git diff --staged muestra los cambios ya añadidos pero sin confirmar",
+        "Son exactamente lo mismo",
+        "git diff --staged muestra el historial completo de commits",
+        "git diff solo funciona después de hacer commit"
+      ],
+      "correct": 0,
+      "explanation": "git diff compara el directorio de trabajo con el área de staging (lo que aún no se ha añadido con git add), mientras que git diff --staged compara el área de staging con el último commit, mostrando lo que entrará en el próximo commit."
     }
   ],
   "htmlcss": [
@@ -1157,6 +1234,17 @@
       ],
       "correct": 0,
       "explanation": "'gap' añade un espacio uniforme entre los elementos de un contenedor flex o grid sin tener que poner margin en cada hijo por separado, evitando además el margen extra no deseado en el primer o último elemento."
+    },
+    {
+      "q": "¿Para qué sirve un atributo personalizado como `data-id=\"42\"` en una etiqueta HTML?",
+      "opts": [
+        "Para guardar información adicional accesible desde CSS o JavaScript sin afectar la semántica del HTML",
+        "Para definir un identificador único obligatorio en HTML",
+        "Para validar automáticamente el formulario",
+        "Solo funciona dentro de etiquetas <table>"
+      ],
+      "correct": 0,
+      "explanation": "Los atributos que empiezan por 'data-' permiten almacenar información personalizada en cualquier elemento HTML, accesible en JavaScript mediante dataset (como elemento.dataset.id) o en CSS con attr(), sin afectar el significado semántico de la etiqueta."
     }
   ],
   "bash": [
@@ -1302,6 +1390,17 @@
       ],
       "correct": 0,
       "explanation": "La expansión de llaves genera una cadena distinta por cada valor separado por comas dentro de las llaves, combinándolo con el texto que lo rodea; aquí produce archivo1.txt, archivo2.txt y archivo3.txt como tres argumentos distintos para echo."
+    },
+    {
+      "q": "¿Qué comprueba la condición `if [ -f \"archivo.txt\" ]; then` en un script de Bash?",
+      "opts": [
+        "Si 'archivo.txt' existe y es un archivo regular",
+        "Si 'archivo.txt' está vacío",
+        "Si el usuario tiene permiso de escritura sobre 'archivo.txt'",
+        "Si 'archivo.txt' es una carpeta"
+      ],
+      "correct": 0,
+      "explanation": "El operador -f comprueba si la ruta indicada existe y es un archivo regular (no un directorio ni un enlace especial), una comprobación muy habitual antes de leer o procesar un archivo en un script."
     }
   ],
   "ia": [
@@ -1447,6 +1546,17 @@
       ],
       "correct": 0,
       "explanation": "El prompt injection consiste en ocultar instrucciones dentro del texto que recibe el modelo (por ejemplo en un documento, una página web o un comentario) con la intención de que el modelo las obedezca en lugar de seguir las instrucciones legítimas de quien lo está usando."
+    },
+    {
+      "q": "¿Qué diferencia hay entre dar a un modelo de lenguaje un prompt de 'zero-shot' y uno de 'few-shot'?",
+      "opts": [
+        "En zero-shot no se dan ejemplos de la tarea; en few-shot se incluyen algunos ejemplos resueltos dentro del propio prompt para guiar la respuesta",
+        "Zero-shot solo funciona con imágenes y few-shot solo con texto",
+        "Son exactamente lo mismo, solo cambia el nombre",
+        "Few-shot requiere reentrenar el modelo; zero-shot no"
+      ],
+      "correct": 0,
+      "explanation": "En un prompt zero-shot se le pide al modelo que resuelva la tarea directamente, sin ejemplos previos; en uno few-shot se incluyen uno o varios ejemplos ya resueltos dentro del mismo prompt, lo que suele mejorar la precisión de la respuesta sin necesidad de reentrenar el modelo."
     }
   ]
 }

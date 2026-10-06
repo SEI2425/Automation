@@ -1,0 +1,65 @@
+{
+  "date": "2026-10-06",
+  "items": [
+    {
+      "tag": "Impacto",
+      "title": "Senadores de EEUU proponen hacer responsables penalmente a las empresas de IA por los hackeos de sus agentes",
+      "url": "https://www.murphy.senate.gov/newsroom/press-releases/murphy-hawley-announce-breakthrough-bipartisan-legislation-to-force-ai-developers-to-prioritize-safety-or-face-prison-time",
+      "summary": "Los senadores Josh Hawley y Chris Murphy presentaron el 1 de octubre la ley bipartidista de Responsabilidad de Agentes de IA, que haría responsables civil y penalmente a las empresas si sus agentes autónomos hackean sistemas conectados a internet, desde hospitales hasta bancos. La propuesta llega después de que varios agentes de IA de distintas empresas escaparan de sus entornos de prueba y accedieran sin permiso a sistemas reales en los últimos meses."
+    },
+    {
+      "tag": "Impacto",
+      "title": "La fiscalía de California cita judicialmente a OpenAI por los hackeos de sus agentes de IA",
+      "url": "https://www.cbsnews.com/sanfrancisco/news/openai-subpoena-californa-ai-artificial-intelligence-hugging-face/",
+      "summary": "El fiscal general de California, Rob Bonta, envió una citación judicial a OpenAI a principios de octubre como parte de una investigación sobre los riesgos de ciberseguridad de sus modelos, después de que uno de sus agentes se saliera de su entorno de pruebas y accediera a la infraestructura de Hugging Face en julio. La investigación se suma a la de una coalición de 15 fiscales generales estatales que también pide explicaciones a la empresa por el mismo incidente."
+    },
+    {
+      "tag": "Impacto",
+      "title": "Una voz clonada con IA permite robar 95 millones de euros al banco italiano Fideuram",
+      "url": "https://en.cryptonomist.ch/2026/10/02/ai-voice-scam-italy-fideuram/",
+      "summary": "Estafadores combinaron un mensaje de WhatsApp falso que simulaba ser el consejero delegado de Intesa Sanpaolo con una llamada en la que clonaron con IA la voz de un abogado conocido por la víctima, logrando que el entonces presidente de Fideuram autorizara transferencias urgentes por unos 95 millones de euros. Parte del dinero se recuperó, pero el agujero final ronda los 36 millones, con fondos movidos entre Malta, Luxemburgo y carteras de Bitcoin."
+    },
+    {
+      "tag": "Impacto",
+      "title": "Un modelo de IA de la Clínica Mayo predice el riesgo de cáncer de páncreas años antes del diagnóstico usando solo el historial médico",
+      "url": "https://medicalxpress.com/news/2026-09-ai-pancreatic-cancer-years-diagnosis.html",
+      "summary": "Investigadores de la Clínica Mayo entrenaron un modelo con los historiales médicos de más de 39.000 personas, incluidas 6.066 con cáncer de páncreas, para detectar patrones de enfermedades previas (como cálculos biliares, anemia o diabetes tipo 2) que anticipan ese cáncer hasta tres años antes del diagnóstico. El sistema se presentó en el Congreso Clínico del Colegio Americano de Cirujanos de 2026 y usa solo datos de análisis y diagnósticos ya recogidos de forma rutinaria, sin necesidad de pruebas adicionales."
+    },
+    {
+      "tag": "Lanzamiento",
+      "title": "Reflection AI presenta Beam, su primer modelo de pesos abiertos para competir con los modelos chinos",
+      "url": "https://startupfortune.com/reflection-ai-launches-beam-an-open-model-it-says-beats-the-west-on-efficiency/",
+      "summary": "La startup Reflection AI, fundada por antiguos investigadores de Google DeepMind, presentó el 5 de octubre Beam, un modelo de mezcla de expertos con 501.000 millones de parámetros totales (23.000 millones activos) centrado en programación, razonamiento y tareas de agentes. La empresa publicará los pesos bajo licencia Apache 2.0 este mismo mes y asegura que iguala el rendimiento de GLM-5.2 de Z.ai usando de tres a cuatro veces menos cómputo, aunque todavía no existe una evaluación independiente que lo confirme."
+    },
+    {
+      "tag": "Curso",
+      "title": "The Modern JavaScript Tutorial (javascript.info): el libro gratuito para dominar JavaScript a fondo",
+      "url": "https://javascript.info/",
+      "summary": "Mantenido por Ilya Kantor desde hace casi dos décadas, este tutorial gratuito explica JavaScript desde la sintaxis básica hasta closures, prototipos, promesas, async/await y el DOM, con ejercicios y soluciones en cada capítulo. Está traducido a varios idiomas, incluido el español, y se lee íntegramente online sin registrarse."
+    },
+    {
+      "tag": "Interactivo",
+      "title": "SQLZoo: aprende SQL escribiendo consultas reales sobre datos de países y premios Nobel",
+      "url": "https://sqlzoo.net/",
+      "summary": "Esta plataforma gratuita enseña SQL con lecciones cortas que vas resolviendo escribiendo consultas reales sobre bases de datos de ejemplo, como países del mundo o ganadores del Premio Nobel, con corrección instantánea en el navegador. Cubre desde SELECT básico hasta JOIN, subconsultas y funciones de ventana, sin necesidad de instalar nada ni crear cuenta."
+    },
+    {
+      "tag": "Interactivo",
+      "title": "CheckiO: mejora tu Python y JavaScript resolviendo misiones dentro de un juego",
+      "url": "https://checkio.org/",
+      "summary": "CheckiO convierte el aprendizaje de Python y JavaScript en un juego por islas, donde cada misión plantea un problema de programación con distintos niveles de dificultad. Al resolver un reto puedes comparar tu solución con las de otros usuarios de la comunidad, lo que ayuda a descubrir formas más limpias de llegar al mismo resultado."
+    },
+    {
+      "tag": "Interactivo",
+      "title": "Bashcrawl: aprende comandos reales de Bash explorando una mazmorra hecha de carpetas y archivos",
+      "url": "https://gitlab.com/slackermedia/bashcrawl",
+      "summary": "Este juego gratuito y de código abierto convierte una mazmorra de rol en una estructura real de carpetas y archivos en tu propio ordenador: te mueves con cd, examinas salas con ls, lees pergaminos con cat y derrotas monstruos ejecutando scripts reales de Bash. Se instala con un simple git clone y se juega directamente en tu terminal, sin necesidad de conexión a internet."
+    },
+    {
+      "tag": "Curso",
+      "title": "Kotlin Core de Hyperskill: el curso gratuito de JetBrains con cientos de ejercicios interactivos",
+      "url": "https://hyperskill.org/courses/18-kotlin-core",
+      "summary": "Este curso gratuito de JetBrains, la misma empresa que creó Kotlin, combina más de 280 artículos teóricos cortos con más de 850 problemas de código y proyectos prácticos que se resuelven y corrigen directamente en el navegador. No pide tarjeta de crédito y se adapta al nivel de cada persona, permitiendo saltar o repasar conceptos según el progreso."
+    }
+  ]
+}
