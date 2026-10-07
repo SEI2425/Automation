@@ -1,0 +1,92 @@
+{
+  "date": "2026-10-07",
+  "questions": [
+    {
+      "type": "complete",
+      "lang": "Python",
+      "question": "¿Que falta para que total acumule la suma de los elementos en posicion par del array?",
+      "code": "nums = [10, 20, 30, 40]\ntotal = 0\nfor i, n in enumerate(nums):\n    if i % 2 == 0:\n        total ____ n\nprint(total)",
+      "options": ["+=", "=", "==", "+"],
+      "correct": 0,
+      "hint": "Necesitas acumular, no sobrescribir, el valor en cada vuelta.",
+      "explanation": "+= suma n al valor que total ya tenia; como enumerate numera desde 0, los indices pares (0 y 2) corresponden a los valores 10 y 30, cuya suma es 40."
+    },
+    {
+      "type": "identify",
+      "lang": "JavaScript",
+      "question": "¿Que imprime este codigo?",
+      "code": "const arr = [1, 2, 3];\nconst result = arr.map(n => n * 2).filter(n => n > 3);\nconsole.log(result);",
+      "options": ["[4, 6]", "[2, 4, 6]", "[1, 2, 3]", "Error"],
+      "correct": 0,
+      "hint": "Primero se duplica cada elemento, luego se descartan los que no superen 3.",
+      "explanation": "map(n => n*2) convierte [1,2,3] en [2,4,6], y filter(n => n>3) se queda solo con los valores mayores que 3, dejando [4,6]."
+    },
+    {
+      "type": "complete",
+      "lang": "TypeScript",
+      "question": "¿Que tipo se infiere para x al llamar a esta funcion generica?",
+      "code": "function primero<T>(lista: T[]): T {\n  return lista[0];\n}\nconst x = primero(____);\n// x se infiere como tipo number",
+      "options": ["[1, 2, 3]", "\"hola\"", "{a: 1}", "true"],
+      "correct": 0,
+      "hint": "T se infiere automaticamente del tipo de argumento que le pases a la funcion generica.",
+      "explanation": "Al pasar un array de numeros, TypeScript infiere T como number, por lo que x queda tipado como number; las demas opciones no son arrays o no encajan con el tipo de retorno esperado."
+    },
+    {
+      "type": "complete",
+      "lang": "Kotlin",
+      "question": "¿Que metodo falta para crear una copia de p1 cambiando solo el precio?",
+      "code": "data class Producto(val nombre: String, val precio: Double)\n\nval p1 = Producto(\"Mesa\", 100.0)\nval p2 = p1.____(precio = 80.0)\nprintln(p2)",
+      "options": ["copy", "clone", "with", "apply"],
+      "correct": 0,
+      "hint": "Las data class generan automaticamente un metodo para crear una copia cambiando solo algunas propiedades.",
+      "explanation": "copy() crea una nueva instancia de la data class reutilizando los valores originales, salvo los que se indiquen explicitamente; aqui genera un Producto igual a p1 pero con precio 80.0."
+    },
+    {
+      "type": "identify",
+      "lang": "SQL",
+      "question": "¿Que devuelve esta consulta?",
+      "code": "SELECT category, COUNT(*) AS total\nFROM products\nWHERE price > 50\nGROUP BY category\nORDER BY total DESC\nLIMIT 3;",
+      "options": [
+        "Las 3 categorias con mas productos de precio superior a 50, de mayor a menor cantidad",
+        "Los 3 productos mas caros de cada categoria",
+        "El precio promedio de las 3 categorias mas baratas",
+        "Todas las categorias ordenadas alfabeticamente"
+      ],
+      "correct": 0,
+      "hint": "Primero se filtran los productos caros, luego se agrupan y se cuenta cuantos hay en cada categoria.",
+      "explanation": "WHERE filtra los productos con precio mayor a 50 antes de agrupar; GROUP BY cuenta cuantos quedan por categoria, ORDER BY total DESC los ordena de mayor a menor cantidad, y LIMIT 3 se queda solo con las tres primeras."
+    }
+  ],
+  "tips": [
+    {
+      "text": "No compares numeros de punto flotante con '==': usa una pequena tolerancia (epsilon) para ver si son 'suficientemente iguales'.",
+      "explanation": "Debido a como las computadoras representan los decimales en binario, una operacion tan simple como 0.1 + 0.2 no da exactamente 0.3, sino un valor con un error minusculo de redondeo. Comparar ese resultado con == casi siempre da falso, aunque para cualquier persona los numeros 'sean iguales', asi que hay que comparar si la diferencia es menor que un margen pequeno.",
+      "link": "https://docs.python.org/3/tutorial/floatingpoint.html",
+      "linkLabel": "Documentacion oficial de Python: aritmetica de punto flotante"
+    },
+    {
+      "text": "Usa un sistema de logging con niveles (DEBUG, INFO, ERROR) en vez de llenar el codigo de print().",
+      "explanation": "Un print() se queda para siempre en el codigo o hay que borrarlo a mano, mientras que un logger te permite silenciar los mensajes de depuracion en produccion sin tocar una sola linea, solo cambiando el nivel configurado. Ademas, cada mensaje queda con su marca de tiempo y su gravedad, lo que facilita mucho rastrear que paso cuando algo falla en un servidor que no puedes ver en directo.",
+      "link": "https://docs.python.org/3/howto/logging.html",
+      "linkLabel": "Documentacion oficial de Python: guia de logging"
+    },
+    {
+      "text": "No asumas que los datos que recibes de una API externa tienen siempre la forma que esperas: compruebalo antes de usarlos.",
+      "explanation": "Una API puede cambiar sin avisar, devolver un campo como null en lugar del texto esperado, o fallar parcialmente y mandar un objeto de error con una forma distinta a la normal. Si tu codigo asume ciegamente que el campo que busca siempre va a estar ahi, un cambio asi puede tirar abajo tu aplicacion en produccion en lugar de mostrar un error controlado.",
+      "link": "https://json-schema.org/understanding-json-schema/",
+      "linkLabel": "Understanding JSON Schema: como validar la forma de datos externos"
+    },
+    {
+      "text": "Haz una copia de seguridad de tu base de datos antes de ejecutar una migracion o un cambio estructural grande.",
+      "explanation": "Una migracion que sale mal a mitad de camino puede dejar la base de datos en un estado intermedio roto, mezclando la estructura antigua con la nueva, y sin una copia reciente la unica forma de arreglarlo es reconstruir todo a mano. Herramientas como pg_dump o mysqldump tardan segundos en crear esa copia, un seguro barato frente a horas de trabajo perdido.",
+      "link": "https://www.postgresql.org/docs/current/backup.html",
+      "linkLabel": "Documentacion de PostgreSQL: copias de seguridad"
+    },
+    {
+      "text": "Antes de escribir el codigo que consume una API, pruebala a mano con curl o Postman.",
+      "explanation": "Si la peticion falla o devuelve algo raro al probarla directamente, sabes enseguida que el problema esta en la API (o en como la estas llamando), sin perder tiempo revisando tu propio codigo buscando un bug que no existe. Es una forma rapida de aislar en que lado del problema estas antes de escribir una sola linea.",
+      "link": "https://learning.postman.com/docs/getting-started/overview/",
+      "linkLabel": "Postman: guia de introduccion para probar APIs"
+    }
+  ]
+}

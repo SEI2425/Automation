@@ -153,6 +153,17 @@
       ],
       "correct": 0,
       "explanation": "get() devuelve el valor por defecto indicado como segundo argumento cuando la clave no existe, en lugar de lanzar KeyError como lo haría acceder con corchetes."
+    },
+    {
+      "q": "¿Que imprime `x = 7; resultado = 'par' if x % 2 == 0 else 'impar'; print(resultado)`?",
+      "opts": [
+        "par",
+        "impar",
+        "True",
+        "Error de sintaxis"
+      ],
+      "correct": 1,
+      "explanation": "El operador ternario evalua primero la condicion x % 2 == 0; como 7 es impar, esa condicion es falsa y se devuelve el valor tras 'else', es decir 'impar'."
     }
   ],
   "javascript": [
@@ -309,6 +320,17 @@
       ],
       "correct": 1,
       "explanation": "var tiene ámbito de función, no de bloque, así que las tres funciones de setTimeout comparten la misma variable i; cuando finalmente se ejecutan, tras terminar el bucle, i ya vale 3, por eso se imprime '3 3 3' en vez del valor esperado en cada iteración."
+    },
+    {
+      "q": "¿Que hace `Promise.all([p1, p2, p3])` cuando p1, p2 y p3 son promesas?",
+      "opts": [
+        "Espera a que las tres se resuelvan y devuelve un array con sus resultados en el mismo orden, o falla en cuanto una se rechaza",
+        "Devuelve solo el resultado de la primera promesa que termine",
+        "Ejecuta las promesas una detras de otra, nunca en paralelo",
+        "Ignora los errores de cualquiera de las promesas"
+      ],
+      "correct": 0,
+      "explanation": "Promise.all espera a que todas las promesas del array se resuelvan y devuelve sus resultados en un array respetando el orden original; si cualquiera de ellas se rechaza, Promise.all se rechaza inmediatamente con ese error, sin esperar a las demas."
     }
   ],
   "typescript": [
@@ -465,6 +487,17 @@
       ],
       "correct": 0,
       "explanation": "Una firma de índice como [clave: string]: number permite que el objeto tenga cualquier número de propiedades con nombres de tipo string, siempre que todos sus valores sean del tipo number indicado."
+    },
+    {
+      "q": "¿Que permite declarar varias firmas para la misma funcion en TypeScript, como en `function combinar(a: string, b: string): string; function combinar(a: number, b: number): number;`?",
+      "opts": [
+        "Sobrecarga de funciones: distintas combinaciones validas de tipos de parametros y retorno para la misma funcion",
+        "Declarar la misma funcion dos veces por error sin que el compilador avise",
+        "Convertir la funcion en generica automaticamente",
+        "Ejecutar ambas versiones a la vez y combinar sus resultados"
+      ],
+      "correct": 0,
+      "explanation": "TypeScript permite declarar varias firmas (overloads) para la misma funcion, especificando que combinaciones de tipos de entrada y salida son validas, aunque luego exista una unica implementacion que maneje internamente los distintos casos."
     }
   ],
   "java": [
@@ -621,6 +654,17 @@
       ],
       "correct": 0,
       "explanation": "El autoboxing convierte automáticamente un valor primitivo (int) en su clase envoltorio correspondiente (Integer) cuando es necesario, y el 'unboxing' hace la conversión inversa, sin que el programador tenga que llamar manualmente a métodos de conversión."
+    },
+    {
+      "q": "¿Que permite la nueva sintaxis de 'switch' como expresion en Java (desde Java 14), como en `String resultado = switch(dia) { case 1, 7 -> \"finde\"; default -> \"laborable\"; };`?",
+      "opts": [
+        "Usar switch directamente como una expresion que devuelve un valor, con la flecha -> en lugar de 'case ... : break;'",
+        "Declarar una nueva clase llamada switch",
+        "Ejecutar todos los casos a la vez y concatenar sus resultados",
+        "Eliminar la necesidad de la palabra clave 'default'"
+      ],
+      "correct": 0,
+      "explanation": "Desde Java 14, switch puede usarse como expresion que directamente devuelve un valor con la sintaxis de flecha (->), evitando el 'fall-through' accidental de case sin break y haciendo el codigo mas conciso que el switch clasico."
     }
   ],
   "kotlin": [
@@ -777,6 +821,17 @@
       ],
       "correct": 0,
       "explanation": "La declaración por desestructuración asigna automáticamente cada componente de un objeto (aquí el 'first' y 'second' de un Pair) a variables individuales, siempre que la clase tenga definidas las funciones component1(), component2(), etc."
+    },
+    {
+      "q": "¿Que permite este codigo sin necesidad de un cast explicito?\nfun describir(obj: Any) {\n    if (obj is String) {\n        println(obj.length)\n    }\n}",
+      "opts": [
+        "El 'smart cast' de Kotlin: tras comprobar 'obj is String', el compilador trata automaticamente a obj como String dentro de ese bloque",
+        "Kotlin ignora por completo la comprobacion 'is' y permite llamar a cualquier metodo",
+        "Es un error de compilacion porque falta convertir obj explicitamente con 'as String'",
+        "Solo funciona si obj se declara como 'var', nunca como 'val'"
+      ],
+      "correct": 0,
+      "explanation": "Kotlin aplica un 'smart cast' automatico: una vez que el compilador comprueba con 'is' que obj es de tipo String dentro de un bloque, permite usar directamente los miembros de String (como .length) sin necesidad de un cast manual con 'as'."
     }
   ],
   "sql": [
@@ -933,6 +988,17 @@
       ],
       "correct": 0,
       "explanation": "El operador LIKE con el patrón 'A%' busca textos que empiecen por 'A', donde el símbolo % representa cualquier secuencia de caracteres (incluida ninguna) a continuación."
+    },
+    {
+      "q": "¿Que hace `LAG(salary) OVER (ORDER BY hire_date)` en una consulta SQL?",
+      "opts": [
+        "Devuelve el valor de 'salary' de la fila anterior segun el orden indicado, para comparar cada fila con la precedente",
+        "Calcula el salario promedio de todas las filas anteriores",
+        "Elimina las filas anteriores a la actual",
+        "Cuenta cuantas filas hay antes de la actual"
+      ],
+      "correct": 0,
+      "explanation": "LAG() es una funcion de ventana que accede al valor de una columna en una fila anterior (segun el orden indicado) sin necesidad de una subconsulta o un self join, muy util para comparar un valor con el de la fila previa, como calcular la diferencia entre salarios consecutivos."
     }
   ],
   "git": [
@@ -1089,6 +1155,17 @@
       ],
       "correct": 0,
       "explanation": "git diff compara el directorio de trabajo con el área de staging (lo que aún no se ha añadido con git add), mientras que git diff --staged compara el área de staging con el último commit, mostrando lo que entrará en el próximo commit."
+    },
+    {
+      "q": "¿Que diferencia hay entre una fusion 'fast-forward' y una fusion normal en Git?",
+      "opts": [
+        "En una fusion fast-forward Git simplemente mueve el puntero de la rama hacia adelante, sin crear un commit de fusion, porque no hubo cambios divergentes",
+        "Son exactamente lo mismo",
+        "Fast-forward borra la rama fusionada automaticamente",
+        "Una fusion normal nunca se puede deshacer"
+      ],
+      "correct": 0,
+      "explanation": "Cuando la rama actual no tiene commits propios desde que se creo la otra rama, Git puede simplemente adelantar el puntero (fast-forward) sin generar un commit de fusion adicional; si ambas ramas avanzaron por separado, se crea un commit de fusion normal que une ambas historias."
     }
   ],
   "htmlcss": [
@@ -1245,6 +1322,17 @@
       ],
       "correct": 0,
       "explanation": "Los atributos que empiezan por 'data-' permiten almacenar información personalizada en cualquier elemento HTML, accesible en JavaScript mediante dataset (como elemento.dataset.id) o en CSS con attr(), sin afectar el significado semántico de la etiqueta."
+    },
+    {
+      "q": "¿Que diferencia hay entre las pseudo-clases CSS ':focus' y ':focus-visible'?",
+      "opts": [
+        ":focus se aplica siempre que el elemento tiene el foco; :focus-visible solo cuando el navegador considera que ese foco deberia mostrarse visualmente, como al navegar con teclado",
+        "Son exactamente lo mismo, solo cambia el nombre",
+        ":focus-visible solo funciona en formularios",
+        ":focus solo se activa con el raton, nunca con el teclado"
+      ],
+      "correct": 0,
+      "explanation": ":focus se activa en cualquier caso en que el elemento recibe el foco, incluido un clic de raton; :focus-visible es mas selectivo y solo aplica el estilo cuando el navegador detecta que ese foco deberia ser visible para el usuario, como al moverse con la tecla Tab, evitando el contorno de foco en clics de raton donde no suele hacer falta."
     }
   ],
   "bash": [
@@ -1401,6 +1489,17 @@
       ],
       "correct": 0,
       "explanation": "El operador -f comprueba si la ruta indicada existe y es un archivo regular (no un directorio ni un enlace especial), una comprobación muy habitual antes de leer o procesar un archivo en un script."
+    },
+    {
+      "q": "¿Que diferencia hay entre `\"$@\"` y `\"$*\"` dentro de un script de Bash cuando se pasan varios argumentos?",
+      "opts": [
+        "\"$@\" expande cada argumento como una palabra separada; \"$*\" los combina todos en una sola cadena de texto",
+        "Son exactamente lo mismo entre comillas dobles",
+        "\"$*\" solo funciona dentro de funciones, nunca en el script principal",
+        "\"$@\" cuenta cuantos argumentos se pasaron"
+      ],
+      "correct": 0,
+      "explanation": "Entre comillas dobles, \"$@\" se expande como una lista de palabras independientes (cada argumento por separado, respetando espacios internos), mientras que \"$*\" une todos los argumentos en una unica cadena de texto separada por espacios, lo que importa mucho al recorrerlos en un bucle for."
     }
   ],
   "ia": [
@@ -1557,6 +1656,17 @@
       ],
       "correct": 0,
       "explanation": "En un prompt zero-shot se le pide al modelo que resuelva la tarea directamente, sin ejemplos previos; en uno few-shot se incluyen uno o varios ejemplos ya resueltos dentro del mismo prompt, lo que suele mejorar la precisión de la respuesta sin necesidad de reentrenar el modelo."
+    },
+    {
+      "q": "¿Que significa que un modelo de aprendizaje automatico sufra 'sobreajuste' (overfitting)?",
+      "opts": [
+        "Que el modelo memoriza demasiado bien los datos de entrenamiento pero generaliza mal con datos nuevos que no ha visto antes",
+        "Que el modelo tarda demasiado tiempo en entrenarse",
+        "Que el modelo necesita mas memoria RAM de la disponible",
+        "Que el modelo solo funciona con datos en ingles"
+      ],
+      "correct": 0,
+      "explanation": "El sobreajuste ocurre cuando un modelo aprende patrones demasiado especificos de los datos de entrenamiento, incluido su ruido, en lugar de las reglas generales del problema, lo que hace que funcione muy bien con esos datos pero mal con ejemplos nuevos que no ha visto antes."
     }
   ]
 }

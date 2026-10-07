@@ -1,0 +1,65 @@
+{
+  "date": "2026-10-07",
+  "items": [
+    {
+      "tag": "Impacto",
+      "title": "Utah amplia su sandbox de IA en salud con recetas automaticas y terapia pelvica",
+      "url": "https://www.healthcaredive.com/news/utah-approves-health-ai-pilots-drug-management-womens-health/832318/",
+      "summary": "La Oficina de Politica de IA de Utah anuncio el 5 de octubre tres nuevos pilotos dentro de su sandbox regulatorio: Nolla Health evaluara y podra prescribir tratamientos de acne leve a partir de fotos sin revision de un medico, August AI renovara recetas de enfermedades cronicas y Expect Fitness ofrecera terapia pelvica virtual. El estado tambien firmo acuerdos con seis auditores externos, entre ellos Stanford y la Coalition for Health AI, para revisar los registros de decisiones y los resultados en pacientes de estos programas."
+    },
+    {
+      "tag": "Impacto",
+      "title": "Starling Bank alerta de que millones de personas podrian sufrir una estafa con su voz clonada por IA",
+      "url": "https://thenightly.com.au/business/wealth/this-bank-says-millions-of-people-could-be-targeted-by-ai-voice-cloning-scams-c-16107398",
+      "summary": "Una encuesta del banco britanico Starling a mas de 3.000 personas encontro que un 28% cree haber sido ya objetivo de una estafa con voz clonada por IA, y que bastan tres segundos de audio de un video subido a redes sociales para replicar la voz de alguien. Casi la mitad de los encuestados ni siquiera sabia que este tipo de fraude existe, por lo que el banco recomienda acordar una 'frase de seguridad' con familiares y amigos para verificar la identidad por telefono."
+    },
+    {
+      "tag": "Impacto",
+      "title": "El empleo de programadores jovenes cae casi un 20% desde 2024, segun el Indice de IA de Stanford",
+      "url": "https://www.unite.ai/stanford-ai-index-2026-reveals-a-field-racing-ahead-of-its-guardrails/",
+      "summary": "El Indice de IA 2026 de Stanford, basado en datos de nomina de mas de 25 millones de trabajadores, encontro que el empleo de desarrolladores de software de entre 22 y 25 anos cayo casi un 20% respecto a 2024, mientras que el de programadores con mas experiencia crecio entre un 6% y un 12% en el mismo periodo. El informe vincula la caida con las ganancias de productividad medibles que la IA ya aporta a tareas de programacion, que segun sus calculos alcanzan un 26%."
+    },
+    {
+      "tag": "Impacto",
+      "title": "Los deepfakes de IA en campanas electorales empiezan a acabar en demandas en EEUU",
+      "url": "https://axios.com/2026/10/02/ai-deepfake-election-campaign-lawsuits",
+      "summary": "Varios candidatos y cargos electos de EEUU ya reciben cartas de cese y amenazas legales por anuncios de campana con deepfakes generados por IA, como el caso del representante Derrick Van Orden, acusado de difundir un video falso de su rival. El senador Adam Schiff reintrodujo en julio la Ley de Anuncios con IA para prohibir este uso en campanas, aunque una version similar de California ya fue anulada por un juez federal por motivos de libertad de expresion."
+    },
+    {
+      "tag": "Impacto",
+      "title": "Un tinte fluorescente combinado con IA detecta enfermedades en el maiz antes de que sean visibles",
+      "url": "https://www.wowt.com/2026/08/21/ai-tool-helps-farmers-catch-crop-disease-before-it-spreads/",
+      "summary": "La startup InnerPlant desarrollo CropVoice, un sistema que usa plantas modificadas con un tinte fluorescente que se activa bajo una luz especial cuando aparece una enfermedad, junto a un modelo de IA que predice hacia donde se propagara dentro del cultivo. La version para soja ya esta disponible para agricultores y la de maiz llegara en 2027, pensada para avisar antes de que el hongo sea visible a simple vista, cuando ya suele ser demasiado tarde para actuar."
+    },
+    {
+      "tag": "Curso",
+      "title": "TypeScript Handbook: la guia oficial y gratuita para aprender el sistema de tipos de TypeScript",
+      "url": "https://www.typescriptlang.org/docs/handbook/intro.html",
+      "summary": "Mantenido por el propio equipo de TypeScript en Microsoft, este manual gratuito explica desde los tipos basicos hasta genericos, interfaces y tipos avanzados, pensado para completarse en unas pocas horas siguiendo la navegacion lateral. Esta disponible en formato web, PDF y EPUB, y es la referencia que cita la mayoria de cursos y librerias del lenguaje."
+    },
+    {
+      "tag": "Interactivo",
+      "title": "W3Schools: tutorial interactivo de Git con editor en el navegador",
+      "url": "https://www.w3schools.com/git/",
+      "summary": "Este tutorial gratuito cubre desde los conceptos basicos de control de versiones hasta ramas, fusiones y repositorios remotos, con un editor 'Try it Yourself' en cada capitulo para ejecutar comandos reales sin instalar nada. Incluye ejercicios y cuestionarios cortos al final de cada seccion para comprobar si el concepto quedo claro."
+    },
+    {
+      "tag": "Curso",
+      "title": "The Java Tutorials de Oracle: la guia oficial y gratuita del lenguaje",
+      "url": "https://docs.oracle.com/javase/tutorial/",
+      "summary": "Escrita por el propio creador del lenguaje, esta coleccion de lecciones gratuitas cubre desde la sintaxis basica hasta colecciones, excepciones y la API de fechas, organizadas en rutas tematicas con cientos de ejemplos de codigo completos y funcionales. Todo el contenido se puede leer online o descargar en un unico archivo para consultarlo sin conexion."
+    },
+    {
+      "tag": "Interactivo",
+      "title": "Mode SQL Tutorial: practica consultas SQL reales directamente en el navegador",
+      "url": "https://mode.com/sql-tutorial/",
+      "summary": "Este tutorial gratuito de la plataforma de datos Mode va un paso mas alla de lo basico, cubriendo subconsultas y funciones de ventana que se usan a diario en analisis de datos reales, con un editor integrado donde escribes y ejecutas tus propias consultas. Es una buena continuacion para quien ya conoce SELECT y JOIN y quiere dar el siguiente paso."
+    },
+    {
+      "tag": "Interactivo",
+      "title": "Explainshell: pega cualquier comando de Bash y descubre que hace cada parte",
+      "url": "https://explainshell.com/",
+      "summary": "Esta herramienta gratuita descompone cualquier comando de la terminal en sus piezas (el programa, cada opcion, cada argumento) y muestra junto a cada una la explicacion exacta sacada de su pagina de manual. Es especialmente util para entender de un vistazo comandos largos con tuberias y redirecciones que copiaste de algun sitio sin acabar de entenderlos del todo."
+    }
+  ]
+}
