@@ -1,0 +1,92 @@
+{
+  "date": "2026-10-08",
+  "questions": [
+    {
+      "type": "complete",
+      "lang": "Python",
+      "question": "¿Que metodo falta para eliminar los espacios sobrantes al principio y al final del texto?",
+      "code": "texto = \"  Hola Mundo  \"\nlimpio = texto.____()\nprint(limpio)\n# imprime \"Hola Mundo\" sin espacios al principio ni al final",
+      "options": ["strip", "lower", "split", "replace"],
+      "correct": 0,
+      "hint": "Busca el metodo que elimina espacios en blanco al principio y al final de una cadena.",
+      "explanation": "strip() elimina los espacios en blanco (u otros caracteres indicados) del principio y el final de la cadena, sin afectar los espacios internos."
+    },
+    {
+      "type": "identify",
+      "lang": "JavaScript",
+      "question": "¿Que imprime este codigo?",
+      "code": "let x = 1;\nfunction cambiar() {\n  let x = 2;\n  console.log(x);\n}\ncambiar();\nconsole.log(x);",
+      "options": ["2\n1", "1\n1", "2\n2", "Error"],
+      "correct": 0,
+      "hint": "La palabra clave let crea una nueva variable local dentro de la funcion, distinta de la externa.",
+      "explanation": "let tiene ambito de bloque/funcion: la x declarada dentro de cambiar() es una variable distinta que solo existe dentro de la funcion, por lo que no afecta a la x externa."
+    },
+    {
+      "type": "complete",
+      "lang": "Java",
+      "question": "¿Que metodo falta para que el array quede ordenado de menor a mayor?",
+      "code": "public class Main {\n    public static void main(String[] args) {\n        int[] nums = {4, 2, 7, 1};\n        Arrays.____(nums);\n        System.out.println(Arrays.toString(nums));\n    }\n}\n// imprime [1, 2, 4, 7]",
+      "options": ["sort", "asList", "copyOf", "fill"],
+      "correct": 0,
+      "hint": "Es el metodo estatico de Arrays que ordena el array de menor a mayor.",
+      "explanation": "Arrays.sort() ordena el array en su propio sitio (in place) de menor a mayor, por lo que al imprimirlo despues aparece [1, 2, 4, 7]."
+    },
+    {
+      "type": "identify",
+      "lang": "Git",
+      "question": "¿Que hace este comando?",
+      "code": "git log --oneline | head -5",
+      "options": [
+        "Muestra los 5 commits mas recientes, cada uno resumido en una linea",
+        "Elimina los 5 commits mas antiguos",
+        "Crea 5 ramas nuevas",
+        "Muestra solo los archivos modificados en los ultimos 5 commits"
+      ],
+      "correct": 0,
+      "hint": "head -5 se queda solo con las primeras 5 lineas de lo que recibe.",
+      "explanation": "git log --oneline resume cada commit en una sola linea, y head -5 se queda solo con las primeras 5 lineas de esa salida, es decir los 5 commits mas recientes."
+    },
+    {
+      "type": "complete",
+      "lang": "HTML/CSS",
+      "question": "¿Que valor falta para que los enlaces del menu no aparezcan subrayados?",
+      "code": "<nav>\n  <a href=\"#inicio\">Inicio</a>\n  <a href=\"#contacto\">Contacto</a>\n</nav>\n\n<style>\nnav a {\n  text-decoration: ____;\n}\n</style>\n<!-- los enlaces del menu de navegacion quedan sin subrayado -->",
+      "options": ["none", "underline", "line-through", "inherit"],
+      "correct": 0,
+      "hint": "Es el valor que quita por completo cualquier linea decorativa del texto, como el subrayado.",
+      "explanation": "text-decoration: none elimina el subrayado por defecto de los enlaces, algo muy habitual en menus de navegacion."
+    }
+  ],
+  "tips": [
+    {
+      "text": "Nunca construyas una consulta SQL concatenando directamente el texto que escribe un usuario: usa siempre consultas parametrizadas (prepared statements).",
+      "explanation": "Si pegas el texto del usuario directamente en la consulta, alguien puede escribir algo como ' OR 1=1 -- ' y conseguir que la base de datos le devuelva o borre datos que no deberia poder tocar. Las consultas parametrizadas separan el dato del comando SQL, de forma que el motor nunca lo interpreta como codigo.",
+      "link": "https://owasp.org/www-community/attacks/SQL_Injection",
+      "linkLabel": "OWASP: ataques de inyeccion SQL"
+    },
+    {
+      "text": "Si una pagina hace una consulta a la base de datos dentro de un bucle, una por cada elemento de una lista, estas ante el problema N+1: trae de una vez los datos relacionados.",
+      "explanation": "Cargar primero una lista de 50 elementos y despues, uno a uno, pedir sus datos relacionados genera 51 consultas en lugar de 2, lo que puede hacer que una pagina tarde segundos en lugar de milisegundos cuando los datos crecen. La mayoria de ORMs ofrecen una forma de precargar esas relaciones en una sola consulta.",
+      "link": "https://www.prisma.io/dataguide/types/relational/avoiding-orm-pitfalls",
+      "linkLabel": "Prisma Data Guide: como evitar el problema N+1"
+    },
+    {
+      "text": "Diseña las operaciones que cobran dinero o envian algo (como un pago o un correo) para que ejecutarlas dos veces por error no duplique el efecto.",
+      "explanation": "Las redes fallan y los reintentos automaticos son habituales; sin una comprobacion de 'esto ya se hizo', un simple reintento de una peticion puede cobrar dos veces a un cliente o enviarle el mismo correo repetido. Anadir esa comprobacion cuesta poco comparado con el problema que evita.",
+      "link": "https://stripe.com/docs/api/idempotent_requests",
+      "linkLabel": "Stripe: peticiones idempotentes"
+    },
+    {
+      "text": "Si publicas tu propia libreria, sigue el versionado semantico (MAJOR.MINOR.PATCH) y sube el numero mayor solo cuando rompas compatibilidad.",
+      "explanation": "Quien use tu libreria confia en que actualizar solo el numero de parche o el menor nunca le va a romper el codigo; subir el numero mayor es la señal clara de que hay que revisar los cambios antes de actualizar. Sin esa convencion, cualquier actualizacion se convierte en una loteria.",
+      "link": "https://semver.org/",
+      "linkLabel": "Semantic Versioning 2.0.0"
+    },
+    {
+      "text": "Si muestras en una pagina web un texto que escribio un usuario, escapalo antes de insertarlo en el HTML para evitar un ataque XSS.",
+      "explanation": "Si insertas el texto de un usuario directamente en el HTML sin escaparlo, alguien podria escribir una etiqueta script que se ejecute en el navegador de otras personas que vean esa pagina, robando sus cookies o sesiones. Escapar los caracteres especiales (como < y >) antes de mostrarlos convierte ese texto en contenido inofensivo.",
+      "link": "https://owasp.org/www-community/attacks/xss/",
+      "linkLabel": "OWASP: ataques XSS (Cross-Site Scripting)"
+    }
+  ]
+}

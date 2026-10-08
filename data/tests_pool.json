@@ -164,6 +164,17 @@
       ],
       "correct": 1,
       "explanation": "El operador ternario evalua primero la condicion x % 2 == 0; como 7 es impar, esa condicion es falsa y se devuelve el valor tras 'else', es decir 'impar'."
+    },
+    {
+      "q": "¿Qué hace el método `dict.setdefault(clave, valor_por_defecto)`?",
+      "opts": [
+        "Devuelve el valor de clave si existe, o lo crea con valor_por_defecto si no existe, en ambos casos sin lanzar error",
+        "Elimina la clave del diccionario",
+        "Siempre sobrescribe el valor de clave con valor_por_defecto",
+        "Lanza KeyError si la clave no existe"
+      ],
+      "correct": 0,
+      "explanation": "setdefault() devuelve el valor asociado a la clave si ya esta en el diccionario; si no esta, la inserta con el valor por defecto indicado y devuelve ese mismo valor, evitando comprobar manualmente con un if."
     }
   ],
   "javascript": [
@@ -331,6 +342,17 @@
       ],
       "correct": 0,
       "explanation": "Promise.all espera a que todas las promesas del array se resuelvan y devuelve sus resultados en un array respetando el orden original; si cualquiera de ellas se rechaza, Promise.all se rechaza inmediatamente con ese error, sin esperar a las demas."
+    },
+    {
+      "q": "¿Qué imprime este código?\nconsole.log([...\"hola\"]);",
+      "opts": [
+        "['h', 'o', 'l', 'a']",
+        "'hola'",
+        "['hola']",
+        "Error"
+      ],
+      "correct": 0,
+      "explanation": "El operador spread sobre un string lo trata como un iterable de caracteres, por lo que ...\"hola\" los separa en un array con cada letra como elemento individual."
     }
   ],
   "typescript": [
@@ -498,8 +520,20 @@
       ],
       "correct": 0,
       "explanation": "TypeScript permite declarar varias firmas (overloads) para la misma funcion, especificando que combinaciones de tipos de entrada y salida son validas, aunque luego exista una unica implementacion que maneje internamente los distintos casos."
+    },
+    {
+      "q": "¿Qué hace un 'type guard' definido con una función como `function esString(x: unknown): x is string { return typeof x === \"string\"; }`?",
+      "opts": [
+        "Permite que TypeScript reduzca (narrow) el tipo de una variable dentro del bloque donde la función devuelve true",
+        "Convierte cualquier valor en string en tiempo de ejecución",
+        "Elimina la necesidad de comprobar tipos en tiempo de ejecución",
+        "Solo funciona dentro de clases"
+      ],
+      "correct": 0,
+      "explanation": "La sintaxis 'x is string' como tipo de retorno le dice al compilador que, si la función devuelve true, puede tratar con seguridad esa variable como string en el código que sigue, sin necesidad de un cast manual."
     }
   ],
+
   "java": [
     {
       "q": "¿Qué palabra clave evita que una clase se pueda heredar?",
@@ -665,6 +699,17 @@
       ],
       "correct": 0,
       "explanation": "Desde Java 14, switch puede usarse como expresion que directamente devuelve un valor con la sintaxis de flecha (->), evitando el 'fall-through' accidental de case sin break y haciendo el codigo mas conciso que el switch clasico."
+    },
+    {
+      "q": "¿Qué hace la interfaz `Comparable<T>` cuando una clase implementa su método `compareTo`?",
+      "opts": [
+        "Define un orden natural para los objetos de esa clase, que métodos como Collections.sort() pueden usar automáticamente",
+        "Hace que la clase no se pueda instanciar",
+        "Convierte la clase en inmutable",
+        "Permite comparar objetos de tipos distintos sin ningún casting"
+      ],
+      "correct": 0,
+      "explanation": "Al implementar Comparable<T> y su método compareTo(), una clase define cómo se ordenan sus instancias entre sí, lo que permite que Collections.sort() o Arrays.sort() las ordenen sin necesitar un comparador aparte."
     }
   ],
   "kotlin": [
@@ -832,6 +877,17 @@
       ],
       "correct": 0,
       "explanation": "Kotlin aplica un 'smart cast' automatico: una vez que el compilador comprueba con 'is' que obj es de tipo String dentro de un bloque, permite usar directamente los miembros de String (como .length) sin necesidad de un cast manual con 'as'."
+    },
+    {
+      "q": "¿Qué hace la función `takeIf` aplicada a un valor, como en `numero.takeIf { it > 0 }`?",
+      "opts": [
+        "Devuelve el propio valor si cumple la condición, o null si no la cumple",
+        "Convierte el valor en booleano",
+        "Lanza una excepción si la condición es falsa",
+        "Repite la operación hasta que la condición sea verdadera"
+      ],
+      "correct": 0,
+      "explanation": "takeIf devuelve el objeto original cuando el bloque lambda es true, o null cuando es false, lo que permite encadenar una condición dentro de una expresión sin escribir un if aparte."
     }
   ],
   "sql": [
@@ -999,6 +1055,17 @@
       ],
       "correct": 0,
       "explanation": "LAG() es una funcion de ventana que accede al valor de una columna en una fila anterior (segun el orden indicado) sin necesidad de una subconsulta o un self join, muy util para comparar un valor con el de la fila previa, como calcular la diferencia entre salarios consecutivos."
+    },
+    {
+      "q": "¿Que hace `INSERT INTO ventas (producto, cantidad) VALUES ('Mesa', 2) ON CONFLICT (producto) DO UPDATE SET cantidad = ventas.cantidad + 2;` en PostgreSQL?",
+      "opts": [
+        "Inserta la fila si el producto no existe, o suma la cantidad a la fila existente si ya hay una con ese producto (upsert)",
+        "Siempre inserta una fila nueva, incluso si ya existe ese producto",
+        "Elimina la fila si el producto ya existe",
+        "Solo funciona si la tabla no tiene ninguna clave única"
+      ],
+      "correct": 0,
+      "explanation": "ON CONFLICT ... DO UPDATE implementa un 'upsert': intenta insertar la fila, y si viola una restricción única (como el producto repetido) en vez de fallar ejecuta la actualización indicada sobre la fila ya existente."
     }
   ],
   "git": [
@@ -1166,6 +1233,17 @@
       ],
       "correct": 0,
       "explanation": "Cuando la rama actual no tiene commits propios desde que se creo la otra rama, Git puede simplemente adelantar el puntero (fast-forward) sin generar un commit de fusion adicional; si ambas ramas avanzaron por separado, se crea un commit de fusion normal que une ambas historias."
+    },
+    {
+      "q": "¿Qué hace el comando `git add -p`?",
+      "opts": [
+        "Permite revisar y elegir, fragmento a fragmento, qué cambios de un archivo se añaden al área de staging",
+        "Añade automáticamente todos los archivos del repositorio",
+        "Crea un parche (.patch) a partir del último commit",
+        "Deshace el último git add"
+      ],
+      "correct": 0,
+      "explanation": "git add -p divide los cambios de cada archivo modificado en fragmentos (hunks) y pregunta uno por uno si se quieren incluir en el próximo commit, lo que permite confirmar cambios muy concretos en lugar de todo el archivo de golpe."
     }
   ],
   "htmlcss": [
@@ -1333,6 +1411,17 @@
       ],
       "correct": 0,
       "explanation": ":focus se activa en cualquier caso en que el elemento recibe el foco, incluido un clic de raton; :focus-visible es mas selectivo y solo aplica el estilo cuando el navegador detecta que ese foco deberia ser visible para el usuario, como al moverse con la tecla Tab, evitando el contorno de foco en clics de raton donde no suele hacer falta."
+    },
+    {
+      "q": "¿Para qué sirve el atributo `for` en una etiqueta `<label for=\"email\">` junto a un `<input id=\"email\">`?",
+      "opts": [
+        "Asocia la etiqueta con ese campo concreto, de forma que hacer clic en el texto también enfoca o activa el input, y mejora la accesibilidad",
+        "Valida automáticamente el formato del campo",
+        "Oculta el campo hasta que se hace clic en la etiqueta",
+        "Solo tiene efecto visual, sin relación con el input"
+      ],
+      "correct": 0,
+      "explanation": "El atributo for de <label> debe coincidir con el id del campo de formulario correspondiente; esa asociación permite que un clic en la etiqueta active el input y que los lectores de pantalla anuncien correctamente para qué sirve cada campo."
     }
   ],
   "bash": [
@@ -1500,6 +1589,17 @@
       ],
       "correct": 0,
       "explanation": "Entre comillas dobles, \"$@\" se expande como una lista de palabras independientes (cada argumento por separado, respetando espacios internos), mientras que \"$*\" une todos los argumentos en una unica cadena de texto separada por espacios, lo que importa mucho al recorrerlos en un bucle for."
+    },
+    {
+      "q": "¿Qué diferencia hay entre ejecutar un script con `./script.sh` y con `source script.sh`?",
+      "opts": [
+        "./script.sh lo ejecuta en un proceso (subshell) nuevo; source lo ejecuta en la shell actual, por lo que sus variables y cambios de directorio sí afectan a la sesión actual",
+        "Son exactamente lo mismo en cualquier caso",
+        "source solo funciona con archivos .sh, nunca con otros scripts",
+        "./script.sh siempre requiere permisos de administrador"
+      ],
+      "correct": 0,
+      "explanation": "Al ejecutar ./script.sh se lanza un proceso hijo nuevo que hereda el entorno pero no puede modificar la shell que lo invocó; con source (o su alias '.') el script se ejecuta dentro de la propia shell actual, por lo que variables, alias o un 'cd' dentro del script sí persisten después de terminar."
     }
   ],
   "ia": [
@@ -1667,6 +1767,17 @@
       ],
       "correct": 0,
       "explanation": "El sobreajuste ocurre cuando un modelo aprende patrones demasiado especificos de los datos de entrenamiento, incluido su ruido, en lugar de las reglas generales del problema, lo que hace que funcione muy bien con esos datos pero mal con ejemplos nuevos que no ha visto antes."
+    },
+    {
+      "q": "¿Qué es la 'cuantización' de un modelo de lenguaje?",
+      "opts": [
+        "Reducir la precisión numérica de sus parámetros (por ejemplo de 16 a 4 bits) para que ocupe menos memoria y sea más rápido, a cambio de algo de precisión",
+        "Aumentar el número de parámetros del modelo para mejorar su calidad",
+        "Traducir el modelo a otro lenguaje de programación",
+        "Entrenar varias copias del modelo a la vez"
+      ],
+      "correct": 0,
+      "explanation": "La cuantización representa los pesos del modelo con menos bits de precisión (por ejemplo int8 o int4 en vez de float16), lo que reduce mucho el tamaño en memoria y acelera la inferencia, con una pérdida de calidad generalmente pequeña si se hace bien."
     }
   ]
 }
