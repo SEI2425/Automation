@@ -1,0 +1,112 @@
+{
+  "date": "2026-10-09",
+  "questions": [
+    {
+      "type": "identify",
+      "lang": "Python",
+      "question": "¿Que contiene la variable pairs despues de ejecutar este codigo?",
+      "code": "pairs = [(i, c) for i, c in enumerate(\"abc\")]\nprint(pairs)",
+      "options": [
+        "[(0, 'a'), (1, 'b'), (2, 'c')]",
+        "['a', 'b', 'c']",
+        "[(1, 'a'), (2, 'b'), (3, 'c')]",
+        "Error de sintaxis"
+      ],
+      "correct": 0,
+      "hint": "enumerate() empieza a contar desde el indice 0 por defecto.",
+      "explanation": "enumerate(\"abc\") genera pares (indice, caracter) comenzando en 0, y la comprension de lista simplemente los recoge en una lista de tuplas: [(0,'a'),(1,'b'),(2,'c')]."
+    },
+    {
+      "type": "complete",
+      "lang": "JavaScript",
+      "question": "¿Que metodo falta para comprobar si el array contiene el valor 2?",
+      "code": "const nums = [1, 2, 3];\nconsole.log(nums.____(2));\n// true",
+      "options": [
+        "includes",
+        "indexOf",
+        "push",
+        "join"
+      ],
+      "correct": 0,
+      "hint": "Necesitas un metodo que devuelva true o false segun si el valor esta presente.",
+      "explanation": "includes() comprueba si un array contiene un valor dado y devuelve un booleano; indexOf() devolveria un numero (la posicion), no true o false."
+    },
+    {
+      "type": "identify",
+      "lang": "SQL",
+      "question": "¿Que hace esta consulta SQL?",
+      "code": "SELECT name FROM employees\nUNION\nSELECT name FROM contractors;",
+      "options": [
+        "Combina los nombres de ambas tablas en una sola lista sin duplicados",
+        "Combina ambas tablas columna por columna, una al lado de la otra",
+        "Compara que empleados son tambien contratistas",
+        "Elimina los contratistas duplicados de la tabla"
+      ],
+      "correct": 0,
+      "hint": "UNION combina los resultados de dos consultas en una sola lista, eliminando duplicados por defecto.",
+      "explanation": "UNION junta los resultados de ambas consultas SELECT en un unico listado, eliminando las filas duplicadas automaticamente (a diferencia de UNION ALL, que las conserva)."
+    },
+    {
+      "type": "complete",
+      "lang": "Git",
+      "question": "¿Que comando falta para descargar la rama develop sin fusionarla todavia?",
+      "code": "git clone https://github.com/usuario/repo.git\ncd repo\ngit ____ origin develop\n# descarga la rama develop sin fusionarla todavia",
+      "options": [
+        "fetch",
+        "pull",
+        "push",
+        "merge"
+      ],
+      "correct": 0,
+      "hint": "Este comando descarga los cambios del remoto sin fusionarlos automaticamente en tu rama actual.",
+      "explanation": "git fetch descarga las referencias y commits de la rama remota sin modificar tu rama local actual; git pull, en cambio, los fusionaria automaticamente."
+    },
+    {
+      "type": "complete",
+      "lang": "HTML/CSS",
+      "question": "¿Que falta para que el titulo use el color guardado en la variable CSS?",
+      "code": "<style>\n  :root { --color-principal: teal; }\n  .titulo { color: ____; }\n</style>\n<h1 class=\"titulo\">Hola</h1>",
+      "options": [
+        "var(--color-principal)",
+        "--color-principal",
+        "root(--color-principal)",
+        "$color-principal"
+      ],
+      "correct": 0,
+      "hint": "Las variables CSS se leen con la funcion var(), no escribiendo su nombre directamente como valor.",
+      "explanation": "var(--color-principal) obtiene el valor guardado en esa variable CSS definida en :root; escribir --color-principal directamente como valor no funciona, hay que envolverlo en var()."
+    }
+  ],
+  "tips": [
+    {
+      "text": "Usa etiquetas HTML semanticas (header, nav, main, button) en lugar de divs genericos con clases.",
+      "explanation": "Las etiquetas semanticas le dicen al navegador y a los lectores de pantalla que es cada parte de la pagina, lo que mejora automaticamente la accesibilidad y el posicionamiento en buscadores sin escribir ningun codigo extra. Un div generico, en cambio, no transmite ningun significado por si mismo.",
+      "link": "https://developer.mozilla.org/en-US/docs/Glossary/Semantics",
+      "linkLabel": "MDN: semantica en HTML"
+    },
+    {
+      "text": "Usa siempre === en JavaScript en lugar de == para comparar valores.",
+      "explanation": "El operador == convierte los tipos antes de comparar, lo que produce resultados poco intuitivos como que 0 sea igual a una cadena vacia. === compara tambien el tipo del valor, evitando esas conversiones implicitas que suelen esconder errores dificiles de detectar.",
+      "link": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Strict_equality",
+      "linkLabel": "MDN: igualdad estricta (===)"
+    },
+    {
+      "text": "Aprende que significan los codigos de estado HTTP (200, 404, 500...) antes de programar contra una API.",
+      "explanation": "Cada codigo de estado indica un tipo concreto de resultado: exito, error del cliente o error del servidor, y conocerlos ayuda a diagnosticar rapido por que una peticion fallo en vez de adivinarlo. Sin esa base es facil tratar un error 500 del servidor como si fuera un fallo en tu propio codigo.",
+      "link": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Status",
+      "linkLabel": "MDN: codigos de estado HTTP"
+    },
+    {
+      "text": "Aprende los fundamentos de las expresiones regulares (regex): te ahorraran muchas lineas de codigo al validar o buscar texto.",
+      "explanation": "Una sola expresion regular puede sustituir decenas de lineas de comprobaciones manuales para validar un correo, un telefono o extraer un patron concreto de un texto largo. Cuestan un poco al principio, pero una vez entendida la sintaxis basica se reutilizan en casi cualquier lenguaje de programacion.",
+      "link": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_expressions",
+      "linkLabel": "MDN: guia de expresiones regulares"
+    },
+    {
+      "text": "Trabaja en bloques de tiempo cortos y con descansos (como la tecnica Pomodoro) en vez de sesiones de horas sin pausa.",
+      "explanation": "La concentracion real baja mucho despues de un rato sin descanso, aunque sigas mirando la pantalla, lo que hace que programar sin pausas sea menos productivo de lo que parece. Dividir el trabajo en bloques cortos con descansos breves ayuda a mantener la atencion y a notar antes cuando un problema necesita un enfoque distinto.",
+      "link": "https://todoist.com/productivity-methods/pomodoro-technique",
+      "linkLabel": "Todoist: la tecnica Pomodoro"
+    }
+  ]
+}

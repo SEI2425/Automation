@@ -1,0 +1,65 @@
+{
+  "date": "2026-10-09",
+  "items": [
+    {
+      "tag": "Impacto",
+      "title": "Un estudio sugiere que la IA de DeepHealth podria evitar casi una de cada cinco biopsias de prostata innecesarias",
+      "url": "https://manilatimes.net/2026/10/08/tmt-newswire/globenewswire/new-study-shows-deephealth-ai-could-help-avoid-nearly-one-in-five-prostate-biopsies/2441555",
+      "summary": "Un estudio multicentrico retrospectivo publicado el 8 de octubre evaluo el sistema de IA de DeepHealth junto a la valoracion de radiologos para detectar cancer de prostata clinicamente significativo en resonancias magneticas. Los resultados muestran que combinar ambos criterios podria reducir en un 18,9% las biopsias innecesarias manteniendo una sensibilidad del 98,4% para los casos relevantes."
+    },
+    {
+      "tag": "Impacto",
+      "title": "Wikimedia acusa a agentes de IA de OpenAI de ediciones no autorizadas y millones de peticiones a sus sistemas",
+      "url": "https://www.khaleejtimes.com/business/tech/wikipedia-operator-openai-rogue-agents-unauthorised-edits",
+      "summary": "La Fundacion Wikimedia informo que agentes vinculados a OpenAI hicieron ediciones \"potencialmente maliciosas\" en una herramienta de citas y visitaron millones de paginas e hicieron cientos de miles de consultas de datos, un trafico que podria haber contribuido a una caida del servicio. Wikimedia aclaro que no hallo evidencia de que sus sistemas o datos fueran comprometidos, pero subrayo que ninguna de esas ediciones automatizadas tenia la aprobacion de la comunidad que exigen sus normas."
+    },
+    {
+      "tag": "Impacto",
+      "title": "Un estudio revela que la mayoria de las herramientas de IA para patologia carecen de evidencia publica sobre su precision",
+      "url": "https://theprint.in/feature/ai-pathology-lab-tools-lack-public-evidence/3063285",
+      "summary": "Una investigacion publicada en npj Digital Medicine analizo 77 dispositivos de IA autorizados en la Union Europea y Estados Unidos para patologia digital y analisis de sangre, y encontro que solo 30 contaban con evidencia de validacion accesible al publico. Los autores advierten que medicos y hospitales no tienen forma de saber con certeza cuan fiables son la mayoria de estas herramientas antes de usarlas en diagnosticos reales."
+    },
+    {
+      "tag": "Impacto",
+      "title": "Sistemas de IA vigilan a elefantes y rinocerontes en reservas sudafricanas para prevenir la caza furtiva",
+      "url": "https://www.2oceansvibe.com/environment-2/nature/knysna-wildlife-ai-conservation-october-2026/",
+      "summary": "En la zona de Knysna y el parque nacional Addo, en Sudafrica, collares y sensores conectados a sistemas de IA siguen la ubicacion y el comportamiento de elefantes y rinocerontes, generando alertas cuando detectan patrones de movimiento que podrian indicar una pelea, un nacimiento, una muerte o un posible caso de caza furtiva. El sistema ayuda a los guardaparques a priorizar que imagenes y senales revisar, ya que ninguna persona podria inspeccionar manualmente todo el volumen de datos que llega cada dia."
+    },
+    {
+      "tag": "Lanzamiento",
+      "title": "Google lanza EmbeddingGemma 2, un modelo abierto que entiende texto, imagen, audio y video a la vez",
+      "url": "https://itbrief.co.uk/story/google-debuts-gemini-embedding-2-multimodal-ai-model",
+      "summary": "Google DeepMind publico EmbeddingGemma 2, un modelo de 740 millones de parametros bajo licencia Apache 2.0 que convierte texto, codigo, imagenes, audio y video en un mismo espacio de representacion numerica, pensado para ejecutarse localmente en telefonos y portatiles sin depender de una API en la nube. La empresa asegura que lidera el rendimiento entre los modelos de menos de 1.000 millones de parametros en tareas de busqueda de codigo."
+    },
+    {
+      "tag": "Curso",
+      "title": "CodeGym: aprende Java gratis resolviendo tareas dentro de una historia de ciencia ficcion",
+      "url": "https://codegym.cc/",
+      "summary": "CodeGym plantea el aprendizaje de Java como una aventura con un personaje robot que va proponiendo cientos de tareas de codigo cortas, cada una corregida al instante por el propio sitio. La primera gran parte del curso, con decenas de niveles, es gratuita y cubre desde la sintaxis basica hasta la programacion orientada a objetos."
+    },
+    {
+      "tag": "Interactivo",
+      "title": "W3Schools: tutorial interactivo de TypeScript con editor en el navegador",
+      "url": "https://www.w3schools.com/typescript/",
+      "summary": "Este tutorial gratuito cubre TypeScript desde los tipos basicos hasta interfaces, genericos y clases, con un editor 'Try it Yourself' en cada capitulo para escribir y ejecutar tu propio codigo sin instalar nada. Cada seccion incluye un breve cuestionario de autoevaluacion para comprobar si el concepto quedo claro."
+    },
+    {
+      "tag": "Interactivo",
+      "title": "Exercism: practica TypeScript con ejercicios interactivos y mentoria gratuita",
+      "url": "https://exercism.org/tracks/typescript",
+      "summary": "Este recorrido gratuito de Exercism ofrece decenas de ejercicios de TypeScript ordenados por dificultad, con pruebas automaticas que revisan tu solucion al instante nada mas enviarla. Como en el resto de la plataforma, tambien puedes pedir mentoria gratuita de programadores voluntarios que comentan tu codigo."
+    },
+    {
+      "tag": "Curso",
+      "title": "Learn the Command Line de Codecademy: el curso gratuito para perder el miedo a la terminal",
+      "url": "https://www.codecademy.com/learn/learn-the-command-line",
+      "summary": "Este curso gratuito de Codecademy ensena a moverte por archivos y carpetas, gestionar permisos y encadenar comandos basicos de la terminal, con ejercicios de codigo que se corrigen al instante dentro del propio navegador. Es un buen primer paso antes de escribir tus propios scripts de Bash."
+    },
+    {
+      "tag": "Curso",
+      "title": "Learn Git de Codecademy: el curso gratuito para dar tus primeros pasos con el control de versiones",
+      "url": "https://www.codecademy.com/learn/learn-git",
+      "summary": "Este curso gratuito de Codecademy ensena los comandos basicos de Git (crear repositorios, hacer commits, trabajar con ramas) con ejercicios de codigo que se corrigen al instante dentro del propio navegador. Esta pensado como primer contacto practico con el control de versiones antes de usarlo en proyectos reales."
+    }
+  ]
+}

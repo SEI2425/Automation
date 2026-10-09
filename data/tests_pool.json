@@ -175,6 +175,17 @@
       ],
       "correct": 0,
       "explanation": "setdefault() devuelve el valor asociado a la clave si ya esta en el diccionario; si no esta, la inserta con el valor por defecto indicado y devuelve ese mismo valor, evitando comprobar manualmente con un if."
+    },
+    {
+      "q": "¿Que devuelve type([]) en Python?",
+      "opts": [
+        "<class 'list'>",
+        "<class 'array'>",
+        "list",
+        "Error"
+      ],
+      "correct": 0,
+      "explanation": "type() devuelve la clase del objeto; para una lista vacia esa clase se muestra como <class 'list'>."
     }
   ],
   "javascript": [
@@ -353,6 +364,17 @@
       ],
       "correct": 0,
       "explanation": "El operador spread sobre un string lo trata como un iterable de caracteres, por lo que ...\"hola\" los separa en un array con cada letra como elemento individual."
+    },
+    {
+      "q": "¿Que imprime este codigo?\nconst obj = {\n  valor: 42,\n  mostrar: () => console.log(this.valor)\n};\nobj.mostrar();",
+      "opts": [
+        "undefined",
+        "42",
+        "Error",
+        "null"
+      ],
+      "correct": 0,
+      "explanation": "Las funciones flecha no tienen su propio 'this': lo heredan del contexto donde se definieron, no del objeto que las contiene, por lo que this.valor no es 42 sino undefined."
     }
   ],
   "typescript": [
@@ -531,9 +553,19 @@
       ],
       "correct": 0,
       "explanation": "La sintaxis 'x is string' como tipo de retorno le dice al compilador que, si la función devuelve true, puede tratar con seguridad esa variable como string en el código que sigue, sin necesidad de un cast manual."
+    },
+    {
+      "q": "¿Que tipo tiene la variable 'valor' tras esta declaracion?\nlet valor: [string, number] = ['edad', 30];",
+      "opts": [
+        "Una tupla con un string en la posicion 0 y un number en la posicion 1",
+        "Un array que solo puede contener strings",
+        "Un objeto con dos propiedades",
+        "Error de compilacion porque los tipos no coinciden"
+      ],
+      "correct": 0,
+      "explanation": "La sintaxis [string, number] define una tupla: un array de longitud fija donde cada posicion tiene un tipo especifico, a diferencia de string[] o number[], que permiten cualquier cantidad de elementos del mismo tipo."
     }
   ],
-
   "java": [
     {
       "q": "¿Qué palabra clave evita que una clase se pueda heredar?",
@@ -710,6 +742,17 @@
       ],
       "correct": 0,
       "explanation": "Al implementar Comparable<T> y su método compareTo(), una clase define cómo se ordenan sus instancias entre sí, lo que permite que Collections.sort() o Arrays.sort() las ordenen sin necesitar un comparador aparte."
+    },
+    {
+      "q": "¿Que caracteristica tienen los objetos String en Java una vez creados?",
+      "opts": [
+        "Son inmutables: cualquier operacion que parezca modificarlos crea en realidad un nuevo objeto String",
+        "Se pueden modificar directamente caracter por caracter con metodos como setCharAt",
+        "Ocupan siempre el mismo tamano en memoria sin importar su longitud",
+        "Dejan de existir automaticamente tras usarlos una vez"
+      ],
+      "correct": 0,
+      "explanation": "En Java, los objetos String son inmutables: metodos como concat(), replace() o toUpperCase() no modifican el String original, sino que devuelven un String nuevo con el resultado, dejando intacto el original."
     }
   ],
   "kotlin": [
@@ -888,6 +931,17 @@
       ],
       "correct": 0,
       "explanation": "takeIf devuelve el objeto original cuando el bloque lambda es true, o null cuando es false, lo que permite encadenar una condición dentro de una expresión sin escribir un if aparte."
+    },
+    {
+      "q": "¿Que tipo tiene el valor devuelto por una funcion de Kotlin que no declara ningun tipo de retorno y no usa 'return' con un valor, como 'fun saludar() { println(\"Hola\") }'?",
+      "opts": [
+        "Unit, el equivalente de Kotlin a 'sin valor util que devolver'",
+        "Nothing, porque la funcion nunca termina",
+        "Any, porque Kotlin no puede inferir el tipo",
+        "String, porque la funcion imprime texto"
+      ],
+      "correct": 0,
+      "explanation": "Cuando una funcion de Kotlin no devuelve explicitamente ningun valor, su tipo de retorno inferido es Unit, similar a 'void' en Java pero tratado como un tipo real dentro del sistema de tipos de Kotlin."
     }
   ],
   "sql": [
@@ -1066,6 +1120,17 @@
       ],
       "correct": 0,
       "explanation": "ON CONFLICT ... DO UPDATE implementa un 'upsert': intenta insertar la fila, y si viola una restricción única (como el producto repetido) en vez de fallar ejecuta la actualización indicada sobre la fila ya existente."
+    },
+    {
+      "q": "¿Que diferencia hay entre COUNT(*) y COUNT(columna) en SQL?",
+      "opts": [
+        "COUNT(*) cuenta todas las filas, COUNT(columna) ignora los valores NULL de esa columna",
+        "No hay ninguna diferencia entre ambos",
+        "COUNT(*) es mas lento pero da el mismo resultado siempre",
+        "COUNT(columna) cuenta solo los valores duplicados"
+      ],
+      "correct": 0,
+      "explanation": "COUNT(*) cuenta el numero total de filas devueltas, mientras que COUNT(columna) solo cuenta las filas donde esa columna especifica no es NULL."
     }
   ],
   "git": [
@@ -1244,6 +1309,17 @@
       ],
       "correct": 0,
       "explanation": "git add -p divide los cambios de cada archivo modificado en fragmentos (hunks) y pregunta uno por uno si se quieren incluir en el próximo commit, lo que permite confirmar cambios muy concretos en lugar de todo el archivo de golpe."
+    },
+    {
+      "q": "¿Que hace el comando 'git clone --depth 1 <url>'?",
+      "opts": [
+        "Descarga solo el ultimo commit del repositorio remoto, sin el historial completo, para clonar mas rapido",
+        "Descarga el repositorio completo pero solo la rama main",
+        "Crea una copia local sin conexion al repositorio remoto",
+        "Clona unicamente los archivos modificados en el ultimo dia"
+      ],
+      "correct": 0,
+      "explanation": "La opcion --depth limita cuantos commits de historial se descargan al clonar; con --depth 1 solo se trae la version mas reciente de cada archivo, lo que acelera mucho la clonacion de repositorios grandes cuando no se necesita el historial completo."
     }
   ],
   "htmlcss": [
@@ -1422,6 +1498,17 @@
       ],
       "correct": 0,
       "explanation": "El atributo for de <label> debe coincidir con el id del campo de formulario correspondiente; esa asociación permite que un clic en la etiqueta active el input y que los lectores de pantalla anuncien correctamente para qué sirve cada campo."
+    },
+    {
+      "q": "¿Que efecto tiene este elemento en un formulario?\n<input type=\"checkbox\" checked disabled>",
+      "opts": [
+        "Muestra una casilla marcada que el usuario no puede modificar",
+        "Muestra una casilla vacia que se puede marcar",
+        "Oculta la casilla del formulario",
+        "Marca la casilla solo al enviar el formulario"
+      ],
+      "correct": 0,
+      "explanation": "checked marca la casilla por defecto, y disabled impide que el usuario pueda cambiar su estado, dejandola fija tal como esta."
     }
   ],
   "bash": [
@@ -1600,6 +1687,17 @@
       ],
       "correct": 0,
       "explanation": "Al ejecutar ./script.sh se lanza un proceso hijo nuevo que hereda el entorno pero no puede modificar la shell que lo invocó; con source (o su alias '.') el script se ejecuta dentro de la propia shell actual, por lo que variables, alias o un 'cd' dentro del script sí persisten después de terminar."
+    },
+    {
+      "q": "¿Que diferencia hay entre ejecutar un comando en segundo plano con 'comando &' y esperar su finalizacion con 'wait'?",
+      "opts": [
+        "& lanza el comando sin bloquear la terminal, y wait pausa el script hasta que ese proceso en segundo plano termine",
+        "& detiene el comando inmediatamente y wait lo reanuda",
+        "Son exactamente lo mismo",
+        "wait solo funciona dentro de un bucle for"
+      ],
+      "correct": 0,
+      "explanation": "El simbolo & al final de un comando lo ejecuta en segundo plano, devolviendo el control a la terminal de inmediato; el comando wait, usado despues, pausa la ejecucion del script hasta que ese proceso en segundo plano (u otros lanzados igual) termine."
     }
   ],
   "ia": [
@@ -1778,6 +1876,17 @@
       ],
       "correct": 0,
       "explanation": "La cuantización representa los pesos del modelo con menos bits de precisión (por ejemplo int8 o int4 en vez de float16), lo que reduce mucho el tamaño en memoria y acelera la inferencia, con una pérdida de calidad generalmente pequeña si se hace bien."
+    },
+    {
+      "q": "¿Que diferencia hay entre la fase de 'entrenamiento' y la de 'inferencia' de un modelo de lenguaje?",
+      "opts": [
+        "Entrenamiento es cuando el modelo ajusta sus parametros a partir de datos; inferencia es cuando ya entrenado genera respuestas a partir de una entrada nueva",
+        "Son exactamente la misma fase con distinto nombre",
+        "Inferencia requiere mucha mas potencia de calculo que el entrenamiento",
+        "Entrenamiento ocurre cada vez que el usuario envia un mensaje"
+      ],
+      "correct": 0,
+      "explanation": "Durante el entrenamiento, el modelo ajusta sus millones o miles de millones de parametros analizando grandes cantidades de datos; durante la inferencia, ese modelo ya entrenado y con los parametros fijos se usa simplemente para generar una respuesta a partir de una entrada nueva, sin seguir aprendiendo de ella."
     }
   ]
 }

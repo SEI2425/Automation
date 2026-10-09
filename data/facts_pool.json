@@ -15,7 +15,8 @@
     "El nombre del instalador de paquetes 'pip' es un acrónimo recursivo que, según la versión más citada, significa 'Pip Installs Packages'.",
     "Además del conteo de referencias, CPython incluye un recolector de basura generacional que detecta y libera ciclos de referencias (objetos que se apuntan entre sí) que el conteo de referencias por sí solo no puede resolver.",
     "Las listas por comprensión se añadieron en Python 2.0 (2000), y las expresiones generadoras llegaron varios años después, en Python 2.4 (2004).",
-    "El módulo 'turtle' de la biblioteca estándar de Python, pensado para enseñar programación dibujando con una tortuga virtual, existe desde las primeras versiones del lenguaje y sigue incluido hoy sin instalar nada aparte."
+    "El módulo 'turtle' de la biblioteca estándar de Python, pensado para enseñar programación dibujando con una tortuga virtual, existe desde las primeras versiones del lenguaje y sigue incluido hoy sin instalar nada aparte.",
+    "Python usa indentacion obligatoria para definir los bloques de codigo en lugar de llaves, una decision de diseno que Guido van Rossum tomo inspirandose en el lenguaje educativo ABC."
   ],
   "javascript": [
     "A pesar del nombre, JavaScript no tiene relación técnica con Java: el nombre fue una decisión de marketing de Netscape para aprovechar la popularidad de Java en 1995.",
@@ -33,7 +34,8 @@
     "La propiedad 'globalThis', añadida en ES2020, ofrece una forma estándar de acceder al objeto global sin importar si el código corre en un navegador (window) o en Node.js (global).",
     "El operador de encadenamiento opcional (?.) y el operador de fusión nula (??) se añadieron juntos a JavaScript en la misma especificación, ECMAScript 2020 (ES2020).",
     "JavaScript es de los pocos lenguajes mainstream que no distingue entre enteros y decimales: todos los números (salvo BigInt) se guardan como 'double' de 64 bits según el estándar IEEE 754.",
-    "El método Array.prototype.toSorted(), que devuelve una copia ordenada sin modificar el array original, se añadió recién en 2023 (ES2023), junto a otros métodos 'inmutables' como toReversed() y toSpliced()."
+    "El método Array.prototype.toSorted(), que devuelve una copia ordenada sin modificar el array original, se añadió recién en 2023 (ES2023), junto a otros métodos 'inmutables' como toReversed() y toSpliced().",
+    "El primer nombre oficial de JavaScript tras el apodo interno 'Mocha' fue 'LiveScript'; se renombro a 'JavaScript' justo antes de su lanzamiento, como parte de un acuerdo de marketing entre Netscape y Sun Microsystems."
   ],
   "typescript": [
     "TypeScript no reemplaza a JavaScript en ningún momento: todo programa TypeScript se compila (transpila) a JavaScript plano antes de ejecutarse en el navegador o en Node.",
@@ -51,7 +53,8 @@
     "TypeScript 5.0, publicado en 2023, convirtió los decoradores en una característica estándar del lenguaje en lugar de depender de una bandera experimental del compilador.",
     "Visual Studio Code, uno de los editores donde TypeScript brilla gracias a su autocompletado y detección de errores en tiempo real, está escrito en gran parte en TypeScript.",
     "TypeScript puede analizar archivos JavaScript puro gracias a la opción 'checkJs', lo que permite detectar errores de tipos en proyectos que todavía no migraron a archivos .ts.",
-    "El compilador de TypeScript (tsc) está escrito en el propio TypeScript, lo que lo convierte en un compilador que se compila a sí mismo, un proceso conocido como 'bootstrapping'."
+    "El compilador de TypeScript (tsc) está escrito en el propio TypeScript, lo que lo convierte en un compilador que se compila a sí mismo, un proceso conocido como 'bootstrapping'.",
+    "La version 1.0 de TypeScript se lanzo en abril de 2014, casi dos anos despues de que Microsoft lo presentara publicamente en una vista previa en 2012."
   ],
   "java": [
     "La mascota de Java, Duke, fue diseñada en 1992 para un proyecto anterior llamado Oak, antes incluso de que existiera el lenguaje Java tal como lo conocemos.",
@@ -69,7 +72,8 @@
     "Java 21, publicada en 2023, introdujo los 'virtual threads' del Proyecto Loom, hilos ligeros gestionados por la JVM que permiten manejar millones de tareas concurrentes sin el coste de los hilos tradicionales del sistema operativo.",
     "Java 17, publicada en 2021 como versión LTS (de soporte a largo plazo), introdujo las 'sealed classes', que permiten restringir de forma explícita qué clases pueden extender o implementar un tipo determinado.",
     "Java incluyó en la versión 10 (2018) la inferencia de tipo local con la palabra clave 'var', que permite escribir 'var lista = new ArrayList<String>();' sin perder el tipado estático, ya que el compilador deduce el tipo en tiempo de compilación.",
-    "La API de Streams de Java, introducida en Java 8, no modifica la colección original: cada operación intermedia como filter() o map() devuelve un nuevo stream, dejando intacta la lista de partida."
+    "La API de Streams de Java, introducida en Java 8, no modifica la colección original: cada operación intermedia como filter() o map() devuelve un nuevo stream, dejando intacta la lista de partida.",
+    "El nombre 'Java' se elegio durante una sesion de lluvia de ideas del equipo original y hace referencia al cafe, en honor a la cantidad que bebian sus creadores mientras buscaban un nuevo nombre tras el conflicto de marca con 'Oak'."
   ],
   "kotlin": [
     "Kotlin es interoperable al 100% con Java: se puede llamar código Java desde Kotlin y código Kotlin desde Java dentro del mismo proyecto sin conversión manual.",
@@ -87,7 +91,8 @@
     "Kotlin 1.9 incluyó en fase beta K2, un nuevo compilador reescrito desde cero para mejorar mucho la velocidad de compilación, que se convirtió en el compilador por defecto con el lanzamiento de Kotlin 2.0 en 2024.",
     "Kotlin ofrece las 'value classes' (antes llamadas inline classes) para crear envoltorios de un único valor con comprobación de tipos, sin el coste en memoria de crear un objeto adicional en tiempo de ejecución.",
     "Kotlin permite declarar parámetros con valores por defecto, como 'fun saludar(nombre: String = \"Mundo\")', lo que evita tener que escribir varias versiones sobrecargadas de la misma función solo para cubrir parámetros opcionales.",
-    "Kotlin no tiene una palabra clave 'new' para crear instancias: basta escribir el nombre de la clase seguido de paréntesis, como 'Persona(\"Ana\")', igual que si fuera una función."
+    "Kotlin no tiene una palabra clave 'new' para crear instancias: basta escribir el nombre de la clase seguido de paréntesis, como 'Persona(\"Ana\")', igual que si fuera una función.",
+    "Google anuncio soporte oficial de Kotlin para el desarrollo de Android en el Google I/O de 2017, dos anos antes de convertirlo, en 2019, en el lenguaje preferido para las nuevas aplicaciones."
   ],
   "sql": [
     "El estándar SQL lo mantiene ISO, pero en la práctica cada motor (PostgreSQL, MySQL, SQL Server...) añade extensiones propias, por lo que el SQL 100% portable entre motores es más raro de lo que parece.",
@@ -105,7 +110,8 @@
     "El estándar SQL:2023 incorporó soporte oficial para consultas de grafos de propiedades (SQL/PGQ), permitiendo escribir patrones de grafos directamente dentro de una consulta SQL normal.",
     "Microsoft SQL Server y Sybase SQL Server comparten un origen común: nacieron de una colaboración entre Microsoft, Sybase y Ashton-Tate en 1988, antes de que las empresas se separaran y desarrollaran el motor por caminos distintos.",
     "El estándar SQL:1992 fue el primero en definir formalmente los niveles de aislamiento de transacciones (como READ COMMITTED o SERIALIZABLE), que hoy sigue usando la mayoría de motores relacionales para controlar qué puede ver una transacción mientras otra está en marcha.",
-    "El estándar SQL no distingue mayúsculas y minúsculas en sus palabras clave (SELECT y select son equivalentes), pero por convención la mayoría de programadores las escribe en mayúsculas para distinguirlas de los nombres de tablas y columnas."
+    "El estándar SQL no distingue mayúsculas y minúsculas en sus palabras clave (SELECT y select son equivalentes), pero por convención la mayoría de programadores las escribe en mayúsculas para distinguirlas de los nombres de tablas y columnas.",
+    "El primer prototipo que implemento SQL en la practica, llamado System R, lo desarrollo IBM a mediados de los anos setenta para poner a prueba el modelo relacional que Edgar Codd habia propuesto en teoria en 1970."
   ],
   "git": [
     "Git guarda cada versión de un archivo completo (no solo las diferencias) internamente, pero los comprime y deduplica para que el repositorio no crezca tanto como parecería.",
@@ -123,7 +129,8 @@
     "Git almacena internamente sus objetos (commits, árboles, blobs) comprimidos con el mismo algoritmo DEFLATE que usa el formato ZIP, guardados dentro de la carpeta .git/objects.",
     "Git guarda internamente el contenido de cada archivo como un objeto 'blob' identificado por su hash, no asociado a un nombre de archivo, lo que permite en muchos casos recuperar versiones anteriores de un archivo aunque ya no exista en el commit actual.",
     "El área de preparación (staging) de Git vive en realidad en un único archivo binario llamado .git/index dentro del repositorio, no en una carpeta con los archivos preparados.",
-    "El hash corto de un commit que muestra 'git log --oneline' (como a1b2c3d) basta con sus primeros caracteres porque Git solo necesita que sea único dentro del repositorio, no los 40 caracteres completos del hash SHA-1."
+    "El hash corto de un commit que muestra 'git log --oneline' (como a1b2c3d) basta con sus primeros caracteres porque Git solo necesita que sea único dentro del repositorio, no los 40 caracteres completos del hash SHA-1.",
+    "El comando 'git bundle' permite exportar un repositorio completo, o parte de su historial, a un unico archivo portable, util para transferir commits sin necesidad de conexion a internet ni acceso a un servidor remoto."
   ],
   "htmlcss": [
     "El primer sitio web de la historia, publicado por Tim Berners-Lee en 1991, seguía online y accesible en su URL original décadas después, solo con HTML básico y sin una sola línea de CSS.",
@@ -141,7 +148,8 @@
     "La propiedad CSS 'accent-color', soportada por los navegadores desde 2022, permite cambiar el color de checkboxes, radio buttons y barras de progreso nativas sin tener que rehacerlos a mano con imágenes o JavaScript.",
     "La propiedad CSS 'scroll-snap-type', soportada ampliamente desde 2019, permite crear carruseles y galerías que se 'encajan' automáticamente en cada elemento al hacer scroll, sin necesidad de JavaScript.",
     "La propiedad CSS 'currentColor' permite reutilizar el color de texto ya definido en un elemento desde cualquier otra propiedad, como el borde o el relleno de un SVG, sin repetir el mismo valor de color dos veces.",
-    "El atributo HTML 'download' en una etiqueta como `<a href=\"archivo.pdf\" download>` hace que el navegador descargue el archivo en vez de abrirlo, y hasta permite indicarle un nombre distinto para el archivo descargado."
+    "El atributo HTML 'download' en una etiqueta como `<a href=\"archivo.pdf\" download>` hace que el navegador descargue el archivo en vez de abrirlo, y hasta permite indicarle un nombre distinto para el archivo descargado.",
+    "El atributo 'required' en un campo de un formulario HTML impide enviarlo si esta vacio sin necesidad de una sola linea de JavaScript, porque el propio navegador implementa esa validacion de forma nativa desde HTML5."
   ],
   "bash": [
     "Bash significa 'Bourne Again SHell', un juego de palabras porque es una reimplementación mejorada de la shell 'sh' original de Stephen Bourne de 1977.",
@@ -159,7 +167,8 @@
     "El comando 'seq', usado para generar secuencias de números como 'seq 1 5', no forma parte del estándar POSIX, por lo que no está garantizado en todos los sistemas tipo Unix.",
     "El comando 'wc' (word count) no solo cuenta líneas con la opción -l: con -w cuenta palabras y con -c cuenta bytes, y se combina constantemente con tuberías para analizar la salida de otros comandos.",
     "El comando 'mkdir -p ruta/profunda/de/carpetas' crea de una sola vez todas las carpetas intermedias que todavía no existen, sin necesidad de crear cada nivel por separado ni mostrar un error si alguna ya existe.",
-    "El comando 'man', que muestra las páginas de manual de Unix, organiza su contenido en secciones estandarizadas (NAME, SYNOPSIS, DESCRIPTION...) que se han mantenido casi iguales desde las primeras versiones de Unix en los años setenta."
+    "El comando 'man', que muestra las páginas de manual de Unix, organiza su contenido en secciones estandarizadas (NAME, SYNOPSIS, DESCRIPTION...) que se han mantenido casi iguales desde las primeras versiones de Unix en los años setenta.",
+    "El operador de redireccion '2>&1' en Bash combina la salida de error (stderr) con la salida estandar (stdout) en un mismo flujo, una tecnica habitual para guardar ambas en un unico archivo de registro."
   ],
   "ia": [
     "El término 'inteligencia artificial' se acuñó en 1956 en la conferencia de Dartmouth, más de medio siglo antes de que la mayoría de las técnicas actuales de deep learning fueran siquiera viables computacionalmente.",
@@ -177,6 +186,7 @@
     "El concepto de 'red generativa antagónica' (GAN), publicado por Ian Goodfellow en 2014, enfrenta a dos redes neuronales entre sí (una generadora y otra discriminadora) y fue clave en los primeros avances de imágenes sintéticas realistas, antes de los modelos de difusión actuales.",
     "El término 'IA generativa' se popularizó a partir de 2022 para distinguir los modelos capaces de crear contenido nuevo (texto, imágenes, audio) de los sistemas de IA anteriores, centrados sobre todo en clasificar o predecir a partir de datos ya existentes.",
     "La 'destilación de modelos' consiste en entrenar un modelo más pequeño (el 'alumno') para imitar las respuestas de un modelo más grande (el 'profesor'), logrando un rendimiento similar con muchos menos parámetros y un coste de inferencia mucho menor.",
-    "El benchmark MMLU (Massive Multitask Language Understanding), muy citado para comparar modelos de lenguaje, se publicó en 2020 y evalúa conocimiento en 57 materias distintas, desde historia hasta matemáticas, mediante preguntas de opción múltiple."
+    "El benchmark MMLU (Massive Multitask Language Understanding), muy citado para comparar modelos de lenguaje, se publicó en 2020 y evalúa conocimiento en 57 materias distintas, desde historia hasta matemáticas, mediante preguntas de opción múltiple.",
+    "El concurso de reconocimiento de imagenes ImageNet, celebrado desde 2010, marco un punto de inflexion en 2012 cuando la red neuronal convolucional AlexNet gano por un margen record, lo que impulso el auge moderno del deep learning."
   ]
 }
