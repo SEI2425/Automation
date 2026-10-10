@@ -1,0 +1,87 @@
+{
+  "date": "2026-10-10",
+  "questions": [
+    {
+      "type": "identify",
+      "lang": "Python",
+      "question": "¿Qué imprime este código?",
+      "code": "print(-7 // 2)\nprint(-7 % 2)",
+      "options": ["-4\n1", "-3\n-1", "-4\n-1", "-3\n1"],
+      "correct": 0,
+      "hint": "// redondea siempre hacia menos infinito, no hacia cero.",
+      "explanation": "-7 // 2 da -4 porque la división entera en Python redondea hacia menos infinito (floor(-3.5) = -4), y -7 % 2 da 1 porque el resto siempre toma el signo del divisor."
+    },
+    {
+      "type": "complete",
+      "lang": "JavaScript",
+      "question": "¿Qué método falta para generar el array a partir de su longitud?",
+      "code": "const arr = Array.____({ length: 3 }, (_, i) => i + 1);\nconsole.log(arr); // [1, 2, 3]",
+      "options": ["from", "of", "fill", "map"],
+      "correct": 0,
+      "hint": "Es el método estático de Array que crea un array a partir de un objeto con longitud, aplicando una función de mapeo.",
+      "explanation": "Array.from() crea un nuevo array a partir de un objeto con una propiedad length, aplicando opcionalmente una función de mapeo a cada posición; aquí genera [1, 2, 3] a partir de los índices 0, 1 y 2."
+    },
+    {
+      "type": "identify",
+      "lang": "TypeScript",
+      "question": "¿Qué imprime este código?",
+      "code": "type Shape = { kind: \"circle\"; radius: number } | { kind: \"square\"; side: number };\nfunction area(s: Shape) {\n  if (s.kind === \"circle\") return Math.PI * s.radius ** 2;\n  return s.side * s.side;\n}\nconsole.log(area({ kind: \"square\", side: 4 }));",
+      "options": ["16", "12.56", "Error de compilación", "undefined"],
+      "correct": 0,
+      "hint": "El campo 'kind' permite que TypeScript identifique qué forma es cada objeto (discriminated union).",
+      "explanation": "Al pasar { kind: 'square', side: 4 }, la condición s.kind === 'circle' es falsa, así que se ejecuta s.side * s.side, es decir 4 * 4 = 16."
+    },
+    {
+      "type": "identify",
+      "lang": "Kotlin",
+      "question": "¿Qué imprime este código?",
+      "code": "fun Int.esPar(): Boolean = this % 2 == 0\n\nfun main() {\n    println(4.esPar())\n    println(7.esPar())\n}",
+      "options": ["true\nfalse", "false\ntrue", "true\ntrue", "Error de compilación"],
+      "correct": 0,
+      "hint": "Una función de extensión permite llamar esPar() directamente sobre un Int, como si fuera un método propio de la clase.",
+      "explanation": "La función de extensión Int.esPar() comprueba si el número es divisible por 2; 4 % 2 == 0 es true, y 7 % 2 == 0 es false."
+    },
+    {
+      "type": "complete",
+      "lang": "Bash",
+      "question": "¿Qué símbolo falta para quitar la extensión .pdf del nombre del archivo?",
+      "code": "archivo=\"informe.pdf\"\necho \"${archivo____.pdf}\"\n# imprime \"informe\"",
+      "options": ["%", "#", ":", "/"],
+      "correct": 0,
+      "hint": "El símbolo % elimina un sufijo que coincide al final de la variable.",
+      "explanation": "${variable%patron} elimina la coincidencia más corta de 'patron' al final del valor de variable; aquí quita la extensión '.pdf', dejando solo 'informe'."
+    }
+  ],
+  "tips": [
+    {
+      "text": "Comprueba el contraste de color entre el texto y el fondo de tu página, no solo que se vea bien en tu propia pantalla.",
+      "explanation": "Muchas personas con baja visión o que usan una pantalla con mucho brillo no pueden leer un texto con bajo contraste aunque a ti te parezca legible a simple vista. Herramientas automáticas de contraste comprueban esto en segundos y son uno de los criterios de accesibilidad web más fáciles de arreglar y más fáciles de pasar por alto sin darse cuenta.",
+      "link": "https://webaim.org/resources/contrastchecker/",
+      "linkLabel": "WebAIM: comprobador de contraste de color"
+    },
+    {
+      "text": "En SQL, evita escribir SELECT * y especifica siempre las columnas que realmente necesitas.",
+      "explanation": "SELECT * trae todas las columnas aunque no las vayas a usar, lo que consume más memoria y ancho de banda de forma innecesaria, y además puede romper tu código si alguien añade o reordena columnas en el futuro. Pedir solo las columnas necesarias hace la consulta más rápida y más resistente a cambios en la tabla.",
+      "link": "https://wiki.postgresql.org/wiki/Don%27t_Do_This#Don.27t_use_SELECT_.2A",
+      "linkLabel": "PostgreSQL Wiki: Don't Do This (sobre SELECT *)"
+    },
+    {
+      "text": "No persigas el 100% de cobertura de tests: prioriza probar la lógica compleja o crítica de tu programa.",
+      "explanation": "Un número alto de cobertura no garantiza que los tests comprueben algo útil, y perseguirlo a toda costa suele llevar a escribir tests triviales para líneas sin riesgo real. Es mejor concentrar el esfuerzo en las partes del código donde un fallo sería costoso o difícil de detectar a simple vista.",
+      "link": "https://martinfowler.com/bliki/TestCoverage.html",
+      "linkLabel": "Martin Fowler: sobre la cobertura de tests"
+    },
+    {
+      "text": "Usa 'git log --follow -- archivo' para ver el historial completo de un archivo, incluso a través de los commits donde se renombró.",
+      "explanation": "Por defecto, git log pierde el rastro de un archivo en el commit donde se le cambió el nombre, como si su historial empezara ahí; --follow le dice a Git que siga la pista del contenido a través de esos renombrados. Es muy útil para entender por qué un archivo con un nombre nuevo tiene un comportamiento que no parece tener explicación en su historial reciente.",
+      "link": "https://git-scm.com/docs/git-log",
+      "linkLabel": "Git SCM: documentación de git log (--follow)"
+    },
+    {
+      "text": "Antes de anidar dos bucles para comparar elementos de dos listas, piensa si guardarlos en un set o diccionario te ahorraría ese coste.",
+      "explanation": "Comparar cada elemento de una lista con cada elemento de otra (bucle anidado) tarda cada vez más al crecer los datos, un coste cuadrático que se nota enseguida con listas grandes. Meter los elementos de una de las listas en un set o diccionario permite comprobar si un valor existe casi al instante, reduciendo mucho el tiempo total.",
+      "link": "https://realpython.com/python-sets/",
+      "linkLabel": "Real Python: guía de sets en Python"
+    }
+  ]
+}

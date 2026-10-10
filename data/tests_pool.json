@@ -186,6 +186,17 @@
       ],
       "correct": 0,
       "explanation": "type() devuelve la clase del objeto; para una lista vacia esa clase se muestra como <class 'list'>."
+    },
+    {
+      "q": "¿Qué diferencia hay entre list.append() y list.extend()?",
+      "opts": [
+        "extend() añade cada elemento de un iterable por separado a la lista; append() añade su argumento completo como un único elemento",
+        "Son exactamente lo mismo",
+        "append() solo funciona con números",
+        "extend() crea una lista nueva sin modificar la original"
+      ],
+      "correct": 0,
+      "explanation": "extend() recorre el iterable que recibe y añade cada uno de sus elementos al final de la lista, mientras que append() añade su argumento tal cual, como un único elemento nuevo (por ejemplo, una lista completa en lugar de sus elementos)."
     }
   ],
   "javascript": [
@@ -375,6 +386,17 @@
       ],
       "correct": 0,
       "explanation": "Las funciones flecha no tienen su propio 'this': lo heredan del contexto donde se definieron, no del objeto que las contiene, por lo que this.valor no es 42 sino undefined."
+    },
+    {
+      "q": "¿Qué imprime este código?\nfor (let i = 0; i < 3; i++) {\n  setTimeout(() => console.log(i), 0);\n}",
+      "opts": [
+        "0 1 2",
+        "3 3 3",
+        "0 0 0",
+        "Error"
+      ],
+      "correct": 0,
+      "explanation": "A diferencia de var, let tiene ámbito de bloque: cada iteración del bucle crea una nueva variable i, por lo que cada función guarda su propio valor y se imprime 0, 1 y 2 en orden."
     }
   ],
   "typescript": [
@@ -564,6 +586,17 @@
       ],
       "correct": 0,
       "explanation": "La sintaxis [string, number] define una tupla: un array de longitud fija donde cada posicion tiene un tipo especifico, a diferencia de string[] o number[], que permiten cualquier cantidad de elementos del mismo tipo."
+    },
+    {
+      "q": "¿Qué hace el tipo utilitario `Exclude<T, U>`?",
+      "opts": [
+        "Crea un tipo con los miembros de la unión T que no están en U",
+        "Añade nuevas propiedades a T",
+        "Convierte T en opcional",
+        "Elimina duplicados de un array"
+      ],
+      "correct": 0,
+      "explanation": "Exclude<T, U> construye un nuevo tipo de unión eliminando de T todos los miembros que también estén presentes en U, útil para quitar un caso concreto de un tipo unión."
     }
   ],
   "java": [
@@ -753,6 +786,17 @@
       ],
       "correct": 0,
       "explanation": "En Java, los objetos String son inmutables: metodos como concat(), replace() o toUpperCase() no modifican el String original, sino que devuelven un String nuevo con el resultado, dejando intacto el original."
+    },
+    {
+      "q": "¿Qué excepción lanza Java al intentar acceder a una posición de un array que no existe, como arr[10] en un array de tamaño 5?",
+      "opts": [
+        "ArrayIndexOutOfBoundsException",
+        "NullPointerException",
+        "ClassCastException",
+        "IllegalArgumentException"
+      ],
+      "correct": 0,
+      "explanation": "ArrayIndexOutOfBoundsException es una excepción en tiempo de ejecución que Java lanza automáticamente al intentar acceder a una posición de un array que no existe, ya sea negativa o mayor que su longitud menos uno."
     }
   ],
   "kotlin": [
@@ -942,6 +986,17 @@
       ],
       "correct": 0,
       "explanation": "Cuando una funcion de Kotlin no devuelve explicitamente ningun valor, su tipo de retorno inferido es Unit, similar a 'void' en Java pero tratado como un tipo real dentro del sistema de tipos de Kotlin."
+    },
+    {
+      "q": "¿Qué hace la función `with(objeto) { ... }` en Kotlin?",
+      "opts": [
+        "Ejecuta el bloque usando el objeto como receptor implícito (this) y devuelve el resultado de la última expresión",
+        "Crea una copia del objeto",
+        "Convierte el objeto en null",
+        "Solo funciona con colecciones"
+      ],
+      "correct": 0,
+      "explanation": "with() no es una función de extensión: recibe el objeto como argumento y ejecuta el bloque con ese objeto como receptor (this), devolviendo el valor de la última expresión, útil para agrupar varias llamadas sobre el mismo objeto sin repetir su nombre."
     }
   ],
   "sql": [
@@ -1131,6 +1186,17 @@
       ],
       "correct": 0,
       "explanation": "COUNT(*) cuenta el numero total de filas devueltas, mientras que COUNT(columna) solo cuenta las filas donde esa columna especifica no es NULL."
+    },
+    {
+      "q": "¿Qué diferencia hay entre INNER JOIN y FULL OUTER JOIN?",
+      "opts": [
+        "INNER JOIN devuelve solo las filas con coincidencia en ambas tablas; FULL OUTER JOIN devuelve también las filas sin coincidencia de cualquiera de las dos, rellenando con NULL",
+        "Son exactamente lo mismo",
+        "FULL OUTER JOIN solo funciona con una tabla",
+        "INNER JOIN siempre devuelve más filas que FULL OUTER JOIN"
+      ],
+      "correct": 0,
+      "explanation": "INNER JOIN descarta cualquier fila que no tenga coincidencia en ambas tablas, mientras que FULL OUTER JOIN conserva todas las filas de las dos tablas, rellenando con NULL los campos de la tabla donde no hubo coincidencia."
     }
   ],
   "git": [
@@ -1320,6 +1386,17 @@
       ],
       "correct": 0,
       "explanation": "La opcion --depth limita cuantos commits de historial se descargan al clonar; con --depth 1 solo se trae la version mas reciente de cada archivo, lo que acelera mucho la clonacion de repositorios grandes cuando no se necesita el historial completo."
+    },
+    {
+      "q": "¿Qué hace el comando `git tag -l \"v1.*\"`?",
+      "opts": [
+        "Lista solo las etiquetas (tags) del repositorio que coinciden con el patrón v1.*",
+        "Crea una nueva etiqueta llamada v1.*",
+        "Elimina todas las etiquetas que empiezan por v1",
+        "Combina todas las etiquetas en una sola"
+      ],
+      "correct": 0,
+      "explanation": "git tag -l acepta un patrón para filtrar qué etiquetas mostrar; aquí solo lista las que empiezan por 'v1.', útil en repositorios con muchas versiones etiquetadas."
     }
   ],
   "htmlcss": [
@@ -1509,6 +1586,17 @@
       ],
       "correct": 0,
       "explanation": "checked marca la casilla por defecto, y disabled impide que el usuario pueda cambiar su estado, dejandola fija tal como esta."
+    },
+    {
+      "q": "¿Qué hace la propiedad CSS `overflow: hidden` en un contenedor con contenido más grande que su tamaño?",
+      "opts": [
+        "Recorta el contenido que sobresale del contenedor sin mostrar barras de scroll",
+        "Añade barras de desplazamiento automáticamente",
+        "Agranda el contenedor para que quepa todo el contenido",
+        "Oculta por completo el contenedor"
+      ],
+      "correct": 0,
+      "explanation": "overflow: hidden recorta cualquier contenido que sobrepase los límites del contenedor y lo oculta, sin añadir barras de scroll como haría overflow: auto o overflow: scroll."
     }
   ],
   "bash": [
@@ -1698,6 +1786,17 @@
       ],
       "correct": 0,
       "explanation": "El simbolo & al final de un comando lo ejecuta en segundo plano, devolviendo el control a la terminal de inmediato; el comando wait, usado despues, pausa la ejecucion del script hasta que ese proceso en segundo plano (u otros lanzados igual) termine."
+    },
+    {
+      "q": "¿Qué hace el operador `||` entre dos comandos, como en 'comando1 || comando2'?",
+      "opts": [
+        "Ejecuta comando2 solo si comando1 falló",
+        "Ejecuta comando2 solo si comando1 tuvo éxito",
+        "Ejecuta ambos comandos siempre, en paralelo",
+        "Combina la salida de ambos comandos en un archivo"
+      ],
+      "correct": 0,
+      "explanation": "El operador || encadena comandos de forma condicional al contrario que &&: el segundo comando solo se ejecuta si el primero devolvió un código de salida distinto de 0, es decir, si falló."
     }
   ],
   "ia": [
@@ -1887,6 +1986,17 @@
       ],
       "correct": 0,
       "explanation": "Durante el entrenamiento, el modelo ajusta sus millones o miles de millones de parametros analizando grandes cantidades de datos; durante la inferencia, ese modelo ya entrenado y con los parametros fijos se usa simplemente para generar una respuesta a partir de una entrada nueva, sin seguir aprendiendo de ella."
+    },
+    {
+      "q": "¿Qué es el 'red teaming' aplicado a un modelo de IA?",
+      "opts": [
+        "Un proceso en el que personas o sistemas intentan deliberadamente hacer que el modelo se comporte mal o genere contenido dañino, para encontrar y corregir esos fallos antes del lanzamiento",
+        "Un método para entrenar el modelo más rápido usando varias GPUs en paralelo",
+        "Un tipo de arquitectura de red neuronal",
+        "Un sistema para traducir el modelo a otros idiomas"
+      ],
+      "correct": 0,
+      "explanation": "El red teaming consiste en poner a prueba un modelo de forma adversarial, buscando activamente formas de que falle, mienta o genere contenido peligroso, con el objetivo de descubrir esos problemas y corregirlos antes de que el modelo llegue a producción."
     }
   ]
 }
