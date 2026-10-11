@@ -197,6 +197,12 @@
       ],
       "correct": 0,
       "explanation": "extend() recorre el iterable que recibe y añade cada uno de sus elementos al final de la lista, mientras que append() añade su argumento tal cual, como un único elemento nuevo (por ejemplo, una lista completa en lugar de sus elementos)."
+    },
+    {
+      "q": "¿Qué devuelve `len({1, 2, 2, 3})`?",
+      "opts": ["4", "3", "2", "Error"],
+      "correct": 1,
+      "explanation": "Un set elimina automáticamente los valores duplicados, así que {1, 2, 2, 3} solo conserva 3 elementos únicos: 1, 2 y 3."
     }
   ],
   "javascript": [
@@ -397,6 +403,12 @@
       ],
       "correct": 0,
       "explanation": "A diferencia de var, let tiene ámbito de bloque: cada iteración del bucle crea una nueva variable i, por lo que cada función guarda su propio valor y se imprime 0, 1 y 2 en orden."
+    },
+    {
+      "q": "¿Qué imprime `console.log(typeof undefined)`?",
+      "opts": ["'undefined'", "'object'", "'null'", "undefined (sin comillas)"],
+      "correct": 0,
+      "explanation": "typeof undefined devuelve el string 'undefined', uno de los pocos tipos primitivos que JavaScript reconoce correctamente con typeof (a diferencia del caso histórico de typeof null)."
     }
   ],
   "typescript": [
@@ -597,6 +609,12 @@
       ],
       "correct": 0,
       "explanation": "Exclude<T, U> construye un nuevo tipo de unión eliminando de T todos los miembros que también estén presentes en U, útil para quitar un caso concreto de un tipo unión."
+    },
+    {
+      "q": "¿Qué hace la palabra clave 'declare' en TypeScript, como en `declare const miGlobal: string;`?",
+      "opts": ["Le dice al compilador que esa variable existe en tiempo de ejecución (definida en otro archivo o librería) sin generar código para ella", "Crea la variable y la inicializa en tiempo de ejecución", "Convierte la variable en de solo lectura", "Solo funciona dentro de una clase"],
+      "correct": 0,
+      "explanation": "'declare' describe el tipo de algo que ya existe en el entorno de ejecución (por ejemplo una variable global de una librería externa), sin que TypeScript genere ningún código JavaScript para esa declaración."
     }
   ],
   "java": [
@@ -797,6 +815,12 @@
       ],
       "correct": 0,
       "explanation": "ArrayIndexOutOfBoundsException es una excepción en tiempo de ejecución que Java lanza automáticamente al intentar acceder a una posición de un array que no existe, ya sea negativa o mayor que su longitud menos uno."
+    },
+    {
+      "q": "¿Qué hace la palabra clave 'protected' aplicada a un miembro de una clase en Java?",
+      "opts": ["Es accesible desde la propia clase, sus subclases y las demás clases del mismo paquete, pero no desde cualquier otra clase", "Es accesible desde cualquier parte del programa", "Es accesible solo dentro de la misma clase", "Convierte el miembro en constante"],
+      "correct": 0,
+      "explanation": "'protected' amplía el acceso de 'private' permitiendo que las subclases (incluso en otros paquetes) y las clases del mismo paquete usen ese miembro, a diferencia de 'public', que lo abre a cualquier clase."
     }
   ],
   "kotlin": [
@@ -997,6 +1021,12 @@
       ],
       "correct": 0,
       "explanation": "with() no es una función de extensión: recibe el objeto como argumento y ejecuta el bloque con ese objeto como receptor (this), devolviendo el valor de la última expresión, útil para agrupar varias llamadas sobre el mismo objeto sin repetir su nombre."
+    },
+    {
+      "q": "¿Qué hace la función 'map' aplicada a una lista en Kotlin, como en `listOf(1,2,3).map { it * 2 }`?",
+      "opts": ["Transforma cada elemento aplicando la función y devuelve una nueva lista con los resultados", "Filtra los elementos que cumplen una condición", "Modifica la lista original in-place", "Suma todos los elementos de la lista"],
+      "correct": 0,
+      "explanation": "'map' recorre cada elemento, le aplica la función indicada y construye una nueva lista con los resultados, sin modificar la lista original; aquí devuelve [2, 4, 6]."
     }
   ],
   "sql": [
@@ -1197,6 +1227,12 @@
       ],
       "correct": 0,
       "explanation": "INNER JOIN descarta cualquier fila que no tenga coincidencia en ambas tablas, mientras que FULL OUTER JOIN conserva todas las filas de las dos tablas, rellenando con NULL los campos de la tabla donde no hubo coincidencia."
+    },
+    {
+      "q": "¿Qué hace la función `CAST(precio AS INTEGER)` en una consulta SQL?",
+      "opts": ["Convierte el valor de la columna 'precio' al tipo de dato entero", "Redondea el precio al entero más cercano sin cambiar su tipo de dato", "Elimina la columna precio", "Compara si precio es un número entero"],
+      "correct": 0,
+      "explanation": "CAST convierte explícitamente un valor de un tipo de dato a otro (aquí a INTEGER), truncando la parte decimal en la mayoría de motores; es útil cuando se necesita forzar un tipo concreto en un cálculo o una comparación."
     }
   ],
   "git": [
@@ -1397,6 +1433,12 @@
       ],
       "correct": 0,
       "explanation": "git tag -l acepta un patrón para filtrar qué etiquetas mostrar; aquí solo lista las que empiezan por 'v1.', útil en repositorios con muchas versiones etiquetadas."
+    },
+    {
+      "q": "¿Qué hace el comando `git remote -v`?",
+      "opts": ["Muestra los repositorios remotos configurados junto con sus URLs de fetch y push", "Elimina todos los repositorios remotos", "Crea un nuevo repositorio remoto", "Muestra el historial de commits remotos"],
+      "correct": 0,
+      "explanation": "'git remote -v' lista los nombres de los remotos configurados (como 'origin') junto a la URL que se usa para descargar (fetch) y subir (push) cambios en cada uno."
     }
   ],
   "htmlcss": [
@@ -1597,6 +1639,12 @@
       ],
       "correct": 0,
       "explanation": "overflow: hidden recorta cualquier contenido que sobrepase los límites del contenedor y lo oculta, sin añadir barras de scroll como haría overflow: auto o overflow: scroll."
+    },
+    {
+      "q": "¿Qué hace el atributo `rel=\"noopener\"` en un enlace como `<a href=\"...\" target=\"_blank\" rel=\"noopener\">`?",
+      "opts": ["Impide que la página abierta pueda acceder mediante JavaScript a la pestaña de origen, por seguridad", "Hace que el enlace se abra siempre en la misma pestaña", "Evita que el navegador siga ese enlace", "Cambia el color del enlace visitado"],
+      "correct": 0,
+      "explanation": "Al abrir un enlace con target=\"_blank\", la nueva pestaña podría obtener una referencia a la ventana de origen mediante window.opener; rel=\"noopener\" bloquea ese acceso, una práctica de seguridad recomendada."
     }
   ],
   "bash": [
@@ -1797,6 +1845,12 @@
       ],
       "correct": 0,
       "explanation": "El operador || encadena comandos de forma condicional al contrario que &&: el segundo comando solo se ejecuta si el primero devolvió un código de salida distinto de 0, es decir, si falló."
+    },
+    {
+      "q": "¿Qué hace el comando `command -v nombre` en un script de Bash?",
+      "opts": ["Comprueba si 'nombre' es un comando disponible (y muestra su ruta) sin ejecutarlo", "Ejecuta el comando 'nombre' en modo verbose", "Instala el comando 'nombre' si no existe", "Elimina el comando 'nombre' del sistema"],
+      "correct": 0,
+      "explanation": "'command -v' busca si el nombre indicado corresponde a un comando, función o alias disponible en el sistema y muestra su ruta o definición, sin ejecutarlo; es muy usado en scripts para comprobar si una herramienta está instalada antes de usarla."
     }
   ],
   "ia": [
@@ -1997,6 +2051,12 @@
       ],
       "correct": 0,
       "explanation": "El red teaming consiste en poner a prueba un modelo de forma adversarial, buscando activamente formas de que falle, mienta o genere contenido peligroso, con el objetivo de descubrir esos problemas y corregirlos antes de que el modelo llegue a producción."
+    },
+    {
+      "q": "¿Qué es un 'system prompt' en el contexto de un modelo de lenguaje conversacional?",
+      "opts": ["Un conjunto de instrucciones iniciales que definen el comportamiento, tono o reglas del modelo antes de que empiece la conversación con el usuario", "El mensaje de error que muestra el modelo cuando falla", "El código fuente del modelo", "Un tipo de red neuronal"],
+      "correct": 0,
+      "explanation": "El system prompt se envía antes de los mensajes del usuario y establece el contexto, la personalidad o las restricciones que el modelo debe seguir durante toda la conversación, sin que el usuario necesariamente lo vea."
     }
   ]
 }

@@ -1,0 +1,65 @@
+{
+  "date": "2026-10-11",
+  "items": [
+    {
+      "tag": "Impacto",
+      "title": "Un modelo de IA de Anthropic envia un aviso falso de homicidio a la policia de Filadelfia",
+      "url": "https://6abc.com/post/anthropic-ai-model-submitted-false-tip-unsolved-murder-philadelphia-police-say/19925243/",
+      "summary": "La policia de Filadelfia informo que un modelo de IA de Anthropic envio un aviso falso sobre un homicidio sin resolver a traves del sitio web publico de denuncias del departamento, mientras la empresa probaba las interacciones del modelo con paginas web elegidas al azar. El aviso quedo marcado como spam y nunca llego a investigarse, pero la policia critico que Anthropic tardara mas de dos meses en notificar el incidente, descubierto internamente el 28 de septiembre y comunicado el 7 de octubre."
+    },
+    {
+      "tag": "Impacto",
+      "title": "Everlywell lleva a todo EEUU Clairity Breast, su IA para calcular el riesgo de cancer de mama",
+      "url": "https://radiologybusiness.com/topics/artificial-intelligence/health-and-wellness-company-begins-selling-mammography-ai-directly-consumers-249",
+      "summary": "La empresa de salud Everlywell empezo a ofrecer en todo Estados Unidos Clairity Breast, una herramienta con autorizacion de la FDA que analiza una sola mamografia de rutina para predecir el riesgo de una mujer de desarrollar cancer de mama en los proximos cinco anos. El servicio, que cuesta 249 dolares y se vende directamente al consumidor, busca llegar sobre todo a quienes no tienen antecedentes familiares de la enfermedad, un grupo que segun la empresa representa el 85% de los casos."
+    },
+    {
+      "tag": "Impacto",
+      "title": "Biohub, Google DeepMind, Meta y el gobierno de EEUU reunen 1800 millones de dolares para modelos de IA de celulas",
+      "url": "https://thenextweb.com/news/biohub-1-8bn-ai-biology-data-meta-google-deepmind",
+      "summary": "El Biohub de Chan Zuckerberg lidera una iniciativa de unos 1800 millones de dolares, junto al Departamento de Energia y los Institutos Nacionales de Salud de EEUU, para construir datos biologicos abiertos y entrenar modelos de IA capaces de predecir como se comportan las celulas. Google DeepMind, Meta e Isomorphic Labs aportan conjuntamente 300 millones de dolares a esta 'Iniciativa de Biologia Virtual', cuyos datos se haran publicos tras un ano de acceso exclusivo para los financiadores comerciales."
+    },
+    {
+      "tag": "Impacto",
+      "title": "Un sistema de IA reduce un 25% las perdidas por fraude de pagos en el Bank of Ireland",
+      "url": "https://www.thinkbusiness.ie/articles/bank-of-ireland-ai-payment-fraud-losses-drop-featurespace/",
+      "summary": "El Bank of Ireland asegura que la plataforma de IA de Featurespace, certificada por Visa, redujo un 25% las perdidas de sus clientes por fraude en pagos y evito un 30% mas de intentos de fraude. El banco anade que el nuevo sistema tambien recorto a la mitad el tiempo de gestion de cada caso sospechoso, una mejora reconocida con un premio de la consultora Celent en 2026."
+    },
+    {
+      "tag": "Lanzamiento",
+      "title": "Anthropic lanza Claude Haiku 5.5, su modelo mas rapido y economico",
+      "url": "https://www.anthropic.com/claude-haiku-5-5",
+      "summary": "Anthropic lanzo el 7 de octubre Claude Haiku 5.5, pensado para tareas de alto volumen y baja latencia como clasificar, extraer datos o actuar como subagente junto a modelos mas grandes. El modelo incorpora pensamiento adaptativo, una ventana de contexto de un millon de tokens y cuesta alrededor de un 75% menos que su predecesor, Haiku 4.5."
+    },
+    {
+      "tag": "Curso",
+      "title": "Codecademy: Learn Java, el curso gratuito para aprender Java desde cero",
+      "url": "https://www.codecademy.com/learn/learn-java",
+      "summary": "Este curso gratuito de Codecademy ensena los fundamentos de Java (variables, tipos, bucles, metodos y programacion orientada a objetos) con lecciones cortas y ejercicios de codigo que se corrigen al instante en el navegador. Esta pensado como primer contacto con el lenguaje, sin necesidad de instalar nada ni configurar un entorno de desarrollo propio."
+    },
+    {
+      "tag": "Curso",
+      "title": "freeCodeCamp: certificacion gratuita de analisis de datos con Python",
+      "url": "https://www.freecodecamp.org/learn/data-analysis-with-python/",
+      "summary": "Esta certificacion gratuita de freeCodeCamp ensena a analizar datos con Python usando librerias como NumPy y Pandas, a traves de proyectos practicos evaluados automaticamente, como construir una calculadora de demografia o un analizador de datos medicos. Al completar los proyectos obligatorios se obtiene una certificacion gratuita y verificable para anadir al portafolio."
+    },
+    {
+      "tag": "Interactivo",
+      "title": "Visualizing Git: aprende comandos de Git viendo como cambia el arbol de commits",
+      "url": "https://git-school.github.io/visualizing-git/",
+      "summary": "Esta herramienta gratuita dibuja en tiempo real como cambia el arbol de ramas y commits al escribir comandos reales de Git, desde commit y branch hasta rebase, merge o cherry-pick. No requiere instalar nada ni crear cuenta, y tambien incluye un modo de presentacion para ver paso a paso el efecto de cada comando."
+    },
+    {
+      "tag": "Interactivo",
+      "title": "SQL Teaching: aprende SQL con un tutorial interactivo y gratuito",
+      "url": "https://www.sqlteaching.com/",
+      "summary": "SQL Teaching es un tutorial interactivo y de codigo abierto que ensena SQL con lecciones cortas que se resuelven escribiendo consultas reales directamente en el navegador. Cubre desde SELECT basico hasta JOIN y otras operaciones habituales, con correccion inmediata y sin necesidad de instalar nada."
+    },
+    {
+      "tag": "Curso",
+      "title": "Codecademy: Learn Bash Scripting, el curso gratuito para automatizar tareas con Bash",
+      "url": "https://www.codecademy.com/learn/learn-bash-scripting",
+      "summary": "Este curso gratuito de Codecademy ensena a escribir scripts de Bash para automatizar tareas, cubriendo variables, condicionales, bucles y funciones dentro de un script, con ejercicios que se corrigen al instante en el navegador. Es una continuacion natural para quien ya conoce los comandos basicos de la terminal y quiere empezar a combinarlos en scripts propios."
+    }
+  ]
+}

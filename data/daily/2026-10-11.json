@@ -1,0 +1,87 @@
+{
+  "date": "2026-10-11",
+  "questions": [
+    {
+      "type": "identify",
+      "lang": "Python",
+      "question": "¿Que imprime este codigo?",
+      "code": "data = [1, 2, 3]\ndata2 = data.copy()\ndata2.append(4)\nprint(data)",
+      "options": ["[1, 2, 3, 4]", "[1, 2, 3]", "[4]", "Error"],
+      "correct": 1,
+      "hint": "copy() crea una lista nueva e independiente, a diferencia de data2 = data.",
+      "explanation": "copy() crea una copia independiente de la lista; modificar data2 con append() no afecta a data, porque ya no comparten la misma lista en memoria."
+    },
+    {
+      "type": "complete",
+      "lang": "JavaScript",
+      "question": "¿Que metodo falta para obtener un array con los nombres de las propiedades del objeto?",
+      "code": "const obj = { a: 1, b: 2 };\nconst keys = Object.____(obj);\nconsole.log(keys); // ['a', 'b']",
+      "options": ["keys", "values", "entries", "assign"],
+      "correct": 0,
+      "hint": "Necesitas el nombre de las propiedades, no sus valores.",
+      "explanation": "Object.keys() devuelve un array con los nombres de las propiedades propias de un objeto, en el orden en que se definieron."
+    },
+    {
+      "type": "identify",
+      "lang": "SQL",
+      "question": "¿Que devuelve esta consulta?",
+      "code": "SELECT customer_id FROM orders_2025\nINTERSECT\nSELECT customer_id FROM orders_2026;",
+      "options": ["Los clientes que hicieron pedidos tanto en 2025 como en 2026", "Los clientes que solo pidieron en 2025", "Todos los clientes de ambas tablas, sin repetir", "Los clientes que no pidieron en ninguno de los dos años"],
+      "correct": 0,
+      "hint": "INTERSECT solo conserva las filas que aparecen en los resultados de las dos consultas a la vez.",
+      "explanation": "INTERSECT devuelve unicamente las filas presentes en los resultados de ambas consultas, por lo que aqui selecciona los ids de cliente que pidieron en 2025 y tambien en 2026."
+    },
+    {
+      "type": "complete",
+      "lang": "Git",
+      "question": "¿Que comando falta para cambiar a la rama feature-x recien creada?",
+      "code": "git branch feature-x\ngit ____ feature-x\n# cambia a la rama feature-x recien creada",
+      "options": ["checkout", "branch", "merge", "clone"],
+      "correct": 0,
+      "hint": "git branch crea la rama, pero no cambia a ella por si solo.",
+      "explanation": "git checkout <rama> cambia el directorio de trabajo a una rama ya existente (git checkout -b la crearia y cambiaria en un solo paso)."
+    },
+    {
+      "type": "identify",
+      "lang": "HTML/CSS",
+      "question": "¿Que controla la propiedad 'transition' en este fragmento?",
+      "code": "<style>\n  .card { opacity: 0; transition: opacity 0.3s; }\n  .card.visible { opacity: 1; }\n</style>",
+      "options": ["Hace que el cambio de opacidad ocurra de forma gradual en 0.3 segundos en lugar de instantaneamente", "Oculta la tarjeta permanentemente", "Cambia el color de fondo de la tarjeta", "Solo funciona si la tarjeta tiene la clase 'visible' desde el principio"],
+      "correct": 0,
+      "hint": "transition anima el cambio de una propiedad durante el tiempo indicado.",
+      "explanation": "transition anima de forma gradual el cambio de la propiedad indicada (aqui opacity) durante el tiempo especificado, en lugar de aplicarse de golpe cuando se anade la clase 'visible'."
+    }
+  ],
+  "tips": [
+    {
+      "text": "Aprende a usar 'git log -S\"texto\"' para encontrar en que commit se anadio o elimino una linea de codigo concreta.",
+      "explanation": "Buscar a mano commit por commit cuando no sabes en cual se introdujo o borro un fragmento de codigo es lento; la busqueda 'pickaxe' de Git (-S) recorre todo el historial y senala directamente los commits donde ese texto aparecio o desaparecio.",
+      "link": "https://git-scm.com/docs/git-log",
+      "linkLabel": "Git SCM: documentacion de git log (busqueda pickaxe)"
+    },
+    {
+      "text": "Antes de usar una libreria externa en tu proyecto, mira que licencia tiene, no solo si es gratuita.",
+      "explanation": "Una libreria puede descargarse sin coste pero tener una licencia que te obliga a publicar tu propio codigo o que prohibe el uso comercial; comprobarlo antes evita sorpresas legales cuando tu proyecto crezca o quieras venderlo.",
+      "link": "https://choosealicense.com/",
+      "linkLabel": "choosealicense.com: guia para entender licencias de software"
+    },
+    {
+      "text": "Prueba tu pagina simulando una conexion lenta antes de darla por terminada.",
+      "explanation": "Lo que carga al instante en tu ordenador con fibra puede tardar varios segundos en un movil con mala cobertura, y esa espera es la que de verdad vive la mayoria de usuarios. Las herramientas de desarrollador del navegador incluyen un modo para limitar la velocidad de red y ver tu pagina como la veria alguien con una conexion lenta.",
+      "link": "https://developer.chrome.com/docs/devtools/network/reference/#throttling",
+      "linkLabel": "Chrome DevTools: como limitar la velocidad de red (throttling)"
+    },
+    {
+      "text": "Nunca dejes un bloque 'catch' vacio que atrapa un error sin hacer nada con el.",
+      "explanation": "Un catch vacio hace que un fallo real desaparezca en silencio, sin registro ni aviso, lo que convierte depurar un problema en produccion en adivinar a ciegas. Como minimo, registra el error con un log antes de decidir si el programa puede seguir o debe detenerse.",
+      "link": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/try...catch",
+      "linkLabel": "MDN: la sentencia try...catch"
+    },
+    {
+      "text": "Usa 'assert' para comprobar en tu propio codigo condiciones que siempre deberian ser ciertas.",
+      "explanation": "Una aseveracion (assert) detiene el programa de inmediato con un mensaje claro en cuanto una condicion que dabas por garantizada deja de cumplirse, en vez de dejar que el error se propague y aparezca mucho mas tarde, lejos de su causa real.",
+      "link": "https://docs.python.org/3/reference/simple_stmts.html#the-assert-statement",
+      "linkLabel": "Documentacion oficial de Python: la sentencia assert"
+    }
+  ]
+}
