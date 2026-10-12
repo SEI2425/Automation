@@ -1,0 +1,65 @@
+{
+  "date": "2026-10-12",
+  "items": [
+    {
+      "tag": "Impacto",
+      "title": "La FAA despliega SMART, su primer sistema de IA para gestionar el trafico aereo en EEUU",
+      "url": "https://www.kuow.org/npr-news/2026-10-01/do-ai-and-air-traffic-control-mix-ceo-addresses-anxiety-about-new-faa-tool",
+      "summary": "La Administracion Federal de Aviacion de EEUU empezo a desplegar SMART, un software de 875 millones de dolares desarrollado con Air Space Intelligence que ajusta horarios de vuelo para reducir la congestion, primero en tres aeropuertos de la region de Washington D.C. El director de la empresa aseguro que la herramienta no toma decisiones de separacion entre aviones, esas siguen en manos de los controladores humanos, pero un congresista de Virginia critico que la FAA use a sus votantes como conejillos de indias para un sistema todavia sin probar a fondo."
+    },
+    {
+      "tag": "Impacto",
+      "title": "Anthropic prohibira la crueldad gratuita hacia Claude a partir del 12 de noviembre",
+      "url": "https://www.macrumors.com/2026/10/08/anthropic-user-guideline-update/",
+      "summary": "Anthropic actualizo el 8 de octubre la politica de uso de Claude para prohibir el comportamiento sostenido e innecesariamente cruel hacia el modelo, aunque aclara que la frustracion normal, la critica o la investigacion sobre el propio sistema quedan fuera de la norma. La principal herramienta de aplicacion sera que Claude termine la conversacion por su cuenta, y la empresa no ha precisado si tambien podra suspender cuentas; el cambio entra en vigor el 12 de noviembre junto a nuevas reglas sobre desinformacion electoral y armas."
+    },
+    {
+      "tag": "Impacto",
+      "title": "El informe de Zscaler de 2026 senala que el robo de datos en ataques de ransomware crecio un 275% con ayuda de la IA",
+      "url": "https://www.zscaler.com/press/new-zscaler-report-reveals-ai-assisted-attackers-move-massive-data-theft-executive-targeting",
+      "summary": "El informe ThreatLabz 2026 de Zscaler, publicado el 30 de septiembre, calcula que el volumen de datos robados en ataques de ransomware aumento mas de un 275% respecto al ano anterior, hasta cerca de 896 terabytes, con pagos de rescate que superaron los 328 millones de dolares. La empresa atribuye buena parte de ese salto a atacantes que usan IA para moverse mas rapido dentro de las redes, y senala que casi dos tercios de las victimas con cargos directivos fueron objetivo deliberado de los ataques."
+    },
+    {
+      "tag": "Impacto",
+      "title": "El OIJ de Costa Rica detecta 58 denuncias de 2026 en las que aparece la IA, sobre todo en estafas y suplantaciones",
+      "url": "https://www.diarioextra.com/noticia/delitos-con-ia-figuran-este-ano-en-el-pais/",
+      "summary": "Una revision del Organismo de Investigacion Judicial de Costa Rica encontro 58 denuncias presentadas en 2026 cuyas narraciones mencionan el uso de inteligencia artificial, principalmente en casos de estafas, extorsiones y suplantacion de identidad. La propia institucion aclaro que la legislacion costarricense todavia no tipifica un delito especifico de IA, sino que la tecnologia se usa como herramienta para cometer delitos ya recogidos en el Codigo Penal."
+    },
+    {
+      "tag": "Lanzamiento",
+      "title": "Microsoft abre la vista previa de Work IQ, que conecta Copilot con los datos reales de Dynamics 365",
+      "url": "https://erp.today/microsoft-opens-work-iq-preview-for-dynamics-365-and-power-platform-data/",
+      "summary": "Microsoft abrio el 30 de septiembre una vista previa publica de Work IQ, una funcion que conecta a Copilot y a sus agentes con los datos de Dynamics 365 Sales, Dynamics 365 Customer Service y las aplicaciones de Power Apps, construyendo un modelo semantico a partir de la configuracion ya existente de cada empresa. La propia Microsoft advierte que la vista previa no esta pensada todavia para uso en produccion y que la calidad de las respuestas dependera de lo bien mantenida que este la configuracion de cada organizacion."
+    },
+    {
+      "tag": "Interactivo",
+      "title": "DataLemur: practica SQL con preguntas reales de entrevistas de empresas tecnologicas",
+      "url": "https://datalemur.com/",
+      "summary": "DataLemur ofrece mas de 200 preguntas de SQL inspiradas en entrevistas reales de empresas como Amazon, Google o Microsoft, con pistas progresivas y la solucion completa si te quedas atascado. Su plan gratuito permite practicar un conjunto inicial de preguntas directamente en un editor dentro del navegador, sin instalar nada."
+    },
+    {
+      "tag": "Curso",
+      "title": "Codecademy: Learn Python 3, el curso gratuito para aprender Python desde cero",
+      "url": "https://www.codecademy.com/learn/learn-python-3",
+      "summary": "Este curso gratuito de Codecademy ensena los fundamentos de Python (variables, tipos de datos, bucles, funciones y modulos) con lecciones cortas y ejercicios de codigo que se corrigen al instante en el navegador. Esta pensado como primer contacto con el lenguaje, sin necesidad de instalar nada ni configurar un entorno propio."
+    },
+    {
+      "tag": "Curso",
+      "title": "Codecademy: Learn CSS, el curso gratuito para dar estilo a tus paginas web",
+      "url": "https://www.codecademy.com/learn/learn-css",
+      "summary": "Este curso gratuito de Codecademy ensena a transformar HTML en paginas visualmente atractivas usando CSS: colores, tipografia, espaciado y disenos basicos, con seis proyectos practicos incluidos. Las lecciones se corrigen al instante dentro del propio navegador, sin necesidad de instalar nada."
+    },
+    {
+      "tag": "Interactivo",
+      "title": "Scrimba: Learn JavaScript, el curso interactivo gratuito con mas de 140 retos de codigo",
+      "url": "https://scrimba.com/learn/learnjavascript",
+      "summary": "Este curso gratuito de Scrimba, de unas nueve horas, ensena JavaScript desde cero combinando video con un editor en el que puedes pausar al instructor en cualquier momento y editar su codigo tu mismo. Incluye mas de 140 retos interactivos y un certificado gratuito al terminar."
+    },
+    {
+      "tag": "Curso",
+      "title": "Hugging Face LLM Course: el curso gratuito para entender como funcionan los modelos de lenguaje",
+      "url": "https://huggingface.co/learn/llm-course/chapter1/1",
+      "summary": "Este curso gratuito y sin anuncios de Hugging Face ensena a usar librerias como Transformers y Tokenizers para trabajar con modelos de lenguaje, combinando explicaciones con cuadernos de codigo que se ejecutan directamente en el navegador. Nacio en 2022 como un curso de procesamiento de lenguaje natural y ha evolucionado para centrarse en los grandes modelos de lenguaje actuales."
+    }
+  ]
+}

@@ -200,9 +200,25 @@
     },
     {
       "q": "¿Qué devuelve `len({1, 2, 2, 3})`?",
-      "opts": ["4", "3", "2", "Error"],
+      "opts": [
+        "4",
+        "3",
+        "2",
+        "Error"
+      ],
       "correct": 1,
       "explanation": "Un set elimina automáticamente los valores duplicados, así que {1, 2, 2, 3} solo conserva 3 elementos únicos: 1, 2 y 3."
+    },
+    {
+      "q": "¿Que devuelve `list(filter(lambda x: x > 0, [-2, -1, 0, 1, 2]))`?",
+      "opts": [
+        "[1, 2]",
+        "[-2, -1]",
+        "[-2, -1, 0, 1, 2]",
+        "Error"
+      ],
+      "correct": 0,
+      "explanation": "filter() conserva solo los elementos para los que la funcion lambda devuelve True; aqui solo los numeros mayores que 0 (1 y 2) cumplen la condicion."
     }
   ],
   "javascript": [
@@ -406,9 +422,25 @@
     },
     {
       "q": "¿Qué imprime `console.log(typeof undefined)`?",
-      "opts": ["'undefined'", "'object'", "'null'", "undefined (sin comillas)"],
+      "opts": [
+        "'undefined'",
+        "'object'",
+        "'null'",
+        "undefined (sin comillas)"
+      ],
       "correct": 0,
       "explanation": "typeof undefined devuelve el string 'undefined', uno de los pocos tipos primitivos que JavaScript reconoce correctamente con typeof (a diferencia del caso histórico de typeof null)."
+    },
+    {
+      "q": "¿Que imprime `console.log([1,2,3].reduce((a,b) => a+b, 10))`?",
+      "opts": [
+        "16",
+        "6",
+        "Error",
+        "NaN"
+      ],
+      "correct": 0,
+      "explanation": "reduce acumula empezando en el valor inicial 10, y le suma cada elemento del array: 10+1+2+3 = 16."
     }
   ],
   "typescript": [
@@ -612,9 +644,25 @@
     },
     {
       "q": "¿Qué hace la palabra clave 'declare' en TypeScript, como en `declare const miGlobal: string;`?",
-      "opts": ["Le dice al compilador que esa variable existe en tiempo de ejecución (definida en otro archivo o librería) sin generar código para ella", "Crea la variable y la inicializa en tiempo de ejecución", "Convierte la variable en de solo lectura", "Solo funciona dentro de una clase"],
+      "opts": [
+        "Le dice al compilador que esa variable existe en tiempo de ejecución (definida en otro archivo o librería) sin generar código para ella",
+        "Crea la variable y la inicializa en tiempo de ejecución",
+        "Convierte la variable en de solo lectura",
+        "Solo funciona dentro de una clase"
+      ],
       "correct": 0,
       "explanation": "'declare' describe el tipo de algo que ya existe en el entorno de ejecución (por ejemplo una variable global de una librería externa), sin que TypeScript genere ningún código JavaScript para esa declaración."
+    },
+    {
+      "q": "¿Que hace el tipo utilitario `Readonly<T>`?",
+      "opts": [
+        "Convierte todas las propiedades de T en solo lectura",
+        "Elimina las propiedades de T",
+        "Hace que T sea opcional",
+        "Convierte T en un array"
+      ],
+      "correct": 0,
+      "explanation": "Readonly<T> genera un nuevo tipo a partir de T donde todas las propiedades quedan marcadas como readonly, impidiendo reasignarlas despues de la inicializacion."
     }
   ],
   "java": [
@@ -818,9 +866,25 @@
     },
     {
       "q": "¿Qué hace la palabra clave 'protected' aplicada a un miembro de una clase en Java?",
-      "opts": ["Es accesible desde la propia clase, sus subclases y las demás clases del mismo paquete, pero no desde cualquier otra clase", "Es accesible desde cualquier parte del programa", "Es accesible solo dentro de la misma clase", "Convierte el miembro en constante"],
+      "opts": [
+        "Es accesible desde la propia clase, sus subclases y las demás clases del mismo paquete, pero no desde cualquier otra clase",
+        "Es accesible desde cualquier parte del programa",
+        "Es accesible solo dentro de la misma clase",
+        "Convierte el miembro en constante"
+      ],
       "correct": 0,
       "explanation": "'protected' amplía el acceso de 'private' permitiendo que las subclases (incluso en otros paquetes) y las clases del mismo paquete usen ese miembro, a diferencia de 'public', que lo abre a cualquier clase."
+    },
+    {
+      "q": "¿Que hace la interfaz `Runnable` en Java?",
+      "opts": [
+        "Define un unico metodo run() que se puede ejecutar en un hilo separado",
+        "Crea automaticamente una base de datos",
+        "Convierte una clase en inmutable",
+        "Permite sobrecargar operadores"
+      ],
+      "correct": 0,
+      "explanation": "Runnable es una interfaz funcional con un unico metodo run(), pensada para representar una tarea que se puede ejecutar, tipicamente en un hilo (Thread) independiente."
     }
   ],
   "kotlin": [
@@ -1024,9 +1088,25 @@
     },
     {
       "q": "¿Qué hace la función 'map' aplicada a una lista en Kotlin, como en `listOf(1,2,3).map { it * 2 }`?",
-      "opts": ["Transforma cada elemento aplicando la función y devuelve una nueva lista con los resultados", "Filtra los elementos que cumplen una condición", "Modifica la lista original in-place", "Suma todos los elementos de la lista"],
+      "opts": [
+        "Transforma cada elemento aplicando la función y devuelve una nueva lista con los resultados",
+        "Filtra los elementos que cumplen una condición",
+        "Modifica la lista original in-place",
+        "Suma todos los elementos de la lista"
+      ],
       "correct": 0,
       "explanation": "'map' recorre cada elemento, le aplica la función indicada y construye una nueva lista con los resultados, sin modificar la lista original; aquí devuelve [2, 4, 6]."
+    },
+    {
+      "q": "¿Que hace el operador de llamada segura `?.` en Kotlin, como en `persona?.nombre`?",
+      "opts": [
+        "Accede a 'nombre' solo si persona no es null; si es null, devuelve null sin lanzar excepcion",
+        "Lanza una excepcion si persona es null",
+        "Convierte persona en un tipo no anulable",
+        "Asigna null a 'nombre' automaticamente"
+      ],
+      "correct": 0,
+      "explanation": "El operador de llamada segura ?. comprueba si el valor de la izquierda es null; si lo es, toda la expresion devuelve null en lugar de lanzar una NullPointerException, y si no lo es, accede normalmente a la propiedad."
     }
   ],
   "sql": [
@@ -1230,9 +1310,25 @@
     },
     {
       "q": "¿Qué hace la función `CAST(precio AS INTEGER)` en una consulta SQL?",
-      "opts": ["Convierte el valor de la columna 'precio' al tipo de dato entero", "Redondea el precio al entero más cercano sin cambiar su tipo de dato", "Elimina la columna precio", "Compara si precio es un número entero"],
+      "opts": [
+        "Convierte el valor de la columna 'precio' al tipo de dato entero",
+        "Redondea el precio al entero más cercano sin cambiar su tipo de dato",
+        "Elimina la columna precio",
+        "Compara si precio es un número entero"
+      ],
       "correct": 0,
       "explanation": "CAST convierte explícitamente un valor de un tipo de dato a otro (aquí a INTEGER), truncando la parte decimal en la mayoría de motores; es útil cuando se necesita forzar un tipo concreto en un cálculo o una comparación."
+    },
+    {
+      "q": "¿Que hace la clausula `COALESCE(telefono, 'Sin telefono')` en una consulta SQL?",
+      "opts": [
+        "Devuelve el valor de telefono si no es NULL, o el texto 'Sin telefono' en caso contrario",
+        "Elimina las filas donde telefono es NULL",
+        "Cuenta cuantos telefonos hay",
+        "Convierte telefono a mayusculas"
+      ],
+      "correct": 0,
+      "explanation": "COALESCE devuelve el primer valor no nulo de la lista que recibe; si telefono es NULL, devuelve el valor de reemplazo indicado en su lugar."
     }
   ],
   "git": [
@@ -1436,9 +1532,25 @@
     },
     {
       "q": "¿Qué hace el comando `git remote -v`?",
-      "opts": ["Muestra los repositorios remotos configurados junto con sus URLs de fetch y push", "Elimina todos los repositorios remotos", "Crea un nuevo repositorio remoto", "Muestra el historial de commits remotos"],
+      "opts": [
+        "Muestra los repositorios remotos configurados junto con sus URLs de fetch y push",
+        "Elimina todos los repositorios remotos",
+        "Crea un nuevo repositorio remoto",
+        "Muestra el historial de commits remotos"
+      ],
       "correct": 0,
       "explanation": "'git remote -v' lista los nombres de los remotos configurados (como 'origin') junto a la URL que se usa para descargar (fetch) y subir (push) cambios en cada uno."
+    },
+    {
+      "q": "¿Que hace el comando `git revert <commit>`?",
+      "opts": [
+        "Crea un nuevo commit que deshace los cambios de ese commit, sin borrar el historial",
+        "Elimina ese commit del historial por completo",
+        "Vuelve el repositorio exactamente al estado de ese commit, borrando los posteriores",
+        "Fusiona ese commit con la rama actual"
+      ],
+      "correct": 0,
+      "explanation": "git revert genera un nuevo commit que aplica el cambio inverso al del commit indicado, deshaciendo su efecto sin reescribir ni eliminar el historial existente, lo que lo hace seguro en ramas compartidas."
     }
   ],
   "htmlcss": [
@@ -1642,9 +1754,25 @@
     },
     {
       "q": "¿Qué hace el atributo `rel=\"noopener\"` en un enlace como `<a href=\"...\" target=\"_blank\" rel=\"noopener\">`?",
-      "opts": ["Impide que la página abierta pueda acceder mediante JavaScript a la pestaña de origen, por seguridad", "Hace que el enlace se abra siempre en la misma pestaña", "Evita que el navegador siga ese enlace", "Cambia el color del enlace visitado"],
+      "opts": [
+        "Impide que la página abierta pueda acceder mediante JavaScript a la pestaña de origen, por seguridad",
+        "Hace que el enlace se abra siempre en la misma pestaña",
+        "Evita que el navegador siga ese enlace",
+        "Cambia el color del enlace visitado"
+      ],
       "correct": 0,
       "explanation": "Al abrir un enlace con target=\"_blank\", la nueva pestaña podría obtener una referencia a la ventana de origen mediante window.opener; rel=\"noopener\" bloquea ese acceso, una práctica de seguridad recomendada."
+    },
+    {
+      "q": "¿Que hace la propiedad CSS `position: sticky` aplicada a un elemento dentro de un contenedor con scroll?",
+      "opts": [
+        "El elemento se comporta como relative hasta que, al hacer scroll, alcanza el limite indicado (como top: 0) y entonces se queda fijo dentro de su contenedor",
+        "El elemento queda siempre fijo en la pantalla, igual que position: fixed",
+        "El elemento desaparece al hacer scroll",
+        "Solo funciona dentro de una tabla"
+      ],
+      "correct": 0,
+      "explanation": "position: sticky combina el comportamiento de relative y fixed: el elemento se desplaza con la pagina normalmente hasta que alcanza el valor de desplazamiento indicado, momento en el que se fija dentro de los limites de su elemento contenedor."
     }
   ],
   "bash": [
@@ -1848,9 +1976,25 @@
     },
     {
       "q": "¿Qué hace el comando `command -v nombre` en un script de Bash?",
-      "opts": ["Comprueba si 'nombre' es un comando disponible (y muestra su ruta) sin ejecutarlo", "Ejecuta el comando 'nombre' en modo verbose", "Instala el comando 'nombre' si no existe", "Elimina el comando 'nombre' del sistema"],
+      "opts": [
+        "Comprueba si 'nombre' es un comando disponible (y muestra su ruta) sin ejecutarlo",
+        "Ejecuta el comando 'nombre' en modo verbose",
+        "Instala el comando 'nombre' si no existe",
+        "Elimina el comando 'nombre' del sistema"
+      ],
       "correct": 0,
       "explanation": "'command -v' busca si el nombre indicado corresponde a un comando, función o alias disponible en el sistema y muestra su ruta o definición, sin ejecutarlo; es muy usado en scripts para comprobar si una herramienta está instalada antes de usarla."
+    },
+    {
+      "q": "¿Que hace el comando `chmod +x script.sh`?",
+      "opts": [
+        "Le da permiso de ejecucion al archivo script.sh",
+        "Elimina el archivo script.sh",
+        "Cambia el propietario del archivo",
+        "Comprime el archivo en formato .sh"
+      ],
+      "correct": 0,
+      "explanation": "chmod +x anade el permiso de ejecucion (execute) al archivo indicado, lo que permite ejecutarlo directamente como un programa (por ejemplo con ./script.sh) en lugar de solo pasarlo como argumento a un interprete."
     }
   ],
   "ia": [
@@ -2054,9 +2198,25 @@
     },
     {
       "q": "¿Qué es un 'system prompt' en el contexto de un modelo de lenguaje conversacional?",
-      "opts": ["Un conjunto de instrucciones iniciales que definen el comportamiento, tono o reglas del modelo antes de que empiece la conversación con el usuario", "El mensaje de error que muestra el modelo cuando falla", "El código fuente del modelo", "Un tipo de red neuronal"],
+      "opts": [
+        "Un conjunto de instrucciones iniciales que definen el comportamiento, tono o reglas del modelo antes de que empiece la conversación con el usuario",
+        "El mensaje de error que muestra el modelo cuando falla",
+        "El código fuente del modelo",
+        "Un tipo de red neuronal"
+      ],
       "correct": 0,
       "explanation": "El system prompt se envía antes de los mensajes del usuario y establece el contexto, la personalidad o las restricciones que el modelo debe seguir durante toda la conversación, sin que el usuario necesariamente lo vea."
+    },
+    {
+      "q": "¿Que es el 'overfitting' (sobreajuste) en un modelo de aprendizaje automatico?",
+      "opts": [
+        "Cuando el modelo memoriza tan bien los datos de entrenamiento que falla al generalizar con datos nuevos que no ha visto antes",
+        "Cuando el modelo tarda demasiado tiempo en entrenarse",
+        "Cuando el modelo usa demasiada memoria RAM",
+        "Cuando el modelo se entrena con muy pocos datos y por eso falla"
+      ],
+      "correct": 0,
+      "explanation": "El sobreajuste ocurre cuando un modelo aprende patrones demasiado especificos de los datos de entrenamiento, incluido su ruido, y por eso rinde bien en esos datos pero mal ante ejemplos nuevos que no ha visto antes."
     }
   ]
 }

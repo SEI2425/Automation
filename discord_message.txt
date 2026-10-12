@@ -1,1 +1,1 @@
-Nueva edicion de PilaPila News ya lista. La imagen de arriba resume lo mas importante del dia, y en la web tienes el resto completo: noticias, recursos, tips y preguntas nuevas para practicar. [Abrir PilaPila News](<https://sei2425.github.io/Automation/>)
+PilaPila News de hoy ya esta aqui. Lo esencial lo tienes en la imagen, y si quieres el resto (mas noticias, recursos, tips y preguntas nuevas) pasate por la web. [Abrir PilaPila News](<https://sei2425.github.io/Automation/>)

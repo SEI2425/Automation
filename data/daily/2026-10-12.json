@@ -1,0 +1,112 @@
+{
+  "date": "2026-10-12",
+  "questions": [
+    {
+      "type": "identify",
+      "lang": "Python",
+      "question": "¿Que contiene la variable flat despues de ejecutar este codigo?",
+      "code": "matrix = [[1, 2], [3, 4]]\nflat = [x for row in matrix for x in row]\nprint(flat)",
+      "options": [
+        "[1, 2, 3, 4]",
+        "[[1, 2], [3, 4]]",
+        "[1, 3, 2, 4]",
+        "Error de sintaxis"
+      ],
+      "correct": 0,
+      "hint": "La comprension recorre primero cada fila (row) y luego cada elemento (x) dentro de ella.",
+      "explanation": "La comprension de lista anidada recorre primero cada 'row' de matrix y luego cada 'x' dentro de esa fila, aplanando la lista de listas en una sola lista: [1, 2, 3, 4]."
+    },
+    {
+      "type": "complete",
+      "lang": "JavaScript",
+      "question": "¿Que falta para que las propiedades de b sobrescriban las de a en caso de coincidencia?",
+      "code": "const a = { x: 1, y: 2 };\nconst b = { y: 5, z: 9 };\nconst merged = { ...a, ____ };\nconsole.log(merged); // { x: 1, y: 5, z: 9 }",
+      "options": [
+        "...b",
+        "b",
+        "...a",
+        "Object.freeze(b)"
+      ],
+      "correct": 0,
+      "hint": "El operador spread copia las propiedades de un objeto dentro de otro; el que aparece despues en la lista sobrescribe al anterior.",
+      "explanation": "Al escribir {...a, ...b}, las propiedades de b se copian despues que las de a, asi que si coinciden en el nombre (como 'y'), el valor de b prevalece: el resultado final tiene x:1 (solo en a), y:5 (sobrescrito por b) y z:9 (solo en b)."
+    },
+    {
+      "type": "identify",
+      "lang": "SQL",
+      "question": "¿Que devuelve esta consulta?",
+      "code": "SELECT department\nFROM employees\nGROUP BY department\nHAVING COUNT(*) = 1;",
+      "options": [
+        "Los departamentos que tienen exactamente un empleado",
+        "Los departamentos con mas de un empleado",
+        "El numero total de departamentos",
+        "Todos los departamentos ordenados por numero de empleados"
+      ],
+      "correct": 0,
+      "hint": "HAVING filtra los grupos ya formados por GROUP BY, no las filas individuales.",
+      "explanation": "GROUP BY agrupa los empleados por departamento, COUNT(*) cuenta cuantos hay en cada grupo, y HAVING COUNT(*) = 1 se queda solo con los departamentos que tienen exactamente un empleado."
+    },
+    {
+      "type": "complete",
+      "lang": "Kotlin",
+      "question": "¿Que funcion falta para quedarte solo con los numeros mayores o iguales a 18?",
+      "code": "val edades = listOf(18, 25, 16, 30, 12)\nval mayores = edades.____ { it >= 18 }\nprintln(mayores)\n// [18, 25, 30]",
+      "options": [
+        "filter",
+        "map",
+        "reduce",
+        "sortedBy"
+      ],
+      "correct": 0,
+      "hint": "Necesitas una funcion que conserve solo los elementos que cumplen una condicion, no que los transforme.",
+      "explanation": "filter recorre la lista y conserva unicamente los elementos para los que la lambda devuelve true; map transformaria cada elemento sin descartar ninguno, y aqui se descartan 16 y 12."
+    },
+    {
+      "type": "identify",
+      "lang": "Bash",
+      "question": "¿Que hace este comando?",
+      "code": "du -sh */ | sort -rh | head -5",
+      "options": [
+        "Muestra las 5 carpetas que mas espacio ocupan en el directorio actual, de mayor a menor",
+        "Elimina las 5 carpetas mas grandes del directorio actual",
+        "Cuenta cuantas carpetas hay en el directorio actual",
+        "Comprime las carpetas en un unico archivo"
+      ],
+      "correct": 0,
+      "hint": "du -sh calcula el tamano de cada carpeta, y sort -rh las ordena de mayor a menor tamano.",
+      "explanation": "du -sh */ calcula el tamano de cada carpeta del directorio actual en formato legible, sort -rh las ordena de mayor a menor, y head -5 se queda solo con las 5 primeras."
+    }
+  ],
+  "tips": [
+    {
+      "text": "Nunca reescribas con rebase o amend el historial de Git que ya subiste a un repositorio compartido.",
+      "explanation": "Reescribir commits que otras personas ya han descargado les obliga a resolver conflictos extranos al sincronizar su propio trabajo, porque el historial que conocian ya no existe. Git lo resume en una regla simple: nunca reescribas commits que ya existen fuera de tu propio repositorio.",
+      "link": "https://git-scm.com/book/en/v2/Git-Branching-Rebasing",
+      "linkLabel": "Pro Git: los peligros de reescribir el historial"
+    },
+    {
+      "text": "Entiende que pasar una lista o un objeto a una funcion en Python o JavaScript pasa una referencia, no una copia.",
+      "explanation": "Si una funcion modifica ese objeto por dentro (anadiendo un elemento, cambiando una propiedad), el cambio se refleja tambien fuera de la funcion, porque ambas variables apuntan al mismo dato en memoria. No saberlo lleva a bugs donde una funcion 'inocente' acaba modificando datos que el resto del programa todavia necesita intactos.",
+      "link": "https://docs.python.org/3/faq/programming.html#how-do-i-write-a-function-with-output-parameters-call-by-reference",
+      "linkLabel": "Documentacion oficial de Python: paso de parametros por referencia"
+    },
+    {
+      "text": "Antes de instalar una dependencia nueva, comprueba si tiene vulnerabilidades conocidas con una herramienta como npm audit o pip-audit.",
+      "explanation": "Una libreria puede funcionar perfectamente y aun asi tener un fallo de seguridad conocido que un atacante podria aprovechar en tu proyecto. Estas herramientas revisan automaticamente tus dependencias contra bases de datos publicas de vulnerabilidades en segundos, antes de que ese problema llegue a produccion.",
+      "link": "https://docs.npmjs.com/cli/v10/commands/npm-audit",
+      "linkLabel": "npm Docs: npm audit"
+    },
+    {
+      "text": "Configura una integracion continua (CI) que ejecute tus tests automaticamente en cada cambio, no solo en tu propio ordenador.",
+      "explanation": "Un test que solo corres a mano antes de acordarte se acaba olvidando, y 'en mi maquina funciona' no sirve de nada si el servidor donde se despliega el proyecto tiene una configuracion distinta. La integracion continua ejecuta la misma bateria de pruebas de forma automatica cada vez que subes codigo, avisandote del fallo antes de que llegue a nadie mas.",
+      "link": "https://docs.github.com/en/actions/about-github-actions/about-continuous-integration",
+      "linkLabel": "GitHub Docs: integracion continua con GitHub Actions"
+    },
+    {
+      "text": "Aprende la diferencia entre concurrencia y paralelismo antes de intentar que tu programa vaya mas rapido haciendo varias cosas a la vez.",
+      "explanation": "La concurrencia es gestionar varias tareas a la vez, alternando entre ellas aunque solo exista un unico nucleo, mientras que el paralelismo exige ejecutar varias tareas literalmente al mismo tiempo en nucleos distintos. Confundir ambos conceptos lleva a elegir la herramienta equivocada (hilos, procesos o funciones asincronas) para el problema que en realidad tienes.",
+      "link": "https://go.dev/blog/waza-talk",
+      "linkLabel": "Go Blog: la charla de Rob Pike sobre concurrencia y paralelismo"
+    }
+  ]
+}
