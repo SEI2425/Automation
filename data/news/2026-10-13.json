@@ -1,0 +1,65 @@
+{
+  "date": "2026-10-13",
+  "items": [
+    {
+      "tag": "Impacto",
+      "title": "Satya Nadella pide un freno de emergencia para los modelos de IA mas avanzados",
+      "url": "https://theprint.in/world/microsoft-ceo-satya-nadella-calls-for-emergency-brake-on-advanced-ai/3068211/",
+      "summary": "El consejero delegado de Microsoft publico el 10 de octubre un ensayo en el que pide a las empresas que despliegan IA avanzada que traten sus modelos como posibles amenazas internas y construyan mecanismos capaces de pausarlos o apagarlos en pleno funcionamiento. Nadella tambien reclamo no depender de un unico modelo para decisiones criticas, mantener registros a prueba de manipulaciones de las acciones de los agentes y someter los sistemas a auditorias independientes. El llamamiento llega despues de que Anthropic y OpenAI reconocieran varios incidentes recientes de comportamiento no previsto en sus propios modelos."
+    },
+    {
+      "tag": "Impacto",
+      "title": "La Casa Blanca anuncia mas de 6.000 millones de dolares en ciencia e IA, con 2.400 millones en computo de Nvidia, OpenAI, Anthropic y Google",
+      "url": "https://www.whitehouse.gov/fact-sheets/2026/10/fact-sheet-trump-administration-announces-the-most-ambitious-set-of-science-initiatives-this-century/",
+      "summary": "En la cumbre 'Science: A New Golden Age' celebrada el 8 de octubre en Washington, el gobierno de EEUU presento mas de 6.000 millones de dolares en iniciativas cientificas financiadas por el sector publico, empresas, universidades y filantropia. Once companias comprometieron unos 2.400 millones de dolares en herramientas y creditos de computo para la Mision Genesis, con Nvidia aportando 1.000 millones, AMD 500 millones, y OpenAI, Anthropic y Google entre 150 y 200 millones cada una. El paquete incluye tambien 215 millones de dolares del Departamento de Energia para una competicion de computacion cuantica."
+    },
+    {
+      "tag": "Impacto",
+      "title": "Un tribunal de Delhi ordena a Meta y Google retirar en 36 horas los deepfakes de un presentador indio",
+      "url": "https://www.exchange4media.com/digital-news/delhi-high-court-directs-removal-of-deepfake-videos-featuring-rajat-sharma-158181.html",
+      "summary": "El Tribunal Superior de Delhi dicto una orden judicial permanente contra las cuentas que difundieron videos manipulados con IA del presentador de television Rajat Sharma, presidente de India TV. La sentencia obliga a Meta y Google a confirmar la recepcion de las solicitudes de retirada en 24 horas y a eliminar el contenido en un maximo de 36, uno de los plazos mas estrictos impuestos hasta ahora a las plataformas por contenido generado con IA. El caso se suma a otras ordenes similares del mismo tribunal para proteger a figuras publicas indias frente a la suplantacion con deepfakes."
+    },
+    {
+      "tag": "Impacto",
+      "title": "Insilico Medicine y SK Biopharmaceuticals firman un acuerdo de hasta 2.500 millones de dolares para disenar farmacos con IA contra enfermedades neuroinmunes",
+      "url": "https://www.fiercebiotech.com/biotech/insilico-lands-heavily-backloaded-25b-ai-drug-discovery-deal-sk-biopharm",
+      "summary": "La farmaceutica surcoreana SK Biopharmaceuticals usara la plataforma de inteligencia artificial Pharma.AI de Insilico Medicine para descubrir y optimizar candidatos contra trastornos neuroinmunes, mientras SK se encargara del desarrollo clinico tardio y la comercializacion. El acuerdo, centrado en enfermedades neuroinflamatorias y neurodegenerativas, puede alcanzar los 2.500 millones de dolares en hitos de desarrollo y regulacion mas regalias, aunque Insilico solo recibira unos 18 millones de dolares por adelantado. Es la mayor transaccion que Insilico ha firmado hasta ahora con un socio de Asia-Pacifico."
+    },
+    {
+      "tag": "Lanzamiento",
+      "title": "Alibaba abre en abierto Qwen3.8-Max, su modelo de 2,4 billones de parametros centrado en programacion y agentes",
+      "url": "https://technode.com/2026/08/04/alibaba-launches-next-gen-qwen3-8-with-2-4-trillion-parameters",
+      "summary": "Alibaba presento Qwen3.8, un modelo de mezcla de expertos con 2,4 billones de parametros totales que mejora notablemente en programacion y en tareas de trabajo profesional frente a la generacion anterior. La empresa publico los pesos de las versiones Qwen3.8-Max y de una variante mas ligera de 27.000 millones de parametros bajo licencia abierta, junto a Qwen3.8-Flash, de 125.000 millones de parametros, pensada como opcion mas economica. Alibaba asegura que esta ultima compite con modelos rivales como Claude Opus o DeepSeek V4-Flash."
+    },
+    {
+      "tag": "Interactivo",
+      "title": "W3Schools: tutorial interactivo de JavaScript con editor en el navegador",
+      "url": "https://www.w3schools.com/js/",
+      "summary": "Este tutorial gratuito cubre JavaScript desde variables y funciones hasta el DOM y los eventos, con un editor 'Try it Yourself' en cada pagina para escribir y ejecutar tu propio codigo sin instalar nada. Cada capitulo termina con un breve cuestionario de autoevaluacion para comprobar si entendiste el concepto antes de seguir."
+    },
+    {
+      "tag": "Interactivo",
+      "title": "Teachable Machine de Google: entrena tu propio modelo de IA en el navegador sin escribir codigo",
+      "url": "https://teachablemachine.withgoogle.com/",
+      "summary": "Esta herramienta gratuita de Google permite entrenar un modelo de inteligencia artificial que reconoce imagenes, sonidos o posturas corporales usando la camara o el microfono del propio ordenador, sin escribir una sola linea de codigo. El entrenamiento se ejecuta directamente en el navegador con TensorFlow.js, y el modelo resultante se puede exportar para usarlo en una pagina web o un proyecto propio."
+    },
+    {
+      "tag": "Interactivo",
+      "title": "SQL Island: resuelve una aventura de texto escribiendo consultas SQL reales",
+      "url": "https://sql-island.informatik.uni-kl.de/",
+      "summary": "Este juego gratuito de la universidad RPTU de Kaiserslautern plantea una aventura de texto en la que, tras sobrevivir a un accidente de avion, debes usar comandos SQL reales para interactuar con los habitantes de la isla y encontrar la forma de escapar. No hace falta ningun conocimiento previo de SQL: la dificultad aumenta poco a poco a lo largo de unos 30 niveles, y el juego tambien esta disponible en ingles."
+    },
+    {
+      "tag": "Interactivo",
+      "title": "SoloLearn: aprende a programar con lecciones cortas y un editor de codigo en el movil",
+      "url": "https://www.sololearn.com/",
+      "summary": "Esta aplicacion gratuita ofrece lecciones cortas e interactivas en mas de 20 lenguajes de programacion, incluidos Python, JavaScript, SQL, Java y Kotlin, con un editor de codigo integrado para practicar directamente desde el movil. Cada leccion incluye retos y pequenos cuestionarios de correccion inmediata, y cuenta con una comunidad enorme donde comparar tu solucion con la de otros usuarios."
+    },
+    {
+      "tag": "Curso",
+      "title": "Microsoft Learn: Python for beginners, la ruta de aprendizaje gratuita de Microsoft",
+      "url": "https://learn.microsoft.com/en-us/training/paths/beginner-python/",
+      "summary": "Esta ruta de aprendizaje gratuita de Microsoft ensena los fundamentos de Python sin necesidad de experiencia previa: escribir tu primer programa, logica booleana, cadenas de texto, listas y bucles, diccionarios, funciones y manejo de errores. Cada modulo combina una breve explicacion con una comprobacion de conocimientos al final para verificar lo aprendido."
+    }
+  ]
+}

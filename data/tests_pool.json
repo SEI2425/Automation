@@ -219,6 +219,17 @@
       ],
       "correct": 0,
       "explanation": "filter() conserva solo los elementos para los que la funcion lambda devuelve True; aqui solo los numeros mayores que 0 (1 y 2) cumplen la condicion."
+    },
+    {
+      "q": "¿Que hace el operador morsa (:=) en una expresion como `if (n := len(datos)) > 10:`?",
+      "opts": [
+        "Asigna el valor a la variable n y permite usarlo inmediatamente dentro de la misma expresion",
+        "Compara si n es igual a len(datos)",
+        "Declara n como una constante que no se puede modificar despues",
+        "Solo funciona dentro de un bucle for"
+      ],
+      "correct": 0,
+      "explanation": "El operador morsa, introducido en Python 3.8, asigna un valor a una variable dentro de una expresion y devuelve ese mismo valor, permitiendo usarlo de inmediato sin necesidad de una linea de asignacion aparte."
     }
   ],
   "javascript": [
@@ -441,6 +452,17 @@
       ],
       "correct": 0,
       "explanation": "reduce acumula empezando en el valor inicial 10, y le suma cada elemento del array: 10+1+2+3 = 16."
+    },
+    {
+      "q": "¿Que diferencia hay entre `Promise.all()` y `Promise.allSettled()` cuando se les pasa un array de promesas?",
+      "opts": [
+        "Promise.all() se rechaza en cuanto una promesa falla; Promise.allSettled() espera a todas y devuelve el resultado (cumplida o rechazada) de cada una",
+        "Son exactamente lo mismo",
+        "Promise.allSettled() solo acepta una promesa a la vez",
+        "Promise.all() ignora los errores de las promesas"
+      ],
+      "correct": 0,
+      "explanation": "Promise.all() se rechaza inmediatamente si cualquiera de las promesas falla, sin esperar al resto; Promise.allSettled() en cambio espera a que todas terminen, con exito o con error, y devuelve un array con el estado y resultado de cada una."
     }
   ],
   "typescript": [
@@ -663,6 +685,17 @@
       ],
       "correct": 0,
       "explanation": "Readonly<T> genera un nuevo tipo a partir de T donde todas las propiedades quedan marcadas como readonly, impidiendo reasignarlas despues de la inicializacion."
+    },
+    {
+      "q": "¿Que diferencia practica hay entre declarar un tipo con 'type' y con 'interface' en TypeScript para describir un objeto?",
+      "opts": [
+        "Ambos pueden describir la forma de un objeto, pero solo 'interface' se puede extender despues con una declaracion adicional del mismo nombre (declaration merging)",
+        "'type' no permite describir objetos, solo tipos primitivos",
+        "'interface' no se puede usar junto a clases",
+        "Son identicos en todos los casos, sin ninguna diferencia"
+      ],
+      "correct": 0,
+      "explanation": "Tanto 'type' como 'interface' pueden describir la forma de un objeto, pero una 'interface' con el mismo nombre declarada varias veces se combina automaticamente (declaration merging), mientras que un 'type' no admite esa fusion."
     }
   ],
   "java": [
@@ -885,6 +918,17 @@
       ],
       "correct": 0,
       "explanation": "Runnable es una interfaz funcional con un unico metodo run(), pensada para representar una tarea que se puede ejecutar, tipicamente en un hilo (Thread) independiente."
+    },
+    {
+      "q": "¿Que permite declarar un parametro de metodo como `void imprimir(String... palabras)` en Java?",
+      "opts": [
+        "Que el metodo acepte cualquier cantidad de argumentos String, tratados internamente como un array",
+        "Que el parametro acepte solo un unico array ya creado, nunca argumentos sueltos",
+        "Que el metodo sea estatico automaticamente",
+        "Que el parametro sea opcional y pueda omitirse sin problemas"
+      ],
+      "correct": 0,
+      "explanation": "La sintaxis de 'varargs' (...) permite llamar al metodo con cualquier numero de argumentos de ese tipo, incluido cero, y Java los agrupa automaticamente en un array dentro del metodo."
     }
   ],
   "kotlin": [
@@ -1107,6 +1151,17 @@
       ],
       "correct": 0,
       "explanation": "El operador de llamada segura ?. comprueba si el valor de la izquierda es null; si lo es, toda la expresion devuelve null en lugar de lanzar una NullPointerException, y si no lo es, accede normalmente a la propiedad."
+    },
+    {
+      "q": "¿Para que sirve el modificador 'lateinit' en una propiedad de Kotlin, como en `lateinit var usuario: Usuario`?",
+      "opts": [
+        "Para declarar una propiedad 'var' no anulable que se inicializara mas adelante, en vez de en el momento de declararla",
+        "Para que la propiedad se inicialice automaticamente con un valor por defecto",
+        "Para convertir la propiedad en constante",
+        "Para que la propiedad solo exista dentro de una funcion"
+      ],
+      "correct": 0,
+      "explanation": "'lateinit' permite declarar una propiedad var de un tipo no anulable sin asignarle un valor inmediatamente, prometiendo al compilador que se inicializara antes de usarla; si se accede antes de esa inicializacion, lanza una excepcion en tiempo de ejecucion."
     }
   ],
   "sql": [
@@ -1329,6 +1384,17 @@
       ],
       "correct": 0,
       "explanation": "COALESCE devuelve el primer valor no nulo de la lista que recibe; si telefono es NULL, devuelve el valor de reemplazo indicado en su lugar."
+    },
+    {
+      "q": "¿Que devuelve `SELECT COUNT(DISTINCT pais) FROM clientes;`?",
+      "opts": [
+        "El numero de paises distintos que aparecen en la columna pais, sin contar duplicados",
+        "El numero total de filas de la tabla clientes",
+        "La lista de todos los paises distintos",
+        "El pais que aparece mas veces en la tabla"
+      ],
+      "correct": 0,
+      "explanation": "COUNT(DISTINCT columna) cuenta cuantos valores diferentes hay en esa columna, ignorando las repeticiones; aqui da el numero de paises unicos entre los clientes, no el total de filas."
     }
   ],
   "git": [
@@ -1551,6 +1617,17 @@
       ],
       "correct": 0,
       "explanation": "git revert genera un nuevo commit que aplica el cambio inverso al del commit indicado, deshaciendo su efecto sin reescribir ni eliminar el historial existente, lo que lo hace seguro en ramas compartidas."
+    },
+    {
+      "q": "¿Que hace el comando 'git show <hash>'?",
+      "opts": [
+        "Muestra los cambios introducidos por ese commit especifico junto a su mensaje y metadatos",
+        "Elimina ese commit del historial",
+        "Crea una nueva rama en ese commit",
+        "Compara dos ramas completas"
+      ],
+      "correct": 0,
+      "explanation": "'git show' muestra la informacion completa de un commit concreto: su autor, fecha, mensaje y el diff exacto de los cambios que introdujo, sin afectar al estado actual del repositorio."
     }
   ],
   "htmlcss": [
@@ -1773,6 +1850,17 @@
       ],
       "correct": 0,
       "explanation": "position: sticky combina el comportamiento de relative y fixed: el elemento se desplaza con la pagina normalmente hasta que alcanza el valor de desplazamiento indicado, momento en el que se fija dentro de los limites de su elemento contenedor."
+    },
+    {
+      "q": "¿Que permite el selector CSS `:has()`, como en `.card:has(img)`?",
+      "opts": [
+        "Seleccionar un elemento solo si contiene, entre sus descendientes, algo que coincide con el selector indicado dentro del parentesis",
+        "Seleccionar unicamente las imagenes dentro de la clase card",
+        "Ocultar el elemento si no tiene hijos",
+        "Solo funciona combinado con JavaScript"
+      ],
+      "correct": 0,
+      "explanation": "':has()' es un selector relacional que permite elegir un elemento basandose en si contiene (o le sigue) algo que coincide con el selector interno; aqui selecciona cualquier '.card' que tenga una imagen dentro, algo que antes solo se podia hacer con JavaScript."
     }
   ],
   "bash": [
@@ -1995,6 +2083,17 @@
       ],
       "correct": 0,
       "explanation": "chmod +x anade el permiso de ejecucion (execute) al archivo indicado, lo que permite ejecutarlo directamente como un programa (por ejemplo con ./script.sh) en lugar de solo pasarlo como argumento a un interprete."
+    },
+    {
+      "q": "¿Que devuelve la variable especial `$RANDOM` en Bash, como en `echo $RANDOM`?",
+      "opts": [
+        "Un numero entero pseudoaleatorio entre 0 y 32767 cada vez que se consulta",
+        "Siempre el mismo numero fijo",
+        "La fecha y hora actual en segundos",
+        "El numero de proceso (PID) de la shell actual"
+      ],
+      "correct": 0,
+      "explanation": "$RANDOM es una variable especial de Bash que devuelve un numero entero pseudoaleatorio distinto (entre 0 y 32767) cada vez que se lee, util para generar nombres de archivo temporales o tomar decisiones aleatorias dentro de un script."
     }
   ],
   "ia": [
@@ -2217,6 +2316,17 @@
       ],
       "correct": 0,
       "explanation": "El sobreajuste ocurre cuando un modelo aprende patrones demasiado especificos de los datos de entrenamiento, incluido su ruido, y por eso rinde bien en esos datos pero mal ante ejemplos nuevos que no ha visto antes."
+    },
+    {
+      "q": "¿Que es RLHF (Reinforcement Learning from Human Feedback), una tecnica clave para alinear modelos de lenguaje como ChatGPT?",
+      "opts": [
+        "Un metodo que ajusta el modelo usando las preferencias de personas que comparan y puntuan sus respuestas, en lugar de solo datos de texto sin etiquetar",
+        "Un algoritmo para comprimir el tamano del modelo",
+        "Una tecnica exclusiva para generar imagenes",
+        "Un metodo para traducir el modelo a otros idiomas automaticamente"
+      ],
+      "correct": 0,
+      "explanation": "RLHF entrena un modelo de recompensa a partir de comparaciones hechas por personas entre distintas respuestas, y despues usa aprendizaje por refuerzo para ajustar el modelo de lenguaje hacia las respuestas que esas personas prefirieron, una tecnica clave para hacer que modelos como ChatGPT sean mas utiles y seguros."
     }
   ]
 }

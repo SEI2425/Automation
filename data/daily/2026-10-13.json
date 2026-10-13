@@ -1,0 +1,92 @@
+{
+  "date": "2026-10-13",
+  "questions": [
+    {
+      "type": "identify",
+      "lang": "Python",
+      "question": "¿Que contiene la variable total despues de ejecutar este codigo?",
+      "code": "nums = [1, 2, 3, 4, 5]\ntotal = sum(n for n in nums if n % 2 != 0)\nprint(total)",
+      "options": ["9", "15", "6", "Error de sintaxis"],
+      "correct": 0,
+      "hint": "Filtra primero los numeros impares, luego sumalos.",
+      "explanation": "La expresion generadora recorre nums y conserva solo los impares (1, 3 y 5) antes de que sum() los sume, dando como resultado 9."
+    },
+    {
+      "type": "complete",
+      "lang": "JavaScript",
+      "question": "¿Que metodo falta para obtener el valor mas alto del array?",
+      "code": "const arr = [3, 1, 4, 1, 5];\nconst max = Math.____(...arr);\nconsole.log(max); // 5",
+      "options": ["max", "min", "abs", "floor"],
+      "correct": 0,
+      "hint": "Necesitas el metodo que devuelve el mayor valor entre varios argumentos.",
+      "explanation": "Math.max(...arr) usa el operador spread para pasar cada elemento del array como argumento individual, y Math.max devuelve el mayor de todos ellos."
+    },
+    {
+      "type": "identify",
+      "lang": "SQL",
+      "question": "¿Que devuelve esta consulta?",
+      "code": "SELECT name FROM products\nWHERE name LIKE 'A%';",
+      "options": [
+        "Los productos cuyo nombre empieza por la letra A",
+        "Los productos cuyo nombre contiene la letra A en cualquier posicion",
+        "Los productos cuyo nombre termina en A",
+        "Los productos cuyo nombre es exactamente 'A'"
+      ],
+      "correct": 0,
+      "hint": "El signo % al final del patron representa cualquier secuencia de caracteres despues de la A.",
+      "explanation": "LIKE 'A%' busca los valores que empiezan por 'A' seguido de cualquier cosa, ya que el simbolo % es un comodin que representa cero o mas caracteres."
+    },
+    {
+      "type": "complete",
+      "lang": "Git",
+      "question": "¿Que comando falta para poder subir tus cambios despues de que el push fuera rechazado?",
+      "code": "git commit -m \"fix bug\"\ngit push origin main\n# alguien mas ya subio cambios antes que tu\n# el push es rechazado\ngit ____ origin main\ngit push origin main",
+      "options": ["pull", "clone", "init", "status"],
+      "correct": 0,
+      "hint": "Necesitas traer y fusionar los cambios remotos antes de poder subir los tuyos.",
+      "explanation": "git pull descarga los commits nuevos del remoto y los fusiona con tu rama local; una vez actualizada, el push ya no sera rechazado por estar desactualizada."
+    },
+    {
+      "type": "identify",
+      "lang": "Bash",
+      "question": "¿Que imprime este codigo?",
+      "code": "nombre=\"ana\"\necho \"${nombre^}\"",
+      "options": ["Ana", "ANA", "ana", "Error de sintaxis"],
+      "correct": 0,
+      "hint": "El simbolo ^ (una sola vez) pone en mayuscula solo la primera letra del valor.",
+      "explanation": "${variable^} convierte a mayuscula unicamente el primer caracter del valor, mientras que ${variable^^} lo haria con todos; aqui solo cambia la 'a' inicial, dando 'Ana'."
+    }
+  ],
+  "tips": [
+    {
+      "text": "Antes de usar una API o libreria de permisos, entiende la diferencia entre autenticacion y autorizacion.",
+      "explanation": "La autenticacion comprueba quien eres (iniciar sesion), mientras que la autorizacion decide que puedes hacer una vez identificado; confundir ambas lleva a fallos de seguridad donde un usuario identificado accede a datos o acciones que no deberia poder tocar.",
+      "link": "https://auth0.com/intro-to-iam/authentication-vs-authorization",
+      "linkLabel": "Auth0: autenticacion frente a autorizacion"
+    },
+    {
+      "text": "Usa un gestor de versiones de lenguaje como pyenv o nvm en vez de depender de la version de Python o Node instalada en el sistema.",
+      "explanation": "Cada proyecto puede necesitar una version distinta del lenguaje, y actualizar la version del sistema operativo puede romper otros programas que dependen de ella; un gestor de versiones te permite instalar varias en paralelo y cambiar entre ellas por proyecto sin ese riesgo.",
+      "link": "https://realpython.com/intro-to-pyenv/",
+      "linkLabel": "Real Python: gestiona varias versiones de Python con pyenv"
+    },
+    {
+      "text": "Guarda siempre las fechas y horas en UTC internamente, y conviertelas a la zona horaria local solo al mostrarlas.",
+      "explanation": "Mezclar zonas horarias dentro del propio codigo o la base de datos provoca errores dificiles de rastrear, como eventos que aparecen en el dia equivocado o duraciones mal calculadas en cuanto cambia el horario de verano; trabajar siempre en UTC y convertir solo al mostrar evita casi todos esos problemas.",
+      "link": "https://gist.github.com/timvisee/fcda9bbdff88d45cc9061606b4b923ca",
+      "linkLabel": "Falsehoods programmers believe about time"
+    },
+    {
+      "text": "Si repites a menudo la misma secuencia larga de comandos, guardala como una tarea de Makefile o un script en vez de volver a escribirla cada vez.",
+      "explanation": "Un Makefile convierte una secuencia de comandos propensa a errores, como instalar dependencias, compilar y ejecutar los tests, en una sola palabra facil de recordar, y documenta para cualquiera, incluido tu yo futuro, como se pone en marcha realmente el proyecto.",
+      "link": "https://makefiletutorial.com/",
+      "linkLabel": "Makefile Tutorial"
+    },
+    {
+      "text": "No hardcodees rutas de archivo absolutas, como \"C:\\Users\\tunombre\\proyecto\", dentro de tu codigo.",
+      "explanation": "Una ruta absoluta solo funciona en el ordenador exacto donde se escribio, asi que el mismo programa falla en cuanto otra persona lo ejecuta o lo subes a un servidor con una estructura de carpetas distinta; las rutas relativas al propio proyecto evitan ese problema.",
+      "link": "https://dev.to/realrichi3/relative-and-absolute-paths-2ll6",
+      "linkLabel": "DEV Community: rutas relativas y absolutas"
+    }
+  ]
+}
