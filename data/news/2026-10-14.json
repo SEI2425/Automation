@@ -1,0 +1,65 @@
+{
+  "date": "2026-10-14",
+  "items": [
+    {
+      "tag": "Impacto",
+      "title": "Kaspersky detecta mas de 92.000 ciberataques camuflados como aplicaciones de IA falsas",
+      "url": "https://www.kaspersky.co.uk/about/press-releases/kaspersky-detected-more-than-92000-malware-attacks-disguised-as-ai-services",
+      "summary": "Kaspersky registro mas de 92.000 ataques de malware y software no deseado disfrazados de agentes y servicios de IA entre enero y principios de mayo de 2026, con falsas apps de ChatGPT representando el 49% de las detecciones y Claude y Gemini un 18% cada una. La empresa tambien vinculo una campana de mayo con el grupo Silver Fox, que distribuyo instaladores falsos de Claude para Windows, macOS y Linux que desplegaban malware de forma silenciosa en cuanto se ejecutaban."
+    },
+    {
+      "tag": "Impacto",
+      "title": "Banqueros preparan a los inversores de Anthropic para una posible salida a bolsa valorada en 2 billones de dolares",
+      "url": "https://www.trendingtopics.eu/anthropic-investors-expect-ipo-valuation-of-2-trillion-more-than-spacex/",
+      "summary": "Segun el Financial Times, banqueros de Morgan Stanley, Goldman Sachs y JPMorgan han estado informando a inversores de que la salida a bolsa de Anthropic, prevista para octubre, podria levantar mas de 100.000 millones de dolares con una valoracion cercana a los 2 billones, lo que superaria el debut de SpaceX. La empresa, que presento su documentacion ante la SEC en junio y entro en periodo de silencio, no ha confirmado ninguna cifra oficial; su ultima valoracion privada fue de 965.000 millones de dolares."
+    },
+    {
+      "tag": "Impacto",
+      "title": "Un estudio en cinco centros medicos academicos de EEUU confirma que los 'scribes' de IA reducen la carga de los medicos",
+      "url": "https://www.physiciansweekly.com/post/reducing-burnout-and-documentation-burden-with-ambient-ai",
+      "summary": "Un estudio publicado en JAMA y realizado en cinco centros medicos academicos de Estados Unidos encontro que el uso de asistentes de IA que transcriben las consultas redujo en 13,4 minutos el tiempo total que los medicos pasan en el historial electronico por cada visita, y en 16 minutos el tiempo dedicado solo a documentar. Los medicos que usaron la herramienta en al menos la mitad de sus consultas llegaron a ahorrar mas de 27 minutos de documentacion en una jornada de ocho horas."
+    },
+    {
+      "tag": "Impacto",
+      "title": "Consumer Reports advierte que una de cada cinco estafas en EEUU ya usa IA para personalizarse",
+      "url": "https://laopinion.com/2026/10/03/ia-dispara-estafas-9-de-cada-10-personas-fueron-victimas/",
+      "summary": "Una investigadora de Consumer Reports alerto de que aproximadamente una de cada cinco estafas reportadas en Estados Unidos incluye ya algun tipo de personalizacion generada con inteligencia artificial, lo que las hace mas dificiles de identificar antes de la temporada de compras de fin de ano. El aviso llega en medio de un aumento de paginas falsas, anuncios enganosos y correos fraudulentos creados con IA detectado por varios especialistas en los ultimos dias."
+    },
+    {
+      "tag": "Lanzamiento",
+      "title": "Mistral confirma que los pesos abiertos de Large 4 llegaran el 27 de octubre",
+      "url": "https://pasqualepillitteri.it/en/news/21196/mistral-large-4-launches-open-weights-late-october",
+      "summary": "Una semana despues de abrir el acceso a Large 4 mediante una vista previa por API, Mistral AI confirmo que los pesos descargables de su modelo de mezcla de expertos, con 1,05 billones de parametros totales y unos 52.000 millones activos por tarea, se publicaran en abierto el 27 de octubre. Hasta esa fecha, el modelo solo puede probarse a traves del acceso alojado de la empresa, sin posibilidad de descargarlo ni ejecutarlo en infraestructura propia."
+    },
+    {
+      "tag": "Interactivo",
+      "title": "Grasshopper: la app gratuita de Google para aprender JavaScript con puzzles",
+      "url": "https://grasshopper.app/",
+      "summary": "Grasshopper es una aplicacion gratuita creada por Area 120, el laboratorio de proyectos experimentales de Google, que ensena los fundamentos de JavaScript (variables, funciones, bucles) mediante puzzles cortos tipo juego, sin publicidad ni compras dentro de la app. Tambien incluye un 'Code Playground' libre para experimentar con lo aprendido una vez terminadas las lecciones guiadas."
+    },
+    {
+      "tag": "Interactivo",
+      "title": "CodeHS Sandbox: mueve a Karel por una cuadricula escribiendo codigo real",
+      "url": "https://codehs.com/explore/sandbox/karel",
+      "summary": "Este sandbox gratuito de CodeHS deja escribir y ejecutar codigo directamente en el navegador para mover a Karel, un perro dentro de una cuadricula, usando comandos basicos como avanzar, girar o recoger objetos. Esta disponible en JavaScript, Python o Java, y es una forma visual de practicar bucles y funciones sin necesidad de instalar nada ni crear cuenta."
+    },
+    {
+      "tag": "Curso",
+      "title": "Microsoft Learn: GitHub Foundations, la ruta gratuita para aprender Git y GitHub",
+      "url": "https://learn.microsoft.com/training/paths/github-foundations",
+      "summary": "Esta ruta de aprendizaje gratuita de Microsoft ensena los conceptos basicos de Git y GitHub: crear repositorios, hacer commits, trabajar con ramas, issues y pull requests. Cada modulo combina una breve explicacion con una comprobacion de conocimientos al final, pensada para quien ya probo el curso de Python de Microsoft y quiere seguir con control de versiones."
+    },
+    {
+      "tag": "Interactivo",
+      "title": "W3Schools: tutorial interactivo de Java con editor en el navegador",
+      "url": "https://www.w3schools.com/java/",
+      "summary": "Este tutorial gratuito cubre Java desde variables y tipos de datos hasta clases, herencia y manejo de excepciones, con un editor 'Try it Yourself' en cada pagina para escribir y ejecutar codigo sin instalar nada. Cada capitulo termina con un breve cuestionario de autoevaluacion para comprobar si el concepto quedo claro antes de seguir."
+    },
+    {
+      "tag": "Interactivo",
+      "title": "Scratch: el lenguaje visual gratuito del MIT para dar tus primeros pasos en programacion",
+      "url": "https://scratch.mit.edu/",
+      "summary": "Creado por el MIT Media Lab, Scratch es una plataforma gratuita que ensena los fundamentos de la programacion (bucles, condicionales, variables) encajando bloques visuales en lugar de escribir texto, pensada para quien nunca ha programado antes. Permite crear animaciones, juegos e historias interactivas y compartirlas con una comunidad global de millones de personas."
+    }
+  ]
+}

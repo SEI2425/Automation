@@ -230,6 +230,17 @@
       ],
       "correct": 0,
       "explanation": "El operador morsa, introducido en Python 3.8, asigna un valor a una variable dentro de una expresion y devuelve ese mismo valor, permitiendo usarlo de inmediato sin necesidad de una linea de asignacion aparte."
+    },
+    {
+      "q": "¿Que tipo de dato devuelve la expresion type(3 / 2) en Python 3?",
+      "opts": [
+        "int",
+        "float",
+        "double",
+        "str"
+      ],
+      "correct": 1,
+      "explanation": "En Python 3, el operador / siempre realiza division real y devuelve un float, incluso si ambos operandos son enteros; para division entera se usa //."
     }
   ],
   "javascript": [
@@ -463,6 +474,17 @@
       ],
       "correct": 0,
       "explanation": "Promise.all() se rechaza inmediatamente si cualquiera de las promesas falla, sin esperar al resto; Promise.allSettled() en cambio espera a que todas terminen, con exito o con error, y devuelve un array con el estado y resultado de cada una."
+    },
+    {
+      "q": "¿Que devuelve typeof undefined en JavaScript?",
+      "opts": [
+        "\"undefined\"",
+        "\"object\"",
+        "\"null\"",
+        "Error"
+      ],
+      "correct": 0,
+      "explanation": "typeof undefined devuelve la cadena 'undefined'; es distinto de typeof null, que por una peculiaridad historica del lenguaje devuelve 'object'."
     }
   ],
   "typescript": [
@@ -696,6 +718,17 @@
       ],
       "correct": 0,
       "explanation": "Tanto 'type' como 'interface' pueden describir la forma de un objeto, pero una 'interface' con el mismo nombre declarada varias veces se combina automaticamente (declaration merging), mientras que un 'type' no admite esa fusion."
+    },
+    {
+      "q": "¿Que hace la palabra clave readonly delante de una propiedad en una interfaz de TypeScript?",
+      "opts": [
+        "Impide reasignar esa propiedad despues de crear el objeto, mostrando un error en tiempo de compilacion si se intenta",
+        "Hace que la propiedad sea opcional",
+        "Convierte la propiedad en una constante global",
+        "Oculta la propiedad al compilar a JavaScript"
+      ],
+      "correct": 0,
+      "explanation": "readonly marca una propiedad para que TypeScript impida reasignarla tras la creacion del objeto; es una comprobacion solo en tiempo de compilacion, no afecta al JavaScript final."
     }
   ],
   "java": [
@@ -929,6 +962,17 @@
       ],
       "correct": 0,
       "explanation": "La sintaxis de 'varargs' (...) permite llamar al metodo con cualquier numero de argumentos de ese tipo, incluido cero, y Java los agrupa automaticamente en un array dentro del metodo."
+    },
+    {
+      "q": "¿Que palabra clave se usa en Java para que una clase herede de otra clase?",
+      "opts": [
+        "extends",
+        "implements",
+        "inherits",
+        "super"
+      ],
+      "correct": 0,
+      "explanation": "extends se usa para que una clase herede de otra clase; implements se usa en cambio para que una clase cumpla una interfaz."
     }
   ],
   "kotlin": [
@@ -1162,6 +1206,17 @@
       ],
       "correct": 0,
       "explanation": "'lateinit' permite declarar una propiedad var de un tipo no anulable sin asignarle un valor inmediatamente, prometiendo al compilador que se inicializara antes de usarla; si se accede antes de esa inicializacion, lanza una excepcion en tiempo de ejecucion."
+    },
+    {
+      "q": "¿Que palabra clave declara una clase inmutable de solo datos en Kotlin, generando automaticamente equals(), toString() y copy()?",
+      "opts": [
+        "data class",
+        "sealed class",
+        "object",
+        "companion"
+      ],
+      "correct": 0,
+      "explanation": "'data class' genera automaticamente equals(), hashCode(), toString() y copy() a partir de las propiedades declaradas en el constructor."
     }
   ],
   "sql": [
@@ -1395,6 +1450,17 @@
       ],
       "correct": 0,
       "explanation": "COUNT(DISTINCT columna) cuenta cuantos valores diferentes hay en esa columna, ignorando las repeticiones; aqui da el numero de paises unicos entre los clientes, no el total de filas."
+    },
+    {
+      "q": "¿Que hace la clausula HAVING en una consulta SQL que ya usa GROUP BY?",
+      "opts": [
+        "Filtra los grupos ya formados, por ejemplo tras calcular un COUNT o SUM",
+        "Filtra las filas individuales antes de agruparlas",
+        "Ordena los resultados finales",
+        "Elimina las columnas duplicadas"
+      ],
+      "correct": 0,
+      "explanation": "A diferencia de WHERE, que filtra filas antes de agrupar, HAVING filtra los grupos resultantes de GROUP BY, por ejemplo descartando los que no superan un cierto COUNT o SUM."
     }
   ],
   "git": [
@@ -1628,6 +1694,17 @@
       ],
       "correct": 0,
       "explanation": "'git show' muestra la informacion completa de un commit concreto: su autor, fecha, mensaje y el diff exacto de los cambios que introdujo, sin afectar al estado actual del repositorio."
+    },
+    {
+      "q": "¿Que comando muestra las diferencias entre el directorio de trabajo y el area de staging en Git?",
+      "opts": [
+        "git diff",
+        "git status",
+        "git log",
+        "git show"
+      ],
+      "correct": 0,
+      "explanation": "git diff muestra linea por linea los cambios todavia no anadidos al area de staging; git status solo indica que archivos cambiaron, sin mostrar el contenido exacto del cambio."
     }
   ],
   "htmlcss": [
@@ -1861,6 +1938,17 @@
       ],
       "correct": 0,
       "explanation": "':has()' es un selector relacional que permite elegir un elemento basandose en si contiene (o le sigue) algo que coincide con el selector interno; aqui selecciona cualquier '.card' que tenga una imagen dentro, algo que antes solo se podia hacer con JavaScript."
+    },
+    {
+      "q": "¿Que propiedad CSS se usa para cambiar el espacio entre las lineas de un parrafo de texto?",
+      "opts": [
+        "line-height",
+        "letter-spacing",
+        "text-indent",
+        "vertical-align"
+      ],
+      "correct": 0,
+      "explanation": "line-height controla la altura de linea, es decir, el espacio vertical entre lineas de texto dentro de un mismo bloque; letter-spacing afecta al espacio entre caracteres, no entre lineas."
     }
   ],
   "bash": [
@@ -2094,6 +2182,17 @@
       ],
       "correct": 0,
       "explanation": "$RANDOM es una variable especial de Bash que devuelve un numero entero pseudoaleatorio distinto (entre 0 y 32767) cada vez que se lee, util para generar nombres de archivo temporales o tomar decisiones aleatorias dentro de un script."
+    },
+    {
+      "q": "¿Que hace el comando chmod +x script.sh?",
+      "opts": [
+        "Da permiso de ejecucion al archivo script.sh",
+        "Cambia el propietario del archivo",
+        "Comprime el archivo script.sh",
+        "Lo marca como oculto"
+      ],
+      "correct": 0,
+      "explanation": "chmod +x anade el permiso de ejecucion al archivo, necesario para poder ejecutarlo directamente como './script.sh' en lugar de pasarlo como argumento al interprete."
     }
   ],
   "ia": [
@@ -2327,6 +2426,17 @@
       ],
       "correct": 0,
       "explanation": "RLHF entrena un modelo de recompensa a partir de comparaciones hechas por personas entre distintas respuestas, y despues usa aprendizaje por refuerzo para ajustar el modelo de lenguaje hacia las respuestas que esas personas prefirieron, una tecnica clave para hacer que modelos como ChatGPT sean mas utiles y seguros."
+    },
+    {
+      "q": "¿Que nombre se le da al proceso de ajustar un modelo de lenguaje ya entrenado usando un conjunto mas pequeno de datos especificos de una tarea?",
+      "opts": [
+        "Fine-tuning (ajuste fino)",
+        "Tokenizacion",
+        "Backpropagation",
+        "Overfitting"
+      ],
+      "correct": 0,
+      "explanation": "El fine-tuning parte de un modelo ya preentrenado con grandes cantidades de datos generales y lo ajusta con un conjunto mas pequeno y especifico para especializarlo en una tarea concreta."
     }
   ]
 }

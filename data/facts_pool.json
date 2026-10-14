@@ -20,7 +20,8 @@
     "El método de ordenación sorted() y list.sort() en Python usan el algoritmo Timsort, un híbrido entre merge sort e insertion sort diseñado por Tim Peters en 2002 específicamente para el lenguaje.",
     "La función zip() de Python se detiene en cuanto el iterable más corto se agota, descartando sin avisar el resto de elementos de los iterables más largos que se le pasen.",
     "La funcion reduce(), junto a map() y filter(), se inspiro en conceptos de programacion funcional de lenguajes como Lisp, aunque Guido van Rossum decidio sacarla del nucleo del lenguaje y moverla al modulo functools a partir de Python 3.",
-    "El indice oficial de paquetes de Python, PyPI, se llamaba originalmente 'the Cheese Shop' (la tienda de quesos), en referencia a un sketch de Monty Python sobre una tienda sin ningun queso disponible."
+    "El indice oficial de paquetes de Python, PyPI, se llamaba originalmente 'the Cheese Shop' (la tienda de quesos), en referencia a un sketch de Monty Python sobre una tienda sin ningun queso disponible.",
+    "El modulo 'venv' para crear entornos virtuales se incorporo a la biblioteca estandar de Python en la version 3.3 (2012); antes de eso habia que instalar herramientas externas como virtualenv."
   ],
   "javascript": [
     "A pesar del nombre, JavaScript no tiene relación técnica con Java: el nombre fue una decisión de marketing de Netscape para aprovechar la popularidad de Java en 1995.",
@@ -43,7 +44,8 @@
     "Object.groupBy(), añadido a JavaScript en 2024 (ES2024), permite agrupar los elementos de un array según el resultado de una función, sin necesitar un bucle manual ni una librería externa como Lodash.",
     "El primer motor con compilación JIT (justo a tiempo) para JavaScript en un navegador fue TraceMonkey, de Mozilla Firefox, lanzado en 2008, el mismo año en que Google presentó su propio motor V8.",
     "El metodo Array.prototype.find(), que devuelve el primer elemento que cumple una condicion, se anadio junto a findIndex() en la misma especificacion ECMAScript 2015 (ES6) que introdujo las clases y las funciones flecha.",
-    "La funcion structuredClone(), incorporada de forma nativa a los navegadores y a Node.js en 2022, permite copiar en profundidad objetos complejos (incluidos Map, Set o fechas) sin depender de trucos como JSON.parse(JSON.stringify(objeto))."
+    "La funcion structuredClone(), incorporada de forma nativa a los navegadores y a Node.js en 2022, permite copiar en profundidad objetos complejos (incluidos Map, Set o fechas) sin depender de trucos como JSON.parse(JSON.stringify(objeto)).",
+    "La palabra clave 'async' delante de una funcion hace que esta devuelva siempre una Promise, incluso si dentro no hay ningun 'await' ni se devuelve nada explicitamente."
   ],
   "typescript": [
     "TypeScript no reemplaza a JavaScript en ningún momento: todo programa TypeScript se compila (transpila) a JavaScript plano antes de ejecutarse en el navegador o en Node.",
@@ -66,7 +68,8 @@
     "El operador de aserción no nula (!) en TypeScript, como en 'valor!.propiedad', le dice al compilador que confíe en que el valor no es null ni undefined, pero no hace ninguna comprobación real en tiempo de ejecución.",
     "El Playground oficial de TypeScript, disponible en typescriptlang.org, permite escribir código y ver al instante el JavaScript resultante de la compilación, sin instalar nada en el ordenador.",
     "TypeScript introdujo los 'tipos condicionales' (como `T extends U ? X : Y`) en su version 2.8, publicada en 2018, lo que permitio construir tipos que cambian de forma automatica segun otro tipo de entrada.",
-    "TypeScript 5.5, publicado en 2024, introdujo la inferencia de predicados de tipo: detecta automaticamente cuando una funcion como `arr.filter(x => x !== null)` actua como un type guard, sin necesidad de anotarlo a mano."
+    "TypeScript 5.5, publicado en 2024, introdujo la inferencia de predicados de tipo: detecta automaticamente cuando una funcion como `arr.filter(x => x !== null)` actua como un type guard, sin necesidad de anotarlo a mano.",
+    "TypeScript incorporo en su version 4.9 (2022) el operador 'satisfies', que valida que un valor cumple un tipo determinado sin cambiar el tipo mas especifico que el compilador ya habia inferido para ese valor."
   ],
   "java": [
     "La mascota de Java, Duke, fue diseñada en 1992 para un proyecto anterior llamado Oak, antes incluso de que existiera el lenguaje Java tal como lo conocemos.",
@@ -89,7 +92,8 @@
     "La máquina virtual de Java (JVM) no fue diseñada originalmente solo para el lenguaje Java: hoy también ejecuta bytecode compilado desde Kotlin, Scala, Groovy y Clojure, entre otros lenguajes.",
     "El recolector de basura Shenandoah, desarrollado por Red Hat e incluido como experimental desde Java 12, ofrece pausas de recolección casi constantes sin importar el tamaño del heap, pensado para aplicaciones que no pueden tolerar pausas largas.",
     "La API de fechas y horas 'java.time', introducida en Java 8 junto a los Streams, reemplazo a las antiguas clases Date y Calendar, consideradas durante anos una de las partes mas criticadas y propensas a errores de la biblioteca estandar de Java.",
-    "El metodo String.chars(), anadido en Java 8, permite recorrer los caracteres de una cadena como un IntStream, integrandolos directamente en la API de Streams sin convertir antes la cadena a un array de caracteres."
+    "El metodo String.chars(), anadido en Java 8, permite recorrer los caracteres de una cadena como un IntStream, integrandolos directamente en la API de Streams sin convertir antes la cadena a un array de caracteres.",
+    "El 'record', convertido en funcion estable en Java 16 (2021), genera automaticamente constructor, getters, equals, hashCode y toString para clases inmutables de solo datos, de forma parecida a las data class de Kotlin."
   ],
   "kotlin": [
     "Kotlin es interoperable al 100% con Java: se puede llamar código Java desde Kotlin y código Kotlin desde Java dentro del mismo proyecto sin conversión manual.",
@@ -112,7 +116,8 @@
     "Kotlin permite declarar una función con el modificador 'tailrec' para que el compilador optimice una llamada recursiva final convirtiéndola en un bucle, evitando el desbordamiento de pila en recursiones muy profundas.",
     "El plugin oficial 'kotlin-dsl' de Gradle permite escribir los propios scripts de construcción (build.gradle) en Kotlin en lugar de Groovy, con autocompletado y comprobación de tipos en el propio editor.",
     "El identificador 'it', que Kotlin usa por defecto para referirse al unico parametro de una lambda como en `list.filter { it > 0 }`, es solo una convencion del lenguaje: se puede renombrar explicitamente, pero 'it' aparece automaticamente cuando no se declara ningun nombre de parametro.",
-    "El operador de rango '..' en Kotlin, como en 'for (i in 1..10)', crea un rango cerrado que incluye ambos extremos, mientras que 'until' (como en '1 until 10') excluye el limite superior."
+    "El operador de rango '..' en Kotlin, como en 'for (i in 1..10)', crea un rango cerrado que incluye ambos extremos, mientras que 'until' (como en '1 until 10') excluye el limite superior.",
+    "Las 'sealed classes' de Kotlin restringen que clases pueden heredar de una clase base, lo que permite al compilador comprobar de forma exhaustiva todas las ramas posibles dentro de una expresion 'when'."
   ],
   "sql": [
     "El estándar SQL lo mantiene ISO, pero en la práctica cada motor (PostgreSQL, MySQL, SQL Server...) añade extensiones propias, por lo que el SQL 100% portable entre motores es más raro de lo que parece.",
@@ -135,7 +140,8 @@
     "El estándar SQL:2006 fue el primero en definir cómo integrar SQL con XML (SQL/XML), permitiendo generar y consultar documentos XML directamente desde una base de datos relacional.",
     "El operador INTERSECT, que devuelve solo las filas presentes en los resultados de dos consultas a la vez, no llegó a MySQL de forma nativa hasta su versión 8.0.31 en 2022, pese a formar parte del estándar SQL desde los años noventa.",
     "El operador LIKE de SQL usa el simbolo % para representar cualquier secuencia de caracteres y _ para un unico caracter, una sintaxis de comodines distinta a la de las expresiones regulares que mucha gente confunde al empezar.",
-    "La clausula WINDOW de SQL, parte del estandar SQL:2003, permite definir una sola vez una especificacion de ventana (como PARTITION BY y ORDER BY) y reutilizarla en varias funciones de ventana dentro de la misma consulta, sin repetirla en cada una."
+    "La clausula WINDOW de SQL, parte del estandar SQL:2003, permite definir una sola vez una especificacion de ventana (como PARTITION BY y ORDER BY) y reutilizarla en varias funciones de ventana dentro de la misma consulta, sin repetirla en cada una.",
+    "El comando EXPLAIN ANALYZE de PostgreSQL no se limita a mostrar el plan de ejecucion previsto: ejecuta realmente la consulta y mide los tiempos reales de cada paso del plan."
   ],
   "git": [
     "Git guarda cada versión de un archivo completo (no solo las diferencias) internamente, pero los comprime y deduplica para que el repositorio no crezca tanto como parecería.",
@@ -158,7 +164,8 @@
     "El formato de archivo 'packfile' que usa Git para comprimir muchos objetos en un solo archivo .pack fue diseñado para que las operaciones de clonado y transferencia de red fueran mucho más rápidas en repositorios con mucho historial.",
     "El formato de parche que genera 'git diff' sigue el mismo 'unified diff' creado para la utilidad clásica de Unix 'diff' en los años setenta, lo que permite aplicar un parche de Git con la herramienta 'patch' incluso fuera de un repositorio Git.",
     "El comando git cherry-pick permite aplicar un commit concreto de otra rama sobre la rama actual sin fusionar el resto de su historial, util para llevar una correccion puntual de una rama a otra sin mezclarlas por completo.",
-    "El comando 'git patch-id' calcula un identificador a partir solo del contenido de un diff, ignorando metadatos como el autor o la fecha, lo que permite reconocer que dos commits con hashes distintos aplican en realidad el mismo cambio."
+    "El comando 'git patch-id' calcula un identificador a partir solo del contenido de un diff, ignorando metadatos como el autor o la fecha, lo que permite reconocer que dos commits con hashes distintos aplican en realidad el mismo cambio.",
+    "El comando 'git reflog' registra temporalmente todos los movimientos de HEAD, incluidos los commits descartados por un reset o un rebase, lo que permite recuperarlos durante un tiempo aunque ya no aparezcan en 'git log'."
   ],
   "htmlcss": [
     "El primer sitio web de la historia, publicado por Tim Berners-Lee en 1991, seguía online y accesible en su URL original décadas después, solo con HTML básico y sin una sola línea de CSS.",
@@ -181,7 +188,8 @@
     "Las 'container queries' (@container) de CSS, que permiten aplicar estilos según el tamaño de un contenedor padre en lugar de la ventana completa, llegaron a los navegadores principales en 2023, mucho después que las media queries clásicas de 2012.",
     "La propiedad CSS 'all: unset' permite resetear de una sola vez casi todas las propiedades heredables y no heredables de un elemento a sus valores iniciales o heredados, útil para 'limpiar' los estilos por defecto del navegador en un solo componente.",
     "El atributo HTML inert, soportado de forma nativa por los navegadores desde 2023, permite desactivar por completo la interaccion (clics, foco, seleccion de texto) de una parte entera de la pagina, util por ejemplo para el contenido que queda detras de una ventana modal abierta.",
-    "La etiqueta HTML <picture>, introducida en 2014, permite servir distintas imagenes segun el tamano de pantalla o el formato soportado por el navegador, sin necesidad de JavaScript, usando varias etiquetas <source> dentro de ella."
+    "La etiqueta HTML <picture>, introducida en 2014, permite servir distintas imagenes segun el tamano de pantalla o el formato soportado por el navegador, sin necesidad de JavaScript, usando varias etiquetas <source> dentro de ella.",
+    "La propiedad CSS 'aspect-ratio', soportada ampliamente desde 2021, permite fijar la proporcion entre ancho y alto de un elemento sin recurrir al viejo truco de simular esa proporcion con 'padding-top' en porcentaje."
   ],
   "bash": [
     "Bash significa 'Bourne Again SHell', un juego de palabras porque es una reimplementación mejorada de la shell 'sh' original de Stephen Bourne de 1977.",
@@ -204,7 +212,8 @@
     "El comando 'diff', usado para comparar archivos línea por línea, es anterior al Unix moderno: su primera versión se escribió en 1974 en los Bell Labs, y su formato de salida sigue siendo la base del formato que usan hoy los parches (patches) y los diffs de Git.",
     "El operador de redirección '<<<' en Bash, llamado 'here string', permite pasar directamente una cadena de texto como entrada estándar de un comando sin necesidad de un archivo ni una tubería, como en 'grep hola <<< \"hola mundo\"'.",
     "El comando trap en Bash permite capturar senales del sistema, como Ctrl+C (SIGINT), para ejecutar codigo de limpieza propio (como borrar archivos temporales) antes de que el script termine, en lugar de dejar que se interrumpa de golpe.",
-    "El comando 'fc' (fix command) de Bash permite abrir el ultimo comando ejecutado directamente en un editor de texto como Vim o Nano para corregirlo con comodidad, en lugar de reescribirlo entero en la linea de comandos."
+    "El comando 'fc' (fix command) de Bash permite abrir el ultimo comando ejecutado directamente en un editor de texto como Vim o Nano para corregirlo con comodidad, en lugar de reescribirlo entero en la linea de comandos.",
+    "El built-in 'local' en Bash declara una variable que solo existe dentro de la funcion donde se define, evitando que modifique por accidente una variable global que tenga el mismo nombre."
   ],
   "ia": [
     "El término 'inteligencia artificial' se acuñó en 1956 en la conferencia de Dartmouth, más de medio siglo antes de que la mayoría de las técnicas actuales de deep learning fueran siquiera viables computacionalmente.",
@@ -227,6 +236,7 @@
     "El término 'Inteligencia Artificial General' (AGI) se refiere a un sistema hipotético capaz de igualar o superar la capacidad humana en prácticamente cualquier tarea cognitiva, a diferencia de los modelos actuales, especializados pero no universales; no existe hoy un consenso científico sobre cuándo, ni siquiera si, podría alcanzarse.",
     "El benchmark SWE-bench, publicado en 2024 para evaluar si un modelo de IA puede resolver problemas reales de software, usa issues y pull requests autenticos extraidos de repositorios de codigo abierto en GitHub, en lugar de preguntas artificiales creadas para el propio test.",
     "El benchmark ARC-AGI, creado por el investigador Francois Chollet en 2019, plantea pequenos puzzles visuales de logica pensados para ser faciles de resolver para humanos pero dificiles para los modelos de IA, como forma de medir el razonamiento general en lugar del conocimiento memorizado.",
-    "El termino 'alineacion' (alignment) en inteligencia artificial se refiere a conseguir que el comportamiento de un modelo coincida con las intenciones y valores de las personas que lo usan, un problema que se volvio mucho mas visible con la llegada de modelos capaces de actuar como agentes autonomos."
+    "El termino 'alineacion' (alignment) en inteligencia artificial se refiere a conseguir que el comportamiento de un modelo coincida con las intenciones y valores de las personas que lo usan, un problema que se volvio mucho mas visible con la llegada de modelos capaces de actuar como agentes autonomos.",
+    "El mecanismo de 'atencion' (attention), presentado en el articulo 'Attention Is All You Need' de 2017, permite a un modelo ponderar que partes de la entrada son mas relevantes para cada palabra que genera, y es la base de la arquitectura Transformer."
   ]
 }

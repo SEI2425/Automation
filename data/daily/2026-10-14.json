@@ -1,0 +1,112 @@
+{
+  "date": "2026-10-14",
+  "questions": [
+    {
+      "type": "identify",
+      "lang": "Python",
+      "question": "¿Que imprime este codigo?",
+      "code": "nums = [1, 2, 3]\nnums2 = nums[:]\nnums2[0] = 99\nprint(nums)",
+      "options": [
+        "[99, 2, 3]",
+        "[1, 2, 3]",
+        "[99]",
+        "Error"
+      ],
+      "correct": 1,
+      "hint": "El slicing completo [:] crea una lista nueva, no una referencia a la misma.",
+      "explanation": "nums[:] crea una copia nueva de la lista mediante slicing completo, por lo que modificar nums2 no afecta a la lista original nums, que sigue siendo [1, 2, 3]."
+    },
+    {
+      "type": "complete",
+      "lang": "JavaScript",
+      "question": "¿Que falta para imprimir unicamente los elementos restantes despues de los dos primeros?",
+      "code": "const arr = [1, 2, 3, 4, 5];\nconst [first, second, ...rest] = arr;\nconsole.log(____);",
+      "options": [
+        "rest",
+        "arr",
+        "first",
+        "...rest"
+      ],
+      "correct": 0,
+      "hint": "El operador rest agrupa en una variable todo lo que no se destructuro antes.",
+      "explanation": "La desestructuracion con rest (...rest) agrupa todos los elementos del array que no se asignaron explicitamente a first o second, dejando rest como [3, 4, 5]."
+    },
+    {
+      "type": "complete",
+      "lang": "SQL",
+      "question": "¿Que clausula falta para ordenar los resultados de mayor a menor total?",
+      "code": "SELECT product, SUM(quantity) AS total\nFROM sales\nGROUP BY product\n____ total DESC;",
+      "options": [
+        "ORDER BY",
+        "GROUP BY",
+        "HAVING",
+        "WHERE"
+      ],
+      "correct": 0,
+      "hint": "Necesitas la clausula que ordena los resultados, no la que los agrupa.",
+      "explanation": "ORDER BY total DESC ordena los grupos ya calculados de mayor a menor segun el total sumado; GROUP BY ya se uso antes para agrupar, no para ordenar."
+    },
+    {
+      "type": "identify",
+      "lang": "Kotlin",
+      "question": "¿Que imprime este codigo?",
+      "code": "fun describir(x: Int): String = when {\n    x < 0 -> \"negativo\"\n    x == 0 -> \"cero\"\n    else -> \"positivo\"\n}\n\nprintln(describir(0))",
+      "options": [
+        "negativo",
+        "cero",
+        "positivo",
+        "Error de compilacion"
+      ],
+      "correct": 1,
+      "hint": "when sin argumento evalua condiciones booleanas en orden, de arriba a abajo.",
+      "explanation": "La expresion when evalua las condiciones en orden; como x == 0 es cierto, devuelve la cadena 'cero'."
+    },
+    {
+      "type": "identify",
+      "lang": "Git",
+      "question": "¿Que hace este comando?",
+      "code": "git revert HEAD",
+      "options": [
+        "Crea un nuevo commit que deshace los cambios introducidos por el ultimo commit, sin borrar el historial",
+        "Elimina por completo el ultimo commit del historial",
+        "Vuelve a aplicar el ultimo commit en otra rama",
+        "Descarta todos los cambios sin confirmar en el directorio de trabajo"
+      ],
+      "correct": 0,
+      "hint": "revert no reescribe el historial: anade un commit nuevo que invierte los cambios.",
+      "explanation": "git revert no borra el commit original: crea un commit nuevo que aplica el cambio contrario, dejando constancia en el historial de que ese commit fue deshecho."
+    }
+  ],
+  "tips": [
+    {
+      "text": "Usa 'git cherry-pick' para traer un commit concreto de otra rama en lugar de fusionar la rama entera.",
+      "explanation": "git cherry-pick aplica sobre tu rama actual los cambios de un solo commit elegido, sin traer el resto del historial de la rama original. Es util cuando necesitas una correccion puntual de otra rama sin mezclar trabajo que todavia no esta terminado.",
+      "link": "https://git-scm.com/docs/git-cherry-pick",
+      "linkLabel": "Git SCM: documentacion de git cherry-pick"
+    },
+    {
+      "text": "Ademas de un linter de estilo, usa una herramienta de analisis estatico de seguridad (SAST) en tu proyecto.",
+      "explanation": "Un linter normal detecta errores de formato o variables sin usar, pero no suele avisar de patrones peligrosos como una consulta SQL construida por concatenacion o una contrasena escrita en el codigo. Las herramientas SAST revisan el codigo fuente buscando especificamente ese tipo de vulnerabilidades conocidas antes de que lleguen a produccion.",
+      "link": "https://owasp.org/www-community/Source_Code_Analysis_Tools",
+      "linkLabel": "OWASP: herramientas de analisis de codigo fuente (SAST)"
+    },
+    {
+      "text": "Prueba tu pagina web con un lector de pantalla activado, no solo mirandola.",
+      "explanation": "Muchas personas ciegas o con baja vision navegan por internet escuchando el contenido en lugar de verlo, y un diseno que parece perfecto a la vista puede resultar incomprensible con un lector de pantalla. Activar uno durante unos minutos revela rapido problemas que ninguna revision visual detecta, como botones sin texto alternativo o un orden de lectura confuso.",
+      "link": "https://webaim.org/techniques/screenreader/",
+      "linkLabel": "WebAIM: como usar un lector de pantalla para evaluar accesibilidad"
+    },
+    {
+      "text": "Separa la logica de tu programa (los calculos y las reglas) del codigo que dibuja la interfaz.",
+      "explanation": "Cuando ambas cosas estan mezcladas en el mismo bloque de codigo, cambiar como se ve algo obliga a tocar la misma funcion que decide que hace, y al reves, lo que multiplica el riesgo de romper algo sin querer. Mantenerlas en archivos o funciones distintas permite probar la logica por separado y cambiar el diseno sin miedo a afectar el resultado.",
+      "link": "https://en.wikipedia.org/wiki/Separation_of_concerns",
+      "linkLabel": "Separacion de responsabilidades (Wikipedia)"
+    },
+    {
+      "text": "Antes de ejecutar un algoritmo que acabas de escribir, sigue sus pasos a mano con una entrada pequena.",
+      "explanation": "Recorrer el codigo linea por linea con lapiz y papel, usando solo 2 o 3 elementos de entrada, obliga a confirmar que cada paso hace realmente lo que crees que hace, en lugar de asumirlo. Es mucho mas facil detectar un error de logica asi que despues de ejecutarlo con datos reales y tener que adivinar en que parte se rompio.",
+      "link": "https://en.wikipedia.org/wiki/Trace_table",
+      "linkLabel": "Tabla de rastreo (trace table) - Wikipedia"
+    }
+  ]
+}

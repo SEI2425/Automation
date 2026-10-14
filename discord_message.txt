@@ -1,1 +1,1 @@
-Hoy toca mirar la imagen de arriba: trae las tres noticias clave y el tip del dia. En la web esta todo completo, con las diez noticias, los tips explicados y tests nuevos por lenguaje que crecen cada dia. [Abrir PilaPila News](<https://sei2425.github.io/Automation/>)
+Otra ronda lista en PilaPila News: noticias de IA, recursos para programar, tips explicados y preguntas nuevas. La imagen de arriba trae lo mas destacado del dia, pero hay mucho mas esperando. Entra en [la web de PilaPila News](<https://sei2425.github.io/Automation/>) para verlo completo.
