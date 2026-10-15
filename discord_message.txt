@@ -1,1 +1,1 @@
-Otra ronda lista en PilaPila News: noticias de IA, recursos para programar, tips explicados y preguntas nuevas. La imagen de arriba trae lo mas destacado del dia, pero hay mucho mas esperando. Entra en [la web de PilaPila News](<https://sei2425.github.io/Automation/>) para verlo completo.
+Nueva entrega de PilaPila News: noticias de IA, recursos gratis para programar, tips explicados, preguntas de codigo y tests nuevos de cada lenguaje. La imagen ya adelanta lo mas importante. Entra en [Abrir PilaPila News](<https://sei2425.github.io/Automation/>) para verlo todo completo.

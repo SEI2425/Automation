@@ -241,6 +241,17 @@
       ],
       "correct": 1,
       "explanation": "En Python 3, el operador / siempre realiza division real y devuelve un float, incluso si ambos operandos son enteros; para division entera se usa //."
+    },
+    {
+      "q": "¿Qué hace la palabra clave 'nonlocal' dentro de una función anidada en Python?",
+      "opts": [
+        "Permite modificar una variable de la función envolvente (no global) desde la función interna",
+        "Declara una variable global",
+        "Impide modificar la variable en cualquier ámbito",
+        "Solo funciona dentro de clases"
+      ],
+      "correct": 0,
+      "explanation": "'nonlocal' indica que la variable referenciada pertenece al ámbito de la función que envuelve a la actual (no al global ni al local), permitiendo reasignarla sin crear una nueva variable local."
     }
   ],
   "javascript": [
@@ -485,6 +496,17 @@
       ],
       "correct": 0,
       "explanation": "typeof undefined devuelve la cadena 'undefined'; es distinto de typeof null, que por una peculiaridad historica del lenguaje devuelve 'object'."
+    },
+    {
+      "q": "¿Qué devuelve `[1, 2, 3].flatMap(n => [n, n * 2])`?",
+      "opts": [
+        "[1, 2, 2, 4, 3, 6]",
+        "[[1,2],[2,4],[3,6]]",
+        "[2, 4, 6]",
+        "Error"
+      ],
+      "correct": 0,
+      "explanation": "flatMap aplica map y luego aplana un nivel el resultado, por lo que cada [n, n*2] se combina en un único array plano."
     }
   ],
   "typescript": [
@@ -729,6 +751,17 @@
       ],
       "correct": 0,
       "explanation": "readonly marca una propiedad para que TypeScript impida reasignarla tras la creacion del objeto; es una comprobacion solo en tiempo de compilacion, no afecta al JavaScript final."
+    },
+    {
+      "q": "¿Qué imprime este código?\nenum Direccion { Arriba, Abajo, Izquierda, Derecha }\nconsole.log(Direccion.Abajo);",
+      "opts": [
+        "1",
+        "'Abajo'",
+        "0",
+        "Error de compilación"
+      ],
+      "correct": 0,
+      "explanation": "Los enums numéricos de TypeScript asignan automáticamente valores empezando en 0; como Abajo es el segundo miembro, su valor es 1."
     }
   ],
   "java": [
@@ -973,6 +1006,17 @@
       ],
       "correct": 0,
       "explanation": "extends se usa para que una clase herede de otra clase; implements se usa en cambio para que una clase cumpla una interfaz."
+    },
+    {
+      "q": "¿Qué permite escribir la palabra clave 'var' en una declaración local de Java (desde Java 10), como en `var lista = new ArrayList<String>();`?",
+      "opts": [
+        "Que el compilador infiera el tipo a partir del valor asignado, sin perder el tipado estático",
+        "Declarar una variable que puede cambiar de tipo en tiempo de ejecución",
+        "Crear una variable global accesible desde cualquier clase",
+        "Declarar una constante inmutable"
+      ],
+      "correct": 0,
+      "explanation": "'var' en Java solo activa inferencia de tipo local en tiempo de compilación; la variable sigue teniendo un tipo fijo y estático, el compilador simplemente lo deduce del valor inicial."
     }
   ],
   "kotlin": [
@@ -1217,6 +1261,17 @@
       ],
       "correct": 0,
       "explanation": "'data class' genera automaticamente equals(), hashCode(), toString() y copy() a partir de las propiedades declaradas en el constructor."
+    },
+    {
+      "q": "¿Para qué sirve el modificador 'lateinit' en una propiedad var de Kotlin, como en `lateinit var nombre: String`?",
+      "opts": [
+        "Permite declarar una propiedad no nula que se inicializará más adelante, en lugar de en el momento de la declaración",
+        "Convierte la propiedad en de solo lectura",
+        "Hace que la propiedad acepte valores nulos",
+        "Declara una propiedad estática"
+      ],
+      "correct": 0,
+      "explanation": "'lateinit' le dice al compilador que esa propiedad var no nula se inicializará antes de usarse, evitando tener que declararla como nula (String?) solo porque su valor no está disponible en el constructor."
     }
   ],
   "sql": [
@@ -1461,6 +1516,17 @@
       ],
       "correct": 0,
       "explanation": "A diferencia de WHERE, que filtra filas antes de agrupar, HAVING filtra los grupos resultantes de GROUP BY, por ejemplo descartando los que no superan un cierto COUNT o SUM."
+    },
+    {
+      "q": "¿Qué diferencia hay entre las funciones de ventana RANK() y DENSE_RANK() cuando hay valores empatados?",
+      "opts": [
+        "RANK() deja huecos en la numeración tras un empate; DENSE_RANK() numera de forma consecutiva sin huecos",
+        "Son exactamente iguales",
+        "DENSE_RANK() solo funciona con columnas de texto",
+        "RANK() no admite ORDER BY"
+      ],
+      "correct": 0,
+      "explanation": "Si dos filas empatan en el mismo puesto, RANK() salta el siguiente número (1,1,3), mientras que DENSE_RANK() continúa de forma consecutiva (1,1,2), sin dejar huecos en la numeración."
     }
   ],
   "git": [
@@ -1705,6 +1771,17 @@
       ],
       "correct": 0,
       "explanation": "git diff muestra linea por linea los cambios todavia no anadidos al area de staging; git status solo indica que archivos cambiaron, sin mostrar el contenido exacto del cambio."
+    },
+    {
+      "q": "¿Qué muestra el comando 'git branch -vv'?",
+      "opts": [
+        "Cada rama local junto con su último commit y la rama remota que sigue (tracking), indicando si está adelantada o atrasada",
+        "Solo el nombre de la rama actual",
+        "Elimina las ramas que no tienen seguimiento remoto",
+        "Crea una nueva rama de seguimiento remoto"
+      ],
+      "correct": 0,
+      "explanation": "La opción -vv (doble verbose) añade a la lista de ramas el commit más reciente de cada una y su relación de seguimiento (tracking) con la rama remota correspondiente, mostrando cuántos commits de diferencia hay."
     }
   ],
   "htmlcss": [
@@ -1949,6 +2026,17 @@
       ],
       "correct": 0,
       "explanation": "line-height controla la altura de linea, es decir, el espacio vertical entre lineas de texto dentro de un mismo bloque; letter-spacing afecta al espacio entre caracteres, no entre lineas."
+    },
+    {
+      "q": "¿Qué hace la pseudo-clase CSS ':is()' en un selector como ':is(h1, h2, h3) { color: navy; }'?",
+      "opts": [
+        "Aplica el mismo estilo a cualquier elemento que coincida con alguno de los selectores listados dentro del paréntesis",
+        "Solo aplica el estilo si se cumplen todas las condiciones a la vez",
+        "Convierte el selector en inválido si hay más de un elemento",
+        "Es idéntica a la pseudo-clase :not()"
+      ],
+      "correct": 0,
+      "explanation": "':is()' agrupa varios selectores y aplica el estilo a cualquier elemento que coincida con uno cualquiera de ellos, evitando repetir la misma regla de estilo varias veces para selectores distintos."
     }
   ],
   "bash": [
@@ -2193,6 +2281,17 @@
       ],
       "correct": 0,
       "explanation": "chmod +x anade el permiso de ejecucion al archivo, necesario para poder ejecutarlo directamente como './script.sh' en lugar de pasarlo como argumento al interprete."
+    },
+    {
+      "q": "¿Qué imprime este script?\nnums=(10 20 30)\necho \"${nums[1]}\"",
+      "opts": [
+        "20",
+        "10",
+        "30",
+        "Error"
+      ],
+      "correct": 0,
+      "explanation": "Los arrays en Bash se indexan desde 0, por lo que ${nums[1]} accede al segundo elemento del array, es decir 20."
     }
   ],
   "ia": [
@@ -2437,6 +2536,17 @@
       ],
       "correct": 0,
       "explanation": "El fine-tuning parte de un modelo ya preentrenado con grandes cantidades de datos generales y lo ajusta con un conjunto mas pequeno y especifico para especializarlo en una tarea concreta."
+    },
+    {
+      "q": "¿Qué es el 'chain-of-thought' (cadena de pensamiento) en el contexto de los modelos de lenguaje?",
+      "opts": [
+        "Una técnica de prompting que pide al modelo mostrar los pasos intermedios de su razonamiento antes de dar la respuesta final, lo que suele mejorar su precisión en tareas complejas",
+        "Un tipo de red neuronal distinto al Transformer",
+        "Un método para comprimir el tamaño de un modelo",
+        "Un parámetro que controla la longitud máxima de la respuesta"
+      ],
+      "correct": 0,
+      "explanation": "El chain-of-thought prompting anima al modelo a desglosar su razonamiento en pasos explícitos antes de concluir, lo que en tareas de lógica o matemáticas suele producir respuestas más precisas que pedir la respuesta directa."
     }
   ]
 }

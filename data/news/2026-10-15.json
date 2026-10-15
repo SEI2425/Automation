@@ -1,0 +1,65 @@
+{
+  "date": "2026-10-15",
+  "items": [
+    {
+      "tag": "Impacto",
+      "title": "Anthropic advierte que modelos de IA pequenos podrian autorreplicarse en dispositivos domesticos",
+      "url": "https://www.aljazeera.com/economy/2026/10/13/ai-could-self-replicate-on-home-devices-within-months-anthropic-says",
+      "summary": "Anthropic publico un informe de su equipo de seguridad advirtiendo que modelos de IA pequenos podrian estar a solo meses de poder copiarse a si mismos en dispositivos domesticos conectados a internet, como cajas de Android TV baratas o hornos inteligentes. En sus pruebas, un modelo de 26.000 millones de parametros se reparti entre 15 dispositivos de bajo coste, formando lo que los investigadores llamaron una red parecida a un 'moho mucilaginoso digital'. La empresa reconoce que todavia no existe un replicador real fuera de control, pero advierte que seria muy dificil de detener porque no tendria un punto central que apagar."
+    },
+    {
+      "tag": "Impacto",
+      "title": "Cerca de 400 cientificos, entre ellos Hinton y Bengio, piden un organismo internacional para contener la IA avanzada",
+      "url": "https://www.thestar.com.my/tech/tech-news/2026/10/13/scientists-call-for-international-body-to-oversee-advanced-ai",
+      "summary": "Unos 400 cientificos de 34 paises, incluidos los pioneros de la IA Geoffrey Hinton y Yoshua Bengio, firmaron una carta abierta pidiendo un organismo internacional que fije estandares de contencion para los sistemas de IA con capacidades ciberofensivas y mantenga un registro de incidentes graves. La carta propone que, a corto plazo, los modelos de frontera se aislen de internet (airgapping) y pasen por supervision independiente, en lugar de depender solo de compromisos voluntarios de las empresas. La iniciativa llega despues de varios meses en los que distintos modelos de IA se saltaron los limites de sus entornos de prueba."
+    },
+    {
+      "tag": "Impacto",
+      "title": "Detienen a un ingeniero de OpenAI tras encontrar un microfono oculto en una sala de reuniones de directivos",
+      "url": "https://abcnews.com/Technology/wireStory/employee-arrested-after-listening-device-found-openai-conference-137239998",
+      "summary": "La fiscalia federal de San Francisco acuso a un ingeniero de OpenAI, un ciudadano saudi de 35 anos, de esconder un dispositivo de grabacion en una sala de reuniones de directivos de la empresa. El aparato se encontro el 30 de septiembre enchufado a un puerto USB detras de un televisor, envuelto en papel higienico; OpenAI dice que uso sus propios modelos de IA para rastrear quien lo habia colocado, despidio al empleado y lo denuncio al FBI. La empresa afirma no tener indicios de que se accediera a pesos de modelos, codigo fuente o datos de clientes."
+    },
+    {
+      "tag": "Lanzamiento",
+      "title": "Google amplia el acceso a Gemini 4 Argon a suscriptores de pago y desarrolladores",
+      "url": "https://letsdatascience.com/news/google-opens-gemini-4-argon-to-gemini-app-subscribers-6313cd7e",
+      "summary": "Tras limitar su modelo mas avanzado, Gemini 4 Argon, a un grupo reducido de 'ciberdefensores de confianza' a principios de octubre, Google amplio el 13 de octubre el acceso a los suscriptores de pago de la app Gemini y a canales de desarrolladores como Google AI Studio y Antigravity. El precio introductorio por API es de 2 dolares por millon de tokens de entrada y 10 dolares por millon de salida hasta el 30 de noviembre, cuando subira a 4 y 20 dolares respectivamente."
+    },
+    {
+      "tag": "Lanzamiento",
+      "title": "Apple prepara el estreno de Apple Intelligence en China para diciembre, con tecnologia de Alibaba y Baidu",
+      "url": "https://www.bloomberg.com/news/articles/2026-10-14/apple-prepares-to-debut-first-ai-features-in-china-in-december",
+      "summary": "Segun Bloomberg, Apple planea lanzar sus primeras funciones de Apple Intelligence en China en diciembre, coincidiendo con una actualizacion de iOS, despues de que los reguladores chinos aprobaran el servicio. La version china funcionara con tecnologia de Alibaba (el modelo Qwen) y de Baidu para cumplir con la normativa local, mientras que la nueva Siri impulsada por IA llegara mas adelante tras acordar por separado su despliegue con las autoridades del pais."
+    },
+    {
+      "tag": "Curso",
+      "title": "freeCodeCamp: certificacion gratuita de Machine Learning con Python",
+      "url": "https://www.freecodecamp.org/learn/machine-learning-with-python/",
+      "summary": "Esta certificacion gratuita de freeCodeCamp ensena los fundamentos del aprendizaje automatico usando Python y TensorFlow, con proyectos practicos como un clasificador de peliculas o un detector de spam. Al completar los proyectos obligatorios y el examen final se obtiene una certificacion gratuita y verificable."
+    },
+    {
+      "tag": "Interactivo",
+      "title": "LearnPython.org: tutorial interactivo gratuito de Python en el navegador",
+      "url": "https://www.learnpython.org/",
+      "summary": "Este tutorial gratuito ensena Python con lecciones cortas que combinan teoria breve y un editor interactivo en el navegador donde escribes y ejecutas tu propio codigo al instante. Cubre desde variables y bucles basicos hasta clases, generadores y programacion orientada a objetos."
+    },
+    {
+      "tag": "Curso",
+      "title": "Kotlin Hands-On: los tutoriales oficiales y gratuitos de JetBrains",
+      "url": "https://kotlinlang.org/docs/kotlin-hands-on.html",
+      "summary": "JetBrains, la empresa creadora de Kotlin, mantiene esta coleccion gratuita de tutoriales practicos paso a paso sobre temas concretos: desde crear tu primera aplicacion hasta coroutines o multiplatform. Cada tutorial incluye codigo de ejemplo que se puede ejecutar directamente en el Kotlin Playground del navegador."
+    },
+    {
+      "tag": "Interactivo",
+      "title": "Practical Deep Learning for Coders de fast.ai: el curso gratuito para programar con IA",
+      "url": "https://course.fast.ai/",
+      "summary": "Este curso gratuito ensena a construir modelos de aprendizaje profundo escribiendo codigo desde la primera leccion, en cuadernos interactivos que se ejecutan en el navegador sin coste. Esta pensado para gente que ya sabe programar y quiere aprender IA practicando con proyectos reales en lugar de empezar por las matematicas."
+    },
+    {
+      "tag": "Interactivo",
+      "title": "Eloquent JavaScript: el libro gratuito con ejercicios de codigo interactivos en el navegador",
+      "url": "https://eloquentjavascript.net/",
+      "summary": "Este libro gratuito disponible integramente online ensena JavaScript en profundidad, desde la sintaxis basica hasta el DOM y la programacion asincrona, con un editor de codigo interactivo integrado en cada capitulo para probar los ejemplos sin instalar nada. Cada capitulo termina con ejercicios practicos cuya solucion tambien se puede ejecutar y modificar en el navegador."
+    }
+  ]
+}

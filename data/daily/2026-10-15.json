@@ -1,0 +1,87 @@
+{
+  "date": "2026-10-15",
+  "questions": [
+    {
+      "type": "identify",
+      "lang": "Python",
+      "question": "¿Que imprime este codigo?",
+      "code": "keys = [\"a\", \"b\", \"c\"]\nvals = [10, 20, 30]\nd = dict(zip(keys, vals))\nprint(d[\"b\"])",
+      "options": ["20", "10", "30", "Error"],
+      "correct": 0,
+      "hint": "zip empareja cada clave con el valor en la misma posicion antes de construir el diccionario.",
+      "explanation": "zip(keys, vals) empareja 'a' con 10, 'b' con 20 y 'c' con 30; dict() convierte esos pares en un diccionario, y d['b'] devuelve 20."
+    },
+    {
+      "type": "complete",
+      "lang": "JavaScript",
+      "question": "¿Que metodo falta para comprobar si al menos un elemento del array es par?",
+      "code": "const nums = [3, 7, 11, 2];\nconst hasEven = nums.____(n => n % 2 === 0);\nconsole.log(hasEven); // true",
+      "options": ["some", "every", "find", "filter"],
+      "correct": 0,
+      "hint": "Necesitas un metodo que devuelva true o false, no un array ni un elemento concreto.",
+      "explanation": "some() devuelve true en cuanto algun elemento cumple la condicion; every() exigiria que todos la cumplieran, y find()/filter() devolverian un elemento o un array, no un booleano."
+    },
+    {
+      "type": "identify",
+      "lang": "SQL",
+      "question": "¿Que devuelve esta consulta?",
+      "code": "SELECT c.name, COUNT(o.id) AS total_pedidos\nFROM customers c\nLEFT JOIN orders o ON c.id = o.customer_id\nGROUP BY c.name;",
+      "options": ["El nombre de cada cliente junto al numero de pedidos que tiene, incluyendo los clientes sin ningun pedido con un 0", "Solo los clientes que tienen al menos un pedido", "El pedido mas caro de cada cliente", "El numero total de clientes de la tabla"],
+      "correct": 0,
+      "hint": "LEFT JOIN conserva todos los clientes aunque no tengan ningun pedido asociado.",
+      "explanation": "LEFT JOIN mantiene todas las filas de customers aunque no haya coincidencia en orders; COUNT(o.id) cuenta los ids de pedido no nulos, asi que un cliente sin pedidos simplemente obtiene un total de 0 en lugar de desaparecer del resultado."
+    },
+    {
+      "type": "complete",
+      "lang": "Git",
+      "question": "¿Que comando falta para ver el contenido completo de ese commit?",
+      "code": "git log --oneline -1\n# abc1234 fix bug\ngit ____ abc1234\n# muestra el mensaje completo, el autor y el diff de ese commit",
+      "options": ["show", "diff", "log", "checkout"],
+      "correct": 0,
+      "hint": "Es el comando pensado especificamente para inspeccionar un commit concreto en detalle.",
+      "explanation": "git show <hash> muestra la informacion completa de un commit (autor, fecha, mensaje) junto con el diff de los cambios que introdujo, a diferencia de git log, que solo lista el historial."
+    },
+    {
+      "type": "identify",
+      "lang": "Kotlin",
+      "question": "¿Que imprime este codigo?",
+      "code": "val nums = listOf(2, 3, 4)\nval product = nums.reduce { acc, n -> acc * n }\nprintln(product)",
+      "options": ["24", "9", "2", "Error de compilacion"],
+      "correct": 0,
+      "hint": "reduce multiplica el acumulador por cada elemento, empezando por el primero de la lista.",
+      "explanation": "reduce usa el primer elemento (2) como valor inicial del acumulador y lo va multiplicando por los siguientes: 2*3=6, luego 6*4=24."
+    }
+  ],
+  "tips": [
+    {
+      "text": "Antes de usar la API de un modelo de IA en tu codigo, comprueba sus limites de peticiones (rate limits) y que hace tu programa si la respuesta tarda o falla.",
+      "explanation": "Las APIs de IA pueden devolver errores por saturacion o tardar varios segundos en responder; un programa que no maneja esos casos se cae por completo en produccion en lugar de reintentar o avisar al usuario con un mensaje claro.",
+      "link": "https://platform.openai.com/docs/guides/rate-limits",
+      "linkLabel": "OpenAI: guia de limites de peticiones (rate limits)"
+    },
+    {
+      "text": "Revisa con cuidado los limites de tus bucles y accesos a listas: el error 'off-by-one' (contar uno de mas o uno de menos) es uno de los fallos mas comunes entre programadores principiantes.",
+      "explanation": "Equivocarse en si un rango incluye o no su ultimo elemento, o empezar a contar desde 0 en vez de 1 sin darse cuenta, provoca errores sutiles que a veces solo fallan en el primer o ultimo elemento, lo que los hace especialmente dificiles de detectar a simple vista.",
+      "link": "https://en.wikipedia.org/wiki/Off-by-one_error",
+      "linkLabel": "Error off-by-one (Wikipedia)"
+    },
+    {
+      "text": "Si una funcion necesita mas de tres o cuatro parametros, agrupalos en un objeto o estructura con nombre en lugar de una lista larga de argumentos sueltos.",
+      "explanation": "Una llamada con muchos argumentos posicionales obliga a recordar el orden exacto de cada uno, y es facil pasar dos valores del mismo tipo en el orden equivocado sin que nada avise del error; agruparlos en un objeto con nombres hace la llamada mas legible y evita ese tipo de fallo.",
+      "link": "https://refactoring.guru/smells/long-parameter-list",
+      "linkLabel": "Refactoring Guru: lista larga de parametros"
+    },
+    {
+      "text": "Si necesitas generar valores aleatorios para contrasenas, tokens de sesion o claves de un solo uso, nunca uses el generador aleatorio normal de tu lenguaje: usa uno pensado especificamente para seguridad.",
+      "explanation": "Los generadores aleatorios estandar (como random() en la mayoria de lenguajes) estan pensados para velocidad, no para seguridad, y su secuencia puede llegar a predecirse; por eso existen funciones aparte, como el modulo secrets de Python o crypto.randomBytes en Node, disenadas para que sus resultados no se puedan adivinar.",
+      "link": "https://docs.python.org/3/library/secrets.html",
+      "linkLabel": "Documentacion oficial de Python: el modulo secrets"
+    },
+    {
+      "text": "Si tu aplicacion hace peticiones repetidas a una API externa pidiendo datos que casi nunca cambian, guarda esas respuestas en cache en lugar de pedirlas de nuevo cada vez.",
+      "explanation": "Muchas APIs cobran por peticion o limitan cuantas puedes hacer en un periodo de tiempo; cachear las respuestas que no cambian a menudo reduce esa carga, hace que tu aplicacion responda mas rapido y evita que te bloqueen por superar el limite de peticiones.",
+      "link": "https://web.dev/articles/http-cache",
+      "linkLabel": "web.dev: guia de cache HTTP"
+    }
+  ]
+}
