@@ -1,0 +1,87 @@
+{
+  "date": "2026-10-16",
+  "questions": [
+    {
+      "type": "identify",
+      "lang": "Python",
+      "question": "¿Que contiene la variable result despues de ejecutar este codigo?",
+      "code": "nums = [1, 2, 3, 4, 5, 6]\nresult = nums[::2]",
+      "options": ["[1, 3, 5]", "[2, 4, 6]", "[1, 2, 3]", "Error de sintaxis"],
+      "correct": 0,
+      "hint": "El tercer valor dentro de los corchetes del slicing es el paso.",
+      "explanation": "El slicing con paso 2 toma los elementos en las posiciones 0, 2 y 4 de la lista, es decir 1, 3 y 5; el paso por defecto sin ese tercer valor seria 1."
+    },
+    {
+      "type": "complete",
+      "lang": "JavaScript",
+      "question": "¿Que falta para que a termine valiendo 2 y b valiendo 1?",
+      "code": "let a = 1, b = 2;\n[a, b] = [____, a];\nconsole.log(a, b); // 2 1",
+      "options": ["b", "a", "0", "undefined"],
+      "correct": 0,
+      "hint": "El lado derecho del array se evalua por completo, con los valores antiguos, antes de hacer la asignacion.",
+      "explanation": "La desestructuracion evalua primero todo el array de la derecha con los valores originales de a y b; al escribir [b, a], a recibe el valor original de b (2) y b recibe el valor original de a (1), intercambiandolos sin variable temporal."
+    },
+    {
+      "type": "identify",
+      "lang": "TypeScript",
+      "question": "¿Que imprime este codigo?",
+      "code": "function obtenerLongitud<T extends { length: number }>(valor: T): number {\n  return valor.length;\n}\nconsole.log(obtenerLongitud(\"hola\"));",
+      "options": ["4", "\"hola\"", "Error de compilacion", "undefined"],
+      "correct": 0,
+      "hint": "El generico T esta restringido a tipos que tengan una propiedad length, y los strings cumplen esa condicion.",
+      "explanation": "La restriccion 'extends { length: number }' permite que T sea cualquier tipo con una propiedad length, como un string; \"hola\" tiene 4 caracteres, por lo que la funcion devuelve 4."
+    },
+    {
+      "type": "complete",
+      "lang": "Java",
+      "question": "¿Que metodo falta para invertir el texto?",
+      "code": "String texto = \"Java\";\nString invertido = new StringBuilder(texto).____().toString();\nSystem.out.println(invertido); // avaJ",
+      "options": ["reverse", "flip", "invert", "swap"],
+      "correct": 0,
+      "hint": "Es el metodo de StringBuilder pensado especificamente para invertir el contenido.",
+      "explanation": "El metodo reverse() de StringBuilder invierte el orden de los caracteres en el propio objeto, y toString() lo convierte de vuelta a String; 'Java' invertido es 'avaJ'."
+    },
+    {
+      "type": "identify",
+      "lang": "SQL",
+      "question": "¿Que devuelve esta consulta?",
+      "code": "SELECT title FROM books\nWHERE author_id IN (SELECT id FROM authors WHERE country = 'España');",
+      "options": ["Los libros cuyo autor es de España", "Los autores de España", "Los libros sin autor asignado", "Todos los libros ordenados por autor"],
+      "correct": 0,
+      "hint": "IN comprueba si un valor esta dentro del conjunto que devuelve la subconsulta.",
+      "explanation": "La subconsulta devuelve los id de los autores de España, y WHERE author_id IN (...) selecciona solo los libros cuyo author_id aparece en esa lista."
+    }
+  ],
+  "tips": [
+    {
+      "text": "Comprueba el codigo de salida de un comando o script, no solo si viste un mensaje de error.",
+      "explanation": "La variable especial $? guarda el codigo de salida del ultimo comando ejecutado: un 0 significa exito y cualquier otro valor entre 1 y 255 indica que algo fallo. Muchas herramientas automatizadas, como un pipeline de integracion continua, se basan en ese numero y no en el texto que se imprimio para decidir si todo salio bien.",
+      "link": "https://www.redhat.com/sysadmin/exit-codes-demystified",
+      "linkLabel": "Red Hat: codigos de salida explicados"
+    },
+    {
+      "text": "Si una API devuelve datos en paginas, comprueba siempre si hay un cursor o un campo 'next page' antes de asumir que ya tienes todos los resultados.",
+      "explanation": "Muchas APIs limitan cuantos elementos devuelven en una sola respuesta por rendimiento, aunque existan miles de resultados en total; si tu codigo ignora ese limite, puede dar por buena una lista incompleta sin ningun error visible. Revisar la documentacion de paginacion antes de escribir el bucle que consume la API evita perder silenciosamente la mayoria de los datos.",
+      "link": "https://docs.github.com/en/rest/using-the-rest-api/using-pagination-in-the-rest-api",
+      "linkLabel": "GitHub Docs: paginacion en una API REST"
+    },
+    {
+      "text": "Cuando depures una peticion HTTP que no hace lo que esperabas, revisa tambien las cabeceras (headers) de la respuesta, no solo el cuerpo.",
+      "explanation": "Las cabeceras indican cosas que el cuerpo de la respuesta no dice, como por que el servidor rechazo la peticion, si la respuesta viene de una cache antigua o que formato de datos espera recibir. Herramientas como el inspector de red del navegador o 'curl -i' muestran esas cabeceras sin que tengas que anadir codigo para imprimirlas.",
+      "link": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers",
+      "linkLabel": "MDN: cabeceras HTTP"
+    },
+    {
+      "text": "Si trabajas con Node.js, usa 'npm ci' en lugar de 'npm install' en un pipeline de integracion continua.",
+      "explanation": "npm install puede actualizar silenciosamente el lockfile si encuentra una version mas nueva compatible, lo que hace que una build en el servidor use dependencias distintas a las que probaste en tu maquina. npm ci, en cambio, borra node_modules y reinstala exactamente lo que dice el lockfile, fallando si no coincide con el package.json, lo que hace que cada build sea reproducible.",
+      "link": "https://docs.npmjs.com/cli/v10/commands/npm-ci",
+      "linkLabel": "npm Docs: npm ci"
+    },
+    {
+      "text": "Nombra tus archivos y carpetas en minusculas y sin espacios: evitas problemas al compartir el proyecto entre distintos sistemas operativos.",
+      "explanation": "Windows y macOS no distinguen mayusculas de minusculas en los nombres de archivo por defecto, pero Linux si, asi que una referencia que funciona en tu portatil puede romperse en el servidor si el nombre real del archivo tiene una mayuscula distinta. Los espacios, por su parte, obligan a anadir comillas en casi cualquier comando de terminal o script, una fuente constante de errores pequenos.",
+      "link": "https://blog.rtwilson.com/reminder-about-cross-platform-case-sensitivity-differences/",
+      "linkLabel": "Robin's Blog: diferencias de sensibilidad a mayusculas entre sistemas"
+    }
+  ]
+}

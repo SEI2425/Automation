@@ -1,0 +1,65 @@
+{
+  "date": "2026-10-16",
+  "items": [
+    {
+      "tag": "Impacto",
+      "title": "Un equipo financiado por el NIH logra que pacientes con epilepsia conversen en tiempo real con su propio monitor mediante IA",
+      "url": "https://www.nih.gov/news-events/news-releases/patients-engage-epilepsy-monitor-real-time-improving-seizure-detection",
+      "summary": "Un equipo respaldado por el NIH probo en 13 pacientes del Hospital de la Universidad de Pensilvania una interfaz conversacional con IA que permite preguntar en tiempo real por los propios datos de un monitor de epilepsia desde una app de movil. El sistema de deteccion de crisis fue aprendiendo de las respuestas de los pacientes y, a lo largo del estudio, redujo en torno a un 80% las falsas alarmas. Los propios autores advierten que es una prueba de concepto con una muestra pequena, pendiente de validarse en mas centros."
+    },
+    {
+      "tag": "Impacto",
+      "title": "Una encuesta revela que el 81% de los directivos financieros ya sufrio un intento de fraude con IA en el ultimo ano",
+      "url": "https://www.cfo.com/news/1-in-5-finance-leaders-fear-deepfake-impersonation/832408/",
+      "summary": "Una encuesta de la empresa Certos a 230 altos directivos financieros encontro que un 81% habia detectado al menos un intento de fraude que involucraba o parecia involucrar inteligencia artificial en el ultimo ano, y un 84% considera ese fraude mas dificil de detectar que el tradicional. El desvio de pagos fue la principal preocupacion, por delante de la suplantacion de ejecutivos con voces o videos clonados. La encuesta, publicada el 8 de octubre, excluyo de su muestra a bancos y empresas fintech."
+    },
+    {
+      "tag": "Impacto",
+      "title": "Gartner advierte que mas de 3,5 billones de dolares en infraestructura de IA podrian perder valor antes de 2030",
+      "url": "https://www.gartner.com/en/newsroom/press-releases/2026-10-14-gartner-says-over-us-dollars-three-and-a-half-trillion-of-artificial-intelligence-infrastructure-spending-could-be-exposed-to-impairment-by-the-end-of-2030",
+      "summary": "Gartner publico el 14 de octubre un analisis que advierte que, si continua el ritmo actual de inversion, mas de 3,5 billones de dolares en centros de datos, chips y equipos de IA podrian quedar expuestos a un riesgo de deterioro contable antes de 2030. La consultora atribuye el riesgo a la rapida obsolescencia del hardware y a la incertidumbre sobre si la demanda real de computo justificara todo el gasto previsto. El informe no afirma que esa perdida vaya a materializarse, solo que gran parte de la inversion actual queda expuesta a ese riesgo."
+    },
+    {
+      "tag": "Impacto",
+      "title": "Despega Altair-1, el primer satelite de observacion terrestre con IA construido en los Emiratos Arabes",
+      "url": "https://www.thenationalnews.com/news/uae/2026/10/02/first-uae-built-commercial-satellite-completes-historic-launch-in-major-step-forward-in-space-race/",
+      "summary": "Altair-1, el primer satelite comercial construido por completo en los Emiratos Arabes Unidos, despego el 2 de octubre a bordo de un cohete de SpaceX y ya esta en fase de puesta en marcha. Es el primero de una constelacion de diez satelites que combinan sensores opticos, infrarrojos y de radiofrecuencia con procesamiento de IA a bordo, pensados para monitorizar desastres naturales, zonas costeras y trafico maritimo casi en tiempo real. La empresa Orbitworks, responsable del proyecto, preve lanzar los nueve satelites restantes a lo largo de 2027."
+    },
+    {
+      "tag": "Lanzamiento",
+      "title": "Meta lanza Muse Wonder y Muse Wonder Full, sus primeros modelos de IA de frontera",
+      "url": "https://propakistani.pk/2026/10/13/meta-enters-ai-frontier-with-new-wonder-models/",
+      "summary": "Meta presento el 12 de octubre Muse Wonder y Muse Wonder Full, los primeros modelos que su laboratorio Superintelligence Labs describe como de frontera, pensados para agentes personales y profesionales con una ventana de contexto de un millon de tokens. Wonder esta disponible a traves de la API de Meta a 4 dolares por millon de tokens de entrada y 20 por millon de salida, mientras que Wonder Full queda reservado a suscriptores de Muse Code. Segun puntuaciones independientes de Artificial Analysis, el rendimiento de ambos modelos queda cerca pero por debajo del de Claude Opus 5.5."
+    },
+    {
+      "tag": "Interactivo",
+      "title": "Codedex: aprende Python, HTML, CSS y JavaScript jugando en el navegador",
+      "url": "https://codedex.io",
+      "summary": "Codedex es una plataforma gratuita que convierte el aprendizaje de Python, HTML, CSS y JavaScript en una aventura por 'tierras' tematicas, con lecciones cortas, un editor de codigo integrado y retos que se corrigen al instante. Tiene un plan de pago opcional con cursos ampliados y mentoria, pero la biblioteca gratuita ya incluye cientos de horas de lecciones interactivas."
+    },
+    {
+      "tag": "Interactivo",
+      "title": "Hedy: el lenguaje de programacion gratuito que te lleva paso a paso hasta Python",
+      "url": "https://www.hedycode.com/",
+      "summary": "Hedy es un lenguaje de programacion gratuito y de codigo abierto, creado por una investigadora de la Universidad de Leiden, que empieza casi sin sintaxis y va anadiendo poco a poco bucles, condicionales y variables hasta terminar en un subconjunto real de Python. Se ejecuta directamente en el navegador, esta traducido a varios idiomas y ya lo han usado casi 1,5 millones de veces estudiantes de todo el mundo."
+    },
+    {
+      "tag": "Interactivo",
+      "title": "SQL Noir: resuelve casos de detective escribiendo consultas SQL reales",
+      "url": "https://www.sqlnoir.com/",
+      "summary": "SQL Noir es un juego gratuito y de codigo abierto en el que resuelves casos policiales escribiendo consultas SQL reales (SELECT, WHERE, JOIN) sobre una base de datos distinta para cada caso, sin sintaxis simplificada ni anuncios. Sirve tanto para quien nunca ha escrito una consulta como para quien ya sabe SQL y quiere un reto mas narrativo que los ejercicios tradicionales."
+    },
+    {
+      "tag": "Curso",
+      "title": "freeCodeCamp: certificacion gratuita de librerias de desarrollo front-end",
+      "url": "https://www.freecodecamp.org/learn/front-end-development-libraries/",
+      "summary": "Esta certificacion gratuita de freeCodeCamp ensena a construir interfaces con React y a gestionar el estado de una aplicacion con Redux, ademas de Bootstrap y jQuery, a traves de proyectos practicos evaluados automaticamente. Al completar los proyectos obligatorios y el examen final se obtiene una certificacion gratuita y verificable para anadir al portafolio."
+    },
+    {
+      "tag": "Curso",
+      "title": "CS50's Introduction to 2D Game Development: el curso gratuito de Harvard para crear videojuegos",
+      "url": "https://cs50.harvard.edu/games/",
+      "summary": "Este curso gratuito de Harvard ensena los principios de los graficos 2D, la animacion, el sonido y la deteccion de colisiones programando en Lua con el framework LOVE2D, recreando juegos como Pong, Flappy Bird o Breakout. Esta disponible integramente como material abierto sin necesidad de ser estudiante de Harvard, aunque registrarse en edX permite obtener un certificado."
+    }
+  ]
+}

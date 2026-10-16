@@ -252,6 +252,17 @@
       ],
       "correct": 0,
       "explanation": "'nonlocal' indica que la variable referenciada pertenece al ámbito de la función que envuelve a la actual (no al global ni al local), permitiendo reasignarla sin crear una nueva variable local."
+    },
+    {
+      "q": "¿Qué permite hacer el parámetro **kwargs en la definición de una función en Python?",
+      "opts": [
+        "Recibir solo argumentos posicionales",
+        "Recibir un número variable de argumentos con nombre, agrupados en un diccionario",
+        "Limitar la función a un máximo de 2 argumentos",
+        "Convertir automáticamente los argumentos a cadenas de texto"
+      ],
+      "correct": 1,
+      "explanation": "**kwargs recoge en un diccionario cualquier argumento con nombre que no coincida con un parámetro explícito, lo que permite que la función acepte un número variable de argumentos con nombre sin tener que declararlos todos de antemano."
     }
   ],
   "javascript": [
@@ -507,6 +518,17 @@
       ],
       "correct": 0,
       "explanation": "flatMap aplica map y luego aplana un nivel el resultado, por lo que cada [n, n*2] se combina en un único array plano."
+    },
+    {
+      "q": "¿Qué hace el método String.prototype.padStart(longitud, relleno) en JavaScript?",
+      "opts": [
+        "Elimina espacios al principio de la cadena",
+        "Añade caracteres de relleno al principio de la cadena hasta alcanzar la longitud indicada",
+        "Corta la cadena a la longitud indicada",
+        "Convierte la cadena a mayúsculas"
+      ],
+      "correct": 1,
+      "explanation": "padStart añade el carácter de relleno indicado al inicio de la cadena las veces que haga falta hasta que alcance la longitud total pedida, útil por ejemplo para rellenar números con ceros a la izquierda."
     }
   ],
   "typescript": [
@@ -762,6 +784,17 @@
       ],
       "correct": 0,
       "explanation": "Los enums numéricos de TypeScript asignan automáticamente valores empezando en 0; como Abajo es el segundo miembro, su valor es 1."
+    },
+    {
+      "q": "¿Qué hace la palabra clave 'infer' dentro de un tipo condicional en TypeScript, como en `type ElementType<T> = T extends (infer U)[] ? U : T;`?",
+      "opts": [
+        "Declara una variable de tipo que se deduce automáticamente a partir de la estructura que se está comprobando",
+        "Obliga a especificar el tipo manualmente sin inferencia",
+        "Convierte el tipo en opcional",
+        "Solo funciona dentro de funciones genéricas, nunca en tipos"
+      ],
+      "correct": 0,
+      "explanation": "'infer' declara una variable de tipo dentro de un tipo condicional que TypeScript rellena automáticamente a partir de la forma del tipo que se está comprobando; en el ejemplo, extrae el tipo de los elementos de un array."
     }
   ],
   "java": [
@@ -1017,6 +1050,17 @@
       ],
       "correct": 0,
       "explanation": "'var' en Java solo activa inferencia de tipo local en tiempo de compilación; la variable sigue teniendo un tipo fijo y estático, el compilador simplemente lo deduce del valor inicial."
+    },
+    {
+      "q": "¿Qué permite declarar un 'método default' dentro de una interfaz en Java, como en `default void saludar() { System.out.println(\"Hola\"); }`?",
+      "opts": [
+        "Obligar a todas las clases a sobrescribir ese método",
+        "Dar una implementación por defecto que las clases que implementan la interfaz pueden heredar sin tener que sobrescribirla",
+        "Convertir la interfaz en una clase abstracta",
+        "Solo se puede usar dentro de clases, nunca en interfaces"
+      ],
+      "correct": 1,
+      "explanation": "Los métodos default, introducidos en Java 8 junto a las expresiones lambda, permiten añadir un comportamiento por defecto a una interfaz sin romper la compatibilidad de las clases que ya la implementaban antes de ese cambio."
     }
   ],
   "kotlin": [
@@ -1272,6 +1316,17 @@
       ],
       "correct": 0,
       "explanation": "'lateinit' le dice al compilador que esa propiedad var no nula se inicializará antes de usarse, evitando tener que declararla como nula (String?) solo porque su valor no está disponible en el constructor."
+    },
+    {
+      "q": "¿Qué permite declarar un parámetro de función como `fun sumar(vararg numeros: Int): Int { ... }` en Kotlin?",
+      "opts": [
+        "Recibir una cantidad variable de argumentos Int, accesibles dentro de la función como un array",
+        "Que el parámetro sea opcional y valga null si no se pasa",
+        "Que la función solo acepte exactamente dos argumentos",
+        "Convertir automáticamente los argumentos a String"
+      ],
+      "correct": 0,
+      "explanation": "El modificador 'vararg' permite pasar cero, uno o varios argumentos del tipo indicado sin agruparlos manualmente en una lista, y dentro de la función se puede recorrer como si fuera un array."
     }
   ],
   "sql": [
@@ -1527,6 +1582,17 @@
       ],
       "correct": 0,
       "explanation": "Si dos filas empatan en el mismo puesto, RANK() salta el siguiente número (1,1,3), mientras que DENSE_RANK() continúa de forma consecutiva (1,1,2), sin dejar huecos en la numeración."
+    },
+    {
+      "q": "¿Qué permite crear la sentencia `CREATE VIEW ventas_2026 AS SELECT * FROM ventas WHERE anio = 2026;`?",
+      "opts": [
+        "Una copia física de la tabla ventas filtrada por el año 2026",
+        "Una consulta guardada que se comporta como una tabla virtual, sin duplicar los datos originales",
+        "Un índice sobre la columna anio",
+        "Una tabla temporal que se borra al cerrar la sesión"
+      ],
+      "correct": 1,
+      "explanation": "Una VIEW guarda la definición de una consulta, no los datos: cada vez que se consulta la vista, la base de datos vuelve a ejecutar la consulta original sobre las tablas reales, por lo que no duplica información ni necesita actualizarse manualmente."
     }
   ],
   "git": [
@@ -1782,6 +1848,17 @@
       ],
       "correct": 0,
       "explanation": "La opción -vv (doble verbose) añade a la lista de ramas el commit más reciente de cada una y su relación de seguimiento (tracking) con la rama remota correspondiente, mostrando cuántos commits de diferencia hay."
+    },
+    {
+      "q": "¿Para qué sirve el comando 'git bisect start' seguido de 'git bisect good' y 'git bisect bad'?",
+      "opts": [
+        "Para encontrar mediante búsqueda binaria el commit exacto que introdujo un fallo, marcando commits como buenos o malos",
+        "Para dividir un commit grande en varios más pequeños",
+        "Para fusionar dos ramas automáticamente sin conflictos",
+        "Para eliminar permanentemente un commit del historial"
+      ],
+      "correct": 0,
+      "explanation": "git bisect recorre el historial con búsqueda binaria: le indicas un commit que funcionaba bien (good) y uno que ya tenía el fallo (bad), y Git va proponiendo commits intermedios hasta señalar exactamente cuál introdujo el problema."
     }
   ],
   "htmlcss": [
@@ -2037,6 +2114,17 @@
       ],
       "correct": 0,
       "explanation": "':is()' agrupa varios selectores y aplica el estilo a cualquier elemento que coincida con uno cualquiera de ellos, evitando repetir la misma regla de estilo varias veces para selectores distintos."
+    },
+    {
+      "q": "¿Para qué sirve la consulta de medios `@media (prefers-color-scheme: dark) { body { background: black; } }` en CSS?",
+      "opts": [
+        "Aplica esos estilos solo en pantallas pequeñas",
+        "Aplica esos estilos cuando el sistema operativo o navegador del usuario tiene activado el modo oscuro",
+        "Aplica esos estilos solo si la página lleva más de un minuto abierta",
+        "Desactiva por completo los estilos de la página"
+      ],
+      "correct": 1,
+      "explanation": "prefers-color-scheme detecta la preferencia de tema (claro u oscuro) configurada en el sistema operativo o el navegador del usuario, lo que permite adaptar los colores de una página sin necesidad de JavaScript ni de un botón para cambiar de tema."
     }
   ],
   "bash": [
@@ -2292,6 +2380,17 @@
       ],
       "correct": 0,
       "explanation": "Los arrays en Bash se indexan desde 0, por lo que ${nums[1]} accede al segundo elemento del array, es decir 20."
+    },
+    {
+      "q": "¿Qué hace la opción '-s' en el comando `read -s -p \"Contraseña: \" clave` dentro de un script de Bash?",
+      "opts": [
+        "Oculta en la terminal los caracteres que escribe el usuario mientras los guarda en la variable",
+        "Lee la entrada desde un archivo en lugar del teclado",
+        "Limita la entrada a un solo carácter",
+        "Convierte automáticamente el texto a mayúsculas"
+      ],
+      "correct": 0,
+      "explanation": "La opción -s (silent) de read desactiva que la terminal muestre en pantalla lo que el usuario escribe, aunque el valor se sigue guardando con normalidad en la variable indicada; es la forma habitual de pedir una contraseña en un script de shell."
     }
   ],
   "ia": [
@@ -2547,6 +2646,17 @@
       ],
       "correct": 0,
       "explanation": "El chain-of-thought prompting anima al modelo a desglosar su razonamiento en pasos explícitos antes de concluir, lo que en tareas de lógica o matemáticas suele producir respuestas más precisas que pedir la respuesta directa."
+    },
+    {
+      "q": "¿Qué significa que las respuestas de un modelo de lenguaje estén 'basadas' (grounded) en una fuente externa?",
+      "opts": [
+        "Que el modelo nunca puede equivocarse",
+        "Que el modelo apoya sus respuestas en datos o documentos concretos que se le proporcionan, en lugar de depender solo de lo que memorizó durante el entrenamiento",
+        "Que el modelo deja de funcionar sin conexión a internet",
+        "Que el modelo genera siempre la misma respuesta para la misma pregunta"
+      ],
+      "correct": 1,
+      "explanation": "El 'grounding' consiste en apoyar las respuestas de un modelo en documentos, bases de datos o resultados de búsqueda concretos que se le pasan como contexto, en lugar de depender únicamente de lo que aprendió durante el entrenamiento, lo que suele reducir las alucinaciones."
     }
   ]
 }
