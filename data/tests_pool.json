@@ -263,6 +263,17 @@
       ],
       "correct": 1,
       "explanation": "**kwargs recoge en un diccionario cualquier argumento con nombre que no coincida con un parámetro explícito, lo que permite que la función acepte un número variable de argumentos con nombre sin tener que declararlos todos de antemano."
+    },
+    {
+      "q": "¿Que devuelve list(enumerate(['a','b','c'], start=1))?",
+      "opts": [
+        "[(1,'a'), (2,'b'), (3,'c')]",
+        "[(0,'a'), (1,'b'), (2,'c')]",
+        "['a','b','c']",
+        "Error de sintaxis"
+      ],
+      "correct": 0,
+      "explanation": "El parametro start de enumerate() cambia el numero inicial del contador; con start=1, el primer par comienza en 1 en lugar de en 0 por defecto."
     }
   ],
   "javascript": [
@@ -529,6 +540,17 @@
       ],
       "correct": 1,
       "explanation": "padStart añade el carácter de relleno indicado al inicio de la cadena las veces que haga falta hasta que alcance la longitud total pedida, útil por ejemplo para rellenar números con ceros a la izquierda."
+    },
+    {
+      "q": "¿Que muestra console.log(typeof NaN)?",
+      "opts": [
+        "\"number\"",
+        "\"NaN\"",
+        "\"undefined\"",
+        "\"object\""
+      ],
+      "correct": 0,
+      "explanation": "Aunque NaN significa 'Not a Number', su tipo en JavaScript sigue siendo 'number', ya que es un valor especial dentro del propio tipo numerico de punto flotante."
     }
   ],
   "typescript": [
@@ -795,6 +817,17 @@
       ],
       "correct": 0,
       "explanation": "'infer' declara una variable de tipo dentro de un tipo condicional que TypeScript rellena automáticamente a partir de la forma del tipo que se está comprobando; en el ejemplo, extrae el tipo de los elementos de un array."
+    },
+    {
+      "q": "Si 'function identidad<T>(valor: T): T { return valor; }', ¿que ocurre al compilar 'const x: string = identidad<string>(42)'?",
+      "opts": [
+        "Error de compilacion porque 42 no es un string",
+        "Compila y x vale 42",
+        "Compila y x vale \"42\"",
+        "Error solo en tiempo de ejecucion, no al compilar"
+      ],
+      "correct": 0,
+      "explanation": "Al indicar explicitamente identidad<string>, TypeScript exige que el argumento sea de tipo string; pasar el numero 42 produce un error de compilacion porque no coincide con el tipo generico especificado."
     }
   ],
   "java": [
@@ -1061,6 +1094,17 @@
       ],
       "correct": 1,
       "explanation": "Los métodos default, introducidos en Java 8 junto a las expresiones lambda, permiten añadir un comportamiento por defecto a una interfaz sin romper la compatibilidad de las clases que ya la implementaban antes de ese cambio."
+    },
+    {
+      "q": "¿Que imprime este codigo?\nInteger a = 127; Integer b = 127; Integer c = 200; Integer d = 200;\nSystem.out.println(a == b);\nSystem.out.println(c == d);",
+      "opts": [
+        "true\nfalse",
+        "false\ntrue",
+        "true\ntrue",
+        "false\nfalse"
+      ],
+      "correct": 0,
+      "explanation": "Java cachea automaticamente los objetos Integer entre -128 y 127 (Integer Cache), asi que a y b apuntan al mismo objeto y == da true; 200 queda fuera de ese rango, por lo que c y d son objetos distintos y == da false."
     }
   ],
   "kotlin": [
@@ -1327,6 +1371,17 @@
       ],
       "correct": 0,
       "explanation": "El modificador 'vararg' permite pasar cero, uno o varios argumentos del tipo indicado sin agruparlos manualmente en una lista, y dentro de la función se puede recorrer como si fuera un array."
+    },
+    {
+      "q": "¿Que imprime este codigo?\nval lista: List<Int> = listOf(1, 2, 3)\nval sumaCuadrados = lista.sumOf { it * it }\nprintln(sumaCuadrados)",
+      "opts": [
+        "14",
+        "6",
+        "9",
+        "Error de compilacion"
+      ],
+      "correct": 0,
+      "explanation": "sumOf aplica la lambda a cada elemento (elevandolo al cuadrado: 1, 4, 9) y suma directamente los resultados, dando 1+4+9 = 14, sin necesitar un map() seguido de sum()."
     }
   ],
   "sql": [
@@ -1593,6 +1648,17 @@
       ],
       "correct": 1,
       "explanation": "Una VIEW guarda la definición de una consulta, no los datos: cada vez que se consulta la vista, la base de datos vuelve a ejecutar la consulta original sobre las tablas reales, por lo que no duplica información ni necesita actualizarse manualmente."
+    },
+    {
+      "q": "¿Que devuelve esta consulta?\nSELECT COALESCE(apodo, nombre, 'Sin nombre') AS identificador FROM usuarios;",
+      "opts": [
+        "El apodo de cada usuario, o su nombre si no tiene apodo, o 'Sin nombre' si ninguno de los dos existe",
+        "Siempre el texto 'Sin nombre' para todos los usuarios",
+        "Solo los usuarios que tienen apodo y nombre a la vez",
+        "El nombre completo concatenado con el apodo"
+      ],
+      "correct": 0,
+      "explanation": "COALESCE() devuelve el primer valor no nulo de la lista que se le pasa, de izquierda a derecha; aqui prueba primero el apodo, luego el nombre, y por ultimo usa el texto fijo si ambos son NULL."
     }
   ],
   "git": [
@@ -1859,6 +1925,17 @@
       ],
       "correct": 0,
       "explanation": "git bisect recorre el historial con búsqueda binaria: le indicas un commit que funcionaba bien (good) y uno que ya tenía el fallo (bad), y Git va proponiendo commits intermedios hasta señalar exactamente cuál introdujo el problema."
+    },
+    {
+      "q": "¿Que hace este comando?\ngit diff --stat HEAD~3 HEAD",
+      "opts": [
+        "Muestra un resumen de que archivos cambiaron y cuantas lineas se anadieron o borraron entre los ultimos 3 commits",
+        "Elimina los ultimos 3 commits sin confirmar",
+        "Crea una nueva rama con los ultimos 3 commits",
+        "Muestra el contenido completo de los ultimos 3 commits linea por linea"
+      ],
+      "correct": 0,
+      "explanation": "git diff --stat muestra un resumen compacto (archivo, lineas anadidas y borradas) en lugar del diff completo linea por linea; HEAD~3 HEAD compara el estado de hace 3 commits con el estado actual."
     }
   ],
   "htmlcss": [
@@ -2125,6 +2202,17 @@
       ],
       "correct": 1,
       "explanation": "prefers-color-scheme detecta la preferencia de tema (claro u oscuro) configurada en el sistema operativo o el navegador del usuario, lo que permite adaptar los colores de una página sin necesidad de JavaScript ni de un botón para cambiar de tema."
+    },
+    {
+      "q": "¿Que hace la propiedad CSS object-fit: cover en una etiqueta <img> con ancho y alto fijos?",
+      "opts": [
+        "Recorta la imagen para llenar completamente el espacio sin deformarla, manteniendo su proporcion original",
+        "Estira la imagen para que ocupe el espacio exacto, aunque se deforme",
+        "Reduce la imagen hasta que quepa entera sin recortar nada",
+        "Repite la imagen como un patron hasta llenar el espacio"
+      ],
+      "correct": 0,
+      "explanation": "object-fit: cover escala la imagen manteniendo su relacion de aspecto y recorta el sobrante para cubrir todo el contenedor, a diferencia de 'fill' (el valor por defecto), que la deforma, o 'contain', que la reduce entera sin recortar."
     }
   ],
   "bash": [
@@ -2391,6 +2479,17 @@
       ],
       "correct": 0,
       "explanation": "La opción -s (silent) de read desactiva que la terminal muestre en pantalla lo que el usuario escribe, aunque el valor se sigue guardando con normalidad en la variable indicada; es la forma habitual de pedir una contraseña en un script de shell."
+    },
+    {
+      "q": "¿Que hace este comando?\ncommand1 && command2 || command3",
+      "opts": [
+        "Ejecuta command2 si command1 tiene exito, y command3 si command1 (o la cadena hasta ahi) falla",
+        "Ejecuta los tres comandos siempre, uno tras otro",
+        "Ejecuta command2 y command3 en paralelo",
+        "Ejecuta command3 solo si los tres comandos anteriores tienen exito"
+      ],
+      "correct": 0,
+      "explanation": "&& ejecuta el siguiente comando solo si el anterior terminó con exito (codigo de salida 0), y || ejecuta el suyo solo si lo anterior fallo; combinados asi, command3 actua como un 'else' que se dispara si command1 falla."
     }
   ],
   "ia": [
@@ -2657,6 +2756,17 @@
       ],
       "correct": 1,
       "explanation": "El 'grounding' consiste en apoyar las respuestas de un modelo en documentos, bases de datos o resultados de búsqueda concretos que se le pasan como contexto, en lugar de depender únicamente de lo que aprendió durante el entrenamiento, lo que suele reducir las alucinaciones."
+    },
+    {
+      "q": "¿Que describe mejor el termino 'ventana de contexto' en un modelo de lenguaje?",
+      "opts": [
+        "La cantidad maxima de texto (medida en tokens) que el modelo puede tener en cuenta a la vez, entre la entrada y lo que va generando",
+        "La cantidad de parametros que tiene el modelo",
+        "El numero de ejemplos usados para entrenar el modelo",
+        "El tiempo maximo que el modelo puede tardar en responder"
+      ],
+      "correct": 0,
+      "explanation": "La ventana de contexto limita cuanto texto previo (instrucciones, conversacion, documentos) puede 'ver' el modelo al generar la siguiente palabra; superarla hace que el modelo empiece a perder la parte mas antigua de ese texto."
     }
   ]
 }

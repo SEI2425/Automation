@@ -1,0 +1,87 @@
+{
+  "date": "2026-10-17",
+  "questions": [
+    {
+      "type": "identify",
+      "lang": "Python",
+      "question": "¿Que imprime este codigo?",
+      "code": "nums = [10, 20, 30]\nnums[1:1] = [99]\nprint(nums)",
+      "options": ["[10, 99, 20, 30]", "[10, 99, 30]", "[99, 20, 30]", "Error"],
+      "correct": 0,
+      "hint": "Un slice vacio como [1:1] no borra nada; sirve para insertar justo en esa posicion.",
+      "explanation": "nums[1:1] selecciona un rango vacio justo en el indice 1; asignarle [99] inserta ese valor ahi sin eliminar ningun elemento existente, dejando [10, 99, 20, 30]."
+    },
+    {
+      "type": "complete",
+      "lang": "JavaScript",
+      "question": "¿Que falta para que count termine valiendo 2 tras llamar inc() dos veces?",
+      "code": "let count = 0;\nfunction inc() {\n  count = count ____ 1;\n}\ninc(); inc();\nconsole.log(count); // 2",
+      "options": ["+", "=", "++", "*"],
+      "correct": 0,
+      "hint": "Necesitas que count aumente sumando 1 cada vez que se llama a la funcion.",
+      "explanation": "count = count + 1 suma uno al valor actual y lo reasigna; tras llamar inc() dos veces, count pasa de 0 a 2."
+    },
+    {
+      "type": "identify",
+      "lang": "SQL",
+      "question": "¿Que devuelve esta consulta?",
+      "code": "SELECT name FROM products\nWHERE name NOT LIKE '%s';",
+      "options": ["Los productos cuyo nombre no termina en la letra s", "Los productos cuyo nombre empieza por la letra s", "Los productos cuyo nombre no contiene la letra s", "Los productos ordenados alfabeticamente al reves"],
+      "correct": 0,
+      "hint": "El simbolo % antes de la s representa cualquier secuencia de caracteres antes de ella.",
+      "explanation": "LIKE '%s' coincide con cualquier texto que termine en 's'; NOT LIKE invierte esa condicion, devolviendo los nombres que no terminan en esa letra."
+    },
+    {
+      "type": "identify",
+      "lang": "Git",
+      "question": "¿Que consigue el flag --no-ff en este merge?",
+      "code": "git switch -c hotfix\n# ... haces cambios y confirmas ...\ngit switch main\ngit merge --no-ff hotfix",
+      "options": ["Fuerza la creacion de un commit de fusion aunque la fusion pudiera resolverse avanzando la rama sin el (fast-forward)", "Impide por completo la fusion si hay conflictos", "Elimina la rama hotfix automaticamente tras fusionar", "Deshace los cambios de hotfix despues de fusionarlos"],
+      "correct": 0,
+      "hint": "ff significa 'fast-forward'; no-ff evita ese tipo de fusion silenciosa.",
+      "explanation": "Por defecto, si main no tiene commits nuevos desde que se creo hotfix, git merge simplemente mueve el puntero (fast-forward) sin crear un commit de fusion; --no-ff fuerza a crear ese commit igualmente para dejar constancia explicita de la fusion en el historial."
+    },
+    {
+      "type": "complete",
+      "lang": "HTML/CSS",
+      "question": "¿Que valor falta para que el badge se posicione en la esquina de la tarjeta, usando esta misma como referencia?",
+      "code": ".tarjeta {\n  position: relative;\n}\n.tarjeta .badge {\n  position: ____;\n  top: 0;\n  right: 0;\n}",
+      "options": ["absolute", "relative", "static", "fixed"],
+      "correct": 0,
+      "hint": "Necesitas que el badge se posicione respecto al ancestro posicionado mas cercano, que aqui es .tarjeta.",
+      "explanation": "position: absolute coloca el elemento respecto a su ancestro posicionado mas cercano (aqui .tarjeta, con position: relative), permitiendo anclarlo a una esquina con top y right; static no permite usar top/right, y fixed lo posicionaria respecto a la ventana, no a la tarjeta."
+    }
+  ],
+  "tips": [
+    {
+      "text": "Nunca uses eval() (ni similares) para ejecutar texto que no controlas por completo.",
+      "explanation": "eval() ejecuta como codigo cualquier texto que le pases, asi que si ese texto viene de un usuario o de una fuente externa, alguien podria hacer que tu programa ejecute comandos arbitrarios. Casi cualquier problema que parezca resolverse con eval() tiene una alternativa mas segura, como JSON.parse() para datos o una funcion explicita para la logica que necesitas.",
+      "link": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/eval",
+      "linkLabel": "MDN: eval()"
+    },
+    {
+      "text": "Si un bug no tiene sentido, divide el codigo a la mitad y comenta una parte para aislar en que mitad esta el problema.",
+      "explanation": "Esta busqueda binaria manual reduce el espacio de busqueda a la mitad en cada intento, asi que encuentras la linea exacta en pocos pasos en lugar de revisar el codigo entero de arriba a abajo. Es la misma idea que usa 'git bisect', pero aplicada directamente a la logica de un programa en lugar de al historial de commits.",
+      "link": "https://en.wikipedia.org/wiki/Delta_debugging",
+      "linkLabel": "Delta debugging (Wikipedia)"
+    },
+    {
+      "text": "Guarda un archivo .env.example en tu repositorio que liste las variables de entorno que necesita el proyecto, sin sus valores reales.",
+      "explanation": "Cuando otra persona (o tu yo futuro) clona el proyecto, ese archivo le dice exactamente que configurar sin tener que adivinarlo leyendo todo el codigo fuente ni pedirte las claves reales por chat. Es una practica habitual en proyectos que usan variables de entorno para la configuracion.",
+      "link": "https://www.npmjs.com/package/dotenv",
+      "linkLabel": "npm: el paquete dotenv"
+    },
+    {
+      "text": "No ignores las actualizaciones de seguridad del propio lenguaje o entorno de ejecucion (Python, Node.js, el JDK), no solo las de las librerias que instalas.",
+      "explanation": "Una version antigua del propio interprete o la maquina virtual puede tener vulnerabilidades conocidas aunque todas tus dependencias estén actualizadas, porque el fallo esta en la base sobre la que corre tu programa, no en el codigo que escribiste. Revisar de vez en cuando si tu version de Python, Node o Java sigue recibiendo parches de seguridad evita quedarte expuesto sin darte cuenta.",
+      "link": "https://endoflife.date/",
+      "linkLabel": "endoflife.date: calendario de soporte de lenguajes y herramientas"
+    },
+    {
+      "text": "Usa TODO y FIXME con sentidos distintos en tus comentarios: TODO para trabajo pendiente, FIXME para codigo que ya sabes que esta roto.",
+      "explanation": "Distinguir ambos ayuda a priorizar: un FIXME senala un problema real que ya existe y podria romper algo, mientras que un TODO es una mejora futura que todavia no es urgente. La mayoria de editores resaltan estas palabras clave automaticamente, lo que facilita encontrarlas todas de un vistazo.",
+      "link": "https://www.jetbrains.com/help/idea/using-todo.html",
+      "linkLabel": "JetBrains: como usar comentarios TODO"
+    }
+  ]
+}

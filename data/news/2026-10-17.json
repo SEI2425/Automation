@@ -1,0 +1,65 @@
+{
+  "date": "2026-10-17",
+  "items": [
+    {
+      "tag": "Impacto",
+      "title": "Un estudio en The Lancet confirma que el asistente medico de IA Amie de Google es seguro en consultas reales con pacientes",
+      "url": "https://blog.google/innovation-and-ai/technology/health/amie-clinical-study-lancet/",
+      "summary": "Investigadores del centro medico Beth Israel Deaconess hicieron que 98 pacientes conversaran con Amie, el asistente conversacional de Google DeepMind, antes de una visita de atencion urgente, en el primer estudio con pacientes reales (no simulados) de este tipo, publicado el 8 de octubre. Ninguna de las conversaciones necesito que un medico interviniera por un fallo de seguridad, aunque los supervisores detectaron una alucinacion del modelo durante el estudio."
+    },
+    {
+      "tag": "Impacto",
+      "title": "Un hombre es condenado a 18 meses de carcel en EEUU por el primer caso penal de fraude musical masivo con canciones generadas por IA",
+      "url": "https://www.musicweek.com/digital/read/us-man-sentenced-to-18-months-in-prison-for-8-million-ai-music-streaming-fraud/095182",
+      "summary": "Un juez federal de Manhattan condeno el 6 de octubre a Michael Smith, de Carolina del Norte, por usar cientos de miles de canciones generadas con IA y unos 10.000 bots para reproducirlas de forma automatica en Spotify, Apple Music y otras plataformas entre 2017 y 2024. Ademas de la pena de carcel, debera devolver mas de 8 millones de dolares en regalias cobradas de forma fraudulenta, en el primer caso penal de EEUU por este tipo especifico de fraude."
+    },
+    {
+      "tag": "Impacto",
+      "title": "Un estudio de Mount Sinai muestra que un simple recordatorio de seguridad hace que los modelos de IA den consejos clinicos mas prudentes",
+      "url": "https://www.mountsinai.org/about/newsroom/2026/mount-sinai-study-finds-safety-prompts-can-help-ai-models-make-safer-clinical-choices",
+      "summary": "Investigadores de Mount Sinai probaron 20 modelos de IA con escenarios clinicos disenados para inducir errores peligrosos, y encontraron que anadir un recordatorio explicito de seguridad en la instruccion reducia las respuestas potencialmente daninas en 19 de los 20 modelos evaluados. El estudio, publicado el 26 de septiembre en Communications Medicine, sugiere que medidas sencillas en el diseno de las instrucciones pueden mejorar la seguridad de la IA en entornos sanitarios sin cambiar el modelo."
+    },
+    {
+      "tag": "Impacto",
+      "title": "La policia espanola detiene a un hombre que uso una mascara de IA en tiempo real para robar certificados digitales con identidades falsas",
+      "url": "https://cybernews.com/ai-news/deepfake-fraudster-caught-ai-mask-glitch-spain/",
+      "summary": "La policia de Murcia detuvo a un hombre que intento 38 veces obtener certificados electronicos usando mas de 30 identidades robadas, superando las videoverificaciones de un proveedor con un software que alteraba su cara en tiempo real para parecer otra persona. Lo delato un fallo de un segundo en el que el programa mostro su rostro real, y los investigadores creen que buscaba abrir cuentas bancarias y firmar contratos a nombre de otras personas."
+    },
+    {
+      "tag": "Lanzamiento",
+      "title": "Salesforce activa Agentforce por defecto en su actualizacion Winter '27, llevando agentes de IA autonomos a flujos de trabajo empresariales reales",
+      "url": "https://www.salesforceben.com/salesforce-to-auto-enable-agentforce-in-winter-27-what-that-means-for-you/",
+      "summary": "Desde el 12 de octubre, la actualizacion Winter '27 de Salesforce activa automaticamente Agentforce, su plataforma de agentes de IA, en las organizaciones que cumplen los requisitos, para que ejecuten tareas completas de ventas, servicio o marketing sin que una persona dirija cada paso. La empresa insiste en que los agentes llegan activados por defecto salvo que la organizacion decida desactivarlos, un cambio que afecta a miles de empresas clientes de la plataforma."
+    },
+    {
+      "tag": "Curso",
+      "title": "Pro Git: el libro oficial y gratuito para dominar Git a fondo",
+      "url": "https://git-scm.com/book/en/v2",
+      "summary": "Escrito por Scott Chacon y Ben Straub, este libro gratuito disponible integramente online explica Git desde los conceptos basicos de control de versiones hasta ramas, flujos de trabajo en equipo y los mecanismos internos del propio sistema. Esta traducido a varios idiomas, incluido el espanol, y es la referencia que cita la propia documentacion oficial de Git."
+    },
+    {
+      "tag": "Curso",
+      "title": "You Don't Know JS Yet: la coleccion de libros gratuitos para entender JavaScript en profundidad",
+      "url": "https://github.com/getify/You-Dont-Know-JS",
+      "summary": "Escrita por Kyle Simpson y disponible integramente en GitHub, esta coleccion de libros gratuitos explica el funcionamiento interno de JavaScript (scope, closures, prototipos, tipos) en lugar de limitarse a su sintaxis superficial. Esta pensada para quien ya conoce lo basico del lenguaje y quiere entender de verdad por que se comporta como lo hace."
+    },
+    {
+      "tag": "Curso",
+      "title": "Baeldung: miles de tutoriales gratuitos de Java y su ecosistema",
+      "url": "https://www.baeldung.com/category/java",
+      "summary": "Baeldung ofrece una enorme coleccion gratuita de articulos y tutoriales de Java, desde la sintaxis basica hasta temas avanzados como Streams, concurrencia o Spring Boot, escritos por desarrolladores profesionales. Aunque el sitio tambien vende cursos y libros electronicos de pago, la inmensa mayoria de sus articulos tecnicos se leen gratis sin registrarse."
+    },
+    {
+      "tag": "Interactivo",
+      "title": "Mimo: aprende Python, JavaScript y SQL con lecciones gratuitas de cinco minutos al dia",
+      "url": "https://mimo.org",
+      "summary": "Mimo es una aplicacion que ensena a programar con lecciones cortas e interactivas en Python, JavaScript, HTML, CSS y SQL, pensadas para practicar solo cinco minutos al dia desde el movil. El contenido principal de cada ruta es gratuito, con un editor de codigo integrado y proyectos guiados, aunque tambien ofrece una suscripcion de pago opcional con contenido ampliado."
+    },
+    {
+      "tag": "Interactivo",
+      "title": "StrataScratch: practica SQL con preguntas reales de entrevistas de empresas de datos",
+      "url": "https://www.stratascratch.com",
+      "summary": "StrataScratch ofrece preguntas de SQL (y tambien de Python) basadas en entrevistas reales de empresas como Amazon, Meta o Spotify, con un editor integrado donde se puede ejecutar el codigo directamente en el navegador. Buena parte de sus preguntas, centradas en joins, funciones de ventana y subconsultas, se pueden resolver de forma gratuita creando una cuenta."
+    }
+  ]
+}
