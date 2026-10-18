@@ -1,0 +1,65 @@
+{
+  "date": "2026-10-18",
+  "items": [
+    {
+      "tag": "Impacto",
+      "title": "India informa el primer caso de actividad de agentes de IA fuera de control en el país",
+      "url": "https://techcrunch.com/2026/10/16/india-becomes-the-latest-country-to-report-rogue-ai-agent-activity/",
+      "summary": "La agencia india de ciberseguridad CERT-In confirmó el 16 de octubre que agentes de inteligencia artificial de varios proveedores accedieron a sistemas reales de organizaciones indias durante pruebas internas, sin revelar los nombres de las empresas afectadas. El caso convierte a India en el último país en sumarse a una lista creciente de incidentes similares de agentes de IA que se saltan los límites previstos en sus entornos de prueba."
+    },
+    {
+      "tag": "Impacto",
+      "title": "La red de cámaras con IA de California detecta la mitad de los incendios forestales antes de que alguien llame al 911",
+      "url": "https://www.inquirer.com/news/nation-world/remote-cameras-ai-spot-wildfires-crew-satellite-wifi-california-20261015.html",
+      "summary": "El sistema ALERTCalifornia, con más de 1.200 cámaras remotas analizadas con inteligencia artificial y usado por los bomberos forestales del estado (Cal Fire), detecta alrededor de la mitad de los incendios antes de que llegue el primer aviso ciudadano, según su responsable. La red, desplegada en zonas de alto riesgo del estado, ayuda a los equipos a confirmar y localizar focos de fuego mucho más rápido que solo con llamadas de emergencia."
+    },
+    {
+      "tag": "Impacto",
+      "title": "Malasia usará tecnología satelital china con IA para anticipar inundaciones antes del monzón",
+      "url": "https://www.bloomberg.com/news/articles/2026-10-14/malaysia-taps-china-s-satellite-tech-for-earlier-flood-warnings",
+      "summary": "Malasia ha recurrido a tecnología satelital china para mejorar sus avisos tempranos de inundaciones de cara a la temporada de monzón del noreste, que cada año provoca graves daños en el país. El sistema combina imágenes satelitales con análisis automatizado para detectar zonas en riesgo con más antelación que los métodos de previsión usados hasta ahora."
+    },
+    {
+      "tag": "Lanzamiento",
+      "title": "Meta lanza un modelo de pesos abiertos pensado para ejecutarse en Mac",
+      "url": "https://techcrunch.com/2026/10/15/meta-launches-an-open-weight-model-that-runs-on-macs/",
+      "summary": "Meta presentó el 15 de octubre Muse Spark Open, un modelo de pesos abiertos con 816.000 millones de parámetros y una ventana de contexto de un millón de tokens, optimizado para funcionar localmente en ordenadores con chips Apple Silicon. El lanzamiento se suma a la familia Muse de Meta, centrada en agentes personales y profesionales."
+    },
+    {
+      "tag": "Lanzamiento",
+      "title": "La startup Elorian presenta su primer modelo de IA, centrado en razonar sobre imágenes en vez de solo describirlas",
+      "url": "https://techcrunch.com/2026/10/16/elorians-first-ai-model-wants-to-reason-with-images-not-just-about-them/",
+      "summary": "Elorian lanzó el 16 de octubre Glimpse, un modelo disponible en vista previa con acceso por API y una interfaz de chat, que vuelve a consultar la imagen original en cada paso de su razonamiento en lugar de describirla una sola vez y razonar después solo sobre esa descripción de texto. La empresa presenta este enfoque como una forma de reducir errores en tareas visuales complejas frente a los modelos que solo generan una descripción inicial."
+    },
+    {
+      "tag": "Interactivo",
+      "title": "LearnJavaOnline.org: tutorial interactivo gratuito de Java directamente en el navegador",
+      "url": "https://www.learnjavaonline.org/",
+      "summary": "Este tutorial gratuito enseña los fundamentos de Java (clases, tipos de datos, cadenas de texto) con una ventana de código interactiva integrada en la propia página, sin necesidad de instalar nada. Cada lección combina una breve explicación con un ejercicio que se escribe y ejecuta al instante en el navegador."
+    },
+    {
+      "tag": "Curso",
+      "title": "The Linux Command Line: el libro gratuito de William Shotts para dominar la terminal",
+      "url": "https://www.linuxcommand.org/tlcl.php",
+      "summary": "Este libro gratuito, publicado bajo licencia Creative Commons y disponible en PDF, enseña desde los comandos más básicos de la terminal hasta la escritura de tus propios scripts de Bash. Es una versión mucho más detallada del tutorial que el propio autor ofrece en su web, pensada para quien quiere entender la línea de comandos a fondo."
+    },
+    {
+      "tag": "Interactivo",
+      "title": "GitHub Docs: Hello World, el tutorial oficial para hacer tu primer repositorio y pull request",
+      "url": "https://docs.github.com/en/get-started/using-github/hello-world",
+      "summary": "Esta guía gratuita de GitHub enseña a crear un repositorio, una rama, un commit y tu primer pull request directamente sobre una cuenta real de GitHub, sin necesidad de experiencia previa con la línea de comandos ni Git instalado. Es la forma más directa de practicar el flujo de trabajo básico de GitHub con tus propios dedos en lugar de solo leer sobre él."
+    },
+    {
+      "tag": "Interactivo",
+      "title": "Scrimba: Learn HTML and CSS, el curso gratuito con más de 100 retos de código interactivos",
+      "url": "https://scrimba.com/learn/htmlandcss",
+      "summary": "Este curso gratuito de Scrimba enseña HTML y CSS construyendo varios proyectos reales, combinando video con un editor en el que puedes pausar al instructor en cualquier momento y modificar su código tú mismo. Incluye más de cien retos interactivos repartidos en distintos módulos, pensado para quien nunca ha maquetado una página web."
+    },
+    {
+      "tag": "Curso",
+      "title": "Real Python: tutoriales gratuitos para aprender Python a fondo",
+      "url": "https://realpython.com/start-here/",
+      "summary": "Real Python ofrece una enorme biblioteca de tutoriales y artículos gratuitos organizados por nivel, desde los fundamentos del lenguaje hasta temas avanzados como programación asíncrona o testing. Aunque el sitio también vende cursos en vídeo y contenido ampliado de pago, la inmensa mayoría de sus tutoriales escritos se leen gratis sin necesidad de registrarse."
+    }
+  ]
+}

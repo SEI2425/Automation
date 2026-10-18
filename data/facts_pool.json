@@ -24,7 +24,8 @@
     "El modulo 'venv' para crear entornos virtuales se incorporo a la biblioteca estandar de Python en la version 3.3 (2012); antes de eso habia que instalar herramientas externas como virtualenv.",
     "El módulo 'pathlib', incorporado en Python 3.4 (2014), permite trabajar con rutas de archivos como objetos orientados a objetos en lugar de manipular cadenas de texto con os.path.",
     "La sentencia 'match', que anadio a Python el 'pattern matching' estructural similar al switch de otros lenguajes, no llego hasta la version 3.10, publicada en 2021, una de las incorporaciones mas debatidas de la historia reciente del lenguaje.",
-    "El operador '@' en Python, ademas de usarse para decoradores, se puede sobrecargar como el operador de multiplicacion de matrices mediante el metodo __matmul__, introducido en Python 3.5 (PEP 465)."
+    "El operador '@' en Python, ademas de usarse para decoradores, se puede sobrecargar como el operador de multiplicacion de matrices mediante el metodo __matmul__, introducido en Python 3.5 (PEP 465).",
+    "En Python 2, 'print' era una sentencia del propio lenguaje y no una funcion: escribir 'print \"hola\"' sin parentesis era valido, algo que cambio al convertirse en la funcion print() de Python 3."
   ],
   "javascript": [
     "A pesar del nombre, JavaScript no tiene relación técnica con Java: el nombre fue una decisión de marketing de Netscape para aprovechar la popularidad de Java en 1995.",
@@ -51,7 +52,8 @@
     "La palabra clave 'async' delante de una funcion hace que esta devuelva siempre una Promise, incluso si dentro no hay ningun 'await' ni se devuelve nada explicitamente.",
     "El método String.prototype.replaceAll(), que sustituye todas las coincidencias de un patrón sin necesidad de una expresión regular con el modificador global, se añadió a JavaScript en 2021 (ES2021).",
     "El modo estricto de JavaScript, activado escribiendo 'use strict' al principio de un archivo o funcion, se introdujo en ECMAScript 5 (2009) para prohibir practicas peligrosas del lenguaje, como crear variables globales por accidente al olvidar 'var'.",
-    "A pesar de su nombre, Number.isNaN() y el operador global isNaN() no siempre coinciden: isNaN() convierte primero su argumento a numero, por lo que isNaN('hola') da true, mientras que Number.isNaN('hola') da false porque no hace esa conversion."
+    "A pesar de su nombre, Number.isNaN() y el operador global isNaN() no siempre coinciden: isNaN() convierte primero su argumento a numero, por lo que isNaN('hola') da true, mientras que Number.isNaN('hola') da false porque no hace esa conversion.",
+    "SpiderMonkey, el primer motor de JavaScript, fue escrito por Brendan Eich para el navegador Netscape en 1995 y, tras varias reescrituras a lo largo de los años, sigue siendo el motor que usa Firefox hoy en dia."
   ],
   "typescript": [
     "TypeScript no reemplaza a JavaScript en ningún momento: todo programa TypeScript se compila (transpila) a JavaScript plano antes de ejecutarse en el navegador o en Node.",
@@ -78,7 +80,8 @@
     "TypeScript incorporo en su version 4.9 (2022) el operador 'satisfies', que valida que un valor cumple un tipo determinado sin cambiar el tipo mas especifico que el compilador ya habia inferido para ese valor.",
     "El modo 'isolatedModules' de TypeScript, pensado para compiladores que procesan archivos uno por uno (como Babel o esbuild), obliga a que cada archivo pueda transpilarse de forma independiente sin necesitar información de otros archivos.",
     "A diferencia de lenguajes como Java o C#, TypeScript usa tipado estructural: dos tipos se consideran compatibles si tienen la misma forma (las mismas propiedades), sin importar si se declararon con nombres distintos o sin ninguna relacion de herencia entre ellos.",
-    "TypeScript permite tipos recursivos, como un tipo JSON que se define a si mismo (type JSONValue = string | number | boolean | null | JSONValue[] | {[key: string]: JSONValue}), algo que no era posible en las primeras versiones del lenguaje."
+    "TypeScript permite tipos recursivos, como un tipo JSON que se define a si mismo (type JSONValue = string | number | boolean | null | JSONValue[] | {[key: string]: JSONValue}), algo que no era posible en las primeras versiones del lenguaje.",
+    "TypeScript no permite sobrecargar operadores como '+' o '==' para tipos personalizados, igual que JavaScript: es una decision deliberada para mantener el comportamiento de los operadores predecible en todo el lenguaje."
   ],
   "java": [
     "La mascota de Java, Duke, fue diseñada en 1992 para un proyecto anterior llamado Oak, antes incluso de que existiera el lenguaje Java tal como lo conocemos.",
@@ -105,7 +108,8 @@
     "El 'record', convertido en funcion estable en Java 16 (2021), genera automaticamente constructor, getters, equals, hashCode y toString para clases inmutables de solo datos, de forma parecida a las data class de Kotlin.",
     "El método String.format(), inspirado en printf de C, permite construir cadenas de texto con marcadores de posición como %s o %d, y está disponible en Java desde la versión 5 (2004).",
     "El eslogan 'write once, run anywhere' (escribelo una vez, ejecutalo en cualquier lugar) resume la promesa original de Java: un mismo archivo .class compilado puede ejecutarse sin cambios en cualquier sistema operativo que tenga instalada una maquina virtual de Java compatible.",
-    "El metodo hashCode() por defecto de la clase Object en Java no garantiza devolver la posicion en memoria del objeto, aunque muchas implementaciones de la JVM lo deriven de ella; la unica garantia real es que dos llamadas sobre el mismo objeto sin modificar devuelvan el mismo valor durante la ejecucion del programa."
+    "El metodo hashCode() por defecto de la clase Object en Java no garantiza devolver la posicion en memoria del objeto, aunque muchas implementaciones de la JVM lo deriven de ella; la unica garantia real es que dos llamadas sobre el mismo objeto sin modificar devuelvan el mismo valor durante la ejecucion del programa.",
+    "Java no permite la herencia multiple entre clases (una clase solo puede extender a otra), precisamente para evitar el problema del diamante que si puede darse en lenguajes como C++; en su lugar, una clase puede implementar varias interfaces a la vez."
   ],
   "kotlin": [
     "Kotlin es interoperable al 100% con Java: se puede llamar código Java desde Kotlin y código Kotlin desde Java dentro del mismo proyecto sin conversión manual.",
@@ -132,7 +136,8 @@
     "Las 'sealed classes' de Kotlin restringen que clases pueden heredar de una clase base, lo que permite al compilador comprobar de forma exhaustiva todas las ramas posibles dentro de una expresion 'when'.",
     "Kotlin permite declarar propiedades calculadas (sin campo de respaldo) usando getters personalizados, como 'val areaCuadrado: Int get() = lado * lado', que se recalculan cada vez que se accede a ellas en lugar de guardar un valor fijo.",
     "Android Studio, el entorno oficial de desarrollo para Android, incluyo soporte integrado para Kotlin desde su version 3.0, lanzada en 2017, dos anos antes de que Google lo convirtiera en su lenguaje preferido para la plataforma.",
-    "La funcion de extension sumOf() de Kotlin, que combina map y sum en una sola llamada, se anadio a la biblioteca estandar en Kotlin 1.4 (2020) para evitar crear una lista intermedia innecesaria."
+    "La funcion de extension sumOf() de Kotlin, que combina map y sum en una sola llamada, se anadio a la biblioteca estandar en Kotlin 1.4 (2020) para evitar crear una lista intermedia innecesaria.",
+    "En Kotlin, una clase anidada no guarda por defecto ninguna referencia a la clase que la contiene, a diferencia de las clases internas de Java; solo la retiene si se marca explicitamente con la palabra clave 'inner'."
   ],
   "sql": [
     "El estándar SQL lo mantiene ISO, pero en la práctica cada motor (PostgreSQL, MySQL, SQL Server...) añade extensiones propias, por lo que el SQL 100% portable entre motores es más raro de lo que parece.",
@@ -159,7 +164,8 @@
     "El comando EXPLAIN ANALYZE de PostgreSQL no se limita a mostrar el plan de ejecucion previsto: ejecuta realmente la consulta y mide los tiempos reales de cada paso del plan.",
     "El operador EXCEPT (o MINUS en Oracle) devuelve las filas de la primera consulta que no aparecen en los resultados de la segunda, lo contrario de INTERSECT.",
     "El acronimo ACID (atomicidad, consistencia, aislamiento y durabilidad), que describe las garantias que debe cumplir una transaccion fiable en una base de datos relacional, fue propuesto por los informaticos Andreas Reuter y Theo Harder en 1983.",
-    "La funcion COALESCE(), parte del estandar SQL desde 1992, es en realidad una forma mas general y portable de la funcion CASE, ya que internamente se expande a una serie de comprobaciones CASE WHEN valor IS NOT NULL."
+    "La funcion COALESCE(), parte del estandar SQL desde 1992, es en realidad una forma mas general y portable de la funcion CASE, ya que internamente se expande a una serie de comprobaciones CASE WHEN valor IS NOT NULL.",
+    "MariaDB nacio en 2009 como una bifurcacion (fork) de MySQL creada por su fundador original, Michael Widenius, poco despues de que Oracle comprara Sun Microsystems, y mantiene compatibilidad casi total con la sintaxis SQL de MySQL."
   ],
   "git": [
     "Git guarda cada versión de un archivo completo (no solo las diferencias) internamente, pero los comprime y deduplica para que el repositorio no crezca tanto como parecería.",
@@ -186,7 +192,8 @@
     "El comando 'git reflog' registra temporalmente todos los movimientos de HEAD, incluidos los commits descartados por un reset o un rebase, lo que permite recuperarlos durante un tiempo aunque ya no aparezcan en 'git log'.",
     "El comando 'git gc' (garbage collection) compacta y limpia periódicamente el repositorio, eliminando objetos sueltos ya innecesarios y empaquetándolos en archivos .pack, y Git lo ejecuta automáticamente de forma periódica sin que el usuario tenga que invocarlo a mano.",
     "Las primeras versiones de Git, escritas por Linus Torvalds en 2005, combinaban codigo en C con un buen numero de scripts de shell y Perl; no fue hasta anos despues que buena parte de esas herramientas se reescribieron en C por motivos de rendimiento.",
-    "El comando 'git diff --stat' muestra junto a cada archivo modificado una pequena barra hecha de simbolos '+' y '-' que representa, a escala, la proporcion de lineas anadidas y eliminadas en ese archivo."
+    "El comando 'git diff --stat' muestra junto a cada archivo modificado una pequena barra hecha de simbolos '+' y '-' que representa, a escala, la proporcion de lineas anadidas y eliminadas en ese archivo.",
+    "Los 'hooks' de Git, scripts que se ejecutan automaticamente antes o despues de ciertas acciones como un commit, viven en la carpeta .git/hooks y llegan desactivados por defecto, con la extension .sample en el nombre del archivo."
   ],
   "htmlcss": [
     "El primer sitio web de la historia, publicado por Tim Berners-Lee en 1991, seguía online y accesible en su URL original décadas después, solo con HTML básico y sin una sola línea de CSS.",
@@ -213,7 +220,8 @@
     "La propiedad CSS 'aspect-ratio', soportada ampliamente desde 2021, permite fijar la proporcion entre ancho y alto de un elemento sin recurrir al viejo truco de simular esa proporcion con 'padding-top' en porcentaje.",
     "El atributo HTML 'popover', soportado de forma nativa por los navegadores desde 2023-2024, permite crear ventanas emergentes y menús desplegables sin escribir JavaScript, usando solo HTML y unos pocos atributos.",
     "La etiqueta HTML <details>, que crea un desplegable nativo con una flecha y contenido oculto sin necesidad de JavaScript, existe desde HTML5 pero no obtuvo soporte uniforme en todos los navegadores de escritorio hasta bastantes anos despues de su especificacion inicial.",
-    "La propiedad CSS 'object-fit', que controla como se ajusta una imagen o un video dentro de su contenedor sin deformarlo, se basa en el mismo concepto que 'background-size: cover', pero aplicado a elementos reemplazados como <img> o <video> en lugar de a fondos."
+    "La propiedad CSS 'object-fit', que controla como se ajusta una imagen o un video dentro de su contenedor sin deformarlo, se basa en el mismo concepto que 'background-size: cover', pero aplicado a elementos reemplazados como <img> o <video> en lugar de a fondos.",
+    "La propiedad CSS 'gap', que define el espacio entre elementos, llego primero a CSS Grid y tardo varios años mas en extenderse tambien a Flexbox en los navegadores principales, por lo que durante un tiempo solo funcionaba en disenos de cuadricula."
   ],
   "bash": [
     "Bash significa 'Bourne Again SHell', un juego de palabras porque es una reimplementación mejorada de la shell 'sh' original de Stephen Bourne de 1977.",
@@ -240,7 +248,8 @@
     "El built-in 'local' en Bash declara una variable que solo existe dentro de la funcion donde se define, evitando que modifique por accidente una variable global que tenga el mismo nombre.",
     "El operador de sustitución de comandos con comillas invertidas (`comando`), la forma original de ejecutar un comando y capturar su salida en Bash, fue reemplazado en la práctica por la sintaxis $(comando), más legible y que permite anidar comandos sin escapar caracteres.",
     "La opcion 'set -x' al principio de un script de Bash activa un modo de depuracion que imprime cada comando justo antes de ejecutarlo, precedido normalmente por un signo '+', lo que ayuda a ver exactamente que esta haciendo el script paso a paso.",
-    "El operador && de Bash no es una simple conjuncion logica: en una cadena 'a && b || c', si a falla, Bash ejecuta c, pero si a tiene exito y b falla, Bash tambien ejecuta c, porque lo unico que realmente comprueba el || final es si el comando inmediatamente anterior (b) tuvo exito."
+    "El operador && de Bash no es una simple conjuncion logica: en una cadena 'a && b || c', si a falla, Bash ejecuta c, pero si a tiene exito y b falla, Bash tambien ejecuta c, porque lo unico que realmente comprueba el || final es si el comando inmediatamente anterior (b) tuvo exito.",
+    "El comando 'cut', usado para extraer columnas de texto segun un delimitador o una posicion, forma parte de las herramientas estandar de Unix desde sus primeras versiones y su sintaxis apenas ha cambiado en decadas."
   ],
   "ia": [
     "El término 'inteligencia artificial' se acuñó en 1956 en la conferencia de Dartmouth, más de medio siglo antes de que la mayoría de las técnicas actuales de deep learning fueran siquiera viables computacionalmente.",
@@ -267,6 +276,7 @@
     "El mecanismo de 'atencion' (attention), presentado en el articulo 'Attention Is All You Need' de 2017, permite a un modelo ponderar que partes de la entrada son mas relevantes para cada palabra que genera, y es la base de la arquitectura Transformer.",
     "El concepto de 'escalado' (scaling laws), que describe cómo el rendimiento de un modelo de lenguaje mejora de forma predecible al aumentar su tamaño, los datos de entrenamiento y el cómputo usado, se formalizó en un influyente artículo de OpenAI publicado en 2020.",
     "La tecnica word2vec, publicada por un equipo de Google en 2013, fue una de las primeras en demostrar que representar palabras como vectores numericos permitia hacer operaciones aritmeticas con significado, como que 'rey' menos 'hombre' mas 'mujer' se acercara al vector de 'reina'.",
-    "El termino 'tokens', la unidad en la que los modelos de lenguaje miden y cobran el texto, no equivale exactamente a palabras: una palabra larga o poco comun puede dividirse en varios tokens, mientras que varias palabras cortas y frecuentes pueden caber en un solo token."
+    "El termino 'tokens', la unidad en la que los modelos de lenguaje miden y cobran el texto, no equivale exactamente a palabras: una palabra larga o poco comun puede dividirse en varios tokens, mientras que varias palabras cortas y frecuentes pueden caber en un solo token.",
+    "El resurgir del aprendizaje profundo moderno suele situarse en 2006, cuando Geoffrey Hinton popularizo un metodo de preentrenamiento para las llamadas 'redes de creencia profunda', ayudando a revivir el interes por las redes neuronales tras decadas de relativo abandono conocidas como el 'invierno de la IA'."
   ]
 }

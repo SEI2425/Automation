@@ -274,6 +274,17 @@
       ],
       "correct": 0,
       "explanation": "El parametro start de enumerate() cambia el numero inicial del contador; con start=1, el primer par comienza en 1 en lugar de en 0 por defecto."
+    },
+    {
+      "q": "¿Qué hace la palabra clave 'global' dentro de una función en Python?",
+      "opts": [
+        "Permite modificar una variable del ámbito global desde dentro de la función",
+        "Crea una variable que solo existe en esa función",
+        "Convierte la función en estática",
+        "Solo funciona dentro de clases"
+      ],
+      "correct": 0,
+      "explanation": "'global' declara que el nombre referenciado dentro de la función pertenece al ámbito global del módulo, permitiendo reasignarlo en lugar de crear automáticamente una variable local nueva con ese mismo nombre."
     }
   ],
   "javascript": [
@@ -551,6 +562,17 @@
       ],
       "correct": 0,
       "explanation": "Aunque NaN significa 'Not a Number', su tipo en JavaScript sigue siendo 'number', ya que es un valor especial dentro del propio tipo numerico de punto flotante."
+    },
+    {
+      "q": "¿Qué devuelve `JSON.stringify({ a: undefined, b: 1 })`?",
+      "opts": [
+        "'{\"b\":1}'",
+        "'{\"a\":undefined,\"b\":1}'",
+        "'{}'",
+        "Error"
+      ],
+      "correct": 0,
+      "explanation": "JSON.stringify() omite por completo las propiedades cuyo valor es undefined al serializar un objeto, por lo que 'a' desaparece del resultado y solo queda 'b'."
     }
   ],
   "typescript": [
@@ -828,6 +850,17 @@
       ],
       "correct": 0,
       "explanation": "Al indicar explicitamente identidad<string>, TypeScript exige que el argumento sea de tipo string; pasar el numero 42 produce un error de compilacion porque no coincide con el tipo generico especificado."
+    },
+    {
+      "q": "¿Qué permite declarar `type Par = [string, number?];` en TypeScript?",
+      "opts": [
+        "Una tupla donde el segundo elemento (number) es opcional",
+        "Un array de longitud variable de strings",
+        "Una función con un parámetro opcional",
+        "Error de sintaxis: las tuplas no admiten elementos opcionales"
+      ],
+      "correct": 0,
+      "explanation": "Añadir '?' a un elemento de una tupla en TypeScript lo marca como opcional, lo que permite que la tupla tenga esa posición presente o ausente dentro de un rango de longitudes válido."
     }
   ],
   "java": [
@@ -1105,6 +1138,17 @@
       ],
       "correct": 0,
       "explanation": "Java cachea automaticamente los objetos Integer entre -128 y 127 (Integer Cache), asi que a y b apuntan al mismo objeto y == da true; 200 queda fuera de ese rango, por lo que c y d son objetos distintos y == da false."
+    },
+    {
+      "q": "¿Qué hace `this(...)` como primera línea de un constructor en Java?",
+      "opts": [
+        "Llama a otro constructor sobrecargado de la misma clase",
+        "Llama al constructor de la clase padre",
+        "Crea una nueva instancia de la clase",
+        "Declara un método estático"
+      ],
+      "correct": 0,
+      "explanation": "'this(...)' invoca a otro constructor de la misma clase para reutilizar su lógica de inicialización, evitando repetir código; debe ser la primera instrucción del constructor si se usa."
     }
   ],
   "kotlin": [
@@ -1382,6 +1426,17 @@
       ],
       "correct": 0,
       "explanation": "sumOf aplica la lambda a cada elemento (elevandolo al cuadrado: 1, 4, 9) y suma directamente los resultados, dando 1+4+9 = 14, sin necesitar un map() seguido de sum()."
+    },
+    {
+      "q": "¿Qué hace el operador Elvis (?:) en Kotlin, como en `val nombre = entrada ?: \"Invitado\"`?",
+      "opts": [
+        "Devuelve el valor de la izquierda si no es null, o el de la derecha si lo es",
+        "Compara si ambos valores son iguales",
+        "Declara una variable nullable",
+        "Convierte el valor en texto"
+      ],
+      "correct": 0,
+      "explanation": "El operador Elvis evalúa el operando izquierdo; si no es null, lo devuelve tal cual, y solo recurre al operando derecho como valor por defecto cuando el izquierdo es null."
     }
   ],
   "sql": [
@@ -1659,6 +1714,17 @@
       ],
       "correct": 0,
       "explanation": "COALESCE() devuelve el primer valor no nulo de la lista que se le pasa, de izquierda a derecha; aqui prueba primero el apodo, luego el nombre, y por ultimo usa el texto fijo si ambos son NULL."
+    },
+    {
+      "q": "¿Qué hace una CROSS JOIN entre una tabla A de 3 filas y una tabla B de 4 filas?",
+      "opts": [
+        "Devuelve el producto cartesiano: 12 filas, combinando cada fila de A con cada fila de B",
+        "Devuelve solo las filas que coinciden en ambas tablas",
+        "Devuelve únicamente las 3 filas de la tabla A",
+        "Da un error porque falta una condición ON"
+      ],
+      "correct": 0,
+      "explanation": "CROSS JOIN combina cada fila de una tabla con cada fila de la otra sin ninguna condición de coincidencia, por lo que el resultado tiene tantas filas como el producto del número de filas de ambas tablas: 3 × 4 = 12."
     }
   ],
   "git": [
@@ -1936,6 +2002,17 @@
       ],
       "correct": 0,
       "explanation": "git diff --stat muestra un resumen compacto (archivo, lineas anadidas y borradas) en lugar del diff completo linea por linea; HEAD~3 HEAD compara el estado de hace 3 commits con el estado actual."
+    },
+    {
+      "q": "¿Qué hace el comando `git clean -fd`?",
+      "opts": [
+        "Elimina del directorio de trabajo los archivos y carpetas no rastreados por Git",
+        "Elimina los commits no fusionados",
+        "Limpia el historial de commits antiguos",
+        "Elimina las ramas remotas obsoletas"
+      ],
+      "correct": 0,
+      "explanation": "git clean -fd borra de forma forzada (-f) los archivos sueltos y las carpetas (-d) que no están siendo rastreados por Git, útil para dejar el directorio de trabajo exactamente como lo describe el repositorio. Conviene ejecutar antes 'git clean -n' para ver qué se borraría sin hacerlo todavía."
     }
   ],
   "htmlcss": [
@@ -2213,6 +2290,17 @@
       ],
       "correct": 0,
       "explanation": "object-fit: cover escala la imagen manteniendo su relacion de aspecto y recorta el sobrante para cubrir todo el contenedor, a diferencia de 'fill' (el valor por defecto), que la deforma, o 'contain', que la reduce entera sin recortar."
+    },
+    {
+      "q": "¿Qué diferencia hay entre las propiedades CSS 'border' y 'outline'?",
+      "opts": [
+        "outline no ocupa espacio en el layout (no afecta al tamaño ni posición de los elementos vecinos), a diferencia de border",
+        "Son exactamente lo mismo, solo con nombres distintos",
+        "outline solo funciona en botones y enlaces",
+        "border no se puede quitar, outline sí"
+      ],
+      "correct": 0,
+      "explanation": "outline se dibuja fuera del elemento sin reservar espacio en el modelo de caja, por lo que no desplaza a los elementos vecinos ni cambia el tamaño total, mientras que border sí forma parte de la caja (salvo con box-sizing: border-box); por eso quitar el outline de foco por defecto sin sustituirlo por otra señal visual es un problema de accesibilidad frecuente."
     }
   ],
   "bash": [
@@ -2490,6 +2578,17 @@
       ],
       "correct": 0,
       "explanation": "&& ejecuta el siguiente comando solo si el anterior terminó con exito (codigo de salida 0), y || ejecuta el suyo solo si lo anterior fallo; combinados asi, command3 actua como un 'else' que se dispara si command1 falla."
+    },
+    {
+      "q": "¿Qué hace esta estructura 'case' en un script de Bash?\ncase \"$1\" in\n  start) echo \"Iniciando\";;\n  stop) echo \"Deteniendo\";;\n  *) echo \"Opción desconocida\";;\nesac",
+      "opts": [
+        "Compara el valor de $1 contra varios patrones y ejecuta el bloque del primero que coincida",
+        "Repite el bloque hasta que $1 cambie de valor",
+        "Declara una función llamada case",
+        "Ejecuta los tres bloques siempre, uno tras otro"
+      ],
+      "correct": 0,
+      "explanation": "case compara el valor de la variable contra una lista de patrones, separados por ')', y ejecuta solo el bloque del primer patrón que coincide; '*' actúa como un 'por defecto' que coincide con cualquier valor no capturado antes."
     }
   ],
   "ia": [

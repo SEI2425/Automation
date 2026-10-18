@@ -1,0 +1,87 @@
+{
+  "date": "2026-10-18",
+  "questions": [
+    {
+      "type": "identify",
+      "lang": "Python",
+      "question": "¿Qué imprime este código?",
+      "code": "a = {1, 2, 3}\nb = {2, 3, 4}\nprint(a & b)",
+      "options": ["{2, 3}", "{1, 2, 3, 4}", "{1, 4}", "Error"],
+      "correct": 0,
+      "hint": "El operador & entre dos sets devuelve su intersección, los elementos que están en ambos.",
+      "explanation": "a & b calcula la intersección de los dos conjuntos, es decir los elementos presentes en a y en b a la vez: 2 y 3."
+    },
+    {
+      "type": "complete",
+      "lang": "JavaScript",
+      "question": "¿Qué método falta para recorrer las claves y los valores del objeto a la vez?",
+      "code": "const user = { name: \"Ana\", age: 30 };\nfor (const [key, value] of Object.____(user)) {\n  console.log(key, value);\n}",
+      "options": ["entries", "keys", "values", "assign"],
+      "correct": 0,
+      "hint": "Necesitas un método que devuelva pares [clave, valor] que se puedan desestructurar directamente.",
+      "explanation": "Object.entries() devuelve un array de pares [clave, valor] para cada propiedad del objeto, lo que permite desestructurarlos directamente en el bucle for...of."
+    },
+    {
+      "type": "identify",
+      "lang": "TypeScript",
+      "question": "¿Qué imprime este código?",
+      "code": "function clamp(value: number, min: number, max: number): number {\n  return Math.min(Math.max(value, min), max);\n}\nconsole.log(clamp(15, 0, 10));",
+      "options": ["10", "15", "0", "Error de compilación"],
+      "correct": 0,
+      "hint": "Primero se calcula el mayor entre value y min, y después el menor entre ese resultado y max.",
+      "explanation": "Math.max(15, 0) da 15, y Math.min(15, 10) da 10; la función 'recorta' el valor para que nunca supere max, aunque el valor original (15) fuera mayor."
+    },
+    {
+      "type": "complete",
+      "lang": "Java",
+      "question": "¿Qué método falta para unir los nombres de la lista en un solo texto separado por comas?",
+      "code": "List<String> names = new ArrayList<>();\nnames.add(\"Ana\");\nnames.add(\"Leo\");\nString joined = String.____(\", \", names);\nSystem.out.println(joined);",
+      "options": ["join", "concat", "format", "valueOf"],
+      "correct": 0,
+      "hint": "Es un método estático de String pensado para unir los elementos de una lista con un separador.",
+      "explanation": "String.join(separador, iterable) concatena todos los elementos de la lista en un único texto, colocando el separador indicado entre cada uno: 'Ana, Leo'."
+    },
+    {
+      "type": "identify",
+      "lang": "SQL",
+      "question": "¿Qué devuelve esta consulta?",
+      "code": "SELECT COUNT(DISTINCT department) FROM employees;",
+      "options": ["El número de departamentos distintos que tienen al menos un empleado", "El número total de empleados", "El nombre de cada departamento", "El departamento con más empleados"],
+      "correct": 0,
+      "hint": "DISTINCT elimina los valores repetidos antes de que COUNT los cuente.",
+      "explanation": "COUNT(DISTINCT department) cuenta cuántos valores únicos de department aparecen en la tabla, es decir, cuántos departamentos distintos tienen al menos un empleado."
+    }
+  ],
+  "tips": [
+    {
+      "text": "Guarda las fechas en tus datos con el formato ISO 8601 (AAAA-MM-DD), no con formatos regionales ambiguos como DD/MM/AAAA.",
+      "explanation": "Un formato como 01/04/2026 puede leerse como 1 de abril o como 4 de enero según el país, y ese tipo de ambigüedad genera errores silenciosos difíciles de detectar cuando compartes datos entre sistemas o personas de distintas regiones. El formato ISO 8601 ordena siempre de mayor a menor (año, mes, día), lo que además permite ordenar fechas como si fueran texto sin necesidad de convertirlas antes.",
+      "link": "https://en.wikipedia.org/wiki/ISO_8601",
+      "linkLabel": "Wikipedia: el estándar ISO 8601"
+    },
+    {
+      "text": "No mezcles tabulaciones y espacios al indentar código Python: usa siempre uno de los dos.",
+      "explanation": "Python usa la indentación para definir los bloques de código, y si un archivo mezcla tabulaciones con espacios de forma inconsistente, el intérprete puede lanzar un TabError o, peor aún, interpretar el bloque de forma distinta a como se ve en tu editor. La mayoría de editores modernos permiten configurar que la tecla Tab inserte siempre espacios para evitar este problema desde el principio.",
+      "link": "https://docs.python.org/3/reference/lexical_analysis.html#indentation",
+      "linkLabel": "Documentación oficial de Python: indentación"
+    },
+    {
+      "text": "En SQL, si solo necesitas saber si existen filas que cumplen una condición, usa EXISTS en lugar de contar todas con COUNT(*).",
+      "explanation": "COUNT(*) obliga a la base de datos a recorrer y contar todas las filas que cumplen la condición antes de poder comparar ese número, aunque a ti solo te interese saber si hay alguna; EXISTS puede detenerse en cuanto encuentra la primera coincidencia, lo que suele ser mucho más rápido en tablas grandes.",
+      "link": "https://www.postgresql.org/docs/current/functions-subquery.html",
+      "linkLabel": "Documentación de PostgreSQL: subconsultas con EXISTS"
+    },
+    {
+      "text": "Si usas npm, instala las herramientas que solo necesitas durante el desarrollo con --save-dev, no junto a las dependencias de producción.",
+      "explanation": "Herramientas como un framework de tests o un linter no hacen falta para que tu aplicación funcione una vez desplegada, solo mientras la desarrollas; separarlas en 'devDependencies' deja claro qué necesita realmente el proyecto en producción y permite instalar solo esas dependencias en un servidor, ahorrando espacio y tiempo.",
+      "link": "https://docs.npmjs.com/cli/v10/commands/npm-install",
+      "linkLabel": "npm Docs: npm install y --save-dev"
+    },
+    {
+      "text": "No captures excepciones genéricas como 'except Exception' sin registrar o relanzar el error.",
+      "explanation": "Atrapar cualquier tipo de error sin anotar qué pasó esconde bugs graves detrás de un fallo que parece controlado, porque el programa sigue funcionando como si nada hubiera ocurrido. Como mínimo, registra el error con un log antes de decidir si el programa puede continuar con seguridad o debe detenerse.",
+      "link": "https://docs.python.org/3/tutorial/errors.html#handling-exceptions",
+      "linkLabel": "Documentación oficial de Python: manejo de excepciones"
+    }
+  ]
+}

@@ -1,1 +1,1 @@
-Nueva ronda de PilaPila News: la imagen de arriba resume lo mas destacado de hoy. Para ver las 10 noticias completas, los tips explicados y las preguntas de codigo, entra en la web: [Abrir PilaPila News](<https://sei2425.github.io/Automation/>)
+Mira la imagen de arriba para las noticias y el tip de hoy. En la web está todo completo: recursos gratis para programar, retos de código y tests nuevos por lenguaje. [Abrir PilaPila News](<https://sei2425.github.io/Automation/>)
