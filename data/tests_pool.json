@@ -285,6 +285,17 @@
       ],
       "correct": 0,
       "explanation": "'global' declara que el nombre referenciado dentro de la función pertenece al ámbito global del módulo, permitiendo reasignarlo en lugar de crear automáticamente una variable local nueva con ese mismo nombre."
+    },
+    {
+      "q": "¿Qué hace el método `str.zfill(5)` aplicado a un texto como `'42'.zfill(5)`?",
+      "opts": [
+        "Rellena el texto con ceros a la izquierda hasta alcanzar la longitud indicada",
+        "Corta el texto a 5 caracteres como máximo",
+        "Convierte el texto en mayúsculas",
+        "Cuenta cuántos ceros hay en el texto"
+      ],
+      "correct": 0,
+      "explanation": "zfill(n) añade ceros ('0') al principio del texto hasta que su longitud total llega a n; aquí '42' pasa a ser '00042', pensado originalmente para formatear números con ceros a la izquierda."
     }
   ],
   "javascript": [
@@ -573,6 +584,17 @@
       ],
       "correct": 0,
       "explanation": "JSON.stringify() omite por completo las propiedades cuyo valor es undefined al serializar un objeto, por lo que 'a' desaparece del resultado y solo queda 'b'."
+    },
+    {
+      "q": "¿Qué devuelve `Array.isArray('hola')`?",
+      "opts": [
+        "false",
+        "true",
+        "'string'",
+        "Error"
+      ],
+      "correct": 0,
+      "explanation": "Array.isArray() comprueba si el valor es específicamente un objeto array; una cadena de texto no lo es, aunque también tenga una propiedad length y se pueda recorrer carácter a carácter."
     }
   ],
   "typescript": [
@@ -861,6 +883,17 @@
       ],
       "correct": 0,
       "explanation": "Añadir '?' a un elemento de una tupla en TypeScript lo marca como opcional, lo que permite que la tupla tenga esa posición presente o ausente dentro de un rango de longitudes válido."
+    },
+    {
+      "q": "¿Qué hace `obj.metodo?.()` en TypeScript cuando la propiedad 'metodo' no existe en obj?",
+      "opts": [
+        "Devuelve undefined sin lanzar ningún error, en vez de intentar llamar a algo que no existe",
+        "Lanza un error de compilación si metodo no existe",
+        "Convierte automáticamente metodo en una función vacía",
+        "Solo funciona si obj completo es null"
+      ],
+      "correct": 0,
+      "explanation": "El encadenamiento opcional también funciona sobre llamadas a función: si 'metodo' es null o undefined, la expresión se corta ahí mismo y devuelve undefined, en lugar de lanzar un TypeError al intentar invocar algo que no existe."
     }
   ],
   "java": [
@@ -1149,6 +1182,17 @@
       ],
       "correct": 0,
       "explanation": "'this(...)' invoca a otro constructor de la misma clase para reutilizar su lógica de inicialización, evitando repetir código; debe ser la primera instrucción del constructor si se usa."
+    },
+    {
+      "q": "¿Qué permite declarar `interface Volador { void volar(); }` seguido de `class Pajaro implements Volador, Comparable<Pajaro>`?",
+      "opts": [
+        "Que una clase implemente varias interfaces a la vez, algo que Java no permite con la herencia entre clases",
+        "Que Pajaro herede de dos clases distintas al mismo tiempo",
+        "Que Volador y Comparable se fusionen en un solo tipo nuevo",
+        "Nada: Java no permite implementar más de una interfaz por clase"
+      ],
+      "correct": 0,
+      "explanation": "Java prohíbe que una clase herede de más de una clase (para evitar el problema del diamante), pero sí permite que una misma clase implemente cuantas interfaces necesite, como aquí Volador y Comparable a la vez."
     }
   ],
   "kotlin": [
@@ -1437,6 +1481,17 @@
       ],
       "correct": 0,
       "explanation": "El operador Elvis evalúa el operando izquierdo; si no es null, lo devuelve tal cual, y solo recurre al operando derecho como valor por defecto cuando el izquierdo es null."
+    },
+    {
+      "q": "¿Qué permite declarar `operator fun plus(otro: Punto): Punto { ... }` dentro de una clase Kotlin llamada Punto?",
+      "opts": [
+        "Sobrecargar el operador + para que funcione entre dos instancias de Punto, como en 'punto1 + punto2'",
+        "Declarar un método estático llamado plus",
+        "Sumar automáticamente todas las propiedades numéricas de la clase sin más código",
+        "Crear una función de extensión exclusiva para valores Int"
+      ],
+      "correct": 0,
+      "explanation": "Kotlin permite sobrecargar operadores como + implementando una función con el nombre especial reconocido por el compilador ('plus'); así, escribir 'punto1 + punto2' llama internamente a ese método definido en la clase."
     }
   ],
   "sql": [
@@ -1725,6 +1780,17 @@
       ],
       "correct": 0,
       "explanation": "CROSS JOIN combina cada fila de una tabla con cada fila de la otra sin ninguna condición de coincidencia, por lo que el resultado tiene tantas filas como el producto del número de filas de ambas tablas: 3 × 4 = 12."
+    },
+    {
+      "q": "¿Qué hace la combinación `OFFSET 10 LIMIT 5` al final de una consulta SQL?",
+      "opts": [
+        "Salta los primeros 10 resultados y devuelve los siguientes 5, algo habitual para paginar resultados",
+        "Limita la consulta a solo 10 filas, ignorando el 5",
+        "Ordena los resultados empezando por el décimo valor más alto",
+        "Elimina de forma permanente las primeras 10 filas de la tabla"
+      ],
+      "correct": 0,
+      "explanation": "OFFSET indica cuántas filas saltar antes de empezar a devolver resultados, y LIMIT fija cuántas filas devolver a partir de ahí; combinados son la forma clásica de implementar la paginación de resultados en SQL."
     }
   ],
   "git": [
@@ -2013,6 +2079,17 @@
       ],
       "correct": 0,
       "explanation": "git clean -fd borra de forma forzada (-f) los archivos sueltos y las carpetas (-d) que no están siendo rastreados por Git, útil para dejar el directorio de trabajo exactamente como lo describe el repositorio. Conviene ejecutar antes 'git clean -n' para ver qué se borraría sin hacerlo todavía."
+    },
+    {
+      "q": "¿Qué hace el comando `git log --since=\"2 weeks ago\"`?",
+      "opts": [
+        "Muestra solo los commits realizados en las últimas dos semanas",
+        "Elimina del historial los commits de hace más de dos semanas",
+        "Crea una rama nueva con los commits de las últimas dos semanas",
+        "Cuenta cuántos commits tiene el repositorio en total"
+      ],
+      "correct": 0,
+      "explanation": "La opción --since filtra lo que muestra git log para incluir solo los commits posteriores a la fecha o expresión relativa indicada, sin modificar en ningún momento el contenido real del repositorio."
     }
   ],
   "htmlcss": [
@@ -2301,6 +2378,17 @@
       ],
       "correct": 0,
       "explanation": "outline se dibuja fuera del elemento sin reservar espacio en el modelo de caja, por lo que no desplaza a los elementos vecinos ni cambia el tamaño total, mientras que border sí forma parte de la caja (salvo con box-sizing: border-box); por eso quitar el outline de foco por defecto sin sustituirlo por otra señal visual es un problema de accesibilidad frecuente."
+    },
+    {
+      "q": "¿Qué hace la propiedad CSS `scroll-behavior: smooth` aplicada al elemento `html`?",
+      "opts": [
+        "Hace que los saltos de desplazamiento provocados por un enlace a un ancla o por JavaScript se animen de forma suave en lugar de ocurrir de golpe",
+        "Activa el scroll infinito de la página automáticamente",
+        "Oculta por completo las barras de desplazamiento del navegador",
+        "Solo afecta al desplazamiento en sentido horizontal"
+      ],
+      "correct": 0,
+      "explanation": "scroll-behavior: smooth hace que cualquier salto de desplazamiento, como el que provoca un enlace a '#seccion' o una llamada a scrollIntoView() desde JavaScript, se anime de forma gradual en vez de saltar instantáneamente a la posición final."
     }
   ],
   "bash": [
@@ -2589,6 +2677,17 @@
       ],
       "correct": 0,
       "explanation": "case compara el valor de la variable contra una lista de patrones, separados por ')', y ejecuta solo el bloque del primer patrón que coincide; '*' actúa como un 'por defecto' que coincide con cualquier valor no capturado antes."
+    },
+    {
+      "q": "¿Qué devuelve `${#variable}` en Bash si `variable=\"hola\"`?",
+      "opts": [
+        "4, la longitud de la cadena guardada en la variable",
+        "El último carácter de la variable",
+        "El tipo de dato de la variable",
+        "Un error de sintaxis"
+      ],
+      "correct": 0,
+      "explanation": "El símbolo # dentro de ${#variable} devuelve la longitud de la cadena almacenada en esa variable; para 'hola', que tiene cuatro caracteres, el resultado es 4."
     }
   ],
   "ia": [
@@ -2866,6 +2965,17 @@
       ],
       "correct": 0,
       "explanation": "La ventana de contexto limita cuanto texto previo (instrucciones, conversacion, documentos) puede 'ver' el modelo al generar la siguiente palabra; superarla hace que el modelo empiece a perder la parte mas antigua de ese texto."
+    },
+    {
+      "q": "¿Qué es un modelo de 'pesos abiertos' (open-weight) en inteligencia artificial?",
+      "opts": [
+        "Un modelo cuyos parámetros ya entrenados se publican para que cualquiera pueda descargarlos y ejecutarlos en su propio hardware",
+        "Un modelo que se entrena sin usar ningún dato",
+        "Un modelo que solo puede funcionar sin conexión a internet",
+        "Un modelo cuyo código de entrenamiento es público, aunque los parámetros entrenados no se publiquen"
+      ],
+      "correct": 0,
+      "explanation": "Un modelo de pesos abiertos pone a disposición del público los parámetros (pesos) ya entrenados, de forma que cualquiera puede descargarlos y ejecutar el modelo en su propia infraestructura, a diferencia de un modelo cerrado al que solo se accede mediante una API controlada por la empresa."
     }
   ]
 }

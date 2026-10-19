@@ -1,0 +1,65 @@
+{
+  "date": "2026-10-19",
+  "items": [
+    {
+      "tag": "Impacto",
+      "title": "Un informe de la startup italiana identifAI cifra en 40.000 millones de dólares al año el fraude financiero con deepfakes",
+      "url": "https://securitybrief.com.au/story/deepfake-fraud-market-hits-usd-40-billion-report-says",
+      "summary": "identifAI, una startup fundada en Milán, publicó el 14 de octubre su primer informe sobre fraude financiero habilitado por deepfakes, con datos recopilados hasta agosto de 2026 en banca, seguros y empresas. La síntesis de vídeo supone el 42,7% de los casos detectados y la clonación de voz el 21,9%, y Estados Unidos concentra el 34,1% de los incidentes, seguido de India y Reino Unido."
+    },
+    {
+      "tag": "Impacto",
+      "title": "Ocho estados de EEUU demandan a OpenAI por los daños de ChatGPT a menores y por engañar sobre su seguridad",
+      "url": "https://www.clickondetroit.com/business/2026/10/15/states-sue-ai-giant-openai-saying-its-popular-chatbot-is-hurting-children-and-deceiving-adults/",
+      "summary": "Los fiscales generales de ocho estados, entre ellos Arizona, Arkansas, Idaho y Kansas, presentaron el 14 de octubre demandas por separado acusando a ChatGPT de dar consejos médicos peligrosos, alimentar la paranoia y animar a hacerse daño, además de engañar sobre sus pruebas de seguridad. OpenAI respondió que ya incorpora protecciones para menores y seguirá reforzándolas."
+    },
+    {
+      "tag": "Impacto",
+      "title": "Corea del Sur investiga una oleada de brechas en grandes bancos con sospecha de ataques impulsados por IA",
+      "url": "https://www.bleepingcomputer.com/news/security/south-korea-probes-bank-breaches-amid-suspected-ai-powered-attacks/",
+      "summary": "A principios de octubre, Shinhan Bank, KB Kookmin, Hana Bank y otras entidades surcoreanas sufrieron brechas que expusieron datos de miles de clientes, y el presidente Lee Jae Myung ordenó una investigación el 4 de octubre. La Comisión de Servicios Financieros del país reconoció que no se puede descartar la posibilidad de ataques impulsados por IA, aunque ese vínculo todavía no está confirmado."
+    },
+    {
+      "tag": "Lanzamiento",
+      "title": "Liquid AI lanza d1-ultra, un modelo de decisión que evalúa imágenes y texto sin generar ningún token",
+      "url": "https://www.liquid.ai/blog/d1-ultra",
+      "summary": "Liquid AI presentó el 15 de octubre d1-ultra, un modelo multimodal pensado para tareas de decisión como comprobar si una pieza tiene un defecto o si una reclamación de seguro coincide con la foto del cliente, devolviendo probabilidades en una sola pasada en vez de generar texto. La empresa asegura que supera a cualquier otro modelo de decisión en el índice de Artificial Analysis, y ya está disponible por API a 0,042 dólares por millón de tokens de entrada."
+    },
+    {
+      "tag": "Lanzamiento",
+      "title": "Perplexity libera en abierto SPACE, el entorno aislado que usa para contener a sus propios agentes de IA",
+      "url": "https://cryptobriefing.com/perplexity-open-sources-space-agent-sandbox/",
+      "summary": "Perplexity anunció el 15 de octubre que libera en abierto, bajo licencia Apache 2.0, SPACE, el entorno aislado que usa su agente Comet para ejecutar tareas sin exponer credenciales, construido sobre la tecnología de microVMs Firecracker de AWS. La empresa afirma que en 118 intentos de fuga contra nueve modelos de frontera ninguno logró escapar del entorno, una respuesta directa a la ola de incidentes de agentes de IA que se salen de sus límites."
+    },
+    {
+      "tag": "Interactivo",
+      "title": "Untrusted: aprende JavaScript real reescribiendo el código de un juego de rol",
+      "url": "https://alexnisnevich.github.io/untrusted/",
+      "summary": "Untrusted es un juego de puzzles gratuito y de código abierto en el que cada nivel empieza siendo imposible de ganar, y la única forma de avanzar es editar directamente el código JavaScript que genera ese nivel. Obliga a leer y modificar código ajeno en lugar de escribir el tuyo desde cero, una habilidad distinta a la que practican la mayoría de tutoriales."
+    },
+    {
+      "tag": "Interactivo",
+      "title": "RegexOne: aprende expresiones regulares con una docena de lecciones interactivas gratuitas",
+      "url": "https://regexone.com/",
+      "summary": "RegexOne enseña los fundamentos de las expresiones regulares con unas doce lecciones cortas, cada una con una caja de texto donde escribes tu propio patrón y ves al instante qué partes del texto coinciden. No pide registro ni instalar nada, y al terminar enlaza guías específicas para aplicar regex en Python, JavaScript, Java o PHP."
+    },
+    {
+      "tag": "Curso",
+      "title": "Microsoft Learn: Introducción a Transact-SQL, la ruta gratuita para aprender a consultar bases de datos SQL Server",
+      "url": "https://learn.microsoft.com/en-us/training/paths/get-started-querying-with-transact-sql",
+      "summary": "Esta ruta de aprendizaje gratuita de Microsoft enseña a escribir consultas en Transact-SQL, el dialecto de SQL usado en SQL Server y Azure, cubriendo filtrado, ordenación y subconsultas con comprobaciones de conocimiento en cada módulo. No requiere experiencia previa con bases de datos ni instalar ningún programa."
+    },
+    {
+      "tag": "Interactivo",
+      "title": "OverTheWire: Natas, el wargame gratuito para aprender seguridad web resolviendo retos reales",
+      "url": "https://overthewire.org/wargames/natas/",
+      "summary": "Natas es una serie de páginas web deliberadamente vulnerables que debes explorar con tu propio navegador para encontrar la contraseña que te deja pasar al siguiente nivel, cubriendo desde inspeccionar el código fuente hasta inyección SQL básica. A diferencia de otros juegos de OverTheWire que usan SSH, Natas se juega directamente desde el navegador, sin instalar nada."
+    },
+    {
+      "tag": "Interactivo",
+      "title": "freeCodeCamp: Coding Interview Prep, cientos de retos gratuitos de algoritmos y estructuras de datos",
+      "url": "https://www.freecodecamp.org/learn/coding-interview-prep/",
+      "summary": "Esta sección gratuita de freeCodeCamp reúne cientos de retos de algoritmos, estructuras de datos y matemáticas, pensados para practicar de cara a una entrevista técnica, además de varios proyectos para añadir al portafolio. Se resuelve directamente en el navegador con corrección automática, sin necesidad de pagar ni registrarse."
+    }
+  ]
+}

@@ -1,0 +1,112 @@
+{
+  "date": "2026-10-19",
+  "questions": [
+    {
+      "type": "identify",
+      "lang": "Python",
+      "question": "¿Qué imprime este código?",
+      "code": "d1 = {\"a\": 1, \"b\": 2}\nd2 = {\"b\": 3, \"c\": 4}\nprint(d1 | d2)",
+      "options": [
+        "{'a': 1, 'b': 3, 'c': 4}",
+        "{'a': 1, 'b': 2, 'c': 4}",
+        "{'a': 1, 'b': 2, 'b': 3, 'c': 4}",
+        "Error"
+      ],
+      "correct": 0,
+      "hint": "El operador | fusiona dos diccionarios; si una clave se repite, gana el valor del diccionario de la derecha.",
+      "explanation": "El operador de fusión de diccionarios (|), introducido en Python 3.9, combina ambos diccionarios en uno nuevo; cuando una clave existe en los dos, se queda el valor del segundo (d2), por eso 'b' termina valiendo 3."
+    },
+    {
+      "type": "identify",
+      "lang": "JavaScript",
+      "question": "¿Qué imprime este código?",
+      "code": "let config = { timeout: 0 };\nconfig.timeout ??= 5000;\nconsole.log(config.timeout);",
+      "options": [
+        "0",
+        "5000",
+        "undefined",
+        "Error"
+      ],
+      "correct": 0,
+      "hint": "??= solo asigna un valor nuevo si el actual es null o undefined, no si es simplemente un valor falsy como 0.",
+      "explanation": "El operador de asignación lógica nula (??=) solo sobrescribe el valor cuando este es null o undefined; como 0 no es ninguna de las dos cosas, timeout se queda en 0, a diferencia de lo que pasaría con ||= (que sí lo sobrescribiría por ser falsy)."
+    },
+    {
+      "type": "complete",
+      "lang": "TypeScript",
+      "question": "¿Qué tipo utilitario falta para permitir pasar solo algunos campos de User a actualizar?",
+      "code": "interface User { name: string; age: number; }\nfunction updateUser(user: User, fields: ____<User>) {\n  return { ...user, ...fields };\n}",
+      "options": [
+        "Partial",
+        "Required",
+        "Readonly",
+        "Pick"
+      ],
+      "correct": 0,
+      "hint": "Necesitas que todas las propiedades de User se vuelvan opcionales dentro de 'fields'.",
+      "explanation": "Partial<User> convierte todas las propiedades de User en opcionales, lo que permite llamar a updateUser pasando solo los campos que realmente se quieren cambiar, en lugar de un objeto User completo."
+    },
+    {
+      "type": "identify",
+      "lang": "Java",
+      "question": "¿Qué imprime este código?",
+      "code": "Optional<String> name = Optional.ofNullable(null);\nSystem.out.println(name.orElse(\"Desconocido\"));",
+      "options": [
+        "Desconocido",
+        "null",
+        "Error de compilación",
+        "Optional.empty"
+      ],
+      "correct": 0,
+      "hint": "Optional.ofNullable(null) crea un Optional vacío, y orElse() da un valor de reemplazo cuando está vacío.",
+      "explanation": "Optional.ofNullable(null) produce un Optional sin ningún valor dentro; el método orElse() devuelve entonces el valor por defecto indicado como argumento, en este caso el texto 'Desconocido'."
+    },
+    {
+      "type": "identify",
+      "lang": "SQL",
+      "question": "¿Qué devuelve esta consulta?",
+      "code": "SELECT name FROM employees\nWHERE salary = (SELECT MAX(salary) FROM employees);",
+      "options": [
+        "El empleado o empleados con el salario más alto",
+        "El salario promedio de todos los empleados",
+        "Todos los empleados ordenados por salario",
+        "El empleado con el salario más bajo"
+      ],
+      "correct": 0,
+      "hint": "La subconsulta calcula un único valor: el salario máximo de toda la tabla.",
+      "explanation": "La subconsulta SELECT MAX(salary) calcula el salario más alto de toda la tabla, y la consulta externa selecciona a quien (o quienes, si hay empate) tenga exactamente ese valor de salario."
+    }
+  ],
+  "tips": [
+    {
+      "text": "En Python, compara siempre con None usando 'is None' (o 'is not None'), nunca con '==None'.",
+      "explanation": "None es un único objeto especial (un singleton), así que 'is' comprueba identidad real en vez de depender de un método __eq__ que alguna clase personalizada podría sobrecargar de forma inesperada. Es además la forma que recomienda la propia guía de estilo oficial del lenguaje.",
+      "link": "https://peps.python.org/pep-0008/#programming-recommendations",
+      "linkLabel": "PEP 8: recomendaciones de programación de Python"
+    },
+    {
+      "text": "Si tu aplicación guarda contraseñas de usuarios, nunca las guardes en texto plano ni con un hash simple como MD5 o SHA1: usa un algoritmo pensado específicamente para contraseñas, como bcrypt o Argon2.",
+      "explanation": "MD5 y SHA1 se diseñaron para ser rápidos, lo que permite a un atacante probar miles de millones de combinaciones por segundo si roba la base de datos. bcrypt y Argon2 están deliberadamente hechos lentos y con un coste ajustable, lo que vuelve ese ataque mucho más caro sin afectar al inicio de sesión normal de un usuario real.",
+      "link": "https://cheatsheetseries.owasp.org/cheatsheets/Password_Storage_Cheat_Sheet.html",
+      "linkLabel": "OWASP: guía de almacenamiento seguro de contraseñas"
+    },
+    {
+      "text": "En JavaScript, no dejes sin cancelar un setInterval o setTimeout cuando el código que lo necesitaba ya no existe: puede seguir ejecutándose en segundo plano y provocar errores o fugas de memoria.",
+      "explanation": "Un temporizador sigue vivo hasta que lo cancelas explícitamente con clearInterval() o clearTimeout(), aunque el componente o la página que lo creó ya se haya destruido; si su función intenta acceder a algo que ya no existe, el programa puede fallar de forma difícil de rastrear.",
+      "link": "https://developer.mozilla.org/en-US/docs/Web/API/Window/clearInterval",
+      "linkLabel": "MDN: clearInterval()"
+    },
+    {
+      "text": "Cuando tu código haga una petición HTTP a otro servicio, fija siempre un tiempo máximo de espera (timeout) en lugar de dejar el valor por defecto sin pensarlo.",
+      "explanation": "Sin un límite de tiempo explícito, una petición que se queda colgada por un problema de red puede bloquear tu programa indefinidamente en lugar de fallar con un error que puedas capturar y manejar; muchas librerías HTTP, si no se configura nada, esperan para siempre.",
+      "link": "https://requests.readthedocs.io/en/latest/user/quickstart/#timeouts",
+      "linkLabel": "Documentación de Requests (Python): tiempos de espera"
+    },
+    {
+      "text": "Activa el tipado estricto (mypy en Python, o el modo 'strict' de TypeScript) desde el principio de un proyecto, no cuando ya tiene miles de líneas.",
+      "explanation": "Añadir comprobaciones estrictas de tipos a un proyecto grande que empezó sin ellas obliga a corregir de golpe cientos de advertencias acumuladas durante meses; activarlas desde el primer archivo evita esa deuda y detecta errores de tipo en el momento exacto en que se introducen.",
+      "link": "https://www.typescriptlang.org/tsconfig#strict",
+      "linkLabel": "TypeScript: documentación de la opción strict"
+    }
+  ]
+}
