@@ -1,1 +1,1 @@
-Ya está listo el boletín de hoy de PilaPila News. La imagen trae lo más destacado y el tip del día, y en la web tienes todo completo: las 10 noticias, los recursos y las preguntas de hoy. Échale un vistazo: [Abrir PilaPila News](<https://sei2425.github.io/Automation/>)
+La imagen de arriba trae las noticias y el tip de hoy. Si quieres verlo todo completo —noticias, tips, preguntas de código y el temario que no para de crecer— entra en [Abrir PilaPila News](<https://sei2425.github.io/Automation/>).

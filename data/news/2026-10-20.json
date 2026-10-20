@@ -1,0 +1,65 @@
+{
+  "date": "2026-10-20",
+  "items": [
+    {
+      "tag": "Impacto",
+      "title": "JPMorgan Chase y Charles Schwab bloquean a los agentes de IA externos para que no toquen el dinero de los clientes",
+      "url": "https://cybernews.com/security/jpmorgan-chase-blocks-outside-ai-agents/",
+      "summary": "El consejero delegado de JPMorgan, Jamie Dimon, confirmo el 13 de octubre que el banco bloqueara a agentes de IA externos, como Muse de Meta, para que no inicien sesion ni actuen dentro de las cuentas de los clientes, alegando el riesgo de 'agentes descontrolados'. Charles Schwab anuncio una medida similar dias despues: su consejero delegado, Rick Wurster, dijo que revisa cada semana un informe de bloqueos, que ya suma decenas, y que la entidad prefiere dirigir a sus clientes a su propio asistente, Charley."
+    },
+    {
+      "tag": "Impacto",
+      "title": "Google amplia sus alertas de terremotos e inundaciones con IA a mas paises",
+      "url": "https://blog.google/innovation-and-ai/models-and-research/google-research/crisis-resilience-white-paper/",
+      "summary": "Coincidiendo con el Dia Internacional del ShakeOut, el 15 de octubre, Google anuncio que su sistema Android Earthquake Alerts, que convierte los telefonos en una red global de deteccion sismica, sigue expandiendose a mas paises y regiones. La empresa asegura que su tecnologia de prevision de inundaciones ya da hasta siete dias de aviso para crecidas de rios a mas de 2.000 millones de personas en 150 paises, y hasta 24 horas para inundaciones repentinas en ciudades."
+    },
+    {
+      "tag": "Impacto",
+      "title": "Agentes de IA ayudan a un hacker a robar mas de 600.000 tarjetas de credito por solo 8.000 dolares",
+      "url": "https://www.bleepingcomputer.com/news/security/malicious-ai-agents-steal-600k-credit-cards-infect-100-plus-sites-with-skimmers",
+      "summary": "La firma de seguridad Gambit descubrio que un atacante uso tres agentes de IA de codigo abierto, apoyados en modelos chinos como DeepSeek y Kimi y en una version antigua de Claude, para automatizar un ataque que comprometio decenas de tiendas online y robo mas de 600.000 tarjetas de credito, en su mayoria de clientes estadounidenses. El operativo completo costo unos 8.000 dolares, con objetivos individuales comprometidos por apenas unos dolares cada uno, y se descubrio despues de que el propio atacante dejara expuesta por error su infraestructura."
+    },
+    {
+      "tag": "Lanzamiento",
+      "title": "xAI lanza Grok Voice 3.0, su modelo de voz a voz para agentes telefonicos",
+      "url": "https://www.devx.com/artificial-intelligence-ai/what-is-grok-voice-3-0-xai-speech-to-speech-model/",
+      "summary": "xAI presento el 14 de octubre Grok Voice 3.0, que sustituye a Grok Voice 2.0 como modelo por defecto en su API de Agentes de Voz, pensado para atencion telefonica y asistentes de voz dentro de aplicaciones. La empresa afirma que responde en menos de un segundo y lidera el indice de voz a voz de Artificial Analysis, manteniendo el mismo precio que su predecesor."
+    },
+    {
+      "tag": "Lanzamiento",
+      "title": "NVIDIA lanza Nemotron 3.5 Super VL, un modelo abierto de 120.000 millones de parametros para agentes siempre activos",
+      "url": "https://www.hpcwire.com/aiwire/2026/10/15/nvidia-expands-nemotron-family-with-highest-efficiency-super-vl-and-bolt-models/",
+      "summary": "NVIDIA publico el 15 de octubre Nemotron 3.5 Super VL, un modelo abierto de 120.000 millones de parametros (12.000 millones activos) capaz de leer imagenes, graficos, paginas web y documentos con una ventana de un millon de tokens. La empresa lo describe como el modelo agente abierto mas rapido de su categoria, pensado para tareas especializadas que requieren estar siempre en funcionamiento."
+    },
+    {
+      "tag": "Interactivo",
+      "title": "Code.org: aprende los fundamentos de la programacion con el Hour of Code, gratis y en mas de 50 idiomas",
+      "url": "https://code.org/",
+      "summary": "Code.org es una organizacion sin animo de lucro que ofrece cursos gratuitos e interactivos de programacion, desde el Hour of Code de una hora hasta rutas mas largas como CS Discoveries, pensadas para quien nunca ha programado. Sus lecciones combinan bloques visuales y proyectos cortos, y estan traducidas a decenas de idiomas."
+    },
+    {
+      "tag": "Interactivo",
+      "title": "W3Schools: Learn AI, el tutorial gratuito para entender el aprendizaje automatico con un editor en el navegador",
+      "url": "https://www.w3schools.com/ai/",
+      "summary": "Esta seccion gratuita de W3Schools explica los fundamentos de la inteligencia artificial y el aprendizaje automatico con lecciones cortas y ejercicios de codigo que se corrigen al instante, siguiendo el mismo formato que el resto de tutoriales del sitio. No requiere instalar nada y esta pensada para quien quiere entender los conceptos antes de usar una libreria real."
+    },
+    {
+      "tag": "Interactivo",
+      "title": "CodeSignal Learn: cursos interactivos gratuitos de programacion con un asistente de IA",
+      "url": "https://codesignal.com/",
+      "summary": "CodeSignal Learn ofrece rutas de aprendizaje interactivas en programacion, estructuras de datos e inteligencia artificial, con un asistente llamado Cosmo que ayuda a resolver dudas sobre el propio codigo. La plataforma permite avanzar por las lecciones de forma gratuita, aunque limita cuantas veces al dia se puede pedir ayuda al asistente."
+    },
+    {
+      "tag": "Interactivo",
+      "title": "LabEx: miles de laboratorios gratuitos para practicar Linux, Python y Git en el navegador",
+      "url": "https://labex.io/",
+      "summary": "LabEx ofrece miles de laboratorios practicos gratuitos sobre Linux, Python, Git y otras herramientas, cada uno con un entorno real en el navegador que comprueba automaticamente si completaste el ejercicio paso a paso. A diferencia de un curso en video, aqui se aprende haciendo, con instrucciones cortas y un asistente que ayuda si te atascas."
+    },
+    {
+      "tag": "Curso",
+      "title": "Khan Academy: AP Computer Science Principles, el curso gratuito con mas de 600 preguntas de practica",
+      "url": "https://www.khanacademy.org/computing/ap-computer-science-principles",
+      "summary": "Este curso gratuito de Khan Academy cubre los fundamentos de la informatica (internet, programacion, algoritmos y analisis de datos) con mas de 600 preguntas de practica, articulos y videos cortos. Los ejercicios de programacion usan un pseudocodigo sencillo, pensado para aprender los conceptos sin atarse a la sintaxis de un lenguaje concreto."
+    }
+  ]
+}

@@ -296,6 +296,17 @@
       ],
       "correct": 0,
       "explanation": "zfill(n) añade ceros ('0') al principio del texto hasta que su longitud total llega a n; aquí '42' pasa a ser '00042', pensado originalmente para formatear números con ceros a la izquierda."
+    },
+    {
+      "q": "¿Qué devuelve `list({'a': 1, 'b': 2}.keys())`?",
+      "opts": [
+        "['a', 'b']",
+        "[('a', 1), ('b', 2)]",
+        "{'a', 'b'}",
+        "Error"
+      ],
+      "correct": 0,
+      "explanation": "'.keys()' devuelve una vista con los nombres de las claves del diccionario; list() la convierte en una lista normal con esos nombres, en el mismo orden en que se insertaron."
     }
   ],
   "javascript": [
@@ -595,6 +606,17 @@
       ],
       "correct": 0,
       "explanation": "Array.isArray() comprueba si el valor es específicamente un objeto array; una cadena de texto no lo es, aunque también tenga una propiedad length y se pueda recorrer carácter a carácter."
+    },
+    {
+      "q": "¿Qué devuelve `[1, 2, 3].at(-1)`?",
+      "opts": [
+        "3",
+        "1",
+        "undefined",
+        "Error"
+      ],
+      "correct": 0,
+      "explanation": "at() permite usar índices negativos para acceder a elementos desde el final del array; at(-1) devuelve el último elemento, en este caso 3."
     }
   ],
   "typescript": [
@@ -894,6 +916,17 @@
       ],
       "correct": 0,
       "explanation": "El encadenamiento opcional también funciona sobre llamadas a función: si 'metodo' es null o undefined, la expresión se corta ahí mismo y devuelve undefined, en lugar de lanzar un TypeError al intentar invocar algo que no existe."
+    },
+    {
+      "q": "¿Qué hace el tipo utilitario `NonNullable<T>`?",
+      "opts": [
+        "Elimina null y undefined de la unión de tipos T",
+        "Hace que T admita también null",
+        "Convierte todas las propiedades de T en opcionales",
+        "Elimina las propiedades opcionales de T"
+      ],
+      "correct": 0,
+      "explanation": "NonNullable<T> construye un tipo igual a T pero excluyendo null y undefined de la unión, útil después de comprobar que un valor no puede ser nulo."
     }
   ],
   "java": [
@@ -1193,6 +1226,17 @@
       ],
       "correct": 0,
       "explanation": "Java prohíbe que una clase herede de más de una clase (para evitar el problema del diamante), pero sí permite que una misma clase implemente cuantas interfaces necesite, como aquí Volador y Comparable a la vez."
+    },
+    {
+      "q": "¿Qué palabra clave se usa en Java para lanzar una excepción manualmente, como en `throw new IllegalArgumentException(\"valor invalido\");`?",
+      "opts": [
+        "throw",
+        "throws",
+        "catch",
+        "raise"
+      ],
+      "correct": 0,
+      "explanation": "'throw' lanza una excepción en el punto exacto del código donde se detecta el problema; 'throws', en cambio, se usa en la firma de un método para declarar qué excepciones puede propagar."
     }
   ],
   "kotlin": [
@@ -1492,6 +1536,17 @@
       ],
       "correct": 0,
       "explanation": "Kotlin permite sobrecargar operadores como + implementando una función con el nombre especial reconocido por el compilador ('plus'); así, escribir 'punto1 + punto2' llama internamente a ese método definido en la clase."
+    },
+    {
+      "q": "¿Qué hace la función `repeat(3) { println(it) }` en Kotlin?",
+      "opts": [
+        "Ejecuta el bloque 3 veces, pasando el índice de la iteración (0, 1, 2) como 'it'",
+        "Repite el último valor impreso 3 veces",
+        "Crea una lista con 3 elementos vacíos",
+        "Lanza un error porque 'it' no está definido"
+      ],
+      "correct": 0,
+      "explanation": "repeat(n) ejecuta el bloque indicado n veces, pasando en cada vuelta el índice de la iteración (empezando en 0) como parámetro implícito 'it'."
     }
   ],
   "sql": [
@@ -1791,6 +1846,17 @@
       ],
       "correct": 0,
       "explanation": "OFFSET indica cuántas filas saltar antes de empezar a devolver resultados, y LIMIT fija cuántas filas devolver a partir de ahí; combinados son la forma clásica de implementar la paginación de resultados en SQL."
+    },
+    {
+      "q": "¿Qué devuelve `SELECT NULLIF(stock, 0) FROM products;` cuando stock vale 0?",
+      "opts": [
+        "NULL",
+        "0",
+        "Un error",
+        "El valor anterior de stock"
+      ],
+      "correct": 0,
+      "explanation": "NULLIF(a, b) devuelve NULL si a es igual a b, y devuelve a en caso contrario; aquí convierte los valores de stock iguales a 0 en NULL, útil por ejemplo para evitar divisiones entre cero."
     }
   ],
   "git": [
@@ -2090,6 +2156,17 @@
       ],
       "correct": 0,
       "explanation": "La opción --since filtra lo que muestra git log para incluir solo los commits posteriores a la fecha o expresión relativa indicada, sin modificar en ningún momento el contenido real del repositorio."
+    },
+    {
+      "q": "¿Qué hace el comando `git restore --staged archivo.txt`?",
+      "opts": [
+        "Quita el archivo del área de staging sin descartar los cambios en el directorio de trabajo",
+        "Elimina el archivo por completo del repositorio",
+        "Deshace los cambios del archivo y lo deja como en el último commit",
+        "Crea una nueva rama a partir del archivo"
+      ],
+      "correct": 0,
+      "explanation": "git restore --staged quita un archivo del área de preparación ('despreparalo'), pero mantiene intactos los cambios que ya habías hecho en el directorio de trabajo."
     }
   ],
   "htmlcss": [
@@ -2389,6 +2466,17 @@
       ],
       "correct": 0,
       "explanation": "scroll-behavior: smooth hace que cualquier salto de desplazamiento, como el que provoca un enlace a '#seccion' o una llamada a scrollIntoView() desde JavaScript, se anime de forma gradual en vez de saltar instantáneamente a la posición final."
+    },
+    {
+      "q": "¿Qué hace la propiedad CSS `pointer-events: none` aplicada a un elemento?",
+      "opts": [
+        "Impide que el elemento reciba eventos del ratón, dejando que pasen al elemento que tiene debajo",
+        "Oculta el elemento completamente de la página",
+        "Cambia el cursor del ratón al pasar por encima del elemento",
+        "Impide que el elemento se pueda seleccionar con el teclado"
+      ],
+      "correct": 0,
+      "explanation": "pointer-events: none hace que el elemento se vuelva transparente a los eventos del ratón: los clics y el hover lo atraviesan y llegan al elemento que esté debajo, aunque el elemento siga siendo visible."
     }
   ],
   "bash": [
@@ -2688,6 +2776,17 @@
       ],
       "correct": 0,
       "explanation": "El símbolo # dentro de ${#variable} devuelve la longitud de la cadena almacenada en esa variable; para 'hola', que tiene cuatro caracteres, el resultado es 4."
+    },
+    {
+      "q": "¿Qué hace el comando `basename /home/user/archivo.txt .txt`?",
+      "opts": [
+        "Devuelve 'archivo', quitando la ruta y la extensión indicada",
+        "Devuelve la ruta completa sin el nombre del archivo",
+        "Crea un archivo nuevo llamado 'archivo.txt'",
+        "Cuenta cuántos caracteres tiene el nombre del archivo"
+      ],
+      "correct": 0,
+      "explanation": "basename extrae solo el nombre del archivo de una ruta completa, y si se le pasa un segundo argumento con una extensión, la elimina también del resultado."
     }
   ],
   "ia": [
@@ -2976,6 +3075,17 @@
       ],
       "correct": 0,
       "explanation": "Un modelo de pesos abiertos pone a disposición del público los parámetros (pesos) ya entrenados, de forma que cualquiera puede descargarlos y ejecutar el modelo en su propia infraestructura, a diferencia de un modelo cerrado al que solo se accede mediante una API controlada por la empresa."
+    },
+    {
+      "q": "¿Qué es el 'catastrophic forgetting' (olvido catastrófico) en el entrenamiento de redes neuronales?",
+      "opts": [
+        "El fenómeno por el que un modelo pierde rendimiento en tareas aprendidas antes al entrenarse con datos nuevos",
+        "Un error de hardware que borra los pesos del modelo",
+        "La incapacidad de un modelo para generar texto largo",
+        "Un tipo de alucinación específico de los modelos de visión"
+      ],
+      "correct": 0,
+      "explanation": "El olvido catastrófico ocurre cuando un modelo, al ajustarse con nuevos datos o tareas, pierde gran parte de lo que había aprendido anteriormente, un problema clásico del aprendizaje continuo en redes neuronales."
     }
   ]
 }

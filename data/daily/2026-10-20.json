@@ -1,0 +1,87 @@
+{
+  "date": "2026-10-20",
+  "questions": [
+    {
+      "type": "identify",
+      "lang": "Python",
+      "question": "¿Qué contiene la variable total después de ejecutar este código?",
+      "code": "nums = [1, 2, 3, 4, 5]\ntotal = sum(nums[::-1][:2])",
+      "options": ["9", "3", "15", "Error de sintaxis"],
+      "correct": 0,
+      "hint": "El slicing [::-1] invierte la lista antes de tomar los primeros dos elementos.",
+      "explanation": "nums[::-1] invierte la lista a [5, 4, 3, 2, 1]; [:2] toma los dos primeros (5 y 4), y sum() los suma dando 9."
+    },
+    {
+      "type": "complete",
+      "lang": "JavaScript",
+      "question": "¿Qué método falta para convertir el array de pares en un objeto?",
+      "code": "const pares = [[\"a\", 1], [\"b\", 2]];\nconst obj = Object.____(pares);\nconsole.log(obj); // { a: 1, b: 2 }",
+      "options": ["fromEntries", "entries", "assign", "keys"],
+      "correct": 0,
+      "hint": "Es el método que hace justo lo contrario de Object.entries().",
+      "explanation": "Object.fromEntries() convierte un array de pares [clave, valor] en un objeto, el proceso inverso al de Object.entries()."
+    },
+    {
+      "type": "identify",
+      "lang": "SQL",
+      "question": "¿Qué devuelve esta consulta?",
+      "code": "SELECT department, MIN(salary) AS min_salary\nFROM employees\nGROUP BY department;",
+      "options": ["El salario más bajo de cada departamento", "El salario más alto de toda la empresa", "El número de empleados por departamento", "Todos los empleados ordenados por salario"],
+      "correct": 0,
+      "hint": "MIN() dentro de un GROUP BY calcula el mínimo de cada grupo por separado.",
+      "explanation": "GROUP BY department agrupa las filas por departamento, y MIN(salary) calcula el salario más bajo dentro de cada uno de esos grupos."
+    },
+    {
+      "type": "complete",
+      "lang": "Git",
+      "question": "¿Qué modo de reset falta para deshacer el commit pero conservar los cambios sin confirmar?",
+      "code": "git commit -m \"fix typo\"\n# necesitas deshacer SOLO ese ultimo commit sin perder los cambios en el directorio de trabajo\ngit reset --____ HEAD~1",
+      "options": ["soft", "hard", "mixed", "merge"],
+      "correct": 0,
+      "hint": "Este modo mueve HEAD pero deja los cambios ya en el área de staging, listos para volver a confirmarlos.",
+      "explanation": "git reset --soft mueve el puntero HEAD al commit anterior pero mantiene los cambios en el área de staging, a diferencia de --mixed (que los deja sin preparar) o --hard (que los borra)."
+    },
+    {
+      "type": "identify",
+      "lang": "HTML/CSS",
+      "question": "¿Qué permite el atributo 'form' en este botón, estando fuera de la etiqueta <form>?",
+      "code": "<button type=\"submit\" form=\"formulario-pago\">Pagar</button>",
+      "options": ["Asociar el botón a un formulario concreto por su id, aunque el botón esté fuera de ese formulario en el HTML", "Crear un nuevo formulario automáticamente", "Enviar el formulario sin validar sus campos", "Cambiar el método de envío del formulario a GET"],
+      "correct": 0,
+      "hint": "El valor del atributo coincide con el id del formulario al que se refiere.",
+      "explanation": "El atributo form en un <button> o <input> lo asocia a un <form> concreto mediante su id, permitiendo colocar el botón en cualquier parte del documento aunque no esté anidado dentro del formulario."
+    }
+  ],
+  "tips": [
+    {
+      "text": "Revisa el rendimiento de tu web con una herramienta como Lighthouse antes de darla por terminada.",
+      "explanation": "Lighthouse, integrado en Chrome DevTools, mide velocidad, accesibilidad y buenas prácticas con una puntuación concreta, lo que permite encontrar cuellos de botella (imágenes enormes, scripts que bloquean la carga) sin tener que adivinar ni esperar quejas de usuarios reales.",
+      "link": "https://developer.chrome.com/docs/lighthouse/overview",
+      "linkLabel": "Chrome Developers: guía de Lighthouse"
+    },
+    {
+      "text": "Si una pantalla muestra listas muy largas, usa paginación o scroll virtual en lugar de cargar todo de golpe.",
+      "explanation": "Renderizar miles de elementos en el DOM a la vez ralentiza la página y consume memoria innecesaria, incluso si el usuario solo ve una pantalla a la vez; cargar por partes mantiene la interfaz fluida sin importar cuántos datos haya en total.",
+      "link": "https://web.dev/articles/virtualize-long-lists-react-window",
+      "linkLabel": "web.dev: cómo virtualizar listas largas"
+    },
+    {
+      "text": "Antes de dar por terminado un formulario o un menú, prueba a navegar por él solo con el teclado.",
+      "explanation": "Muchas personas no usan el ratón, ya sea por una discapacidad motriz o simplemente por costumbre, y un elemento que solo responde al clic del ratón las deja completamente bloqueadas; comprobarlo con el teclado cuesta un minuto y revela fallos de accesibilidad que una revisión visual nunca detecta.",
+      "link": "https://webaim.org/techniques/keyboard/",
+      "linkLabel": "WebAIM: pruebas de navegación con teclado"
+    },
+    {
+      "text": "No captures una excepción solo para volver a lanzarla sin añadir nada: deja que se propague sola.",
+      "explanation": "Un bloque try/except que solo hace 'except Exception as e: raise e' añade ruido al código sin cambiar el comportamiento. Solo tiene sentido capturar una excepción cuando realmente vas a hacer algo distinto con ella: registrarla, convertirla en otro tipo de error o recuperarte del fallo.",
+      "link": "https://docs.python.org/3/tutorial/errors.html#exception-chaining",
+      "linkLabel": "Documentación oficial de Python: encadenamiento de excepciones"
+    },
+    {
+      "text": "Cuando diseñes una pantalla que muestra datos, diseña también qué se ve cuando todavía no hay ninguno.",
+      "explanation": "Es fácil probar una pantalla solo con datos de ejemplo bonitos y olvidarse de qué pasa el primer día, cuando la lista está vacía o una búsqueda no encuentra nada; una pantalla en blanco sin ninguna explicación confunde al usuario mucho más que un simple mensaje de \"aún no hay nada aquí\".",
+      "link": "https://www.nngroup.com/articles/empty-state-design/",
+      "linkLabel": "Nielsen Norman Group: diseño de estados vacíos"
+    }
+  ]
+}

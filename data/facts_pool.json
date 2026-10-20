@@ -26,7 +26,8 @@
     "La sentencia 'match', que anadio a Python el 'pattern matching' estructural similar al switch de otros lenguajes, no llego hasta la version 3.10, publicada en 2021, una de las incorporaciones mas debatidas de la historia reciente del lenguaje.",
     "El operador '@' en Python, ademas de usarse para decoradores, se puede sobrecargar como el operador de multiplicacion de matrices mediante el metodo __matmul__, introducido en Python 3.5 (PEP 465).",
     "En Python 2, 'print' era una sentencia del propio lenguaje y no una funcion: escribir 'print \"hola\"' sin parentesis era valido, algo que cambio al convertirse en la funcion print() de Python 3.",
-    "El módulo estándar 'sched' de Python, poco conocido, permite programar la ejecución de funciones en un momento futuro dentro de un mismo proceso, sin depender de un sistema de colas externo."
+    "El módulo estándar 'sched' de Python, poco conocido, permite programar la ejecución de funciones en un momento futuro dentro de un mismo proceso, sin depender de un sistema de colas externo.",
+    "El módulo 'csv' de la biblioteca estándar de Python permite leer y escribir archivos CSV respetando las comillas y las comas que aparecen dentro de un propio campo, algo que dividir el texto a mano por comas no gestiona correctamente."
   ],
   "javascript": [
     "A pesar del nombre, JavaScript no tiene relación técnica con Java: el nombre fue una decisión de marketing de Netscape para aprovechar la popularidad de Java en 1995.",
@@ -55,7 +56,8 @@
     "El modo estricto de JavaScript, activado escribiendo 'use strict' al principio de un archivo o funcion, se introdujo en ECMAScript 5 (2009) para prohibir practicas peligrosas del lenguaje, como crear variables globales por accidente al olvidar 'var'.",
     "A pesar de su nombre, Number.isNaN() y el operador global isNaN() no siempre coinciden: isNaN() convierte primero su argumento a numero, por lo que isNaN('hola') da true, mientras que Number.isNaN('hola') da false porque no hace esa conversion.",
     "SpiderMonkey, el primer motor de JavaScript, fue escrito por Brendan Eich para el navegador Netscape en 1995 y, tras varias reescrituras a lo largo de los años, sigue siendo el motor que usa Firefox hoy en dia.",
-    "El método Array.prototype.with(), añadido en 2023 (ES2023), permite crear una copia de un array cambiando un único índice, sin mutar el array original ni tener que usar slice() y spread a mano."
+    "El método Array.prototype.with(), añadido en 2023 (ES2023), permite crear una copia de un array cambiando un único índice, sin mutar el array original ni tener que usar slice() y spread a mano.",
+    "El operador de coalescencia nula (??) no se puede combinar directamente con los operadores lógicos || o && sin paréntesis: JavaScript lanza un error de sintaxis si se escribe, por ejemplo, 'a ?? b || c' sin agrupar antes las operaciones."
   ],
   "typescript": [
     "TypeScript no reemplaza a JavaScript en ningún momento: todo programa TypeScript se compila (transpila) a JavaScript plano antes de ejecutarse en el navegador o en Node.",
@@ -84,7 +86,8 @@
     "A diferencia de lenguajes como Java o C#, TypeScript usa tipado estructural: dos tipos se consideran compatibles si tienen la misma forma (las mismas propiedades), sin importar si se declararon con nombres distintos o sin ninguna relacion de herencia entre ellos.",
     "TypeScript permite tipos recursivos, como un tipo JSON que se define a si mismo (type JSONValue = string | number | boolean | null | JSONValue[] | {[key: string]: JSONValue}), algo que no era posible en las primeras versiones del lenguaje.",
     "TypeScript no permite sobrecargar operadores como '+' o '==' para tipos personalizados, igual que JavaScript: es una decision deliberada para mantener el comportamiento de los operadores predecible en todo el lenguaje.",
-    "TypeScript 5.4, publicado en 2024, mejoró el análisis de cierres (closures) dentro de bucles, permitiendo que el compilador deduzca de forma más precisa que una variable capturada por una función no cambiará más adelante."
+    "TypeScript 5.4, publicado en 2024, mejoró el análisis de cierres (closures) dentro de bucles, permitiendo que el compilador deduzca de forma más precisa que una variable capturada por una función no cambiará más adelante.",
+    "TypeScript incorporó en su versión 2.0 (2016) la bandera 'strictNullChecks' para comprobar en tiempo de compilación los posibles valores null o undefined, antes de que esa comprobación pasara a formar parte del modo agrupado 'strict' en versiones posteriores."
   ],
   "java": [
     "La mascota de Java, Duke, fue diseñada en 1992 para un proyecto anterior llamado Oak, antes incluso de que existiera el lenguaje Java tal como lo conocemos.",
@@ -113,7 +116,8 @@
     "El eslogan 'write once, run anywhere' (escribelo una vez, ejecutalo en cualquier lugar) resume la promesa original de Java: un mismo archivo .class compilado puede ejecutarse sin cambios en cualquier sistema operativo que tenga instalada una maquina virtual de Java compatible.",
     "El metodo hashCode() por defecto de la clase Object en Java no garantiza devolver la posicion en memoria del objeto, aunque muchas implementaciones de la JVM lo deriven de ella; la unica garantia real es que dos llamadas sobre el mismo objeto sin modificar devuelvan el mismo valor durante la ejecucion del programa.",
     "Java no permite la herencia multiple entre clases (una clase solo puede extender a otra), precisamente para evitar el problema del diamante que si puede darse en lenguajes como C++; en su lugar, una clase puede implementar varias interfaces a la vez.",
-    "La palabra clave 'yield' dentro de un bloque de 'switch' como expresión, introducida en Java 13, permite devolver un valor desde un bloque con varias líneas sin usar 'return', que terminaría la función entera en lugar de solo el bloque switch."
+    "La palabra clave 'yield' dentro de un bloque de 'switch' como expresión, introducida en Java 13, permite devolver un valor desde un bloque con varias líneas sin usar 'return', que terminaría la función entera en lugar de solo el bloque switch.",
+    "El método Collections.unmodifiableList(), parte de la biblioteca estándar desde Java 1.2, envuelve una lista existente para impedir que se modifique a través de esa envoltura, pero sigue reflejando los cambios hechos sobre la lista original si esta cambia después."
   ],
   "kotlin": [
     "Kotlin es interoperable al 100% con Java: se puede llamar código Java desde Kotlin y código Kotlin desde Java dentro del mismo proyecto sin conversión manual.",
@@ -142,7 +146,8 @@
     "Android Studio, el entorno oficial de desarrollo para Android, incluyo soporte integrado para Kotlin desde su version 3.0, lanzada en 2017, dos anos antes de que Google lo convirtiera en su lenguaje preferido para la plataforma.",
     "La funcion de extension sumOf() de Kotlin, que combina map y sum en una sola llamada, se anadio a la biblioteca estandar en Kotlin 1.4 (2020) para evitar crear una lista intermedia innecesaria.",
     "En Kotlin, una clase anidada no guarda por defecto ninguna referencia a la clase que la contiene, a diferencia de las clases internas de Java; solo la retiene si se marca explicitamente con la palabra clave 'inner'.",
-    "Kotlin permite declarar una función con el modificador 'infix' para poder llamarla sin punto ni paréntesis, como en '1 shl 2', una sintaxis que la propia biblioteca estándar usa para operaciones a nivel de bits sobre enteros."
+    "Kotlin permite declarar una función con el modificador 'infix' para poder llamarla sin punto ni paréntesis, como en '1 shl 2', una sintaxis que la propia biblioteca estándar usa para operaciones a nivel de bits sobre enteros.",
+    "La función 'buildString { }' de Kotlin construye una cadena de texto usando internamente un StringBuilder sin que haga falta crearlo ni declararlo de forma explícita, devolviendo directamente el String final una vez terminado el bloque."
   ],
   "sql": [
     "El estándar SQL lo mantiene ISO, pero en la práctica cada motor (PostgreSQL, MySQL, SQL Server...) añade extensiones propias, por lo que el SQL 100% portable entre motores es más raro de lo que parece.",
@@ -171,7 +176,8 @@
     "El acronimo ACID (atomicidad, consistencia, aislamiento y durabilidad), que describe las garantias que debe cumplir una transaccion fiable en una base de datos relacional, fue propuesto por los informaticos Andreas Reuter y Theo Harder en 1983.",
     "La funcion COALESCE(), parte del estandar SQL desde 1992, es en realidad una forma mas general y portable de la funcion CASE, ya que internamente se expande a una serie de comprobaciones CASE WHEN valor IS NOT NULL.",
     "MariaDB nacio en 2009 como una bifurcacion (fork) de MySQL creada por su fundador original, Michael Widenius, poco despues de que Oracle comprara Sun Microsystems, y mantiene compatibilidad casi total con la sintaxis SQL de MySQL.",
-    "El estándar SQL:2011 fue el primero en incorporar soporte oficial para tablas temporales que registran automáticamente los cambios a lo largo del tiempo, pensadas para auditar o consultar cómo eran los datos en una fecha pasada."
+    "El estándar SQL:2011 fue el primero en incorporar soporte oficial para tablas temporales que registran automáticamente los cambios a lo largo del tiempo, pensadas para auditar o consultar cómo eran los datos en una fecha pasada.",
+    "El operador '||' para concatenar cadenas de texto forma parte del estándar SQL desde los años noventa, pero motores como MySQL no lo soportan por defecto y usan en su lugar la función CONCAT(), a menos que se active el modo ANSI."
   ],
   "git": [
     "Git guarda cada versión de un archivo completo (no solo las diferencias) internamente, pero los comprime y deduplica para que el repositorio no crezca tanto como parecería.",
@@ -200,7 +206,8 @@
     "Las primeras versiones de Git, escritas por Linus Torvalds en 2005, combinaban codigo en C con un buen numero de scripts de shell y Perl; no fue hasta anos despues que buena parte de esas herramientas se reescribieron en C por motivos de rendimiento.",
     "El comando 'git diff --stat' muestra junto a cada archivo modificado una pequena barra hecha de simbolos '+' y '-' que representa, a escala, la proporcion de lineas anadidas y eliminadas en ese archivo.",
     "Los 'hooks' de Git, scripts que se ejecutan automaticamente antes o despues de ciertas acciones como un commit, viven en la carpeta .git/hooks y llegan desactivados por defecto, con la extension .sample en el nombre del archivo.",
-    "El comando 'git worktree' permite tener varias ramas de un mismo repositorio Git abiertas al mismo tiempo en carpetas distintas del disco, sin necesidad de clonar el repositorio ni hacer varios 'git stash' para cambiar de rama."
+    "El comando 'git worktree' permite tener varias ramas de un mismo repositorio Git abiertas al mismo tiempo en carpetas distintas del disco, sin necesidad de clonar el repositorio ni hacer varios 'git stash' para cambiar de rama.",
+    "El comando 'git switch', introducido en Git 2.23 (2019) junto a 'git restore', se creó para dividir las numerosas funciones del comando 'git checkout' en comandos más específicos y menos propensos a errores."
   ],
   "htmlcss": [
     "El primer sitio web de la historia, publicado por Tim Berners-Lee en 1991, seguía online y accesible en su URL original décadas después, solo con HTML básico y sin una sola línea de CSS.",
@@ -229,7 +236,8 @@
     "La etiqueta HTML <details>, que crea un desplegable nativo con una flecha y contenido oculto sin necesidad de JavaScript, existe desde HTML5 pero no obtuvo soporte uniforme en todos los navegadores de escritorio hasta bastantes anos despues de su especificacion inicial.",
     "La propiedad CSS 'object-fit', que controla como se ajusta una imagen o un video dentro de su contenedor sin deformarlo, se basa en el mismo concepto que 'background-size: cover', pero aplicado a elementos reemplazados como <img> o <video> en lugar de a fondos.",
     "La propiedad CSS 'gap', que define el espacio entre elementos, llego primero a CSS Grid y tardo varios años mas en extenderse tambien a Flexbox en los navegadores principales, por lo que durante un tiempo solo funcionaba en disenos de cuadricula.",
-    "La propiedad CSS 'text-wrap: balance', soportada en los navegadores principales desde 2023-2024, reparte automáticamente el texto de un titular entre varias líneas para que queden lo más parejas posible en longitud, evitando que la última línea quede casi vacía."
+    "La propiedad CSS 'text-wrap: balance', soportada en los navegadores principales desde 2023-2024, reparte automáticamente el texto de un titular entre varias líneas para que queden lo más parejas posible en longitud, evitando que la última línea quede casi vacía.",
+    "La propiedad CSS 'pointer-events', aunque hoy se usa sobre todo en HTML normal, se definió originalmente como parte de la especificación de SVG antes de extenderse al resto de elementos HTML."
   ],
   "bash": [
     "Bash significa 'Bourne Again SHell', un juego de palabras porque es una reimplementación mejorada de la shell 'sh' original de Stephen Bourne de 1977.",
@@ -258,7 +266,8 @@
     "La opcion 'set -x' al principio de un script de Bash activa un modo de depuracion que imprime cada comando justo antes de ejecutarlo, precedido normalmente por un signo '+', lo que ayuda a ver exactamente que esta haciendo el script paso a paso.",
     "El operador && de Bash no es una simple conjuncion logica: en una cadena 'a && b || c', si a falla, Bash ejecuta c, pero si a tiene exito y b falla, Bash tambien ejecuta c, porque lo unico que realmente comprueba el || final es si el comando inmediatamente anterior (b) tuvo exito.",
     "El comando 'cut', usado para extraer columnas de texto segun un delimitador o una posicion, forma parte de las herramientas estandar de Unix desde sus primeras versiones y su sintaxis apenas ha cambiado en decadas.",
-    "El comando 'watch', que repite un comando cada pocos segundos mostrando siempre el resultado más reciente en pantalla, es útil para vigilar en vivo el contenido de un archivo o el estado de un proceso sin tener que volver a escribir el comando cada vez."
+    "El comando 'watch', que repite un comando cada pocos segundos mostrando siempre el resultado más reciente en pantalla, es útil para vigilar en vivo el contenido de un archivo o el estado de un proceso sin tener que volver a escribir el comando cada vez.",
+    "El comando 'basename', junto a su complementario 'dirname' (que devuelve solo la carpeta contenedora), forma parte de las utilidades estándar de Unix desde sus primeras versiones en los años setenta."
   ],
   "ia": [
     "El término 'inteligencia artificial' se acuñó en 1956 en la conferencia de Dartmouth, más de medio siglo antes de que la mayoría de las técnicas actuales de deep learning fueran siquiera viables computacionalmente.",
@@ -287,6 +296,7 @@
     "La tecnica word2vec, publicada por un equipo de Google en 2013, fue una de las primeras en demostrar que representar palabras como vectores numericos permitia hacer operaciones aritmeticas con significado, como que 'rey' menos 'hombre' mas 'mujer' se acercara al vector de 'reina'.",
     "El termino 'tokens', la unidad en la que los modelos de lenguaje miden y cobran el texto, no equivale exactamente a palabras: una palabra larga o poco comun puede dividirse en varios tokens, mientras que varias palabras cortas y frecuentes pueden caber en un solo token.",
     "El resurgir del aprendizaje profundo moderno suele situarse en 2006, cuando Geoffrey Hinton popularizo un metodo de preentrenamiento para las llamadas 'redes de creencia profunda', ayudando a revivir el interes por las redes neuronales tras decadas de relativo abandono conocidas como el 'invierno de la IA'.",
-    "El término 'contexto largo' (long context) se refiere a la capacidad de un modelo de lenguaje para procesar documentos muy extensos de una sola vez; antes de 2023 la mayoría de modelos comerciales apenas superaban unos pocos miles de tokens de contexto, muy por debajo del millón de tokens que ofrecen algunos modelos actuales."
+    "El término 'contexto largo' (long context) se refiere a la capacidad de un modelo de lenguaje para procesar documentos muy extensos de una sola vez; antes de 2023 la mayoría de modelos comerciales apenas superaban unos pocos miles de tokens de contexto, muy por debajo del millón de tokens que ofrecen algunos modelos actuales.",
+    "El fenómeno conocido como 'emergencia' en modelos de lenguaje describe capacidades, como la aritmética básica o el razonamiento paso a paso, que aparecen de forma relativamente abrupta al superar cierto tamaño de modelo, en lugar de mejorar de manera gradual y continua."
   ]
 }
