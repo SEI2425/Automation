@@ -307,6 +307,17 @@
       ],
       "correct": 0,
       "explanation": "'.keys()' devuelve una vista con los nombres de las claves del diccionario; list() la convierte en una lista normal con esos nombres, en el mismo orden en que se insertaron."
+    },
+    {
+      "q": "¿Que devuelve list('abc') en Python?",
+      "opts": [
+        "['a', 'b', 'c']",
+        "'abc'",
+        "['abc']",
+        "Error"
+      ],
+      "correct": 0,
+      "explanation": "list() sobre una cadena la convierte en una lista con cada uno de sus caracteres por separado, dando ['a', 'b', 'c']."
     }
   ],
   "javascript": [
@@ -617,6 +628,17 @@
       ],
       "correct": 0,
       "explanation": "at() permite usar índices negativos para acceder a elementos desde el final del array; at(-1) devuelve el último elemento, en este caso 3."
+    },
+    {
+      "q": "¿Que imprime console.log(typeof NaN) en JavaScript?",
+      "opts": [
+        "'number'",
+        "'NaN'",
+        "'undefined'",
+        "'object'"
+      ],
+      "correct": 0,
+      "explanation": "Aunque NaN significa 'Not a Number', su tipo en JavaScript es 'number', ya que forma parte del conjunto de valores numericos del lenguaje."
     }
   ],
   "typescript": [
@@ -927,6 +949,17 @@
       ],
       "correct": 0,
       "explanation": "NonNullable<T> construye un tipo igual a T pero excluyendo null y undefined de la unión, útil después de comprobar que un valor no puede ser nulo."
+    },
+    {
+      "q": "¿Que hace el modificador readonly en una propiedad de una interfaz de TypeScript?",
+      "opts": [
+        "Impide que esa propiedad se reasigne despues de crear el objeto",
+        "La convierte en una propiedad opcional",
+        "La oculta del autocompletado del editor",
+        "La convierte automaticamente en una constante global"
+      ],
+      "correct": 0,
+      "explanation": "readonly marca una propiedad para que solo pueda asignarse al crear el objeto; cualquier intento posterior de reasignarla genera un error de compilacion."
     }
   ],
   "java": [
@@ -1237,6 +1270,17 @@
       ],
       "correct": 0,
       "explanation": "'throw' lanza una excepción en el punto exacto del código donde se detecta el problema; 'throws', en cambio, se usa en la firma de un método para declarar qué excepciones puede propagar."
+    },
+    {
+      "q": "¿Que palabra clave se usa en Java para evitar que una clase pueda heredarse?",
+      "opts": [
+        "final",
+        "static",
+        "private",
+        "abstract"
+      ],
+      "correct": 0,
+      "explanation": "Declarar una clase como final impide que otra clase la extienda, justo lo contrario de abstract, que obliga a que se extienda."
     }
   ],
   "kotlin": [
@@ -1547,6 +1591,17 @@
       ],
       "correct": 0,
       "explanation": "repeat(n) ejecuta el bloque indicado n veces, pasando en cada vuelta el índice de la iteración (empezando en 0) como parámetro implícito 'it'."
+    },
+    {
+      "q": "¿Que palabra clave de Kotlin declara una clase pensada solo para contener datos, generando automaticamente equals(), hashCode() y toString()?",
+      "opts": [
+        "data class",
+        "sealed class",
+        "object",
+        "companion"
+      ],
+      "correct": 0,
+      "explanation": "data class genera automaticamente equals(), hashCode(), toString() y copy() a partir de las propiedades declaradas en el constructor, pensada para modelar datos simples."
     }
   ],
   "sql": [
@@ -1857,6 +1912,17 @@
       ],
       "correct": 0,
       "explanation": "NULLIF(a, b) devuelve NULL si a es igual a b, y devuelve a en caso contrario; aquí convierte los valores de stock iguales a 0 en NULL, útil por ejemplo para evitar divisiones entre cero."
+    },
+    {
+      "q": "¿Que hace una CTE (clausula WITH nombre AS (...)) en SQL?",
+      "opts": [
+        "Define un resultado temporal con nombre que se puede usar en el resto de la consulta",
+        "Elimina permanentemente una tabla",
+        "Crea un indice sobre una columna",
+        "Combina dos bases de datos distintas"
+      ],
+      "correct": 0,
+      "explanation": "Una CTE define un resultado temporal con nombre, valido solo durante esa consulta, util para dividir consultas complejas en partes mas legibles."
     }
   ],
   "git": [
@@ -2167,6 +2233,17 @@
       ],
       "correct": 0,
       "explanation": "git restore --staged quita un archivo del área de preparación ('despreparalo'), pero mantiene intactos los cambios que ya habías hecho en el directorio de trabajo."
+    },
+    {
+      "q": "¿Que hace el comando git rm --cached archivo.txt?",
+      "opts": [
+        "Deja de rastrear el archivo en Git pero lo conserva en el disco",
+        "Borra el archivo tanto del repositorio como del disco",
+        "Lo mueve a la papelera de reciclaje del sistema",
+        "Crea una copia de seguridad del archivo antes de eliminarlo"
+      ],
+      "correct": 0,
+      "explanation": "--cached elimina el archivo del area de staging y de futuros commits, pero no lo borra del directorio de trabajo, util cuando olvidaste anadirlo al .gitignore."
     }
   ],
   "htmlcss": [
@@ -2477,6 +2554,17 @@
       ],
       "correct": 0,
       "explanation": "pointer-events: none hace que el elemento se vuelva transparente a los eventos del ratón: los clics y el hover lo atraviesan y llegan al elemento que esté debajo, aunque el elemento siga siendo visible."
+    },
+    {
+      "q": "¿Que hace la propiedad CSS aspect-ratio: 16 / 9 aplicada a un elemento?",
+      "opts": [
+        "Fija la proporcion entre su ancho y su alto, aunque solo se defina uno de los dos",
+        "Cambia el color de fondo segun el tamano de la pantalla",
+        "Recorta la imagen en esa proporcion sin deformarla",
+        "Solo afecta a elementos de tipo <img>"
+      ],
+      "correct": 0,
+      "explanation": "aspect-ratio define la relacion entre ancho y alto de un elemento, de forma que si solo se fija uno de los dos, el navegador calcula el otro automaticamente para mantener esa proporcion."
     }
   ],
   "bash": [
@@ -2787,6 +2875,17 @@
       ],
       "correct": 0,
       "explanation": "basename extrae solo el nombre del archivo de una ruta completa, y si se le pasa un segundo argumento con una extensión, la elimina también del resultado."
+    },
+    {
+      "q": "¿Que hace el comando chmod +x script.sh?",
+      "opts": [
+        "Da permiso de ejecucion al archivo para poder lanzarlo directamente",
+        "Lo convierte en un archivo oculto",
+        "Cambia el propietario del archivo",
+        "Lo comprime en formato .sh"
+      ],
+      "correct": 0,
+      "explanation": "chmod +x anade el permiso de ejecucion al archivo, lo que permite lanzarlo directamente con ./script.sh en vez de invocarlo con bash script.sh."
     }
   ],
   "ia": [
@@ -3086,6 +3185,17 @@
       ],
       "correct": 0,
       "explanation": "El olvido catastrófico ocurre cuando un modelo, al ajustarse con nuevos datos o tareas, pierde gran parte de lo que había aprendido anteriormente, un problema clásico del aprendizaje continuo en redes neuronales."
+    },
+    {
+      "q": "¿Que significa que un modelo de lenguaje tenga una ventana de contexto de '1 millon de tokens'?",
+      "opts": [
+        "Que puede tener en cuenta hasta un millon de tokens de texto entre la entrada y la respuesta en una misma conversacion",
+        "Que fue entrenado con un millon de documentos distintos",
+        "Que solo puede responder un millon de veces antes de reiniciarse",
+        "Que tiene un millon de parametros internos"
+      ],
+      "correct": 0,
+      "explanation": "La ventana de contexto es la cantidad maxima de tokens que el modelo puede tener en cuenta a la vez entre la conversacion y su propia respuesta; no tiene relacion directa con el numero de parametros ni con los datos de entrenamiento."
     }
   ]
 }

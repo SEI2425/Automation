@@ -1,0 +1,112 @@
+{
+  "date": "2026-10-21",
+  "questions": [
+    {
+      "type": "identify",
+      "lang": "Python",
+      "question": "¿Que imprime este codigo?",
+      "code": "s = \"hello\"\nprint(s * 3)",
+      "options": [
+        "hellohellohello",
+        "hello hello hello",
+        "Error",
+        "hhheeellllllooo"
+      ],
+      "correct": 0,
+      "hint": "El operador * repite la cadena ese numero de veces, sin anadir espacios.",
+      "explanation": "En Python, multiplicar una cadena por un entero n repite esa cadena n veces consecutivas sin espacios, dando 'hellohellohello'."
+    },
+    {
+      "type": "complete",
+      "lang": "JavaScript",
+      "question": "¿Que metodo falta para duplicar cada elemento y unirlos con un guion?",
+      "code": "const arr = [1, 2, 3];\nconst doubled = arr.____(n => n * 2).join('-');\nconsole.log(doubled); // \"2-4-6\"",
+      "options": [
+        "map",
+        "forEach",
+        "filter",
+        "reduce"
+      ],
+      "correct": 0,
+      "hint": "Necesitas transformar cada elemento en uno nuevo, no filtrar ni acumular un unico valor.",
+      "explanation": "map() transforma cada elemento del array aplicando la funcion indicada, devolviendo un nuevo array [2, 4, 6], que join('-') convierte despues en el texto '2-4-6'."
+    },
+    {
+      "type": "identify",
+      "lang": "SQL",
+      "question": "¿Que devuelve esta consulta?",
+      "code": "SELECT name FROM products\nWHERE price IS NULL;",
+      "options": [
+        "Los productos que no tienen un precio asignado",
+        "Los productos con precio igual a cero",
+        "Los productos con el precio mas bajo",
+        "Todos los productos sin excepcion"
+      ],
+      "correct": 0,
+      "hint": "IS NULL comprueba la ausencia de un valor, no una comparacion con cero.",
+      "explanation": "IS NULL filtra las filas donde la columna price no tiene ningun valor asignado, a diferencia de = 0, que buscaria un precio explicitamente igual a cero."
+    },
+    {
+      "type": "complete",
+      "lang": "Kotlin",
+      "question": "¿Que funcion falta para ejecutar el bloque solo si nombre no es null, usando 'it'?",
+      "code": "val nombre: String? = \"Ana\"\nnombre?.____ { println(\"Hola, $it\") }",
+      "options": [
+        "let",
+        "also",
+        "apply",
+        "run"
+      ],
+      "correct": 0,
+      "hint": "Necesitas una funcion de ambito que reciba el valor como 'it' dentro del bloque.",
+      "explanation": "let ejecuta el bloque lambda usando el valor no nulo como parametro 'it'; combinado con el operador ?., ese bloque solo se ejecuta si nombre no es null."
+    },
+    {
+      "type": "identify",
+      "lang": "Bash",
+      "question": "¿Que imprime este comando?",
+      "code": "echo \"a b  c\" | tr -s ' ' '\\n'",
+      "options": [
+        "Imprime 'a', 'b' y 'c' cada uno en su propia linea",
+        "Imprime 'a b c' sin ningun espacio",
+        "Elimina todos los espacios del texto",
+        "Imprime solo la primera palabra 'a'"
+      ],
+      "correct": 0,
+      "hint": "tr -s comprime los espacios repetidos antes de convertir cada espacio restante en un salto de linea.",
+      "explanation": "tr -s ' ' '\\n' primero comprime las repeticiones de espacio en uno solo, y luego traduce cada espacio restante en un salto de linea, separando el texto en tres lineas: a, b y c."
+    }
+  ],
+  "tips": [
+    {
+      "text": "Configura un archivo .editorconfig en tu proyecto para que la indentacion y el estilo basico sean iguales sin importar el editor de cada persona del equipo.",
+      "explanation": "Cada editor trae su propia configuracion por defecto de tabulaciones, saltos de linea o codificacion, y sin un acuerdo explicito el mismo archivo puede verse distinto para cada persona, generando diffs de git llenos de cambios de formato irrelevantes. Un archivo .editorconfig en la raiz del proyecto fija esas reglas basicas para cualquier editor compatible, sin necesidad de instalar un plugin pesado.",
+      "link": "https://editorconfig.org/",
+      "linkLabel": "EditorConfig: especificacion oficial"
+    },
+    {
+      "text": "No dejes credenciales de prueba como 'admin/admin' o contrasenas por defecto activas en un servicio que cualquiera pueda alcanzar desde internet.",
+      "explanation": "Los atacantes automatizan el escaneo de paneles de administracion probando listas conocidas de usuarios y contrasenas por defecto, asi que un servicio expuesto con credenciales de fabrica puede comprometerse en minutos sin que nadie lo ataque especificamente. Cambiar esa contrasena es uno de los pasos de seguridad mas baratos y mas ignorados al desplegar un nuevo servicio.",
+      "link": "https://owasp.org/www-community/vulnerabilities/Using_Default_Credentials",
+      "linkLabel": "OWASP: uso de credenciales por defecto"
+    },
+    {
+      "text": "Evita anidar varios operadores ternarios seguidos: a partir del segundo, un if/else normal suele ser mas facil de leer.",
+      "explanation": "Un ternario resuelve bien una decision simple en una sola linea, pero encadenar dos o tres seguidos obliga a quien lee el codigo a desenredar mentalmente cada condicion antes de saber que valor se usa realmente. Un if/else tradicional, aunque ocupe mas lineas, deja claro de un vistazo que caso se esta evaluando en cada momento.",
+      "link": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_(ternary)_operator",
+      "linkLabel": "MDN: el operador condicional (ternario)"
+    },
+    {
+      "text": "Cuando una API devuelva un error, lee siempre el cuerpo de la respuesta, no solo el codigo HTTP: casi siempre trae mas detalle sobre que salio mal.",
+      "explanation": "Un codigo como 400 o 422 solo dice que la peticion fue rechazada, pero el cuerpo de la respuesta suele incluir el campo exacto que fallo o la razon especifica, informacion que se pierde si el codigo solo comprueba el numero de estado y descarta el resto. Revisarlo ahorra minutos de adivinar por que una peticion que parecia correcta no funciono.",
+      "link": "https://cloud.google.com/apis/design/errors",
+      "linkLabel": "Google: guia de diseno de errores en APIs"
+    },
+    {
+      "text": "Lee el README y el archivo CONTRIBUTING.md de un proyecto open source antes de enviar tu primer pull request.",
+      "explanation": "Cada proyecto tiene sus propias convenciones para los mensajes de commit, el formato del codigo o el proceso de revision, y enviar un pull request que no las sigue suele significar pedirle al mantenedor que te explique reglas que ya estaban escritas. Leer ese documento primero ahorra varias rondas de comentarios antes de que tu contribucion pueda aceptarse.",
+      "link": "https://opensource.guide/how-to-contribute/",
+      "linkLabel": "Open Source Guide: como contribuir a un proyecto"
+    }
+  ]
+}

@@ -1,1 +1,1 @@
-La imagen de arriba trae las noticias y el tip de hoy. Si quieres verlo todo completo —noticias, tips, preguntas de código y el temario que no para de crecer— entra en [Abrir PilaPila News](<https://sei2425.github.io/Automation/>).
+Nueva ronda de noticias de IA y recursos gratuitos para aprender a programar, con el tip del dia en la imagen de arriba. El resto (preguntas, temario y tests) te espera completo en la web. [Abrir PilaPila News](<https://sei2425.github.io/Automation/>)

@@ -1,0 +1,65 @@
+{
+  "date": "2026-10-21",
+  "items": [
+    {
+      "tag": "Impacto",
+      "title": "OpenAI bloquea cuentas de ChatGPT vinculadas a operaciones de influencia de Rusia e Iran",
+      "url": "https://businesstoday.in/technology/news/story/openai-bans-russian-and-iranian-accounts-over-ai-powered-fake-news-campaigns-targeting-global-audiences-560608-2026-10-09",
+      "summary": "OpenAI confirmo el 8 de octubre que bloqueo cuentas de ChatGPT vinculadas a operaciones de influencia encubiertas respaldadas por Rusia e Iran, que combinaban contenido generado con IA con tacticas tradicionales como identidades falsas y articulos con sesgo politico. La campana buscaba llegar a audiencias de America Latina y a plataformas informativas internacionales; la empresa no detallo cuantas cuentas elimino ni el alcance real que llego a tener."
+    },
+    {
+      "tag": "Impacto",
+      "title": "Un hombre demanda a OpenAI alegando que ChatGPT le dio pautas de medicacion peligrosas",
+      "url": "https://letsdatascience.com/news/rosenthal-sues-openai-over-chatgpt-medical-advice-bfccd09a",
+      "summary": "David Rosenthal demando a OpenAI y a Sam Altman ante un tribunal de San Francisco, alegando que ChatGPT le ayudo a elegir medicamentos y le dio indicaciones de dosis que contribuyeron a una crisis de salud mental y una hospitalizacion. La demanda incluye cargos de ejercicio no autorizado de la medicina y de diseno negligente del producto; ningun tribunal se ha pronunciado todavia sobre las acusaciones."
+    },
+    {
+      "tag": "Impacto",
+      "title": "China propone ampliar sus controles de exportacion a grandes modelos de IA y disenos de chips",
+      "url": "https://thenextweb.com/news/china-ai-export-controls-draft",
+      "summary": "Los ministerios de Comercio y de Ciencia y Tecnologia de China publicaron el 16 de octubre un borrador que anadiria 23 tecnologias de IA a su lista de control de exportaciones, con un periodo de comentarios publicos hasta el 15 de noviembre. La propuesta cubriria los pesos y el codigo fuente de modelos con al menos dos billones de parametros o que figuren entre los diez mejores del mundo en pruebas de rendimiento y seguridad, aunque el codigo abierto y el acceso por API quedarian exentos."
+    },
+    {
+      "tag": "Impacto",
+      "title": "DeepSeek negocia una ronda de financiacion de al menos 12.000 millones de dolares respaldada por Tencent",
+      "url": "https://www.khaleejtimes.com/deepseek-to-raise-at-least-12-billion-in-tencent-backed-funding",
+      "summary": "Segun Bloomberg, la startup china DeepSeek esta cerca de cerrar una ronda de financiacion de al menos 80.000 millones de yuanes (unos 12.000 millones de dolares), con Tencent y CATL entre los principales inversores comprometidos. La demanda de los inversores supero las expectativas tras el lanzamiento de su ultimo modelo de IA, y la ronda podria alcanzar los 100.000 millones de yuanes en total."
+    },
+    {
+      "tag": "Lanzamiento",
+      "title": "MBZUAI e Inception42 lanzan Jais 3, una familia de modelos de IA nativos en arabe",
+      "url": "https://gulfnews.com/uae/uae-launches-jais-3-arabic-native-ai-for-speech-writing-and-agents-1.500711935",
+      "summary": "El Instituto de Modelos Fundacionales de la Universidad Mohamed bin Zayed de IA (MBZUAI) e Inception42, de G42, presentaron el 15 de octubre Jais 3, una familia de seis modelos de lenguaje abiertos en arabe que van de 900 millones a 375.000 millones de parametros, junto a Jais Speech, un modelo de reconocimiento de voz para el arabe y sus dialectos. Los modelos estan construidos sobre K2 Horizon, la base abierta que el instituto publico en septiembre, y ya estan disponibles en Hugging Face."
+    },
+    {
+      "tag": "Curso",
+      "title": "CS50's Introduction to Cybersecurity: el curso gratuito de Harvard sobre seguridad digital",
+      "url": "https://cs50.harvard.edu/cybersecurity/",
+      "summary": "Impartido por David J. Malan, este curso gratuito de Harvard ensena a proteger tus propios datos, dispositivos y sistemas frente a las amenazas actuales, sin dar por hecho conocimientos tecnicos previos. Combina explicaciones breves con cuestionarios y laboratorios practicos, y se puede seguir de forma gratuita en modo auditoria a traves de edX."
+    },
+    {
+      "tag": "Interactivo",
+      "title": "Tour of Rust: aprende Rust paso a paso editando y ejecutando codigo real en el navegador",
+      "url": "https://tourofrust.com/",
+      "summary": "Tour of Rust es una guia gratuita que explica paso a paso las caracteristicas del lenguaje Rust, desde la sintaxis basica hasta la propiedad (ownership) y los punteros inteligentes, con un editor de codigo integrado en cada pagina para ejecutar los ejemplos sin instalar nada. Esta pensada como una introduccion mas suave que la documentacion oficial para quien viene de lenguajes como C o C++."
+    },
+    {
+      "tag": "Interactivo",
+      "title": "MongoDB University: cursos gratuitos e interactivos para aprender bases de datos con MongoDB",
+      "url": "https://learn.mongodb.com/",
+      "summary": "MongoDB University ofrece cursos gratuitos e interactivos sobre MongoDB, desde los fundamentos de las bases de datos no relacionales hasta temas mas avanzados como el framework de agregacion, cada uno con videos cortos, cuestionarios y laboratorios guiados sobre un cluster real de prueba. No hace falta instalar nada en tu propio ordenador para completar los ejercicios."
+    },
+    {
+      "tag": "Interactivo",
+      "title": "Boot.dev: aprende desarrollo backend con Python, SQL y Go resolviendo ejercicios interactivos",
+      "url": "https://www.boot.dev/",
+      "summary": "Boot.dev ensena desarrollo backend con Python, SQL y Go a traves de lecciones cortas y ejercicios de codigo que se corrigen al instante, con las primeras lecciones de cada curso disponibles de forma completamente gratuita. Pensado para quien ya conoce lo basico de programacion y quiere especializarse en la parte de servidor."
+    },
+    {
+      "tag": "Curso",
+      "title": "freeCodeCamp: certificacion gratuita de C# Fundamentals en colaboracion con Microsoft",
+      "url": "https://www.freecodecamp.org/learn/foundational-c-sharp-with-microsoft/",
+      "summary": "freeCodeCamp y Microsoft ofrecen juntos una certificacion gratuita de C#, basada en un curso de 35 horas alojado en Microsoft Learn que cubre desde crear tu primera aplicacion hasta escribir metodos y depurar errores. Al completar los modulos y aprobar el examen final de freeCodeCamp se obtiene una certificacion gratuita y verificable."
+    }
+  ]
+}
