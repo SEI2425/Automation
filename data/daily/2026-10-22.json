@@ -1,0 +1,97 @@
+{
+  "date": "2026-10-22",
+  "questions": [
+    {
+      "type": "identify",
+      "lang": "Python",
+      "question": "¿Qué imprime este código?",
+      "code": "nums = [1, 2, 3, 4, 5]\nresult = [n for n in nums if n % 2][0]\nprint(result)",
+      "options": ["1", "2", "5", "Error"],
+      "correct": 0,
+      "hint": "El filtro conserva solo los numeros impares (donde n % 2 es distinto de cero).",
+      "explanation": "La comprension de lista filtra los numeros impares (1, 3 y 5), ya que n % 2 da 1 (valor verdadero) para ellos y 0 (falso) para los pares; [0] toma el primero de esa lista filtrada, que es 1."
+    },
+    {
+      "type": "complete",
+      "lang": "JavaScript",
+      "question": "¿Qué método falta para ordenar la copia del array sin modificar el original?",
+      "code": "const arr = [5, 3, 8, 1];\nconst copia = [...arr].____((a, b) => a - b);\nconsole.log(arr, copia);",
+      "options": ["sort", "toReversed", "reverse", "map"],
+      "correct": 0,
+      "hint": "Necesitas el método que ordena los elementos del array sobre el que se llama, aplicado aquí sobre la copia creada con el operador spread.",
+      "explanation": "sort() ordena el array sobre el que se invoca, pero como aquí se llama sobre una copia creada con el operador spread (...arr), el array original arr queda intacto; copia queda ordenado de menor a mayor gracias al comparador (a, b) => a - b."
+    },
+    {
+      "type": "identify",
+      "lang": "SQL",
+      "question": "¿Qué calcula la cláusula FILTER en esta consulta?",
+      "code": "SELECT department,\n       COUNT(*) FILTER (WHERE salary > 50000) AS altos\nFROM employees\nGROUP BY department;",
+      "options": [
+        "Cuenta, para cada departamento, solo los empleados con un salario mayor a 50000",
+        "Cuenta todos los empleados de cada departamento sin excepcion",
+        "Filtra los departamentos con menos de 50000 de presupuesto total",
+        "Elimina los empleados con salario mayor a 50000"
+      ],
+      "correct": 0,
+      "hint": "FILTER limita a qué filas se aplica ese COUNT(*) en concreto, sin afectar al resto del GROUP BY.",
+      "explanation": "La cláusula FILTER (WHERE ...) restringe las filas que entran en ese COUNT(*) específico a las que cumplen la condición indicada, permitiendo calcular varios conteos condicionales distintos dentro del mismo GROUP BY sin necesitar subconsultas separadas."
+    },
+    {
+      "type": "complete",
+      "lang": "Kotlin",
+      "question": "¿Qué función falta para dividir la lista en dos según si cada número es par?",
+      "code": "val lista = listOf(1, 2, 3, 4, 5)\nval (pares, impares) = lista.____ { it % 2 == 0 }\nprintln(pares)",
+      "options": ["partition", "filter", "groupBy", "associate"],
+      "correct": 0,
+      "hint": "Necesitas una función que devuelva dos listas a la vez: una con los que cumplen la condición y otra con los que no.",
+      "explanation": "partition() recorre la lista y devuelve un par de listas: la primera con los elementos que cumplen la condición (los pares: 2 y 4) y la segunda con el resto, a diferencia de filter(), que solo devolvería una única lista con los que cumplen."
+    },
+    {
+      "type": "identify",
+      "lang": "Bash",
+      "question": "¿Qué comprueba la condición [ -s \"$f\" ] en este script?",
+      "code": "for f in *.txt; do\n  [ -s \"$f\" ] && echo \"$f no esta vacio\"\ndone",
+      "options": [
+        "Que el archivo exista y tenga un tamaño mayor que cero",
+        "Que el archivo sea ejecutable",
+        "Que el archivo tenga permisos de escritura",
+        "Que el archivo sea un enlace simbólico"
+      ],
+      "correct": 0,
+      "hint": "La opción -s de test comprueba el tamaño del archivo, no sus permisos.",
+      "explanation": "El operador -s de test (o [ ]) devuelve verdadero si el archivo existe y su tamaño es mayor que cero bytes, lo que permite distinguir archivos vacíos de los que tienen contenido real."
+    }
+  ],
+  "tips": [
+    {
+      "text": "Antes de simplificar un condicional con muchos 'and' y 'or', dibuja una tabla de verdad con todas las combinaciones posibles.",
+      "explanation": "Una tabla de verdad lista cada combinacion posible de los valores booleanos implicados junto al resultado que deberia dar, lo que permite comprobar con certeza si una simplificacion mantiene el mismo comportamiento en todos los casos, no solo en los que se te ocurrieron de memoria. Es la misma herramienta que usan los circuitos digitales y los compiladores para optimizar expresiones logicas sin cambiar su resultado.",
+      "link": "https://en.wikipedia.org/wiki/Truth_table",
+      "linkLabel": "Wikipedia: tabla de verdad"
+    },
+    {
+      "text": "Usa datos de prueba generados automaticamente (fixtures), nunca una copia de datos reales de usuarios, en tu entorno de desarrollo.",
+      "explanation": "Los datos reales de produccion suelen contener informacion personal sensible, y cualquier fallo de seguridad en tu propio ordenador o en un entorno de pruebas menos protegido expone esos mismos datos sin que nadie ataque el sistema en produccion. Generar datos ficticios con la misma forma que los reales (nombres, fechas, direcciones) permite probar tu codigo con la misma confianza, sin ese riesgo innecesario.",
+      "link": "https://faker.readthedocs.io/en/master/",
+      "linkLabel": "Documentacion de Faker: genera datos de prueba falsos"
+    },
+    {
+      "text": "Si tu programa consume cada vez mas memoria con el tiempo, usa un profiler de memoria, no solo mirar el uso de CPU.",
+      "explanation": "Un profiler de memoria muestra que objetos siguen vivos, cuanta memoria ocupa cada uno y por que no se han liberado, algo que la simple sensacion de que el programa 'va lento' no revela por si sola. Las fugas de memoria suelen venir de referencias que alguien olvido soltar, como listeners de eventos o cachés que crecen sin limite, y sin esta herramienta es casi imposible encontrarlas solo leyendo el codigo.",
+      "link": "https://docs.python.org/3/library/tracemalloc.html",
+      "linkLabel": "Documentacion oficial de Python: tracemalloc"
+    },
+    {
+      "text": "Antes de escribir una funcion recursiva, asegurate de tener un caso base claro que detenga las llamadas.",
+      "explanation": "Una funcion recursiva sin una condicion de parada bien definida sigue llamandose a si misma hasta agotar la memoria de la pila (stack overflow), un error que puede tardar en aparecer si solo pruebas con entradas pequenas. Escribir primero el caso base, y despues el paso recursivo que se acerca a el en cada llamada, evita este problema desde el propio diseno de la funcion.",
+      "link": "https://www.khanacademy.org/computing/computer-science/algorithms/recursive-algorithms/a/recursive-functions",
+      "linkLabel": "Khan Academy: funciones recursivas"
+    },
+    {
+      "text": "Si vas a lanzar una funcionalidad arriesgada, activala primero solo para un grupo pequeno de usuarios con un 'feature flag', no para todos a la vez.",
+      "explanation": "Un feature flag te permite activar o desactivar una funcionalidad nueva sin volver a desplegar el codigo, lo que hace mucho mas facil revertirla al instante si algo sale mal. Probarla primero con un grupo reducido de usuarios reales limita el dano de un posible error antes de confirmarla para todo el mundo.",
+      "link": "https://martinfowler.com/bliki/FeatureToggle.html",
+      "linkLabel": "Martin Fowler: Feature Toggle"
+    }
+  ]
+}

@@ -318,6 +318,17 @@
       ],
       "correct": 0,
       "explanation": "list() sobre una cadena la convierte en una lista con cada uno de sus caracteres por separado, dando ['a', 'b', 'c']."
+    },
+    {
+      "q": "¿Qué imprime `from collections import Counter; c = Counter('banana'); print(c.most_common(1))`?",
+      "opts": [
+        "[('a', 3)]",
+        "[('b', 1)]",
+        "[('n', 2)]",
+        "Error"
+      ],
+      "correct": 0,
+      "explanation": "Counter cuenta las apariciones de cada carácter ('b':1, 'a':3, 'n':2), y most_common(1) devuelve una lista con el elemento más frecuente junto a su conteo; en 'banana' la letra que más se repite es 'a', con 3 apariciones."
     }
   ],
   "javascript": [
@@ -639,6 +650,17 @@
       ],
       "correct": 0,
       "explanation": "Aunque NaN significa 'Not a Number', su tipo en JavaScript es 'number', ya que forma parte del conjunto de valores numericos del lenguaje."
+    },
+    {
+      "q": "¿Qué imprime este código?\nconsole.log([1, [2, [3, 4]]].flat(Infinity));",
+      "opts": [
+        "[1, 2, 3, 4]",
+        "[1, [2, [3, 4]]]",
+        "[1, 2, [3, 4]]",
+        "Error"
+      ],
+      "correct": 0,
+      "explanation": "flat(Infinity) aplana un array sin importar cuántos niveles de anidación tenga, a diferencia de flat() sin argumento, que solo aplana un nivel; aquí elimina ambos niveles de anidación y deja [1, 2, 3, 4]."
     }
   ],
   "typescript": [
@@ -960,6 +982,17 @@
       ],
       "correct": 0,
       "explanation": "readonly marca una propiedad para que solo pueda asignarse al crear el objeto; cualquier intento posterior de reasignarla genera un error de compilacion."
+    },
+    {
+      "q": "¿Qué hace el tipo utilitario `Awaited<T>` en TypeScript, pensado por ejemplo para describir el valor que resuelve una `Promise<T>`?",
+      "opts": [
+        "Extrae el tipo del valor que una Promise resuelve, incluso si hay Promises anidadas",
+        "Convierte cualquier tipo en una Promise",
+        "Hace que el compilador espere a que una Promise se resuelva antes de compilar",
+        "Elimina las propiedades asíncronas de un tipo"
+      ],
+      "correct": 0,
+      "explanation": "Awaited<T> obtiene el tipo 'desenvuelto' de una Promise, resolviendo incluso Promises anidadas dentro de otras Promises, de forma parecida a lo que hace 'await' en tiempo de ejecución pero a nivel de tipos; es útil para tipar el valor que devuelve una función async sin repetirlo a mano."
     }
   ],
   "java": [
@@ -1281,6 +1314,17 @@
       ],
       "correct": 0,
       "explanation": "Declarar una clase como final impide que otra clase la extienda, justo lo contrario de abstract, que obliga a que se extienda."
+    },
+    {
+      "q": "¿Qué exige en Java el contrato entre los métodos equals() y hashCode() al sobrescribirlos en una clase propia?",
+      "opts": [
+        "Que dos objetos considerados iguales por equals() devuelvan siempre el mismo valor de hashCode()",
+        "Que equals() y hashCode() tengan exactamente el mismo código",
+        "Nada: Java no exige ninguna relación entre ambos métodos",
+        "Que solo se puedan sobrescribir en clases que implementan Comparable"
+      ],
+      "correct": 0,
+      "explanation": "Java no lo comprueba en tiempo de compilación, pero exige ese contrato como convención: si dos objetos iguales según equals() devolvieran valores distintos de hashCode(), estructuras como HashMap o HashSet podrían no encontrar un objeto que sí está guardado, rompiendo su funcionamiento interno."
     }
   ],
   "kotlin": [
@@ -1602,6 +1646,17 @@
       ],
       "correct": 0,
       "explanation": "data class genera automaticamente equals(), hashCode(), toString() y copy() a partir de las propiedades declaradas en el constructor, pensada para modelar datos simples."
+    },
+    {
+      "q": "¿Qué ventaja tiene usar una Sequence en lugar de una List al encadenar varias operaciones como filter y map sobre una colección grande en Kotlin?",
+      "opts": [
+        "Una Sequence evalúa las operaciones de forma perezosa, procesando cada elemento a través de toda la cadena antes de pasar al siguiente, en lugar de crear una lista intermedia en cada paso",
+        "Una Sequence siempre es más lenta que una List, pero usa menos memoria",
+        "Una Sequence no permite usar filter ni map",
+        "Una Sequence ordena automáticamente los elementos antes de procesarlos"
+      ],
+      "correct": 0,
+      "explanation": "A diferencia de una List, donde cada operación como filter o map crea una lista intermedia completa, una Sequence procesa los elementos de forma perezosa: aplica todas las operaciones encadenadas a un elemento antes de pasar al siguiente, lo que puede ahorrar memoria y tiempo con colecciones grandes."
     }
   ],
   "sql": [
@@ -1923,6 +1978,17 @@
       ],
       "correct": 0,
       "explanation": "Una CTE define un resultado temporal con nombre, valido solo durante esa consulta, util para dividir consultas complejas en partes mas legibles."
+    },
+    {
+      "q": "¿Qué hace la restricción `CHECK (edad >= 0)` al definir una columna en una tabla SQL?",
+      "opts": [
+        "Impide insertar o actualizar una fila donde el valor de edad sea negativo",
+        "Rellena automáticamente edad con 0 si no se indica ningún valor",
+        "Ordena las filas por edad de forma ascendente",
+        "Convierte automáticamente los valores negativos en su valor absoluto"
+      ],
+      "correct": 0,
+      "explanation": "Una restricción CHECK define una condición booleana que cada fila debe cumplir; si una inserción o actualización produce un valor que no la cumple, como una edad negativa, la base de datos rechaza la operación en lugar de guardar un dato inválido."
     }
   ],
   "git": [
@@ -2244,6 +2310,17 @@
       ],
       "correct": 0,
       "explanation": "--cached elimina el archivo del area de staging y de futuros commits, pero no lo borra del directorio de trabajo, util cuando olvidaste anadirlo al .gitignore."
+    },
+    {
+      "q": "¿Qué diferencia hay entre 'git stash pop' y 'git stash apply'?",
+      "opts": [
+        "pop aplica el último stash guardado y además lo elimina de la lista; apply lo aplica pero lo deja guardado en la lista",
+        "Son exactamente lo mismo",
+        "apply elimina todos los stashes guardados",
+        "pop solo funciona en la rama main"
+      ],
+      "correct": 0,
+      "explanation": "git stash apply reaplica los cambios guardados sobre el directorio de trabajo pero mantiene ese stash en la lista para poder aplicarlo otra vez más adelante; git stash pop hace lo mismo pero además lo borra de la lista de stashes tras aplicarlo con éxito."
     }
   ],
   "htmlcss": [
@@ -2565,6 +2642,17 @@
       ],
       "correct": 0,
       "explanation": "aspect-ratio define la relacion entre ancho y alto de un elemento, de forma que si solo se fija uno de los dos, el navegador calcula el otro automaticamente para mantener esa proporcion."
+    },
+    {
+      "q": "¿Qué hace el segundo argumento en `var(--color-principal, blue)` dentro de una propiedad CSS?",
+      "opts": [
+        "Proporciona un valor de reserva que se usa si la variable --color-principal no está definida",
+        "Define el color por defecto del navegador",
+        "Convierte la variable en una constante que no se puede cambiar después",
+        "Aplica ese color solo cuando el usuario activa el modo oscuro"
+      ],
+      "correct": 0,
+      "explanation": "La función var() acepta un segundo argumento opcional que actúa como valor de respaldo: si la variable CSS indicada (--color-principal) no está definida en ningún selector aplicable a ese elemento, el navegador usa ese valor de reserva en su lugar."
     }
   ],
   "bash": [
@@ -2886,6 +2974,17 @@
       ],
       "correct": 0,
       "explanation": "chmod +x anade el permiso de ejecucion al archivo, lo que permite lanzarlo directamente con ./script.sh en vez de invocarlo con bash script.sh."
+    },
+    {
+      "q": "¿Para qué sirve el comando interno 'getopts' en un script de Bash?",
+      "opts": [
+        "Para analizar las opciones con guion (como -v o -f archivo) que se pasan al script, siguiendo la convención habitual de los comandos de Unix",
+        "Para obtener la fecha y hora actuales del sistema",
+        "Para comprobar si un archivo tiene permisos de ejecución",
+        "Para instalar paquetes del sistema automáticamente"
+      ],
+      "correct": 0,
+      "explanation": "getopts recorre los argumentos de la línea de comandos y reconoce opciones con guion (como -v para 'verbose' o -f seguido de un valor), siguiendo la misma convención que usan la mayoría de comandos de Unix, en lugar de tener que analizar $1, $2... a mano."
     }
   ],
   "ia": [
@@ -3196,6 +3295,17 @@
       ],
       "correct": 0,
       "explanation": "La ventana de contexto es la cantidad maxima de tokens que el modelo puede tener en cuenta a la vez entre la conversacion y su propia respuesta; no tiene relacion directa con el numero de parametros ni con los datos de entrenamiento."
+    },
+    {
+      "q": "¿Qué son los 'embeddings' en el contexto de los modelos de lenguaje y la inteligencia artificial?",
+      "opts": [
+        "Representaciones numéricas (vectores) de palabras, frases o documentos, donde los elementos con significado similar quedan cerca en ese espacio",
+        "Un tipo de red neuronal usada únicamente para generar imágenes",
+        "El proceso de reducir el tamaño de un modelo para que ocupe menos memoria",
+        "Un conjunto de reglas fijas escritas a mano para traducir texto entre idiomas"
+      ],
+      "correct": 0,
+      "explanation": "Un embedding convierte una palabra, frase o documento en un vector de números, de forma que los elementos con significados similares queden geométricamente cerca en ese espacio; es la base de muchas técnicas de búsqueda semántica y de sistemas como RAG."
     }
   ]
 }
