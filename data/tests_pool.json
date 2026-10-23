@@ -329,6 +329,17 @@
       ],
       "correct": 0,
       "explanation": "Counter cuenta las apariciones de cada carácter ('b':1, 'a':3, 'n':2), y most_common(1) devuelve una lista con el elemento más frecuente junto a su conteo; en 'banana' la letra que más se repite es 'a', con 3 apariciones."
+    },
+    {
+      "q": "¿Qué devuelve `list(reversed([1, 2, 3]))`?",
+      "opts": [
+        "[3, 2, 1]",
+        "[1, 2, 3]",
+        "None",
+        "Error"
+      ],
+      "correct": 0,
+      "explanation": "reversed() devuelve un iterador que recorre la secuencia en orden inverso; list() lo convierte en una lista normal: [3, 2, 1]."
     }
   ],
   "javascript": [
@@ -661,6 +672,17 @@
       ],
       "correct": 0,
       "explanation": "flat(Infinity) aplana un array sin importar cuántos niveles de anidación tenga, a diferencia de flat() sin argumento, que solo aplana un nivel; aquí elimina ambos niveles de anidación y deja [1, 2, 3, 4]."
+    },
+    {
+      "q": "¿Qué devuelve `'5' - 2` en JavaScript?",
+      "opts": [
+        "3",
+        "'3'",
+        "'52'",
+        "NaN"
+      ],
+      "correct": 0,
+      "explanation": "El operador '-' siempre intenta una resta numérica, así que JavaScript convierte el string '5' a número antes de restar: 5 - 2 = 3, a diferencia de '+', que concatenaría los textos."
     }
   ],
   "typescript": [
@@ -993,6 +1015,17 @@
       ],
       "correct": 0,
       "explanation": "Awaited<T> obtiene el tipo 'desenvuelto' de una Promise, resolviendo incluso Promises anidadas dentro de otras Promises, de forma parecida a lo que hace 'await' en tiempo de ejecución pero a nivel de tipos; es útil para tipar el valor que devuelve una función async sin repetirlo a mano."
+    },
+    {
+      "q": "¿Qué hace el modificador 'protected' en una propiedad de una clase de TypeScript?",
+      "opts": [
+        "Permite el acceso desde la propia clase y sus subclases, pero no desde fuera",
+        "La hace accesible solo desde fuera de la clase",
+        "La convierte en opcional",
+        "La hace de solo lectura"
+      ],
+      "correct": 0,
+      "explanation": "'protected' permite usar la propiedad dentro de la clase donde se declara y en las clases que heredan de ella, pero no desde código externo a esa jerarquía, a diferencia de 'private', que la restringe solo a la propia clase."
     }
   ],
   "java": [
@@ -1325,6 +1358,17 @@
       ],
       "correct": 0,
       "explanation": "Java no lo comprueba en tiempo de compilación, pero exige ese contrato como convención: si dos objetos iguales según equals() devolvieran valores distintos de hashCode(), estructuras como HashMap o HashSet podrían no encontrar un objeto que sí está guardado, rompiendo su funcionamiento interno."
+    },
+    {
+      "q": "¿Qué hace la interfaz `Iterable<T>` cuando una clase la implementa?",
+      "opts": [
+        "Permite recorrer sus elementos con un bucle for-each",
+        "Hace que la clase sea inmutable",
+        "Convierte la clase en una excepción personalizada",
+        "Permite serializar la clase a JSON automáticamente"
+      ],
+      "correct": 0,
+      "explanation": "Implementar Iterable<T> obliga a definir un método iterator(), lo que permite recorrer los elementos del objeto con la sintaxis for (T elemento : objeto) sin usar índices manuales."
     }
   ],
   "kotlin": [
@@ -1657,6 +1701,17 @@
       ],
       "correct": 0,
       "explanation": "A diferencia de una List, donde cada operación como filter o map crea una lista intermedia completa, una Sequence procesa los elementos de forma perezosa: aplica todas las operaciones encadenadas a un elemento antes de pasar al siguiente, lo que puede ahorrar memoria y tiempo con colecciones grandes."
+    },
+    {
+      "q": "¿Qué hace la función `firstOrNull()` aplicada a una lista en Kotlin, como en `listOf<Int>().firstOrNull()`?",
+      "opts": [
+        "Devuelve el primer elemento, o null si la lista está vacía, en lugar de lanzar una excepción",
+        "Lanza una excepción si la lista está vacía",
+        "Devuelve siempre 0",
+        "Convierte la lista en un Set"
+      ],
+      "correct": 0,
+      "explanation": "firstOrNull() devuelve el primer elemento de la colección si existe, o null si está vacía, evitando la excepción NoSuchElementException que lanzaría first() en ese mismo caso."
     }
   ],
   "sql": [
@@ -1989,6 +2044,17 @@
       ],
       "correct": 0,
       "explanation": "Una restricción CHECK define una condición booleana que cada fila debe cumplir; si una inserción o actualización produce un valor que no la cumple, como una edad negativa, la base de datos rechaza la operación en lugar de guardar un dato inválido."
+    },
+    {
+      "q": "¿Qué hace la cláusula `ORDER BY RANDOM() LIMIT 1` al final de una consulta SQL (en PostgreSQL o SQLite)?",
+      "opts": [
+        "Selecciona una fila al azar de los resultados",
+        "Ordena los resultados alfabéticamente",
+        "Selecciona siempre la primera fila de la tabla",
+        "Elimina las filas duplicadas"
+      ],
+      "correct": 0,
+      "explanation": "ORDER BY RANDOM() reordena las filas en un orden aleatorio distinto cada vez que se ejecuta la consulta, y LIMIT 1 se queda solo con la primera de ese orden, lo que equivale a elegir una fila al azar."
     }
   ],
   "git": [
@@ -2321,6 +2387,17 @@
       ],
       "correct": 0,
       "explanation": "git stash apply reaplica los cambios guardados sobre el directorio de trabajo pero mantiene ese stash en la lista para poder aplicarlo otra vez más adelante; git stash pop hace lo mismo pero además lo borra de la lista de stashes tras aplicarlo con éxito."
+    },
+    {
+      "q": "¿Qué hace el comando `git commit --amend --no-edit`?",
+      "opts": [
+        "Modifica el último commit (por ejemplo, añadiendo cambios en el staging) sin cambiar su mensaje",
+        "Crea un nuevo commit vacío",
+        "Elimina el último commit sin confirmar nada",
+        "Cambia el autor de todos los commits del repositorio"
+      ],
+      "correct": 0,
+      "explanation": "git commit --amend reescribe el último commit incorporando lo que haya en el área de staging; la opción --no-edit evita que se abra el editor, conservando el mensaje original del commit."
     }
   ],
   "htmlcss": [
@@ -2653,6 +2730,17 @@
       ],
       "correct": 0,
       "explanation": "La función var() acepta un segundo argumento opcional que actúa como valor de respaldo: si la variable CSS indicada (--color-principal) no está definida en ningún selector aplicable a ese elemento, el navegador usa ese valor de reserva en su lugar."
+    },
+    {
+      "q": "¿Qué hace la propiedad CSS `user-select: none;` aplicada a un elemento?",
+      "opts": [
+        "Impide que el usuario pueda seleccionar el texto de ese elemento con el ratón",
+        "Oculta el elemento de la pantalla",
+        "Impide hacer clic en el elemento",
+        "Convierte el texto en mayúsculas"
+      ],
+      "correct": 0,
+      "explanation": "user-select: none evita que el texto del elemento se pueda seleccionar arrastrando el ratón, algo habitual en botones o interfaces donde no tiene sentido copiar el texto."
     }
   ],
   "bash": [
@@ -2985,6 +3073,17 @@
       ],
       "correct": 0,
       "explanation": "getopts recorre los argumentos de la línea de comandos y reconoce opciones con guion (como -v para 'verbose' o -f seguido de un valor), siguiendo la misma convención que usan la mayoría de comandos de Unix, en lugar de tener que analizar $1, $2... a mano."
+    },
+    {
+      "q": "¿Qué hace el comando `uniq` cuando se usa después de `sort` en una tubería, como en `sort archivo.txt | uniq`?",
+      "opts": [
+        "Elimina las líneas duplicadas consecutivas, dejando solo una copia de cada una",
+        "Cuenta cuántas líneas tiene el archivo",
+        "Ordena el archivo alfabéticamente",
+        "Elimina todas las líneas vacías"
+      ],
+      "correct": 0,
+      "explanation": "uniq elimina líneas duplicadas que aparecen de forma consecutiva; por eso se combina con sort primero, que agrupa las líneas iguales una junto a otra antes de pasarlas a uniq."
     }
   ],
   "ia": [
@@ -3306,6 +3405,17 @@
       ],
       "correct": 0,
       "explanation": "Un embedding convierte una palabra, frase o documento en un vector de números, de forma que los elementos con significados similares queden geométricamente cerca en ese espacio; es la base de muchas técnicas de búsqueda semántica y de sistemas como RAG."
+    },
+    {
+      "q": "¿Qué es un 'benchmark' en el contexto de la evaluación de modelos de inteligencia artificial?",
+      "opts": [
+        "Un conjunto estandarizado de pruebas o preguntas que permite comparar el rendimiento de distintos modelos entre sí",
+        "La cantidad de parámetros que tiene un modelo",
+        "El servidor donde se entrena un modelo",
+        "Un tipo de red neuronal especializada en imágenes"
+      ],
+      "correct": 0,
+      "explanation": "Un benchmark es una colección fija de tareas o preguntas (como MMLU o SWE-bench) usada como vara de medir común, lo que permite comparar de forma objetiva el rendimiento de distintos modelos de IA en las mismas condiciones."
     }
   ]
 }

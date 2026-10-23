@@ -1,0 +1,92 @@
+{
+  "date": "2026-10-23",
+  "questions": [
+    {
+      "type": "identify",
+      "lang": "Python",
+      "question": "¿Qué imprime este código?",
+      "code": "text = 'Python'\nprint(text[1:-1])",
+      "options": ["ytho", "ython", "Pytho", "ytho n"],
+      "correct": 0,
+      "hint": "El -1 en el slicing excluye el último carácter de la cadena.",
+      "explanation": "El slicing toma desde el índice 1 hasta el índice -1 (sin incluirlo), es decir, sin la primera ni la última letra de 'Python', dando como resultado 'ytho'."
+    },
+    {
+      "type": "complete",
+      "lang": "JavaScript",
+      "question": "¿Qué falta para acceder al último elemento del array?",
+      "code": "const arr = [1, 2, 3];\nconst last = arr[arr.____ - 1];\nconsole.log(last); // 3",
+      "options": ["length", "size", "count", "len"],
+      "correct": 0,
+      "hint": "Necesitas la propiedad que da el número de elementos del array.",
+      "explanation": "arr.length da el número de elementos del array (3), y arr[length - 1] accede así al último elemento, en este caso 3."
+    },
+    {
+      "type": "identify",
+      "lang": "Java",
+      "question": "¿Qué imprime este código?",
+      "code": "int a = 17;\nint b = 5;\nSystem.out.println(a / b + \" \" + a % b);",
+      "options": ["3 2", "3.4 2", "17 5", "2 3"],
+      "correct": 0,
+      "hint": "La división entre enteros en Java descarta la parte decimal.",
+      "explanation": "17 / 5 da 3 (división entera, se descarta el resto), y 17 % 5 da 2 (el resto de esa división); el operador + concatena ambos resultados con un espacio entre medio."
+    },
+    {
+      "type": "identify",
+      "lang": "SQL",
+      "question": "¿Qué devuelve esta consulta?",
+      "code": "SELECT name,\n       CASE WHEN stock = 0 THEN 'Sin stock'\n            WHEN stock < 10 THEN 'Pocas unidades'\n            ELSE 'Disponible'\n       END AS estado\nFROM products;",
+      "options": [
+        "Para cada producto, una etiqueta de texto según su nivel de stock (Sin stock, Pocas unidades o Disponible)",
+        "Solo los productos sin stock",
+        "El número total de productos por estado",
+        "Actualiza el stock de cada producto"
+      ],
+      "correct": 0,
+      "hint": "CASE WHEN evalúa las condiciones en orden y devuelve el primer resultado cuya condición sea verdadera.",
+      "explanation": "La expresión CASE WHEN revisa las condiciones en orden: si stock es 0 devuelve 'Sin stock', si es menor que 10 (pero no 0) devuelve 'Pocas unidades', y en cualquier otro caso devuelve 'Disponible'."
+    },
+    {
+      "type": "complete",
+      "lang": "Git",
+      "question": "¿Qué falta para renombrar la rama sin cambiar su historial?",
+      "code": "git branch rama-vieja\ngit branch -____ rama-vieja rama-nueva\n# renombra la rama sin cambiar su historial",
+      "options": ["m", "d", "f", "c"],
+      "correct": 0,
+      "hint": "Es la misma letra que 'mover' (move), usada aquí para renombrar.",
+      "explanation": "git branch -m (o --move) renombra una rama existente sin alterar su historial de commits; -d la borraría y -c la copiaría en lugar de renombrarla."
+    }
+  ],
+  "tips": [
+    {
+      "text": "Usa transacciones de base de datos para agrupar operaciones que deben tener éxito o fallar todas juntas.",
+      "explanation": "Si un programa cobra un pago y luego registra el pedido como pasos separados, un fallo a mitad de camino puede dejar el cobro hecho pero el pedido sin registrar. Una transacción asegura que todos los cambios se confirmen juntos (COMMIT) o se deshagan todos juntos (ROLLBACK) si algo falla.",
+      "link": "https://www.postgresql.org/docs/current/tutorial-transactions.html",
+      "linkLabel": "PostgreSQL: tutorial de transacciones"
+    },
+    {
+      "text": "Cuando pidas ayuda por un bug, incluye también qué esperabas que pasara y qué pasó en realidad, no solo el mensaje de error.",
+      "explanation": "El mensaje de error por sí solo dice qué reventó, pero no qué intentabas conseguir; sin esa parte, quien te ayuda tiene que adivinar tu objetivo antes de poder sugerir una solución, lo que alarga la conversación innecesariamente.",
+      "link": "https://stackoverflow.com/help/how-to-ask",
+      "linkLabel": "Stack Overflow: cómo hacer una buena pregunta"
+    },
+    {
+      "text": "Nombra tus tests describiendo el comportamiento esperado, no con nombres genéricos como 'test1' o 'test2'.",
+      "explanation": "Un nombre como 'calcula_total_con_descuento_aplicado' dice de un vistazo qué se rompió cuando el test falla en una lista larga de resultados; un nombre genérico obliga a abrir el código del test para entenderlo, perdiendo justo la ventaja de tener tests.",
+      "link": "https://testing.googleblog.com/2014/10/testing-on-toilet-writing-descriptive.html",
+      "linkLabel": "Google Testing Blog: nombres de test descriptivos"
+    },
+    {
+      "text": "Revisa de vez en cuando qué dependencias de tu proyecto llevan tiempo sin actualizarse, no solo cuando algo se rompe.",
+      "explanation": "Una librería puede acumular meses de parches de seguridad y mejoras sin que te enteres si solo la tocas cuando falla algo. Comandos como 'npm outdated' o 'pip list --outdated' muestran en segundos qué versiones te estás perdiendo.",
+      "link": "https://docs.npmjs.com/cli/v10/commands/npm-outdated",
+      "linkLabel": "npm Docs: npm outdated"
+    },
+    {
+      "text": "Si un error aparece una sola vez y no sabes reproducirlo, guarda el mensaje completo y el contexto exacto antes de seguir trabajando.",
+      "explanation": "Un bug intermitente que ignoras hoy puede tardar semanas en volver a aparecer, y para entonces habrás perdido los detalles (qué hacías, qué datos tenías) que hubieran ayudado a encontrar la causa real la primera vez.",
+      "link": "https://sre.google/sre-book/postmortem-culture/",
+      "linkLabel": "Google SRE Book: cultura de postmortems"
+    }
+  ]
+}

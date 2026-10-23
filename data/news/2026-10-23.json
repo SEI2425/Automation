@@ -1,0 +1,65 @@
+{
+  "date": "2026-10-23",
+  "items": [
+    {
+      "tag": "Impacto",
+      "title": "Una IA de Microsoft publicada en Science diagnostica casos complejos mejor que los medicos generalistas",
+      "url": "https://www.detroitnews.com/story/tech/2026/10/22/microsoft-develops-ai-tool-that-can-diagnose-sequentially-like-a-doctor/92388908007/",
+      "summary": "Microsoft publico esta semana en la revista Science los resultados de su AI Diagnostic Orchestrator (MAI-DxO), un sistema que simula un panel de clinicos que interroga al paciente, pide pruebas y debate el diagnostico mas probable. En casos complejos extraidos del New England Journal of Medicine acerto el 83% de las veces frente al 36% de medicos generalistas con material de referencia, y tambien supero a los medicos en diagnosticos de urgencias (80,3% frente a 46,8%). Los propios autores advierten que no se probo contra especialistas ni con pacientes reales, solo con casos simulados."
+    },
+    {
+      "tag": "Impacto",
+      "title": "Un sistema de IA indio evaluo en horas los danos de un ciclon sobre los cultivos de millones de agricultores",
+      "url": "https://frontiertech.niti.gov.in/story/the-ai-system-protecting-one-crore-indian-farmers/",
+      "summary": "fieldWISE, el sistema de IA, mapas satelitales e IoT que el gobierno indio usa para proteger a cerca de 15 millones de agricultores, identifico durante el ciclon Montha unas 252.000 hectareas de cultivo en riesgo y disparo 6,9 millones de alertas por SMS en varios estados. El sistema tambien agilizo el despliegue de funcionarios para evaluar perdidas, en una region donde antes la inspeccion manual de danos podia tardar semanas."
+    },
+    {
+      "tag": "Impacto",
+      "title": "Un unico hacker usa agentes de IA para vulnerar mas de 100 webs de empresas como Deere o Cummins",
+      "url": "https://www.staradvertiser.com/2026/10/19/breaking-news/how-one-hacker-used-ai-agents-to-break-into-over-100-company-websites/",
+      "summary": "Segun informo Reuters el 19 de octubre, un atacante que daba instrucciones en chino uso agentes de IA basados en DeepSeek y Claude Code para intentar vulnerar mas de 1.200 paginas web corporativas, logrando entrar en mas de 100, entre ellas las de John Deere, SharkNinja y Cummins. El investigador que descubrio la operacion calculo que el ataque completo costo unos 5.000 dolares en uso de IA, unos 50 dolares por cada intrusion exitosa, con una media de 23 horas por brecha. Deere asegura no tener indicios de que se accediera a informacion sensible."
+    },
+    {
+      "tag": "Impacto",
+      "title": "OpenAI compra la startup Orchestra Bio para sumar agentes de IA al desarrollo de farmacos",
+      "url": "https://letsdatascience.com/news/openai-acquires-orchestra-bio-to-expand-rosalind-life-scienc-c7bd7b39",
+      "summary": "OpenAI anuncio el 20 de octubre la compra de Orchestra Bio, una startup de San Francisco que habia recaudado unos 20 millones de dolares para construir agentes de IA que ayudan a equipos farmaceuticos a vigilar ensayos clinicos, seguir cronogramas y detectar retrasos. La tecnologia se integrara en Rosalind, la suite de IA para ciencias de la vida de OpenAI, que ya trabaja con farmaceuticas como Novo Nordisk y Moderna, en plena carrera con Anthropic por entrar en el desarrollo cientifico mas alla de la programacion."
+    },
+    {
+      "tag": "Lanzamiento",
+      "title": "Google lleva la IA personalizada de Gemini a los coches a traves de Android Auto",
+      "url": "https://www.androidcentral.com/apps-software/android-auto/personal-intelligence-hits-the-road-google-gemini-rollout-android-auto",
+      "summary": "Google empezo el 20 de octubre a llevar Personal Intelligence, la funcion de Gemini que usa el contenido de Gmail, Calendario, Maps, Fotos y Busqueda para dar respuestas personalizadas, a los coches a traves de Android Auto, con llegada a vehiculos con Google integrado en los proximos meses. La funcion es opcional y solo esta disponible para cuentas personales de mayores de 18 anos, y queda excluida por ahora en la Union Europea, Reino Unido, Suiza y Nigeria."
+    },
+    {
+      "tag": "Interactivo",
+      "title": "Exercism: practica C# con ejercicios interactivos y mentoria gratuita",
+      "url": "https://exercism.org/tracks/csharp",
+      "summary": "Este recorrido gratuito de Exercism ofrece 178 ejercicios de C# organizados por dificultad, con pruebas automaticas que revisan tu solucion al instante nada mas enviarla. Como en el resto de la plataforma, tambien puedes pedir mentoria gratuita de programadores voluntarios que comentan tu codigo."
+    },
+    {
+      "tag": "Interactivo",
+      "title": "W3Schools: tutorial interactivo de PHP con editor en el navegador",
+      "url": "https://www.w3schools.com/php/",
+      "summary": "Este tutorial gratuito ensena los fundamentos de PHP (variables, formularios, conexion a bases de datos) con un editor Try it Yourself en cada pagina para escribir y ejecutar tu propio codigo sin instalar nada. Cada capitulo termina con un breve cuestionario de autoevaluacion."
+    },
+    {
+      "tag": "Curso",
+      "title": "Codecademy: Learn C++ Introduction, el curso gratuito para dar tus primeros pasos en el lenguaje",
+      "url": "https://www.codecademy.com/learn/learn-c-plus-plus-introduction",
+      "summary": "Este curso gratuito de Codecademy ensena los fundamentos de C++ (tipos de datos, condicionales, Hello World) en unas cuatro horas, con siete proyectos practicos y ejercicios que se corrigen al instante en el navegador. Esta pensado como primer contacto con el lenguaje, sin necesidad de instalar nada."
+    },
+    {
+      "tag": "Curso",
+      "title": "The Rust Programming Language: el libro oficial y gratuito para aprender Rust",
+      "url": "https://doc.rust-lang.org/book/",
+      "summary": "Mantenido por el propio equipo de Rust, este libro gratuito explica el lenguaje desde la sintaxis basica hasta el sistema de propiedad (ownership) y los punteros inteligentes, con ejemplos de codigo completos en cada capitulo. Se lee integramente online y es la referencia que cita la mayoria de tutoriales del lenguaje."
+    },
+    {
+      "tag": "Interactivo",
+      "title": "Exercism: practica Go con ejercicios interactivos y mentoria gratuita",
+      "url": "https://exercism.org/tracks/go",
+      "summary": "Este recorrido gratuito de Exercism ofrece decenas de ejercicios de Go ordenados por dificultad, con pruebas automaticas que revisan tu solucion al instante nada mas enviarla. Ademas, puedes pedir mentoria gratuita de programadores voluntarios que comentan tu codigo y sugieren formas mas idiomaticas de resolverlo."
+    }
+  ]
+}
