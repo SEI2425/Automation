@@ -30,7 +30,8 @@
     "El módulo 'csv' de la biblioteca estándar de Python permite leer y escribir archivos CSV respetando las comillas y las comas que aparecen dentro de un propio campo, algo que dividir el texto a mano por comas no gestiona correctamente.",
     "Python debe su nombre al grupo de comedia britanico Monty Python, no a la serpiente, segun explico su creador Guido van Rossum.",
     "El módulo 'array' de la biblioteca estándar de Python permite crear arreglos de números con un tipo fijo (como enteros de 4 bytes), ocupando mucha menos memoria que una lista normal de objetos Python, aunque hoy en día se usa menos gracias a librerías como NumPy.",
-    "El módulo 'statistics' de la biblioteca estándar de Python, incorporado en la versión 3.4 (2014), ofrece funciones como mean(), median() y stdev() sin necesidad de instalar librerías externas como NumPy para cálculos estadísticos simples."
+    "El módulo 'statistics' de la biblioteca estándar de Python, incorporado en la versión 3.4 (2014), ofrece funciones como mean(), median() y stdev() sin necesidad de instalar librerías externas como NumPy para cálculos estadísticos simples.",
+    "La biblioteca estándar de Python incluye un pequeño huevo de pascua oficial: al escribir 'import this' en cualquier intérprete se imprime el poema 'The Zen of Python', con los principios de diseño del lenguaje."
   ],
   "javascript": [
     "A pesar del nombre, JavaScript no tiene relación técnica con Java: el nombre fue una decisión de marketing de Netscape para aprovechar la popularidad de Java en 1995.",
@@ -63,7 +64,8 @@
     "El operador de coalescencia nula (??) no se puede combinar directamente con los operadores lógicos || o && sin paréntesis: JavaScript lanza un error de sintaxis si se escribe, por ejemplo, 'a ?? b || c' sin agrupar antes las operaciones.",
     "JavaScript se creo en apenas 10 dias en 1995, cuando Brendan Eich trabajaba en Netscape.",
     "El operador 'in' de JavaScript comprueba si una clave existe en un objeto o un índice en un array, incluida una propiedad heredada de su prototipo, a diferencia de hasOwnProperty(), que solo comprueba las propiedades propias del propio objeto.",
-    "El método String.prototype.matchAll(), introducido en ES2020, devuelve un iterador con todas las coincidencias de una expresión regular global, a diferencia de match(), que sin esa bandera solo devuelve la primera coincidencia."
+    "El método String.prototype.matchAll(), introducido en ES2020, devuelve un iterador con todas las coincidencias de una expresión regular global, a diferencia de match(), que sin esa bandera solo devuelve la primera coincidencia.",
+    "El método Array.prototype.flat(), que aplana arrays anidados, no llegó al estándar del lenguaje hasta ES2019, pese a que los arrays anidados existen desde la primera versión de JavaScript en 1995."
   ],
   "typescript": [
     "TypeScript no reemplaza a JavaScript en ningún momento: todo programa TypeScript se compila (transpila) a JavaScript plano antes de ejecutarse en el navegador o en Node.",
@@ -96,7 +98,8 @@
     "TypeScript incorporó en su versión 2.0 (2016) la bandera 'strictNullChecks' para comprobar en tiempo de compilación los posibles valores null o undefined, antes de que esa comprobación pasara a formar parte del modo agrupado 'strict' en versiones posteriores.",
     "TypeScript fue creado por Anders Hejlsberg, el mismo ingeniero que antes diseno Turbo Pascal y Delphi, y hoy trabaja en Microsoft.",
     "TypeScript introdujo en su versión 4.4 (2021) un análisis llamado 'control flow analysis of aliased conditions', que permite que el compilador reduzca (narrow) el tipo de una variable incluso cuando la condición de comprobación se guarda antes en una constante aparte, en lugar de escribirse directamente dentro del if.",
-    "El operador de aserción de tipo doble, como en '(valor as unknown) as string', permite forzar una conversión de tipos que TypeScript consideraría demasiado arriesgada con una sola aserción, aunque la propia documentación del lenguaje recomienda evitarlo salvo que sea realmente necesario."
+    "El operador de aserción de tipo doble, como en '(valor as unknown) as string', permite forzar una conversión de tipos que TypeScript consideraría demasiado arriesgada con una sola aserción, aunque la propia documentación del lenguaje recomienda evitarlo salvo que sea realmente necesario.",
+    "TypeScript no tiene su propio motor de ejecución: todo el código se transpila a JavaScript antes de ejecutarse, por lo que en tiempo de ejecución no quedan tipos ni comprobaciones, solo el JavaScript resultante."
   ],
   "java": [
     "La mascota de Java, Duke, fue diseñada en 1992 para un proyecto anterior llamado Oak, antes incluso de que existiera el lenguaje Java tal como lo conocemos.",
@@ -129,7 +132,8 @@
     "El método Collections.unmodifiableList(), parte de la biblioteca estándar desde Java 1.2, envuelve una lista existente para impedir que se modifique a través de esa envoltura, pero sigue reflejando los cambios hechos sobre la lista original si esta cambia después.",
     "Java se llamo originalmente 'Oak', en honor a un roble que habia junto a la oficina de James Gosling, antes de cambiar de nombre por motivos de marca registrada.",
     "El método List.copyOf(), introducido en Java 10, crea una copia inmutable de una lista existente: cualquier intento posterior de añadir, eliminar o modificar un elemento de esa copia lanza una excepción.",
-    "El método Objects.requireNonNullElse(valor, porDefecto), incorporado en Java 9, devuelve el valor indicado si no es null, o el valor por defecto en caso contrario, evitando escribir a mano un operador ternario con una comprobación de null."
+    "El método Objects.requireNonNullElse(valor, porDefecto), incorporado en Java 9, devuelve el valor indicado si no es null, o el valor por defecto en caso contrario, evitando escribir a mano un operador ternario con una comprobación de null.",
+    "La máquina virtual de Java (JVM) no fue diseñada solo para el lenguaje Java: hoy ejecuta decenas de otros lenguajes, como Kotlin, Scala, Clojure o Groovy, que se compilan al mismo bytecode."
   ],
   "kotlin": [
     "Kotlin es interoperable al 100% con Java: se puede llamar código Java desde Kotlin y código Kotlin desde Java dentro del mismo proyecto sin conversión manual.",
@@ -162,7 +166,8 @@
     "La función 'buildString { }' de Kotlin construye una cadena de texto usando internamente un StringBuilder sin que haga falta crearlo ni declararlo de forma explícita, devolviendo directamente el String final una vez terminado el bloque.",
     "Kotlin toma su nombre de la isla de Kotlin, cerca de San Petersburgo, siguiendo la tradicion de JetBrains de nombrar lenguajes con nombres geograficos.",
     "Kotlin permite declarar un operador personalizado de indexación mediante las funciones get y set, lo que hace posible escribir 'miObjeto[0]' o 'miObjeto[0] = valor' sobre una clase propia sin que sea necesariamente una lista o un array.",
-    "Kotlin incluye en su biblioteca estándar una API experimental de 'contratos' (contracts) que permite a funciones como isNullOrEmpty() comunicarle reglas extra de nulabilidad al compilador, mejorando el análisis de tipos sin cambiar la sintaxis del lenguaje."
+    "Kotlin incluye en su biblioteca estándar una API experimental de 'contratos' (contracts) que permite a funciones como isNullOrEmpty() comunicarle reglas extra de nulabilidad al compilador, mejorando el análisis de tipos sin cambiar la sintaxis del lenguaje.",
+    "Kotlin se convirtió en 2019 en el lenguaje recomendado por Google para el desarrollo de apps Android, por delante de Java, aunque sigue ejecutándose sobre la misma máquina virtual de Java."
   ],
   "sql": [
     "El estándar SQL lo mantiene ISO, pero en la práctica cada motor (PostgreSQL, MySQL, SQL Server...) añade extensiones propias, por lo que el SQL 100% portable entre motores es más raro de lo que parece.",
@@ -195,7 +200,8 @@
     "El operador '||' para concatenar cadenas de texto forma parte del estándar SQL desde los años noventa, pero motores como MySQL no lo soportan por defecto y usan en su lugar la función CONCAT(), a menos que se active el modo ANSI.",
     "SQL se diseno originalmente en IBM durante los anos 70 bajo el nombre SEQUEL, pero tuvo que cambiarse a SQL por un conflicto de marca con una empresa britanica que ya usaba ese nombre.",
     "El estándar SQL:2008 fue el primero en incorporar la cláusula OFFSET ... FETCH como forma portable de paginar resultados entre distintos motores, aunque bases de datos como MySQL siguieron prefiriendo su propia sintaxis LIMIT en lugar de adoptarla.",
-    "El comando MERGE, incorporado al estándar SQL en 2003 y disponible en motores como SQL Server, Oracle y PostgreSQL (desde la versión 15, en 2022), permite insertar, actualizar o borrar filas en una sola sentencia según si ya existe una fila coincidente."
+    "El comando MERGE, incorporado al estándar SQL en 2003 y disponible en motores como SQL Server, Oracle y PostgreSQL (desde la versión 15, en 2022), permite insertar, actualizar o borrar filas en una sola sentencia según si ya existe una fila coincidente.",
+    "El estándar SQL no distingue mayúsculas de minúsculas en sus palabras clave (SELECT y select funcionan igual), pero por convención casi todo el mundo las escribe en mayúsculas para distinguirlas de tablas y columnas."
   ],
   "git": [
     "Git guarda cada versión de un archivo completo (no solo las diferencias) internamente, pero los comprime y deduplica para que el repositorio no crezca tanto como parecería.",
@@ -228,7 +234,8 @@
     "El comando 'git switch', introducido en Git 2.23 (2019) junto a 'git restore', se creó para dividir las numerosas funciones del comando 'git checkout' en comandos más específicos y menos propensos a errores.",
     "Linus Torvalds creo Git en poco mas de una semana en 2005, despues de que el kernel de Linux perdiera el acceso gratuito a la herramienta de control de versiones que usaba hasta entonces.",
     "El comando 'git shortlog -sn' resume el historial de commits contando cuántos ha hecho cada autor y ordenándolos de mayor a menor, una forma rápida de ver quién ha contribuido más a un repositorio sin revisar el log completo commit por commit.",
-    "El comando 'git describe' busca la etiqueta (tag) más reciente alcanzable desde un commit y añade el número de commits de distancia hasta él, por lo que se usa a menudo para generar automáticamente identificadores de versión como 'v1.4-3-gabc1234'."
+    "El comando 'git describe' busca la etiqueta (tag) más reciente alcanzable desde un commit y añade el número de commits de distancia hasta él, por lo que se usa a menudo para generar automáticamente identificadores de versión como 'v1.4-3-gabc1234'.",
+    "El propio código fuente de Git se gestiona con Git desde su segundo día de existencia en 2005: Linus Torvalds terminó la primera versión funcional y la usó de inmediato para seguir desarrollándola."
   ],
   "htmlcss": [
     "El primer sitio web de la historia, publicado por Tim Berners-Lee en 1991, seguía online y accesible en su URL original décadas después, solo con HTML básico y sin una sola línea de CSS.",
@@ -261,7 +268,8 @@
     "La propiedad CSS 'pointer-events', aunque hoy se usa sobre todo en HTML normal, se definió originalmente como parte de la especificación de SVG antes de extenderse al resto de elementos HTML.",
     "La etiqueta <marquee>, que hacia que el texto se desplazara por la pantalla, llego a usarse en HTML en los anos 90 pero nunca fue un estandar oficial y hoy esta obsoleta.",
     "La propiedad CSS 'writing-mode', con origen en la tipografía asiática, permite cambiar la dirección del texto de horizontal a vertical, y los navegadores la soportan ampliamente desde hace más de una década aunque se usa poco fuera de diseños muy específicos.",
-    "La propiedad CSS 'content-visibility: auto', soportada en navegadores basados en Chromium desde 2020, permite que el navegador salte el renderizado de elementos que están fuera de pantalla, mejorando el tiempo de carga inicial de páginas muy largas."
+    "La propiedad CSS 'content-visibility: auto', soportada en navegadores basados en Chromium desde 2020, permite que el navegador salte el renderizado de elementos que están fuera de pantalla, mejorando el tiempo de carga inicial de páginas muy largas.",
+    "El atributo loading=\"lazy\" en una etiqueta <img>, estandarizado en 2019 y hoy soportado por todos los navegadores modernos, retrasa la carga de una imagen hasta que está a punto de entrar en la pantalla visible, sin ninguna librería de JavaScript."
   ],
   "bash": [
     "Bash significa 'Bourne Again SHell', un juego de palabras porque es una reimplementación mejorada de la shell 'sh' original de Stephen Bourne de 1977.",
@@ -294,7 +302,8 @@
     "El comando 'basename', junto a su complementario 'dirname' (que devuelve solo la carpeta contenedora), forma parte de las utilidades estándar de Unix desde sus primeras versiones en los años setenta.",
     "Bash significa 'Bourne Again SHell', un juego de palabras que hace referencia a que es una version mejorada de la shell Bourne (sh), creada en los anos 70.",
     "El built-in 'shopt' de Bash permite activar o desactivar opciones de comportamiento del propio shell, como globstar (que hace que ** recorra subdirectorios de forma recursiva al expandir nombres de archivo), sin necesidad de cambiar la versión de Bash instalada.",
-    "El comando 'ss', incluido en la mayoría de distribuciones Linux modernas, reemplaza al antiguo 'netstat' para listar conexiones de red activas y sockets, con un rendimiento mucho mejor en sistemas con muchas conexiones abiertas."
+    "El comando 'ss', incluido en la mayoría de distribuciones Linux modernas, reemplaza al antiguo 'netstat' para listar conexiones de red activas y sockets, con un rendimiento mucho mejor en sistemas con muchas conexiones abiertas.",
+    "El símbolo '#!' al principio de un script de Bash, seguido de la ruta al intérprete (como #!/bin/bash), se llama 'shebang', y le indica al sistema operativo con qué programa debe ejecutar el resto del archivo."
   ],
   "ia": [
     "El término 'inteligencia artificial' se acuñó en 1956 en la conferencia de Dartmouth, más de medio siglo antes de que la mayoría de las técnicas actuales de deep learning fueran siquiera viables computacionalmente.",
@@ -327,6 +336,7 @@
     "El fenómeno conocido como 'emergencia' en modelos de lenguaje describe capacidades, como la aritmética básica o el razonamiento paso a paso, que aparecen de forma relativamente abrupta al superar cierto tamaño de modelo, en lugar de mejorar de manera gradual y continua.",
     "El termino 'inteligencia artificial' se acuno formalmente en 1956, durante un taller de verano en Dartmouth College organizado por John McCarthy, mucho antes de que existieran los ordenadores personales.",
     "El término 'inteligencia artificial débil' (o estrecha) describe sistemas diseñados para una tarea específica, como jugar al ajedrez o traducir texto, en contraste con la 'inteligencia artificial general' (o fuerte), que sería capaz de igualar la versatilidad cognitiva humana en cualquier tarea.",
-    "El benchmark HellaSwag, publicado en 2019, evalúa el sentido común de un modelo de lenguaje pidiéndole que elija, entre varias opciones, la continuación más plausible de una frase cotidiana."
+    "El benchmark HellaSwag, publicado en 2019, evalúa el sentido común de un modelo de lenguaje pidiéndole que elija, entre varias opciones, la continuación más plausible de una frase cotidiana.",
+    "El término 'token', la unidad mínima de texto que procesan los modelos de lenguaje, no siempre equivale a una palabra completa: una palabra larga o poco común puede dividirse en varios tokens, mientras que las palabras muy frecuentes suelen ocupar uno solo."
   ]
 }

@@ -340,6 +340,17 @@
       ],
       "correct": 0,
       "explanation": "reversed() devuelve un iterador que recorre la secuencia en orden inverso; list() lo convierte en una lista normal: [3, 2, 1]."
+    },
+    {
+      "q": "¿Qué devuelve la expresión list(range(2, 10, 3)) en Python?",
+      "opts": [
+        "[2, 5, 8]",
+        "[2, 5, 8, 11]",
+        "[2, 3, 4, 5, 6, 7, 8, 9]",
+        "[3, 6, 9]"
+      ],
+      "correct": 0,
+      "explanation": "range(2, 10, 3) empieza en 2, se detiene antes de llegar a 10, y avanza de 3 en 3: 2, 5 y 8."
     }
   ],
   "javascript": [
@@ -683,6 +694,17 @@
       ],
       "correct": 0,
       "explanation": "El operador '-' siempre intenta una resta numérica, así que JavaScript convierte el string '5' a número antes de restar: 5 - 2 = 3, a diferencia de '+', que concatenaría los textos."
+    },
+    {
+      "q": "¿Qué muestra console.log(typeof NaN) en JavaScript?",
+      "opts": [
+        "number",
+        "NaN",
+        "undefined",
+        "object"
+      ],
+      "correct": 0,
+      "explanation": "Aunque NaN significa 'Not a Number', su tipo en JavaScript es 'number'; es el único valor numérico que no es igual a sí mismo (NaN !== NaN)."
     }
   ],
   "typescript": [
@@ -1026,6 +1048,17 @@
       ],
       "correct": 0,
       "explanation": "'protected' permite usar la propiedad dentro de la clase donde se declara y en las clases que heredan de ella, pero no desde código externo a esa jerarquía, a diferencia de 'private', que la restringe solo a la propia clase."
+    },
+    {
+      "q": "¿Qué tipo tiene la variable x tras esta declaración: let x = [1, 2, 3] as const;?",
+      "opts": [
+        "readonly [1, 2, 3]",
+        "number[]",
+        "Array<number>",
+        "any"
+      ],
+      "correct": 0,
+      "explanation": "'as const' convierte el array en una tupla de solo lectura con los valores literales exactos, en lugar de inferirlo como el tipo más general number[]."
     }
   ],
   "java": [
@@ -1369,6 +1402,17 @@
       ],
       "correct": 0,
       "explanation": "Implementar Iterable<T> obliga a definir un método iterator(), lo que permite recorrer los elementos del objeto con la sintaxis for (T elemento : objeto) sin usar índices manuales."
+    },
+    {
+      "q": "¿Cuál es el valor por defecto de un campo booleano de instancia en Java si no se inicializa explícitamente?",
+      "opts": [
+        "false",
+        "true",
+        "null",
+        "0"
+      ],
+      "correct": 0,
+      "explanation": "Los campos booleanos de una clase en Java se inicializan automáticamente a false si no se les asigna un valor, a diferencia de las variables locales, que deben inicializarse antes de usarse."
     }
   ],
   "kotlin": [
@@ -1712,6 +1756,17 @@
       ],
       "correct": 0,
       "explanation": "firstOrNull() devuelve el primer elemento de la colección si existe, o null si está vacía, evitando la excepción NoSuchElementException que lanzaría first() en ese mismo caso."
+    },
+    {
+      "q": "¿Qué imprime este código?\nval x: Int? = 5\nval y = x ?: 0\nprintln(y + 1)",
+      "opts": [
+        "6",
+        "5",
+        "1",
+        "Error de compilación"
+      ],
+      "correct": 0,
+      "explanation": "El operador elvis (?:) devuelve x si no es null; como x vale 5, y toma ese valor, por lo que y + 1 imprime 6."
     }
   ],
   "sql": [
@@ -2055,6 +2110,17 @@
       ],
       "correct": 0,
       "explanation": "ORDER BY RANDOM() reordena las filas en un orden aleatorio distinto cada vez que se ejecuta la consulta, y LIMIT 1 se queda solo con la primera de ese orden, lo que equivale a elegir una fila al azar."
+    },
+    {
+      "q": "¿Qué hace la cláusula LIMIT 5 OFFSET 10 al final de una consulta SQL?",
+      "opts": [
+        "Omite las primeras 10 filas del resultado y devuelve las 5 siguientes",
+        "Devuelve las primeras 10 filas y omite las siguientes 5",
+        "Limita la consulta a un máximo de 15 filas en total",
+        "Elimina 10 filas de la tabla y añade 5 nuevas"
+      ],
+      "correct": 0,
+      "explanation": "OFFSET 10 salta las primeras 10 filas del resultado ordenado, y LIMIT 5 se queda con las 5 filas siguientes a ese punto; es una forma habitual de paginar resultados."
     }
   ],
   "git": [
@@ -2398,6 +2464,17 @@
       ],
       "correct": 0,
       "explanation": "git commit --amend reescribe el último commit incorporando lo que haya en el área de staging; la opción --no-edit evita que se abra el editor, conservando el mensaje original del commit."
+    },
+    {
+      "q": "¿Qué diferencia hay entre 'git fetch' y 'git pull'?",
+      "opts": [
+        "git fetch descarga los cambios remotos sin fusionarlos; git pull los descarga y los fusiona automáticamente",
+        "git fetch fusiona los cambios; git pull solo los descarga",
+        "Son exactamente el mismo comando con distinto nombre",
+        "git fetch solo funciona con GitHub, git pull con cualquier remoto"
+      ],
+      "correct": 0,
+      "explanation": "git fetch actualiza las referencias remotas localmente sin tocar tu rama actual, mientras que git pull es en esencia un fetch seguido automáticamente de un merge (o rebase, según la configuración)."
     }
   ],
   "htmlcss": [
@@ -2741,6 +2818,17 @@
       ],
       "correct": 0,
       "explanation": "user-select: none evita que el texto del elemento se pueda seleccionar arrastrando el ratón, algo habitual en botones o interfaces donde no tiene sentido copiar el texto."
+    },
+    {
+      "q": "¿Qué hace la propiedad CSS object-fit: cover aplicada a una imagen dentro de un contenedor de tamaño fijo?",
+      "opts": [
+        "Recorta la imagen para que cubra todo el contenedor manteniendo su proporción, sin deformarla",
+        "Estira la imagen para que ocupe el contenedor exacto, deformándola si hace falta",
+        "Repite la imagen como un patrón hasta llenar el contenedor",
+        "Oculta la imagen si no cabe exactamente en el contenedor"
+      ],
+      "correct": 0,
+      "explanation": "object-fit: cover escala la imagen para cubrir todo el espacio disponible manteniendo su relación de aspecto original, recortando el exceso por los bordes en vez de deformarla como haría 'fill'."
     }
   ],
   "bash": [
@@ -3084,6 +3172,17 @@
       ],
       "correct": 0,
       "explanation": "uniq elimina líneas duplicadas que aparecen de forma consecutiva; por eso se combina con sort primero, que agrupa las líneas iguales una junto a otra antes de pasarlas a uniq."
+    },
+    {
+      "q": "¿Qué hace el comando chmod +x script.sh?",
+      "opts": [
+        "Añade permiso de ejecución al archivo para poder lanzarlo directamente",
+        "Cambia el propietario del archivo",
+        "Comprime el archivo en formato .sh",
+        "Elimina los permisos de lectura del archivo"
+      ],
+      "correct": 0,
+      "explanation": "chmod +x añade el permiso de ejecución (execute) al archivo, lo que permite lanzarlo directamente con ./script.sh en lugar de pasarlo como argumento al intérprete bash."
     }
   ],
   "ia": [
@@ -3416,6 +3515,17 @@
       ],
       "correct": 0,
       "explanation": "Un benchmark es una colección fija de tareas o preguntas (como MMLU o SWE-bench) usada como vara de medir común, lo que permite comparar de forma objetiva el rendimiento de distintos modelos de IA en las mismas condiciones."
+    },
+    {
+      "q": "¿Qué significa que un modelo de lenguaje tenga una 'ventana de contexto' de un millón de tokens?",
+      "opts": [
+        "Que puede tener en cuenta hasta un millón de tokens de texto (entrada y lo ya generado) a la vez al responder",
+        "Que ha sido entrenado con un millón de documentos distintos",
+        "Que tarda un millón de pasos en generar cada respuesta",
+        "Que solo puede responder un millón de veces antes de necesitar reentrenarse"
+      ],
+      "correct": 0,
+      "explanation": "La ventana de contexto es la cantidad máxima de texto, medida en tokens, que un modelo puede 'ver' a la vez (el prompt, el historial de conversación y su propia respuesta en curso) antes de empezar a perder u olvidar información anterior."
     }
   ]
 }

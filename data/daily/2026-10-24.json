@@ -1,0 +1,112 @@
+{
+  "date": "2026-10-24",
+  "questions": [
+    {
+      "type": "identify",
+      "lang": "Python",
+      "question": "¿Qué contiene la variable b después de ejecutar este código?",
+      "code": "nums = [10, 20, 30]\na, *b, c = nums\nprint(b)",
+      "options": [
+        "[20]",
+        "[10, 20]",
+        "[30]",
+        "Error de sintaxis"
+      ],
+      "correct": 0,
+      "hint": "El asterisco agrupa en una lista los elementos que quedan en medio, entre el primero y el último.",
+      "explanation": "El desempaquetado extendido asigna el primer elemento a a, el último a c, y agrupa todo lo que queda en medio en una lista para b; aquí solo queda el 20."
+    },
+    {
+      "type": "complete",
+      "lang": "JavaScript",
+      "question": "¿Qué método falta para acceder al último elemento usando un índice negativo?",
+      "code": "const arr = [10, 20, 30];\nconsole.log(arr.____(-1)); // 30",
+      "options": [
+        "at",
+        "indexOf",
+        "slice",
+        "find"
+      ],
+      "correct": 0,
+      "hint": "Es un método moderno de array que acepta índices negativos para contar desde el final.",
+      "explanation": "at() permite acceder a elementos usando índices negativos, contando desde el final del array; arr.at(-1) devuelve el último elemento, 30."
+    },
+    {
+      "type": "identify",
+      "lang": "TypeScript",
+      "question": "¿Qué ocurre al intentar compilar este código?",
+      "code": "function sumar(nums: readonly number[]): number {\n  nums.push(4);\n  return nums.reduce((a, b) => a + b, 0);\n}",
+      "options": [
+        "Compila sin problemas",
+        "Error de compilación porque no se puede usar push en un array readonly",
+        "Se ejecuta pero push no hace nada",
+        "Solo falla en tiempo de ejecución, no al compilar"
+      ],
+      "correct": 1,
+      "hint": "readonly impide llamar a métodos que modifiquen el array, no solo reasignar la variable.",
+      "explanation": "Un array marcado como readonly number[] no permite métodos que lo modifican, como push, shift o splice; TypeScript detecta ese error en tiempo de compilación."
+    },
+    {
+      "type": "complete",
+      "lang": "Java",
+      "question": "¿Qué palabra falta para que el bucle salte el 2 sin imprimirlo, pero siga con el resto?",
+      "code": "int[] nums = {1, 2, 3};\nfor (int n : nums) {\n    if (n == 2) ____;\n    System.out.println(n);\n}\n// imprime 1 y 3, salta el 2",
+      "options": [
+        "continue",
+        "break",
+        "return",
+        "pass"
+      ],
+      "correct": 0,
+      "hint": "Necesitas saltar solo esta iteración del bucle, no salir de él por completo.",
+      "explanation": "continue salta directamente a la siguiente iteración del bucle sin ejecutar el resto del cuerpo, por lo que el println para n==2 nunca se ejecuta, pero el bucle sigue con el 3."
+    },
+    {
+      "type": "identify",
+      "lang": "SQL",
+      "question": "¿Qué devuelve esta consulta?",
+      "code": "SELECT name FROM products\nWHERE price BETWEEN 10 AND 20\n  AND name LIKE '%pro%';",
+      "options": [
+        "Los productos con precio entre 10 y 20 (incluidos ambos) cuyo nombre contiene 'pro'",
+        "Los productos con precio exactamente 10 o 20",
+        "Los productos cuyo nombre empieza por 'pro'",
+        "Todos los productos ordenados por precio"
+      ],
+      "correct": 0,
+      "hint": "El símbolo % a ambos lados de 'pro' permite que aparezca en cualquier parte del nombre.",
+      "explanation": "BETWEEN 10 AND 20 incluye ambos límites, y LIKE '%pro%' exige que 'pro' aparezca en cualquier posición del nombre; AND obliga a que las dos condiciones se cumplan a la vez."
+    }
+  ],
+  "tips": [
+    {
+      "text": "No despliegues un cambio grande en producción justo antes de un fin de semana si puedes evitarlo.",
+      "explanation": "Si algo sale mal, el viernes por la tarde tendrás mucha menos gente disponible para ayudarte a arreglarlo antes del fin de semana, y los picos de soporte tras un lanzamiento suelen llegar justo en esas horas. No es una regla absoluta, pero vale la pena preguntarse si ese cambio puede esperar a primera hora del lunes.",
+      "link": "https://www.shortcut.com/blog/dont-deploy-on-frida-3-other-unwritten-rules-of-software-engineering",
+      "linkLabel": "Shortcut: no despliegues en viernes y otras reglas no escritas"
+    },
+    {
+      "text": "Antes de conectar la API real de pagos o envíos a tu proyecto, pruébala primero en su entorno de pruebas (sandbox) gratuito.",
+      "explanation": "Casi todas las pasarelas de pago y servicios de envío ofrecen un modo de pruebas con tarjetas y pedidos ficticios que no mueven dinero real, pensado exactamente para que falles ahí en vez de en producción. Saltarte ese paso puede significar cobrar de verdad a un cliente de prueba o descubrir un error de integración con dinero real en juego.",
+      "link": "https://docs.stripe.com/testing",
+      "linkLabel": "Stripe: guía de pruebas con tarjetas y pagos ficticios"
+    },
+    {
+      "text": "Si no sabes qué hace un comando de la terminal, prueba primero 'comando --help' o 'man comando' antes de buscarlo en internet.",
+      "explanation": "La inmensa mayoría de comandos llevan su propia documentación incorporada, con todas sus opciones explicadas, sin necesidad de salir de la terminal ni depender de que un resultado de búsqueda esté actualizado. Acostumbrarte a consultarla primero también te enseña opciones útiles que un tutorial online rara vez menciona todas.",
+      "link": "https://linuxconfig.org/how-to-use-man-linux-command/how-to-access-manual-pages-for-linux-commands",
+      "linkLabel": "LinuxConfig: cómo usar las páginas de manual (man)"
+    },
+    {
+      "text": "Antes de escribir una expresión regular complicada a ciegas, pruébala en una herramienta visual que te muestre en tiempo real qué parte del texto coincide.",
+      "explanation": "Una expresión regular que parece correcta a simple vista puede fallar en casos que no probaste, y depurarla solo leyendo el patrón es mucho más lento que ver al instante qué se resalta en el texto. Herramientas como esta también explican cada parte del patrón por separado, lo que ayuda a entender por qué algo no coincide como esperabas.",
+      "link": "https://regex101.com/",
+      "linkLabel": "regex101: prueba expresiones regulares en tiempo real"
+    },
+    {
+      "text": "Usa el comando 'watch' para ver cómo cambia la salida de un comando cada pocos segundos, en lugar de volver a ejecutarlo tú mismo a mano.",
+      "explanation": "watch repite automáticamente un comando al intervalo que le indiques y resalta en pantalla lo que cambió respecto a la ejecución anterior, útil por ejemplo para vigilar el uso de memoria o si ya apareció un archivo nuevo en una carpeta. Ahorra la molestia de pulsar la flecha hacia arriba y Enter decenas de veces seguidas.",
+      "link": "https://man7.org/linux/man-pages/man1/watch.1.html",
+      "linkLabel": "man7.org: documentación oficial del comando watch"
+    }
+  ]
+}
