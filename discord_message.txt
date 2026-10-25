@@ -1,1 +1,1 @@
-Hoy: un fallo critico en PHP hallado con IA obliga a parchear medio internet, y Anthropic lanza su nuevo agente Duet. La imagen de arriba trae lo mas importante del dia, pero hay mucho mas: [entra en PilaPila News](<https://sei2425.github.io/Automation/>) para verlo todo completo.
+Hoy en PilaPila News: la IA acelera diagnósticos en hospitales pero también deja huecos de seguridad, y hay nuevas formas gratis de seguir aprendiendo a programar. Mira la imagen y entra en la web para verlo completo: [Abrir PilaPila News](<https://sei2425.github.io/Automation/>)

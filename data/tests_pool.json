@@ -351,6 +351,17 @@
       ],
       "correct": 0,
       "explanation": "range(2, 10, 3) empieza en 2, se detiene antes de llegar a 10, y avanza de 3 en 3: 2, 5 y 8."
+    },
+    {
+      "q": "¿Qué devuelve `'Python'.find('th')`?",
+      "opts": [
+        "2",
+        "3",
+        "-1",
+        "Error"
+      ],
+      "correct": 0,
+      "explanation": "find() devuelve el índice de la primera aparición de la subcadena indicada; en 'Python' (P-y-t-h-o-n), 'th' empieza en la posición 2 (índice contado desde 0)."
     }
   ],
   "javascript": [
@@ -705,6 +716,17 @@
       ],
       "correct": 0,
       "explanation": "Aunque NaN significa 'Not a Number', su tipo en JavaScript es 'number'; es el único valor numérico que no es igual a sí mismo (NaN !== NaN)."
+    },
+    {
+      "q": "¿Qué imprime `console.log('5' + 3 - 1)`?",
+      "opts": [
+        "52",
+        "7",
+        "'52'",
+        "NaN"
+      ],
+      "correct": 0,
+      "explanation": "El operador + con un string concatena primero ('5'+3 da '53'), pero el - que sigue fuerza una conversión numérica ('53'-1 da 52)."
     }
   ],
   "typescript": [
@@ -1059,6 +1081,17 @@
       ],
       "correct": 0,
       "explanation": "'as const' convierte el array en una tupla de solo lectura con los valores literales exactos, en lugar de inferirlo como el tipo más general number[]."
+    },
+    {
+      "q": "¿Qué tipo tiene la constante en `const dirs = ['norte', 'sur'] as const;`?",
+      "opts": [
+        "Una tupla de solo lectura con los literales 'norte' y 'sur'",
+        "string[]",
+        "Array<string>",
+        "Error de compilación"
+      ],
+      "correct": 0,
+      "explanation": "'as const' congela el array como una tupla de solo lectura con los valores literales exactos, en lugar de inferirlo como el tipo más general string[]."
     }
   ],
   "java": [
@@ -1413,6 +1446,17 @@
       ],
       "correct": 0,
       "explanation": "Los campos booleanos de una clase en Java se inicializan automáticamente a false si no se les asigna un valor, a diferencia de las variables locales, que deben inicializarse antes de usarse."
+    },
+    {
+      "q": "¿Qué ocurre al compilar este código?\ninterface Saludo {\n    void decir();\n    void decir2();\n}\n@FunctionalInterface\ninterface SaludoFuncional extends Saludo {}",
+      "opts": [
+        "Error de compilación: una interfaz anotada con @FunctionalInterface debe tener exactamente un método abstracto",
+        "Compila sin problemas",
+        "Solo falla en tiempo de ejecución",
+        "La anotación se ignora si la interfaz hereda de otra"
+      ],
+      "correct": 0,
+      "explanation": "@FunctionalInterface obliga a que la interfaz tenga un único método abstracto; como SaludoFuncional hereda dos (decir y decir2) de Saludo, el compilador lanza un error."
     }
   ],
   "kotlin": [
@@ -1767,6 +1811,17 @@
       ],
       "correct": 0,
       "explanation": "El operador elvis (?:) devuelve x si no es null; como x vale 5, y toma ese valor, por lo que y + 1 imprime 6."
+    },
+    {
+      "q": "¿Qué imprime este código?\ndata class Punto(val x: Int, val y: Int)\nval p = Punto(3, 4)\nval (a, b) = p\nprintln(a + b)",
+      "opts": [
+        "7",
+        "Error de compilación",
+        "34",
+        "0"
+      ],
+      "correct": 0,
+      "explanation": "Las funciones component1() y component2() que genera automáticamente una data class permiten desestructurar p en a=3 y b=4, cuya suma es 7."
     }
   ],
   "sql": [
@@ -2121,6 +2176,17 @@
       ],
       "correct": 0,
       "explanation": "OFFSET 10 salta las primeras 10 filas del resultado ordenado, y LIMIT 5 se queda con las 5 filas siguientes a ese punto; es una forma habitual de paginar resultados."
+    },
+    {
+      "q": "SELECT name FROM products\nWHERE price > 100\nORDER BY price DESC\nOFFSET 2 ROWS FETCH NEXT 3 ROWS ONLY;\n\n¿Qué devuelve esta consulta?",
+      "opts": [
+        "Los productos del 3º al 5º más caros (con precio mayor a 100)",
+        "Los 2 productos más caros",
+        "Los primeros 3 productos sin ordenar",
+        "Todos los productos con precio mayor a 100"
+      ],
+      "correct": 0,
+      "explanation": "OFFSET 2 ROWS salta los dos primeros resultados ya ordenados por precio descendente, y FETCH NEXT 3 ROWS ONLY toma los tres siguientes, es decir, del tercero al quinto más caro."
     }
   ],
   "git": [
@@ -2475,6 +2541,17 @@
       ],
       "correct": 0,
       "explanation": "git fetch actualiza las referencias remotas localmente sin tocar tu rama actual, mientras que git pull es en esencia un fetch seguido automáticamente de un merge (o rebase, según la configuración)."
+    },
+    {
+      "q": "git commit -m \"a\"\ngit commit -m \"b\"\ngit commit -m \"c\"\ngit tag v1.0\ngit commit -m \"d\"\ngit describe\n\n¿Qué tipo de resultado produce 'git describe' en este punto?",
+      "opts": [
+        "Algo como 'v1.0-1-gXXXXXXX': la última etiqueta alcanzable, cuántos commits la separan del commit actual, y su hash corto",
+        "Simplemente 'v1.0', sin más información",
+        "Un error porque hay commits después de la etiqueta",
+        "La lista completa de todas las etiquetas del repositorio"
+      ],
+      "correct": 0,
+      "explanation": "git describe busca la etiqueta más reciente alcanzable desde HEAD y añade el número de commits de distancia hasta ella junto al hash corto, por eso tras un commit nuevo después de v1.0 el resultado incluye ese sufijo."
     }
   ],
   "htmlcss": [
@@ -2829,6 +2906,17 @@
       ],
       "correct": 0,
       "explanation": "object-fit: cover escala la imagen para cubrir todo el espacio disponible manteniendo su relación de aspecto original, recortando el exceso por los bordes en vez de deformarla como haría 'fill'."
+    },
+    {
+      "q": "<style>\n.video {\n  width: 100%;\n  aspect-ratio: 16 / 9;\n}\n</style>\n<div class=\"video\"></div>\n\n¿Qué efecto tiene 'aspect-ratio: 16 / 9' sobre este div?",
+      "opts": [
+        "Calcula automáticamente la altura del div para que mantenga siempre una proporción de 16 de ancho por cada 9 de alto",
+        "Fuerza al div a medir exactamente 16 por 9 píxeles",
+        "Solo funciona dentro de elementos <video>",
+        "Recorta el contenido que no quepa en esa proporción"
+      ],
+      "correct": 0,
+      "explanation": "aspect-ratio fija la relación entre el ancho y el alto del elemento; como el ancho ya está definido al 100%, el navegador calcula automáticamente la altura necesaria para mantener la proporción 16:9."
     }
   ],
   "bash": [
@@ -3183,6 +3271,17 @@
       ],
       "correct": 0,
       "explanation": "chmod +x añade el permiso de ejecución (execute) al archivo, lo que permite lanzarlo directamente con ./script.sh en lugar de pasarlo como argumento al intérprete bash."
+    },
+    {
+      "q": "#!/bin/bash\ntrap 'echo \"Saliendo...\"' EXIT\necho \"Haciendo trabajo\"\nexit 0\n\n¿Qué imprime este script?",
+      "opts": [
+        "Haciendo trabajo\nSaliendo...",
+        "Saliendo...\nHaciendo trabajo",
+        "Solo Haciendo trabajo",
+        "Error de sintaxis"
+      ],
+      "correct": 0,
+      "explanation": "trap ... EXIT registra un comando que se ejecuta justo antes de que el script termine, sin importar cómo termine; por eso 'Saliendo...' se imprime después de 'Haciendo trabajo', justo antes de que el script acabe."
     }
   ],
   "ia": [
@@ -3526,6 +3625,17 @@
       ],
       "correct": 0,
       "explanation": "La ventana de contexto es la cantidad máxima de texto, medida en tokens, que un modelo puede 'ver' a la vez (el prompt, el historial de conversación y su propia respuesta en curso) antes de empezar a perder u olvidar información anterior."
+    },
+    {
+      "q": "¿Qué significa que un modelo de lenguaje tenga una 'ventana de contexto' de 128.000 tokens?",
+      "opts": [
+        "Que puede tener en cuenta como máximo unos 128.000 tokens de texto (entrada y salida combinadas) en una misma conversación o petición",
+        "Que tarda 128.000 milisegundos en responder",
+        "Que se entrenó con 128.000 ejemplos de texto",
+        "Que solo puede responder en inglés hasta ese límite de palabras"
+      ],
+      "correct": 0,
+      "explanation": "La ventana de contexto es la cantidad máxima de texto, medida en tokens, que un modelo puede 'tener en cuenta' a la vez en una conversación; superado ese límite, el modelo deja de ver el texto más antiguo."
     }
   ]
 }

@@ -1,0 +1,87 @@
+{
+  "date": "2026-10-25",
+  "questions": [
+    {
+      "type": "identify",
+      "lang": "Python",
+      "question": "¿Qué imprime este código?",
+      "code": "def f(x, y=10):\n    return x + y\n\nprint(f(5), f(5, 1))",
+      "options": ["15 6", "15 15", "5 10 5 1", "Error"],
+      "correct": 0,
+      "hint": "El segundo argumento solo se usa si lo pasas explícitamente; si no, se usa el valor por defecto.",
+      "explanation": "f(5) usa el valor por defecto y=10, dando 15; f(5,1) usa y=1 explícito, dando 6."
+    },
+    {
+      "type": "complete",
+      "lang": "JavaScript",
+      "question": "¿Qué método falta para que el objeto no se pueda modificar?",
+      "code": "const obj = { a: 1 };\nconst frozen = Object.____(obj);\nfrozen.a = 99;\nconsole.log(frozen.a); // 1",
+      "options": ["freeze", "seal", "assign", "create"],
+      "correct": 0,
+      "hint": "Necesitas un método que impida modificar las propiedades existentes del objeto.",
+      "explanation": "Object.freeze() impide cualquier modificación a las propiedades del objeto; por eso frozen.a sigue siendo 1 aunque se intente cambiar a 99."
+    },
+    {
+      "type": "identify",
+      "lang": "SQL",
+      "question": "¿Qué devuelve esta consulta?",
+      "code": "SELECT name FROM employees e\nWHERE EXISTS (\n  SELECT 1 FROM orders o WHERE o.employee_id = e.id\n);",
+      "options": ["Los empleados que tienen al menos un pedido asociado", "Los empleados sin ningún pedido", "El número de pedidos por empleado", "Todos los empleados ordenados por nombre"],
+      "correct": 0,
+      "hint": "EXISTS comprueba si la subconsulta devuelve alguna fila, no importa cuántas.",
+      "explanation": "EXISTS devuelve verdadero en cuanto la subconsulta encuentra al menos una fila que cumple la condición, por lo que la consulta externa selecciona los empleados que tienen al menos un pedido."
+    },
+    {
+      "type": "identify",
+      "lang": "Git",
+      "question": "¿Qué consigue esta secuencia de comandos?",
+      "code": "git commit -m \"wip\"\ngit commit -m \"wip2\"\ngit commit -m \"wip3\"\ngit reset --soft HEAD~3\ngit commit -m \"una sola funcionalidad completa\"",
+      "options": ["Combinar los tres últimos commits en uno solo, conservando todos los cambios", "Eliminar por completo los cambios de los tres últimos commits", "Crear tres ramas nuevas a partir de cada commit", "Subir los tres commits al repositorio remoto"],
+      "correct": 0,
+      "hint": "--soft mueve HEAD hacia atrás pero deja los cambios listos para confirmarlos de nuevo en el área de staging.",
+      "explanation": "git reset --soft HEAD~3 deshace los tres últimos commits pero mantiene todos sus cambios en el área de staging, permitiendo crear un único commit nuevo que los agrupa."
+    },
+    {
+      "type": "complete",
+      "lang": "HTML/CSS",
+      "question": "¿Qué valor falta para dejar un espacio de 16 píxeles entre columnas y filas del grid?",
+      "code": "<style>\n  .card {\n    display: grid;\n    grid-template-columns: 1fr 1fr 1fr;\n    gap: ____;\n  }\n</style>",
+      "options": ["16px", "16%", "space-16", "16"],
+      "correct": 0,
+      "hint": "La propiedad gap necesita una unidad de medida válida, como px.",
+      "explanation": "gap: 16px define un espacio de 16 píxeles tanto entre columnas como entre filas del grid; escribir solo \"16\" sin unidad no es válido en CSS."
+    }
+  ],
+  "tips": [
+    {
+      "text": "No instales paquetes de Python o Node con sudo (sudo pip install, sudo npm install -g) sin saber por qué: casi siempre es señal de que tu entorno está mal configurado.",
+      "explanation": "Instalar con privilegios de administrador puede escribir archivos en carpetas que luego chocan con las herramientas del propio sistema operativo, y si el paquete resulta tener código malicioso, ese código se ejecuta con permisos elevados. Un entorno virtual o la instalación para el usuario (pip install --user) resuelven el problema sin necesitar privilegios de administrador.",
+      "link": "https://pip.pypa.io/en/stable/user_guide/#user-installs",
+      "linkLabel": "pip: guía de instalaciones de usuario"
+    },
+    {
+      "text": "Prueba tu página ampliando el zoom del navegador al 200%, no solo mirándola a tamaño normal: muchos diseños 'responsive' se rompen antes de lo que crees.",
+      "explanation": "Ampliar el zoom simula lo que ve alguien con baja visión o que simplemente prefiere letra más grande, y revela textos cortados, botones solapados o menús que desaparecen de la pantalla. Es uno de los criterios oficiales de accesibilidad web (WCAG) y comprobarlo lleva menos de un minuto.",
+      "link": "https://www.w3.org/WAI/WCAG21/Understanding/resize-text.html",
+      "linkLabel": "W3C: criterio de accesibilidad sobre ampliar el texto"
+    },
+    {
+      "text": "Haz que tu programa falle de inmediato y con un mensaje claro en cuanto detecte un dato que no debería faltar, en lugar de seguir adelante con un valor por defecto silencioso.",
+      "explanation": "Un programa que sigue funcionando con un valor inventado cuando falta algo importante traslada el error a un punto mucho más tarde y más difícil de rastrear, lejos de donde realmente ocurrió. El principio 'fail fast' defiende que un fallo visible e inmediato, aunque pare el programa, es mucho más fácil de depurar que uno que se esconde.",
+      "link": "https://martinfowler.com/ieeeSoftware/failFast.pdf",
+      "linkLabel": "Martin Fowler: el artículo original sobre Fail Fast"
+    },
+    {
+      "text": "Cuando copies una solución de una respuesta de Stack Overflow, lee también los comentarios antes de usarla: muchas veces alguien ya señaló ahí un caso en que falla.",
+      "explanation": "La respuesta con más votos no siempre es la más correcta ni la más actual, y los comentarios suelen contener advertencias sobre versiones donde el código ya no funciona o casos límite que el autor original no probó. Ignorarlos es perderte información que otra persona ya verificó por ti, gratis.",
+      "link": "https://stackoverflow.com/help/accepted-answer",
+      "linkLabel": "Stack Overflow: ayuda sobre las respuestas aceptadas"
+    },
+    {
+      "text": "No persigas aprender el framework de moda antes de dominar bien las estructuras de control y de datos del lenguaje base: un framework nuevo se aprende en días si ya entiendes bien lo que hay debajo.",
+      "explanation": "Los frameworks cambian cada pocos años, pero los bucles, las funciones, las listas y los condicionales son prácticamente los mismos en cualquier lenguaje que aprendas después, así que son la base que de verdad se queda contigo a largo plazo. Dominarlos primero hace que entender un framework nuevo sea mucho más rápido que memorizar sus reglas sin entender qué hay detrás.",
+      "link": "https://roadmap.sh/computer-science",
+      "linkLabel": "roadmap.sh: fundamentos de ciencias de la computación"
+    }
+  ]
+}

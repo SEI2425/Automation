@@ -1,0 +1,65 @@
+{
+  "date": "2026-10-25",
+  "items": [
+    {
+      "tag": "Impacto",
+      "title": "Un sistema de IA autónomo libera el equivalente a 8.500 citas de dermatología en hospitales del NHS",
+      "url": "https://www.healio.com/news/dermatology/20261019/ai-device-successfully-triages-skin-cancer-cases-in-realworld-study",
+      "summary": "Un estudio presentado en el congreso EADV 2026 evaluó durante 16 meses un sistema de IA autónomo con marcado CE que clasifica fotos de lesiones cutáneas tomadas con el móvil en dos hospitales del Reino Unido. El sistema dio el alta sin revisión médica a entre el 25% y el 31% de los pacientes y ahorró unas 2.850 horas de trabajo clínico, equivalentes a más de 8.500 citas presenciales de dermatología. Los propios autores reconocen seis casos en los que el sistema dio de alta por error a un paciente que resultó ser un falso negativo."
+    },
+    {
+      "tag": "Impacto",
+      "title": "Una IA que analiza la voz detecta señales de diabetes tipo 2 en solo 20 segundos de habla",
+      "url": "https://www.news-medical.net/news/20260929/Short-voice-recordings-could-screen-patients-for-type-2-diabetes.aspx",
+      "summary": "Investigadores de la empresa thymia y la Universidad RMIT entrenaron un modelo con más de 63.000 grabaciones de voz de más de 21.000 personas, presentado en el congreso EASD 2026 en Milán. Al escuchar solo 20 segundos de una persona leyendo un texto en voz alta, el modelo asignó una puntuación de riesgo más alta al 80% de quienes ya tenían diagnóstico de diabetes tipo 2 en el grupo británico analizado. Los propios autores aclaran que una grabación de voz no basta por sí sola para confirmar un diagnóstico, solo para detectar una señal de riesgo."
+    },
+    {
+      "tag": "Impacto",
+      "title": "El chatbot de IA del gobierno de EEUU corrige a Trump sobre las elecciones de 2020 y después deja de responder sobre política",
+      "url": "https://tribune.net.ph/2026/10/01/us-governments-new-ai-chatbot-pulls-back-from-debunking-trump",
+      "summary": "Nada más lanzarse a finales de septiembre, America.gov, el chatbot oficial del gobierno de EEUU, respondió que Joe Biden ganó las elecciones de 2020, contradiciendo las afirmaciones del propio Trump. Un día después, el chatbot dejó de responder a varias preguntas sobre temas políticos, sin que la Casa Blanca explicara el motivo del cambio. Un grupo independiente que analizó sus respuestas iniciales concluyó que el sistema solía basarse en registros oficiales del gobierno, incluso cuando contradecían al propio presidente."
+    },
+    {
+      "tag": "Impacto",
+      "title": "Una brecha en una empresa de IA sanitaria expone los datos de 1,4 millones de pacientes en varios hospitales de EEUU",
+      "url": "https://www.beckershospitalreview.com/healthcare-information-technology/cybersecurity/1-4-million-patients-7-health-systems-caught-in-ai-company-data-breach/",
+      "summary": "Xsolis, una empresa que usa inteligencia artificial para ayudar a hospitales a gestionar autorizaciones e historiales clínicos, notificó a las autoridades sanitarias de EEUU que un ataque de phishing en enero permitió a un atacante acceder sin permiso a parte de su sistema. Según Becker's Hospital Review, la brecha afectó a varios sistemas hospitalarios y a 1,4 millones de pacientes, aunque la empresa asegura no tener indicios de que esos datos se hayan usado de forma indebida."
+    },
+    {
+      "tag": "Lanzamiento",
+      "title": "Microsoft rediseña Copilot como una 'superapp' con tres modos: Home, Code y Autopilot",
+      "url": "https://www.techrepublic.com/article/news-microsoft-copilot-home-code-autopilot/",
+      "summary": "Microsoft presentó el 25 de septiembre una versión renovada de Copilot organizada en tres áreas: Home, que combina el chat con Word, Excel y PowerPoint; Code, que permite crear aplicaciones y automatizaciones sencillas describiéndolas en lenguaje natural; y Autopilot, un asistente que vigila canales de Teams y gestiona tareas recurrentes incluso cuando el usuario está desconectado. La empresa cobrará por consumo el uso de Code y Autopilot, que se están desplegando por fases a través de su programa Frontier."
+    },
+    {
+      "tag": "Interactivo",
+      "title": "Exercism: practica Ruby con ejercicios interactivos y mentoría gratuita",
+      "url": "https://exercism.org/tracks/ruby",
+      "summary": "Este recorrido gratuito de Exercism ofrece 120 ejercicios de Ruby organizados en 20 conceptos del lenguaje, con corrección automática de tu código nada más enviarlo. Como en el resto de la plataforma, también puedes pedir mentoría gratuita de programadores voluntarios que comentan tu solución y sugieren formas más idiomáticas de escribirla."
+    },
+    {
+      "tag": "Interactivo",
+      "title": "OverTheWire: Krypton, el wargame gratuito para aprender los fundamentos de la criptografía",
+      "url": "https://overthewire.org/wargames/krypton/",
+      "summary": "Krypton es una serie corta de retos gratuitos en los que debes descifrar mensajes cada vez más complejos para avanzar de nivel, empezando por cifrados clásicos como el César y la sustitución, hasta el análisis de frecuencia. No hace falta ningún conocimiento previo de criptografía: cada nivel introduce la técnica necesaria para romper el cifrado del siguiente."
+    },
+    {
+      "tag": "Curso",
+      "title": "Khan Academy: Journey into Cryptography, el curso gratuito sobre los fundamentos de la criptografía",
+      "url": "https://www.khanacademy.org/computing/computer-science/cryptography",
+      "summary": "Este curso gratuito de Khan Academy explica la historia de la criptografía, desde los cifrados antiguos hasta las claves pública y privada que protegen internet hoy, con vídeos cortos y ejercicios interactivos sobre aritmética modular. No requiere conocimientos previos de matemáticas avanzadas y está pensado para entender por qué ciertos números primos muy grandes hacen tan difícil romper un cifrado moderno."
+    },
+    {
+      "tag": "Curso",
+      "title": "Codecademy: Learn Ruby, el curso gratuito para dar tus primeros pasos en el lenguaje",
+      "url": "https://www.codecademy.com/learn/learn-ruby",
+      "summary": "Este curso gratuito de unas nueve horas enseña los fundamentos de Ruby (variables, bucles, control de flujo) y una introducción a la programación orientada a objetos, con ejercicios de código que se corrigen al instante en el navegador. Está pensado como primer contacto con el lenguaje, sin necesidad de instalar nada."
+    },
+    {
+      "tag": "Curso",
+      "title": "freeCodeCamp: certificación gratuita de seguridad informática",
+      "url": "https://www.freecodecamp.org/learn/information-security/",
+      "summary": "Esta certificación gratuita de freeCodeCamp enseña fundamentos de ciberseguridad construyendo con Python y Node proyectos prácticos como un escáner de puertos, un descifrador de contraseñas SHA-1 y un juego multijugador en tiempo real protegido. Al completar los proyectos obligatorios y el examen final se obtiene una certificación gratuita y verificable."
+    }
+  ]
+}
