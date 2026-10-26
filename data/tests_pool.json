@@ -362,6 +362,17 @@
       ],
       "correct": 0,
       "explanation": "find() devuelve el índice de la primera aparición de la subcadena indicada; en 'Python' (P-y-t-h-o-n), 'th' empieza en la posición 2 (índice contado desde 0)."
+    },
+    {
+      "q": "¿Qué devuelve `','.join(str(x) for x in range(3))`?",
+      "opts": [
+        "'0,1,2'",
+        "[0, 1, 2]",
+        "'012'",
+        "Error"
+      ],
+      "correct": 0,
+      "explanation": "join() concatena los elementos de la expresión generadora, convertidos antes a texto por str(), separándolos con el carácter indicado; range(3) genera 0, 1 y 2."
     }
   ],
   "javascript": [
@@ -727,6 +738,17 @@
       ],
       "correct": 0,
       "explanation": "El operador + con un string concatena primero ('5'+3 da '53'), pero el - que sigue fuerza una conversión numérica ('53'-1 da 52)."
+    },
+    {
+      "q": "¿Qué imprime `console.log(typeof Symbol())`?",
+      "opts": [
+        "'symbol'",
+        "'object'",
+        "'undefined'",
+        "Error"
+      ],
+      "correct": 0,
+      "explanation": "Symbol es un tipo primitivo propio desde ES2015, y typeof lo reconoce correctamente como 'symbol', a diferencia de otros casos especiales del lenguaje como typeof null."
     }
   ],
   "typescript": [
@@ -1092,6 +1114,17 @@
       ],
       "correct": 0,
       "explanation": "'as const' congela el array como una tupla de solo lectura con los valores literales exactos, en lugar de inferirlo como el tipo más general string[]."
+    },
+    {
+      "q": "¿Qué hace el tipo utilitario `ReturnType<T>`, como en `type R = ReturnType<typeof miFuncion>`?",
+      "opts": [
+        "Extrae el tipo de retorno de una función",
+        "Convierte la función en asíncrona",
+        "Elimina los parámetros de la función",
+        "Hace que la función sea genérica"
+      ],
+      "correct": 0,
+      "explanation": "ReturnType<T> construye un nuevo tipo a partir del tipo que devuelve la función indicada, útil para reutilizar ese tipo sin volver a escribirlo a mano en otra parte del código."
     }
   ],
   "java": [
@@ -1457,6 +1490,17 @@
       ],
       "correct": 0,
       "explanation": "@FunctionalInterface obliga a que la interfaz tenga un único método abstracto; como SaludoFuncional hereda dos (decir y decir2) de Saludo, el compilador lanza un error."
+    },
+    {
+      "q": "¿Qué ocurre al ejecutar `List<Integer> l = List.of(1, 2, 3); l.add(4);`?",
+      "opts": [
+        "Lanza UnsupportedOperationException porque List.of() crea una lista inmutable",
+        "Añade el 4 a la lista sin problema",
+        "Compila pero no hace nada",
+        "Error de compilación"
+      ],
+      "correct": 0,
+      "explanation": "List.of() crea una lista inmutable: cualquier intento de añadir, eliminar o modificar un elemento lanza una UnsupportedOperationException en tiempo de ejecución, a diferencia de un ArrayList normal."
     }
   ],
   "kotlin": [
@@ -1822,6 +1866,17 @@
       ],
       "correct": 0,
       "explanation": "Las funciones component1() y component2() que genera automáticamente una data class permiten desestructurar p en a=3 y b=4, cuya suma es 7."
+    },
+    {
+      "q": "¿Qué imprime este código?\nval lista = listOf(1, 2, 3)\nprintln(lista.sumOf { it * it })",
+      "opts": [
+        "14",
+        "6",
+        "9",
+        "Error de compilación"
+      ],
+      "correct": 0,
+      "explanation": "sumOf aplica la lambda a cada elemento (1, 4, 9) y suma los resultados directamente: 1+4+9 = 14, sin necesidad de encadenar map() y sum() por separado."
     }
   ],
   "sql": [
@@ -2187,6 +2242,17 @@
       ],
       "correct": 0,
       "explanation": "OFFSET 2 ROWS salta los dos primeros resultados ya ordenados por precio descendente, y FETCH NEXT 3 ROWS ONLY toma los tres siguientes, es decir, del tercero al quinto más caro."
+    },
+    {
+      "q": "¿Qué devuelve `SELECT COUNT(*) FROM orders WHERE customer_id IS NOT NULL;`?",
+      "opts": [
+        "El número de pedidos que tienen un cliente asignado",
+        "El número total de clientes",
+        "El número de pedidos sin cliente asignado",
+        "Los pedidos ordenados por cliente"
+      ],
+      "correct": 0,
+      "explanation": "WHERE customer_id IS NOT NULL filtra solo las filas donde esa columna tiene un valor, y COUNT(*) cuenta cuántas filas cumplen esa condición."
     }
   ],
   "git": [
@@ -2552,6 +2618,17 @@
       ],
       "correct": 0,
       "explanation": "git describe busca la etiqueta más reciente alcanzable desde HEAD y añade el número de commits de distancia hasta ella junto al hash corto, por eso tras un commit nuevo después de v1.0 el resultado incluye ese sufijo."
+    },
+    {
+      "q": "¿Qué hace el comando `git stash list`?",
+      "opts": [
+        "Muestra todos los cambios guardados temporalmente con git stash, cada uno con un identificador",
+        "Elimina todos los stashes guardados",
+        "Aplica el último stash guardado",
+        "Crea un nuevo stash vacío"
+      ],
+      "correct": 0,
+      "explanation": "git stash list muestra una lista de todos los conjuntos de cambios guardados temporalmente, cada uno identificado como stash@{n}, sin aplicar ni eliminar ninguno."
     }
   ],
   "htmlcss": [
@@ -2917,6 +2994,17 @@
       ],
       "correct": 0,
       "explanation": "aspect-ratio fija la relación entre el ancho y el alto del elemento; como el ancho ya está definido al 100%, el navegador calcula automáticamente la altura necesaria para mantener la proporción 16:9."
+    },
+    {
+      "q": "¿Qué selecciona la pseudoclase CSS `:nth-child(2n)` aplicada a una lista de elementos `<li>`?",
+      "opts": [
+        "Los elementos en posición par (2º, 4º, 6º...)",
+        "Solo el segundo elemento",
+        "Los elementos en posición impar",
+        "El último elemento"
+      ],
+      "correct": 0,
+      "explanation": ":nth-child(2n) selecciona los elementos cuya posición es múltiplo de 2 dentro de su contenedor, es decir el 2º, 4º, 6º..., muy usado para dar un color distinto a filas alternas de una tabla."
     }
   ],
   "bash": [
@@ -3282,6 +3370,17 @@
       ],
       "correct": 0,
       "explanation": "trap ... EXIT registra un comando que se ejecuta justo antes de que el script termine, sin importar cómo termine; por eso 'Saliendo...' se imprime después de 'Haciendo trabajo', justo antes de que el script acabe."
+    },
+    {
+      "q": "¿Qué hace el comando `history | tail -20`?",
+      "opts": [
+        "Muestra los últimos 20 comandos ejecutados en la terminal",
+        "Borra el historial de comandos",
+        "Muestra los primeros 20 comandos del historial",
+        "Repite el último comando 20 veces"
+      ],
+      "correct": 0,
+      "explanation": "history muestra el historial completo de comandos con su número, y tail -20 se queda solo con las últimas 20 líneas de esa lista, es decir los comandos más recientes."
     }
   ],
   "ia": [
@@ -3636,6 +3735,17 @@
       ],
       "correct": 0,
       "explanation": "La ventana de contexto es la cantidad máxima de texto, medida en tokens, que un modelo puede 'tener en cuenta' a la vez en una conversación; superado ese límite, el modelo deja de ver el texto más antiguo."
+    },
+    {
+      "q": "¿Qué significa que un modelo de lenguaje tenga una 'ventana de contexto' de 128.000 tokens?",
+      "opts": [
+        "Que puede tener en cuenta como máximo unos 128.000 tokens de texto (entrada más salida) en una misma conversación",
+        "Que tarda 128.000 milisegundos en responder",
+        "Que fue entrenado con 128.000 ejemplos",
+        "Que solo puede generar 128.000 palabras en toda su vida"
+      ],
+      "correct": 0,
+      "explanation": "La ventana de contexto es la cantidad máxima de texto, medida en tokens, que un modelo puede 'ver' a la vez entre lo que se le pregunta y lo que va generando; superado ese límite, el modelo pierde la parte más antigua de la conversación."
     }
   ]
 }

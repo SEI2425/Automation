@@ -1,0 +1,87 @@
+{
+  "date": "2026-10-26",
+  "questions": [
+    {
+      "type": "complete",
+      "lang": "Python",
+      "question": "¿Qué falta para que esto imprima \"007\"?",
+      "code": "precio = 7\nprint(f\"{precio:____}\")\n# imprime \"007\"",
+      "options": ["03d", "3d", ".3f", "<3"],
+      "correct": 0,
+      "hint": "Necesitas rellenar con ceros hasta un ancho de 3 caracteres, en un número entero.",
+      "explanation": "El especificador 03d en una f-string rellena el número con ceros a la izquierda hasta alcanzar 3 caracteres de ancho; la 'd' indica que se trata de un entero."
+    },
+    {
+      "type": "identify",
+      "lang": "JavaScript",
+      "question": "¿Qué imprime este código?",
+      "code": "const a = new Set([1, 2, 3]);\nconst b = new Set([2, 3, 4]);\nconsole.log([...a].filter(x => b.has(x)));",
+      "options": ["[2, 3]", "[1, 2, 3, 4]", "[1]", "Error"],
+      "correct": 0,
+      "hint": "El filter conserva solo los elementos de 'a' que también están en 'b'.",
+      "explanation": "[...a] convierte el Set en el array [1,2,3], y filter se queda solo con los que b.has() confirma que también están en b: 2 y 3, la intersección de ambos conjuntos."
+    },
+    {
+      "type": "identify",
+      "lang": "SQL",
+      "question": "¿Qué devuelve esta consulta?",
+      "code": "SELECT name, COALESCE(nickname, name) AS display_name\nFROM users;",
+      "options": ["El apodo de cada usuario, o su nombre si no tiene apodo asignado", "Solo los usuarios que tienen apodo", "El nombre siempre, ignorando el apodo", "Une nombre y apodo en un solo texto"],
+      "correct": 0,
+      "hint": "COALESCE devuelve el primer valor no nulo de la lista que recibe.",
+      "explanation": "COALESCE(nickname, name) devuelve nickname si no es NULL, y si lo es, cae al siguiente valor, name; cada usuario muestra así su apodo cuando existe, o su nombre normal en caso contrario."
+    },
+    {
+      "type": "identify",
+      "lang": "Kotlin",
+      "question": "¿Qué imprime este código?",
+      "code": "val numero = 15\nval resultado = numero.takeIf { it > 10 }\nprintln(resultado)",
+      "options": ["15", "null", "true", "Error de compilación"],
+      "correct": 0,
+      "hint": "takeIf devuelve el propio valor si la condición es verdadera, o null si es falsa.",
+      "explanation": "takeIf evalúa la condición (15 > 10, verdadera) y como se cumple, devuelve el propio valor original, 15; si la condición fuera falsa devolvería null en su lugar."
+    },
+    {
+      "type": "complete",
+      "lang": "Bash",
+      "question": "¿Qué falta para que esto imprima 2?",
+      "code": "x=5\ny=3\necho $((x ____ y))\n# imprime 2",
+      "options": ["%", "/", "-", "*"],
+      "correct": 0,
+      "hint": "El resultado es el resto de dividir 5 entre 3.",
+      "explanation": "El operador % dentro de $(( )) calcula el resto de la división entera; 5 % 3 da 2, ya que 5 = 1*3 + 2."
+    }
+  ],
+  "tips": [
+    {
+      "text": "No uses imports con comodín como 'from modulo import *' en Python: dificulta saber de dónde viene cada nombre y puede sobrescribir funciones sin que te enteres.",
+      "explanation": "Cuando importas todo con *, cualquier nombre definido en ese módulo entra directamente en tu espacio de nombres, y si dos módulos definen una función con el mismo nombre, la segunda importación pisa a la primera sin ningún aviso. Importar solo lo que necesitas, o el módulo completo con su propio nombre, deja claro de dónde viene cada pieza de código.",
+      "link": "https://peps.python.org/pep-0008/#imports",
+      "linkLabel": "PEP 8: guía de estilo sobre imports en Python"
+    },
+    {
+      "text": "Si vas a publicar una API, pon el número de versión en la propia ruta desde el principio (como /api/v1/...), aunque todavía solo tengas una versión.",
+      "explanation": "Cambiar la forma de los datos que devuelve una API más adelante, sin romper a quien ya la está usando, es mucho más fácil si desde el principio dejaste un hueco para una v2 en paralelo. Añadir esa versión después, cuando ya hay aplicaciones reales conectadas a /api/, obliga a hacer un cambio mucho más disruptivo.",
+      "link": "https://restfulapi.net/versioning/",
+      "linkLabel": "RESTfulAPI.net: guía de versionado de APIs REST"
+    },
+    {
+      "text": "Si necesitas medir cuánto tarda algo en tu código, usa un reloj monótono (como time.monotonic() en Python o performance.now() en JavaScript), no la hora normal del sistema.",
+      "explanation": "El reloj normal de un ordenador puede ajustarse hacia atrás en cualquier momento, por ejemplo al sincronizarse con un servidor de hora, lo que puede hacer que una medición de tiempo salga negativa o absurda. Un reloj monótono solo avanza, nunca retrocede, por lo que es la herramienta correcta para medir duraciones, no para saber la hora actual.",
+      "link": "https://docs.python.org/3/library/time.html#time.monotonic",
+      "linkLabel": "Documentación oficial de Python: time.monotonic()"
+    },
+    {
+      "text": "Antes de poner en producción una aplicación web, comprueba que responde con cabeceras de seguridad básicas como Content-Security-Policy o X-Frame-Options.",
+      "explanation": "Estas cabeceras son gratis de añadir (no cambian tu código, solo la configuración del servidor) y cierran de un golpe varias clases de ataque habituales, como inyectar scripts ajenos en tu página o incrustarla dentro de otra web sin permiso. La mayoría de frameworks modernos ofrecen un plugin o una opción para activarlas en un par de líneas.",
+      "link": "https://owasp.org/www-project-secure-headers/",
+      "linkLabel": "OWASP: proyecto de cabeceras de seguridad"
+    },
+    {
+      "text": "Si tu programa necesita ejecutar algo justo antes de cerrarse, como guardar un archivo o cerrar una conexión, regístralo con un gestor como atexit en vez de confiar en que el código después del bucle principal siempre se ejecute.",
+      "explanation": "Una señal de apagado, un error no capturado o que el proceso termine por otro camino puede saltarse por completo el código que escribiste al final de tu script, dejando una conexión abierta o un archivo sin guardar. Un gestor de limpieza como atexit (o su equivalente en otros lenguajes) se ejecuta de forma más fiable en esos casos, aunque tampoco es una garantía absoluta ante un cierre muy abrupto del proceso.",
+      "link": "https://docs.python.org/3/library/atexit.html",
+      "linkLabel": "Documentación oficial de Python: el módulo atexit"
+    }
+  ]
+}
