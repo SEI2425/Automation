@@ -373,6 +373,17 @@
       ],
       "correct": 0,
       "explanation": "join() concatena los elementos de la expresión generadora, convertidos antes a texto por str(), separándolos con el carácter indicado; range(3) genera 0, 1 y 2."
+    },
+    {
+      "q": "¿Qué imprime este código?\nprint(1 < 2 < 3)\nprint(3 > 2 > 5)",
+      "opts": [
+        "True\nFalse",
+        "True\nTrue",
+        "False\nFalse",
+        "Error de sintaxis"
+      ],
+      "correct": 0,
+      "explanation": "Python permite encadenar comparaciones: '1 < 2 < 3' equivale a '(1 < 2) and (2 < 3)', que es True. Pero '3 > 2 > 5' equivale a '(3 > 2) and (2 > 5)': la primera parte es True pero la segunda es False, así que el resultado final es False."
     }
   ],
   "javascript": [
@@ -749,6 +760,17 @@
       ],
       "correct": 0,
       "explanation": "Symbol es un tipo primitivo propio desde ES2015, y typeof lo reconoce correctamente como 'symbol', a diferencia de otros casos especiales del lenguaje como typeof null."
+    },
+    {
+      "q": "¿Qué imprime este código?\nconst obj = {};\nconsole.log(obj.saludar?.());",
+      "opts": [
+        "undefined",
+        "Error: obj.saludar is not a function",
+        "null",
+        "Error de sintaxis"
+      ],
+      "correct": 0,
+      "explanation": "El operador ?. colocado justo antes de la llamada () comprueba si 'saludar' existe antes de intentar invocarla; como obj.saludar es undefined, la expresión se detiene ahí y devuelve undefined en lugar de lanzar un error."
     }
   ],
   "typescript": [
@@ -1125,6 +1147,17 @@
       ],
       "correct": 0,
       "explanation": "ReturnType<T> construye un nuevo tipo a partir del tipo que devuelve la función indicada, útil para reutilizar ese tipo sin volver a escribirlo a mano en otra parte del código."
+    },
+    {
+      "q": "¿Qué representa el tipo resultante en este código?\ninterface Persona {\n  nombre: string;\n  edad: number;\n}\ntype Claves = keyof Persona;",
+      "opts": [
+        "\"nombre\" | \"edad\"",
+        "string",
+        "Persona[]",
+        "any"
+      ],
+      "correct": 0,
+      "explanation": "El operador keyof toma un tipo objeto y produce una unión de tipos literales de cadena con los nombres de sus propiedades; para Persona, el resultado es el tipo \"nombre\" | \"edad\", útil por ejemplo para funciones genéricas que acceden a una propiedad por su nombre de forma segura."
     }
   ],
   "java": [
@@ -1501,6 +1534,17 @@
       ],
       "correct": 0,
       "explanation": "List.of() crea una lista inmutable: cualquier intento de añadir, eliminar o modificar un elemento lanza una UnsupportedOperationException en tiempo de ejecución, a diferencia de un ArrayList normal."
+    },
+    {
+      "q": "¿Qué garantiza la sintaxis 'try-with-resources' usada aquí?\ntry (FileReader f = new FileReader(\"datos.txt\")) {\n    // leer el archivo\n}\n// no hay bloque finally, pero el archivo se cierra solo",
+      "opts": [
+        "Que el recurso (aquí f) se cierra automáticamente al salir del bloque, incluso si se lanza una excepción",
+        "Que el archivo se abre en modo de solo lectura",
+        "Que el bloque catch es opcional solo en este caso",
+        "Que el recurso se abre de forma asíncrona"
+      ],
+      "correct": 0,
+      "explanation": "try-with-resources, introducido en Java 7, llama automáticamente al método close() del recurso al salir del bloque try, tanto si termina con éxito como si lanza una excepción, evitando tener que cerrarlo a mano en un finally."
     }
   ],
   "kotlin": [
@@ -1877,6 +1921,17 @@
       ],
       "correct": 0,
       "explanation": "sumOf aplica la lambda a cada elemento (1, 4, 9) y suma los resultados directamente: 1+4+9 = 14, sin necesidad de encadenar map() y sum() por separado."
+    },
+    {
+      "q": "¿Por qué no hace falta un cast explícito en la última línea de este código?\nfun describir(valor: Any) {\n    if (valor is String) {\n        println(valor.length)\n    }\n}",
+      "opts": [
+        "Porque Kotlin aplica un 'smart cast': tras comprobar 'is String', el compilador trata automáticamente a valor como String dentro de ese bloque",
+        "Porque Any siempre tiene una propiedad length",
+        "Porque Kotlin ignora los tipos dentro de un if",
+        "El código no compila: sí hace falta un cast explícito"
+      ],
+      "correct": 0,
+      "explanation": "Kotlin realiza 'smart casts' automáticos: una vez comprobado con 'is String' que valor es de ese tipo, el compilador sabe que dentro de ese bloque puede tratarlo como String de forma segura, sin necesitar un cast manual como '(valor as String)'."
     }
   ],
   "sql": [
@@ -2253,6 +2308,17 @@
       ],
       "correct": 0,
       "explanation": "WHERE customer_id IS NOT NULL filtra solo las filas donde esa columna tiene un valor, y COUNT(*) cuenta cuántas filas cumplen esa condición."
+    },
+    {
+      "q": "¿Por qué esta consulta puede no devolver ninguna fila aunque existan clientes válidos, si la tabla orders tiene al menos un customer_id con valor NULL?\nSELECT name FROM customers\nWHERE id NOT IN (SELECT customer_id FROM orders);",
+      "opts": [
+        "Porque si cualquier valor de la subconsulta es NULL, toda la comparación NOT IN se vuelve NULL (desconocida) y ninguna fila pasa el filtro",
+        "Porque NOT IN nunca funciona con subconsultas",
+        "Porque hace falta un JOIN en lugar de una subconsulta",
+        "Porque orders debería tener una clave foránea"
+      ],
+      "correct": 0,
+      "explanation": "NOT IN se traduce internamente en comparar id contra cada valor con <>; si uno de esos valores es NULL, esa comparación da NULL en vez de verdadero o falso, y basta un solo NULL en la lista para que el resultado completo de NOT IN sea NULL en todas las filas, descartándolas todas."
     }
   ],
   "git": [
@@ -2629,6 +2695,17 @@
       ],
       "correct": 0,
       "explanation": "git stash list muestra una lista de todos los conjuntos de cambios guardados temporalmente, cada uno identificado como stash@{n}, sin aplicar ni eliminar ninguno."
+    },
+    {
+      "q": "¿Qué diferencia hay entre `git merge rama-x` y `git merge --squash rama-x`?",
+      "opts": [
+        "El merge normal crea un commit de fusión que conserva todos los commits individuales de rama-x; --squash combina todos esos cambios en un solo commit nuevo, sin fusión real ni historial detallado",
+        "--squash elimina la rama rama-x automáticamente después de fusionarla",
+        "Son exactamente el mismo comando",
+        "--squash solo funciona si no hay conflictos"
+      ],
+      "correct": 0,
+      "explanation": "Un merge normal conserva el historial completo de commits de la rama que se fusiona, mientras que --squash junta todos esos cambios en un único commit nuevo sobre la rama actual, sin registrar que hubo una fusión ni mantener los commits individuales por separado."
     }
   ],
   "htmlcss": [
@@ -3005,6 +3082,17 @@
       ],
       "correct": 0,
       "explanation": ":nth-child(2n) selecciona los elementos cuya posición es múltiplo de 2 dentro de su contenedor, es decir el 2º, 4º, 6º..., muy usado para dar un color distinto a filas alternas de una tabla."
+    },
+    {
+      "q": "¿Qué tiene de especial el contenido dentro de una etiqueta `<template>` en HTML?",
+      "opts": [
+        "No se renderiza ni se ejecuta (ni siquiera las imágenes cargan) hasta que el JavaScript lo clona y lo inserta explícitamente en el documento",
+        "Se muestra igual que cualquier otro contenido HTML normal",
+        "Solo puede contener texto, ningún otro elemento HTML",
+        "Se envía automáticamente al servidor como si fuera un formulario"
+      ],
+      "correct": 0,
+      "explanation": "El contenido de <template> queda 'inerte': el navegador lo analiza pero no lo muestra, no carga sus imágenes ni ejecuta sus scripts, hasta que código JavaScript clona ese contenido (con .content.cloneNode()) y lo añade activamente al DOM visible."
     }
   ],
   "bash": [
@@ -3381,6 +3469,17 @@
       ],
       "correct": 0,
       "explanation": "history muestra el historial completo de comandos con su número, y tail -20 se queda solo con las últimas 20 líneas de esa lista, es decir los comandos más recientes."
+    },
+    {
+      "q": "¿Qué consigue añadir `set -euo pipefail` al principio de un script de Bash?",
+      "opts": [
+        "Que el script se detenga ante el primer error, ante una variable sin definir, o si falla cualquier comando dentro de una tubería (pipe)",
+        "Que el script se ejecute más rápido",
+        "Que el script ignore todos los errores y continúe siempre",
+        "Que el script se ejecute en segundo plano"
+      ],
+      "correct": 0,
+      "explanation": "'-e' detiene el script si un comando falla, '-u' lo detiene si se usa una variable no definida, y '-o pipefail' hace que una tubería falle si cualquier comando de la cadena falla, no solo el último; juntas son una práctica habitual para escribir scripts más seguros."
     }
   ],
   "ia": [
@@ -3746,6 +3845,17 @@
       ],
       "correct": 0,
       "explanation": "La ventana de contexto es la cantidad máxima de texto, medida en tokens, que un modelo puede 'ver' a la vez entre lo que se le pregunta y lo que va generando; superado ese límite, el modelo pierde la parte más antigua de la conversación."
+    },
+    {
+      "q": "¿Qué es un 'jailbreak' aplicado a un modelo de IA conversacional?",
+      "opts": [
+        "Un conjunto de trucos o instrucciones diseñadas para que el modelo ignore sus propias normas de seguridad y genere contenido que normalmente rechazaría",
+        "Un fallo de hardware que hace que el modelo deje de responder",
+        "El proceso oficial por el que una empresa libera los pesos de un modelo en abierto",
+        "Una técnica para acelerar las respuestas del modelo"
+      ],
+      "correct": 0,
+      "explanation": "Un jailbreak busca manipular al modelo, normalmente con instrucciones cuidadosamente redactadas o escenarios ficticios, para que pase por alto las restricciones de seguridad que sus creadores le impusieron y genere una respuesta que de otro modo rechazaría."
     }
   ]
 }

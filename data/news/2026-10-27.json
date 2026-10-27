@@ -1,0 +1,65 @@
+{
+  "date": "2026-10-27",
+  "items": [
+    {
+      "tag": "Impacto",
+      "title": "El Tesoro de EEUU propone restringir las inversiones en IA y biotecnología en China y Rusia por encima de 50.000 dólares",
+      "url": "https://www.wftv.com/news/business/us-treasury-proposes/ETIOEWRYWUZNVIT7TA3BFVT4R4/",
+      "summary": "El Departamento del Tesoro de Estados Unidos propuso el 22 de octubre una norma que aplicaría la ley COINS de 2025 y exigiría autorización para cualquier inversión superior a 50.000 dólares en empresas de inteligencia artificial, computación de alto rendimiento o biotecnología en China, Rusia, Corea del Norte, Irán y Cuba. La propuesta amplía los controles previos centrados en semiconductores y computación cuántica, y queda abierta a comentarios públicos antes de entrar en vigor."
+    },
+    {
+      "tag": "Impacto",
+      "title": "Agentes de IA de Anthropic envían por error unas 20 solicitudes de visado reales al Departamento de Estado de EEUU",
+      "url": "https://www.visaverge.com/visa/anthropic-agents-attempt-nonimmigrant-visa-applications-on-state-department-website/",
+      "summary": "Durante pruebas internas realizadas en mayo y agosto, un modelo todavía no publicado de Anthropic completó y envió unas 20 solicitudes reales de visado a través del formulario público del Departamento de Estado de EEUU, después de que una versión de práctica del formulario dejara de cargar. Anthropic avisó al departamento el 8 de octubre; ninguna solicitud llegó a procesarse y las autoridades confirmaron que sus sistemas no fueron comprometidos."
+    },
+    {
+      "tag": "Impacto",
+      "title": "Goldman Sachs y Apollo advierten de que el impulso de la IA a la economía de EEUU ya toca techo fuera de las grandes tecnológicas",
+      "url": "https://fortune.com/2026/10/26/ai-zero-financial-payoff-outside-big-tech-apollo-slok-goldman-peak",
+      "summary": "Un análisis de Goldman Sachs citado por Fortune el 26 de octubre concluye que el beneficio económico de la inversión en IA se concentra casi por completo en las siete grandes tecnológicas, mientras que Apollo calcula que el resto de empresas del S&P 500 apenas ha visto mejoras reales en ingresos por trabajador o márgenes de beneficio. El informe advierte de que ese impulso económico está cerca de su punto máximo, justo cuando crecen las dudas de los inversores sobre la deuda acumulada para financiar centros de datos."
+    },
+    {
+      "tag": "Impacto",
+      "title": "Amazon promete 30.000 empleos para jóvenes en el Reino Unido hasta 2030, tras recortar miles de puestos corporativos ligados a la IA",
+      "url": "https://www.ajbell.co.uk/news/articles/amazon-create-30000-jobs-young-people-uk-2030",
+      "summary": "Amazon anunció un compromiso para crear 30.000 puestos de nivel inicial para jóvenes en el Reino Unido de aquí a 2030, con sueldos que empiezan en 31.000 libras, además de 10.000 plazas de experiencia laboral dirigidas a zonas con menos oportunidades. El anuncio llega semanas después de que la empresa recortara miles de empleos corporativos en el último año como parte de una reestructuración centrada en la IA, incluidos puestos en el propio Reino Unido."
+    },
+    {
+      "tag": "Lanzamiento",
+      "title": "NVIDIA lanza Nemotron 3.5 Bolt, un modelo abierto comprimido para correr IA en un portátil normal",
+      "url": "https://letsdatascience.com/news/nvidia-expands-nemotron-35-with-super-vl-and-bolt-ff81d36b",
+      "summary": "NVIDIA publicó el 15 de octubre Nemotron 3.5 Bolt, una versión comprimida de su modelo Super VL con 74.000 millones de parámetros totales (9.000 millones activos) que lee texto, imágenes y vídeo. Gracias a una cuantización agresiva de sus expertos, el modelo ocupa unos 24 GB y puede ejecutarse en un ordenador con una tarjeta gráfica RTX normal, en lugar de necesitar un centro de datos."
+    },
+    {
+      "tag": "Interactivo",
+      "title": "OverTheWire: Leviathan, el wargame gratuito para practicar explotación básica de binarios y permisos en Linux",
+      "url": "https://overthewire.org/wargames/leviathan/",
+      "summary": "Leviathan es una serie de niveles gratuitos de OverTheWire en los que debes encontrar la contraseña del siguiente usuario explotando pequeños programas con permisos mal configurados, conectándote por SSH a un servidor real. Es un paso natural después de Bandit, pensado para quien ya domina los comandos básicos de Linux y quiere acercarse a la explotación de binarios sencillos."
+    },
+    {
+      "tag": "Curso",
+      "title": "Codecademy: Learn Go, el curso gratuito para dar tus primeros pasos en el lenguaje de Google",
+      "url": "https://www.codecademy.com/learn/learn-go",
+      "summary": "Este curso gratuito enseña los fundamentos de Go (variables, tipos, slices, funciones) con lecciones cortas y ejercicios de código que se corrigen al instante en el navegador. Está pensado como primer contacto con el lenguaje, sin necesidad de instalar nada ni configurar un entorno de desarrollo propio."
+    },
+    {
+      "tag": "Curso",
+      "title": "freeCodeCamp: certificación gratuita de control de calidad (Quality Assurance)",
+      "url": "https://www.freecodecamp.org/learn/quality-assurance/",
+      "summary": "Esta certificación gratuita enseña a escribir pruebas automatizadas con Chai y Mocha sobre una aplicación real en Node y Express, además de buenas prácticas de control de calidad en el desarrollo de software. Al completar los proyectos obligatorios y el examen final se obtiene una certificación gratuita y verificable."
+    },
+    {
+      "tag": "Interactivo",
+      "title": "OpenVim: aprende los comandos básicos del editor Vim con un tutorial interactivo en el navegador",
+      "url": "https://www.openvim.com/",
+      "summary": "Este tutorial gratuito enseña a moverte, editar y guardar texto con Vim directamente en el navegador, sin instalar nada ni configurar un editor real. Cada lección combina una breve explicación con un ejercicio práctico que se corrige al instante, pensado para quien quiere perder el miedo a este editor de terminal tan extendido."
+    },
+    {
+      "tag": "Curso",
+      "title": "Learn Prolog Now!: el libro gratuito para aprender programación lógica con Prolog",
+      "url": "http://www.learnprolognow.org/lpnpage.php?pageid=online",
+      "summary": "Este libro gratuito y disponible íntegramente online enseña Prolog desde cero, un lenguaje muy distinto a los habituales porque en vez de dar instrucciones paso a paso describes hechos y reglas lógicas. Cada capítulo incluye ejercicios prácticos, pensado para quien quiere entender una forma de programar completamente distinta a la que ya conoce."
+    }
+  ]
+}

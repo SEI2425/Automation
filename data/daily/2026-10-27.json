@@ -1,0 +1,112 @@
+{
+  "date": "2026-10-27",
+  "questions": [
+    {
+      "type": "identify",
+      "lang": "Python",
+      "question": "¿Qué imprime este código?",
+      "code": "data = [1, 2, 3, 4, 5]\ntotal = 0\ni = 0\nwhile (n := data[i]) < 4:\n    total += n\n    i += 1\nprint(total)",
+      "options": [
+        "6",
+        "10",
+        "15",
+        "Error de sintaxis"
+      ],
+      "correct": 0,
+      "hint": "El operador := asigna n dentro de la condición del while antes de evaluarla.",
+      "explanation": ":= (operador morsa) asigna data[i] a n y evalúa esa misma asignación en la condición; el bucle suma 1+2+3=6 antes de que n valga 4 y la condición se vuelva falsa."
+    },
+    {
+      "type": "complete",
+      "lang": "JavaScript",
+      "question": "¿Qué falta para que este código imprima solo \"0 0\"?",
+      "code": "outer:\nfor (let i = 0; i < 3; i++) {\n  for (let j = 0; j < 3; j++) {\n    if (j === 1) ____ outer;\n    console.log(i, j);\n  }\n}",
+      "options": [
+        "break",
+        "continue",
+        "return",
+        "throw"
+      ],
+      "correct": 0,
+      "hint": "Necesitas salir por completo del bucle externo, no solo de esta iteración.",
+      "explanation": "'break outer' termina inmediatamente el bucle marcado con la etiqueta 'outer', deteniendo tanto el bucle interno como el externo; por eso solo se imprime la primera combinación antes de que j llegue a 1."
+    },
+    {
+      "type": "identify",
+      "lang": "SQL",
+      "question": "¿Qué devuelve esta consulta si la tabla sizes tiene 3 filas y colors tiene 2?",
+      "code": "SELECT s.size, c.color\nFROM sizes s\nCROSS JOIN colors c;",
+      "options": [
+        "Las 6 combinaciones posibles entre cada talla y cada color (3 x 2)",
+        "Solo 3 filas, combinando cada talla con un color al azar",
+        "Un error, porque faltaría una condición ON",
+        "Las filas de sizes y colors una debajo de otra, sin combinarlas"
+      ],
+      "correct": 0,
+      "hint": "CROSS JOIN combina cada fila de una tabla con cada fila de la otra, sin ninguna condición de coincidencia.",
+      "explanation": "CROSS JOIN genera el producto cartesiano de las dos tablas: cada fila de sizes se combina con cada fila de colors, dando 3 x 2 = 6 combinaciones en total, útil por ejemplo para generar todas las variantes posibles de un producto."
+    },
+    {
+      "type": "complete",
+      "lang": "Kotlin",
+      "question": "¿Qué función falta para que total termine valiendo 10?",
+      "code": "var total = 0\n____(5) { total += it }\nprintln(total)\n// imprime 10 (0+1+2+3+4)",
+      "options": [
+        "repeat",
+        "forEach",
+        "map",
+        "times"
+      ],
+      "correct": 0,
+      "hint": "Es una función de la librería estándar que ejecuta un bloque un número fijo de veces, pasando el índice como 'it'.",
+      "explanation": "repeat(5) { ... } ejecuta el bloque 5 veces con 'it' tomando los valores 0,1,2,3,4; sumarlos da 0+1+2+3+4=10."
+    },
+    {
+      "type": "identify",
+      "lang": "Bash",
+      "question": "¿Qué hace 'shift 2' en este script?",
+      "code": "#!/bin/bash\nset -- a b c\nshift 2\necho \"$1\"\n# imprime c",
+      "options": [
+        "Descarta los dos primeros parámetros posicionales, dejando que $1 pase a referirse al tercero",
+        "Mueve el primer parámetro al final de la lista",
+        "Duplica los dos primeros parámetros",
+        "Imprime los dos primeros parámetros y los elimina"
+      ],
+      "correct": 0,
+      "hint": "shift n elimina los n primeros parámetros posicionales y renumera el resto.",
+      "explanation": "shift 2 descarta $1 y $2 (a y b), por lo que lo que antes era $3 (c) pasa a ser el nuevo $1."
+    }
+  ],
+  "tips": [
+    {
+      "text": "No encadenes llamadas await dentro de un bucle for cuando cada llamada es independiente de las anteriores: usa Promise.all para lanzarlas en paralelo.",
+      "explanation": "Esperar awaits uno detrás de otro obliga a tu programa a quedarse parado el tiempo total de todas las llamadas sumadas, aunque ninguna dependa del resultado de la anterior. Promise.all lanza todas esas llamadas a la vez y espera a que todas terminen, lo que puede reducir el tiempo total de minutos a segundos.",
+      "link": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/all",
+      "linkLabel": "MDN: Promise.all()"
+    },
+    {
+      "text": "Antes de instalar una librería de frontend solo por una función pequeña, comprueba cuánto peso añade a tu paquete final con una herramienta como Bundlephobia.",
+      "explanation": "Una librería puede resolver un problema pequeño pero añadir cientos de kilobytes al código que el navegador descarga, lo que ralentiza la carga de la página para cualquier usuario con una conexión mala. Comprobar su tamaño antes de instalarla evita cambiar una línea de código propia por una dependencia que pesa más que el resto de tu aplicación.",
+      "link": "https://bundlephobia.com/",
+      "linkLabel": "Bundlephobia: comprueba el peso de un paquete de npm"
+    },
+    {
+      "text": "Si añades carpetas o archivos a .gitignore después de que Git ya los estaba siguiendo, no basta con editar el archivo: quítalos primero del índice con 'git rm -r --cached'.",
+      "explanation": ".gitignore solo afecta a los archivos que Git todavía no conoce; si un archivo ya está siendo rastreado, seguirá apareciendo en cada commit aunque lo añadas a esa lista después. Hay que decirle explícitamente a Git que deje de seguirlo, sin borrar el archivo de tu disco.",
+      "link": "https://git-scm.com/docs/gitignore",
+      "linkLabel": "Git SCM: documentación de .gitignore"
+    },
+    {
+      "text": "No uses 'any' en TypeScript como forma rápida de silenciar un error de tipos: casi siempre hay una alternativa, como 'unknown' con una comprobación, que no desactiva la seguridad del compilador.",
+      "explanation": "'any' le dice al compilador que deje de comprobar ese valor por completo, lo que anula la principal ventaja de usar TypeScript en esa parte del código y puede esconder errores reales hasta que el programa ya está en producción. 'unknown' obliga a comprobar el tipo antes de usarlo, manteniendo la seguridad sin tener que inventar un tipo exacto de inmediato.",
+      "link": "https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#any",
+      "linkLabel": "TypeScript Handbook: el tipo any"
+    },
+    {
+      "text": "Revisa los términos de uso y los límites de peticiones de una API externa antes de construir una parte importante de tu proyecto sobre ella, no después.",
+      "explanation": "Un servicio externo puede cambiar sus precios, reducir drásticamente su límite gratuito de peticiones o incluso cerrar su API sin mucho aviso previo, y si tu aplicación depende por completo de ella sin haberlo previsto, puedes quedarte con una funcionalidad rota de la noche a la mañana. Leer esas condiciones antes de integrar la API te permite diseñar una alternativa o un plan de respaldo con tiempo.",
+      "link": "https://nordicapis.com/how-to-review-an-api-terms-of-service/",
+      "linkLabel": "Nordic APIs: cómo revisar los términos de servicio de una API"
+    }
+  ]
+}
