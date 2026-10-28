@@ -1,0 +1,87 @@
+{
+  "date": "2026-10-28",
+  "questions": [
+    {
+      "type": "identify",
+      "lang": "Python",
+      "question": "¿Qué contiene el diccionario data después de ejecutar este código?",
+      "code": "data = {\"a\": 1, \"b\": 2}\nfor k in list(data.keys()):\n    if data[k] == 1:\n        del data[k]\nprint(data)",
+      "options": ["{'b': 2}", "{'a': 1, 'b': 2}", "RuntimeError: dictionary changed size during iteration", "{'a': 1}"],
+      "correct": 0,
+      "hint": "list(data.keys()) crea una copia de las claves, así que borrar elementos de data durante el bucle no causa error.",
+      "explanation": "Al recorrer list(data.keys()) en vez del diccionario directamente, Python itera sobre una copia fija de las claves; eso permite borrar 'a' (cuyo valor es 1) sin lanzar el error que sí aparecería si se borrara mientras se itera sobre el diccionario original."
+    },
+    {
+      "type": "complete",
+      "lang": "JavaScript",
+      "question": "¿Qué método falta para obtener una copia ordenada sin modificar el array original?",
+      "code": "const original = [3, 1, 2];\nconst copiaOrdenada = original.____();\nconsole.log(original);      // [3, 1, 2]\nconsole.log(copiaOrdenada); // [1, 2, 3]",
+      "options": ["toSorted", "sort", "reverse", "toReversed"],
+      "correct": 0,
+      "hint": "Busca el método 'inmutable' introducido en 2023 que no cambia el array original.",
+      "explanation": "toSorted() devuelve una copia nueva y ordenada del array sin tocar el original, a diferencia de sort(), que ordena el array sobre el que se llama modificándolo directamente."
+    },
+    {
+      "type": "complete",
+      "lang": "TypeScript",
+      "question": "¿Qué operador falta para comprobar que el objeto cumple el tipo indicado sin perder su tipo literal más específico?",
+      "code": "const config = {\n  mode: \"dark\",\n  retries: 3\n} ____ Record<string, unknown>;",
+      "options": ["satisfies", "as", "extends", "implements"],
+      "correct": 0,
+      "hint": "Es el operador introducido en TypeScript 4.9 que valida el tipo sin cambiar el tipo ya inferido.",
+      "explanation": "'satisfies' comprueba que el valor cumple el tipo indicado, pero a diferencia de 'as', no sustituye el tipo inferido: config sigue teniendo el tipo literal más preciso (con mode como \"dark\", no como string genérico)."
+    },
+    {
+      "type": "identify",
+      "lang": "Java",
+      "question": "¿Qué imprime este código?",
+      "code": "List<String> names = Arrays.asList(\"Ana\", \"Leo\", \"Zoe\");\nnames.sort(Comparator.reverseOrder());\nSystem.out.println(names);",
+      "options": ["[Zoe, Leo, Ana]", "[Ana, Leo, Zoe]", "Error de compilación", "UnsupportedOperationException"],
+      "correct": 0,
+      "hint": "Comparator.reverseOrder() invierte el orden natural; sort() solo reordena, no cambia el tamaño de la lista.",
+      "explanation": "sort() reordena los elementos de la lista sin añadir ni quitar ninguno, así que funciona incluso sobre la lista de tamaño fijo que devuelve Arrays.asList(); con el orden invertido, el resultado queda de mayor a menor alfabéticamente: [Zoe, Leo, Ana]."
+    },
+    {
+      "type": "complete",
+      "lang": "SQL",
+      "question": "¿Qué función de ventana falta para dividir a los estudiantes en 4 grupos (cuartiles) según su puntuación?",
+      "code": "SELECT name, score,\n       ____(4) OVER (ORDER BY score DESC) AS cuartil\nFROM students;",
+      "options": ["NTILE", "RANK", "ROW_NUMBER", "PERCENT_RANK"],
+      "correct": 0,
+      "hint": "Es la función que reparte las filas ordenadas en N grupos de tamaño lo más parecido posible.",
+      "explanation": "NTILE(4) divide las filas, ya ordenadas, en 4 grupos numerados del 1 al 4 repartiendo las filas lo más equitativamente posible; a diferencia de RANK o ROW_NUMBER, no numera cada fila individualmente sino que asigna un número de grupo."
+    }
+  ],
+  "tips": [
+    {
+      "text": "Prueba tu programa con un volumen de datos realista, no solo con los pocos registros que usaste mientras programabas.",
+      "explanation": "Un bucle o una consulta que tarda un instante con diez registros puede volverse insoportablemente lento con cien mil, y ese problema no se nota nunca si solo pruebas con los datos pequeños y cómodos que usaste para desarrollar. Probar con un volumen parecido al real, aunque sea con datos de ejemplo generados a propósito, es la única forma de detectar a tiempo un cuello de botella que crece con el tamaño de los datos.",
+      "link": "https://docs.locust.io/en/stable/what-is-locust.html",
+      "linkLabel": "Locust: qué es una prueba de carga"
+    },
+    {
+      "text": "No modifiques (mutes) un array mientras lo recorres con un bucle: construye uno nuevo con filter o map, o copia el array antes de tocarlo.",
+      "explanation": "Añadir o quitar elementos de un array en mitad de un bucle que lo recorre puede hacer que se salten elementos o se repitan, porque los índices cambian de significado a mitad de la iteración. Es un error sutil que a menudo solo se nota con ciertos tamaños de lista, por lo que es más seguro acostumbrarse a construir un array nuevo en lugar de tocar el que se está recorriendo.",
+      "link": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array",
+      "linkLabel": "MDN: métodos de Array en JavaScript"
+    },
+    {
+      "text": "Si una petición desde el navegador falla sin motivo aparente, revisa si el problema es CORS antes de asumir que tu código está mal.",
+      "explanation": "CORS es una protección del propio navegador que bloquea las peticiones entre páginas de distinto origen salvo que el servidor lo autorice explícitamente con sus cabeceras; ese bloqueo ocurre en el navegador, no en tu código, así que revisar la consola en busca de un error de CORS ahorra mucho tiempo buscando un bug que no existe en tu programa.",
+      "link": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/CORS",
+      "linkLabel": "MDN: qué es CORS"
+    },
+    {
+      "text": "Evita anidar muchos callbacks uno dentro de otro (callback hell): usa async/await o encadena promesas para que el código se lea de arriba a abajo.",
+      "explanation": "Cuando cada función depende de otra que solo se sabe cuándo termina gracias a un callback, anidarlas todas seguidas crea un código con forma de pirámide muy difícil de leer y de depurar, sobre todo a la hora de manejar errores. async/await, o encadenar promesas con then(), deja ese mismo flujo escrito de forma lineal, mucho más fácil de seguir.",
+      "link": "http://callbackhell.com/",
+      "linkLabel": "callbackhell.com: qué es y cómo evitarlo"
+    },
+    {
+      "text": "Antes de hacer scraping de una web, revisa su archivo robots.txt y sus términos de uso: no todo lo que es técnicamente posible es legal o está permitido.",
+      "explanation": "El archivo robots.txt de un sitio indica qué partes no quiere que un programa automático visite, y aunque no es una barrera técnica real, ignorarlo puede violar los términos de servicio del sitio o incluso tener consecuencias legales en algunos países. Revisarlo antes de escribir el scraper evita problemas que no tienen nada que ver con si tu código funciona o no.",
+      "link": "https://developers.google.com/search/docs/crawling-indexing/robots/intro",
+      "linkLabel": "Google: introducción a robots.txt"
+    }
+  ]
+}

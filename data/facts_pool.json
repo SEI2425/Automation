@@ -34,7 +34,8 @@
     "La biblioteca estándar de Python incluye un pequeño huevo de pascua oficial: al escribir 'import this' en cualquier intérprete se imprime el poema 'The Zen of Python', con los principios de diseño del lenguaje.",
     "Python introdujo las f-strings (cadenas de texto con formato literal, como f'{nombre}') en la versión 3.6, lanzada en 2016, mucho más rápidas de evaluar que el método str.format() o el operador %.",
     "El módulo functools de Python incluye lru_cache, un decorador que memoriza automáticamente los resultados de una función según sus argumentos, evitando recalcular lo mismo dos veces sin tener que escribir ese caché a mano.",
-    "En Python, el tipo bool es en realidad una subclase de int: True equivale a 1 y False a 0, por lo que 'True + True' da 2 sin lanzar ningún error, y se puede usar un booleano como índice de una lista."
+    "En Python, el tipo bool es en realidad una subclase de int: True equivale a 1 y False a 0, por lo que 'True + True' da 2 sin lanzar ningún error, y se puede usar un booleano como índice de una lista.",
+    "El módulo 'enum' de la biblioteca estándar de Python, incorporado en la versión 3.4 (2014), permite declarar conjuntos fijos de constantes con nombre, con comparación por identidad en lugar de depender de números o cadenas de texto sueltas."
   ],
   "javascript": [
     "A pesar del nombre, JavaScript no tiene relación técnica con Java: el nombre fue una decisión de marketing de Netscape para aprovechar la popularidad de Java en 1995.",
@@ -71,7 +72,8 @@
     "El método Array.prototype.flat(), que aplana arrays anidados, no llegó al estándar del lenguaje hasta ES2019, pese a que los arrays anidados existen desde la primera versión de JavaScript en 1995.",
     "JavaScript no distingue un tipo entero aparte: todos los números (salvo BigInt) comparten el mismo tipo de 64 bits, lo que limita los enteros representados con precisión exacta a 2^53-1; BigInt se añadió en 2020 (ES2020) para enteros más grandes.",
     "El operador de exponenciación ** se añadió a JavaScript en ES2016, mucho después de que el lenguaje ya tuviera Math.pow() para calcular potencias.",
-    "A diferencia de un objeto normal, un Map de JavaScript admite cualquier tipo de valor como clave, incluyendo objetos, funciones o incluso NaN, no solo cadenas y símbolos, y además conserva el orden en que se insertaron sus elementos."
+    "A diferencia de un objeto normal, un Map de JavaScript admite cualquier tipo de valor como clave, incluyendo objetos, funciones o incluso NaN, no solo cadenas y símbolos, y además conserva el orden en que se insertaron sus elementos.",
+    "WeakMap y WeakSet, incorporados en ECMAScript 2015 (ES6), permiten asociar datos a objetos sin impedir que el recolector de basura libere esos objetos cuando ya no se usan en ningún otro sitio, algo que un Map o Set normal sí impediría."
   ],
   "typescript": [
     "TypeScript no reemplaza a JavaScript en ningún momento: todo programa TypeScript se compila (transpila) a JavaScript plano antes de ejecutarse en el navegador o en Node.",
@@ -108,7 +110,8 @@
     "TypeScript no tiene su propio motor de ejecución: todo el código se transpila a JavaScript antes de ejecutarse, por lo que en tiempo de ejecución no quedan tipos ni comprobaciones, solo el JavaScript resultante.",
     "El operador 'as const', añadido en TypeScript 3.4 (2019), congela el tipo de un valor literal en su forma más específica posible, por ejemplo convirtiendo un array en una tupla de solo lectura en lugar de inferirlo como un array genérico.",
     "El tipo utilitario NonNullable<T>, que elimina null y undefined de un tipo unión, forma parte del conjunto de tipos utilitarios que TypeScript fue incorporando entre 2016 y 2018, en las versiones 2.1 a 2.8 del lenguaje.",
-    "Los enums numéricos de TypeScript generan automáticamente un 'mapeo inverso': además de escribir Color.Rojo para obtener su valor numérico, también se puede escribir Color[0] para obtener el texto 'Rojo' a partir de ese número; los enums de tipo string no tienen este mapeo inverso."
+    "Los enums numéricos de TypeScript generan automáticamente un 'mapeo inverso': además de escribir Color.Rojo para obtener su valor numérico, también se puede escribir Color[0] para obtener el texto 'Rojo' a partir de ese número; los enums de tipo string no tienen este mapeo inverso.",
+    "Las funciones de aserción de TypeScript, con la sintaxis 'asserts condition' o 'asserts x is T', se añadieron en la versión 3.7 (2019), la misma actualización que introdujo el encadenamiento opcional (?.) y el operador nullish (??) a nivel de tipos, antes de que llegaran a JavaScript con ES2020."
   ],
   "java": [
     "La mascota de Java, Duke, fue diseñada en 1992 para un proyecto anterior llamado Oak, antes incluso de que existiera el lenguaje Java tal como lo conocemos.",
@@ -145,7 +148,8 @@
     "La máquina virtual de Java (JVM) no fue diseñada solo para el lenguaje Java: hoy ejecuta decenas de otros lenguajes, como Kotlin, Scala, Clojure o Groovy, que se compilan al mismo bytecode.",
     "La anotación @FunctionalInterface, incorporada en Java 8 junto a las expresiones lambda, no es obligatoria, pero hace que el compilador compruebe que la interfaz tiene exactamente un método abstracto, avisando con un error si alguien añade un segundo por error.",
     "El método List.of(), introducido en Java 9 (2017), crea una lista inmutable cuyo intento de modificación lanza una excepción, a diferencia de Arrays.asList(), que sí permite cambiar los elementos existentes aunque no añadir ni quitar ninguno.",
-    "Desde Java 14, 'switch' puede usarse como una expresión que devuelve directamente un valor con la sintaxis de flecha, como 'int dias = switch (mes) { case 2 -> 28; default -> 30; };', sin necesidad de 'break' ni de declarar una variable aparte dentro de cada rama como exige el switch tradicional."
+    "Desde Java 14, 'switch' puede usarse como una expresión que devuelve directamente un valor con la sintaxis de flecha, como 'int dias = switch (mes) { case 2 -> 28; default -> 30; };', sin necesidad de 'break' ni de declarar una variable aparte dentro de cada rama como exige el switch tradicional.",
+    "El recolector de basura ZGC (Z Garbage Collector), diseñado para mantener pausas de menos de un milisegundo incluso en montones de varios terabytes, se convirtió en una característica de producción en Java 15 (2020), tras haberse introducido como experimental en Java 11."
   ],
   "kotlin": [
     "Kotlin es interoperable al 100% con Java: se puede llamar código Java desde Kotlin y código Kotlin desde Java dentro del mismo proyecto sin conversión manual.",
@@ -182,7 +186,8 @@
     "Kotlin se convirtió en 2019 en el lenguaje recomendado por Google para el desarrollo de apps Android, por delante de Java, aunque sigue ejecutándose sobre la misma máquina virtual de Java.",
     "Kotlin genera automáticamente, para cada propiedad de una 'data class', una función componentN() (component1(), component2()...), lo que permite desestructurarla directamente como 'val (x, y) = punto'.",
     "La función repeat(n) { ... } de Kotlin ejecuta el bloque indicado exactamente n veces, sin necesidad de declarar una variable de control como en un bucle for tradicional.",
-    "Un 'companion object' dentro de una clase Kotlin permite definir miembros parecidos a los 'static' de Java, pero a diferencia de estos, el companion object es en realidad una instancia real de un objeto, por lo que puede implementar interfaces y heredar de una clase."
+    "Un 'companion object' dentro de una clase Kotlin permite definir miembros parecidos a los 'static' de Java, pero a diferencia de estos, el companion object es en realidad una instancia real de un objeto, por lo que puede implementar interfaces y heredar de una clase.",
+    "El operador de comparación '===' en Kotlin comprueba si dos referencias apuntan al mismo objeto en memoria (identidad), mientras que '==' llama automáticamente al método equals() de la clase para comparar su contenido, justo al revés de como funcionan esos mismos símbolos en Java."
   ],
   "sql": [
     "El estándar SQL lo mantiene ISO, pero en la práctica cada motor (PostgreSQL, MySQL, SQL Server...) añade extensiones propias, por lo que el SQL 100% portable entre motores es más raro de lo que parece.",
@@ -219,7 +224,8 @@
     "El estándar SQL no distingue mayúsculas de minúsculas en sus palabras clave (SELECT y select funcionan igual), pero por convención casi todo el mundo las escribe en mayúsculas para distinguirlas de tablas y columnas.",
     "El estándar SQL:1999 introdujo el tipo de dato BOOLEAN, pero motores muy usados como Oracle Database todavía no lo implementan de forma nativa en sus columnas, por lo que suele simularse con un NUMBER(1) o un CHAR(1).",
     "SQLite, pese a ser uno de los motores de bases de datos más usados del mundo, no impone por defecto el tipo de sus columnas con la misma rigidez que otros motores: se puede guardar texto en una columna declarada como INTEGER sin que salte ningún error, un comportamiento llamado tipado dinámico (type affinity).",
-    "A diferencia de GROUP BY, que combina varias filas en una sola fila de resultado, una función de ventana como SUM(salario) OVER (PARTITION BY departamento) calcula su resultado para cada fila por separado, sin reducir el número total de filas devueltas por la consulta."
+    "A diferencia de GROUP BY, que combina varias filas en una sola fila de resultado, una función de ventana como SUM(salario) OVER (PARTITION BY departamento) calcula su resultado para cada fila por separado, sin reducir el número total de filas devueltas por la consulta.",
+    "La cláusula GROUPING SETS, parte del estándar SQL desde 1999 junto a ROLLUP y CUBE, permite calcular en una sola consulta varios niveles de agregación distintos (por ejemplo, totales por mes, por región y el total general) sin tener que escribir una consulta UNION por cada nivel."
   ],
   "git": [
     "Git guarda cada versión de un archivo completo (no solo las diferencias) internamente, pero los comprime y deduplica para que el repositorio no crezca tanto como parecería.",
@@ -256,7 +262,8 @@
     "El propio código fuente de Git se gestiona con Git desde su segundo día de existencia en 2005: Linus Torvalds terminó la primera versión funcional y la usó de inmediato para seguir desarrollándola.",
     "El comando 'git blame' puede ignorar un commit concreto (por ejemplo, uno que solo reformateó el código) al mostrar el historial de una línea, pasando su hash con la opción --ignore-rev, para no atribuir ese cambio cosmético al verdadero origen de la línea.",
     "El comando git log -p muestra, además del historial de commits, el diff completo (las líneas añadidas y eliminadas) de cada uno, sin necesidad de ejecutar git show por separado para cada commit.",
-    "Una etiqueta (tag) 'ligera' en Git es solo un puntero fijo a un commit, mientras que una etiqueta 'anotada' (creada con git tag -a) se guarda como un objeto completo en la base de datos de Git, con su propio autor, fecha y mensaje, igual que un commit."
+    "Una etiqueta (tag) 'ligera' en Git es solo un puntero fijo a un commit, mientras que una etiqueta 'anotada' (creada con git tag -a) se guarda como un objeto completo en la base de datos de Git, con su propio autor, fecha y mensaje, igual que un commit.",
+    "El comando 'git maintenance', incorporado en Git 2.30 (2021), automatiza tareas de mantenimiento como la compactación de objetos y la actualización de referencias en segundo plano, programándolas para que se ejecuten solas sin que el usuario tenga que acordarse de lanzar 'git gc' a mano."
   ],
   "htmlcss": [
     "El primer sitio web de la historia, publicado por Tim Berners-Lee en 1991, seguía online y accesible en su URL original décadas después, solo con HTML básico y sin una sola línea de CSS.",
@@ -293,7 +300,8 @@
     "El atributo loading=\"lazy\" en una etiqueta <img>, estandarizado en 2019 y hoy soportado por todos los navegadores modernos, retrasa la carga de una imagen hasta que está a punto de entrar en la pantalla visible, sin ninguna librería de JavaScript.",
     "La propiedad CSS 'aspect-ratio', soportada por los navegadores principales desde 2021, permite fijar la proporción entre ancho y alto de un elemento (como 16/9 para un vídeo) sin necesidad del viejo truco de usar un padding-top calculado en porcentaje.",
     "La propiedad CSS aspect-ratio, que permite fijar la proporción entre el ancho y el alto de un elemento sin calcular manualmente su altura, no tuvo soporte amplio en los navegadores hasta 2021.",
-    "La media query 'prefers-reduced-motion: reduce' permite detectar si una persona activó en su sistema operativo la preferencia de reducir animaciones (por mareo, migrañas u otros motivos), y adaptar o quitar las animaciones de una página sin necesidad de ningún interruptor manual en la propia web."
+    "La media query 'prefers-reduced-motion: reduce' permite detectar si una persona activó en su sistema operativo la preferencia de reducir animaciones (por mareo, migrañas u otros motivos), y adaptar o quitar las animaciones de una página sin necesidad de ningún interruptor manual en la propia web.",
+    "El atributo HTML 'translate=\"no\"' le indica a los traductores automáticos del navegador, como el traductor integrado de Chrome, que no deben traducir el contenido de ese elemento, útil por ejemplo para nombres propios, fragmentos de código o marcas comerciales."
   ],
   "bash": [
     "Bash significa 'Bourne Again SHell', un juego de palabras porque es una reimplementación mejorada de la shell 'sh' original de Stephen Bourne de 1977.",
@@ -330,7 +338,8 @@
     "El símbolo '#!' al principio de un script de Bash, seguido de la ruta al intérprete (como #!/bin/bash), se llama 'shebang', y le indica al sistema operativo con qué programa debe ejecutar el resto del archivo.",
     "El comando 'trap' en Bash permite ejecutar una función o comando propio justo antes de que el script termine (por ejemplo al recibir Ctrl+C), lo que se usa habitualmente para borrar archivos temporales aunque el script se interrumpa a medias.",
     "El carácter ! seguido de un número en Bash, como !42, vuelve a ejecutar exactamente el comando número 42 del historial, sin necesidad de desplazarte con las flechas del teclado hasta encontrarlo.",
-    "En Bash, un código de salida 127 significa específicamente que el shell no encontró el comando o programa que intentabas ejecutar, a diferencia del 126 que indica que el archivo existe pero no tiene permiso de ejecución."
+    "En Bash, un código de salida 127 significa específicamente que el shell no encontró el comando o programa que intentabas ejecutar, a diferencia del 126 que indica que el archivo existe pero no tiene permiso de ejecución.",
+    "El built-in 'mapfile' (también llamado readarray) de Bash, disponible desde la versión 4.0 (2009), lee cada línea de la entrada estándar directamente en los elementos de un array, evitando el bucle manual típico con 'while read' para esa misma tarea."
   ],
   "ia": [
     "El término 'inteligencia artificial' se acuñó en 1956 en la conferencia de Dartmouth, más de medio siglo antes de que la mayoría de las técnicas actuales de deep learning fueran siquiera viables computacionalmente.",
@@ -367,6 +376,7 @@
     "El término 'token', la unidad mínima de texto que procesan los modelos de lenguaje, no siempre equivale a una palabra completa: una palabra larga o poco común puede dividirse en varios tokens, mientras que las palabras muy frecuentes suelen ocupar uno solo.",
     "El término 'alucinación', usado para describir cuando un modelo de IA genera información falsa con aparente seguridad, se popularizó en el campo del procesamiento de lenguaje natural a partir de 2018, antes de que existieran los grandes modelos de lenguaje actuales.",
     "El término 'alucinación', usado para describir cuando un modelo de IA genera información falsa con total seguridad, se popularizó a partir de artículos sobre traducción automática y descripción de imágenes de mediados de la década de 2010, antes de que existieran los grandes modelos de lenguaje actuales.",
-    "LoRA (Low-Rank Adaptation) es una técnica que permite ajustar (fine-tunear) un modelo de lenguaje grande entrenando solo un pequeño número de parámetros adicionales, en lugar de modificar los miles de millones de parámetros originales, lo que reduce mucho el coste de memoria y tiempo necesario."
+    "LoRA (Low-Rank Adaptation) es una técnica que permite ajustar (fine-tunear) un modelo de lenguaje grande entrenando solo un pequeño número de parámetros adicionales, en lugar de modificar los miles de millones de parámetros originales, lo que reduce mucho el coste de memoria y tiempo necesario.",
+    "El término 'red neuronal de grafos' (Graph Neural Network, GNN), pensada para procesar datos con forma de grafo como moléculas o redes sociales en lugar de texto o imágenes, ganó popularidad académica a partir de mediados de la década de 2010, antes del auge actual de los grandes modelos de lenguaje."
   ]
 }
