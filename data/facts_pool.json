@@ -1,5 +1,6 @@
 {
   "python": [
+    "El operador de desempaquetado doble (**), usado para combinar diccionarios como {**d1, **d2}, llego al lenguaje en Python 3.5 (2015), varios anos antes de que la sintaxis equivalente con el operador | para diccionarios se anadiera en Python 3.9.",
     "El símbolo del emoji de Python, dos serpientes entrelazadas, no forma parte del logo oficial: el logo real son dos serpientes estilizadas de colores azul y amarillo, sin cabeza definida, a propósito.",
     "El módulo estándar 'this' de Python (al ejecutar import this) imprime el Zen de Python, un poema con los principios de diseño del lenguaje, como un huevo de pascua oficial.",
     "El operador morsa (:=), introducido en Python 3.8, permite asignar una variable dentro de una expresión, como en la condición de un bucle while.",
@@ -38,6 +39,7 @@
     "El módulo 'enum' de la biblioteca estándar de Python, incorporado en la versión 3.4 (2014), permite declarar conjuntos fijos de constantes con nombre, con comparación por identidad en lugar de depender de números o cadenas de texto sueltas."
   ],
   "javascript": [
+    "El metodo Array.prototype.copyWithin(), disponible desde ES2015 pero poco conocido, copia una parte de un array dentro del mismo array sin crear uno nuevo, sobrescribiendo los valores en el destino.",
     "A pesar del nombre, JavaScript no tiene relación técnica con Java: el nombre fue una decisión de marketing de Netscape para aprovechar la popularidad de Java en 1995.",
     "JavaScript fue creado por Brendan Eich en solo diez días en 1995, mientras trabajaba en Netscape, y su primer nombre interno fue 'Mocha'.",
     "JSON, uno de los formatos de datos más usados en la web, significa 'JavaScript Object Notation' y se basa en la sintaxis de los objetos literales de JavaScript, aunque hoy lo usan prácticamente todos los lenguajes.",
@@ -76,6 +78,7 @@
     "WeakMap y WeakSet, incorporados en ECMAScript 2015 (ES6), permiten asociar datos a objetos sin impedir que el recolector de basura libere esos objetos cuando ya no se usan en ningún otro sitio, algo que un Map o Set normal sí impediría."
   ],
   "typescript": [
+    "El modificador 'protected' en TypeScript permite que una propiedad sea accesible desde la propia clase y desde sus subclases, pero no desde fuera de esa jerarquia, a diferencia de 'private', que la restringe solo a la clase donde se declara.",
     "TypeScript no reemplaza a JavaScript en ningún momento: todo programa TypeScript se compila (transpila) a JavaScript plano antes de ejecutarse en el navegador o en Node.",
     "TypeScript fue anunciado públicamente por Microsoft en 2012, con Anders Hejlsberg, el creador de C#, como uno de sus principales diseñadores.",
     "Frameworks como Angular y Deno están escritos en TypeScript o lo usan como lenguaje principal de desarrollo, algo poco habitual para un lenguaje que nace como una capa sobre otro.",
@@ -114,6 +117,7 @@
     "Las funciones de aserción de TypeScript, con la sintaxis 'asserts condition' o 'asserts x is T', se añadieron en la versión 3.7 (2019), la misma actualización que introdujo el encadenamiento opcional (?.) y el operador nullish (??) a nivel de tipos, antes de que llegaran a JavaScript con ES2020."
   ],
   "java": [
+    "El metodo Collectors.groupingBy(), parte de la API de Streams desde Java 8, permite agrupar los elementos de una coleccion segun una funcion clave y devolver directamente un Map con los grupos resultantes, sin necesidad de escribir el bucle manual.",
     "La mascota de Java, Duke, fue diseñada en 1992 para un proyecto anterior llamado Oak, antes incluso de que existiera el lenguaje Java tal como lo conocemos.",
     "Java se llamó originalmente 'Oak', en honor a un roble que había frente a la oficina de James Gosling, antes de renombrarse por un conflicto de marca registrada.",
     "Java se ejecuta sobre una máquina virtual (JVM) que compila el código a bytecode, lo que permite que el mismo programa compilado funcione igual en Windows, macOS o Linux: el lema original era 'write once, run anywhere'.",
@@ -152,6 +156,7 @@
     "El recolector de basura ZGC (Z Garbage Collector), diseñado para mantener pausas de menos de un milisegundo incluso en montones de varios terabytes, se convirtió en una característica de producción en Java 15 (2020), tras haberse introducido como experimental en Java 11."
   ],
   "kotlin": [
+    "La funcion 'with(objeto) { ... }' de Kotlin permite ejecutar un bloque de codigo usando un objeto como receptor implicito, evitando repetir su nombre antes de cada llamada a sus propiedades o metodos.",
     "Kotlin es interoperable al 100% con Java: se puede llamar código Java desde Kotlin y código Kotlin desde Java dentro del mismo proyecto sin conversión manual.",
     "Kotlin recibe su nombre de la isla Kotlin, cerca de San Petersburgo (Rusia), donde JetBrains tiene una de sus oficinas.",
     "Google eligió Kotlin en 2019 como el lenguaje preferido para el desarrollo de aplicaciones Android, por delante de Java, aunque ambos siguen siendo totalmente compatibles entre sí.",
@@ -190,6 +195,7 @@
     "El operador de comparación '===' en Kotlin comprueba si dos referencias apuntan al mismo objeto en memoria (identidad), mientras que '==' llama automáticamente al método equals() de la clase para comparar su contenido, justo al revés de como funcionan esos mismos símbolos en Java."
   ],
   "sql": [
+    "La clausula QUALIFY, soportada por motores como Snowflake y BigQuery pero ausente del estandar SQL oficial, permite filtrar directamente el resultado de una funcion de ventana sin tener que envolver la consulta en una subconsulta solo para aplicar ese filtro.",
     "El estándar SQL lo mantiene ISO, pero en la práctica cada motor (PostgreSQL, MySQL, SQL Server...) añade extensiones propias, por lo que el SQL 100% portable entre motores es más raro de lo que parece.",
     "SQL se pronuncia oficialmente 'ese-cu-ele', no 'sequel', aunque el nombre original del lenguaje en IBM durante los años setenta era precisamente SEQUEL.",
     "El modelo relacional en el que se basa SQL fue propuesto por Edgar F. Codd en 1970 en un artículo de investigación de IBM, casi una década antes de que existiera un producto comercial de base de datos relacional.",
@@ -228,6 +234,7 @@
     "La cláusula GROUPING SETS, parte del estándar SQL desde 1999 junto a ROLLUP y CUBE, permite calcular en una sola consulta varios niveles de agregación distintos (por ejemplo, totales por mes, por región y el total general) sin tener que escribir una consulta UNION por cada nivel."
   ],
   "git": [
+    "El comando 'git range-diff', incorporado en Git 2.19 (2018), compara dos versiones distintas de la misma serie de commits (por ejemplo antes y despues de un rebase) mostrando que cambio realmente en cada commit equivalente, en lugar de solo comparar el estado final de ambas ramas.",
     "Git guarda cada versión de un archivo completo (no solo las diferencias) internamente, pero los comprime y deduplica para que el repositorio no crezca tanto como parecería.",
     "Git fue creado por Linus Torvalds en 2005, en solo unas semanas, para gestionar el desarrollo del propio kernel de Linux tras un conflicto de licencias con la herramienta que usaban antes.",
     "Git y GitHub son cosas distintas: Git es el sistema de control de versiones que funciona sin internet en tu propio ordenador, y GitHub es solo una de varias plataformas (junto a GitLab o Bitbucket) que alojan repositorios Git en la nube.",
@@ -266,6 +273,7 @@
     "El comando 'git maintenance', incorporado en Git 2.30 (2021), automatiza tareas de mantenimiento como la compactación de objetos y la actualización de referencias en segundo plano, programándolas para que se ejecuten solas sin que el usuario tenga que acordarse de lanzar 'git gc' a mano."
   ],
   "htmlcss": [
+    "La pseudo-clase CSS ':has()', que permite seleccionar un elemento segun lo que contiene dentro, se conoce como el 'selector padre' que CSS no tuvo durante decadas, y llego a todos los navegadores principales recien en 2023.",
     "El primer sitio web de la historia, publicado por Tim Berners-Lee en 1991, seguía online y accesible en su URL original décadas después, solo con HTML básico y sin una sola línea de CSS.",
     "CSS fue propuesto en 1994 por Håkon Wium Lie, cuando trabajaba junto a Tim Berners-Lee en el CERN, para separar el diseño visual del contenido HTML.",
     "La propiedad CSS 'box-sizing: border-box' cambia cómo se calcula el ancho total de un elemento para que el padding y el borde se incluyan dentro del ancho definido, en lugar de sumarse por fuera.",
@@ -304,6 +312,7 @@
     "El atributo HTML 'translate=\"no\"' le indica a los traductores automáticos del navegador, como el traductor integrado de Chrome, que no deben traducir el contenido de ese elemento, útil por ejemplo para nombres propios, fragmentos de código o marcas comerciales."
   ],
   "bash": [
+    "El operador de redireccion '>>' en Bash anade la salida de un comando al final de un archivo existente sin borrar su contenido previo, a diferencia de un unico '>', que sobrescribe el archivo entero cada vez.",
     "Bash significa 'Bourne Again SHell', un juego de palabras porque es una reimplementación mejorada de la shell 'sh' original de Stephen Bourne de 1977.",
     "El símbolo '#!' al inicio de un script (como #!/bin/bash) se llama 'shebang' y le indica al sistema qué intérprete debe usar para ejecutar el archivo.",
     "En muchos sistemas Linux, /bin/sh no es en realidad un enlace a bash sino a una shell más ligera (como dash), lo que puede hacer que un script falle si usa funciones exclusivas de bash.",
@@ -342,6 +351,7 @@
     "El built-in 'mapfile' (también llamado readarray) de Bash, disponible desde la versión 4.0 (2009), lee cada línea de la entrada estándar directamente en los elementos de un array, evitando el bucle manual típico con 'while read' para esa misma tarea."
   ],
   "ia": [
+    "El termino 'RAG' (Retrieval-Augmented Generation, o generacion aumentada por recuperacion), que combina un modelo de lenguaje con una busqueda en una base de datos externa antes de responder, se formalizo en un articulo de investigadores de Facebook AI Research publicado en 2020.",
     "El término 'inteligencia artificial' se acuñó en 1956 en la conferencia de Dartmouth, más de medio siglo antes de que la mayoría de las técnicas actuales de deep learning fueran siquiera viables computacionalmente.",
     "Las redes neuronales artificiales datan de 1958, con el perceptrón de Frank Rosenblatt, mucho antes de que existiera la potencia de cálculo necesaria para aprovecharlas de verdad.",
     "El término 'aprendizaje profundo' (deep learning) se popularizó recién en los años 2000, aunque las redes neuronales con varias capas ya se estudiaban desde los años setenta y ochenta.",

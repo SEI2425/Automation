@@ -1,6 +1,12 @@
 {
   "python": [
     {
+      "q": "¿Qué imprime este código?\nclass Animal:\n    def sonido(self):\n        return '...'\n\nclass Perro(Animal):\n    def sonido(self):\n        return 'Guau'\n\nanimales = [Animal(), Perro()]\nprint(', '.join(a.sonido() for a in animales))",
+      "opts": ["..., Guau", "Guau, ...", "..., ...", "Error"],
+      "correct": 0,
+      "explanation": "Cada objeto llama a su propia versión de sonido() (polimorfismo): Animal() usa la de la clase base ('...') y Perro() usa la sobrescrita ('Guau'), uniendo ambos resultados con ', '."
+    },
+    {
       "q": "¿Qué imprime este código?",
       "opts": [
         "('a', 1)",
@@ -393,6 +399,12 @@
     }
   ],
   "javascript": [
+    {
+      "q": "¿Qué imprime este código?\nconst arr = [1, 2, 3];\nconst [a = 10, b = 20, c = 30, d = 40] = arr;\nconsole.log(d);",
+      "opts": ["40", "undefined", "30", "Error"],
+      "correct": 0,
+      "explanation": "El array solo tiene 3 elementos, así que la cuarta posición no recibe ningún valor del array y se usa su valor por defecto, 40."
+    },
     {
       "q": "¿Qué devuelve [1,2,3].includes(2)?",
       "opts": [
@@ -787,6 +799,12 @@
   ],
   "typescript": [
     {
+      "q": "¿Qué imprime este código?\nfunction unir<T, U>(a: T, b: U): T & U {\n  return { ...a, ...b } as T & U;\n}\nconst resultado = unir({ nombre: \"Ana\" }, { edad: 30 });\nconsole.log(resultado.edad);",
+      "opts": ["30", "undefined", "Error de compilación", "\"30\""],
+      "correct": 0,
+      "explanation": "El tipo de intersección T & U combina las propiedades de ambos objetos, por lo que resultado tiene tanto 'nombre' como 'edad'; en tiempo de ejecución el spread copia realmente ambas propiedades."
+    },
+    {
       "q": "¿Qué hace 'readonly' delante de una propiedad de una interface?",
       "opts": [
         "La hace privada",
@@ -1179,6 +1197,12 @@
     }
   ],
   "java": [
+    {
+      "q": "¿Qué imprime este código?\ninterface Forma {\n    double area();\n    default String describir() {\n        return \"Area: \" + area();\n    }\n}\nclass Circulo implements Forma {\n    double radio;\n    Circulo(double radio) { this.radio = radio; }\n    public double area() { return Math.PI * radio * radio; }\n}\nSystem.out.println(new Circulo(2).describir().startsWith(\"Area\"));",
+      "opts": ["true", "false", "Error de compilación", "Error en tiempo de ejecución"],
+      "correct": 0,
+      "explanation": "Los métodos 'default' de una interfaz, introducidos en Java 8, ya traen una implementación lista que las clases heredan sin escribirla; describir() funciona tal cual y el resultado empieza por 'Area'."
+    },
     {
       "q": "¿Qué palabra clave evita que una clase se pueda heredar?",
       "opts": [
@@ -1573,6 +1597,12 @@
   ],
   "kotlin": [
     {
+      "q": "¿Qué imprime este código?\nval texto: String? = null\nval longitud = texto?.length ?: 0\nval mayusculas = texto?.uppercase() ?: \"SIN TEXTO\"\nprintln(\"$longitud - $mayusculas\")",
+      "opts": ["0 - SIN TEXTO", "null - null", "0 - null", "Error de compilación"],
+      "correct": 0,
+      "explanation": "Como texto es null, el operador ?. corta la cadena en ambos casos y el operador elvis ?: sustituye ese null por los valores por defecto indicados: 0 y 'SIN TEXTO'."
+    },
+    {
       "q": "¿Qué hace el operador '!!' sobre una variable anulable?",
       "opts": [
         "La convierte en no anulable, lanzando excepción si es null",
@@ -1965,6 +1995,12 @@
     }
   ],
   "sql": [
+    {
+      "q": "¿Qué calcula la función LAG en esta consulta?\nSELECT name,\n       LAG(salary) OVER (ORDER BY hire_date) AS salario_anterior\nFROM employees;",
+      "opts": ["El salario del empleado contratado justo antes, según el orden de contratación", "El salario máximo de toda la tabla", "El número de empleados contratados antes de cada uno", "Elimina los empleados sin fecha de contratación"],
+      "correct": 0,
+      "explanation": "LAG() es una función de ventana que, para cada fila, devuelve el valor de una columna en la fila anterior según el orden indicado; aquí trae el salario del empleado contratado inmediatamente antes."
+    },
     {
       "q": "¿Qué hace UNION frente a UNION ALL?",
       "opts": [
@@ -2359,6 +2395,12 @@
   ],
   "git": [
     {
+      "q": "¿Qué muestra este último comando?\ngit add archivo.txt\ngit commit -m \"cambio 1\"\ngit tag v1.0\ngit commit --allow-empty -m \"cambio 2\"\ngit log --oneline v1.0..HEAD",
+      "opts": ["Los commits realizados después de la etiqueta v1.0, sin incluirla", "Todos los commits del repositorio desde el principio", "Solo el commit donde se creó la etiqueta v1.0", "Un error, porque no se puede comparar una etiqueta con HEAD"],
+      "correct": 0,
+      "explanation": "La sintaxis rango..rango en git log muestra los commits alcanzables desde el segundo punto (HEAD) que no son alcanzables desde el primero (v1.0), es decir, los posteriores a esa etiqueta."
+    },
+    {
       "q": "¿Para qué sirve un archivo .gitignore?",
       "opts": [
         "Para listar archivos que Git no debe rastrear",
@@ -2751,6 +2793,12 @@
     }
   ],
   "htmlcss": [
+    {
+      "q": "¿De qué color se muestra el texto 'Hola'?\n<style>\n  .box { color: red; }\n</style>\n<p class=\"box\" style=\"color: blue;\">Hola</p>",
+      "opts": ["Azul, porque un estilo en línea (atributo style) tiene más especificidad que una clase", "Rojo, porque la clase se declaró en una etiqueta <style> independiente", "Negro, porque ambos estilos se cancelan entre sí", "Ninguno: el navegador ignora el atributo style si ya existe una clase en ese elemento"],
+      "correct": 0,
+      "explanation": "Un estilo en línea escrito en el atributo style de un elemento tiene mayor especificidad en CSS que cualquier selector de clase, así que gana sobre '.box' y el texto se muestra azul."
+    },
     {
       "q": "¿Qué hace la propiedad 'position: sticky'?",
       "opts": [
@@ -3145,6 +3193,12 @@
   ],
   "bash": [
     {
+      "q": "¿Qué hace el símbolo ## en este script?\nnombre=\"archivo.tar.gz\"\necho \"${nombre##*.}\"\n# imprime \"gz\"",
+      "opts": ["Elimina la coincidencia más larga del patrón al principio del valor, dejando solo la última extensión", "Elimina la coincidencia más corta del patrón al principio del valor", "Cuenta cuántos puntos hay en el nombre del archivo", "Convierte el texto a mayúsculas"],
+      "correct": 0,
+      "explanation": "El símbolo ## elimina la coincidencia MÁS LARGA posible del patrón indicado desde el principio de la cadena; como *. es un patrón codicioso, se come todo hasta el último punto, dejando solo 'gz'."
+    },
+    {
       "q": "¿Qué hace el comando 'chmod +x script.sh'?",
       "opts": [
         "Ejecuta el script inmediatamente",
@@ -3537,6 +3591,12 @@
     }
   ],
   "ia": [
+    {
+      "q": "¿Qué describe el término 'fine-tuning' (ajuste fino) de un modelo de lenguaje?",
+      "opts": ["Entrenar un modelo ya preentrenado con datos adicionales y específicos para especializarlo en una tarea o dominio concreto", "Reducir el tamaño de un modelo eliminando capas al azar", "Cambiar solo la temperatura de generación sin tocar los pesos del modelo", "Traducir las respuestas del modelo a otro idioma"],
+      "correct": 0,
+      "explanation": "El fine-tuning parte de un modelo ya entrenado de forma general y continúa su entrenamiento con un conjunto de datos más pequeño y específico, ajustando sus pesos para que rinda mejor en una tarea concreta."
+    },
     {
       "q": "¿Qué es la 'ventana de contexto' de un modelo de lenguaje?",
       "opts": [

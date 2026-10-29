@@ -1,0 +1,87 @@
+{
+  "date": "2026-10-29",
+  "questions": [
+    {
+      "type": "identify",
+      "lang": "Python",
+      "question": "¿Que imprime este codigo?",
+      "code": "nums = [1, 2, 3]\nnums[1], nums[2] = nums[2], nums[1]\nprint(nums)",
+      "options": ["[1, 3, 2]", "[1, 2, 3]", "[2, 1, 3]", "Error"],
+      "correct": 0,
+      "hint": "Python evalua primero todo el lado derecho antes de asignar nada.",
+      "explanation": "La asignacion simultanea intercambia los valores de nums[1] y nums[2] sin necesitar una variable temporal: nums[1] pasa a ser 3 y nums[2] pasa a ser 2, dejando la lista como [1, 3, 2]."
+    },
+    {
+      "type": "identify",
+      "lang": "JavaScript",
+      "question": "¿Que imprime este codigo?",
+      "code": "const arr = [1, 2, 3];\nconst [first, , third] = arr;\nconsole.log(first, third);",
+      "options": ["1 3", "1 2", "undefined 3", "Error"],
+      "correct": 0,
+      "hint": "Una coma vacia en la desestructuracion salta esa posicion sin asignarla a ninguna variable.",
+      "explanation": "La coma vacia en la mitad del patron de desestructuracion omite el segundo elemento del array (2); first toma el primer valor (1) y third toma el tercero (3)."
+    },
+    {
+      "type": "complete",
+      "lang": "TypeScript",
+      "question": "¿Que propiedad falta para acceder al mensaje de error cuando r.ok es false?",
+      "code": "type Resultado<T> = { ok: true; valor: T } | { ok: false; error: string };\n\nfunction manejar(r: Resultado<number>) {\n  if (r.ok) {\n    console.log(r.valor);\n  } else {\n    console.log(r.____);\n  }\n}",
+      "options": ["error", "valor", "mensaje", "ok"],
+      "correct": 0,
+      "hint": "Dentro del bloque else, TypeScript ya sabe que r pertenece al segundo tipo de la union.",
+      "explanation": "Dentro del else, TypeScript reduce (narrows) el tipo de r al miembro { ok: false; error: string } de la union, que solo tiene la propiedad error, no valor."
+    },
+    {
+      "type": "identify",
+      "lang": "Java",
+      "question": "¿Que imprime este codigo?",
+      "code": "int a = 10;\nint b = 3;\ndouble resultado = (double) a / b;\nSystem.out.println(resultado);",
+      "options": ["3.3333333333333335", "3", "3.0", "Error de compilacion"],
+      "correct": 0,
+      "hint": "El cast (double) se aplica a 'a' antes de que ocurra la division.",
+      "explanation": "El cast (double) convierte a en un numero de coma flotante antes de dividir, forzando una division real en lugar de la division entera que ocurriria entre dos int; 10.0 / 3 da 3.3333333333333335."
+    },
+    {
+      "type": "complete",
+      "lang": "SQL",
+      "question": "¿Que falta para obtener el segundo salario mas alto de la tabla?",
+      "code": "SELECT name, salary\nFROM employees\nWHERE salary = (\n  SELECT salary FROM employees ORDER BY salary DESC ____ 1 OFFSET 1\n);",
+      "options": ["LIMIT", "TOP", "ROWNUM", "FETCH"],
+      "correct": 0,
+      "hint": "Necesitas limitar el resultado a una sola fila, saltandote la primera.",
+      "explanation": "LIMIT 1 OFFSET 1 selecciona exactamente una fila saltandose la primera tras ordenar de mayor a menor, es decir, el segundo salario mas alto."
+    }
+  ],
+  "tips": [
+    {
+      "text": "Aprende a usar 'ir a definicion' y 'buscar todas las referencias' en tu editor antes de modificar una funcion que no escribiste tu.",
+      "explanation": "Estas dos funciones, presentes en casi cualquier editor moderno, te llevan directamente a donde se declaro algo y a cada sitio donde se usa, lo que es mucho mas rapido y fiable que leerte el archivo entero de arriba a abajo intentando adivinar que afecta a que.",
+      "link": "https://code.visualstudio.com/docs/editor/editingevolved#_go-to-definition",
+      "linkLabel": "VS Code: ir a la definicion y buscar referencias"
+    },
+    {
+      "text": "Cuando un bug solo aparece en el ordenador de otra persona, pide la version exacta del lenguaje y de las dependencias antes de intentar reproducirlo a ciegas.",
+      "explanation": "Una diferencia de version, por pequena que parezca, puede cambiar el comportamiento de una funcion o de una libreria; preguntar primero por esos datos concretos suele ahorrar horas de intentos fallidos tratando de reproducir algo que en tu entorno simplemente no puede pasar.",
+      "link": "https://www.chiark.greenend.org.uk/~sgtatham/bugs.html",
+      "linkLabel": "Simon Tatham: como reportar errores de forma efectiva"
+    },
+    {
+      "text": "Antes de corregir un bug, guarda el caso exacto (los datos de entrada) que lo provoco, no solo la correccion.",
+      "explanation": "Sin ese caso guardado como una prueba, no tienes forma fiable de comprobar mas adelante que el mismo error no ha vuelto a aparecer tras otro cambio; guardarlo como una prueba de regresion convierte un bug ya corregido en una proteccion permanente para el resto del proyecto.",
+      "link": "https://en.wikipedia.org/wiki/Regression_testing",
+      "linkLabel": "Wikipedia: pruebas de regresion"
+    },
+    {
+      "text": "Usa el historial del portapapeles de tu sistema o editor en vez de copiar y pegar un solo fragmento de codigo a la vez.",
+      "explanation": "Cuando necesitas mover varios trozos de codigo entre archivos distintos, copiar uno, pegarlo, volver a copiar otro y pegarlo de nuevo es mucho mas lento que tener varios elementos guardados a la vez y elegir cual pegar en cada momento.",
+      "link": "https://support.microsoft.com/en-us/windows/clipboard-in-windows-c436501e-985d-1c8d-97ea-fe46ddf338c6",
+      "linkLabel": "Microsoft: el historial del portapapeles en Windows"
+    },
+    {
+      "text": "No confundas 'compila sin errores' con 'funciona correctamente': ejecuta tu programa con un caso real antes de darlo por terminado.",
+      "explanation": "Que el compilador o el interprete no se queje solo significa que la sintaxis es valida, no que la logica haga lo que tu crees que hace; probarlo con datos reales, aunque sea una sola vez a mano, es la unica forma de confirmar que el resultado es el que esperabas.",
+      "link": "https://en.wikipedia.org/wiki/Software_testing",
+      "linkLabel": "Wikipedia: pruebas de software"
+    }
+  ]
+}

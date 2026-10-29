@@ -1,0 +1,65 @@
+{
+  "date": "2026-10-29",
+  "items": [
+    {
+      "tag": "Impacto",
+      "title": "Un sistema de IA de la Universidad de Nueva York detecta incendios en segundos usando camaras de seguridad normales",
+      "url": "https://engineering.nyu.edu/news/ai-system-detects-fires-alarms-sound-nyu-study-shows",
+      "summary": "Investigadores del grupo de investigacion de incendios de NYU Tandon publicaron en el IEEE Internet of Things Journal un sistema de IA que analiza el video de camaras de seguridad ya instaladas y detecta un incendio en apenas 0,016 segundos por fotograma, con una precision del 80,6% en su mejor configuracion. El sistema exige que varios algoritmos coincidan antes de dar la alarma, lo que segun sus creadores reduce las falsas alarmas en un 92,6% y funciona sobre la infraestructura de camaras que ya existe, sin necesidad de instalar sensores nuevos."
+    },
+    {
+      "tag": "Impacto",
+      "title": "Un hackeo a la plataforma OpenCode deja expuestas claves de API de OpenAI, Anthropic y Google",
+      "url": "https://techcrunch.com/2026/10/19/hackers-hit-ai-coding-tool-opencode-running-up-charges-on-users-ai-accounts/",
+      "summary": "OpenCode revelo el 17 de octubre que un atacante entro de madrugada en un sistema antiguo de su servicio en la nube OpenCode Console, afectando a cerca del 1,4% de sus usuarios y pudiendo acceder a las claves de API de OpenAI, Anthropic y Google que algunos habian guardado ahi. Varios usuarios reportaron cargos no autorizados de varios cientos de dolares; Anthropic y Google bloquearon las claves comprometidas y OpenAI reembolso los creditos gastados por los atacantes."
+    },
+    {
+      "tag": "Impacto",
+      "title": "Un modelo de IA ayuda a prever con mas de cuatro dias de antelacion la trayectoria de un tifon en China",
+      "url": "https://www.chinadailyhk.com/article/641092",
+      "summary": "Investigadores del Instituto de Tifones de Shanghai combinaron un modelo de inteligencia artificial con los metodos numericos tradicionales de prevision meteorologica para prever con precision, 108 horas antes de que ocurriera, el comportamiento del tifon Bavi. El sistema hibrido se suma a otros modelos de IA que ya ayudan a anticipar ciclones con mas antelacion que las tecnicas convencionales, en un ano en el que China ha sufrido tifones especialmente dificiles de predecir."
+    },
+    {
+      "tag": "Impacto",
+      "title": "Microsoft ofrece bajas voluntarias a unos 60.000 empleados, una cuarta parte de su plantilla",
+      "url": "https://techcrunch.com/2026/10/26/microsoft-offers-buyouts-to-around-60000-employees-reports-say/",
+      "summary": "Microsoft anuncio el 26 de octubre una oferta de 'salida voluntaria' dirigida a unos 60.000 empleados elegibles en Estados Unidos, Reino Unido, India y Canada, cerca de una cuarta parte de su plantilla global, con fecha de salida prevista para el 31 de diciembre. La empresa insiste en que la inteligencia artificial no es la causa del programa, aunque llega pocos meses despues de otra ronda de recortes centrada en areas que la compania esta reorientando hacia productos de IA como Copilot."
+    },
+    {
+      "tag": "Impacto",
+      "title": "Los tribunales de EEUU ya han impuesto mas de 145.000 dolares en multas en un solo trimestre por citas legales inventadas por IA",
+      "url": "https://complexdiscovery.com/the-ai-sanction-wave-145k-in-q1-penalties-signals-courts-have-lost-patience-with-genai-filing-failures",
+      "summary": "Un analisis de ComplexDiscovery calcula que los tribunales estadounidenses impusieron al menos 145.000 dolares en sanciones durante el primer trimestre de 2026 por culpa de citas y casos judiciales inventados por herramientas de IA generativa, con multas de hasta 49.500 dolares contra un bufete de Chicago y 110.000 dolares combinados contra dos abogados de California y Oregon. El informe advierte de que los jueces ya aplican formulas cada vez mas fijas por cada infraccion, convirtiendo estas sanciones en un coste predecible para los despachos que no revisan lo que genera la IA antes de presentarlo ante un juez."
+    },
+    {
+      "tag": "Curso",
+      "title": "freeCodeCamp relanza su curriculo con la nueva certificacion Full Stack Developer",
+      "url": "https://www.freecodecamp.org/news/freecodecamps-new-coding-curriculum-is-now-live-with-1400-coding-lessons-and-6-developer-certifications-you-can-earn/",
+      "summary": "freeCodeCamp puso en marcha un curriculo renovado con mas de 1.400 lecciones de codigo gratuitas y una nueva certificacion Full Stack Developer que exige aprobar seis certificaciones distintas -diseno web responsive, JavaScript, librerias de front-end, Python, bases de datos relacionales y APIs backend- con proyectos reales evaluados automaticamente. Todo el contenido se puede completar gratis sin registrar ninguna tarjeta de pago."
+    },
+    {
+      "tag": "Interactivo",
+      "title": "Exercism: practica PHP con ejercicios interactivos y mentoria gratuita",
+      "url": "https://exercism.org/tracks/php",
+      "summary": "Este recorrido gratuito de Exercism ofrece decenas de ejercicios de PHP ordenados por dificultad, con pruebas automaticas que revisan tu solucion al instante nada mas enviarla. Como en el resto de la plataforma, tambien puedes pedir mentoria gratuita de programadores voluntarios que comentan tu codigo y sugieren formas mas idiomaticas de resolverlo."
+    },
+    {
+      "tag": "Curso",
+      "title": "Codecademy: Learn Swift, el curso gratuito para dar tus primeros pasos en el lenguaje de Apple",
+      "url": "https://www.codecademy.com/learn/learn-swift",
+      "summary": "Este curso gratuito de Codecademy ensena los fundamentos de Swift (variables, opcionales, estructuras de control) con lecciones cortas y ejercicios de codigo que se corrigen al instante en el navegador. Esta pensado como primer contacto con el lenguaje que usa Apple para crear apps de iOS y macOS, sin necesidad de instalar Xcode."
+    },
+    {
+      "tag": "Curso",
+      "title": "Microsoft Learn: Introduccion a la IA en Azure, la ruta gratuita de Microsoft",
+      "url": "https://learn.microsoft.com/en-us/training/paths/get-started-with-artificial-intelligence-on-azure/",
+      "summary": "Esta ruta de aprendizaje gratuita de Microsoft explica los conceptos basicos de la inteligencia artificial y el aprendizaje automatico -aprendizaje supervisado, no supervisado y por refuerzo- sin exigir experiencia previa en programacion ni matematicas avanzadas. Cada modulo combina una breve explicacion con una comprobacion de conocimientos al final para verificar lo aprendido."
+    },
+    {
+      "tag": "Interactivo",
+      "title": "Elevator Saga: programa en JavaScript el algoritmo de un ascensor",
+      "url": "https://play.elevatorsaga.com/",
+      "summary": "Elevator Saga es un juego de puzzles gratuito en el que escribes codigo JavaScript real para decidir como se mueve un ascensor y a quien recoge primero, con niveles que van anadiendo mas pisos y mas pasajeros a medida que tu algoritmo mejora. Todo se programa y se prueba directamente en el navegador, sin instalar nada ni crear cuenta."
+    }
+  ]
+}
