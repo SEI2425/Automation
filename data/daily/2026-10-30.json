@@ -1,0 +1,112 @@
+{
+  "date": "2026-10-30",
+  "questions": [
+    {
+      "type": "identify",
+      "lang": "Python",
+      "question": "¿Qué imprime este código?",
+      "code": "a = [1, 2, 3]\nb = ['x', 'y']\nprint(list(zip(a, b)))",
+      "options": [
+        "[(1, 'x'), (2, 'y')]",
+        "[(1, 'x'), (2, 'y'), (3, None)]",
+        "[(1, 2, 3), ('x', 'y')]",
+        "Error por longitudes distintas"
+      ],
+      "correct": 0,
+      "hint": "zip() se detiene en cuanto el iterable más corto se agota.",
+      "explanation": "zip() combina los elementos por posición y se detiene en cuanto el iterable más corto se queda sin elementos; como b solo tiene 2, el resultado tiene 2 pares, ignorando el 3 de a."
+    },
+    {
+      "type": "identify",
+      "lang": "JavaScript",
+      "question": "¿Qué imprime este código?",
+      "code": "const {a: x = 5} = {};\nconsole.log(x);",
+      "options": [
+        "5",
+        "undefined",
+        "Error de sintaxis",
+        "a"
+      ],
+      "correct": 0,
+      "hint": "La desestructuración permite renombrar una propiedad y darle un valor por defecto si no existe.",
+      "explanation": "Se desestructura la propiedad 'a' del objeto vacío, renombrándola como x; como 'a' no existe en el objeto, x toma su valor por defecto, 5."
+    },
+    {
+      "type": "complete",
+      "lang": "TypeScript",
+      "question": "¿Qué tipo falta para que 'key' solo acepte 'x' o 'y' como nombres válidos de propiedad?",
+      "code": "interface Point { x: number; y: number; }\nfunction getValue(p: Point, key: ____): number {\n  return p[key];\n}",
+      "options": [
+        "keyof Point",
+        "string",
+        "Point",
+        "any"
+      ],
+      "correct": 0,
+      "hint": "Necesitas un tipo que represente únicamente los nombres de las propiedades de Point.",
+      "explanation": "keyof Point genera un tipo unión con los nombres de las propiedades de Point ('x' | 'y'), lo que permite indexar p[key] de forma segura sin aceptar cualquier string."
+    },
+    {
+      "type": "identify",
+      "lang": "Java",
+      "question": "¿Qué imprime este código?",
+      "code": "Integer a = 100;\nInteger b = 100;\nInteger c = 200;\nInteger d = 200;\nSystem.out.println(a == b);\nSystem.out.println(c == d);",
+      "options": [
+        "true\nfalse",
+        "true\ntrue",
+        "false\nfalse",
+        "false\ntrue"
+      ],
+      "correct": 0,
+      "hint": "Java guarda en caché los objetos Integer entre -128 y 127.",
+      "explanation": "Java cachea automáticamente los objetos Integer en el rango -128 a 127, así que a y b (100) son el mismo objeto y == da true; c y d (200) quedan fuera de ese rango y son objetos distintos, por lo que == da false."
+    },
+    {
+      "type": "complete",
+      "lang": "Kotlin",
+      "question": "¿Qué delegado falta para que el bloque solo se ejecute una vez, la primera vez que se accede a 'nombre'?",
+      "code": "val nombre: String by ____ {\n    println(\"Calculando...\")\n    \"Ana\"\n}\nprintln(nombre)\nprintln(nombre)",
+      "options": [
+        "lazy",
+        "let",
+        "also",
+        "run"
+      ],
+      "correct": 0,
+      "hint": "Es un delegado de propiedad pensado para retrasar un cálculo hasta su primer uso y guardarlo en caché.",
+      "explanation": "by lazy { ... } retrasa la ejecución del bloque hasta el primer acceso a la propiedad y guarda el resultado, por lo que 'Calculando...' se imprime solo una vez aunque se acceda a nombre dos veces."
+    }
+  ],
+  "tips": [
+    {
+      "text": "No dejes una libreria marcada como 'deprecated' sin plan de migracion: tarde o temprano dejara de funcionar sin aviso.",
+      "explanation": "Una funcion o libreria obsoleta suele seguir funcionando durante un tiempo, pero sus mantenedores ya no corrigen fallos de seguridad en ella y puede desaparecer por completo en una version futura. Migrar con calma, en el momento en que aparece el aviso, es mucho mas barato que hacerlo de golpe cuando la aplicacion ya no compila tras una actualizacion.",
+      "link": "https://docs.python.org/3/library/exceptions.html#DeprecationWarning",
+      "linkLabel": "Documentacion oficial de Python: DeprecationWarning"
+    },
+    {
+      "text": "Nunca escribas una contrasena o un token directamente como argumento en un comando de la terminal: queda guardado en el historial de tu shell.",
+      "explanation": "Comandos como 'curl -u usuario:clave' o 'mysql -ppassword' dejan ese secreto guardado en texto plano en archivos como ~/.bash_history, legible por cualquiera con acceso a tu cuenta o a una copia de seguridad del sistema. Casi todas las herramientas ofrecen una forma de pedir la contrasena de forma interactiva o leerla de una variable de entorno en su lugar.",
+      "link": "https://cheatsheetseries.owasp.org/cheatsheets/Secrets_Management_Cheat_Sheet.html",
+      "linkLabel": "OWASP: guia de gestion de secretos"
+    },
+    {
+      "text": "Si tu aplicacion recibe webhooks de un servicio externo, verifica siempre la firma criptografica antes de confiar en los datos que llegan.",
+      "explanation": "Un webhook es una URL publica de tu propio servidor, asi que cualquiera que conozca esa direccion puede enviarle una peticion fingiendo ser el servicio real, por ejemplo simulando un pago que nunca ocurrio. Comprobar la firma que el propio servicio incluye en cada envio, usando una clave secreta que solo ambos conocen, es la unica forma de confirmar que el mensaje es autentico.",
+      "link": "https://docs.stripe.com/webhooks#verify-events",
+      "linkLabel": "Stripe: como verificar la firma de un webhook"
+    },
+    {
+      "text": "Cuidado con la mutabilidad compartida al programar con hilos o tareas concurrentes: dos tareas que modifican el mismo dato a la vez pueden producir un resultado distinto cada vez que ejecutas el programa.",
+      "explanation": "Esto se llama una condicion de carrera, y es especialmente dificil de depurar porque el programa puede funcionar bien cientos de veces y fallar solo de forma ocasional, cuando el orden exacto de ejecucion coincide de la manera equivocada. Proteger ese dato compartido con un bloqueo, o evitar compartirlo por completo, elimina el problema de raiz en lugar de esperar a que aparezca en produccion.",
+      "link": "https://www.baeldung.com/cs/race-conditions",
+      "linkLabel": "Baeldung: que es una condicion de carrera"
+    },
+    {
+      "text": "Antes de ejecutar un instalador que descargaste de internet, comprueba su suma de verificacion (checksum) si la pagina oficial la ofrece.",
+      "explanation": "Una descarga puede corromperse a mitad de camino, o un atacante puede haber sustituido el archivo original por una version con malware en un servidor de descarga no oficial. Calcular el hash del archivo descargado y compararlo con el que publica la pagina oficial confirma, en segundos, que el archivo es exactamente el que deberia ser.",
+      "link": "https://docs.python.org/3/library/hashlib.html",
+      "linkLabel": "Documentacion oficial de Python: el modulo hashlib"
+    }
+  ]
+}

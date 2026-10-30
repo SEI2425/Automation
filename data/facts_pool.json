@@ -36,7 +36,8 @@
     "Python introdujo las f-strings (cadenas de texto con formato literal, como f'{nombre}') en la versión 3.6, lanzada en 2016, mucho más rápidas de evaluar que el método str.format() o el operador %.",
     "El módulo functools de Python incluye lru_cache, un decorador que memoriza automáticamente los resultados de una función según sus argumentos, evitando recalcular lo mismo dos veces sin tener que escribir ese caché a mano.",
     "En Python, el tipo bool es en realidad una subclase de int: True equivale a 1 y False a 0, por lo que 'True + True' da 2 sin lanzar ningún error, y se puede usar un booleano como índice de una lista.",
-    "El módulo 'enum' de la biblioteca estándar de Python, incorporado en la versión 3.4 (2014), permite declarar conjuntos fijos de constantes con nombre, con comparación por identidad en lugar de depender de números o cadenas de texto sueltas."
+    "El módulo 'enum' de la biblioteca estándar de Python, incorporado en la versión 3.4 (2014), permite declarar conjuntos fijos de constantes con nombre, con comparación por identidad en lugar de depender de números o cadenas de texto sueltas.",
+    "CPython cachea automaticamente los enteros pequenos (entre -5 y 256): dos variables que valen 100 apuntan literalmente al mismo objeto en memoria, algo que no ocurre con numeros mas grandes."
   ],
   "javascript": [
     "El metodo Array.prototype.copyWithin(), disponible desde ES2015 pero poco conocido, copia una parte de un array dentro del mismo array sin crear uno nuevo, sobrescribiendo los valores en el destino.",
@@ -75,7 +76,8 @@
     "JavaScript no distingue un tipo entero aparte: todos los números (salvo BigInt) comparten el mismo tipo de 64 bits, lo que limita los enteros representados con precisión exacta a 2^53-1; BigInt se añadió en 2020 (ES2020) para enteros más grandes.",
     "El operador de exponenciación ** se añadió a JavaScript en ES2016, mucho después de que el lenguaje ya tuviera Math.pow() para calcular potencias.",
     "A diferencia de un objeto normal, un Map de JavaScript admite cualquier tipo de valor como clave, incluyendo objetos, funciones o incluso NaN, no solo cadenas y símbolos, y además conserva el orden en que se insertaron sus elementos.",
-    "WeakMap y WeakSet, incorporados en ECMAScript 2015 (ES6), permiten asociar datos a objetos sin impedir que el recolector de basura libere esos objetos cuando ya no se usan en ningún otro sitio, algo que un Map o Set normal sí impediría."
+    "WeakMap y WeakSet, incorporados en ECMAScript 2015 (ES6), permiten asociar datos a objetos sin impedir que el recolector de basura libere esos objetos cuando ya no se usan en ningún otro sitio, algo que un Map o Set normal sí impediría.",
+    "El metodo Array.prototype.includes() puede encontrar NaN dentro de un array, mientras que indexOf() nunca lo encuentra, porque NaN no es igual a si mismo salvo para includes(), que usa una comparacion distinta."
   ],
   "typescript": [
     "El modificador 'protected' en TypeScript permite que una propiedad sea accesible desde la propia clase y desde sus subclases, pero no desde fuera de esa jerarquia, a diferencia de 'private', que la restringe solo a la clase donde se declara.",
@@ -114,7 +116,8 @@
     "El operador 'as const', añadido en TypeScript 3.4 (2019), congela el tipo de un valor literal en su forma más específica posible, por ejemplo convirtiendo un array en una tupla de solo lectura en lugar de inferirlo como un array genérico.",
     "El tipo utilitario NonNullable<T>, que elimina null y undefined de un tipo unión, forma parte del conjunto de tipos utilitarios que TypeScript fue incorporando entre 2016 y 2018, en las versiones 2.1 a 2.8 del lenguaje.",
     "Los enums numéricos de TypeScript generan automáticamente un 'mapeo inverso': además de escribir Color.Rojo para obtener su valor numérico, también se puede escribir Color[0] para obtener el texto 'Rojo' a partir de ese número; los enums de tipo string no tienen este mapeo inverso.",
-    "Las funciones de aserción de TypeScript, con la sintaxis 'asserts condition' o 'asserts x is T', se añadieron en la versión 3.7 (2019), la misma actualización que introdujo el encadenamiento opcional (?.) y el operador nullish (??) a nivel de tipos, antes de que llegaran a JavaScript con ES2020."
+    "Las funciones de aserción de TypeScript, con la sintaxis 'asserts condition' o 'asserts x is T', se añadieron en la versión 3.7 (2019), la misma actualización que introdujo el encadenamiento opcional (?.) y el operador nullish (??) a nivel de tipos, antes de que llegaran a JavaScript con ES2020.",
+    "Los modificadores de acceso 'private' y 'protected' de TypeScript solo existen en tiempo de compilacion: en el JavaScript generado se convierten en propiedades normales, accesibles igualmente en tiempo de ejecucion."
   ],
   "java": [
     "El metodo Collectors.groupingBy(), parte de la API de Streams desde Java 8, permite agrupar los elementos de una coleccion segun una funcion clave y devolver directamente un Map con los grupos resultantes, sin necesidad de escribir el bucle manual.",
@@ -153,7 +156,8 @@
     "La anotación @FunctionalInterface, incorporada en Java 8 junto a las expresiones lambda, no es obligatoria, pero hace que el compilador compruebe que la interfaz tiene exactamente un método abstracto, avisando con un error si alguien añade un segundo por error.",
     "El método List.of(), introducido en Java 9 (2017), crea una lista inmutable cuyo intento de modificación lanza una excepción, a diferencia de Arrays.asList(), que sí permite cambiar los elementos existentes aunque no añadir ni quitar ninguno.",
     "Desde Java 14, 'switch' puede usarse como una expresión que devuelve directamente un valor con la sintaxis de flecha, como 'int dias = switch (mes) { case 2 -> 28; default -> 30; };', sin necesidad de 'break' ni de declarar una variable aparte dentro de cada rama como exige el switch tradicional.",
-    "El recolector de basura ZGC (Z Garbage Collector), diseñado para mantener pausas de menos de un milisegundo incluso en montones de varios terabytes, se convirtió en una característica de producción en Java 15 (2020), tras haberse introducido como experimental en Java 11."
+    "El recolector de basura ZGC (Z Garbage Collector), diseñado para mantener pausas de menos de un milisegundo incluso en montones de varios terabytes, se convirtió en una característica de producción en Java 15 (2020), tras haberse introducido como experimental en Java 11.",
+    "El metodo hashCode() por defecto de la clase Object en Java no se basa en el contenido del objeto, sino en un valor interno de la JVM, por lo que dos objetos con el mismo contenido pueden tener hashCode distinto si la clase no sobrescribe el metodo."
   ],
   "kotlin": [
     "La funcion 'with(objeto) { ... }' de Kotlin permite ejecutar un bloque de codigo usando un objeto como receptor implicito, evitando repetir su nombre antes de cada llamada a sus propiedades o metodos.",
@@ -192,7 +196,8 @@
     "Kotlin genera automáticamente, para cada propiedad de una 'data class', una función componentN() (component1(), component2()...), lo que permite desestructurarla directamente como 'val (x, y) = punto'.",
     "La función repeat(n) { ... } de Kotlin ejecuta el bloque indicado exactamente n veces, sin necesidad de declarar una variable de control como en un bucle for tradicional.",
     "Un 'companion object' dentro de una clase Kotlin permite definir miembros parecidos a los 'static' de Java, pero a diferencia de estos, el companion object es en realidad una instancia real de un objeto, por lo que puede implementar interfaces y heredar de una clase.",
-    "El operador de comparación '===' en Kotlin comprueba si dos referencias apuntan al mismo objeto en memoria (identidad), mientras que '==' llama automáticamente al método equals() de la clase para comparar su contenido, justo al revés de como funcionan esos mismos símbolos en Java."
+    "El operador de comparación '===' en Kotlin comprueba si dos referencias apuntan al mismo objeto en memoria (identidad), mientras que '==' llama automáticamente al método equals() de la clase para comparar su contenido, justo al revés de como funcionan esos mismos símbolos en Java.",
+    "La palabra clave 'inline' en una funcion de Kotlin le pide al compilador que copie el cuerpo de la funcion en cada punto donde se llama, evitando crear un objeto nuevo para cada lambda que recibe como parametro."
   ],
   "sql": [
     "La clausula QUALIFY, soportada por motores como Snowflake y BigQuery pero ausente del estandar SQL oficial, permite filtrar directamente el resultado de una funcion de ventana sin tener que envolver la consulta en una subconsulta solo para aplicar ese filtro.",
@@ -231,7 +236,8 @@
     "El estándar SQL:1999 introdujo el tipo de dato BOOLEAN, pero motores muy usados como Oracle Database todavía no lo implementan de forma nativa en sus columnas, por lo que suele simularse con un NUMBER(1) o un CHAR(1).",
     "SQLite, pese a ser uno de los motores de bases de datos más usados del mundo, no impone por defecto el tipo de sus columnas con la misma rigidez que otros motores: se puede guardar texto en una columna declarada como INTEGER sin que salte ningún error, un comportamiento llamado tipado dinámico (type affinity).",
     "A diferencia de GROUP BY, que combina varias filas en una sola fila de resultado, una función de ventana como SUM(salario) OVER (PARTITION BY departamento) calcula su resultado para cada fila por separado, sin reducir el número total de filas devueltas por la consulta.",
-    "La cláusula GROUPING SETS, parte del estándar SQL desde 1999 junto a ROLLUP y CUBE, permite calcular en una sola consulta varios niveles de agregación distintos (por ejemplo, totales por mes, por región y el total general) sin tener que escribir una consulta UNION por cada nivel."
+    "La cláusula GROUPING SETS, parte del estándar SQL desde 1999 junto a ROLLUP y CUBE, permite calcular en una sola consulta varios niveles de agregación distintos (por ejemplo, totales por mes, por región y el total general) sin tener que escribir una consulta UNION por cada nivel.",
+    "La clausula WINDOW, parte del estandar SQL desde 2003, permite definir una sola vez una especificacion de ventana (como PARTITION BY y ORDER BY) y reutilizarla en varias funciones de ventana dentro de la misma consulta."
   ],
   "git": [
     "El comando 'git range-diff', incorporado en Git 2.19 (2018), compara dos versiones distintas de la misma serie de commits (por ejemplo antes y despues de un rebase) mostrando que cambio realmente en cada commit equivalente, en lugar de solo comparar el estado final de ambas ramas.",
@@ -270,7 +276,8 @@
     "El comando 'git blame' puede ignorar un commit concreto (por ejemplo, uno que solo reformateó el código) al mostrar el historial de una línea, pasando su hash con la opción --ignore-rev, para no atribuir ese cambio cosmético al verdadero origen de la línea.",
     "El comando git log -p muestra, además del historial de commits, el diff completo (las líneas añadidas y eliminadas) de cada uno, sin necesidad de ejecutar git show por separado para cada commit.",
     "Una etiqueta (tag) 'ligera' en Git es solo un puntero fijo a un commit, mientras que una etiqueta 'anotada' (creada con git tag -a) se guarda como un objeto completo en la base de datos de Git, con su propio autor, fecha y mensaje, igual que un commit.",
-    "El comando 'git maintenance', incorporado en Git 2.30 (2021), automatiza tareas de mantenimiento como la compactación de objetos y la actualización de referencias en segundo plano, programándolas para que se ejecuten solas sin que el usuario tenga que acordarse de lanzar 'git gc' a mano."
+    "El comando 'git maintenance', incorporado en Git 2.30 (2021), automatiza tareas de mantenimiento como la compactación de objetos y la actualización de referencias en segundo plano, programándolas para que se ejecuten solas sin que el usuario tenga que acordarse de lanzar 'git gc' a mano.",
+    "El comando 'git reflog' guarda un registro local de casi todos los movimientos de HEAD (commits, resets, cambios de rama), incluso los que ya no aparecen en 'git log', lo que permite recuperar commits que parecian perdidos."
   ],
   "htmlcss": [
     "La pseudo-clase CSS ':has()', que permite seleccionar un elemento segun lo que contiene dentro, se conoce como el 'selector padre' que CSS no tuvo durante decadas, y llego a todos los navegadores principales recien en 2023.",
@@ -309,7 +316,8 @@
     "La propiedad CSS 'aspect-ratio', soportada por los navegadores principales desde 2021, permite fijar la proporción entre ancho y alto de un elemento (como 16/9 para un vídeo) sin necesidad del viejo truco de usar un padding-top calculado en porcentaje.",
     "La propiedad CSS aspect-ratio, que permite fijar la proporción entre el ancho y el alto de un elemento sin calcular manualmente su altura, no tuvo soporte amplio en los navegadores hasta 2021.",
     "La media query 'prefers-reduced-motion: reduce' permite detectar si una persona activó en su sistema operativo la preferencia de reducir animaciones (por mareo, migrañas u otros motivos), y adaptar o quitar las animaciones de una página sin necesidad de ningún interruptor manual en la propia web.",
-    "El atributo HTML 'translate=\"no\"' le indica a los traductores automáticos del navegador, como el traductor integrado de Chrome, que no deben traducir el contenido de ese elemento, útil por ejemplo para nombres propios, fragmentos de código o marcas comerciales."
+    "El atributo HTML 'translate=\"no\"' le indica a los traductores automáticos del navegador, como el traductor integrado de Chrome, que no deben traducir el contenido de ese elemento, útil por ejemplo para nombres propios, fragmentos de código o marcas comerciales.",
+    "El atributo HTML 'inert', soportado por los navegadores modernos desde 2021-2022, marca una parte del documento como no interactiva y la saca tambien del orden de tabulacion y de los lectores de pantalla, util por ejemplo para el contenido detras de un modal abierto."
   ],
   "bash": [
     "El operador de redireccion '>>' en Bash anade la salida de un comando al final de un archivo existente sin borrar su contenido previo, a diferencia de un unico '>', que sobrescribe el archivo entero cada vez.",
@@ -348,7 +356,8 @@
     "El comando 'trap' en Bash permite ejecutar una función o comando propio justo antes de que el script termine (por ejemplo al recibir Ctrl+C), lo que se usa habitualmente para borrar archivos temporales aunque el script se interrumpa a medias.",
     "El carácter ! seguido de un número en Bash, como !42, vuelve a ejecutar exactamente el comando número 42 del historial, sin necesidad de desplazarte con las flechas del teclado hasta encontrarlo.",
     "En Bash, un código de salida 127 significa específicamente que el shell no encontró el comando o programa que intentabas ejecutar, a diferencia del 126 que indica que el archivo existe pero no tiene permiso de ejecución.",
-    "El built-in 'mapfile' (también llamado readarray) de Bash, disponible desde la versión 4.0 (2009), lee cada línea de la entrada estándar directamente en los elementos de un array, evitando el bucle manual típico con 'while read' para esa misma tarea."
+    "El built-in 'mapfile' (también llamado readarray) de Bash, disponible desde la versión 4.0 (2009), lee cada línea de la entrada estándar directamente en los elementos de un array, evitando el bucle manual típico con 'while read' para esa misma tarea.",
+    "El comando 'xargs' en Bash convierte la salida de otro comando en argumentos de linea de comandos para un segundo programa, algo que una simple tuberia no permite hacer por si sola."
   ],
   "ia": [
     "El termino 'RAG' (Retrieval-Augmented Generation, o generacion aumentada por recuperacion), que combina un modelo de lenguaje con una busqueda en una base de datos externa antes de responder, se formalizo en un articulo de investigadores de Facebook AI Research publicado en 2020.",
@@ -387,6 +396,7 @@
     "El término 'alucinación', usado para describir cuando un modelo de IA genera información falsa con aparente seguridad, se popularizó en el campo del procesamiento de lenguaje natural a partir de 2018, antes de que existieran los grandes modelos de lenguaje actuales.",
     "El término 'alucinación', usado para describir cuando un modelo de IA genera información falsa con total seguridad, se popularizó a partir de artículos sobre traducción automática y descripción de imágenes de mediados de la década de 2010, antes de que existieran los grandes modelos de lenguaje actuales.",
     "LoRA (Low-Rank Adaptation) es una técnica que permite ajustar (fine-tunear) un modelo de lenguaje grande entrenando solo un pequeño número de parámetros adicionales, en lugar de modificar los miles de millones de parámetros originales, lo que reduce mucho el coste de memoria y tiempo necesario.",
-    "El término 'red neuronal de grafos' (Graph Neural Network, GNN), pensada para procesar datos con forma de grafo como moléculas o redes sociales en lugar de texto o imágenes, ganó popularidad académica a partir de mediados de la década de 2010, antes del auge actual de los grandes modelos de lenguaje."
+    "El término 'red neuronal de grafos' (Graph Neural Network, GNN), pensada para procesar datos con forma de grafo como moléculas o redes sociales en lugar de texto o imágenes, ganó popularidad académica a partir de mediados de la década de 2010, antes del auge actual de los grandes modelos de lenguaje.",
+    "El 'few-shot learning' consiste en darle a un modelo de lenguaje unos pocos ejemplos dentro del propio prompt para que aprenda el patron a seguir, sin necesidad de reentrenarlo ni ajustar sus parametros internos."
   ]
 }

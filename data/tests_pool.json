@@ -2,7 +2,12 @@
   "python": [
     {
       "q": "¿Qué imprime este código?\nclass Animal:\n    def sonido(self):\n        return '...'\n\nclass Perro(Animal):\n    def sonido(self):\n        return 'Guau'\n\nanimales = [Animal(), Perro()]\nprint(', '.join(a.sonido() for a in animales))",
-      "opts": ["..., Guau", "Guau, ...", "..., ...", "Error"],
+      "opts": [
+        "..., Guau",
+        "Guau, ...",
+        "..., ...",
+        "Error"
+      ],
       "correct": 0,
       "explanation": "Cada objeto llama a su propia versión de sonido() (polimorfismo): Animal() usa la de la clase base ('...') y Perro() usa la sobrescrita ('Guau'), uniendo ambos resultados con ', '."
     },
@@ -393,15 +398,36 @@
     },
     {
       "q": "¿Qué devuelve `list(map(str, [1, 2, 3]))` en Python?",
-      "opts": ["['1', '2', '3']", "[1, 2, 3]", "'123'", "Error"],
+      "opts": [
+        "['1', '2', '3']",
+        "[1, 2, 3]",
+        "'123'",
+        "Error"
+      ],
       "correct": 0,
       "explanation": "map() aplica la función str a cada elemento del iterable, convirtiendo cada número en su representación como texto; list() recoge esos resultados en una lista."
+    },
+    {
+      "q": "¿Qué devuelve el método .get() de un diccionario en Python cuando la clave no existe y no se indica un valor por defecto?",
+      "opts": [
+        "None",
+        "Lanza un KeyError",
+        "0",
+        "Crea la clave con valor None"
+      ],
+      "correct": 0,
+      "explanation": "A diferencia de d[clave], que lanza KeyError si la clave no existe, d.get(clave) devuelve None de forma segura cuando no se indica un valor por defecto explicito."
     }
   ],
   "javascript": [
     {
       "q": "¿Qué imprime este código?\nconst arr = [1, 2, 3];\nconst [a = 10, b = 20, c = 30, d = 40] = arr;\nconsole.log(d);",
-      "opts": ["40", "undefined", "30", "Error"],
+      "opts": [
+        "40",
+        "undefined",
+        "30",
+        "Error"
+      ],
       "correct": 0,
       "explanation": "El array solo tiene 3 elementos, así que la cuarta posición no recibe ningún valor del array y se usa su valor por defecto, 40."
     },
@@ -792,15 +818,36 @@
     },
     {
       "q": "¿Qué imprime `console.log(Boolean(''))`?",
-      "opts": ["false", "true", "''", "Error"],
+      "opts": [
+        "false",
+        "true",
+        "''",
+        "Error"
+      ],
       "correct": 0,
       "explanation": "Boolean() convierte el valor a su equivalente booleano; una cadena vacía es uno de los valores 'falsy' de JavaScript, junto con 0, null, undefined y NaN, por lo que se convierte en false."
+    },
+    {
+      "q": "¿Qué devuelve 'typeof NaN' en JavaScript?",
+      "opts": [
+        "'number'",
+        "'NaN'",
+        "'undefined'",
+        "'object'"
+      ],
+      "correct": 0,
+      "explanation": "Aunque NaN significa 'Not a Number', JavaScript lo clasifica como un valor del tipo 'number', ya que forma parte del mismo tipo numerico que el resto de valores."
     }
   ],
   "typescript": [
     {
       "q": "¿Qué imprime este código?\nfunction unir<T, U>(a: T, b: U): T & U {\n  return { ...a, ...b } as T & U;\n}\nconst resultado = unir({ nombre: \"Ana\" }, { edad: 30 });\nconsole.log(resultado.edad);",
-      "opts": ["30", "undefined", "Error de compilación", "\"30\""],
+      "opts": [
+        "30",
+        "undefined",
+        "Error de compilación",
+        "\"30\""
+      ],
       "correct": 0,
       "explanation": "El tipo de intersección T & U combina las propiedades de ambos objetos, por lo que resultado tiene tanto 'nombre' como 'edad'; en tiempo de ejecución el spread copia realmente ambas propiedades."
     },
@@ -1191,15 +1238,36 @@
     },
     {
       "q": "¿Qué permite declarar `function esString(x: unknown): asserts x is string { if (typeof x !== 'string') throw new Error(); }` en TypeScript?",
-      "opts": ["Una función de aserción que, si no lanza, le dice al compilador que a partir de ese punto x es de tipo string", "Una función que siempre devuelve un string", "Una función que solo compila dentro de una clase", "Un alias de tipo para string"],
+      "opts": [
+        "Una función de aserción que, si no lanza, le dice al compilador que a partir de ese punto x es de tipo string",
+        "Una función que siempre devuelve un string",
+        "Una función que solo compila dentro de una clase",
+        "Un alias de tipo para string"
+      ],
       "correct": 0,
       "explanation": "Las funciones de aserción con la sintaxis 'asserts x is T' no devuelven un booleano como un type guard normal: si la función retorna sin lanzar una excepción, TypeScript asume que la condición se cumple y reduce (narrows) el tipo de la variable en el código que sigue."
+    },
+    {
+      "q": "¿Qué significa que una funcion tenga el tipo de retorno 'never' en TypeScript?",
+      "opts": [
+        "Que la funcion nunca termina normalmente: siempre lanza un error o entra en un bucle infinito",
+        "Que la variable nunca se usa en el programa",
+        "Que el valor devuelto es siempre null",
+        "Que la funcion siempre devuelve un booleano"
+      ],
+      "correct": 0,
+      "explanation": "El tipo 'never' describe funciones que nunca llegan a devolver un valor de forma normal, como las que siempre lanzan una excepcion o quedan en un bucle sin fin."
     }
   ],
   "java": [
     {
       "q": "¿Qué imprime este código?\ninterface Forma {\n    double area();\n    default String describir() {\n        return \"Area: \" + area();\n    }\n}\nclass Circulo implements Forma {\n    double radio;\n    Circulo(double radio) { this.radio = radio; }\n    public double area() { return Math.PI * radio * radio; }\n}\nSystem.out.println(new Circulo(2).describir().startsWith(\"Area\"));",
-      "opts": ["true", "false", "Error de compilación", "Error en tiempo de ejecución"],
+      "opts": [
+        "true",
+        "false",
+        "Error de compilación",
+        "Error en tiempo de ejecución"
+      ],
       "correct": 0,
       "explanation": "Los métodos 'default' de una interfaz, introducidos en Java 8, ya traen una implementación lista que las clases heredan sin escribirla; describir() funciona tal cual y el resultado empieza por 'Area'."
     },
@@ -1590,15 +1658,36 @@
     },
     {
       "q": "¿Qué palabra clave declara en Java un bloque de código que se ejecuta una sola vez, cuando la JVM carga la clase, antes de crear cualquier instancia?",
-      "opts": ["static", "final", "synchronized", "transient"],
+      "opts": [
+        "static",
+        "final",
+        "synchronized",
+        "transient"
+      ],
       "correct": 0,
       "explanation": "Un bloque 'static { ... }' dentro de una clase se ejecuta una sola vez, cuando la JVM carga esa clase por primera vez, antes de crear cualquier instancia; se usa para inicializar datos estáticos complejos."
+    },
+    {
+      "q": "¿Qué problema puede causar sobrescribir equals() en una clase Java sin sobrescribir tambien hashCode()?",
+      "opts": [
+        "Que la clase se comporte de forma incorrecta en estructuras como HashMap o HashSet",
+        "Que el programa no compile",
+        "Que Java lance una excepcion en tiempo de ejecucion automaticamente",
+        "No causa ningun problema real"
+      ],
+      "correct": 0,
+      "explanation": "HashMap y HashSet usan hashCode() para ubicar los objetos y despues equals() para confirmar la igualdad; si solo se sobrescribe equals(), dos objetos 'iguales' pueden acabar en posiciones distintas y la estructura deja de encontrarlos correctamente."
     }
   ],
   "kotlin": [
     {
       "q": "¿Qué imprime este código?\nval texto: String? = null\nval longitud = texto?.length ?: 0\nval mayusculas = texto?.uppercase() ?: \"SIN TEXTO\"\nprintln(\"$longitud - $mayusculas\")",
-      "opts": ["0 - SIN TEXTO", "null - null", "0 - null", "Error de compilación"],
+      "opts": [
+        "0 - SIN TEXTO",
+        "null - null",
+        "0 - null",
+        "Error de compilación"
+      ],
       "correct": 0,
       "explanation": "Como texto es null, el operador ?. corta la cadena en ambos casos y el operador elvis ?: sustituye ese null por los valores por defecto indicados: 0 y 'SIN TEXTO'."
     },
@@ -1989,15 +2078,36 @@
     },
     {
       "q": "¿Qué permite la palabra clave 'reified' en una función inline de Kotlin, como en `inline fun <reified T> esDe(valor: Any) = valor is T`?",
-      "opts": ["Acceder al tipo genérico T en tiempo de ejecución dentro de la función, algo que normalmente se pierde por el borrado de tipos", "Convertir la función en recursiva automáticamente", "Declarar T como un tipo de solo lectura", "Hacer que la función solo acepte tipos numéricos"],
+      "opts": [
+        "Acceder al tipo genérico T en tiempo de ejecución dentro de la función, algo que normalmente se pierde por el borrado de tipos",
+        "Convertir la función en recursiva automáticamente",
+        "Declarar T como un tipo de solo lectura",
+        "Hacer que la función solo acepte tipos numéricos"
+      ],
       "correct": 0,
       "explanation": "Normalmente la información de un tipo genérico se borra en tiempo de ejecución (type erasure); al marcar una función inline con 'reified', el compilador sustituye el tipo real en cada llamada, permitiendo comprobaciones como 'valor is T' que de otro modo no compilarían."
+    },
+    {
+      "q": "En Kotlin, ¿que cambia al usar .asSequence() antes de encadenar varias llamadas a map y filter sobre una lista grande?",
+      "opts": [
+        "Las operaciones se evaluan de forma perezosa, elemento por elemento, sin crear una lista intermedia completa en cada paso",
+        "El resultado deja de ser una coleccion utilizable",
+        "Ya no se puede usar forEach despues",
+        "Los elementos se ordenan automaticamente de menor a mayor"
+      ],
+      "correct": 0,
+      "explanation": "Una Sequence en Kotlin procesa cada elemento de principio a fin antes de pasar al siguiente, en vez de crear una lista nueva completa tras cada map o filter, lo que ahorra memoria con colecciones grandes."
     }
   ],
   "sql": [
     {
       "q": "¿Qué calcula la función LAG en esta consulta?\nSELECT name,\n       LAG(salary) OVER (ORDER BY hire_date) AS salario_anterior\nFROM employees;",
-      "opts": ["El salario del empleado contratado justo antes, según el orden de contratación", "El salario máximo de toda la tabla", "El número de empleados contratados antes de cada uno", "Elimina los empleados sin fecha de contratación"],
+      "opts": [
+        "El salario del empleado contratado justo antes, según el orden de contratación",
+        "El salario máximo de toda la tabla",
+        "El número de empleados contratados antes de cada uno",
+        "Elimina los empleados sin fecha de contratación"
+      ],
       "correct": 0,
       "explanation": "LAG() es una función de ventana que, para cada fila, devuelve el valor de una columna en la fila anterior según el orden indicado; aquí trae el salario del empleado contratado inmediatamente antes."
     },
@@ -2388,15 +2498,36 @@
     },
     {
       "q": "¿Qué hace la función de ventana `PERCENT_RANK() OVER (ORDER BY salary)` en una consulta SQL?",
-      "opts": ["Calcula el percentil relativo de cada fila (un valor entre 0 y 1) según su posición en el orden indicado", "Cuenta cuántas filas hay en total", "Elimina las filas con salario nulo", "Calcula el salario promedio de todas las filas"],
+      "opts": [
+        "Calcula el percentil relativo de cada fila (un valor entre 0 y 1) según su posición en el orden indicado",
+        "Cuenta cuántas filas hay en total",
+        "Elimina las filas con salario nulo",
+        "Calcula el salario promedio de todas las filas"
+      ],
       "correct": 0,
       "explanation": "PERCENT_RANK() devuelve, para cada fila, la proporción de filas con un valor menor dentro del conjunto ordenado, expresada como un número entre 0 y 1; la primera fila siempre vale 0 y la última 1."
+    },
+    {
+      "q": "¿Que ocurre si usas LIMIT en una consulta SQL sin anadir una clausula ORDER BY?",
+      "opts": [
+        "Se devuelve un subconjunto de filas en un orden no garantizado, que puede variar entre ejecuciones",
+        "La consulta siempre devuelve las filas insertadas mas recientemente",
+        "El motor ordena automaticamente por la clave primaria",
+        "La consulta produce un error de sintaxis"
+      ],
+      "correct": 0,
+      "explanation": "Sin ORDER BY, el motor de base de datos no garantiza en que orden llegan las filas, por lo que LIMIT puede devolver un conjunto distinto de filas en ejecuciones diferentes, incluso sobre los mismos datos."
     }
   ],
   "git": [
     {
       "q": "¿Qué muestra este último comando?\ngit add archivo.txt\ngit commit -m \"cambio 1\"\ngit tag v1.0\ngit commit --allow-empty -m \"cambio 2\"\ngit log --oneline v1.0..HEAD",
-      "opts": ["Los commits realizados después de la etiqueta v1.0, sin incluirla", "Todos los commits del repositorio desde el principio", "Solo el commit donde se creó la etiqueta v1.0", "Un error, porque no se puede comparar una etiqueta con HEAD"],
+      "opts": [
+        "Los commits realizados después de la etiqueta v1.0, sin incluirla",
+        "Todos los commits del repositorio desde el principio",
+        "Solo el commit donde se creó la etiqueta v1.0",
+        "Un error, porque no se puede comparar una etiqueta con HEAD"
+      ],
       "correct": 0,
       "explanation": "La sintaxis rango..rango en git log muestra los commits alcanzables desde el segundo punto (HEAD) que no son alcanzables desde el primero (v1.0), es decir, los posteriores a esa etiqueta."
     },
@@ -2787,15 +2918,36 @@
     },
     {
       "q": "¿Qué hace el comando `git log --merges`?",
-      "opts": ["Muestra solo los commits que son resultado de una fusión (merge), ocultando los commits normales", "Fusiona automáticamente todas las ramas", "Elimina los commits de fusión del historial", "Muestra solo los commits sin fusionar"],
+      "opts": [
+        "Muestra solo los commits que son resultado de una fusión (merge), ocultando los commits normales",
+        "Fusiona automáticamente todas las ramas",
+        "Elimina los commits de fusión del historial",
+        "Muestra solo los commits sin fusionar"
+      ],
       "correct": 0,
       "explanation": "La opción --merges filtra el historial para mostrar únicamente los commits que tienen más de un padre, es decir, los que resultaron de una fusión entre ramas, útil para ver de un vistazo cuándo se integró cada rama."
+    },
+    {
+      "q": "¿Que comando de Git permite recuperar un commit que parecia perdido tras un 'git reset --hard' hecho por error?",
+      "opts": [
+        "git reflog",
+        "git clean -fd",
+        "git revert HEAD",
+        "git branch -D"
+      ],
+      "correct": 0,
+      "explanation": "git reflog guarda un registro local de casi todos los movimientos recientes de HEAD, incluidos los que un reset --hard deja fuera de 'git log', lo que permite localizar y recuperar el commit con git checkout o git reset."
     }
   ],
   "htmlcss": [
     {
       "q": "¿De qué color se muestra el texto 'Hola'?\n<style>\n  .box { color: red; }\n</style>\n<p class=\"box\" style=\"color: blue;\">Hola</p>",
-      "opts": ["Azul, porque un estilo en línea (atributo style) tiene más especificidad que una clase", "Rojo, porque la clase se declaró en una etiqueta <style> independiente", "Negro, porque ambos estilos se cancelan entre sí", "Ninguno: el navegador ignora el atributo style si ya existe una clase en ese elemento"],
+      "opts": [
+        "Azul, porque un estilo en línea (atributo style) tiene más especificidad que una clase",
+        "Rojo, porque la clase se declaró en una etiqueta <style> independiente",
+        "Negro, porque ambos estilos se cancelan entre sí",
+        "Ninguno: el navegador ignora el atributo style si ya existe una clase en ese elemento"
+      ],
       "correct": 0,
       "explanation": "Un estilo en línea escrito en el atributo style de un elemento tiene mayor especificidad en CSS que cualquier selector de clase, así que gana sobre '.box' y el texto se muestra azul."
     },
@@ -3186,15 +3338,36 @@
     },
     {
       "q": "¿Qué hace la propiedad CSS `inset: 0;` aplicada a un elemento con `position: absolute;`?",
-      "opts": ["Equivale a fijar top, right, bottom y left todos a 0 a la vez, haciendo que el elemento cubra todo su contenedor", "Invierte los colores del elemento", "Oculta el elemento completamente", "Solo afecta al margen del elemento"],
+      "opts": [
+        "Equivale a fijar top, right, bottom y left todos a 0 a la vez, haciendo que el elemento cubra todo su contenedor",
+        "Invierte los colores del elemento",
+        "Oculta el elemento completamente",
+        "Solo afecta al margen del elemento"
+      ],
       "correct": 0,
       "explanation": "'inset' es una propiedad abreviada que fija de una vez los cuatro desplazamientos (top, right, bottom, left); con 'inset: 0' sobre un elemento posicionado de forma absoluta, este se estira para ocupar exactamente el espacio de su contenedor más cercano posicionado."
+    },
+    {
+      "q": "¿Que hace la propiedad CSS 'object-fit: cover' aplicada a una imagen dentro de un contenedor de tamano fijo?",
+      "opts": [
+        "Recorta la imagen para llenar todo el contenedor manteniendo su proporcion original, sin deformarla",
+        "Estira la imagen para llenar el contenedor, deformando su proporcion si es necesario",
+        "Reduce la imagen hasta que quepa entera, dejando espacio vacio alrededor",
+        "Oculta la imagen por completo"
+      ],
+      "correct": 0,
+      "explanation": "object-fit: cover escala la imagen y recorta el sobrante para que cubra todo el contenedor sin perder su proporcion original, a diferencia de 'fill', que la deforma, o 'contain', que la deja entera con espacio vacio."
     }
   ],
   "bash": [
     {
       "q": "¿Qué hace el símbolo ## en este script?\nnombre=\"archivo.tar.gz\"\necho \"${nombre##*.}\"\n# imprime \"gz\"",
-      "opts": ["Elimina la coincidencia más larga del patrón al principio del valor, dejando solo la última extensión", "Elimina la coincidencia más corta del patrón al principio del valor", "Cuenta cuántos puntos hay en el nombre del archivo", "Convierte el texto a mayúsculas"],
+      "opts": [
+        "Elimina la coincidencia más larga del patrón al principio del valor, dejando solo la última extensión",
+        "Elimina la coincidencia más corta del patrón al principio del valor",
+        "Cuenta cuántos puntos hay en el nombre del archivo",
+        "Convierte el texto a mayúsculas"
+      ],
       "correct": 0,
       "explanation": "El símbolo ## elimina la coincidencia MÁS LARGA posible del patrón indicado desde el principio de la cadena; como *. es un patrón codicioso, se come todo hasta el último punto, dejando solo 'gz'."
     },
@@ -3585,15 +3758,36 @@
     },
     {
       "q": "¿Qué hace la sustitución de proceso `diff <(sort archivo1.txt) <(sort archivo2.txt)` en Bash?",
-      "opts": ["Compara el contenido ordenado de ambos archivos sin necesidad de crear archivos temporales", "Combina ambos archivos en uno solo", "Ordena y sobrescribe los archivos originales", "Elimina las líneas duplicadas entre ambos archivos"],
+      "opts": [
+        "Compara el contenido ordenado de ambos archivos sin necesidad de crear archivos temporales",
+        "Combina ambos archivos en uno solo",
+        "Ordena y sobrescribe los archivos originales",
+        "Elimina las líneas duplicadas entre ambos archivos"
+      ],
       "correct": 0,
       "explanation": "La sustitución de procesos <(...) ejecuta el comando dentro de los paréntesis y lo presenta como si fuera un archivo temporal; aquí permite pasarle a diff el resultado ya ordenado de cada archivo sin tener que guardarlo primero en disco."
+    },
+    {
+      "q": "¿Que hace el comando 'comando1 | xargs comando2' en Bash?",
+      "opts": [
+        "Toma cada linea de la salida de comando1 y la pasa como argumento a comando2",
+        "Ejecuta comando1 y comando2 en paralelo sin relacion entre ellos",
+        "Redirige la salida de comando1 a un archivo llamado comando2",
+        "Combina la salida de ambos comandos en una sola linea de texto"
+      ],
+      "correct": 0,
+      "explanation": "xargs convierte la salida que recibe por la tuberia en argumentos de linea de comandos para el siguiente programa, lo que permite por ejemplo borrar en lote archivos que encontro 'find', algo que un simple pipe no permite hacer directamente."
     }
   ],
   "ia": [
     {
       "q": "¿Qué describe el término 'fine-tuning' (ajuste fino) de un modelo de lenguaje?",
-      "opts": ["Entrenar un modelo ya preentrenado con datos adicionales y específicos para especializarlo en una tarea o dominio concreto", "Reducir el tamaño de un modelo eliminando capas al azar", "Cambiar solo la temperatura de generación sin tocar los pesos del modelo", "Traducir las respuestas del modelo a otro idioma"],
+      "opts": [
+        "Entrenar un modelo ya preentrenado con datos adicionales y específicos para especializarlo en una tarea o dominio concreto",
+        "Reducir el tamaño de un modelo eliminando capas al azar",
+        "Cambiar solo la temperatura de generación sin tocar los pesos del modelo",
+        "Traducir las respuestas del modelo a otro idioma"
+      ],
       "correct": 0,
       "explanation": "El fine-tuning parte de un modelo ya entrenado de forma general y continúa su entrenamiento con un conjunto de datos más pequeño y específico, ajustando sus pesos para que rinda mejor en una tarea concreta."
     },
@@ -3973,9 +4167,25 @@
     },
     {
       "q": "¿Qué describe el término 'constitutional AI' (IA constitucional), una técnica introducida por Anthropic en 2022?",
-      "opts": ["Un método para entrenar un modelo a seguir un conjunto explícito de principios escritos, usando al propio modelo para evaluar y corregir sus respuestas según esos principios, en lugar de depender solo de feedback humano directo", "Una ley que regula el uso de la inteligencia artificial en el gobierno", "Un tipo de arquitectura de red neuronal distinta al Transformer", "Un método para comprimir el tamaño de un modelo"],
+      "opts": [
+        "Un método para entrenar un modelo a seguir un conjunto explícito de principios escritos, usando al propio modelo para evaluar y corregir sus respuestas según esos principios, en lugar de depender solo de feedback humano directo",
+        "Una ley que regula el uso de la inteligencia artificial en el gobierno",
+        "Un tipo de arquitectura de red neuronal distinta al Transformer",
+        "Un método para comprimir el tamaño de un modelo"
+      ],
       "correct": 0,
       "explanation": "La IA constitucional entrena a un modelo para que él mismo critique y revise sus respuestas comparándolas con una lista explícita de principios ('la constitución'), reduciendo la cantidad de feedback humano directo necesario frente a técnicas como el RLHF puro."
+    },
+    {
+      "q": "¿Que significa que un modelo de lenguaje tenga una 'ventana de contexto' de 128.000 tokens?",
+      "opts": [
+        "Que puede tener en cuenta como maximo esa cantidad de tokens entre el prompt y su propia respuesta en una misma conversacion",
+        "Que tarda 128.000 milisegundos en generar una respuesta",
+        "Que fue entrenado con exactamente 128.000 documentos",
+        "Que puede generar como maximo 128.000 respuestas distintas en total"
+      ],
+      "correct": 0,
+      "explanation": "La ventana de contexto es el limite de tokens (del prompt, el historial de la conversacion y la propia respuesta) que un modelo puede procesar de una vez; todo lo que supera ese limite queda fuera de lo que el modelo puede 'recordar' en ese momento."
     }
   ]
 }

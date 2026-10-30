@@ -1,0 +1,65 @@
+{
+  "date": "2026-10-30",
+  "items": [
+    {
+      "tag": "Impacto",
+      "title": "Anthropic acelera el desarrollo de farmacos con Claude en seis colaboraciones con biotecnologicas",
+      "url": "https://www.anthropic.com/research/early-progress-drug-development",
+      "summary": "Anthropic publico el 27 de octubre los primeros resultados de su equipo de ciencias de la vida tras meses de colaboracion con seis empresas de biotecnologia, entre ellas Generate Biomedicines y BigHat Biosciences. En un caso, Claude ayudo a disenar una terapia de celulas CAR-T un 70% mas corta que la version estandar; en otro, redujo un 89% el tiempo de revision de documentos de fabricacion para una farmaceutica, pasando de unos tres meses a cuatro horas. Todo el trabajo es todavia preclinico, sin pruebas en humanos."
+    },
+    {
+      "tag": "Impacto",
+      "title": "Anthropic presenta su solicitud de salida a bolsa (S-1) ante la SEC de Estados Unidos",
+      "url": "https://www.anthropic.com/news/s1-sec",
+      "summary": "Anthropic PBC registro el 26 de octubre ante la Comision de Bolsa y Valores de EEUU el formulario S-1 para una oferta publica inicial de sus acciones Clase A, con intencion de cotizar en el Nasdaq bajo el simbolo 'ANT'. La empresa todavia no ha fijado el numero de acciones ni el rango de precio, y Goldman Sachs y Morgan Stanley figuran como los bancos de referencia de la operacion."
+    },
+    {
+      "tag": "Impacto",
+      "title": "Corea del Sur detiene a un expentester que robo 8,2 millones de registros personales con la herramienta de IA ARTEX",
+      "url": "https://bleepingcomputer.com/news/security/former-pentester-used-artex-ai-to-steal-82-million-data-records",
+      "summary": "La policia de Seul detuvo a un expentester de 32 anos que, segun investigadores, uso el framework de pruebas de seguridad ARTEX AI para automatizar ataques contra mas de 90 organizaciones surcoreanas, vulnerando mas de 60 empresas en 43 dias tras adoptar la herramienta en agosto. El caso, calificado como el primer arresto del pais por un hackeo a gran escala con IA generativa, expuso unos 8,2 millones de registros personales; otros seis sospechosos siguen investigados sin estar detenidos."
+    },
+    {
+      "tag": "Impacto",
+      "title": "Un analisis de IA sobre corrientes oceanicas identifica los arrecifes del Triangulo de Coral con mas potencial de recuperacion",
+      "url": "https://theaiinsider.tech/?p=26211",
+      "summary": "Investigadores combinaron modelos de IA con datos de corrientes marinas para estudiar como el cambio entre El Nino y La Nina conecta distintos arrecifes del Triangulo de Coral, la region con mayor biodiversidad marina del planeta. El analisis permite senalar que arrecifes concretos tienen mas probabilidad de recuperarse tras un blanqueamiento gracias a esa conectividad, informacion que antes era muy dificil de calcular a esa escala, aunque los propios autores insisten en que la proteccion humana directa sigue siendo decisiva."
+    },
+    {
+      "tag": "Impacto",
+      "title": "Anthropic amplia su acuerdo con la Administracion de Servicios Generales de EEUU para llevar Claude a todos los niveles de gobierno",
+      "url": "https://www.anthropic.com/news/expanding-partnership-gsa",
+      "summary": "Anthropic anuncio el 27 de octubre un nuevo acuerdo con la GSA que extiende un descuento del 40% en Claude a gobiernos estatales, locales, tribales y territoriales de EEUU, no solo al federal, con un ahorro estimado de 1.000 millones de dolares. Unas 500 organizaciones publicas ya usan Claude, con un crecimiento de ocho veces en usuarios activos semanales desde febrero; un proyecto piloto en Utah con 34 desarrolladores reporto que el 71% ahorro mas de 20 horas de trabajo."
+    },
+    {
+      "tag": "Interactivo",
+      "title": "Exercism: practica Nim con ejercicios interactivos y mentoria gratuita",
+      "url": "https://exercism.org/tracks/nim",
+      "summary": "Este recorrido gratuito de Exercism ofrece decenas de ejercicios del lenguaje Nim ordenados por dificultad, con pruebas automaticas que revisan tu solucion al instante nada mas enviarla. Como en el resto de la plataforma, tambien puedes pedir mentoria gratuita de programadores voluntarios que comentan tu codigo y sugieren formas mas idiomaticas de resolverlo."
+    },
+    {
+      "tag": "Interactivo",
+      "title": "W3Schools: tutorial interactivo de HTML con editor en el navegador",
+      "url": "https://www.w3schools.com/html/",
+      "summary": "Este tutorial gratuito cubre los fundamentos de HTML (etiquetas, enlaces, formularios, tablas) con un editor 'Try it Yourself' en cada pagina para escribir y ver el resultado al instante sin instalar nada. Cada capitulo termina con un breve cuestionario de autoevaluacion para comprobar si el concepto quedo claro antes de seguir."
+    },
+    {
+      "tag": "Interactivo",
+      "title": "W3Schools: tutorial interactivo de Node.js con editor en el navegador",
+      "url": "https://www.w3schools.com/nodejs/",
+      "summary": "Este tutorial gratuito ensena los fundamentos de Node.js (modulos, el sistema de archivos, servidores HTTP basicos) con un editor integrado para escribir y ejecutar codigo directamente en el navegador. Esta pensado para quien ya conoce JavaScript y quiere dar el salto a programar en el servidor."
+    },
+    {
+      "tag": "Curso",
+      "title": "Hyperskill: Python Core, el curso gratuito de JetBrains Academy con cientos de ejercicios",
+      "url": "https://hyperskill.org/tracks/22",
+      "summary": "Esta ruta gratuita de JetBrains Academy ensena Python desde cero combinando mas de 280 lecciones teoricas cortas con cientos de problemas de codigo que se resuelven y corrigen directamente en el navegador. No pide tarjeta de credito y se adapta al nivel de cada persona, con proyectos de portafolio al completar cada seccion."
+    },
+    {
+      "tag": "Curso",
+      "title": "Rosetta Code: compara como resolver la misma tarea en decenas de lenguajes de programacion",
+      "url": "https://rosettacode.org/wiki/Rosetta_Code",
+      "summary": "Esta wiki gratuita y de codigo abierto reune miles de pequenas tareas de programacion, cada una resuelta en decenas de lenguajes distintos, desde Python hasta Kotlin o Bash. Es una forma rapida de ver como cambia (o no) la solucion de un mismo problema al pasar de un lenguaje a otro, util tanto para aprender uno nuevo como para comparar estilos."
+    }
+  ]
+}
