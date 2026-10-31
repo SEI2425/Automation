@@ -1,0 +1,65 @@
+{
+  "date": "2026-10-31",
+  "items": [
+    {
+      "tag": "Impacto",
+      "title": "Corea del Norte financia armas con una red de falsos trabajadores de IT que usa IA para pasar entrevistas de trabajo",
+      "url": "https://www.techtimes.com/articles/329671/20261029/north-koreas-800m-it-fraud-ring-used-ai-pass-hiring-screens-russia-sanctioned.htm",
+      "summary": "El Departamento del Tesoro de EEUU sancionó el 28 de octubre a diez personas y una empresa por facilitar una red norcoreana que coloca a trabajadores remotos de IT en empresas extranjeras usando currículums falsos, overlays de deepfake en videollamadas y voces alteradas para ocultar su identidad real. Según Washington, el dinero recaudado por este esquema, que ya suma cientos de millones de dólares, ayuda a financiar los programas nuclear y de misiles del régimen."
+    },
+    {
+      "tag": "Impacto",
+      "title": "OpenAI dice que su IA resolvió tres problemas abiertos de matemáticas, física e informática, pero la comunidad científica todavía no lo confirma",
+      "url": "https://thenextweb.com/news/openai-exponential-time-hypothesis-false-kakeya-yang-mills",
+      "summary": "OpenAI anunció el 26 de octubre tres resultados generados por un modelo interno: una presunta demostración de la conjetura de suavizado local (que resolvería también la conjetura de Kakeya), una prueba de que la Hipótesis del Tiempo Exponencial es falsa, y un resultado sobre teorías cuánticas de campos. La propia empresa insiste en que son hallazgos preliminares pendientes de revisión independiente, y ya pidió a matemáticos externos que comprueben las pruebas."
+    },
+    {
+      "tag": "Impacto",
+      "title": "Un empleado de un hospital de Johns Hopkins sube datos de más de 3.000 pacientes a una herramienta de IA no autorizada",
+      "url": "https://www.thebanner.com/community/public-health/johns-hopkins-data-exposure-unauthorized-ai-tool-3SO2HGS7XVDP7GMKSK7TP527NE/",
+      "summary": "Johns Hopkins Bayview Medical Center en Baltimore descubrió el 21 de septiembre que un trabajador había subido una hoja de cálculo con datos de unos 3.182 pacientes (tratamientos, medicamentos y números de historial) a una herramienta de IA pública que el hospital no tenía aprobada. El hospital envió las notificaciones el 22 de octubre y ofrece un año de monitorización de crédito gratuita, aunque no ha confirmado si la empresa detrás de la herramienta borró realmente los datos."
+    },
+    {
+      "tag": "Impacto",
+      "title": "La policía de Londres registra un aumento del 395% en los fraudes con IA en un año",
+      "url": "https://policeprofessional.com/news/rising-cost-of-investment-fraud-revealed/",
+      "summary": "El primer informe anual de fraude de la City of London Police revela que las denuncias relacionadas con IA pasaron de 193 a 956 casos en un año, con pérdidas que subieron de 1,2 a 9,6 millones de libras. La mayoría son fraudes de inversión con vídeos de IA de figuras públicas fingiendo recomendar la inversión, y algunas víctimas creen que los estafadores clonaron voces para saltarse la verificación telefónica de su banco."
+    },
+    {
+      "tag": "Lanzamiento",
+      "title": "Google lanza Gemini 4 Carbon, su modelo más avanzado, centrado en ciberseguridad y con acceso muy restringido",
+      "url": "https://www.khaleejtimes.com/business/google-launches-gemini-4-carbon-ai-model-with-cybersecurity-focus-2",
+      "summary": "Google presentó el 28 de octubre Gemini 4 Carbon, su nuevo modelo de frontera especializado en tareas de ciberseguridad como detectar y corregir vulnerabilidades. Por ahora el acceso está limitado a un grupo reducido de 'ciberdefensores de confianza' elegidos por Google, sin fecha confirmada para abrirlo a desarrolladores, empresas o al público general."
+    },
+    {
+      "tag": "Curso",
+      "title": "freeCodeCamp: certificación gratuita de visualización de datos con D3.js",
+      "url": "https://www.freecodecamp.org/learn/data-visualization/",
+      "summary": "Esta certificación gratuita de freeCodeCamp enseña a construir gráficos, mapas y visualizaciones interactivas con la librería D3.js, además de trabajar con JSON y peticiones a APIs, a través de proyectos prácticos evaluados automáticamente. Al completar los proyectos obligatorios y el examen final se obtiene una certificación gratuita y verificable."
+    },
+    {
+      "tag": "Interactivo",
+      "title": "Exercism: practica Clojure con ejercicios interactivos y mentoría gratuita",
+      "url": "https://exercism.org/tracks/clojure",
+      "summary": "Este recorrido gratuito de Exercism ofrece más de cien ejercicios del lenguaje funcional Clojure organizados en una docena de conceptos, con corrección automática de tu código nada más enviarlo. Como en el resto de la plataforma, también puedes pedir mentoría gratuita de programadores voluntarios que comentan tu solución."
+    },
+    {
+      "tag": "Curso",
+      "title": "Codecademy: Learn C, el curso gratuito para dar tus primeros pasos en el lenguaje",
+      "url": "https://www.codecademy.com/learn/learn-c",
+      "summary": "Este curso gratuito de Codecademy enseña los fundamentos del lenguaje C (variables, punteros, estructuras de control) con lecciones cortas y ejercicios de código que se corrigen al instante en el navegador. Está pensado como primer contacto con uno de los lenguajes que sostiene buena parte de los sistemas operativos y el software de bajo nivel actual."
+    },
+    {
+      "tag": "Curso",
+      "title": "Generative AI for Beginners: el curso gratuito de Microsoft con 21 lecciones sobre IA generativa",
+      "url": "https://github.com/microsoft/generative-ai-for-beginners",
+      "summary": "Este curso gratuito y de código abierto de Microsoft explica en 21 lecciones cómo construir aplicaciones con IA generativa, desde los conceptos básicos de los modelos de lenguaje hasta técnicas como RAG o el ajuste fino, con ejemplos de código en cada lección. Todo el material está disponible en GitHub y se puede seguir sin coste, aunque algunos ejercicios piden una cuenta gratuita para ejecutar el código."
+    },
+    {
+      "tag": "Interactivo",
+      "title": "W3Schools: tutorial interactivo de Bootstrap con editor en el navegador",
+      "url": "https://www.w3schools.com/bootstrap/",
+      "summary": "Este tutorial gratuito enseña a usar Bootstrap, uno de los frameworks de CSS más usados para maquetar páginas responsive, con un editor 'Try it Yourself' en cada página para escribir y ver el resultado al instante. Cada capítulo incluye ejercicios y un breve cuestionario de autoevaluación para comprobar lo aprendido."
+    }
+  ]
+}

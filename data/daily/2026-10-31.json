@@ -1,0 +1,112 @@
+{
+  "date": "2026-10-31",
+  "questions": [
+    {
+      "type": "identify",
+      "lang": "Python",
+      "question": "¿Qué imprime este código?",
+      "code": "nums = [3, 7, 2, 9, 4]\nresult = all(n > 0 for n in nums) and any(n % 2 == 0 for n in nums)\nprint(result)",
+      "options": [
+        "True",
+        "False",
+        "None",
+        "Error"
+      ],
+      "correct": 0,
+      "hint": "all() exige que se cumplan todas las condiciones; any() basta con que se cumpla una.",
+      "explanation": "all() comprueba que todos los números sean positivos (cierto), y any() comprueba que al menos uno sea par (cierto, hay 2 y 4); True and True da True."
+    },
+    {
+      "type": "complete",
+      "lang": "JavaScript",
+      "question": "¿Qué método falta para comprobar que TODOS los elementos del array son pares?",
+      "code": "const nums = [4, 8, 15, 16];\nconst todosPares = nums.____(n => n % 2 === 0);\nconsole.log(todosPares); // false",
+      "options": [
+        "every",
+        "some",
+        "map",
+        "filter"
+      ],
+      "correct": 0,
+      "hint": "Necesitas que TODOS los elementos cumplan la condición, no solo uno.",
+      "explanation": "every() devuelve true solo si TODOS los elementos cumplen la condición; como 15 es impar, devuelve false. some() bastaría con que uno solo la cumpliera."
+    },
+    {
+      "type": "identify",
+      "lang": "TypeScript",
+      "question": "¿Qué hace la sintaxis 'valor is number' como tipo de retorno de esta función?",
+      "code": "function esNumero(valor: unknown): valor is number {\n  return typeof valor === \"number\";\n}\n\nfunction duplicar(valor: unknown) {\n  if (esNumero(valor)) {\n    return valor * 2;\n  }\n  return null;\n}",
+      "options": [
+        "Declara una función de aserción de tipo (type guard): si devuelve true, TypeScript reduce el tipo de 'valor' a number dentro de ese bloque",
+        "Es un error de sintaxis porque 'is' no existe en TypeScript",
+        "Convierte 'valor' a number automáticamente sin comprobar nada en tiempo de ejecución",
+        "Solo afecta a cómo se ve el código en el editor, pero no cambia qué operaciones permite el compilador"
+      ],
+      "correct": 0,
+      "hint": "La sintaxis 'parametro is Tipo' como tipo de retorno crea un type guard personalizado.",
+      "explanation": "Un type guard definido con 'is' le dice al compilador que, cuando la función devuelve true, el tipo del parámetro se reduce (narrows) al tipo indicado; por eso 'valor * 2' no da error dentro del if, aunque 'valor' llegó como unknown."
+    },
+    {
+      "type": "complete",
+      "lang": "SQL",
+      "question": "¿Qué cláusula falta para ordenar de mayor a menor el resultado del CTE?",
+      "code": "WITH ventas_altas AS (\n  SELECT product, amount FROM sales WHERE amount > 1000\n)\nSELECT product FROM ventas_altas\n____ amount DESC;",
+      "options": [
+        "ORDER BY",
+        "GROUP BY",
+        "HAVING",
+        "WHERE"
+      ],
+      "correct": 0,
+      "hint": "Necesitas ordenar los resultados ya filtrados por el CTE, no agruparlos ni volver a filtrarlos.",
+      "explanation": "La cláusula WITH define una tabla temporal (CTE) llamada ventas_altas; la consulta final la usa como si fuera una tabla normal, y ORDER BY amount DESC ordena esos resultados de mayor a menor."
+    },
+    {
+      "type": "identify",
+      "lang": "Bash",
+      "question": "¿Qué ocurre al ejecutar este script?",
+      "code": "#!/bin/bash\nset -e\nfalse\necho \"Esto no se imprime\"",
+      "options": [
+        "El script termina inmediatamente al fallar 'false', sin llegar a ejecutar el echo",
+        "El script ignora el fallo y sigue ejecutando el echo con normalidad",
+        "Lanza un error de sintaxis porque 'false' no es un comando válido",
+        "El echo se ejecuta pero no imprime nada en pantalla"
+      ],
+      "correct": 0,
+      "hint": "'set -e' detiene el script en cuanto un comando falla.",
+      "explanation": "'set -e' hace que el script termine en cuanto cualquier comando devuelva un código de salida distinto de cero; como 'false' siempre falla, el script se detiene ahí y nunca llega al echo."
+    }
+  ],
+  "tips": [
+    {
+      "text": "Fija la versión exacta del lenguaje o entorno que usa tu proyecto, por ejemplo con un archivo .nvmrc o .python-version, no la dejes solo en tu memoria.",
+      "explanation": "Si cada persona del equipo usa una versión distinta del lenguaje, el mismo código puede comportarse de forma distinta sin que nadie cambie una sola línea. Un archivo que fija esa versión permite que herramientas como nvm cambien de versión automáticamente al entrar en la carpeta del proyecto, sin tener que acordarse a mano.",
+      "link": "https://github.com/nvm-sh/nvm#nvmrc",
+      "linkLabel": "nvm: el archivo .nvmrc"
+    },
+    {
+      "text": "Si tu código depende de números aleatorios, fija una semilla (seed) en tus pruebas para que el resultado sea siempre el mismo.",
+      "explanation": "Sin una semilla fija, un test que use valores aleatorios puede pasar hoy y fallar mañana sin que el código haya cambiado, lo que hace casi imposible depurarlo. Fijar la semilla convierte ese comportamiento impredecible en algo reproducible, útil también para barajar listas o generar datos de prueba de forma controlada.",
+      "link": "https://docs.python.org/3/library/random.html#random.seed",
+      "linkLabel": "Documentación oficial de Python: random.seed()"
+    },
+    {
+      "text": "Antes de depurar a ciegas, escribe tu hipótesis sobre qué crees que está fallando y compruébala antes de pasar a la siguiente.",
+      "explanation": "Cambiar código al azar hasta que algo funcione suele arreglar un síntoma sin entender la causa real, y puede introducir un bug nuevo sin que te des cuenta. Tratar cada intento como un experimento con una hipótesis clara, en lugar de un tanteo, ahorra tiempo y deja constancia de qué se ha probado ya y qué no.",
+      "link": "https://cseweb.ucsd.edu/classes/sp10/cse15L/a/method.php",
+      "linkLabel": "UCSD: el método científico aplicado a depurar código"
+    },
+    {
+      "text": "Evita nombres de variables booleanas en negativo, como 'noErrors' o 'isNotValid': nómbralas en positivo y niega la condición solo donde la necesites.",
+      "explanation": "Un nombre negativo obliga a hacer una doble negación mental en cuanto aparece un '!' delante, como en '!isNotValid', lo que vuelve el código mucho más difícil de leer de un vistazo. Nombrarla en positivo (isValid) y escribir '!isValid' donde haga falta mantiene la misma lógica con mucha menos confusión.",
+      "link": "https://samanthaming.com/tidbits/34-better-boolean-variable-names/",
+      "linkLabel": "Samantha Ming: mejores nombres para variables booleanas"
+    },
+    {
+      "text": "Usa una herramienta de búsqueda de texto en todo el proyecto, como grep o ripgrep, en lugar de abrir carpeta por carpeta buscando dónde está algo.",
+      "explanation": "Buscar a mano en un proyecto con cientos de archivos es lento y fácil de hacer mal, mientras que una búsqueda de texto completo encuentra en segundos cada sitio donde aparece una función, una variable o un mensaje de error concreto. La mayoría de editores integran algo parecido, pero conocer la versión de terminal ayuda cuando trabajas por SSH o dentro de un script.",
+      "link": "https://github.com/BurntSushi/ripgrep",
+      "linkLabel": "ripgrep: búsqueda de texto rápida en todo un proyecto"
+    }
+  ]
+}

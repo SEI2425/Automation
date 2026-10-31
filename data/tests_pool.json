@@ -417,6 +417,17 @@
       ],
       "correct": 0,
       "explanation": "A diferencia de d[clave], que lanza KeyError si la clave no existe, d.get(clave) devuelve None de forma segura cuando no se indica un valor por defecto explicito."
+    },
+    {
+      "q": "¿Qué garantiza usar 'with open(\"datos.txt\") as f:' en Python en lugar de abrir el archivo directamente?",
+      "opts": [
+        "Que el archivo se cierra automáticamente al salir del bloque, incluso si ocurre una excepción dentro de él",
+        "Que el archivo se abre siempre en modo solo lectura",
+        "Que el contenido completo se carga en memoria antes de empezar",
+        "Que no se puede modificar el archivo dentro del bloque"
+      ],
+      "correct": 0,
+      "explanation": "'with' usa un gestor de contexto que llama automáticamente a close() al salir del bloque, incluso si se lanza una excepción dentro, evitando archivos que se quedan abiertos por error."
     }
   ],
   "javascript": [
@@ -837,6 +848,17 @@
       ],
       "correct": 0,
       "explanation": "Aunque NaN significa 'Not a Number', JavaScript lo clasifica como un valor del tipo 'number', ya que forma parte del mismo tipo numerico que el resto de valores."
+    },
+    {
+      "q": "¿Qué diferencia a Promise.allSettled() de Promise.all()?",
+      "opts": [
+        "allSettled() espera a que todas las promesas terminen, se cumplan o se rechacen, sin abortar si una de ellas falla",
+        "allSettled() se detiene en la primera promesa que se rechaza, igual que all()",
+        "allSettled() solo puede recibir una promesa a la vez",
+        "allSettled() ejecuta las promesas en orden secuencial, una detrás de otra"
+      ],
+      "correct": 0,
+      "explanation": "A diferencia de Promise.all(), que se rechaza entera en cuanto una promesa falla, Promise.allSettled() espera a que todas terminen y devuelve un resultado por cada una indicando si se cumplió o se rechazó."
     }
   ],
   "typescript": [
@@ -1257,6 +1279,17 @@
       ],
       "correct": 0,
       "explanation": "El tipo 'never' describe funciones que nunca llegan a devolver un valor de forma normal, como las que siempre lanzan una excepcion o quedan en un bucle sin fin."
+    },
+    {
+      "q": "¿Qué describe el tipo 'Record<string, number>' en TypeScript?",
+      "opts": [
+        "Un objeto cuyas claves son texto y cuyos valores son siempre number",
+        "Un array de numeros con claves de texto opcionales",
+        "Una función que recibe un string y devuelve un number",
+        "Una clase abstracta que no se puede instanciar"
+      ],
+      "correct": 0,
+      "explanation": "Record<K, V> es un tipo utilitario que describe un objeto donde todas las claves son del tipo K (aquí string) y todos los valores son del tipo V (aquí number)."
     }
   ],
   "java": [
@@ -1677,6 +1710,17 @@
       ],
       "correct": 0,
       "explanation": "HashMap y HashSet usan hashCode() para ubicar los objetos y despues equals() para confirmar la igualdad; si solo se sobrescribe equals(), dos objetos 'iguales' pueden acabar en posiciones distintas y la estructura deja de encontrarlos correctamente."
+    },
+    {
+      "q": "¿Qué ventaja ofrece 'try (BufferedReader br = new BufferedReader(...)) { ... }' frente a un try normal con un finally?",
+      "opts": [
+        "Cierra automáticamente el recurso al salir del bloque, incluso si se lanza una excepción, sin necesitar un finally explícito",
+        "Evita que el código dentro del try pueda lanzar excepciones",
+        "Hace que el recurso se abra en un hilo separado automáticamente",
+        "Impide usar más de un recurso a la vez dentro del mismo try"
+      ],
+      "correct": 0,
+      "explanation": "El try-with-resources, introducido en Java 7, llama automáticamente a close() sobre cualquier recurso que implemente AutoCloseable al salir del bloque, ahorrando escribir un finally manual para cerrarlo."
     }
   ],
   "kotlin": [
@@ -2097,6 +2141,17 @@
       ],
       "correct": 0,
       "explanation": "Una Sequence en Kotlin procesa cada elemento de principio a fin antes de pasar al siguiente, en vez de crear una lista nueva completa tras cada map o filter, lo que ahorra memoria con colecciones grandes."
+    },
+    {
+      "q": "¿Qué devuelve la función 'apply' en Kotlin, usada como en 'Persona().apply { nombre = \"Ana\" }'?",
+      "opts": [
+        "El propio objeto receptor, ya modificado, lo que permite seguir usándolo o asignarlo en la misma expresión",
+        "Un Boolean indicando si el bloque se ejecutó sin errores",
+        "Una copia nueva del objeto, sin modificar el original",
+        "Nada: 'apply' no se puede usar como expresión"
+      ],
+      "correct": 0,
+      "explanation": "apply ejecuta el bloque usando el objeto como receptor ('this') y devuelve ese mismo objeto al final, lo que permite configurarlo y asignarlo en una sola expresión, a diferencia de 'let', que devuelve el resultado del bloque."
     }
   ],
   "sql": [
@@ -2517,6 +2572,17 @@
       ],
       "correct": 0,
       "explanation": "Sin ORDER BY, el motor de base de datos no garantiza en que orden llegan las filas, por lo que LIMIT puede devolver un conjunto distinto de filas en ejecuciones diferentes, incluso sobre los mismos datos."
+    },
+    {
+      "q": "¿Qué hace esta consulta?\nSELECT e1.name AS empleado, e2.name AS jefe\nFROM employees e1\nJOIN employees e2 ON e1.manager_id = e2.id;",
+      "opts": [
+        "Une la tabla employees con ella misma para mostrar, junto a cada empleado, el nombre de su jefe",
+        "Elimina los empleados que no tienen jefe asignado",
+        "Cuenta cuántos empleados tiene cada jefe",
+        "Crea una copia duplicada de la tabla employees"
+      ],
+      "correct": 0,
+      "explanation": "Este es un self-join: la tabla employees se usa dos veces con alias distintos (e1 y e2), uniendo el manager_id de cada empleado con el id del empleado que es su jefe, para mostrar ambos nombres juntos."
     }
   ],
   "git": [
@@ -2937,6 +3003,17 @@
       ],
       "correct": 0,
       "explanation": "git reflog guarda un registro local de casi todos los movimientos recientes de HEAD, incluidos los que un reset --hard deja fuera de 'git log', lo que permite localizar y recuperar el commit con git checkout o git reset."
+    },
+    {
+      "q": "¿Qué hace el comando 'git clean -fd'?",
+      "opts": [
+        "Elimina del directorio de trabajo los archivos y carpetas no rastreados por Git, sin posibilidad de deshacerlo fácilmente",
+        "Limpia el historial de commits antiguos del repositorio",
+        "Elimina solo los archivos ya confirmados (commiteados)",
+        "Reformatea el mensaje de los últimos commits"
+      ],
+      "correct": 0,
+      "explanation": "git clean borra archivos no rastreados (los que nunca se añadieron a Git); la opción -f lo fuerza y -d incluye también directorios, una operación difícil de revertir porque esos archivos nunca estuvieron en el historial."
     }
   ],
   "htmlcss": [
@@ -3357,6 +3434,17 @@
       ],
       "correct": 0,
       "explanation": "object-fit: cover escala la imagen y recorta el sobrante para que cubra todo el contenedor sin perder su proporcion original, a diferencia de 'fill', que la deforma, o 'contain', que la deja entera con espacio vacio."
+    },
+    {
+      "q": "¿Qué elementos selecciona 'li:not(.activo)' en una lista?",
+      "opts": [
+        "Todos los elementos <li> que NO tengan la clase 'activo'",
+        "Solo el primer <li> de la lista",
+        "Todos los elementos <li>, ignorando por completo la clase 'activo'",
+        "Ningún elemento, porque ':not()' no es un selector válido en CSS"
+      ],
+      "correct": 0,
+      "explanation": "La pseudo-clase :not() selecciona los elementos que no coinciden con el selector indicado dentro del paréntesis; aquí selecciona todos los <li> salvo los que tengan la clase 'activo'."
     }
   ],
   "bash": [
@@ -3777,6 +3865,17 @@
       ],
       "correct": 0,
       "explanation": "xargs convierte la salida que recibe por la tuberia en argumentos de linea de comandos para el siguiente programa, lo que permite por ejemplo borrar en lote archivos que encontro 'find', algo que un simple pipe no permite hacer directamente."
+    },
+    {
+      "q": "Después de ejecutar un comando que falla, ¿qué valor tiene la variable especial '$?'?",
+      "opts": [
+        "Un número distinto de cero que indica el código de salida del último comando ejecutado",
+        "Siempre el número 1, sin importar el tipo de fallo",
+        "El mensaje de error completo del comando",
+        "El nombre del comando que falló"
+      ],
+      "correct": 0,
+      "explanation": "La variable '$?' guarda el código de salida del último comando ejecutado; 0 significa éxito, y cualquier valor entre 1 y 255 indica un tipo de fallo distinto, aunque no el mensaje de error en sí."
     }
   ],
   "ia": [
@@ -4186,6 +4285,17 @@
       ],
       "correct": 0,
       "explanation": "La ventana de contexto es el limite de tokens (del prompt, el historial de la conversacion y la propia respuesta) que un modelo puede procesar de una vez; todo lo que supera ese limite queda fuera de lo que el modelo puede 'recordar' en ese momento."
+    },
+    {
+      "q": "En un modelo de lenguaje, ¿qué controla principalmente el parámetro de 'temperatura' (temperature)?",
+      "opts": [
+        "Cuánta aleatoriedad o variedad tienen las respuestas generadas: una temperatura baja da respuestas más predecibles y una alta, más variadas",
+        "Cuántos tokens puede procesar el modelo como máximo",
+        "La velocidad en segundos con la que responde el modelo",
+        "El idioma en el que el modelo genera la respuesta"
+      ],
+      "correct": 0,
+      "explanation": "La temperatura ajusta cuánto se favorecen las opciones más probables al elegir la siguiente palabra: con temperatura baja el modelo es más conservador y repetitivo, y con temperatura alta genera respuestas más variadas pero también más propensas a errores."
     }
   ]
 }
