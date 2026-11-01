@@ -1,0 +1,112 @@
+{
+  "date": "2026-11-01",
+  "questions": [
+    {
+      "type": "identify",
+      "lang": "Python",
+      "question": "¿Qué imprime este código?",
+      "code": "nums = [5, 10, 15, 20]\nprint(nums[-3:-1])",
+      "options": [
+        "[10, 15]",
+        "[15, 20]",
+        "[5, 10]",
+        "Error"
+      ],
+      "correct": 0,
+      "hint": "Los índices negativos cuentan desde el final; el índice final del slicing no se incluye.",
+      "explanation": "nums[-3:-1] toma desde la posición -3 (10) hasta la -1 sin incluirla, es decir, 10 y 15."
+    },
+    {
+      "type": "complete",
+      "lang": "JavaScript",
+      "question": "¿Qué método falta para crear una copia con un índice distinto, sin modificar el array original?",
+      "code": "const arr = [1, 2, 3];\nconst copia = arr.____(1, 9);\nconsole.log(arr);   // [1, 2, 3]\nconsole.log(copia); // [1, 9, 3]",
+      "options": [
+        "with",
+        "splice",
+        "fill",
+        "copyWithin"
+      ],
+      "correct": 0,
+      "hint": "Es un método inmutable introducido en 2023 que sustituye un único índice.",
+      "explanation": "Array.prototype.with(índice, valor) devuelve una copia del array con ese índice reemplazado, sin mutar el array original, a diferencia de splice() o fill()."
+    },
+    {
+      "type": "identify",
+      "lang": "TypeScript",
+      "question": "¿Qué ocurre al intentar compilar este código?",
+      "code": "type Direccion = \"norte\" | \"sur\" | \"este\" | \"oeste\";\nlet d: Direccion = \"norte\";\nd = \"arriba\";",
+      "options": [
+        "Compila sin problemas",
+        "Error de compilación porque \"arriba\" no es uno de los literales permitidos por Direccion",
+        "Se convierte automáticamente a \"norte\"",
+        "Solo falla en tiempo de ejecución, no al compilar"
+      ],
+      "correct": 1,
+      "hint": "Direccion es un tipo unión formado solo por esos cuatro textos literales.",
+      "explanation": "Como Direccion solo admite los literales 'norte', 'sur', 'este' u 'oeste', asignar 'arriba' produce un error de compilación en TypeScript."
+    },
+    {
+      "type": "identify",
+      "lang": "Kotlin",
+      "question": "¿Qué imprime este código?",
+      "code": "sealed class Figura\nclass Circulo(val r: Double): Figura()\nclass Cuadrado(val lado: Double): Figura()\n\nfun area(f: Figura): Double = when (f) {\n    is Circulo -> Math.PI * f.r * f.r\n    is Cuadrado -> f.lado * f.lado\n}\nprintln(area(Cuadrado(4.0)))",
+      "options": [
+        "16.0",
+        "12.566370614359172",
+        "Error de compilación porque falta un 'else'",
+        "0.0"
+      ],
+      "correct": 0,
+      "hint": "El when sobre una sealed class es exhaustivo sin 'else' porque cubre todas sus subclases.",
+      "explanation": "Como Figura es sealed y el when cubre sus dos únicas subclases (Circulo y Cuadrado), no hace falta un 'else'; Cuadrado(4.0) da área 4.0*4.0 = 16.0."
+    },
+    {
+      "type": "identify",
+      "lang": "SQL",
+      "question": "¿Qué devuelve esta consulta?",
+      "code": "SELECT name, salary,\n       LAG(salary) OVER (ORDER BY salary) AS salario_anterior\nFROM employees;",
+      "options": [
+        "Para cada empleado, su salario junto al salario del empleado justo anterior en el orden establecido",
+        "El salario más alto de toda la empresa",
+        "La diferencia entre el salario máximo y el mínimo",
+        "Elimina los empleados con un salario repetido"
+      ],
+      "correct": 0,
+      "hint": "LAG() es una función de ventana que mira la fila anterior según el ORDER BY indicado.",
+      "explanation": "LAG(salary) OVER (ORDER BY salary) devuelve, para cada fila, el valor de salary de la fila inmediatamente anterior en ese orden; la primera fila obtiene NULL al no tener una anterior."
+    }
+  ],
+  "tips": [
+    {
+      "text": "Usa Git LFS (Large File Storage) en lugar de subir directamente archivos pesados como videos o datasets a un repositorio Git.",
+      "explanation": "Git guarda cada version completa de un archivo en su historial, asi que un binario grande que cambia a menudo puede inflar el repositorio a varios gigabytes y hacer que clonarlo tarde minutos. Git LFS guarda solo un puntero ligero en el repositorio y el archivo real en un almacen aparte, pensado justo para este caso.",
+      "link": "https://docs.github.com/en/repositories/working-with-files/managing-large-files/about-git-large-file-storage",
+      "linkLabel": "GitHub Docs: Git Large File Storage"
+    },
+    {
+      "text": "No guardes mas datos personales de los que tu aplicacion realmente necesita (principio de minimizacion de datos).",
+      "explanation": "Cada dato adicional que recoges es un dato mas que puede filtrarse si tu sistema sufre una brecha de seguridad algun dia, y mantenerlo tambien te obliga a protegerlo correctamente. Leyes de privacidad como el RGPD europeo exigen explicitamente limitar la recogida de datos a lo estrictamente necesario para el proposito declarado.",
+      "link": "https://gdpr.eu/data-minimization/",
+      "linkLabel": "GDPR.eu: minimizacion de datos"
+    },
+    {
+      "text": "Configura un git hook de pre-commit para que un formateador o un linter se ejecuten automaticamente antes de cada commit, en lugar de acordarte de hacerlo a mano.",
+      "explanation": "Un hook de pre-commit se dispara solo, justo antes de confirmar los cambios, asi que un codigo mal formateado o con errores evidentes nunca llega a entrar en el historial aunque se te olvide ejecutar la herramienta manualmente. Herramientas como pre-commit facilitan compartir esa misma configuracion con todo el equipo en un unico archivo.",
+      "link": "https://pre-commit.com/",
+      "linkLabel": "pre-commit: framework de hooks de Git"
+    },
+    {
+      "text": "No confies en la fecha o la hora del dispositivo del usuario para decisiones de seguridad o de negocio, como si un cupon de descuento ya caduco: usa siempre la hora de tu propio servidor.",
+      "explanation": "Cualquier persona puede cambiar manualmente la fecha de su telefono u ordenador antes de enviarte una peticion, asi que un descuento o un bloqueo basado en esa fecha se puede saltar con solo retroceder el reloj. La hora de tu servidor, en cambio, esta fuera del control del usuario.",
+      "link": "https://cheatsheetseries.owasp.org/cheatsheets/Business_Logic_Vulnerability_Cheat_Sheet.html",
+      "linkLabel": "OWASP: vulnerabilidades de logica de negocio"
+    },
+    {
+      "text": "Cuando disenes una API, documenta tambien los codigos de error que puede devolver y que significa cada uno, no solo los campos de una respuesta exitosa.",
+      "explanation": "Quien use tu API tarde o temprano recibira un error, y sin documentacion tendra que adivinar por que devolviste un codigo concreto o que campo exacto fallo. Documentar los errores desde el principio ahorra decenas de preguntas repetidas una vez la API tenga usuarios reales.",
+      "link": "https://stripe.com/docs/api/errors",
+      "linkLabel": "Stripe Docs: gestion de errores de la API"
+    }
+  ]
+}

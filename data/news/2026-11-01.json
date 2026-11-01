@@ -1,0 +1,65 @@
+{
+  "date": "2026-11-01",
+  "items": [
+    {
+      "tag": "Impacto",
+      "title": "Un estudio israeli revela que los chatbots de IA recomiendan pruebas medicas innecesarias en mas de uno de cada cuatro casos",
+      "url": "https://www.jpost.com/health-and-wellness/article-913210",
+      "summary": "Investigadores de la Universidad Ben-Gurion, Clalit Health Services y el Centro Medico Rabin probaron varios chatbots de IA con escenarios clinicos reales y encontraron que sugerian un electrocardiograma innecesario en el 28,3% de los casos, sobre todo cuando el paciente describia palpitaciones. El estudio, publicado el 31 de octubre, advierte de que estos modelos todavia tienden a pedir pruebas de mas en lugar de reconocer cuando un sintoma no requiere ninguna."
+    },
+    {
+      "tag": "Impacto",
+      "title": "Investigadores de Manitoba prueban un sistema de IA para reducir las listas de espera quirurgicas en Canada",
+      "url": "https://www.cp24.com/news/canada/2026/10/31/could-ai-help-reduce-surgical-backlog-manitoba-researchers-are-very-optimistic",
+      "summary": "La Universidad de Manitoba puso en marcha el 31 de octubre un piloto de ORION, un sistema de inteligencia artificial que predice la demanda quirurgica futura y ayuda a programar mejor los quirofanos del Health Sciences Centre de Winnipeg. Los investigadores se muestran optimistas sobre su capacidad para reducir los tiempos de espera, aunque todavia es una prueba piloto sin resultados definitivos."
+    },
+    {
+      "tag": "Impacto",
+      "title": "El primer satelite-centro de datos de Google ya esta en orbita y funcionando",
+      "url": "https://techcrunch.com/2026/10/30/googles-first-data-center-satellite-is-online-and-writing-poetry/",
+      "summary": "El prototipo del proyecto Suncatcher de Google, un satelite equipado con cuatro chips TPU, se activo el 30 de octubre y ya se comunica con tierra, llegando incluso a generar un poema como prueba de que el hardware funciona en el espacio. Google plantea esta infraestructura orbital como una forma de alimentar centros de datos con energia solar constante, sin las limitaciones de espacio y refrigeracion de la Tierra."
+    },
+    {
+      "tag": "Impacto",
+      "title": "Anthropic recibiria una calificacion de credito de bono basura tras su salida a bolsa, segun un informe",
+      "url": "https://techcrunch.com/2026/10/30/anthropic-expected-to-receive-high-junk-rating-from-credit-agencies-following-ipo-report-says/",
+      "summary": "Segun informo el Financial Times el 30 de octubre, varias agencias de calificacion esperan asignar a Anthropic una nota de credito de categoria especulativa (bono basura), aunque en la parte alta de ese rango, poco despues de su salida a bolsa. La noticia refleja la cautela de los inversores ante el elevado gasto en infraestructura que sostiene a las grandes empresas de IA, incluso cuando acaban de completar una OPV multimillonaria."
+    },
+    {
+      "tag": "Impacto",
+      "title": "OpenAI rebaja el objetivo de su proxima ronda de financiacion, segun un informe",
+      "url": "https://techcrunch.com/2026/10/31/openai-reportedly-lowers-funding-target-for-new-round/",
+      "summary": "Segun cito TechCrunch el 31 de octubre a partir de un informe del Financial Times, OpenAI habria reducido a unos 20.000 millones de dolares el objetivo de su ultima ronda de financiacion. El ajuste llega en un momento en que varios inversores empiezan a mostrar mas cautela ante el ritmo de gasto de las grandes empresas de inteligencia artificial."
+    },
+    {
+      "tag": "Interactivo",
+      "title": "Exercism: practica Scala con ejercicios interactivos y mentoria gratuita",
+      "url": "https://exercism.org/tracks/scala",
+      "summary": "Este recorrido gratuito de Exercism ofrece decenas de ejercicios del lenguaje Scala ordenados por dificultad, con pruebas automaticas que revisan tu solucion al instante nada mas enviarla. Como en el resto de la plataforma, tambien puedes pedir mentoria gratuita de programadores voluntarios que comentan tu codigo."
+    },
+    {
+      "tag": "Interactivo",
+      "title": "W3Schools: tutorial interactivo de MySQL con editor en el navegador",
+      "url": "https://www.w3schools.com/mysql/",
+      "summary": "Este tutorial gratuito ensena a instalar y usar MySQL, uno de los motores de bases de datos mas extendidos, con un editor 'Try it Yourself' en cada pagina para ejecutar consultas reales sin instalar nada. Cada capitulo incluye ejercicios cortos y un cuestionario de autoevaluacion."
+    },
+    {
+      "tag": "Curso",
+      "title": "Codecademy: Learn R, el curso gratuito para dar tus primeros pasos en el lenguaje de estadistica",
+      "url": "https://www.codecademy.com/learn/learn-r",
+      "summary": "Este curso gratuito de Codecademy ensena los fundamentos de R (vectores, data frames, funciones basicas) pensado para quien quiere empezar en analisis estadistico y visualizacion de datos. Las lecciones se corrigen al instante en un editor dentro del propio navegador, sin instalar nada."
+    },
+    {
+      "tag": "Interactivo",
+      "title": "W3Schools: Learn Cyber Security, el tutorial gratuito sobre seguridad informatica",
+      "url": "https://www.w3schools.com/cybersecurity/",
+      "summary": "Esta seccion gratuita de W3Schools explica los conceptos basicos de la ciberseguridad (tipos de ataque, buenas practicas, criptografia basica) con el mismo formato de lecciones cortas y cuestionarios del resto del sitio. No requiere instalar nada ni tener conocimientos previos."
+    },
+    {
+      "tag": "Curso",
+      "title": "MDN: Accessibility, el modulo gratuito para aprender a hacer paginas web accesibles",
+      "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Accessibility",
+      "summary": "Este modulo gratuito de la documentacion de Mozilla explica como construir paginas web accesibles para personas con discapacidad visual, motriz o cognitiva, cubriendo HTML semantico, ARIA y pruebas con lector de pantalla. Incluye ejemplos de codigo y evaluaciones practicas al final de cada seccion."
+    }
+  ]
+}

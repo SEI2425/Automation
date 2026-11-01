@@ -428,6 +428,17 @@
       ],
       "correct": 0,
       "explanation": "'with' usa un gestor de contexto que llama automáticamente a close() al salir del bloque, incluso si se lanza una excepción dentro, evitando archivos que se quedan abiertos por error."
+    },
+    {
+      "q": "¿Qué devuelve bool([]) en Python?",
+      "opts": [
+        "True",
+        "False",
+        "Error",
+        "None"
+      ],
+      "correct": 1,
+      "explanation": "Una lista vacía se evalúa como 'falsy'; bool() sobre cualquier secuencia vacía devuelve False."
     }
   ],
   "javascript": [
@@ -859,6 +870,17 @@
       ],
       "correct": 0,
       "explanation": "A diferencia de Promise.all(), que se rechaza entera en cuanto una promesa falla, Promise.allSettled() espera a que todas terminen y devuelve un resultado por cada una indicando si se cumplió o se rechazó."
+    },
+    {
+      "q": "¿Qué devuelve `typeof variableNoDeclarada` si esa variable nunca se declaró?",
+      "opts": [
+        "'undefined'",
+        "Lanza un ReferenceError",
+        "'null'",
+        "'object'"
+      ],
+      "correct": 0,
+      "explanation": "A diferencia de usar la variable directamente (que sí lanza ReferenceError), typeof sobre una variable no declarada devuelve 'undefined' de forma segura, sin lanzar ningún error."
     }
   ],
   "typescript": [
@@ -1290,6 +1312,17 @@
       ],
       "correct": 0,
       "explanation": "Record<K, V> es un tipo utilitario que describe un objeto donde todas las claves son del tipo K (aquí string) y todos los valores son del tipo V (aquí number)."
+    },
+    {
+      "q": "¿Qué hace el tipo utilitario `Parameters<T>` en TypeScript, como en `type P = Parameters<typeof miFuncion>`?",
+      "opts": [
+        "Extrae los tipos de los parámetros de una función como una tupla",
+        "Cuenta cuántos parámetros tiene la función",
+        "Convierte la función en asíncrona",
+        "Elimina los parámetros opcionales de la función"
+      ],
+      "correct": 0,
+      "explanation": "Parameters<T> toma el tipo de una función y devuelve una tupla con los tipos de sus parámetros, en el mismo orden en que se declaran."
     }
   ],
   "java": [
@@ -1721,6 +1754,17 @@
       ],
       "correct": 0,
       "explanation": "El try-with-resources, introducido en Java 7, llama automáticamente a close() sobre cualquier recurso que implemente AutoCloseable al salir del bloque, ahorrando escribir un finally manual para cerrarlo."
+    },
+    {
+      "q": "¿Qué ocurre si una clase abstracta en Java no implementa todos los métodos de una interfaz que declara implementar?",
+      "opts": [
+        "Compila sin problemas, porque una clase abstracta puede dejar métodos sin implementar",
+        "Nunca compila, aunque sea abstracta",
+        "Se implementan automáticamente con un cuerpo vacío",
+        "Solo falla en tiempo de ejecución"
+      ],
+      "correct": 0,
+      "explanation": "Una clase abstracta no está obligada a implementar todos los métodos heredados de una interfaz; esa responsabilidad pasa a la primera subclase concreta que la extienda."
     }
   ],
   "kotlin": [
@@ -2152,6 +2196,17 @@
       ],
       "correct": 0,
       "explanation": "apply ejecuta el bloque usando el objeto como receptor ('this') y devuelve ese mismo objeto al final, lo que permite configurarlo y asignarlo en una sola expresión, a diferencia de 'let', que devuelve el resultado del bloque."
+    },
+    {
+      "q": "¿Para qué sirve 'typealias' en Kotlin, como en `typealias Callback = (Int) -> Unit`?",
+      "opts": [
+        "Para dar un nombre alternativo más corto o claro a un tipo ya existente, sin crear un tipo nuevo",
+        "Para convertir una clase en abstracta",
+        "Para declarar una constante global",
+        "Para heredar de dos interfaces a la vez"
+      ],
+      "correct": 0,
+      "explanation": "typealias no crea un tipo nuevo: solo define un alias, un nombre alternativo, para un tipo existente (a menudo uno complejo, como un tipo de función), facilitando la lectura del código."
     }
   ],
   "sql": [
@@ -2583,6 +2638,17 @@
       ],
       "correct": 0,
       "explanation": "Este es un self-join: la tabla employees se usa dos veces con alias distintos (e1 y e2), uniendo el manager_id de cada empleado con el id del empleado que es su jefe, para mostrar ambos nombres juntos."
+    },
+    {
+      "q": "¿Qué hace la cláusula `ON DELETE CASCADE` al definir una clave foránea?",
+      "opts": [
+        "Borra automáticamente las filas relacionadas en la tabla hija cuando se borra la fila padre",
+        "Impide borrar la fila padre si tiene filas relacionadas",
+        "Pone a NULL la clave foránea en lugar de borrar nada",
+        "Solo funciona dentro de una transacción explícita"
+      ],
+      "correct": 0,
+      "explanation": "ON DELETE CASCADE propaga el borrado: al eliminar una fila padre, la base de datos elimina automáticamente todas las filas hijas que la referencian a través de esa clave foránea."
     }
   ],
   "git": [
@@ -3014,6 +3080,17 @@
       ],
       "correct": 0,
       "explanation": "git clean borra archivos no rastreados (los que nunca se añadieron a Git); la opción -f lo fuerza y -d incluye también directorios, una operación difícil de revertir porque esos archivos nunca estuvieron en el historial."
+    },
+    {
+      "q": "¿Para qué sirve el comando `git submodule add <url> carpeta`?",
+      "opts": [
+        "Para incluir otro repositorio Git completo dentro de una subcarpeta del proyecto actual, manteniendo su propio historial independiente",
+        "Para crear una copia de seguridad del repositorio actual",
+        "Para fusionar dos repositorios en uno solo de forma permanente",
+        "Para eliminar una carpeta del repositorio sin borrarla del disco"
+      ],
+      "correct": 0,
+      "explanation": "git submodule permite referenciar otro repositorio Git dentro de una carpeta del proyecto, fijando además un commit concreto de ese submódulo, sin fusionar ambos historiales en uno solo."
     }
   ],
   "htmlcss": [
@@ -3445,6 +3522,17 @@
       ],
       "correct": 0,
       "explanation": "La pseudo-clase :not() selecciona los elementos que no coinciden con el selector indicado dentro del paréntesis; aquí selecciona todos los <li> salvo los que tengan la clase 'activo'."
+    },
+    {
+      "q": "¿Qué hace el valor `inherit` en una propiedad CSS?",
+      "opts": [
+        "Toma el valor calculado de esa misma propiedad en el elemento padre",
+        "Restaura el valor por defecto del navegador",
+        "Copia el valor de otra propiedad distinta del mismo elemento",
+        "Hereda el estilo de la última regla aplicada en la hoja de estilos"
+      ],
+      "correct": 0,
+      "explanation": "inherit fuerza a una propiedad a tomar exactamente el valor que tiene esa misma propiedad en el elemento padre, incluso en propiedades que no se heredan por defecto."
     }
   ],
   "bash": [
@@ -3876,6 +3964,17 @@
       ],
       "correct": 0,
       "explanation": "La variable '$?' guarda el código de salida del último comando ejecutado; 0 significa éxito, y cualquier valor entre 1 y 255 indica un tipo de fallo distinto, aunque no el mensaje de error en sí."
+    },
+    {
+      "q": "¿Qué permite declarar `declare -A colores` en Bash, antes de asignar `colores[rojo]=\"#FF0000\"`?",
+      "opts": [
+        "Un array asociativo, que guarda valores accediendo a ellos por una clave de texto en lugar de por un índice numérico",
+        "Un array normal con índices numéricos",
+        "Una variable de solo lectura",
+        "Una función que se ejecuta en segundo plano"
+      ],
+      "correct": 0,
+      "explanation": "declare -A crea un array asociativo (similar a un diccionario), donde cada valor se guarda y se recupera usando una clave de texto, como colores[rojo], en lugar de una posición numérica."
     }
   ],
   "ia": [
@@ -4296,6 +4395,17 @@
       ],
       "correct": 0,
       "explanation": "La temperatura ajusta cuánto se favorecen las opciones más probables al elegir la siguiente palabra: con temperatura baja el modelo es más conservador y repetitivo, y con temperatura alta genera respuestas más variadas pero también más propensas a errores."
+    },
+    {
+      "q": "¿Qué es la 'destilación' (distillation) de un modelo de inteligencia artificial?",
+      "opts": [
+        "Entrenar un modelo más pequeño para que imite las respuestas de un modelo más grande, logrando un rendimiento similar con menos recursos",
+        "Eliminar datos de entrenamiento duplicados antes de empezar",
+        "Traducir un modelo a varios idiomas distintos",
+        "Combinar varios modelos distintos en una sola respuesta final"
+      ],
+      "correct": 0,
+      "explanation": "La destilación entrena un modelo 'alumno' más pequeño para reproducir el comportamiento de un modelo 'profesor' más grande, reduciendo mucho el coste de inferencia sin perder demasiado rendimiento."
     }
   ]
 }
