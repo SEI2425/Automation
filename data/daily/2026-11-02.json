@@ -1,0 +1,87 @@
+{
+  "date": "2026-11-02",
+  "questions": [
+    {
+      "type": "complete",
+      "lang": "Python",
+      "question": "¿Que falta para que top_three contenga [9, 6, 5]?",
+      "code": "nums = [3, 1, 4, 1, 5, 9, 2, 6]\ntop_three = sorted(nums, reverse=True)[:____]\nprint(top_three)  # [9, 6, 5]",
+      "options": ["3", "2", "4", "-3"],
+      "correct": 0,
+      "hint": "Cuenta cuantos elementos aparecen en el resultado esperado.",
+      "explanation": "sorted(nums, reverse=True) ordena de mayor a menor, y [:3] toma los tres primeros: 9, 6 y 5."
+    },
+    {
+      "type": "identify",
+      "lang": "JavaScript",
+      "question": "¿Que imprime este codigo?",
+      "code": "const obj = { a: 1, b: 2 };\nconst str = JSON.stringify(obj);\nconsole.log(typeof str);",
+      "options": ["string", "object", "undefined", "Error"],
+      "correct": 0,
+      "hint": "JSON.stringify siempre devuelve un tipo de dato de texto.",
+      "explanation": "JSON.stringify() convierte un objeto a su representacion en texto JSON, por lo que el resultado es siempre de tipo string, aunque el contenido original fuera un objeto."
+    },
+    {
+      "type": "complete",
+      "lang": "SQL",
+      "question": "¿Que falta para combinar los nombres de ambos equipos SIN eliminar los duplicados?",
+      "code": "SELECT name FROM team_a\n____\nSELECT name FROM team_b;",
+      "options": ["UNION ALL", "UNION", "INTERSECT", "EXCEPT"],
+      "correct": 0,
+      "hint": "Necesitas la variante de UNION que no elimina las filas repetidas.",
+      "explanation": "UNION ALL junta los resultados de ambas consultas conservando los duplicados, a diferencia de UNION, que los elimina automaticamente."
+    },
+    {
+      "type": "identify",
+      "lang": "Kotlin",
+      "question": "¿Que imprime este codigo?",
+      "code": "fun clasificar(edad: Int) = when (edad) {\n    in 0..12 -> \"nino\"\n    in 13..19 -> \"adolescente\"\n    else -> \"adulto\"\n}\nprintln(clasificar(15))",
+      "options": ["nino", "adolescente", "adulto", "Error de compilacion"],
+      "correct": 1,
+      "hint": "when con rangos (in 0..12) comprueba si el valor cae dentro de ese intervalo.",
+      "explanation": "15 no esta en 0..12 pero si en 13..19, asi que when devuelve \"adolescente\"."
+    },
+    {
+      "type": "identify",
+      "lang": "Bash",
+      "question": "¿Que imprime este comando?",
+      "code": "nombre=\"Sofia\"\necho \"Hola, ${nombre:0:1}\"",
+      "options": ["Hola, S", "Hola, Sofia", "Hola, 0", "Error de sintaxis"],
+      "correct": 0,
+      "hint": "${variable:inicio:longitud} extrae una parte del texto.",
+      "explanation": "${nombre:0:1} toma 1 caracter empezando en la posicion 0, es decir, la primera letra: \"S\"."
+    }
+  ],
+  "tips": [
+    {
+      "text": "Aprende la diferencia entre null, undefined y un valor vacio en JavaScript, no los trates como lo mismo.",
+      "explanation": "undefined aparece cuando una variable no se ha inicializado o un parametro no se paso, mientras que null es un valor que alguien asigno a proposito para decir 'sin valor'; confundirlos lleva a comparaciones que a veces funcionan y a veces no, dependiendo del caso exacto.",
+      "link": "https://developer.mozilla.org/en-US/docs/Glossary/Null",
+      "linkLabel": "MDN: el valor null"
+    },
+    {
+      "text": "Al copiar una lista de listas o un objeto con propiedades anidadas, recuerda que una copia superficial (shallow copy) no copia lo que hay dentro, solo el primer nivel.",
+      "explanation": "Metodos como list.copy(), [:] o el operador spread {...obj} crean una copia nueva del contenedor exterior, pero las listas u objetos que hay dentro siguen siendo los mismos en memoria; modificar uno de esos elementos internos tambien cambia la lista 'copiada'. Para evitarlo hace falta una copia profunda, como copy.deepcopy() en Python.",
+      "link": "https://docs.python.org/3/library/copy.html",
+      "linkLabel": "Documentacion oficial de Python: el modulo copy"
+    },
+    {
+      "text": "Si tu codigo valida con muchos 'if' sueltos que un formulario o una respuesta de API tengan el formato correcto, describe esas reglas con un esquema en lugar de comprobar cada campo por separado.",
+      "explanation": "Un esquema centraliza en un solo sitio que forma deben tener los datos y genera automaticamente mensajes de error claros, evitando que algun campo se quede sin comprobar por descuido. A medida que un formulario o una API crece, mantener decenas de condicionales sueltos se vuelve mucho mas propenso a errores que mantener un unico esquema.",
+      "link": "https://docs.pydantic.dev/latest/",
+      "linkLabel": "Documentacion de Pydantic: validacion con esquemas"
+    },
+    {
+      "text": "Nunca escribas una clave secreta de API directamente en codigo JavaScript que se ejecuta en el navegador del usuario.",
+      "explanation": "Cualquier persona puede abrir las herramientas de desarrollador de su navegador y ver el codigo fuente completo de la pagina, incluida cualquier clave que hayas escrito ahi, sin importar que la hayas 'escondido' en un archivo aparte. Las claves secretas deben usarse solo desde tu propio servidor, que el usuario nunca llega a ver.",
+      "link": "https://cloud.google.com/docs/authentication/api-keys-best-practices",
+      "linkLabel": "Google Cloud: buenas practicas con claves de API"
+    },
+    {
+      "text": "No confundas el operador de asignacion (=) con el de comparacion (==) dentro de la condicion de un 'if', sobre todo en lenguajes como C, Java o JavaScript.",
+      "explanation": "Escribir 'if (x = 5)' en lugar de 'if (x == 5)' no siempre da un error: en algunos lenguajes esa asignacion se evalua como verdadera y el programa sigue adelante con un bug silencioso, cambiando ademas el valor de x sin que te dieras cuenta. Algunas personas escriben la constante primero, como en 'if (5 == x)', porque asi una asignacion accidental si daria un error de compilacion.",
+      "link": "https://en.wikipedia.org/wiki/Yoda_conditions",
+      "linkLabel": "Wikipedia: condiciones Yoda"
+    }
+  ]
+}

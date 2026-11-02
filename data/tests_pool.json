@@ -439,6 +439,17 @@
       ],
       "correct": 1,
       "explanation": "Una lista vacía se evalúa como 'falsy'; bool() sobre cualquier secuencia vacía devuelve False."
+    },
+    {
+      "q": "¿Que devuelve list(range(2, 10, 3)) en Python?",
+      "opts": [
+        "[2, 5, 8]",
+        "[2, 5, 8, 11]",
+        "[2, 3, 4, 5, 6, 7, 8, 9]",
+        "[3, 6, 9]"
+      ],
+      "correct": 0,
+      "explanation": "range(2, 10, 3) genera valores empezando en 2, sumando 3 cada vez, y se detiene antes de llegar a 10: 2, 5 y 8."
     }
   ],
   "javascript": [
@@ -881,6 +892,17 @@
       ],
       "correct": 0,
       "explanation": "A diferencia de usar la variable directamente (que sí lanza ReferenceError), typeof sobre una variable no declarada devuelve 'undefined' de forma segura, sin lanzar ningún error."
+    },
+    {
+      "q": "¿Que muestra console.log(typeof NaN) en JavaScript?",
+      "opts": [
+        "number",
+        "NaN",
+        "undefined",
+        "object"
+      ],
+      "correct": 0,
+      "explanation": "Aunque NaN significa 'Not a Number', su tipo en JavaScript es 'number', ya que forma parte del conjunto de valores numericos del lenguaje."
     }
   ],
   "typescript": [
@@ -1323,6 +1345,17 @@
       ],
       "correct": 0,
       "explanation": "Parameters<T> toma el tipo de una función y devuelve una tupla con los tipos de sus parámetros, en el mismo orden en que se declaran."
+    },
+    {
+      "q": "¿Que hace el modificador readonly en una propiedad de una interfaz de TypeScript?",
+      "opts": [
+        "Impide reasignar esa propiedad despues de crear el objeto",
+        "Hace que la propiedad sea opcional",
+        "Convierte la propiedad en una funcion",
+        "Oculta la propiedad al compilar"
+      ],
+      "correct": 0,
+      "explanation": "readonly marca una propiedad para que TypeScript avise en tiempo de compilacion si se intenta asignarle un nuevo valor despues de la creacion del objeto."
     }
   ],
   "java": [
@@ -1765,6 +1798,17 @@
       ],
       "correct": 0,
       "explanation": "Una clase abstracta no está obligada a implementar todos los métodos heredados de una interfaz; esa responsabilidad pasa a la primera subclase concreta que la extienda."
+    },
+    {
+      "q": "¿Que palabra clave se usa en Java para evitar que una clase pueda heredarse?",
+      "opts": [
+        "final",
+        "static",
+        "private",
+        "abstract"
+      ],
+      "correct": 0,
+      "explanation": "Declarar una clase como final impide que cualquier otra clase la extienda mediante herencia."
     }
   ],
   "kotlin": [
@@ -2207,6 +2251,17 @@
       ],
       "correct": 0,
       "explanation": "typealias no crea un tipo nuevo: solo define un alias, un nombre alternativo, para un tipo existente (a menudo uno complejo, como un tipo de función), facilitando la lectura del código."
+    },
+    {
+      "q": "¿Que palabra clave de Kotlin permite declarar una variable que se inicializara mas adelante, no en el momento de declararla?",
+      "opts": [
+        "lateinit",
+        "val",
+        "const",
+        "object"
+      ],
+      "correct": 0,
+      "explanation": "lateinit permite declarar una propiedad var sin inicializarla de inmediato, prometiendo que se asignara antes de usarla, util por ejemplo en vistas de Android."
     }
   ],
   "sql": [
@@ -2649,6 +2704,17 @@
       ],
       "correct": 0,
       "explanation": "ON DELETE CASCADE propaga el borrado: al eliminar una fila padre, la base de datos elimina automáticamente todas las filas hijas que la referencian a través de esa clave foránea."
+    },
+    {
+      "q": "¿Que hace la clausula LIMIT 5 OFFSET 10 en una consulta SQL?",
+      "opts": [
+        "Devuelve 5 filas, saltandose las primeras 10",
+        "Devuelve las primeras 10 filas",
+        "Devuelve 10 filas, saltandose las primeras 5",
+        "Limita la consulta a 15 filas en total"
+      ],
+      "correct": 0,
+      "explanation": "OFFSET 10 salta las primeras 10 filas del resultado, y LIMIT 5 se queda con las 5 siguientes a partir de ahi."
     }
   ],
   "git": [
@@ -3091,6 +3157,17 @@
       ],
       "correct": 0,
       "explanation": "git submodule permite referenciar otro repositorio Git dentro de una carpeta del proyecto, fijando además un commit concreto de ese submódulo, sin fusionar ambos historiales en uno solo."
+    },
+    {
+      "q": "¿Que comando de Git muestra que archivos estan en conflicto durante un merge sin resolverlo todavia?",
+      "opts": [
+        "git status",
+        "git merge --abort",
+        "git log",
+        "git commit"
+      ],
+      "correct": 0,
+      "explanation": "git status, ejecutado en mitad de un merge con conflictos, lista los archivos marcados como 'both modified', que son los que hay que resolver a mano."
     }
   ],
   "htmlcss": [
@@ -3533,6 +3610,17 @@
       ],
       "correct": 0,
       "explanation": "inherit fuerza a una propiedad a tomar exactamente el valor que tiene esa misma propiedad en el elemento padre, incluso en propiedades que no se heredan por defecto."
+    },
+    {
+      "q": "¿Que hace la propiedad CSS object-fit: cover aplicada a una imagen dentro de un contenedor de tamano fijo?",
+      "opts": [
+        "Escala la imagen para cubrir todo el contenedor, recortando lo que sobresalga",
+        "Estira la imagen para que ocupe el contenedor sin respetar su proporcion",
+        "Repite la imagen como un mosaico dentro del contenedor",
+        "Centra la imagen sin cambiar su tamano"
+      ],
+      "correct": 0,
+      "explanation": "object-fit: cover escala la imagen manteniendo su proporcion original, de forma que cubra todo el espacio del contenedor, recortando el exceso si no coincide exactamente con las dimensiones."
     }
   ],
   "bash": [
@@ -3975,6 +4063,17 @@
       ],
       "correct": 0,
       "explanation": "declare -A crea un array asociativo (similar a un diccionario), donde cada valor se guarda y se recupera usando una clave de texto, como colores[rojo], en lugar de una posición numérica."
+    },
+    {
+      "q": "¿Que hace el comando chmod +x script.sh?",
+      "opts": [
+        "Da permiso de ejecucion al archivo script.sh",
+        "Borra el archivo script.sh",
+        "Cambia el propietario del archivo",
+        "Comprime el archivo script.sh"
+      ],
+      "correct": 0,
+      "explanation": "chmod +x anade el permiso de ejecucion al archivo, necesario para poder ejecutarlo directamente con ./script.sh en lugar de pasarlo como argumento a bash."
     }
   ],
   "ia": [
@@ -4406,6 +4505,17 @@
       ],
       "correct": 0,
       "explanation": "La destilación entrena un modelo 'alumno' más pequeño para reproducir el comportamiento de un modelo 'profesor' más grande, reduciendo mucho el coste de inferencia sin perder demasiado rendimiento."
+    },
+    {
+      "q": "En el contexto de los modelos de lenguaje, ¿que es un 'token'?",
+      "opts": [
+        "Un fragmento de texto (una palabra, parte de ella o un simbolo) que el modelo procesa como unidad minima",
+        "Una clave de acceso para usar la API de un modelo",
+        "El nombre que se le da a cada parametro entrenable del modelo",
+        "Un tipo de error que comete el modelo al generar texto"
+      ],
+      "correct": 0,
+      "explanation": "Los modelos de lenguaje no procesan letra a letra ni palabra a palabra completa, sino en 'tokens': fragmentos de texto que pueden ser una palabra entera, una parte de ella o un signo de puntuacion."
     }
   ]
 }

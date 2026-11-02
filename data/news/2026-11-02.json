@@ -1,0 +1,65 @@
+{
+  "date": "2026-11-02",
+  "items": [
+    {
+      "tag": "Impacto",
+      "title": "Un grupo de hackers rusos usa hasta 51 agentes de Claude Code para robar mas de 628.000 registros ucranianos",
+      "url": "https://www.esecurityplanet.com/threats/news-cyberxero-claude-code-data-theft-emea-ukraine/",
+      "summary": "La firma de inteligencia de amenazas SOCRadar identifico en octubre hasta 51 agentes de Claude Code ejecutandose en el equipo de un intermediario de accesos de habla rusa conocido como CyberXero, usados para automatizar el robo de datos. El grupo comprometio al menos cuatro organizaciones ucranianas, entre ellas empresas de energia y servicios publicos, con un total de mas de 628.000 registros robados, incluidos unos 564.000 de suscriptores."
+    },
+    {
+      "tag": "Impacto",
+      "title": "Un malware para Windows usa la IA Grok de xAI para decidir como esconderse mejor",
+      "url": "https://www.foxnews.com/tech/windows-malware-uses-grok-ai-help-stay-hidden-researchers-say",
+      "summary": "Investigadores de Qrator Research Labs descubrieron x47.c, un malware vendido por el actor conocido como WraithTools que integra la API de Grok para elegir, entre las tacticas de persistencia que ya tiene programadas, cual usar en cada caso. Si la peticion a Grok falla, el malware recurre a sus metodos propios, lo que significa que bloquear su acceso a la IA no basta para eliminar la infeccion."
+    },
+    {
+      "tag": "Impacto",
+      "title": "Taiwan lanza una herramienta de IA gratuita que valora el dano de un terremoto a partir de una foto",
+      "url": "https://focustaiwan.tw/sci-tech/202610200016",
+      "summary": "El Centro Nacional de Investigacion de Ingenieria Sismica de Taiwan presento el 20 de octubre una herramienta gratuita, entrenada con 8.000 fotos de elementos estructurales danados, que clasifica en un segundo el estado de una viga, columna o muro a partir de una sola imagen subida por el usuario. Las autoridades insisten en que es solo una valoracion preliminar y recomiendan una inspeccion de un ingeniero tras cualquier resultado de riesgo medio o alto."
+    },
+    {
+      "tag": "Impacto",
+      "title": "China presenta sus primeros modelos de IA para satelites meteorologicos, centrados en tifones",
+      "url": "https://news.cgtn.com/news/2026-10-30/China-unveils-first-Fengyun-satellite-AI-models-for-extreme-weather-1RFgj1IPVHG/share_amp.html",
+      "summary": "La Administracion Meteorologica de China presento el 30 de octubre su primera serie de modelos de IA para los satelites Fengyun, incluido uno que interpreta imagenes de nubes de tifones cada 15 minutos y genera un informe en apenas 27 segundos. Otro modelo, centrado en tormentas convectivas, adelanta hasta cuatro horas el aviso frente a los metodos anteriores, aunque los meteorologos locales advierten de que la IA todavia falla con fenomenos extremos poco frecuentes por falta de datos de entrenamiento."
+    },
+    {
+      "tag": "Lanzamiento",
+      "title": "Anthropic lanza Claude Marketplace, con mas de 2.000 conectores, plugins y agentes de socios",
+      "url": "https://bleepingcomputer.com/news/artificial-intelligence/anthropic-turns-claude-into-an-ai-marketplace-with-2-000-plus-plugins-and-connectors",
+      "summary": "Anthropic abrio el 23 de septiembre Claude Marketplace, un espacio unico donde encontrar mas de 2.000 conectores y plugins, agentes y productos de socios, y servicios de consultoria, con empresas como Atlassian, Google, Microsoft, Notion o Salesforce entre los primeros listados. Los desarrolladores crean estas integraciones con el Protocolo de Contexto de Modelo (MCP) y Agent Skills, y las empresas pueden pagar las compras con cargo a su compromiso contratado con Anthropic."
+    },
+    {
+      "tag": "Interactivo",
+      "title": "Exercism: practica F# con ejercicios interactivos y mentoria gratuita",
+      "url": "https://exercism.org/tracks/fsharp",
+      "summary": "Este recorrido gratuito de Exercism ofrece 134 ejercicios del lenguaje funcional F#, que corre sobre .NET, organizados en 15 conceptos con correccion automatica al enviar tu solucion. Como en el resto de la plataforma, tambien puedes pedir mentoria gratuita de programadores voluntarios que comentan tu codigo."
+    },
+    {
+      "tag": "Interactivo",
+      "title": "W3Schools: tutorial interactivo de estructuras de datos y algoritmos (DSA)",
+      "url": "https://www.w3schools.com/dsa/",
+      "summary": "Este tutorial gratuito explica estructuras de datos y algoritmos (listas enlazadas, arboles, grafos, ordenacion y busqueda) de forma independiente del lenguaje, con ejemplos de codigo y cuestionarios en cada capitulo. Tambien incluye versiones del mismo contenido centradas en Python o en C para quien prefiere ver la implementacion completa."
+    },
+    {
+      "tag": "Curso",
+      "title": "Codecademy: Rust for Programmers, el curso gratuito para dar tus primeros pasos en Rust",
+      "url": "https://www.codecademy.com/learn/rust-for-programmers",
+      "summary": "Este curso gratuito de Codecademy resume los fundamentos del lenguaje Rust (propiedad, tipos, estructuras de control) pensado para quien ya programa en otro lenguaje y quiere una introduccion rapida. Las lecciones se corrigen al instante en un editor dentro del propio navegador, sin instalar nada."
+    },
+    {
+      "tag": "Curso",
+      "title": "MDN: guia de HTTP, el curso gratuito para entender como viajan los datos en la web",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Overview",
+      "summary": "Esta guia gratuita de Mozilla explica que es el protocolo HTTP, como se comunican cliente y servidor, y conceptos como cabeceras, metodos o codigos de estado, con ejemplos reales en cada seccion. Es la referencia que cita la mayoria de tutoriales sobre APIs y desarrollo web, pensada para entender que pasa realmente detras de cada peticion."
+    },
+    {
+      "tag": "Interactivo",
+      "title": "W3Schools: tutorial interactivo de Angular con editor en el navegador",
+      "url": "https://www.w3schools.com/angular/",
+      "summary": "Este tutorial gratuito ensena los fundamentos del framework Angular (componentes, directivas, enlace de datos) con un editor Try it Yourself en cada pagina para escribir y ejecutar tu propio codigo sin instalar nada. Cada capitulo incluye ejercicios cortos y un cuestionario de autoevaluacion."
+    }
+  ]
+}
