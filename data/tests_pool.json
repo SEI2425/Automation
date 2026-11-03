@@ -450,6 +450,17 @@
       ],
       "correct": 0,
       "explanation": "range(2, 10, 3) genera valores empezando en 2, sumando 3 cada vez, y se detiene antes de llegar a 10: 2, 5 y 8."
+    },
+    {
+      "q": "¿Qué devuelve `dict.fromkeys(['a', 'b', 'c'], 0)`?",
+      "opts": [
+        "{'a': 0, 'b': 0, 'c': 0}",
+        "{'a': 'a', 'b': 'b', 'c': 'c'}",
+        "['a', 'b', 'c']",
+        "Error"
+      ],
+      "correct": 0,
+      "explanation": "dict.fromkeys(iterable, valor) crea un diccionario nuevo usando los elementos del iterable como claves y asignando a todas ellas el mismo valor indicado (0 en este caso)."
     }
   ],
   "javascript": [
@@ -903,6 +914,17 @@
       ],
       "correct": 0,
       "explanation": "Aunque NaN significa 'Not a Number', su tipo en JavaScript es 'number', ya que forma parte del conjunto de valores numericos del lenguaje."
+    },
+    {
+      "q": "¿Qué devuelve `Object.entries({a: 1, b: 2})`?",
+      "opts": [
+        "[['a', 1], ['b', 2]]",
+        "{a: 1, b: 2}",
+        "['a', 'b']",
+        "[1, 2]"
+      ],
+      "correct": 0,
+      "explanation": "Object.entries() convierte un objeto en un array de pares [clave, valor], uno por cada propiedad propia del objeto, en el mismo orden en que se insertaron."
     }
   ],
   "typescript": [
@@ -1356,6 +1378,17 @@
       ],
       "correct": 0,
       "explanation": "readonly marca una propiedad para que TypeScript avise en tiempo de compilacion si se intenta asignarle un nuevo valor despues de la creacion del objeto."
+    },
+    {
+      "q": "¿Qué permite declarar una clase como `abstract class Forma { abstract area(): number; }` en TypeScript?",
+      "opts": [
+        "Que no se pueda instanciar directamente y que las clases que la extiendan deban implementar sus métodos abstractos",
+        "Que la clase se pueda instanciar pero no heredar",
+        "Que todos sus métodos sean estáticos automáticamente",
+        "Que la clase se elimine al compilar a JavaScript"
+      ],
+      "correct": 0,
+      "explanation": "Una clase 'abstract' no se puede instanciar con 'new' directamente; sirve como plantilla que obliga a las subclases concretas a implementar los métodos marcados también como abstractos, como area() en este caso."
     }
   ],
   "java": [
@@ -1809,6 +1842,17 @@
       ],
       "correct": 0,
       "explanation": "Declarar una clase como final impide que cualquier otra clase la extienda mediante herencia."
+    },
+    {
+      "q": "¿Para qué sirve la clase StringBuilder en Java frente a concatenar con + dentro de un bucle?",
+      "opts": [
+        "Para construir cadenas de texto de forma mucho más eficiente, evitando crear un nuevo objeto String en cada concatenación",
+        "Para convertir automáticamente un String en un número",
+        "Para hacer que un String sea mutable de forma permanente",
+        "Para comparar dos cadenas ignorando mayúsculas"
+      ],
+      "correct": 0,
+      "explanation": "Como los objetos String son inmutables, concatenar con '+' dentro de un bucle crea un nuevo objeto en cada vuelta; StringBuilder modifica un buffer interno mutable, lo que evita esa sobrecarga en bucles con muchas concatenaciones."
     }
   ],
   "kotlin": [
@@ -2262,6 +2306,17 @@
       ],
       "correct": 0,
       "explanation": "lateinit permite declarar una propiedad var sin inicializarla de inmediato, prometiendo que se asignara antes de usarla, util por ejemplo en vistas de Android."
+    },
+    {
+      "q": "¿Qué permite hacer esta línea de Kotlin?\nval (nombre, edad) = Persona(\"Ana\", 30)",
+      "opts": [
+        "Desestructurar una data class en variables separadas usando sus funciones component1() y component2() generadas automáticamente",
+        "Crear dos instancias distintas de Persona",
+        "Declarar una función con dos parámetros",
+        "Comparar dos objetos Persona"
+      ],
+      "correct": 0,
+      "explanation": "Las data class de Kotlin generan automáticamente funciones componentN(); eso permite 'desestructurar' una instancia en variables separadas con una sola línea, asignando cada componente en el orden declarado en el constructor."
     }
   ],
   "sql": [
@@ -2715,6 +2770,17 @@
       ],
       "correct": 0,
       "explanation": "OFFSET 10 salta las primeras 10 filas del resultado, y LIMIT 5 se queda con las 5 siguientes a partir de ahi."
+    },
+    {
+      "q": "¿Qué requisito deben cumplir dos consultas combinadas con UNION para que funcione?",
+      "opts": [
+        "Ambas deben devolver el mismo número de columnas, con tipos de datos compatibles entre ellas",
+        "Deben tener exactamente el mismo nombre de columnas",
+        "Deben venir de la misma tabla",
+        "Deben tener el mismo número de filas"
+      ],
+      "correct": 0,
+      "explanation": "UNION (y UNION ALL) combina los resultados de dos o más consultas, pero exige que cada una devuelva el mismo número de columnas y con tipos compatibles entre ellas; los nombres de columna finales los toma de la primera consulta."
     }
   ],
   "git": [
@@ -3168,6 +3234,17 @@
       ],
       "correct": 0,
       "explanation": "git status, ejecutado en mitad de un merge con conflictos, lista los archivos marcados como 'both modified', que son los que hay que resolver a mano."
+    },
+    {
+      "q": "¿Para qué sirve 'git rebase -i HEAD~3' (rebase interactivo)?",
+      "opts": [
+        "Para reordenar, combinar (squash) o editar los últimos 3 commits antes de continuar",
+        "Para eliminar los últimos 3 commits sin dejar rastro",
+        "Para fusionar automáticamente 3 ramas distintas",
+        "Para crear 3 nuevas ramas a partir de HEAD"
+      ],
+      "correct": 0,
+      "explanation": "git rebase -i abre una lista editable con los commits indicados (aquí los últimos 3), permitiendo reordenarlos, combinarlos con 'squash', cambiar su mensaje con 'reword' o editarlos uno a uno, antes de aplicarlos de nuevo."
     }
   ],
   "htmlcss": [
@@ -3621,6 +3698,17 @@
       ],
       "correct": 0,
       "explanation": "object-fit: cover escala la imagen manteniendo su proporcion original, de forma que cubra todo el espacio del contenedor, recortando el exceso si no coincide exactamente con las dimensiones."
+    },
+    {
+      "q": "Si un elemento tiene un estilo aplicado por un selector de clase (.boton) y otro por un selector de ID (#enviar), y ambos definen el mismo color, ¿cuál gana?",
+      "opts": [
+        "El del selector de ID, porque tiene mayor especificidad que el de clase",
+        "El del selector de clase, porque se declaró más tarde en el archivo",
+        "Ninguno se aplica y se usa el valor por defecto del navegador",
+        "Depende únicamente del orden alfabético de los selectores"
+      ],
+      "correct": 0,
+      "explanation": "La especificidad de CSS da más peso a un selector de ID que a uno de clase, independientemente del orden en que aparezcan en la hoja de estilos; por eso el estilo definido con #enviar prevalece sobre el de .boton."
     }
   ],
   "bash": [
@@ -4074,6 +4162,17 @@
       ],
       "correct": 0,
       "explanation": "chmod +x anade el permiso de ejecucion al archivo, necesario para poder ejecutarlo directamente con ./script.sh en lugar de pasarlo como argumento a bash."
+    },
+    {
+      "q": "¿Qué hace el comando `test -z \"$variable\"` (o `[ -z \"$variable\" ]`) en un script de Bash?",
+      "opts": [
+        "Comprueba si la variable está vacía (longitud cero)",
+        "Comprueba si la variable contiene solo números",
+        "Elimina el contenido de la variable",
+        "Comprueba si la variable está definida como de solo lectura"
+      ],
+      "correct": 0,
+      "explanation": "El operador -z de test/[ ] devuelve verdadero cuando la cadena que recibe tiene longitud cero, es decir, cuando la variable está vacía o no se le asignó ningún valor; el operador contrario, -n, comprueba que no esté vacía."
     }
   ],
   "ia": [
@@ -4516,6 +4615,17 @@
       ],
       "correct": 0,
       "explanation": "Los modelos de lenguaje no procesan letra a letra ni palabra a palabra completa, sino en 'tokens': fragmentos de texto que pueden ser una palabra entera, una parte de ella o un signo de puntuacion."
+    },
+    {
+      "q": "¿Qué permite la capacidad de 'function calling' (o 'tool use') en un modelo de lenguaje moderno?",
+      "opts": [
+        "Que el modelo pueda solicitar la ejecución de una función externa definida por el desarrollador (como consultar una base de datos o una API) y usar su resultado en la respuesta",
+        "Que el modelo escriba automáticamente pruebas unitarias para su propio código",
+        "Que el modelo se entrene a sí mismo sin supervisión humana",
+        "Que el modelo traduzca funciones de un lenguaje de programación a otro"
+      ],
+      "correct": 0,
+      "explanation": "Con function calling, el desarrollador describe al modelo qué funciones externas tiene disponibles (con sus parámetros); el modelo decide cuándo conviene invocar una y genera los argumentos en un formato estructurado, y el programa que lo rodea ejecuta esa función real y le devuelve el resultado."
     }
   ]
 }

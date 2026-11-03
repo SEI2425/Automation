@@ -1,0 +1,87 @@
+{
+  "date": "2026-11-03",
+  "questions": [
+    {
+      "type": "identify",
+      "lang": "python",
+      "question": "¿Que imprime este codigo?",
+      "code": "numeros = [1, 2, 3, 4]\nprint(numeros[::-1])",
+      "options": ["[4, 3, 2, 1]", "[1, 2, 3, 4]", "Error", "[]"],
+      "correct": 0,
+      "hint": "El tercer valor dentro de los corchetes controla el paso del slicing.",
+      "explanation": "numeros[::-1] recorre la lista con paso -1, es decir de atras hacia adelante, y devuelve una copia invertida sin modificar la lista original."
+    },
+    {
+      "type": "complete",
+      "lang": "javascript",
+      "question": "Completa el codigo para quedarte solo con los numeros pares.",
+      "code": "const lista = [1, 2, 3, 4, 5, 6];\nconst pares = lista.____(n => n % 2 === 0);\nconsole.log(pares);",
+      "options": ["filter", "map", "reduce", "forEach"],
+      "correct": 0,
+      "hint": "Busca el metodo que conserva solo los elementos que cumplen una condicion.",
+      "explanation": "filter() devuelve un nuevo array con solo los elementos para los que la funcion devuelve true; map() transformaria cada elemento sin filtrar, reduce() acumularia un unico valor y forEach() no devuelve nada util aqui."
+    },
+    {
+      "type": "identify",
+      "lang": "typescript",
+      "question": "¿Que imprime este codigo?",
+      "code": "class Caja<T> {\n  constructor(private valor: T) {}\n  obtener(): T {\n    return this.valor;\n  }\n}\nconst c = new Caja<string>(\"hola\");\nconsole.log(c.obtener());",
+      "options": ["hola", "undefined", "Error de compilacion", "[object Object]"],
+      "correct": 0,
+      "hint": "Caja es una clase generica: T se fija al tipo que le pases al crear la instancia.",
+      "explanation": "Caja<string> fija T como string; el constructor guarda 'hola' en valor, y obtener() simplemente lo devuelve, por lo que console.log imprime 'hola'."
+    },
+    {
+      "type": "identify",
+      "lang": "bash",
+      "question": "¿Que comprueba este script?",
+      "code": "archivo=$1\nif [ -f \"$archivo\" ]; then\n  echo \"existe\"\nelse\n  echo \"no existe\"\nfi",
+      "options": ["Si el archivo pasado como primer argumento existe y es un archivo regular", "Si el archivo esta vacio", "Si el usuario tiene permisos de escritura sobre el archivo", "Si la variable archivo esta vacia"],
+      "correct": 0,
+      "hint": "El operador -f dentro de los corchetes es la clave.",
+      "explanation": "El operador -f de test comprueba si la ruta dada existe y es un archivo regular (no un directorio ni otro tipo especial); aqui se aplica al primer argumento recibido por el script ($1)."
+    },
+    {
+      "type": "complete",
+      "lang": "sql",
+      "question": "Completa la consulta para asignar una posicion segun el sueldo, de mayor a menor.",
+      "code": "SELECT nombre,\n       ____() OVER (ORDER BY sueldo DESC) AS posicion\nFROM empleados;",
+      "options": ["RANK", "COUNT", "SUM", "AVG"],
+      "correct": 0,
+      "hint": "Buscas una funcion de ventana que asigne una posicion segun el orden, no que calcule un total.",
+      "explanation": "RANK() es una funcion de ventana que asigna una posicion a cada fila segun el orden indicado en OVER (ORDER BY ...); COUNT, SUM y AVG son funciones agregadas que no asignan una posicion por fila."
+    }
+  ],
+  "tips": [
+    {
+      "text": "Usa 'git stash' para guardar cambios a medio terminar sin hacer un commit.",
+      "explanation": "Te permite cambiar de rama o atender algo urgente sin perder tu trabajo ni ensuciar el historial con commits temporales como 'wip' o 'arreglo luego'; luego recuperas los cambios con 'git stash pop'.",
+      "link": "https://git-scm.com/docs/git-stash",
+      "linkLabel": "Documentacion oficial de git stash"
+    },
+    {
+      "text": "Antes de borrar una rama de Git ya fusionada, comprueba con 'git branch --merged' que de verdad se incorporo a la rama principal.",
+      "explanation": "El propio 'git branch -d' se niega a borrar una rama con commits que todavia no se fusionaron, pero revisarlo tu mismo antes evita sorpresas, sobre todo si despues usas la version que fuerza el borrado sin esa comprobacion.",
+      "link": "https://git-scm.com/docs/git-branch",
+      "linkLabel": "Documentacion oficial de git branch"
+    },
+    {
+      "text": "Aplica el principio de menor privilegio: usa cuentas o tokens con los permisos minimos que tu tarea necesita, nunca la cuenta de administrador para el trabajo diario.",
+      "explanation": "Si esa credencial se filtra o un script tiene un error, el dano queda limitado a lo que esa cuenta concreta podia hacer, en lugar de abrir las puertas a todo el sistema.",
+      "link": "https://owasp.org/www-community/controls/Least_Privilege_Principle",
+      "linkLabel": "OWASP: principio de menor privilegio"
+    },
+    {
+      "text": "Para que tu aplicacion no se caiga entera cuando falla un servicio externo, aplica el patron 'circuit breaker': corta las llamadas a ese servicio durante un tiempo en lugar de seguir insistiendo con peticiones que previsiblemente van a fallar.",
+      "explanation": "Evita que un solo servicio lento o caido colapse el resto de tu sistema con peticiones acumulandose sin respuesta, y le da tiempo a ese servicio para recuperarse antes de que vuelvas a intentarlo.",
+      "link": "https://learn.microsoft.com/azure/architecture/patterns/circuit-breaker",
+      "linkLabel": "Microsoft Learn: patron Circuit Breaker"
+    },
+    {
+      "text": "Si comparas el rendimiento de dos fragmentos de codigo, ejecuta cada uno varias veces y quedate con el tiempo minimo, no con una sola medicion.",
+      "explanation": "Una sola ejecucion puede verse afectada por otros procesos de tu ordenador en ese instante; el ruido del sistema casi siempre suma tiempo, nunca lo resta, asi que el minimo de varias repeticiones es mas fiable que la media o una unica prueba.",
+      "link": "https://docs.python.org/3/library/timeit.html",
+      "linkLabel": "Documentacion oficial del modulo timeit de Python"
+    }
+  ]
+}

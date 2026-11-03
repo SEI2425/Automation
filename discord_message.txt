@@ -1,1 +1,1 @@
-Nueva edicion de PilaPila News: noticias reales sobre como se usa (y se abusa de) la IA, recursos gratis para aprender a programar y los tests del dia. La imagen de arriba trae lo mas destacado; en la web tienes todo completo: [Abrir PilaPila News](<https://sei2425.github.io/Automation/>)
+Nuevo numero de PilaPila News ya disponible. La imagen de arriba trae lo mas destacado del dia, y en la web tienes las 10 noticias completas, los tips explicados y los tests por lenguaje. [Abrir PilaPila News](<https://sei2425.github.io/Automation/>)
