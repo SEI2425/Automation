@@ -461,6 +461,17 @@
       ],
       "correct": 0,
       "explanation": "dict.fromkeys(iterable, valor) crea un diccionario nuevo usando los elementos del iterable como claves y asignando a todas ellas el mismo valor indicado (0 en este caso)."
+    },
+    {
+      "q": "¿Para que sirve declarar __slots__ en una clase de Python?",
+      "opts": [
+        "Para reducir el uso de memoria impidiendo atributos dinamicos no declarados",
+        "Para hacer la clase inmutable automaticamente",
+        "Para heredar de varias clases a la vez",
+        "Para convertir la clase en un decorador"
+      ],
+      "correct": 0,
+      "explanation": "__slots__ le dice a Python exactamente que atributos tendra cada instancia, evitando el diccionario __dict__ por defecto y ahorrando memoria, aunque a cambio impide anadir atributos nuevos sobre la marcha."
     }
   ],
   "javascript": [
@@ -925,6 +936,17 @@
       ],
       "correct": 0,
       "explanation": "Object.entries() convierte un objeto en un array de pares [clave, valor], uno por cada propiedad propia del objeto, en el mismo orden en que se insertaron."
+    },
+    {
+      "q": "¿Que devuelve `typeof NaN` en JavaScript?",
+      "opts": [
+        "'number'",
+        "'NaN'",
+        "'undefined'",
+        "'object'"
+      ],
+      "correct": 0,
+      "explanation": "NaN (Not a Number) es, paradojicamente, un valor del tipo number en JavaScript: es tambien el unico valor que no es igual a si mismo (NaN !== NaN)."
     }
   ],
   "typescript": [
@@ -1389,6 +1411,17 @@
       ],
       "correct": 0,
       "explanation": "Una clase 'abstract' no se puede instanciar con 'new' directamente; sirve como plantilla que obliga a las subclases concretas a implementar los métodos marcados también como abstractos, como area() en este caso."
+    },
+    {
+      "q": "¿Cual es la principal diferencia entre los tipos 'any' y 'unknown' en TypeScript?",
+      "opts": [
+        "'unknown' obliga a comprobar el tipo antes de usarlo, mientras que 'any' desactiva por completo la verificacion de tipos",
+        "'any' es mas rapido en tiempo de ejecucion que 'unknown'",
+        "'unknown' solo puede usarse con numeros",
+        "No hay ninguna diferencia real entre ambos"
+      ],
+      "correct": 0,
+      "explanation": "'any' le dice al compilador que deje de comprobar ese valor, mientras que 'unknown' exige reducir (narrow) el tipo con una comprobacion antes de operar con el, manteniendo la seguridad de tipos."
     }
   ],
   "java": [
@@ -1853,6 +1886,17 @@
       ],
       "correct": 0,
       "explanation": "Como los objetos String son inmutables, concatenar con '+' dentro de un bucle crea un nuevo objeto en cada vuelta; StringBuilder modifica un buffer interno mutable, lo que evita esa sobrecarga en bucles con muchas concatenaciones."
+    },
+    {
+      "q": "¿Que palabra clave se usa en Java para evitar que una clase pueda ser heredada?",
+      "opts": [
+        "final",
+        "static",
+        "abstract",
+        "private"
+      ],
+      "correct": 0,
+      "explanation": "Marcar una clase como 'final' impide que cualquier otra clase la extienda; intentarlo produce un error de compilacion."
     }
   ],
   "kotlin": [
@@ -2317,6 +2361,17 @@
       ],
       "correct": 0,
       "explanation": "Las data class de Kotlin generan automáticamente funciones componentN(); eso permite 'desestructurar' una instancia en variables separadas con una sola línea, asignando cada componente en el orden declarado en el constructor."
+    },
+    {
+      "q": "¿Para que se usa un 'companion object' dentro de una clase en Kotlin?",
+      "opts": [
+        "Para definir miembros (propiedades o funciones) asociados a la clase en si, parecido a los 'static' de Java",
+        "Para crear una subclase automaticamente",
+        "Para declarar una variable inmutable",
+        "Para importar otra clase"
+      ],
+      "correct": 0,
+      "explanation": "Un companion object permite llamar a sus miembros usando el nombre de la clase directamente, sin crear una instancia, cubriendo el hueco que en Java ocupa la palabra clave 'static'."
     }
   ],
   "sql": [
@@ -2781,6 +2836,17 @@
       ],
       "correct": 0,
       "explanation": "UNION (y UNION ALL) combina los resultados de dos o más consultas, pero exige que cada una devuelva el mismo número de columnas y con tipos compatibles entre ellas; los nombres de columna finales los toma de la primera consulta."
+    },
+    {
+      "q": "¿Que ventaja principal ofrece crear un indice sobre una columna que se usa a menudo en clausulas WHERE?",
+      "opts": [
+        "Acelera la busqueda de las filas que cumplen esa condicion, a costa de algo mas de espacio y escrituras ligeramente mas lentas",
+        "Hace que la columna no pueda tener nunca valores duplicados",
+        "Elimina automaticamente las filas con NULL en esa columna",
+        "Convierte la tabla en una vista"
+      ],
+      "correct": 0,
+      "explanation": "Un indice le permite al motor de base de datos localizar las filas que cumplen una condicion sin recorrer la tabla entera, aunque mantenerlo actualizado anade un pequeno coste extra en cada escritura."
     }
   ],
   "git": [
@@ -3245,6 +3311,17 @@
       ],
       "correct": 0,
       "explanation": "git rebase -i abre una lista editable con los commits indicados (aquí los últimos 3), permitiendo reordenarlos, combinarlos con 'squash', cambiar su mensaje con 'reword' o editarlos uno a uno, antes de aplicarlos de nuevo."
+    },
+    {
+      "q": "¿Que es un 'detached HEAD' (cabeza desacoplada) en Git?",
+      "opts": [
+        "Un estado en el que HEAD apunta directamente a un commit en lugar de a una rama, por lo que los commits nuevos pueden perderse si no se crea una rama",
+        "Un commit sin ningun autor asignado",
+        "Una rama que nunca se puede fusionar con otra",
+        "Un commit que borra todo el historial anterior"
+      ],
+      "correct": 0,
+      "explanation": "En detached HEAD, Git te situa sobre un commit concreto en vez de sobre una rama; si haces commits nuevos ahi y luego cambias de rama sin crear una nueva para guardarlos, esos commits quedan sin ninguna rama que los referencie y pueden perderse."
     }
   ],
   "htmlcss": [
@@ -3709,6 +3786,17 @@
       ],
       "correct": 0,
       "explanation": "La especificidad de CSS da más peso a un selector de ID que a uno de clase, independientemente del orden en que aparezcan en la hoja de estilos; por eso el estilo definido con #enviar prevalece sobre el de .boton."
+    },
+    {
+      "q": "¿Que cambia la propiedad 'box-sizing: border-box' respecto al comportamiento por defecto de CSS?",
+      "opts": [
+        "El padding y el borde quedan incluidos dentro del ancho y alto declarados, en vez de sumarse a ellos",
+        "El elemento deja de poder tener margen",
+        "El texto se alinea siempre al centro",
+        "El elemento se convierte automaticamente en flexible"
+      ],
+      "correct": 0,
+      "explanation": "Por defecto, el ancho y alto de un elemento en CSS no incluyen su padding ni su borde; con border-box, esos espacios se restan del ancho y alto declarados en vez de anadirse, lo que facilita calcular tamanos exactos."
     }
   ],
   "bash": [
@@ -4173,6 +4261,17 @@
       ],
       "correct": 0,
       "explanation": "El operador -z de test/[ ] devuelve verdadero cuando la cadena que recibe tiene longitud cero, es decir, cuando la variable está vacía o no se le asignó ningún valor; el operador contrario, -n, comprueba que no esté vacía."
+    },
+    {
+      "q": "¿Para que se usa la sintaxis '<<EOF ... EOF' (here document) en un script de Bash?",
+      "opts": [
+        "Para pasar un bloque de texto de varias lineas como entrada a un comando, sin necesidad de un archivo aparte",
+        "Para comentar varias lineas de codigo a la vez",
+        "Para definir una funcion",
+        "Para ejecutar un comando en segundo plano"
+      ],
+      "correct": 0,
+      "explanation": "Un here document redirige todo el texto escrito entre las dos marcas EOF como si viniera de un archivo de entrada, util por ejemplo para generar un archivo de configuracion o enviar varias lineas a un comando como cat o mysql."
     }
   ],
   "ia": [
@@ -4626,6 +4725,17 @@
       ],
       "correct": 0,
       "explanation": "Con function calling, el desarrollador describe al modelo qué funciones externas tiene disponibles (con sus parámetros); el modelo decide cuándo conviene invocar una y genera los argumentos en un formato estructurado, y el programa que lo rodea ejecuta esa función real y le devuelve el resultado."
+    },
+    {
+      "q": "¿Que significa que un modelo de IA 'alucine'?",
+      "opts": [
+        "Que genera informacion que suena convincente pero es falsa o inventada",
+        "Que se queda sin memoria RAM durante el entrenamiento",
+        "Que solo funciona con imagenes, no con texto",
+        "Que necesita conexion a internet para funcionar"
+      ],
+      "correct": 0,
+      "explanation": "Una alucinacion es una respuesta que el modelo presenta con seguridad y coherencia pero que no se corresponde con hechos reales, por ejemplo citas o datos inventados que parecen plausibles."
     }
   ]
 }

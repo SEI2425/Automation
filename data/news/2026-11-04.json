@@ -1,0 +1,65 @@
+{
+  "date": "2026-11-04",
+  "items": [
+    {
+      "tag": "Impacto",
+      "title": "OpenAI despliega un centro de operaciones electorales para vigilar el mal uso de ChatGPT durante las elecciones de mitad de mandato de EEUU",
+      "url": "https://www.eweek.com/news/ai-2026-midterms-deepfakes-chatbots-election-security/",
+      "summary": "OpenAI puso en marcha, en la ultima semana de octubre, un Centro de Operaciones Electorales con cientos de empleados dedicados a vigilar en tiempo real el uso indebido de ChatGPT y sus demas herramientas durante las elecciones de mitad de mandato de EEUU del 3 de noviembre. El equipo, liderado por Josh Lawson, se centra en detectar comportamientos inesperados del modelo y posibles violaciones de las normas de la empresa, no en vigilar la desinformacion electoral en el resto de internet."
+    },
+    {
+      "tag": "Impacto",
+      "title": "Videos e imagenes falsas generadas con IA inundan las redes sociales mientras el huracan Melissa golpeaba Jamaica",
+      "url": "https://www.scmp.com/news/world/americas/article/3330542/ai-generated-fake-videos-proliferate-hurricane-melissa-nears-jamaica",
+      "summary": "Verificadores de datos confirmaron que varios videos e imagenes de supuestos danos del huracan Melissa en Jamaica, compartidos miles de veces en redes sociales, estaban generados con inteligencia artificial, incluida una imagen de destruccion masiva que nunca ocurrio asi. Los expertos advierten que ese contenido falso distrajo a parte del publico de la informacion de seguridad real justo cuando mas se necesitaba."
+    },
+    {
+      "tag": "Impacto",
+      "title": "Microsoft confirma que hackers vinculados a China usaron un programa de IA para vulnerar la plataforma ConnectWise",
+      "url": "https://thenextweb.com/news/microsoft-storm-0940-ai-agents-connectwise-attack",
+      "summary": "Microsoft informo el 21 de octubre que el grupo Storm-0940, vinculado a China, uso ARTEX, un programa gratuito y de codigo abierto basado en agentes de IA, para automatizar un ataque contra el servicio ConnectWise Cloud Backup. Los atacantes intentaron iniciar sesion en mas de 2.250 cuentas de clientes, y en varios casos consiguieron acceso privilegiado a la nube de una organizacion en menos de tres horas."
+    },
+    {
+      "tag": "Impacto",
+      "title": "Un ensayo clinico en Reino Unido muestra que la IA aumenta la deteccion de cancer de mama y acelera el aviso a las pacientes",
+      "url": "https://www.selectscience.net/article/pioneering-study-finds-ai-increases-cancer-detection-by-more-than-10-percent",
+      "summary": "El estudio GEMINI, publicado en Nature Cancer, encontro que anadir IA a la lectura de mamografias aumenta la deteccion de cancer de mama en un 10,4% frente a la revision solo humana, ademas de reducir la carga de trabajo del personal sanitario. El tiempo medio para avisar a una paciente de un resultado sospechoso bajo de 14 dias a solo 3."
+    },
+    {
+      "tag": "Lanzamiento",
+      "title": "Mistral publica los pesos abiertos completos de Large 4, su modelo de un billon de parametros",
+      "url": "https://letsdatascience.com/news/mistral-releases-open-weights-for-1-trillion-parameter-mistr-d712eb0e",
+      "summary": "La empresa francesa Mistral AI publico el 29 de octubre los pesos descargables completos de Large 4, su modelo multimodal de mezcla de expertos con 1,05 billones de parametros totales, bajo una licencia abierta propia basada en MIT. Los pesos ya estan disponibles en Hugging Face para quien quiera ejecutar el modelo en su propia infraestructura en lugar de depender de la API de la empresa."
+    },
+    {
+      "tag": "Interactivo",
+      "title": "W3Schools: tutorial interactivo de Kotlin con editor en el navegador",
+      "url": "https://www.w3schools.com/kotlin/",
+      "summary": "Este tutorial gratuito cubre los fundamentos de Kotlin (variables, funciones, clases, seguridad frente a nulos) con un editor 'Try it Yourself' en cada pagina para escribir y ejecutar codigo sin instalar nada. Cada capitulo incluye un cuestionario de autoevaluacion, y al terminar el temario se puede intentar un examen opcional para la certificacion 'Kotlin Developer' de W3Schools."
+    },
+    {
+      "tag": "Curso",
+      "title": "Codecademy: Learn Recursion with Python, el curso gratuito para entender la recursividad",
+      "url": "https://www.codecademy.com/learn/learn-recursion-python",
+      "summary": "Este curso gratuito de Codecademy explica la recursividad en Python desde cero: como una funcion puede llamarse a si misma, el caso base que detiene las llamadas, y ejemplos clasicos como el factorial o Fibonacci. Las lecciones se corrigen al instante en un editor dentro del propio navegador."
+    },
+    {
+      "tag": "Curso",
+      "title": "MDN: Dynamic scripting with JavaScript, el modulo gratuito para dar tus primeros pasos con codigo real en una pagina web",
+      "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting",
+      "summary": "Este modulo gratuito de la documentacion de Mozilla explica como anadir JavaScript a una pagina HTML para que reaccione a lo que hace el usuario, cubriendo variables, bucles, funciones y el DOM con ejemplos practicos. Esta pensado como el paso natural despues de aprender HTML y CSS, antes de pasar a frameworks mas complejos."
+    },
+    {
+      "tag": "Interactivo",
+      "title": "Replit: 100 Days of Python, el reto gratuito de cien lecciones cortas en el navegador",
+      "url": "https://replit.com/learn/100-days-of-python",
+      "summary": "Este reto gratuito de Replit propone aprender Python con una leccion corta cada dia durante cien dias, construyendo un pequeno proyecto distinto en cada una sin salir del navegador. Esta pensado para quien prefiere avanzar poco a poco con una rutina diaria en lugar de sesiones largas y espaciadas."
+    },
+    {
+      "tag": "Interactivo",
+      "title": "Scrimba: Learn React, el curso interactivo gratuito con mas de 140 retos de codigo",
+      "url": "https://scrimba.com/learn/learnreact",
+      "summary": "Este curso gratuito de Scrimba, impartido por Bob Ziroll, ensena React construyendo varios proyectos reales, combinando video con un editor en el que puedes pausar al instructor y modificar su codigo tu mismo. Incluye mas de 140 retos interactivos repartidos en distintos modulos, pensado para quien ya conoce JavaScript y quiere dar el salto a un framework."
+    }
+  ]
+}

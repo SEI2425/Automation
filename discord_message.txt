@@ -1,1 +1,1 @@
-Nuevo numero de PilaPila News ya disponible. La imagen de arriba trae lo mas destacado del dia, y en la web tienes las 10 noticias completas, los tips explicados y los tests por lenguaje. [Abrir PilaPila News](<https://sei2425.github.io/Automation/>)
+Hoy en PilaPila News: la IA vigilando las elecciones de EEUU, un hackeo chino a ConnectWise y un modelo frances que libera sus pesos. Mira la imagen de arriba y entra en la web para verlo todo completo: [Abrir PilaPila News](<https://sei2425.github.io/Automation/>)

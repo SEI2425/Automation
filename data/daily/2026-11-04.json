@@ -1,0 +1,112 @@
+{
+  "date": "2026-11-04",
+  "questions": [
+    {
+      "type": "identify",
+      "lang": "Python",
+      "question": "¿Que imprime este codigo?",
+      "code": "def f(*args, **kwargs):\n    return args, kwargs\n\nprint(f(1, 2, x=3))",
+      "options": [
+        "((1, 2), {'x': 3})",
+        "(1, 2, 3)",
+        "[1, 2, {'x': 3}]",
+        "Error de sintaxis"
+      ],
+      "correct": 0,
+      "hint": "*args recoge los posicionales en una tupla, **kwargs recoge los nombrados en un diccionario.",
+      "explanation": "*args agrupa 1 y 2 en la tupla (1, 2), y **kwargs agrupa x=3 en el diccionario {'x': 3}; la funcion devuelve ambos como una tupla de dos elementos."
+    },
+    {
+      "type": "identify",
+      "lang": "Bash",
+      "question": "¿Que ocurre al ejecutar este script?",
+      "code": "trap \"echo 'Adios'\" EXIT\necho \"Hola\"",
+      "options": [
+        "Imprime 'Hola' y, justo antes de que el script termine, imprime 'Adios' automaticamente",
+        "Imprime solo 'Adios', nunca llega a imprimir 'Hola'",
+        "Da un error porque 'trap' no es un comando valido",
+        "Imprime 'Hola' en un bucle infinito"
+      ],
+      "correct": 0,
+      "hint": "trap registra un comando que se ejecuta cuando ocurre la senal indicada, aqui EXIT.",
+      "explanation": "trap asocia un comando a una senal; EXIT se dispara justo cuando el script esta por terminar, asi que 'Hola' se imprime durante la ejecucion normal y 'Adios' se imprime automaticamente al final, sin que el script lo pida de forma explicita en ese punto."
+    },
+    {
+      "type": "complete",
+      "lang": "SQL",
+      "question": "¿Que falta para comparar cada empleado con otros que tienen el mismo manager?",
+      "code": "SELECT e1.name, e2.name\nFROM employees e1\n____ employees e2 ON e1.manager_id = e2.manager_id AND e1.id <> e2.id;",
+      "options": [
+        "JOIN",
+        "UNION",
+        "GROUP BY",
+        "WHERE"
+      ],
+      "correct": 0,
+      "hint": "Necesitas combinar la tabla employees consigo misma (un self join).",
+      "explanation": "Un self join combina una tabla con una copia de si misma, aqui aliasada como e1 y e2, para comparar filas entre si; la condicion e1.id <> e2.id evita emparejar a cada empleado consigo mismo."
+    },
+    {
+      "type": "identify",
+      "lang": "TypeScript",
+      "question": "¿Que valores acepta el tipo Greeting en este codigo?",
+      "code": "type Lang = \"es\" | \"en\";\ntype Greeting = `hello_${Lang}`;\nconst g: Greeting = \"hello_es\";",
+      "options": [
+        "Unicamente los textos literales 'hello_es' o 'hello_en'",
+        "Cualquier cadena de texto que empiece por 'hello_'",
+        "Solo el texto exacto 'Lang'",
+        "Cualquier valor, porque los template literal types no restringen nada"
+      ],
+      "correct": 0,
+      "hint": "Los template literal types combinan tipos union dentro de una plantilla de texto.",
+      "explanation": "TypeScript expande `hello_${Lang}` a la union de los literales posibles de Lang insertados en la plantilla, es decir 'hello_es' | 'hello_en'; cualquier otro texto da error de compilacion."
+    },
+    {
+      "type": "complete",
+      "lang": "HTML/CSS",
+      "question": "¿Que pseudo-clase falta para colorear solo las filas pares de la lista?",
+      "code": "li:____(2n) {\n  background: #eee;\n}",
+      "options": [
+        "nth-child",
+        "last-child",
+        "only-child",
+        "first-of-type"
+      ],
+      "correct": 0,
+      "hint": "nth-child(2n) selecciona los elementos en posiciones multiplo de 2.",
+      "explanation": "li:nth-child(2n) selecciona cada segundo elemento dentro de su contenedor (las posiciones pares: 2, 4, 6...), coloreando de gris las filas pares de la lista."
+    }
+  ],
+  "tips": [
+    {
+      "text": "Nunca pases directamente a un comando de la terminal un texto que escribio un usuario: usa las funciones que separan el comando de sus argumentos, en vez de concatenar cadenas.",
+      "explanation": "Si tu programa construye un comando de shell pegando texto externo, alguien puede meter caracteres como ; o | para que el sistema ejecute algo completamente distinto a lo que pensabas, un fallo conocido como inyeccion de comandos. Las APIs que reciben el programa y sus argumentos por separado (como subprocess.run con una lista en Python) evitan ese problema de raiz.",
+      "link": "https://cheatsheetseries.owasp.org/cheatsheets/OS_Command_Injection_Defense_Cheat_Sheet.html",
+      "linkLabel": "OWASP: guia de defensa contra la inyeccion de comandos"
+    },
+    {
+      "text": "Si borraste por error un commit o una rama en Git y crees que el trabajo se perdio para siempre, prueba 'git reflog' antes de darlo por perdido.",
+      "explanation": "Git no borra un commit de inmediato solo porque ya no aparezca en ningun 'git log': reflog guarda un registro local de casi todo por donde ha pasado HEAD en los ultimos dias, incluidos commits que una rama borrada o un reset ya no muestran. Desde ahi casi siempre se puede recuperar el hash exacto y volver a el.",
+      "link": "https://git-scm.com/docs/git-reflog",
+      "linkLabel": "Git SCM: documentacion de git reflog"
+    },
+    {
+      "text": "En JavaScript, usa 'const' por defecto para tus variables y reserva 'let' solo para las que de verdad vas a reasignar.",
+      "explanation": "Si una variable nunca cambia de valor, declararla con const se lo dice de inmediato a cualquiera que lea el codigo, sin tener que rastrear el resto de la funcion para comprobarlo. Ademas, si alguien intenta reasignarla por error mas adelante, el propio motor de JavaScript lanza un error al instante en lugar de dejar pasar un bug silencioso.",
+      "link": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/const",
+      "linkLabel": "MDN: la palabra clave const"
+    },
+    {
+      "text": "Si tu aplicacion expone identificadores en una URL publica (como /pedidos/42), evita que sean numeros secuenciales simples: usa UUIDs o ids aleatorios.",
+      "explanation": "Con un numero secuencial, cualquiera puede cambiar el 42 por 41 o 43 en la URL y acceder a datos de otro usuario si la aplicacion no revisa los permisos en cada peticion, un fallo conocido como referencia insegura a objetos. Un identificador aleatorio no evita ese fallo por si solo, pero hace mucho mas dificil que alguien encuentre otros registros solo probando numeros al azar.",
+      "link": "https://cheatsheetseries.owasp.org/cheatsheets/Insecure_Direct_Object_Reference_Prevention_Cheat_Sheet.html",
+      "linkLabel": "OWASP: guia de prevencion de IDOR"
+    },
+    {
+      "text": "Si una jerarquia de clases que heredan unas de otras se vuelve dificil de seguir, considera usar composicion en lugar de herencia.",
+      "explanation": "Heredar de una clase ata tu codigo a toda su estructura interna, y cambiar la clase base puede romper a todas las que heredan de ella sin que sea evidente por que. Con composicion, un objeto simplemente usa otro objeto como una pieza mas, lo que suele ser mas facil de probar y de cambiar mas adelante sin efectos inesperados en el resto del arbol de clases.",
+      "link": "https://en.wikipedia.org/wiki/Composition_over_inheritance",
+      "linkLabel": "Wikipedia: composicion sobre herencia"
+    }
+  ]
+}
