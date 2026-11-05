@@ -472,6 +472,17 @@
       ],
       "correct": 0,
       "explanation": "__slots__ le dice a Python exactamente que atributos tendra cada instancia, evitando el diccionario __dict__ por defecto y ahorrando memoria, aunque a cambio impide anadir atributos nuevos sobre la marcha."
+    },
+    {
+      "q": "¿Que hace la instruccion 'with open(\"archivo.txt\") as f:' en Python?",
+      "opts": [
+        "Abre el archivo y lo cierra automaticamente al salir del bloque, incluso si ocurre un error",
+        "Abre el archivo pero hay que cerrarlo manualmente despues",
+        "Crea una copia del archivo",
+        "Elimina el archivo al terminar el bloque"
+      ],
+      "correct": 0,
+      "explanation": "El gestor de contexto 'with' garantiza que el archivo se cierre automaticamente al salir del bloque, tanto si todo va bien como si se lanza una excepcion, evitando fugas de recursos."
     }
   ],
   "javascript": [
@@ -947,6 +958,17 @@
       ],
       "correct": 0,
       "explanation": "NaN (Not a Number) es, paradojicamente, un valor del tipo number en JavaScript: es tambien el unico valor que no es igual a si mismo (NaN !== NaN)."
+    },
+    {
+      "q": "¿Que ocurre al ejecutar este codigo?\nconsole.log(x);\nvar x = 5;",
+      "opts": [
+        "Imprime undefined, porque la declaracion de 'var' se eleva (hoisting) pero no su asignacion",
+        "Imprime 5",
+        "Lanza un ReferenceError",
+        "Imprime null"
+      ],
+      "correct": 0,
+      "explanation": "Las declaraciones 'var' se elevan (hoisting) al principio del ambito, pero su valor asignado no, asi que en el momento del console.log, x ya existe pero vale undefined."
     }
   ],
   "typescript": [
@@ -1422,6 +1444,17 @@
       ],
       "correct": 0,
       "explanation": "'any' le dice al compilador que deje de comprobar ese valor, mientras que 'unknown' exige reducir (narrow) el tipo con una comprobacion antes de operar con el, manteniendo la seguridad de tipos."
+    },
+    {
+      "q": "¿Para que sirve el tipo 'never' en TypeScript?",
+      "opts": [
+        "Para representar un valor que nunca ocurre, como el retorno de una funcion que siempre lanza una excepcion o entra en un bucle infinito",
+        "Para representar un valor que todavia no se ha asignado",
+        "Es un sinonimo de 'void' usado en versiones antiguas",
+        "Para representar cualquier tipo posible, igual que 'any'"
+      ],
+      "correct": 0,
+      "explanation": "'never' describe funciones que nunca terminan normalmente, por ejemplo porque siempre lanzan un error; es distinto de 'void', que si implica que la funcion termina pero no devuelve un valor util."
     }
   ],
   "java": [
@@ -1897,6 +1930,17 @@
       ],
       "correct": 0,
       "explanation": "Marcar una clase como 'final' impide que cualquier otra clase la extienda; intentarlo produce un error de compilacion."
+    },
+    {
+      "q": "¿Por que es importante sobrescribir hashCode() en Java cuando se sobrescribe equals()?",
+      "opts": [
+        "Porque estructuras como HashMap o HashSet usan hashCode() para ubicar objetos, y dos objetos iguales segun equals() deben tener el mismo hashCode()",
+        "Porque Java no permite sobrescribir equals() sin hashCode()",
+        "Porque hashCode() determina el orden en que se imprimen los objetos",
+        "No es necesario, es solo una convencion sin efecto real"
+      ],
+      "correct": 0,
+      "explanation": "El contrato de Java exige que si dos objetos son iguales segun equals(), deben devolver el mismo hashCode(); de lo contrario, estructuras como HashSet o HashMap pueden no encontrar el objeto aunque este guardado."
     }
   ],
   "kotlin": [
@@ -2372,6 +2416,17 @@
       ],
       "correct": 0,
       "explanation": "Un companion object permite llamar a sus miembros usando el nombre de la clase directamente, sin crear una instancia, cubriendo el hueco que en Java ocupa la palabra clave 'static'."
+    },
+    {
+      "q": "¿Que crea la palabra clave 'object' en Kotlin, usada asi: object Config { val version = \"1.0\" }?",
+      "opts": [
+        "Un singleton: una unica instancia de esa clase, creada de forma perezosa la primera vez que se usa",
+        "Una interfaz vacia",
+        "Una variable local temporal",
+        "Una funcion anonima"
+      ],
+      "correct": 0,
+      "explanation": "'object' en Kotlin declara un singleton: crea automaticamente una unica instancia de esa clase accesible por su nombre, sin necesidad de un constructor ni de instanciarla con 'new'."
     }
   ],
   "sql": [
@@ -2847,6 +2902,17 @@
       ],
       "correct": 0,
       "explanation": "Un indice le permite al motor de base de datos localizar las filas que cumplen una condicion sin recorrer la tabla entera, aunque mantenerlo actualizado anade un pequeno coste extra en cada escritura."
+    },
+    {
+      "q": "¿Cual es la diferencia principal entre una clave primaria (PRIMARY KEY) y una restriccion UNIQUE en SQL?",
+      "opts": [
+        "Una tabla solo puede tener una clave primaria y esta nunca permite NULL, pero puede tener varias restricciones UNIQUE, que si pueden admitir NULL",
+        "Son exactamente lo mismo con nombres distintos",
+        "UNIQUE no impide valores duplicados, solo PRIMARY KEY lo hace",
+        "PRIMARY KEY permite valores NULL y UNIQUE no"
+      ],
+      "correct": 0,
+      "explanation": "Una tabla admite una sola PRIMARY KEY, que nunca permite NULL, mientras que puede tener varias columnas con restriccion UNIQUE, que segun el motor si pueden admitir un valor NULL."
     }
   ],
   "git": [
@@ -3322,6 +3388,17 @@
       ],
       "correct": 0,
       "explanation": "En detached HEAD, Git te situa sobre un commit concreto en vez de sobre una rama; si haces commits nuevos ahi y luego cambias de rama sin crear una nueva para guardarlos, esos commits quedan sin ninguna rama que los referencie y pueden perderse."
+    },
+    {
+      "q": "¿Cual es la diferencia entre 'git fetch' y 'git pull'?",
+      "opts": [
+        "git fetch descarga los cambios remotos sin fusionarlos con tu rama actual; git pull los descarga y los fusiona automaticamente",
+        "Son sinonimos exactos, solo cambia el nombre",
+        "git fetch sube tus cambios locales; git pull los descarga",
+        "git pull solo funciona con ramas remotas protegidas"
+      ],
+      "correct": 0,
+      "explanation": "git fetch actualiza las referencias remotas localmente sin tocar tu rama de trabajo; git pull hace lo mismo pero ademas fusiona esos cambios en tu rama actual automaticamente."
     }
   ],
   "htmlcss": [
@@ -3797,6 +3874,17 @@
       ],
       "correct": 0,
       "explanation": "Por defecto, el ancho y alto de un elemento en CSS no incluyen su padding ni su borde; con border-box, esos espacios se restan del ancho y alto declarados en vez de anadirse, lo que facilita calcular tamanos exactos."
+    },
+    {
+      "q": "¿Para que se usan los pseudo-elementos ::before y ::after en CSS?",
+      "opts": [
+        "Para insertar contenido generado por CSS antes o despues del contenido real de un elemento, sin anadir una etiqueta nueva al HTML",
+        "Para aplicar un estilo solo cuando el elemento se pasa por encima con el raton",
+        "Para ocultar un elemento completo de la pagina",
+        "Para seleccionar el primer y el ultimo hijo de un contenedor"
+      ],
+      "correct": 0,
+      "explanation": "::before y ::after crean un elemento 'virtual' dentro del elemento seleccionado, normalmente junto con la propiedad content, sin tener que anadir una etiqueta extra en el HTML."
     }
   ],
   "bash": [
@@ -4272,6 +4360,17 @@
       ],
       "correct": 0,
       "explanation": "Un here document redirige todo el texto escrito entre las dos marcas EOF como si viniera de un archivo de entrada, util por ejemplo para generar un archivo de configuracion o enviar varias lineas a un comando como cat o mysql."
+    },
+    {
+      "q": "¿Para que sirve la sintaxis $(comando) en un script de Bash?",
+      "opts": [
+        "Para sustitucion de comandos: ejecuta el comando y sustituye esa expresion por su salida como texto",
+        "Para ejecutar el comando en segundo plano",
+        "Para comentar esa linea del script",
+        "Para repetir el comando varias veces"
+      ],
+      "correct": 0,
+      "explanation": "$(comando) ejecuta el comando en una subshell y reemplaza la expresion por el texto que produjo en su salida estandar; por ejemplo, fecha=$(date) guarda en 'fecha' el resultado de ejecutar 'date'."
     }
   ],
   "ia": [
@@ -4736,6 +4835,17 @@
       ],
       "correct": 0,
       "explanation": "Una alucinacion es una respuesta que el modelo presenta con seguridad y coherencia pero que no se corresponde con hechos reales, por ejemplo citas o datos inventados que parecen plausibles."
+    },
+    {
+      "q": "En el contexto de la IA, ¿que es un 'embedding'?",
+      "opts": [
+        "Una representacion numerica (un vector) de un texto, imagen u otro dato, pensada para que elementos con significado parecido queden cerca entre si en ese espacio",
+        "Un tipo de red neuronal usada solo para generar imagenes",
+        "El proceso de entrenar un modelo desde cero sin datos previos",
+        "Un error de programacion especifico de los modelos de lenguaje"
+      ],
+      "correct": 0,
+      "explanation": "Un embedding convierte texto, imagenes u otros datos en una lista de numeros (un vector) de forma que elementos con significado similar queden geometricamente cerca en ese espacio, lo que permite comparar o buscar por similitud."
     }
   ]
 }

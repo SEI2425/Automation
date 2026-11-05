@@ -1,0 +1,87 @@
+{
+  "date": "2026-11-05",
+  "questions": [
+    {
+      "type": "identify",
+      "lang": "Python",
+      "question": "¿Que imprime este codigo?",
+      "code": "nums = [1, 2, 3, 4, 5]\nprint(sum(nums[i] for i in range(len(nums)) if i % 2 == 1))",
+      "options": ["6", "9", "15", "Error"],
+      "correct": 0,
+      "hint": "Solo se suman los elementos en indices impares (1 y 3).",
+      "explanation": "range(len(nums)) genera 0..4; el filtro i % 2 == 1 conserva los indices 1 y 3; nums[1] es 2 y nums[3] es 4, asi que la suma es 6."
+    },
+    {
+      "type": "complete",
+      "lang": "JavaScript",
+      "question": "¿Que metodo falta para que result sea la suma de los cuadrados de cada elemento?",
+      "code": "const valores = [1, 2, 3];\nconst result = valores.____((acc, cur) => acc + cur * cur, 0);\nconsole.log(result); // 14",
+      "options": ["reduce", "map", "filter", "forEach"],
+      "correct": 0,
+      "hint": "Necesitas acumular un unico valor final, no transformar ni filtrar el array.",
+      "explanation": "reduce aplica (acc, cur) => acc + cur*cur empezando en 0: 0+1+4+9 = 14, mientras que map o filter devolverian un array nuevo en vez de un unico numero."
+    },
+    {
+      "type": "identify",
+      "lang": "TypeScript",
+      "question": "¿Que imprime este codigo?",
+      "code": "function envolver<T>(valor: T): [T, string] {\n  return [valor, typeof valor];\n}\nconsole.log(envolver(42));",
+      "options": ["[42, 'number']", "[42, '42']", "Error de compilacion", "['number', 42]"],
+      "correct": 0,
+      "hint": "typeof devuelve en tiempo de ejecucion el nombre del tipo como una cadena de texto.",
+      "explanation": "La funcion generica devuelve el propio valor junto al resultado de typeof valor; para 42, typeof da la cadena 'number', asi que el resultado es [42, 'number']."
+    },
+    {
+      "type": "complete",
+      "lang": "SQL",
+      "question": "¿Que clausula falta para quedarte solo con las categorias cuya suma de ventas supera 1000?",
+      "code": "SELECT category,\n       SUM(amount) AS total\nFROM sales\nGROUP BY category\n____ SUM(amount) > 1000;",
+      "options": ["HAVING", "WHERE", "ORDER BY", "LIMIT"],
+      "correct": 0,
+      "hint": "Necesitas filtrar sobre un resultado ya agregado (SUM), no sobre filas individuales.",
+      "explanation": "HAVING filtra los grupos despues de aplicar GROUP BY y la funcion de agregacion; WHERE no puede usar SUM() directamente porque se evalua antes de que las filas se agrupen."
+    },
+    {
+      "type": "identify",
+      "lang": "Bash",
+      "question": "¿Que hace este bucle de Bash?",
+      "code": "for f in *.csv; do\n  mv \"$f\" \"${f%.csv}_backup.csv\"\ndone",
+      "options": ["Renombra cada archivo .csv anadiendo el sufijo _backup antes de la extension", "Elimina todos los archivos .csv", "Crea una copia de cada archivo .csv sin borrar el original", "Combina todos los archivos .csv en uno solo"],
+      "correct": 0,
+      "hint": "${f%.csv} quita la extension .csv antes de anadir el nuevo sufijo.",
+      "explanation": "El bucle recorre cada .csv y usa mv para renombrarlo quitando '.csv' y anadiendo '_backup.csv', por lo que 'datos.csv' pasa a llamarse 'datos_backup.csv'."
+    }
+  ],
+  "tips": [
+    {
+      "text": "Antes de ejecutar un UPDATE o un DELETE sobre una base de datos real, ejecuta primero un SELECT con la misma clausula WHERE.",
+      "explanation": "Ver exactamente que filas va a afectar el cambio, y comprobar que el numero coincide con lo que esperabas, es la unica forma de confirmar que ese WHERE selecciona lo que crees antes de que sea demasiado tarde para deshacerlo. Convertir el SELECT ya probado en el UPDATE o DELETE final reduce mucho el riesgo de borrar o cambiar datos por error.",
+      "link": "https://sqlstudies.com/2015/02/18/test-your-updates-and-deletes-before-you-run-them/",
+      "linkLabel": "SQL Studies: prueba tus UPDATE y DELETE antes de ejecutarlos"
+    },
+    {
+      "text": "Si escribes JavaScript clasico sin modulos, activa el modo estricto con la linea 'use strict' al principio del archivo.",
+      "explanation": "El modo estricto convierte en errores visibles varios fallos que de otra forma JavaScript ignoraria en silencio, como asignar un valor a una variable que nunca declaraste. Los modulos de JavaScript ya activan este modo automaticamente, pero un script suelto antiguo no lo hace salvo que lo pidas explicitamente.",
+      "link": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode",
+      "linkLabel": "MDN: modo estricto de JavaScript"
+    },
+    {
+      "text": "Para saber si el navegador soporta algo, comprueba esa funcion concreta (feature detection) en lugar de mirar que navegador es (user-agent).",
+      "explanation": "El texto del user-agent lo puede cambiar cualquier navegador o extension, y un navegador nuevo puede no coincidir con ninguna de las comprobaciones que hiciste pensando solo en los navegadores que existian cuando escribiste el codigo. Comprobar directamente si existe la funcion o propiedad que vas a usar, por ejemplo 'if (navigator.geolocation)', funciona con cualquier navegador, presente o futuro, que la soporte.",
+      "link": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Testing/Feature_detection",
+      "linkLabel": "MDN: implementar deteccion de caracteristicas"
+    },
+    {
+      "text": "Si publicas una API, documentala con un formato estandar como OpenAPI (Swagger) en lugar de solo comentarios sueltos en el codigo.",
+      "explanation": "Un documento OpenAPI describe cada endpoint, sus parametros y lo que devuelve en un formato que tanto personas como herramientas pueden leer, lo que permite generar automaticamente documentacion interactiva donde cualquiera puede probar una llamada real desde el navegador. Mantener esa descripcion en comentarios dispersos por el codigo, en cambio, se desactualiza facilmente y nadie puede probarla sin leer el codigo fuente.",
+      "link": "https://swagger.io/docs/specification/about/",
+      "linkLabel": "Swagger: que es OpenAPI"
+    },
+    {
+      "text": "En una aplicacion real, no dependas solo de los logs para enterarte de un error: anade un servicio de monitorizacion que te avise.",
+      "explanation": "Un archivo de log solo es util si alguien lo esta mirando en ese momento, y para cuando un usuario te avisa de un fallo, el contexto exacto que lo provoco puede haberse perdido entre miles de lineas. Una herramienta de monitorizacion de errores agrupa los fallos parecidos, guarda el contexto completo de cada uno y puede avisarte al instante, en lugar de esperar a que alguien revise los registros.",
+      "link": "https://hostman.com/tutorials/sentry-error-tracking-and-monitoring",
+      "linkLabel": "Hostman: seguimiento y monitorizacion de errores con Sentry"
+    }
+  ]
+}

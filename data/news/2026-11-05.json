@@ -1,0 +1,65 @@
+{
+  "date": "2026-11-05",
+  "items": [
+    {
+      "tag": "Impacto",
+      "title": "Los votantes de EEUU rechazan casi todas las medidas sobre centros de datos de IA en las elecciones de mitad de mandato",
+      "url": "https://www.cnbc.com/2026/11/04/data-center-ballot-measures-2026-midterm.html",
+      "summary": "El 3 de noviembre, votantes de diez estados decidieron sobre unas 41 medidas locales relacionadas con centros de datos de inteligencia artificial, y casi todas las que ya tienen resultado se saldaron con un rechazo o nuevas restricciones a su construccion. En Ohio, que concentraba 21 de esas medidas, los 19 municipios con resultado conocido votaron en contra del desarrollo, reflejando un malestar creciente por el consumo de energia y agua de estas instalaciones."
+    },
+    {
+      "tag": "Impacto",
+      "title": "Los deepfakes circularon en las elecciones de mitad de mandato de EEUU pero no decidieron las carreras mas ajustadas, segun un analisis",
+      "url": "https://time.com/article/2026/11/04/midterm-elections-results-ai-industry-data-centers/",
+      "summary": "Un analisis de Time publicado el 4 de noviembre repaso varios videos falsos generados con IA que circularon antes de los comicios del 3 de noviembre, como uno que mostraba al senador electo de Maine Troy Jackson amenazando a su personal, sin que eso impidiera que ganara por mas de siete puntos. El reportaje concluye que, aunque el contenido falso se difundio en varias campanas, no parece haber cambiado el resultado en la mayoria de las carreras analizadas."
+    },
+    {
+      "tag": "Impacto",
+      "title": "Anthropic incorpora informacion oficial de votacion a Claude para las elecciones de mitad de mandato de EEUU",
+      "url": "https://www.anthropic.com/news/election-safeguards-update",
+      "summary": "Anthropic anuncio el 14 de octubre que Claude empezaria a mostrar informacion oficial de registro, colegios electorales y resultados tomada de Democracy Works para los usuarios de EEUU antes de los comicios del 3 de noviembre. La empresa dijo que, en una muestra de unas 250.000 conversaciones reales, solo alrededor del 0,002% violaba sus politicas de integridad electoral."
+    },
+    {
+      "tag": "Impacto",
+      "title": "Un estudio multinacional confirma que la IA mejora la precision al diagnosticar un ictus en un escaner cerebral sin contraste",
+      "url": "https://medicalxpress.com/news/2026-09-diagnosis-ai-multinational.html",
+      "summary": "Un equipo liderado por el Hospital Guro de la Universidad de Korea probo un sistema de IA que senala posibles obstrucciones de grandes vasos sanguineos en tomografias cerebrales simples, sin contraste. Con la ayuda de la IA, la precision diagnostica de los profesionales medicos subio de un area bajo la curva de 0,718 a 0,852, sin indicios claros de que confiaran a ciegas en la herramienta."
+    },
+    {
+      "tag": "Lanzamiento",
+      "title": "OpenAI lanza GPT-6.1 Terra, un modelo mas rapido y un 50% mas barato centrado en el uso del ordenador",
+      "url": "https://bleepingcomputer.com/news/artificial-intelligence/openai-launches-gpt-61-terra-with-3x-faster-ai-agents-50-percent-lower-pricing",
+      "summary": "OpenAI presento el 26 de octubre GPT-6.1 Terra, un modelo intermedio pensado para el uso de ordenador, razonamiento visual y programacion, con un precio de 1 dolar por millon de tokens de entrada y 5 por millon de salida, la mitad que su predecesor Sol. La empresa asegura que supera a GPT-5.6 Terra por 15 puntos en su prueba de uso de ordenador 'Agents Last Exam' a un tercio del coste."
+    },
+    {
+      "tag": "Interactivo",
+      "title": "Exercism: practica Julia con ejercicios interactivos y mentoria gratuita",
+      "url": "https://exercism.org/tracks/julia",
+      "summary": "Este recorrido gratuito de Exercism ofrece decenas de ejercicios del lenguaje Julia, pensado para computo cientifico y analisis numerico, con correccion automatica de tu codigo nada mas enviarlo. Como en el resto de la plataforma, tambien puedes pedir mentoria gratuita de programadores voluntarios que comentan tu solucion."
+    },
+    {
+      "tag": "Interactivo",
+      "title": "NodeSchool: aprende Node.js y JavaScript con talleres gratuitos que se ejecutan en tu propia terminal",
+      "url": "https://nodeschool.io/",
+      "summary": "NodeSchool es un proyecto gratuito y de codigo abierto que ofrece decenas de 'workshoppers': paquetes que se instalan con npm y plantean ejercicios cortos de JavaScript y Node.js directamente en tu terminal, con correccion automatica al momento. La mayoria funcionan sin conexion a internet una vez instalados, y tambien existen grupos locales que organizan sesiones presenciales gratuitas."
+    },
+    {
+      "tag": "Interactivo",
+      "title": "OverTheWire: Behemoth, el wargame gratuito para dar el siguiente paso en explotacion de binarios en Linux",
+      "url": "https://overthewire.org/wargames/behemoth/",
+      "summary": "Behemoth es una serie de niveles gratuitos de OverTheWire algo mas avanzada que Leviathan, centrada en errores de programacion habituales como desbordamientos de buffer, condiciones de carrera y escalada de privilegios. No se proporciona el codigo fuente de los retos, por lo que tambien obliga a practicar ingenieria inversa basica."
+    },
+    {
+      "tag": "Interactivo",
+      "title": "Programiz: aprende Python, C, C++, Java o Kotlin con tutoriales y un compilador gratuito en el navegador",
+      "url": "https://www.programiz.com/python-programming/online-compiler/",
+      "summary": "Programiz ofrece tutoriales gratuitos de varios lenguajes de programacion junto a un compilador online donde se puede escribir y ejecutar codigo real sin instalar nada. Su seccion de Python combina explicaciones cortas con ejemplos editables, pensada para quien quiere probar cada concepto nuevo nada mas leerlo."
+    },
+    {
+      "tag": "Curso",
+      "title": "MDN: Forms, el modulo gratuito para aprender a construir formularios HTML accesibles",
+      "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Forms",
+      "summary": "Este modulo gratuito de la documentacion de Mozilla explica como estructurar formularios HTML, validar los datos que introduce el usuario y darles estilo con CSS, con ejemplos de codigo en cada seccion. Esta pensado para quien ya conoce HTML y CSS basico y quiere aprender a recoger datos de forma correcta y accesible."
+    }
+  ]
+}
