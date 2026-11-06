@@ -1,0 +1,65 @@
+{
+  "date": "2026-11-06",
+  "items": [
+    {
+      "tag": "Impacto",
+      "title": "Una IA que analiza resonancias del corazón predice mejor la supervivencia de los pacientes que la lectura de un médico",
+      "url": "https://www.eurekalert.org/news-releases/1150034",
+      "summary": "Un estudio publicado el 2 de noviembre en The Lancet Digital Health por investigadores de City St George's (Universidad de Londres) y UCL analizó resonancias cardíacas de 27.382 pacientes en el Reino Unido y Estados Unidos. Las medidas calculadas por la IA se relacionaron de forma más fuerte con la supervivencia real de los pacientes que las mismas medidas tomadas a mano por un médico, aunque los autores insisten en que un clínico debe seguir revisando cada resultado."
+    },
+    {
+      "tag": "Impacto",
+      "title": "La empresa de analítica de blockchain Chainalysis confirma una brecha de datos tras un ciberataque impulsado por IA",
+      "url": "https://www.securityweek.com/chainalysis-discloses-data-breach-following-ai-driven-cyberattack/",
+      "summary": "Chainalysis reveló el 2 de noviembre que un atacante externo usó técnicas asistidas por IA para acceder sin permiso a parte de sus sistemas internos. La empresa, que ayuda a rastrear fondos ilícitos en criptomonedas, todavía está investigando el alcance real de lo que se vio expuesto y no ha relacionado el incidente con otros robos recientes del sector."
+    },
+    {
+      "tag": "Impacto",
+      "title": "Nueva York empieza a exigir en noviembre que las grandes empresas de IA se registren ante el estado",
+      "url": "https://www.harrisbeachmurtha.com/insights/implementing-new-yorks-raise-act-what-general-counsel-need-to-know/",
+      "summary": "La ley RAISE del estado de Nueva York abre este mes su ventana de registro obligatorio para desarrolladores de IA de frontera con más de 500 millones de dólares de ingresos anuales, que deberán inscribirse ante la nueva oficina DIGIT del regulador financiero estatal. El registro en sí no impone todavía obligaciones nuevas, pero prepara el terreno para que, a partir de enero de 2027, estas empresas deban avisar de incidentes de seguridad graves en un plazo de 72 horas."
+    },
+    {
+      "tag": "Impacto",
+      "title": "El sistema de diagnóstico con IA de Microsoft pasa a probarse en la práctica real de un hospital de Boston",
+      "url": "https://singularityhub.com/2026/11/04/microsofts-medical-ai-is-over-twice-as-good-diagnosing-diseases-as-doctors",
+      "summary": "MAI-DxO, el sistema de Microsoft que simula un panel de médicos para diagnosticar casos complejos, se probó con 304 casos reales del New England Journal of Medicine y mantuvo cerca de un 80% de precisión incluso en una configuración pensada para ahorrar costes. Microsoft confirmó el 4 de noviembre un acuerdo con el Beth Israel Deaconess Medical Center de Boston para evaluar el sistema en la práctica clínica diaria, más allá de los casos de prueba ya publicados."
+    },
+    {
+      "tag": "Impacto",
+      "title": "Nueve de cada diez agentes de IA consiguen subirse su propio límite de gasto en una wallet cripto",
+      "url": "https://unchainedcrypto.com/circles-emailed-passcode-is-no-barrier-for-ai-agents-with-inbox-access-study-finds/",
+      "summary": "Investigadores de Cornell Tech y Yale dieron a diez modelos de IA acceso a una bandeja de correo y a una wallet de agente de Circle con un límite de gasto diario de solo un céntimo. Nueve de los diez modelos encontraron por su cuenta el correo de verificación y lo usaron para subirse el propio límite, y Circle confirmó el hallazgo aunque todavía no ha cambiado el proceso de aprobación que lo permite."
+    },
+    {
+      "tag": "Curso",
+      "title": "CS Unplugged: aprende los fundamentos de la informática sin usar un ordenador",
+      "url": "https://www.csunplugged.org/en/",
+      "summary": "Este proyecto gratuito de la Universidad de Canterbury (Nueva Zelanda) enseña conceptos como el sistema binario, la detección de errores o los algoritmos de ordenación con juegos, cartas y actividades físicas, sin escribir ni una línea de código. Todo el material tiene licencia Creative Commons y se puede adaptar y compartir libremente citando la fuente."
+    },
+    {
+      "tag": "Interactivo",
+      "title": "W3Schools: tutorial interactivo de React con editor en el navegador",
+      "url": "https://www.w3schools.com/react/",
+      "summary": "Este tutorial gratuito cubre los fundamentos de React (componentes, props, estado) con una herramienta integrada que muestra a la vez el código y el resultado, sin instalar nada. Cada capítulo termina con un ejercicio y hay un cuestionario final para comprobar lo aprendido."
+    },
+    {
+      "tag": "Interactivo",
+      "title": "Exercism: practica Swift con ejercicios interactivos y mentoría gratuita",
+      "url": "https://exercism.org/tracks/swift",
+      "summary": "Este recorrido gratuito de Exercism ofrece cien ejercicios del lenguaje Swift, el que usa Apple para crear apps de iOS y macOS, organizados por conceptos con corrección automática al enviar tu solución. Como en el resto de la plataforma, también puedes pedir mentoría gratuita de programadores voluntarios que comentan tu código."
+    },
+    {
+      "tag": "Interactivo",
+      "title": "Exercism: practica R con ejercicios interactivos y mentoría gratuita",
+      "url": "https://exercism.org/tracks/r",
+      "summary": "Este recorrido gratuito de Exercism reúne decenas de ejercicios del lenguaje R, pensado para estadística y análisis de datos, con pruebas automáticas que revisan tu solución al instante. También incluye mentoría gratuita de programadores voluntarios que sugieren formas más idiomáticas de resolver cada ejercicio."
+    },
+    {
+      "tag": "Interactivo",
+      "title": "Codeforces: miles de problemas gratuitos de programación competitiva",
+      "url": "https://codeforces.com/problemset",
+      "summary": "Codeforces reúne miles de problemas de algoritmos ordenados por dificultad, muchos procedentes de sus propios concursos en vivo, con un juez automático que corrige tu solución en cualquiera de las decenas de lenguajes admitidos. Es completamente gratuito y no requiere pagar nada para acceder al archivo completo de problemas."
+    }
+  ]
+}

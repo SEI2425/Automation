@@ -1,0 +1,112 @@
+{
+  "date": "2026-11-06",
+  "questions": [
+    {
+      "type": "complete",
+      "lang": "Python",
+      "question": "¿Qué número falta para que result contenga ['ANA', 'EVE']?",
+      "code": "words = [\"ana\", \"bob\", \"eve\", \"zoe\"]\nresult = [w.upper() for i, w in enumerate(words) if i % 2 == ____]\nprint(result)",
+      "options": [
+        "0",
+        "1",
+        "2",
+        "len(words)"
+      ],
+      "correct": 0,
+      "hint": "enumerate empieza a contar los índices desde 0; fíjate en qué posiciones ocupan 'ana' y 'eve'.",
+      "explanation": "'ana' está en el índice 0 y 'eve' en el índice 2, ambos pares; comparar i % 2 == 0 selecciona exactamente esas dos palabras antes de convertirlas a mayúsculas."
+    },
+    {
+      "type": "complete",
+      "lang": "JavaScript",
+      "question": "¿Qué método falta para obtener el valor asociado a la clave 'a'?",
+      "code": "const m = new Map();\nm.set(\"a\", 1).set(\"b\", 2);\nconsole.log(m.____(\"a\"));",
+      "options": [
+        "get",
+        "find",
+        "at",
+        "fetch"
+      ],
+      "correct": 0,
+      "hint": "Necesitas el método que devuelve el valor guardado bajo una clave concreta de un Map.",
+      "explanation": "get(clave) devuelve el valor asociado a esa clave en un Map, o undefined si no existe; en este caso devuelve 1."
+    },
+    {
+      "type": "identify",
+      "lang": "TypeScript",
+      "question": "¿Qué imprime este código?",
+      "code": "function doble(valor: unknown): number {\n  if (typeof valor === \"number\") {\n    return valor * 2;\n  }\n  return 0;\n}\nconsole.log(doble(\"5\"));",
+      "options": [
+        "0",
+        "10",
+        "55",
+        "Error de compilación"
+      ],
+      "correct": 0,
+      "hint": "'5' entre comillas es un string, no un number, así que la comprobación typeof valor === 'number' es falsa.",
+      "explanation": "Como el argumento es la cadena '5' y no el número 5, la condición typeof valor === 'number' no se cumple, así que la función devuelve 0 en lugar de duplicar el valor."
+    },
+    {
+      "type": "identify",
+      "lang": "Java",
+      "question": "¿Qué imprime este código?",
+      "code": "String texto = null;\nSystem.out.println(texto == null ? \"vacío\" : texto.length());",
+      "options": [
+        "vacío",
+        "0",
+        "null",
+        "NullPointerException"
+      ],
+      "correct": 0,
+      "hint": "El operador ternario comprueba primero si texto es null antes de intentar usarlo.",
+      "explanation": "Como texto es null, la condición texto == null es verdadera y el ternario devuelve directamente la cadena 'vacío', sin llegar a llamar a texto.length(), lo que evitaría un NullPointerException."
+    },
+    {
+      "type": "identify",
+      "lang": "SQL",
+      "question": "¿Qué devuelve esta consulta?",
+      "code": "SELECT name, salary,\n       LEAD(salary) OVER (ORDER BY salary) AS siguiente_salario\nFROM employees;",
+      "options": [
+        "Para cada empleado, el salario del siguiente empleado en el orden ascendente (NULL para el último)",
+        "El salario más alto de toda la empresa",
+        "Para cada empleado, el salario del empleado anterior en el orden ascendente",
+        "Elimina los empleados con el salario más bajo"
+      ],
+      "correct": 0,
+      "hint": "LEAD() mira hacia la fila siguiente según el ORDER BY indicado, al contrario que LAG().",
+      "explanation": "LEAD(salary) OVER (ORDER BY salary) devuelve, para cada fila, el valor de salary de la siguiente fila en ese orden; la última fila no tiene una fila siguiente, así que su resultado es NULL."
+    }
+  ],
+  "tips": [
+    {
+      "text": "Escribe tus tests para que puedan ejecutarse de forma independiente, sin importar en qué orden se lancen.",
+      "explanation": "Si un test solo pasa porque otro se ejecutó antes y dejó cierto dato preparado, cualquier cambio en el orden de ejecución, o ejecutar ese test solo, hace que falle sin ningún motivo aparente. Diseñar cada test para que prepare sus propios datos desde cero evita este tipo de fallos fantasma y hace mucho más fácil depurar cuál es el problema real.",
+      "link": "https://docs.pytest.org/en/stable/explanation/goodpractices.html",
+      "linkLabel": "pytest: buenas prácticas de testing"
+    },
+    {
+      "text": "Usa 'npx' para ejecutar una herramienta de Node.js sin tener que instalarla de forma global en tu sistema.",
+      "explanation": "Instalar paquetes de forma global acumula versiones distintas entre proyectos y puede chocar entre sí; npx descarga y ejecuta el paquete una sola vez, o usa la copia local del proyecto si ya existe, sin ensuciar el resto de tu ordenador. Es especialmente útil para probar una herramienta nueva sin comprometerte a instalarla.",
+      "link": "https://docs.npmjs.com/cli/v10/commands/npx",
+      "linkLabel": "npm Docs: npx"
+    },
+    {
+      "text": "Si el navegador avisa de 'contenido mixto' en una página con HTTPS, no lo ignores: significa que una parte de esa página sigue viajando sin cifrar.",
+      "explanation": "Una página servida por HTTPS que carga una imagen, un script o una hoja de estilos por HTTP simple deja esa parte del contenido expuesta a ser leída o modificada por cualquiera en la misma red. La solución casi siempre es tan simple como cambiar esa URL concreta de 'http://' a 'https://', una vez confirmado que el recurso también se sirve de forma segura.",
+      "link": "https://developer.mozilla.org/en-US/docs/Web/Security/Mixed_content",
+      "linkLabel": "MDN: contenido mixto"
+    },
+    {
+      "text": "Si tu proyecto usa un ORM, revisa de vez en cuando la consulta SQL real que genera, no asumas que siempre es eficiente.",
+      "explanation": "Un ORM traduce tu código a SQL por ti, pero esa traducción automática puede acabar generando consultas mucho más lentas o repetitivas de lo que esperarías si la escribieras a mano. La mayoría de ORMs ofrecen una forma de mostrar el SQL generado antes de ejecutarlo, y revisarlo de vez en cuando ayuda a detectar problemas de rendimiento antes de que lleguen a producción.",
+      "link": "https://docs.djangoproject.com/en/5.0/faq/models/",
+      "linkLabel": "Django FAQ: ver las consultas SQL reales"
+    },
+    {
+      "text": "Entiende la diferencia entre una librería y un framework: a una librería la llamas tú, un framework te llama a ti.",
+      "explanation": "Cuando usas una librería, tu código decide cuándo y cómo invocar cada función; con un framework, es el propio framework el que controla el flujo general y llama a tu código en los puntos que él decide, una idea conocida como inversión de control. Saber en qué situación estás ayuda a entender por qué algunas cosas se configuran de una forma muy distinta entre ambos tipos de herramienta.",
+      "link": "https://martinfowler.com/bliki/InversionOfControl.html",
+      "linkLabel": "Martin Fowler: Inversion of Control"
+    }
+  ]
+}

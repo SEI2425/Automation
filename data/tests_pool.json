@@ -483,6 +483,17 @@
       ],
       "correct": 0,
       "explanation": "El gestor de contexto 'with' garantiza que el archivo se cierre automaticamente al salir del bloque, tanto si todo va bien como si se lanza una excepcion, evitando fugas de recursos."
+    },
+    {
+      "q": "¿Qué devuelve `all([1, 2, 0, 3])`?",
+      "opts": [
+        "False",
+        "True",
+        "0",
+        "Error"
+      ],
+      "correct": 0,
+      "explanation": "all() devuelve True solo si todos los elementos son verdaderos (truthy); como 0 es falsy, el resultado es False."
     }
   ],
   "javascript": [
@@ -969,6 +980,17 @@
       ],
       "correct": 0,
       "explanation": "Las declaraciones 'var' se elevan (hoisting) al principio del ambito, pero su valor asignado no, asi que en el momento del console.log, x ya existe pero vale undefined."
+    },
+    {
+      "q": "¿Qué devuelve `Number.isInteger(4.0)`?",
+      "opts": [
+        "true",
+        "false",
+        "\"4\"",
+        "NaN"
+      ],
+      "correct": 0,
+      "explanation": "JavaScript no distingue 4.0 de 4: todos los números no enteros especiales se guardan igual, así que Number.isInteger comprueba si el valor no tiene parte decimal, y 4.0 matemáticamente es un entero."
     }
   ],
   "typescript": [
@@ -1455,6 +1477,17 @@
       ],
       "correct": 0,
       "explanation": "'never' describe funciones que nunca terminan normalmente, por ejemplo porque siempre lanzan un error; es distinto de 'void', que si implica que la funcion termina pero no devuelve un valor util."
+    },
+    {
+      "q": "¿Qué diferencia hay, en TypeScript, entre escribir `number[]` y `Array<number>`?",
+      "opts": [
+        "Ninguna: son formas equivalentes de escribir el mismo tipo",
+        "Array<number> permite valores null y number[] no",
+        "number[] es de solo lectura y Array<number> no",
+        "Son tipos completamente distintos e incompatibles"
+      ],
+      "correct": 0,
+      "explanation": "number[] es simplemente azúcar sintáctico para Array<number>; el compilador los trata exactamente igual."
     }
   ],
   "java": [
@@ -1941,6 +1974,17 @@
       ],
       "correct": 0,
       "explanation": "El contrato de Java exige que si dos objetos son iguales segun equals(), deben devolver el mismo hashCode(); de lo contrario, estructuras como HashSet o HashMap pueden no encontrar el objeto aunque este guardado."
+    },
+    {
+      "q": "¿Qué imprime este código?\npublic class Main {\n    static int test() {\n        try {\n            return 1;\n        } finally {\n            System.out.println(\"finally\");\n        }\n    }\n    public static void main(String[] args) {\n        System.out.println(test());\n    }\n}",
+      "opts": [
+        "finally\n1",
+        "1\nfinally",
+        "1",
+        "finally"
+      ],
+      "correct": 0,
+      "explanation": "El bloque finally se ejecuta siempre antes de que el método realmente devuelva el valor, incluso cuando hay un return dentro del try; por eso 'finally' se imprime antes que el 1 devuelto por test()."
     }
   ],
   "kotlin": [
@@ -2427,6 +2471,17 @@
       ],
       "correct": 0,
       "explanation": "'object' en Kotlin declara un singleton: crea automaticamente una unica instancia de esa clase accesible por su nombre, sin necesidad de un constructor ni de instanciarla con 'new'."
+    },
+    {
+      "q": "¿Qué imprime este código?\nval obj: Any = \"texto\"\nval numero = obj as? Int\nprintln(numero)",
+      "opts": [
+        "null",
+        "0",
+        "Error de compilación",
+        "ClassCastException"
+      ],
+      "correct": 0,
+      "explanation": "El operador 'as?' intenta el cast de forma segura: si obj no es realmente un Int, en lugar de lanzar una excepción como haría 'as', devuelve null."
     }
   ],
   "sql": [
@@ -2913,6 +2968,17 @@
       ],
       "correct": 0,
       "explanation": "Una tabla admite una sola PRIMARY KEY, que nunca permite NULL, mientras que puede tener varias columnas con restriccion UNIQUE, que segun el motor si pueden admitir un valor NULL."
+    },
+    {
+      "q": "¿Qué diferencia principal hay entre `DELETE FROM tabla;` y `TRUNCATE TABLE tabla;` cuando se quiere vaciar una tabla por completo?",
+      "opts": [
+        "TRUNCATE suele ser más rápida porque no registra cada fila eliminada individualmente, mientras que DELETE sí lo hace y permite deshacerse con ROLLBACK en muchos motores",
+        "No hay ninguna diferencia real entre ambos comandos",
+        "DELETE borra la estructura de la tabla además de los datos, y TRUNCATE solo borra los datos",
+        "TRUNCATE solo funciona sobre tablas vacías"
+      ],
+      "correct": 0,
+      "explanation": "DELETE elimina las filas una a una y queda registrado en el log de transacciones, lo que permite revertirlo; TRUNCATE libera las páginas de datos directamente, es mucho más rápida en tablas grandes, pero en la mayoría de motores no se puede deshacer tan fácilmente."
     }
   ],
   "git": [
@@ -3399,6 +3465,17 @@
       ],
       "correct": 0,
       "explanation": "git fetch actualiza las referencias remotas localmente sin tocar tu rama de trabajo; git pull hace lo mismo pero ademas fusiona esos cambios en tu rama actual automaticamente."
+    },
+    {
+      "q": "¿Qué diferencia hay entre configurar algo con `git config --global user.name \"Ana\"` y con `git config user.name \"Ana\"` (sin --global) dentro de un repositorio?",
+      "opts": [
+        "--global aplica esa configuración a todos los repositorios del usuario en esa máquina, mientras que sin esa opción solo afecta al repositorio actual",
+        "Son exactamente lo mismo, --global es solo un alias",
+        "Sin --global el comando falla si no existe ya un repositorio Git",
+        "--global solo funciona la primera vez que se usa Git en el ordenador"
+      ],
+      "correct": 0,
+      "explanation": "git config --global guarda el valor en un archivo de configuración global del usuario (~/.gitconfig), válido para todos sus repositorios; sin esa opción, el valor se guarda solo en el archivo de configuración local de ese repositorio concreto (.git/config), y tiene prioridad sobre el global."
     }
   ],
   "htmlcss": [
@@ -3885,6 +3962,17 @@
       ],
       "correct": 0,
       "explanation": "::before y ::after crean un elemento 'virtual' dentro del elemento seleccionado, normalmente junto con la propiedad content, sin tener que anadir una etiqueta extra en el HTML."
+    },
+    {
+      "q": "¿Qué diferencia hay entre las unidades CSS 'em' y 'rem' al definir un tamaño de fuente?",
+      "opts": [
+        "'em' se calcula en relación al tamaño de fuente del elemento padre, mientras que 'rem' siempre se calcula en relación al tamaño de fuente del elemento raíz (html)",
+        "Son exactamente la misma unidad, solo cambia el nombre",
+        "'rem' solo funciona dentro de un elemento con position: relative",
+        "'em' mide píxeles absolutos y 'rem' mide porcentajes"
+      ],
+      "correct": 0,
+      "explanation": "'em' depende del tamaño de fuente heredado del elemento donde se usa, lo que puede acumularse en anidamientos profundos, mientras que 'rem' siempre se basa en el tamaño de fuente definido en la raíz del documento (normalmente 16px por defecto), lo que hace más predecibles los cálculos."
     }
   ],
   "bash": [
@@ -4371,6 +4459,17 @@
       ],
       "correct": 0,
       "explanation": "$(comando) ejecuta el comando en una subshell y reemplaza la expresion por el texto que produjo en su salida estandar; por ejemplo, fecha=$(date) guarda en 'fecha' el resultado de ejecutar 'date'."
+    },
+    {
+      "q": "¿Qué controla la variable especial IFS (Internal Field Separator) en Bash?",
+      "opts": [
+        "Los caracteres que Bash usa para separar palabras al dividir una cadena, por ejemplo al leer una línea con 'read' o al expandir un array",
+        "El número máximo de procesos en segundo plano permitidos",
+        "El formato en que se muestran las fechas con el comando date",
+        "El directorio donde Bash busca los ejecutables"
+      ],
+      "correct": 0,
+      "explanation": "Por defecto IFS vale espacio, tabulador y salto de línea, y determina dónde corta Bash una cadena en palabras separadas; cambiar su valor, por ejemplo a una coma, permite leer líneas de un CSV campo por campo con 'read'."
     }
   ],
   "ia": [
@@ -4846,6 +4945,17 @@
       ],
       "correct": 0,
       "explanation": "Un embedding convierte texto, imagenes u otros datos en una lista de numeros (un vector) de forma que elementos con significado similar queden geometricamente cerca en ese espacio, lo que permite comparar o buscar por similitud."
+    },
+    {
+      "q": "¿Qué es LoRA (Low-Rank Adaptation) en el contexto del ajuste de modelos de lenguaje?",
+      "opts": [
+        "Una técnica que ajusta un modelo entrenando solo un pequeño número de parámetros adicionales, en lugar de modificar todos los parámetros originales del modelo",
+        "Un formato de archivo para guardar los pesos completos de un modelo",
+        "Un tipo de arquitectura de red neuronal alternativa al Transformer",
+        "Una medida de cuánta electricidad consume entrenar un modelo"
+      ],
+      "correct": 0,
+      "explanation": "LoRA congela los parámetros originales del modelo y añade un número reducido de parámetros nuevos entrenables, lo que permite especializar un modelo grande para una tarea concreta con mucho menos coste de memoria y tiempo que reentrenar todos sus parámetros."
     }
   ]
 }
