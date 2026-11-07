@@ -1,0 +1,65 @@
+{
+  "date": "2026-11-07",
+  "items": [
+    {
+      "tag": "Impacto",
+      "title": "Tres hombres son acusados de robar 129 millones de dólares a empresas usando voces e identidades falsificadas con IA",
+      "url": "https://www.nbcnews.com/news/us-news/3-foreign-nationals-allegedly-used-ai-mimic-ceos-129m-scheme-doj-says-rcna607818",
+      "summary": "El Departamento de Justicia de EEUU acusó el 5 de noviembre a Jacob Soall, Sharon Hazan y Guy Sheetrit de usar IA para clonar las voces de directivos y abogados de miles de empresas, haciéndose pasar por ellos para autorizar transferencias falsas por valor de unos 129 millones de dólares. Los tres fueron arrestados entre junio y septiembre en España y Reino Unido, y ahora esperan su extradición a Estados Unidos."
+    },
+    {
+      "tag": "Impacto",
+      "title": "El Departamento de Agricultura de EEUU estrena una herramienta de IA para revisar sus datos de cosechas tras varios errores",
+      "url": "https://www.thestar.com.my/tech/tech-news/2026/11/07/usda-to-launch-ai-tool-to-check-crop-production-data-after-errors",
+      "summary": "El USDA anunció que usará una herramienta de inteligencia artificial propia para revisar los datos de su informe de producción de cosechas, previsto para el 10 de noviembre, después de que un error en los datos de maíz de septiembre pasara desapercibido. La agencia explicó que el fallo se originó al combinar mal los datos de acres de maíz de regadío y de secano en Nebraska y Kansas, y que la IA se suma a las revisiones ya existentes sin sustituirlas."
+    },
+    {
+      "tag": "Impacto",
+      "title": "El sistema chino de IA MAZU, usado ya en ocho países para prever tifones, todavía falla con fenómenos extremos poco habituales",
+      "url": "https://sixthtone.com/news/1019225",
+      "summary": "El Instituto de Tifones de Shanghai despliega MAZU, un sistema que combina modelos de IA con datos satelitales para prever la trayectoria e intensidad de tifones, en ocho países además de China. Según un reportaje publicado el 6 de noviembre, los propios meteorólogos reconocen que el sistema aún tiene dificultades para anticipar giros o intensificaciones repentinas poco frecuentes en los datos de entrenamiento."
+    },
+    {
+      "tag": "Impacto",
+      "title": "xAI empieza a marcar con una firma invisible todo el texto generado por la API de Grok para cumplir con la ley de IA de la Unión Europea",
+      "url": "https://cryptobriefing.com/xai-grok-text-watermarking-api/",
+      "summary": "Desde el 7 de noviembre, xAI añade por defecto una marca de agua invisible al texto que generan siete modelos de su API de Grok, detectable con una cabecera técnica en la respuesta. La empresa dice que el cambio responde a las exigencias de transparencia de la ley de IA de la Unión Europea, y permite a los administradores desactivarlo modelo por modelo salvo en los casos bloqueados por defecto."
+    },
+    {
+      "tag": "Lanzamiento",
+      "title": "Tencent lanza Hy4, su modelo insignia que por primera vez entiende imágenes y puede manejar directamente un ordenador",
+      "url": "https://technode.com/2026/11/04/tencent-launches-hy4-with-vision-and-computer-use-capabilities/",
+      "summary": "Tencent presentó el 4 de noviembre Hy4, la última versión de su familia Hunyuan, con una arquitectura de mezcla de expertos de unos 770.000 millones de parámetros y ventana de contexto de un millón de tokens. Es el primer modelo Hunyuan capaz de interpretar imágenes y gráficos complejos y de operar directamente un ordenador mediante ratón y teclado tras entrenarse con software profesional como Blender o programas de diseño asistido."
+    },
+    {
+      "tag": "Interactivo",
+      "title": "Exercism: practica Erlang con ejercicios interactivos y mentoría gratuita",
+      "url": "https://exercism.org/tracks/erlang",
+      "summary": "Este recorrido gratuito de Exercism ofrece decenas de ejercicios del lenguaje funcional Erlang, pensado para sistemas distribuidos y tolerantes a fallos, con corrección automática de tu código nada más enviarlo. Como en el resto de la plataforma, también puedes pedir mentoría gratuita de programadores voluntarios que comentan tu solución."
+    },
+    {
+      "tag": "Interactivo",
+      "title": "Exercism: practica el lenguaje D con ejercicios interactivos y mentoría gratuita",
+      "url": "https://exercism.org/tracks/d",
+      "summary": "Este recorrido gratuito de Exercism reúne ejercicios del lenguaje D, pensado como una alternativa moderna a C y C++ con recolección de basura opcional, corregidos automáticamente al enviarlos. También incluye mentoría gratuita de programadores voluntarios que sugieren formas más idiomáticas de resolver cada ejercicio."
+    },
+    {
+      "tag": "Interactivo",
+      "title": "OverTheWire: Narnia, el wargame gratuito para dar tus primeros pasos en la explotación de binarios",
+      "url": "https://overthewire.org/wargames/narnia/",
+      "summary": "Narnia es una serie de diez niveles gratuitos de OverTheWire, algo más sencilla que Leviathan, que da el código fuente de cada programa para facilitar entender por qué funciona cada fallo. Se juega conectándose por SSH a un servidor real, y es un buen primer contacto con desbordamientos de buffer antes de pasar a retos más avanzados."
+    },
+    {
+      "tag": "Curso",
+      "title": "Codecademy: Learn PHP, el curso gratuito para dar tus primeros pasos en el lenguaje",
+      "url": "https://www.codecademy.com/learn/learn-php",
+      "summary": "Este curso gratuito de Codecademy enseña los fundamentos de PHP (variables, condicionales, funciones) con lecciones cortas y ejercicios de código que se corrigen al instante en el navegador. Está pensado como primer contacto con uno de los lenguajes que todavía sostiene gran parte de la web, sin necesidad de instalar nada."
+    },
+    {
+      "tag": "Curso",
+      "title": "freeCodeCamp estrena la certificación Full Stack Developer, su programa más completo hasta ahora",
+      "url": "https://www.freecodecamp.org/learn/full-stack-developer/",
+      "summary": "freeCodeCamp lanzó en las navidades de 2025 el itinerario hacia su nueva certificación Certified Full Stack Developer, que agrupa en un solo programa gratuito certificaciones más pequeñas sobre HTML semántico, accesibilidad, CSS, Flexbox y los fundamentos de JavaScript. Todo el contenido se completa gratis, sin necesidad de tarjeta de pago, con un examen final para obtener el certificado verificable."
+    }
+  ]
+}

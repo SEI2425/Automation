@@ -1,0 +1,92 @@
+{
+  "date": "2026-11-07",
+  "questions": [
+    {
+      "type": "identify",
+      "lang": "Python",
+      "question": "¿Qué imprime este código?",
+      "code": "nums = [1, 2, 3, 4, 5, 6]\nodds_squared = [n**2 for n in nums if n % 2]\nprint(sum(odds_squared))",
+      "options": ["35", "91", "21", "Error de sintaxis"],
+      "correct": 0,
+      "hint": "n % 2 da 1 (verdadero) solo para los números impares.",
+      "explanation": "El filtro conserva solo los impares (1, 3 y 5); sus cuadrados son 1, 9 y 25, y sum() los suma dando 35."
+    },
+    {
+      "type": "complete",
+      "lang": "JavaScript",
+      "question": "¿Qué falta para que copia sea una copia profunda real, sin afectar al objeto original?",
+      "code": "const original = { a: 1, b: { c: 2 } };\nconst copia = ____(original);\ncopia.b.c = 99;\nconsole.log(original.b.c); // 2",
+      "options": ["structuredClone", "Object.assign", "JSON.parse", "Object.freeze"],
+      "correct": 0,
+      "hint": "Necesitas una copia profunda real, no solo del primer nivel del objeto.",
+      "explanation": "structuredClone() crea una copia profunda real, por lo que modificar copia.b.c no afecta a original.b.c; Object.assign solo copia el primer nivel, así que original.b seguiría siendo el mismo objeto."
+    },
+    {
+      "type": "identify",
+      "lang": "TypeScript",
+      "question": "¿Qué imprime este código?",
+      "code": "type Pair = [primero: string, segundo: number];\nfunction describir(p: Pair): string {\n  return `${p[0]} vale ${p[1]}`;\n}\nconsole.log(describir([\"x\", 10]));",
+      "options": ["x vale 10", "primero vale segundo", "Error de compilación", "undefined vale undefined"],
+      "correct": 0,
+      "hint": "Las etiquetas (primero, segundo) dentro de la tupla son solo para el editor; en tiempo de ejecución sigue siendo un array normal.",
+      "explanation": "Las etiquetas de una tupla con nombre solo mejoran la legibilidad en el editor; en tiempo de ejecución p sigue siendo ['x', 10], así que p[0] es 'x' y p[1] es 10."
+    },
+    {
+      "type": "identify",
+      "lang": "SQL",
+      "question": "¿Qué devuelve esta consulta?",
+      "code": "SELECT department, employee, salary,\n       FIRST_VALUE(employee) OVER (PARTITION BY department ORDER BY salary DESC) AS top_earner\nFROM employees;",
+      "options": [
+        "Para cada fila, el nombre del empleado con el salario más alto de su propio departamento",
+        "El salario más alto de toda la empresa",
+        "El número de empleados por departamento",
+        "Elimina los empleados que no son el top earner"
+      ],
+      "correct": 0,
+      "hint": "PARTITION BY reinicia el cálculo en cada departamento, y FIRST_VALUE toma el primero según el ORDER BY.",
+      "explanation": "PARTITION BY department reinicia el cálculo en cada departamento, y FIRST_VALUE(employee) ORDER BY salary DESC devuelve, en cada fila, el nombre de quien tiene el salario más alto de su propio departamento."
+    },
+    {
+      "type": "complete",
+      "lang": "Git",
+      "question": "¿Qué falta para ver, junto a cada uno de los últimos 3 commits, qué archivos cambiaron sin mostrar el diff completo?",
+      "code": "# quieres ver que archivos cambiaron en los ultimos 3 commits, sin ver el contenido completo\ngit log -3 --____",
+      "options": ["stat", "oneline", "graph", "all"],
+      "correct": 0,
+      "hint": "Necesitas un resumen de archivos modificados, no el diff completo ni un resumen de una sola línea.",
+      "explanation": "git log --stat muestra, junto a cada commit, qué archivos cambiaron y cuántas líneas se añadieron o borraron en cada uno, sin mostrar el contenido completo del diff."
+    }
+  ],
+  "tips": [
+    {
+      "text": "Limita siempre los reintentos automáticos de una petición fallida con un backoff exponencial, nunca con un bucle sin límite.",
+      "explanation": "Si una petición falla por un problema temporal, reintentarla sin límite ni espera puede saturar aún más un servicio que ya está teniendo problemas, o dejar tu propio programa colgado para siempre. Esperar un poco más entre cada intento, y rendirte tras un número máximo de reintentos, da tiempo al otro servicio a recuperarse sin convertir un fallo pequeño en uno mayor.",
+      "link": "https://aws.amazon.com/blogs/architecture/exponential-backoff-and-jitter/",
+      "linkLabel": "AWS Architecture Blog: backoff exponencial y jitter"
+    },
+    {
+      "text": "Construye las rutas de archivos con las funciones de tu lenguaje, no concatenando texto a mano con '/' o '\\'.",
+      "explanation": "Windows separa carpetas con '\\' mientras que Linux y macOS usan '/', así que una ruta escrita a mano con el separador equivocado puede romperse en cuanto alguien ejecute tu programa en otro sistema operativo. Funciones como path.join en Node.js o pathlib en Python eligen automáticamente el separador correcto para cada sistema.",
+      "link": "https://nodejs.org/api/path.html#pathjoinpaths",
+      "linkLabel": "Node.js Docs: path.join()"
+    },
+    {
+      "text": "No compares dos arrays u objetos con '==' o '===' esperando que compare su contenido: compara si son el mismo objeto en memoria.",
+      "explanation": "Dos listas o dos objetos con exactamente los mismos valores dentro pueden dar 'false' al compararlos con == si viven en direcciones de memoria distintas, porque el operador solo comprueba si son literalmente el mismo objeto, no si su contenido coincide. Para comparar el contenido hace falta una función pensada para eso, como una comparación profunda o recorrer y comparar cada elemento.",
+      "link": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Equality_comparisons_and_sameness",
+      "linkLabel": "MDN: comparaciones de igualdad"
+    },
+    {
+      "text": "Nunca despliegues un servidor en modo de depuración (debug) accesible desde internet, ni en una demo rápida.",
+      "explanation": "El modo de depuración de frameworks como Django o Flask suele mostrar trazas de error completas, variables internas y en algunos casos hasta una consola interactiva con el código de tu aplicación, información que un atacante puede aprovechar si ese servidor es alcanzable desde fuera. Desactivarlo antes de exponer cualquier cosa a internet, aunque sea solo para una prueba rápida, evita regalar ese acceso por descuido.",
+      "link": "https://docs.djangoproject.com/en/5.0/ref/settings/#debug",
+      "linkLabel": "Documentación de Django: la opción DEBUG"
+    },
+    {
+      "text": "Guarda los datos de prueba (fixtures) de tus tests junto al propio código, no dependas de un servicio externo en vivo.",
+      "explanation": "Si un test descarga datos reales de una API o una web externa cada vez que se ejecuta, un cambio en ese servicio, una caída temporal o simplemente no tener conexión puede hacer que el test falle sin que tu código tenga ningún problema real. Guardar una copia fija de esos datos junto al test hace que el resultado sea siempre reproducible, sin depender de que algo externo siga funcionando igual.",
+      "link": "https://docs.pytest.org/en/stable/explanation/fixtures.html",
+      "linkLabel": "pytest: documentación de fixtures"
+    }
+  ]
+}

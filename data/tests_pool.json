@@ -494,6 +494,17 @@
       ],
       "correct": 0,
       "explanation": "all() devuelve True solo si todos los elementos son verdaderos (truthy); como 0 es falsy, el resultado es False."
+    },
+    {
+      "q": "¿Qué devuelve `'abc'.ljust(6, '*')`?",
+      "opts": [
+        "'abc***'",
+        "'***abc'",
+        "'abc'",
+        "Error"
+      ],
+      "correct": 0,
+      "explanation": "ljust(6, '*') rellena el texto por la derecha con el carácter indicado hasta alcanzar una longitud total de 6, dando 'abc***'."
     }
   ],
   "javascript": [
@@ -991,6 +1002,17 @@
       ],
       "correct": 0,
       "explanation": "JavaScript no distingue 4.0 de 4: todos los números no enteros especiales se guardan igual, así que Number.isInteger comprueba si el valor no tiene parte decimal, y 4.0 matemáticamente es un entero."
+    },
+    {
+      "q": "¿Qué devuelve `Object.is(NaN, NaN)`?",
+      "opts": [
+        "true",
+        "false",
+        "undefined",
+        "Error"
+      ],
+      "correct": 0,
+      "explanation": "Object.is(), a diferencia de === y ==, considera que NaN es igual a sí mismo, por lo que Object.is(NaN, NaN) devuelve true aunque NaN === NaN sea false."
     }
   ],
   "typescript": [
@@ -1488,6 +1510,17 @@
       ],
       "correct": 0,
       "explanation": "number[] es simplemente azúcar sintáctico para Array<number>; el compilador los trata exactamente igual."
+    },
+    {
+      "q": "¿Qué permite escribir `const enum Direccion { Arriba, Abajo }` en TypeScript, a diferencia de un enum normal?",
+      "opts": [
+        "El compilador elimina el enum por completo e inserta directamente los valores literales en el código generado, sin crear un objeto en tiempo de ejecución",
+        "Permite añadir nuevos valores en tiempo de ejecución",
+        "Convierte el enum en una clase abstracta",
+        "No cambia nada respecto a un enum normal"
+      ],
+      "correct": 0,
+      "explanation": "Un 'const enum' se elimina (inline) durante la compilación: cada uso se sustituye por su valor literal directamente, sin generar ningún objeto en el JavaScript final, a cambio de perder cierta flexibilidad frente a un enum normal."
     }
   ],
   "java": [
@@ -1985,6 +2018,17 @@
       ],
       "correct": 0,
       "explanation": "El bloque finally se ejecuta siempre antes de que el método realmente devuelva el valor, incluso cuando hay un return dentro del try; por eso 'finally' se imprime antes que el 1 devuelto por test()."
+    },
+    {
+      "q": "¿Qué excepción lanza `Integer.parseInt(\"12.5\")` en Java?",
+      "opts": [
+        "NumberFormatException",
+        "ClassCastException",
+        "ArithmeticException",
+        "No lanza ninguna excepción"
+      ],
+      "correct": 0,
+      "explanation": "Integer.parseInt() solo acepta texto que represente un entero válido; como \"12.5\" contiene un punto decimal, lanza NumberFormatException en tiempo de ejecución."
     }
   ],
   "kotlin": [
@@ -2482,6 +2526,17 @@
       ],
       "correct": 0,
       "explanation": "El operador 'as?' intenta el cast de forma segura: si obj no es realmente un Int, en lugar de lanzar una excepción como haría 'as', devuelve null."
+    },
+    {
+      "q": "¿Qué devuelve `listOf(1, 2, 3).sumOf { it * it }` en Kotlin?",
+      "opts": [
+        "14",
+        "6",
+        "9",
+        "Error de compilación"
+      ],
+      "correct": 0,
+      "explanation": "sumOf aplica la lambda a cada elemento (elevándolo al cuadrado: 1, 4, 9) y suma los resultados, dando 1+4+9 = 14."
     }
   ],
   "sql": [
@@ -2979,6 +3034,17 @@
       ],
       "correct": 0,
       "explanation": "DELETE elimina las filas una a una y queda registrado en el log de transacciones, lo que permite revertirlo; TRUNCATE libera las páginas de datos directamente, es mucho más rápida en tablas grandes, pero en la mayoría de motores no se puede deshacer tan fácilmente."
+    },
+    {
+      "q": "¿Qué hace la sentencia `UPDATE products SET price = price * 0.9 WHERE category = 'ropa' RETURNING id, price;` en PostgreSQL?",
+      "opts": [
+        "Actualiza el precio de los productos de ropa y devuelve el id y el nuevo precio de cada fila modificada",
+        "Solo muestra qué filas se actualizarían, sin modificarlas",
+        "Elimina los productos de la categoría ropa",
+        "Crea una vista con los productos actualizados"
+      ],
+      "correct": 0,
+      "explanation": "La cláusula RETURNING, soportada por PostgreSQL, hace que un UPDATE (o INSERT/DELETE) devuelva las columnas indicadas de cada fila realmente modificada, en la misma sentencia."
     }
   ],
   "git": [
@@ -3476,6 +3542,17 @@
       ],
       "correct": 0,
       "explanation": "git config --global guarda el valor en un archivo de configuración global del usuario (~/.gitconfig), válido para todos sus repositorios; sin esa opción, el valor se guarda solo en el archivo de configuración local de ese repositorio concreto (.git/config), y tiene prioridad sobre el global."
+    },
+    {
+      "q": "¿Qué hace el comando `git commit --fixup=<hash>` cuando más adelante se ejecuta `git rebase -i --autosquash <hash>~1`?",
+      "opts": [
+        "Crea un commit marcado para fusionarse automáticamente con el commit indicado durante el rebase interactivo",
+        "Deshace el commit indicado inmediatamente",
+        "Crea una nueva rama a partir del commit indicado",
+        "Elimina el commit indicado del historial sin rebase"
+      ],
+      "correct": 0,
+      "explanation": "git commit --fixup crea un commit especial marcado para corregir el commit indicado; al combinarlo con git rebase -i --autosquash, Git lo reordena y lo fusiona automáticamente con ese commit durante el rebase, sin tener que hacerlo a mano."
     }
   ],
   "htmlcss": [
@@ -3973,6 +4050,17 @@
       ],
       "correct": 0,
       "explanation": "'em' depende del tamaño de fuente heredado del elemento donde se usa, lo que puede acumularse en anidamientos profundos, mientras que 'rem' siempre se basa en el tamaño de fuente definido en la raíz del documento (normalmente 16px por defecto), lo que hace más predecibles los cálculos."
+    },
+    {
+      "q": "¿Qué hace la propiedad CSS `will-change: transform;` aplicada a un elemento que se va a animar?",
+      "opts": [
+        "Avisa al navegador de que esa propiedad cambiará pronto, para que pueda optimizar el renderizado por adelantado",
+        "Cambia el elemento inmediatamente a su estado final",
+        "Impide que el elemento se anime nunca",
+        "Solo funciona dentro de un elemento con position: fixed"
+      ],
+      "correct": 0,
+      "explanation": "will-change es una pista para el navegador: le avisa de que una propiedad concreta va a cambiar pronto (por ejemplo en una animación), para que pueda prepararse y optimizar el renderizado por adelantado."
     }
   ],
   "bash": [
@@ -4470,6 +4558,17 @@
       ],
       "correct": 0,
       "explanation": "Por defecto IFS vale espacio, tabulador y salto de línea, y determina dónde corta Bash una cadena en palabras separadas; cambiar su valor, por ejemplo a una coma, permite leer líneas de un CSV campo por campo con 'read'."
+    },
+    {
+      "q": "¿Qué hace el comando `timeout 5 ping example.com` en Bash?",
+      "opts": [
+        "Ejecuta ping durante un máximo de 5 segundos y luego lo detiene automáticamente",
+        "Espera 5 segundos antes de empezar a hacer ping",
+        "Hace ping exactamente 5 veces",
+        "Da un error porque timeout no acepta otros comandos"
+      ],
+      "correct": 0,
+      "explanation": "El comando timeout ejecuta el programa indicado y lo termina automáticamente si sigue corriendo después del número de segundos dado, en este caso deteniendo ping a los 5 segundos."
     }
   ],
   "ia": [
@@ -4956,6 +5055,17 @@
       ],
       "correct": 0,
       "explanation": "LoRA congela los parámetros originales del modelo y añade un número reducido de parámetros nuevos entrenables, lo que permite especializar un modelo grande para una tarea concreta con mucho menos coste de memoria y tiempo que reentrenar todos sus parámetros."
+    },
+    {
+      "q": "¿Qué mide el benchmark GSM8K, usado habitualmente para evaluar modelos de lenguaje?",
+      "opts": [
+        "La capacidad de resolver problemas matemáticos de nivel escolar explicados en texto",
+        "La velocidad de generación de tokens por segundo",
+        "La capacidad de generar imágenes realistas",
+        "El consumo de energía del modelo"
+      ],
+      "correct": 0,
+      "explanation": "GSM8K reúne miles de problemas matemáticos de nivel escolar redactados como enunciados en texto, y evalúa si el modelo puede razonar los pasos necesarios para llegar a la respuesta correcta."
     }
   ]
 }
