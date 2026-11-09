@@ -1,0 +1,92 @@
+{
+  "date": "2026-11-09",
+  "questions": [
+    {
+      "type": "identify",
+      "lang": "Python",
+      "code": "def f(n):\n    return n if n < 2 else f(n-1) + f(n-2)\n\nprint(f(6))",
+      "question": "¿Qué imprime este código?",
+      "options": ["8", "6", "13", "5"],
+      "correct": 0,
+      "hint": "Es una implementación recursiva de la secuencia de Fibonacci.",
+      "explanation": "f(n) llama recursivamente a f(n-1) + f(n-2) hasta que n es menor que 2; siguiendo la secuencia de Fibonacci (0,1,1,2,3,5,8...), f(6) da 8."
+    },
+    {
+      "type": "complete",
+      "lang": "JavaScript",
+      "code": "const a = new Set([1, 2, 3]);\nconst b = new Set([3, 4, 5]);\nconst union = new Set([...a, ...____]);\nconsole.log([...union]); // [1, 2, 3, 4, 5]",
+      "question": "¿Qué falta para que 'union' contenga todos los elementos de a y b sin duplicados?",
+      "options": ["b", "a", "union", "Set()"],
+      "correct": 0,
+      "hint": "Necesitas combinar los elementos de 'a' y los de 'b' dentro del nuevo Set.",
+      "explanation": "El operador spread sobre ambos sets, dentro de un nuevo Set, combina sus elementos eliminando duplicados automáticamente: como 3 aparece en los dos, queda solo una vez en el resultado."
+    },
+    {
+      "type": "identify",
+      "lang": "SQL",
+      "code": "SELECT department,\n       COUNT(*) AS total,\n       SUM(COUNT(*)) OVER () AS total_general\nFROM employees\nGROUP BY department;",
+      "question": "¿Qué devuelve la columna total_general en esta consulta?",
+      "options": [
+        "El número total de empleados de toda la empresa, repetido en cada fila",
+        "El número de empleados del departamento con más personal",
+        "El número de departamentos distintos",
+        "Un error, porque no se puede usar una función de ventana junto a GROUP BY"
+      ],
+      "correct": 0,
+      "hint": "SUM(COUNT(*)) OVER () sin PARTITION BY suma los totales de todos los grupos ya formados por GROUP BY.",
+      "explanation": "COUNT(*) cuenta los empleados de cada departamento tras el GROUP BY; SUM(...) OVER () sin PARTITION BY suma esos totales de grupo sobre el conjunto completo, dando el total general de empleados junto a cada fila."
+    },
+    {
+      "type": "complete",
+      "lang": "Bash",
+      "code": "nombre=\"archivo.tar.gz\"\necho \"${nombre____*.}\"\n# imprime \"gz\"",
+      "question": "¿Qué símbolo falta para quedarte solo con la extensión final (gz)?",
+      "options": ["##", "#", "%", "%%"],
+      "correct": 0,
+      "hint": "Necesitas eliminar la coincidencia más larga posible desde el principio del valor.",
+      "explanation": "${variable##patron} quita la coincidencia más larga del patrón al principio de la cadena; '*.' con comodín codicioso consume hasta el último punto, dejando solo la extensión final 'gz'."
+    },
+    {
+      "type": "identify",
+      "lang": "TypeScript",
+      "code": "function identidad<T>(valor: T): T {\n  return valor;\n}\nconst resultado = identidad<string[]>([\"a\", \"b\"]);\nconsole.log(resultado.length);",
+      "question": "¿Qué imprime este código?",
+      "options": ["2", "Error de compilación", "undefined", "['a', 'b']"],
+      "correct": 0,
+      "hint": "Se indica explícitamente el tipo genérico T como string[] al llamar a la función.",
+      "explanation": "identidad<string[]> fija T como string[]; la función devuelve el mismo array recibido, por lo que resultado es ['a', 'b'] y su propiedad length es 2."
+    }
+  ],
+  "tips": [
+    {
+      "text": "No uses Math.random() (o random() en Python) para generar identificadores que deben ser únicos.",
+      "explanation": "Math.random y equivalentes están pensados para distribuciones aleatorias generales, no para garantizar que cada valor generado sea distinto; dos llamadas pueden coincidir. Para identificadores únicos existen funciones pensadas para eso, como crypto.randomUUID() o uuid4(), diseñadas para minimizar colisiones.",
+      "link": "https://developer.mozilla.org/en-US/docs/Web/API/Crypto/randomUUID",
+      "linkLabel": "MDN: Crypto.randomUUID()"
+    },
+    {
+      "text": "Si una función puede fallar por un motivo esperado (archivo no encontrado, red caída), considera devolver un resultado explícito de error en vez de lanzar siempre una excepción genérica.",
+      "explanation": "Una excepción obliga a quien llama a la función a saber exactamente qué capturar y dónde, y es fácil olvidarlo; un valor de retorno que indica explícitamente el error (como hacen Go o el tipo Result de Rust) hace visible en la propia firma de la función que algo puede salir mal.",
+      "link": "https://go.dev/blog/error-handling-and-go",
+      "linkLabel": "The Go Blog: manejo de errores en Go"
+    },
+    {
+      "text": "Antes de aplicar una migración de base de datos en producción, pruébala primero sobre una copia con un volumen de datos realista, no sobre una base vacía.",
+      "explanation": "Una base de datos vacía no revela bloqueos largos ni tiempos de espera que solo aparecen con el volumen real de datos de producción; probar la migración sobre una copia con un tamaño parecido permite medir cuánto tardará y detectar bloqueos antes de que afecten a usuarios reales.",
+      "link": "https://www.prisma.io/dataguide/types/relational/migration-strategies",
+      "linkLabel": "Prisma Data Guide: estrategias de migración"
+    },
+    {
+      "text": "Si tu programa escribe un archivo importante, escribe primero en un archivo temporal y renómbralo sobre el definitivo, en lugar de escribir directamente encima.",
+      "explanation": "Escribir directamente sobre el archivo final deja una ventana en la que, si el programa se interrumpe a mitad de camino, el archivo queda corrupto; escribir en un archivo temporal y renombrarlo al final (una operación atómica en la mayoría de sistemas de archivos) asegura que el archivo definitivo siempre está completo o no se tocó en absoluto.",
+      "link": "https://docs.python.org/3/library/os.html#os.replace",
+      "linkLabel": "Documentación oficial de Python: os.replace()"
+    },
+    {
+      "text": "No mutes el mismo objeto Date (o datetime) en varios sitios distintos de tu código.",
+      "explanation": "Una función que modifica un objeto de fecha compartido puede alterar sin que lo esperes una fecha que otra parte del programa todavía necesita intacta, porque ambas variables apuntan al mismo objeto en memoria. Es más seguro crear una fecha nueva para cada cambio que mutar la original.",
+      "link": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date",
+      "linkLabel": "MDN: el objeto Date"
+    }
+  ]
+}

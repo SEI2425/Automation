@@ -505,6 +505,17 @@
       ],
       "correct": 0,
       "explanation": "ljust(6, '*') rellena el texto por la derecha con el carácter indicado hasta alcanzar una longitud total de 6, dando 'abc***'."
+    },
+    {
+      "q": "¿Qué devuelve `list(reversed(range(5)))`?",
+      "opts": [
+        "[4, 3, 2, 1, 0]",
+        "[0, 1, 2, 3, 4]",
+        "[5, 4, 3, 2, 1]",
+        "Error"
+      ],
+      "correct": 0,
+      "explanation": "range(5) genera 0,1,2,3,4; reversed() los recorre al revés, y list() los convierte en una lista: [4, 3, 2, 1, 0]."
     }
   ],
   "javascript": [
@@ -1013,6 +1024,17 @@
       ],
       "correct": 0,
       "explanation": "Object.is(), a diferencia de === y ==, considera que NaN es igual a sí mismo, por lo que Object.is(NaN, NaN) devuelve true aunque NaN === NaN sea false."
+    },
+    {
+      "q": "¿Qué devuelve `typeof typeof 1`?",
+      "opts": [
+        "'string'",
+        "'number'",
+        "'undefined'",
+        "Error"
+      ],
+      "correct": 0,
+      "explanation": "typeof 1 devuelve la cadena 'number'; aplicar typeof otra vez sobre esa cadena de texto devuelve 'string', porque ahora el operando es un string."
     }
   ],
   "typescript": [
@@ -1521,6 +1543,17 @@
       ],
       "correct": 0,
       "explanation": "Un 'const enum' se elimina (inline) durante la compilación: cada uso se sustituye por su valor literal directamente, sin generar ningún objeto en el JavaScript final, a cambio de perder cierta flexibilidad frente a un enum normal."
+    },
+    {
+      "q": "¿Qué hace el tipo utilitario `Required<T>`?",
+      "opts": [
+        "Convierte todas las propiedades opcionales de T en obligatorias",
+        "Convierte todas las propiedades de T en opcionales",
+        "Hace que T sea de solo lectura",
+        "Elimina las propiedades opcionales de T"
+      ],
+      "correct": 0,
+      "explanation": "Required<T> es el opuesto de Partial<T>: toma un tipo con propiedades opcionales y genera una versión donde todas pasan a ser obligatorias."
     }
   ],
   "java": [
@@ -2029,6 +2062,17 @@
       ],
       "correct": 0,
       "explanation": "Integer.parseInt() solo acepta texto que represente un entero válido; como \"12.5\" contiene un punto decimal, lanza NumberFormatException en tiempo de ejecución."
+    },
+    {
+      "q": "¿Qué palabra clave se usa para evitar que una clase pueda ser heredada?",
+      "opts": [
+        "final",
+        "static",
+        "private",
+        "sealed"
+      ],
+      "correct": 0,
+      "explanation": "Una clase marcada como 'final' no puede ser extendida por ninguna otra clase; 'sealed' (desde Java 17) permite en cambio restringir qué clases concretas sí pueden heredarla."
     }
   ],
   "kotlin": [
@@ -2537,6 +2581,17 @@
       ],
       "correct": 0,
       "explanation": "sumOf aplica la lambda a cada elemento (elevándolo al cuadrado: 1, 4, 9) y suma los resultados, dando 1+4+9 = 14."
+    },
+    {
+      "q": "¿Qué ocurre al ejecutar `variable?.let { ... }` cuando 'variable' es null?",
+      "opts": [
+        "El bloque no se ejecuta y toda la expresión da null",
+        "Lanza una excepción",
+        "El bloque se ejecuta con 'it' igual a null",
+        "Convierte el valor null en 0"
+      ],
+      "correct": 0,
+      "explanation": "El operador ?. corta la cadena si el valor es null, por lo que let nunca llega a ejecutarse; la expresión completa evalúa a null sin lanzar ninguna excepción."
     }
   ],
   "sql": [
@@ -3045,6 +3100,17 @@
       ],
       "correct": 0,
       "explanation": "La cláusula RETURNING, soportada por PostgreSQL, hace que un UPDATE (o INSERT/DELETE) devuelva las columnas indicadas de cada fila realmente modificada, en la misma sentencia."
+    },
+    {
+      "q": "¿Qué diferencia hay entre UNION y UNION ALL?",
+      "opts": [
+        "UNION elimina las filas duplicadas del resultado combinado, UNION ALL las conserva",
+        "UNION conserva los duplicados, UNION ALL los elimina",
+        "UNION solo funciona con dos columnas, UNION ALL con cualquier número",
+        "No hay ninguna diferencia real entre ambos"
+      ],
+      "correct": 0,
+      "explanation": "UNION combina los resultados de dos consultas eliminando automáticamente las filas repetidas, mientras que UNION ALL las conserva todas, lo que además suele ser más rápido al no comprobar duplicados."
     }
   ],
   "git": [
@@ -3553,6 +3619,17 @@
       ],
       "correct": 0,
       "explanation": "git commit --fixup crea un commit especial marcado para corregir el commit indicado; al combinarlo con git rebase -i --autosquash, Git lo reordena y lo fusiona automáticamente con ese commit durante el rebase, sin tener que hacerlo a mano."
+    },
+    {
+      "q": "¿Qué comando muestra las diferencias entre dos commits concretos, identificados por su hash?",
+      "opts": [
+        "git diff <hash1> <hash2>",
+        "git log <hash1> <hash2>",
+        "git merge <hash1> <hash2>",
+        "git show --all"
+      ],
+      "correct": 0,
+      "explanation": "git diff <hash1> <hash2> compara el estado del repositorio entre esos dos commits y muestra exactamente qué cambió de uno al otro."
     }
   ],
   "htmlcss": [
@@ -4061,6 +4138,17 @@
       ],
       "correct": 0,
       "explanation": "will-change es una pista para el navegador: le avisa de que una propiedad concreta va a cambiar pronto (por ejemplo en una animación), para que pueda prepararse y optimizar el renderizado por adelantado."
+    },
+    {
+      "q": "¿Qué combinación de propiedades CSS hace que un texto largo dentro de una celda muestre puntos suspensivos en lugar de desbordarse?",
+      "opts": [
+        "text-overflow: ellipsis junto a overflow: hidden y white-space: nowrap",
+        "word-wrap: break-word por sí sola",
+        "text-align: justify",
+        "overflow: scroll por sí sola"
+      ],
+      "correct": 0,
+      "explanation": "text-overflow: ellipsis corta el texto con puntos suspensivos cuando se desborda, pero solo funciona combinada con overflow: hidden (para ocultar el exceso) y white-space: nowrap (para impedir que el texto salte de línea)."
     }
   ],
   "bash": [
@@ -4569,6 +4657,17 @@
       ],
       "correct": 0,
       "explanation": "El comando timeout ejecuta el programa indicado y lo termina automáticamente si sigue corriendo después del número de segundos dado, en este caso deteniendo ping a los 5 segundos."
+    },
+    {
+      "q": "¿Qué hace el comando `cmd1 && cmd2`?",
+      "opts": [
+        "Ejecuta cmd2 solo si cmd1 terminó con éxito (código de salida 0)",
+        "Ejecuta ambos comandos siempre, uno detrás de otro",
+        "Ejecuta cmd2 solo si cmd1 falló",
+        "Ejecuta cmd1 y cmd2 en paralelo"
+      ],
+      "correct": 0,
+      "explanation": "El operador && encadena comandos de forma condicional: cmd2 solo se ejecuta si cmd1 devolvió un código de salida 0 (éxito); para el caso contrario (ejecutar solo si falla) se usa ||."
     }
   ],
   "ia": [
@@ -5066,6 +5165,17 @@
       ],
       "correct": 0,
       "explanation": "GSM8K reúne miles de problemas matemáticos de nivel escolar redactados como enunciados en texto, y evalúa si el modelo puede razonar los pasos necesarios para llegar a la respuesta correcta."
+    },
+    {
+      "q": "¿Qué significa que un modelo de lenguaje tenga una 'ventana de contexto' de un millón de tokens?",
+      "opts": [
+        "Que puede tener en cuenta hasta un millón de tokens de entrada y salida combinados en una misma conversación o petición",
+        "Que fue entrenado con un millón de documentos distintos",
+        "Que tarda un millón de pasos en generar una respuesta",
+        "Que solo puede responder preguntas sobre un millón de temas distintos"
+      ],
+      "correct": 0,
+      "explanation": "La ventana de contexto es la cantidad máxima de texto, medida en tokens, que el modelo puede 'tener presente' a la vez en una conversación o documento; no tiene relación directa con cuántos datos se usaron para entrenarlo."
     }
   ]
 }

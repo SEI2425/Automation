@@ -1,0 +1,65 @@
+{
+  "date": "2026-11-09",
+  "items": [
+    {
+      "tag": "Impacto",
+      "title": "Una ola de ataques roba claves de acceso a plataformas de desarrollo con IA y genera gastos a las víctimas",
+      "url": "https://www.infobae.com/tecno/2026/11/07/una-ola-de-ciberataques-afecta-a-plataformas-de-inteligencia-artificial-hackers-roban-claves-de-acceso-y-generan-gastos-a-las-victimas/",
+      "summary": "El 7 de noviembre, Infobae informó de una ola de ciberataques, documentada por la firma de seguridad Wiz bajo el nombre 'Black October', que afecta a al menos nueve plataformas usadas por programadores para crear y alojar aplicaciones con IA, entre ellas Zeabur, Railway y OpenCode. Los atacantes robaron variables de entorno con claves de acceso a modelos como Claude, y en un caso una sola clave robada realizó 1,7 millones de llamadas en 13 horas, generando gastos no autorizados a las víctimas."
+    },
+    {
+      "tag": "Impacto",
+      "title": "Las grandes tecnológicas aceleran su gasto en IA mientras crecen las dudas sobre su rentabilidad",
+      "url": "https://infobae.com/america/agencias/2026/11/08/las-tecnologicas-aceleran-su-gasto-en-ia-mientras-crecen-las-dudas-sobre-su-rentabilidad",
+      "summary": "Según una información de EFE del 8 de noviembre, UBS elevó sus previsiones de gasto de capital en IA de las grandes tecnológicas a un billón de dólares en 2026 y hasta 1,5 billones en 2028, mientras el Nasdaq, muy expuesto a acciones de IA, llegó a caer un 11% desde su máximo el 5 de noviembre por el temor a una desaceleración en la construcción de centros de datos. Varios analistas citados advierten que, de momento, la inversión en IA todavía no resulta rentable."
+    },
+    {
+      "tag": "Impacto",
+      "title": "China amplía el uso de la IA en la agricultura tropical y propone cooperación regional ante desastres",
+      "url": "http://en.people.cn/n3/2026/1109/c90000-20517065.html",
+      "summary": "El 9 de noviembre, People's Daily informó que China ha publicado un plan de modernización agrícola para 2026-2030 que amplía el uso de la inteligencia artificial en el campo, y que su sistema MAZU, que combina datos satelitales e IA para prever desastres como tifones, ya presta servicio a varios países de la ASEAN. Pekín propuso ahora un trabajo conjunto de alerta temprana adaptado a los riesgos agrícolas y climáticos de la región."
+    },
+    {
+      "tag": "Impacto",
+      "title": "La farmacéutica Roche se asocia con la startup de IA Chai Discovery para diseñar fármacos",
+      "url": "https://www.digitalhealthnews.com/roche-partners-with-chai-discovery-to-leverage-ai-models-in-drug-discovery-programmes",
+      "summary": "Roche anunció el 5 de noviembre que integrará la plataforma de diseño de proteínas terapéuticas de Chai Discovery, basada en su modelo Chai-3, en varios de sus programas de descubrimiento de fármacos. La empresa se suma así a otras farmacéuticas como Eli Lilly, GSK y Bristol Myers Squibb que ya trabajan con esta startup respaldada por inversores vinculados a OpenAI."
+    },
+    {
+      "tag": "Impacto",
+      "title": "El 88% de las empresas ya usa inteligencia artificial, pero solo un 7% ha escalado su implementación",
+      "url": "https://mdzol.com/economia/2026/11/7/el-88-de-las-empresas-ya-utiliza-inteligencia-artificial-pero-pocas-logran-transformar-su-forma-de-trabajar-1993479.html",
+      "summary": "Un informe citado el 7 de noviembre por MDZ encontró que el 88% de las empresas encuestadas ya usa inteligencia artificial de forma habitual en al menos una función del negocio, pero solo un 7% ha logrado llevar esa adopción a toda la organización. El estudio sugiere que la mayoría de empresas todavía usa la IA en tareas sueltas, sin haber transformado realmente sus procesos de trabajo."
+    },
+    {
+      "tag": "Interactivo",
+      "title": "Codewars: mejora tu nivel en decenas de lenguajes resolviendo katas con la comunidad",
+      "url": "https://www.codewars.com/",
+      "summary": "Codewars propone miles de ejercicios de programación llamados katas, ordenados por dificultad y disponibles en decenas de lenguajes como Python, JavaScript o Kotlin, con corrección automática al enviar tu solución. Al resolver un kata puedes ver las soluciones de otros usuarios y votar las mejores, una forma de aprender estilos distintos de resolver el mismo problema."
+    },
+    {
+      "tag": "Curso",
+      "title": "The Odin Project: el currículo gratuito y de código abierto para convertirte en desarrollador full stack",
+      "url": "https://www.theodinproject.com/",
+      "summary": "Este proyecto gratuito y de código abierto guía paso a paso desde los fundamentos de HTML, CSS y JavaScript hasta construir aplicaciones completas con Node.js, bases de datos y frameworks como React, con proyectos reales en cada etapa. No cobra nada por el contenido ni exige registro para empezar, y cuenta con una comunidad activa que ayuda a quien se atasca."
+    },
+    {
+      "tag": "Interactivo",
+      "title": "Khan Academy: dibuja y anima con JavaScript directamente en el navegador",
+      "url": "https://www.khanacademy.org/computing/computer-programming/programming",
+      "summary": "Este curso gratuito de Khan Academy enseña los fundamentos de JavaScript dibujando formas, colores y animaciones sencillas en un lienzo dentro del propio navegador, con videos cortos y un editor donde se ve el resultado al instante. Está pensado como una introducción visual a la programación, sin necesidad de instalar nada."
+    },
+    {
+      "tag": "Interactivo",
+      "title": "Exercism: practica OCaml con ejercicios interactivos y mentoría gratuita",
+      "url": "https://exercism.org/tracks/ocaml",
+      "summary": "Este recorrido gratuito de Exercism ofrece decenas de ejercicios del lenguaje funcional OCaml, usado a menudo para enseñar los fundamentos de la programación funcional, con corrección automática de tu código nada más enviarlo. Como en el resto de la plataforma, también puedes pedir mentoría gratuita de programadores voluntarios que comentan tu solución."
+    },
+    {
+      "tag": "Curso",
+      "title": "MIT OpenCourseWare: Introduction to Computational Thinking and Data Science, el curso gratuito del MIT",
+      "url": "https://ocw.mit.edu/courses/6-0002-introduction-to-computational-thinking-and-data-science-fall-2016/",
+      "summary": "Este curso gratuito del MIT, continuación de su introducción a la programación en Python, enseña a resolver problemas con simulaciones, optimización y conceptos básicos de aprendizaje automático. Incluye todas las clases en video, apuntes y los mismos problem sets que usan los estudiantes del MIT, disponibles gratis para cualquiera."
+    }
+  ]
+}
