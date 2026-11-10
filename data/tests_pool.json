@@ -516,6 +516,17 @@
       ],
       "correct": 0,
       "explanation": "range(5) genera 0,1,2,3,4; reversed() los recorre al revés, y list() los convierte en una lista: [4, 3, 2, 1, 0]."
+    },
+    {
+      "q": "Que devuelve la expresion list(range(2, 10, 3)) en Python?",
+      "opts": [
+        "[2, 5, 8]",
+        "[2, 5, 8, 10]",
+        "[2, 3, 4, 5, 6, 7, 8, 9]",
+        "[3, 6, 9]"
+      ],
+      "correct": 0,
+      "explanation": "range(2, 10, 3) empieza en 2, avanza de 3 en 3 y se detiene antes de llegar a 10, dando como resultado 2, 5 y 8."
     }
   ],
   "javascript": [
@@ -1035,6 +1046,17 @@
       ],
       "correct": 0,
       "explanation": "typeof 1 devuelve la cadena 'number'; aplicar typeof otra vez sobre esa cadena de texto devuelve 'string', porque ahora el operando es un string."
+    },
+    {
+      "q": "Que valor tiene typeof null en JavaScript?",
+      "opts": [
+        "'object'",
+        "'null'",
+        "'undefined'",
+        "'boolean'"
+      ],
+      "correct": 0,
+      "explanation": "typeof null devuelve 'object' por un error historico de diseno del lenguaje que nunca se corrigio para no romper codigo existente, aunque null no es realmente un objeto."
     }
   ],
   "typescript": [
@@ -1554,6 +1576,17 @@
       ],
       "correct": 0,
       "explanation": "Required<T> es el opuesto de Partial<T>: toma un tipo con propiedades opcionales y genera una versión donde todas pasan a ser obligatorias."
+    },
+    {
+      "q": "Que hace el operador ! cuando se escribe justo despues de una variable, como en valor!.propiedad?",
+      "opts": [
+        "Le dice al compilador que confie en que valor no es null ni undefined, sin comprobarlo en tiempo de ejecucion",
+        "Convierte valor a un booleano negado",
+        "Lanza un error si valor es null",
+        "Elimina la propiedad del objeto"
+      ],
+      "correct": 0,
+      "explanation": "El operador de asercion no nula (!) solo afecta a la comprobacion de tipos en tiempo de compilacion; no realiza ninguna comprobacion real cuando el programa se ejecuta."
     }
   ],
   "java": [
@@ -2073,6 +2106,17 @@
       ],
       "correct": 0,
       "explanation": "Una clase marcada como 'final' no puede ser extendida por ninguna otra clase; 'sealed' (desde Java 17) permite en cambio restringir qué clases concretas sí pueden heredarla."
+    },
+    {
+      "q": "Que palabra clave se usa en Java para evitar que una clase pueda ser heredada por ninguna otra?",
+      "opts": [
+        "final",
+        "static",
+        "sealed",
+        "private"
+      ],
+      "correct": 0,
+      "explanation": "Una clase declarada como 'final' no puede ser extendida por ninguna subclase; 'sealed', incorporada mas tarde, en cambio permite elegir explicitamente que clases si pueden heredarla."
     }
   ],
   "kotlin": [
@@ -2592,6 +2636,17 @@
       ],
       "correct": 0,
       "explanation": "El operador ?. corta la cadena si el valor es null, por lo que let nunca llega a ejecutarse; la expresión completa evalúa a null sin lanzar ninguna excepción."
+    },
+    {
+      "q": "Que hace el operador as? en Kotlin al intentar convertir un valor a otro tipo?",
+      "opts": [
+        "Devuelve null si la conversion no es posible, en lugar de lanzar una excepcion",
+        "Lanza siempre una excepcion si la conversion falla",
+        "Convierte el valor a String sin importar su tipo",
+        "Solo funciona con tipos numericos"
+      ],
+      "correct": 0,
+      "explanation": "A diferencia del operador 'as' normal, que lanza una excepcion si la conversion no es posible, 'as?' devuelve null en ese caso, lo que permite manejar el fallo sin un bloque try/catch."
     }
   ],
   "sql": [
@@ -3111,6 +3166,17 @@
       ],
       "correct": 0,
       "explanation": "UNION combina los resultados de dos consultas eliminando automáticamente las filas repetidas, mientras que UNION ALL las conserva todas, lo que además suele ser más rápido al no comprobar duplicados."
+    },
+    {
+      "q": "Para que sirve la clausula LIMIT en una consulta SQL?",
+      "opts": [
+        "Para restringir el numero maximo de filas que devuelve la consulta",
+        "Para eliminar las filas duplicadas",
+        "Para ordenar los resultados",
+        "Para combinar dos tablas"
+      ],
+      "correct": 0,
+      "explanation": "LIMIT indica el numero maximo de filas que debe devolver la consulta, independientemente de cuantas cumplan la condicion del WHERE."
     }
   ],
   "git": [
@@ -3630,6 +3696,17 @@
       ],
       "correct": 0,
       "explanation": "git diff <hash1> <hash2> compara el estado del repositorio entre esos dos commits y muestra exactamente qué cambió de uno al otro."
+    },
+    {
+      "q": "Que comando de Git muestra las diferencias entre el directorio de trabajo y el area de staging?",
+      "opts": [
+        "git diff",
+        "git status",
+        "git log",
+        "git show"
+      ],
+      "correct": 0,
+      "explanation": "git diff sin argumentos compara el directorio de trabajo con el area de staging (o con el ultimo commit si no hay nada en staging); git status solo resume que archivos cambiaron, sin mostrar las lineas exactas."
     }
   ],
   "htmlcss": [
@@ -4149,6 +4226,17 @@
       ],
       "correct": 0,
       "explanation": "text-overflow: ellipsis corta el texto con puntos suspensivos cuando se desborda, pero solo funciona combinada con overflow: hidden (para ocultar el exceso) y white-space: nowrap (para impedir que el texto salte de línea)."
+    },
+    {
+      "q": "Que hace la propiedad CSS overflow: hidden en un elemento?",
+      "opts": [
+        "Oculta cualquier contenido que se salga de los limites del elemento",
+        "Hace el elemento invisible por completo",
+        "Anade una barra de scroll siempre visible",
+        "Cambia el color de fondo del elemento"
+      ],
+      "correct": 0,
+      "explanation": "overflow: hidden recorta y oculta el contenido que sobrepasa el tamano del elemento, sin mostrar ninguna barra de desplazamiento para acceder a esa parte."
     }
   ],
   "bash": [
@@ -4668,6 +4756,17 @@
       ],
       "correct": 0,
       "explanation": "El operador && encadena comandos de forma condicional: cmd2 solo se ejecuta si cmd1 devolvió un código de salida 0 (éxito); para el caso contrario (ejecutar solo si falla) se usa ||."
+    },
+    {
+      "q": "Que hace el comando chmod +x archivo.sh en Linux?",
+      "opts": [
+        "Le da permiso de ejecucion al archivo",
+        "Lo convierte en un archivo oculto",
+        "Lo comprime",
+        "Cambia su propietario"
+      ],
+      "correct": 0,
+      "explanation": "chmod +x anade el permiso de ejecucion al archivo, necesario para poder ejecutarlo directamente como un programa (./archivo.sh) en lugar de solo leerlo."
     }
   ],
   "ia": [
@@ -5176,6 +5275,17 @@
       ],
       "correct": 0,
       "explanation": "La ventana de contexto es la cantidad máxima de texto, medida en tokens, que el modelo puede 'tener presente' a la vez en una conversación o documento; no tiene relación directa con cuántos datos se usaron para entrenarlo."
+    },
+    {
+      "q": "Que significa que un modelo de lenguaje tenga una ventana de contexto de un millon de tokens?",
+      "opts": [
+        "Que puede tener en cuenta hasta un millon de tokens de texto de entrada y salida combinados en una misma conversacion",
+        "Que tarda un millon de segundos en responder",
+        "Que fue entrenado con exactamente un millon de documentos",
+        "Que solo puede generar un millon de respuestas distintas"
+      ],
+      "correct": 0,
+      "explanation": "La ventana de contexto es la cantidad maxima de texto, medida en tokens, que un modelo puede procesar y tener en cuenta a la vez dentro de una misma conversacion o documento."
     }
   ]
 }

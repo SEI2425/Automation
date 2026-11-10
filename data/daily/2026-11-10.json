@@ -1,0 +1,112 @@
+{
+  "date": "2026-11-10",
+  "questions": [
+    {
+      "type": "identify",
+      "lang": "Python",
+      "question": "Que contiene la variable result despues de ejecutar este codigo?",
+      "code": "nums = [1, 2, 3, 4, 5]\nresult = [n for n in nums if n > 2][-1]",
+      "options": [
+        "5",
+        "3",
+        "[3, 4, 5]",
+        "Error"
+      ],
+      "correct": 0,
+      "hint": "El filtro conserva los numeros mayores que 2; el indice -1 toma el ultimo de esa lista.",
+      "explanation": "La comprension deja [3, 4, 5], y [-1] toma el ultimo elemento de esa lista, que es 5."
+    },
+    {
+      "type": "complete",
+      "lang": "JavaScript",
+      "question": "Que metodo falta para que total sea la suma de todos los elementos del array?",
+      "code": "const arr = [10, 20, 30];\nconst total = arr.____((a, b) => a + b);\nconsole.log(total); // 60",
+      "options": [
+        "reduce",
+        "map",
+        "filter",
+        "some"
+      ],
+      "correct": 0,
+      "hint": "Necesitas acumular todos los elementos en un unico valor final.",
+      "explanation": "reduce() sin valor inicial usa el primer elemento como acumulador de partida y va sumando el resto: 10+20+30=60."
+    },
+    {
+      "type": "identify",
+      "lang": "SQL",
+      "question": "Que devuelve esta consulta?",
+      "code": "SELECT name FROM products\nWHERE price > 100\nORDER BY price DESC\nLIMIT 1 OFFSET 1;",
+      "options": [
+        "El producto con el segundo precio mas alto por encima de 100",
+        "El producto mas caro de toda la tabla",
+        "Los dos productos mas caros",
+        "El producto mas barato por encima de 100"
+      ],
+      "correct": 0,
+      "hint": "OFFSET 1 salta la primera fila tras ordenar de mayor a menor.",
+      "explanation": "ORDER BY price DESC ordena de mayor a menor los productos con precio superior a 100; LIMIT 1 OFFSET 1 se queda con una sola fila saltandose la primera, es decir el segundo precio mas alto."
+    },
+    {
+      "type": "complete",
+      "lang": "Git",
+      "question": "Que flag falta para eliminar la rama experimento aunque tenga commits sin fusionar?",
+      "code": "git checkout -b experimento\n# haces cambios y los confirmas\ngit checkout main\ngit branch -____ experimento",
+      "options": [
+        "D",
+        "d",
+        "m",
+        "f"
+      ],
+      "correct": 0,
+      "hint": "La version en mayuscula del flag de borrado fuerza la eliminacion aunque la rama no este fusionada.",
+      "explanation": "git branch -D fuerza el borrado de una rama aunque contenga commits que todavia no se han fusionado en ninguna otra rama, a diferencia de -d, que se niega a hacerlo en ese caso."
+    },
+    {
+      "type": "identify",
+      "lang": "HTML/CSS",
+      "question": "Cual es el ancho total real de la caja en pantalla?",
+      "code": ".box { width: 200px; padding: 20px; border: 5px solid; box-sizing: content-box; }",
+      "options": [
+        "250px",
+        "200px",
+        "220px",
+        "230px"
+      ],
+      "correct": 0,
+      "hint": "Con box-sizing: content-box, el padding y el borde se suman por fuera del ancho definido.",
+      "explanation": "box-sizing: content-box es el valor por defecto: el ancho declarado (200px) no incluye padding ni borde, asi que el ancho visual total es 200 + 20+20 de padding + 5+5 de borde = 250px."
+    }
+  ],
+  "tips": [
+    {
+      "text": "Usa la funcion integrada breakpoint() de Python en lugar de escribir 'import pdb; pdb.set_trace()' cada vez que quieras pausar el programa en un punto concreto.",
+      "explanation": "breakpoint(), anadida en Python 3.7, es un atajo que ya importa y lanza el depurador configurado en el sistema, ahorrandote escribir las mismas dos lineas cada vez y permitiendo cambiar de depurador con una variable de entorno sin tocar el codigo.",
+      "link": "https://docs.python.org/3/library/functions.html#breakpoint",
+      "linkLabel": "Documentacion oficial de Python: la funcion breakpoint()"
+    },
+    {
+      "text": "Antes de disenar las tablas de una base de datos a ciegas, dibuja primero un diagrama entidad-relacion con las entidades y como se conectan entre si.",
+      "explanation": "Pensar en las relaciones (uno a muchos, muchos a muchos) antes de escribir un solo CREATE TABLE evita descubrir a mitad de proyecto que falta una tabla intermedia o que una columna deberia vivir en otro sitio, algo mucho mas caro de corregir una vez que ya hay datos reales guardados.",
+      "link": "https://en.wikipedia.org/wiki/Entity%E2%80%93relationship_model",
+      "linkLabel": "Wikipedia: el modelo entidad-relacion"
+    },
+    {
+      "text": "Si una funcion hace algo costoso, como una llamada de red o un calculo pesado, no le pongas un nombre que empiece por 'get', como si leer su resultado fuera gratis.",
+      "explanation": "El principio de separacion entre comandos y consultas espera que algo llamado 'getAlgo' sea barato y sin efectos secundarios; nombrar asi una operacion lenta engana a quien la usa y le hace pensar que puede llamarla sin preocuparse por el coste.",
+      "link": "https://martinfowler.com/bliki/CommandQuerySeparation.html",
+      "linkLabel": "Martin Fowler: Command-Query Separation"
+    },
+    {
+      "text": "Si tu aplicacion guarda archivos subidos por usuarios, nunca uses el nombre de archivo original para guardarlo en el servidor: genera un nombre nuevo aleatorio y guarda el nombre original solo como un dato aparte.",
+      "explanation": "Un nombre de archivo controlado por el usuario puede contener secuencias para escapar de la carpeta de subida o caracteres que rompan tu sistema de archivos; generar un nombre aleatorio en el servidor elimina esa puerta de entrada sin perder el nombre original, que puedes seguir mostrando en la interfaz.",
+      "link": "https://cheatsheetseries.owasp.org/cheatsheets/File_Upload_Cheat_Sheet.html",
+      "linkLabel": "OWASP: guia de subida segura de archivos"
+    },
+    {
+      "text": "Antes de fusionar una rama con varios commits, revisa el diff completo contra la rama principal, no solo cada commit por separado.",
+      "explanation": "Dos cambios que parecen correctos vistos uno a uno pueden contradecirse o repetir trabajo al juntarse; mirar el efecto neto de toda la rama frente a main, por ejemplo al revisar un pull request, muestra de un vistazo que va a cambiar realmente el proyecto.",
+      "link": "https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/reviewing-changes-in-pull-requests/reviewing-proposed-changes-in-a-pull-request",
+      "linkLabel": "GitHub Docs: revisar los cambios propuestos en un pull request"
+    }
+  ]
+}

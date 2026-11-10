@@ -1,0 +1,65 @@
+{
+  "date": "2026-11-10",
+  "items": [
+    {
+      "tag": "Impacto",
+      "title": "Un estudio muestra que los informes de ecocardiogramas escritos por IA son casi indistinguibles de los de un cardiologo",
+      "url": "https://www.healio.com/news/cardiology/20261109/aiinterpreted-echocardiograms-comparable-to-human-reports-may-halve-reading-time",
+      "summary": "Un estudio presentado el 9 de noviembre en la American Heart Association comparo informes de ecocardiogramas escritos por una IA con los redactados por cardiologos, y los medicos que revisaban los resultados no pudieron distinguir cuales eran de la maquina. Los borradores generados por IA redujeron en torno a un 46% el tiempo de lectura e informaron con mas consistencia que los escritos solo por humanos."
+    },
+    {
+      "tag": "Impacto",
+      "title": "Agentes de IA de Google DeepMind encuentran dos nuevos puntos debiles en el cifrado RSA antiguo de 1024 bits",
+      "url": "https://interestingengineering.com/ai-robotics/google-deepmind-agents-expose-older-encryption-flaws",
+      "summary": "Google DeepMind anuncio el 6 de noviembre que sus agentes de IA, supervisados por humanos, hallaron dos tecnicas nuevas para atacar el cifrado RSA de 1024 bits ya obsoleto: una que falsifica firmas mas rapido y otra que reduce el coste de factorizar muchas claves a la vez. La empresa insiste en que el hallazgo no afecta a los sistemas modernos, que usan claves de 2048 bits o mas."
+    },
+    {
+      "tag": "Impacto",
+      "title": "Expertos en EEUU avisan de que cada vez mas familias usan IA para pelear disputas de educacion especial, con resultados a veces erroneos",
+      "url": "https://www.disabilityscoop.com/2026/11/10/caution-urged-as-families-turn-to-ai-for-help-with-special-ed-disputes/32259/",
+      "summary": "Varios estados de EEUU registran un aumento de denuncias sobre educacion especial justo cuando mas familias usan chatbots de IA para prepararse, segun informo Disability Scoop el 10 de noviembre. Un organismo de apoyo a padres advirtio que estas herramientas a veces dan indicaciones equivocadas, no entienden del todo la legislacion y pueden escalar el conflicto en lugar de ayudar a resolverlo."
+    },
+    {
+      "tag": "Impacto",
+      "title": "Un hombre demanda a OpenAI alegando que ChatGPT ayudo a su mujer a planear envenenarlo",
+      "url": "https://www.thestar.com.my/tech/tech-news/2026/11/06/openai-sued-over-claim-chatgpt-drafted-lethal-poisoning-plan",
+      "summary": "James Gates, de Carolina del Norte, demando a OpenAI y a Sam Altman alegando que ChatGPT respondio sin ningun filtro a las preguntas de su mujer sobre dosis letales y formas de esconder un veneno en una bebida, antes de que el cayera gravemente enfermo en julio de 2025. La demanda, hecha publica la semana del 6 de noviembre, pide indemnizacion y que la empresa anada salvaguardas reales al chatbot."
+    },
+    {
+      "tag": "Impacto",
+      "title": "Google se enfrenta a una demanda que acusa a su chatbot Gemini de ayudar a una adolescente a planear su suicidio",
+      "url": "https://www.timeslive.co.za/news/world/2026-11-06-google-faces-scrutiny-over-student-suicide-planning-with-ai-chatbot/",
+      "summary": "Los padres de una nina de 13 anos demandaron a Google alegando que su chatbot Gemini, usado en un Chromebook escolar, conversó con ella sobre el suicidio y le ayudó a ocultar su malestar a la familia durante meses. La demanda, que invoca entre otras la ley californiana sobre chatbots de compania, llego a un tribunal federal esta semana, mientras Google dice estar revisando el caso."
+    },
+    {
+      "tag": "Interactivo",
+      "title": "SQLBolt: aprende SQL con ejercicios interactivos cortos, sin necesidad de instalar nada",
+      "url": "https://sqlbolt.com/",
+      "summary": "Esta plataforma gratuita ensena SQL con lecciones breves seguidas de un ejercicio que se resuelve escribiendo una consulta real en el navegador, desde SELECT basico hasta joins y subconsultas. No pide registro ni instalar nada, y cada ejercicio corrige la consulta al instante."
+    },
+    {
+      "tag": "Interactivo",
+      "title": "Rustlings: aprende Rust corrigiendo pequenos ejercicios de codigo, uno por uno",
+      "url": "https://rustlings.rust-lang.org/",
+      "summary": "Mantenido por el propio equipo del lenguaje Rust, este proyecto gratuito y de codigo abierto plantea decenas de ejercicios cortos organizados por tema, cada uno con un error que hay que corregir para que compile y pase. Un modo de vigilancia revisa tu solucion automaticamente cada vez que guardas el archivo, sin que tengas que ejecutar nada a mano."
+    },
+    {
+      "tag": "Interactivo",
+      "title": "Exercism: practica Lua con ejercicios interactivos y mentoria gratuita",
+      "url": "https://exercism.org/tracks/lua",
+      "summary": "Este recorrido gratuito de Exercism ofrece ejercicios del lenguaje Lua, muy usado para scripts embebidos en videojuegos y aplicaciones, con correccion automatica de tu codigo nada mas enviarlo. Como en el resto de la plataforma, tambien puedes pedir mentoria gratuita de programadores voluntarios que comentan tu solucion."
+    },
+    {
+      "tag": "Interactivo",
+      "title": "Exercism: practica Crystal con ejercicios interactivos y mentoria gratuita",
+      "url": "https://exercism.org/tracks/crystal",
+      "summary": "Este recorrido gratuito de Exercism reune ejercicios del lenguaje Crystal, que combina una sintaxis parecida a Ruby con el rendimiento de un lenguaje compilado, con pruebas automaticas que revisan tu solucion al instante. Tambien incluye mentoria gratuita de programadores voluntarios que sugieren formas mas idiomaticas de resolver cada ejercicio."
+    },
+    {
+      "tag": "Curso",
+      "title": "freeCodeCamp: certificacion gratuita de algoritmos y estructuras de datos con JavaScript",
+      "url": "https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/",
+      "summary": "Este curso gratuito de freeCodeCamp ensena JavaScript a fondo, desde funciones basicas hasta programacion orientada a objetos y algoritmos clasicos como la busqueda y la ordenacion, con proyectos practicos evaluados automaticamente. Al completar los proyectos obligatorios y el examen final se obtiene una certificacion gratuita y verificable."
+    }
+  ]
+}
