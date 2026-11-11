@@ -1,0 +1,112 @@
+{
+  "date": "2026-11-11",
+  "questions": [
+    {
+      "type": "identify",
+      "lang": "Python",
+      "question": "¿Que imprime este codigo?",
+      "code": "nums = [1, 2, 3, 4, 5]\nit = iter(nums)\nnext(it)\nprint(sum(it))",
+      "options": [
+        "14",
+        "15",
+        "10",
+        "Error"
+      ],
+      "correct": 0,
+      "hint": "next(it) consume el primer elemento del iterador antes de que sum() recorra el resto.",
+      "explanation": "iter(nums) crea un iterador sobre la lista; next(it) avanza y descarta el primer valor (1), y sum(it) suma lo que queda del iterador: 2+3+4+5 = 14."
+    },
+    {
+      "type": "identify",
+      "lang": "JavaScript",
+      "question": "¿Que imprime este codigo?",
+      "code": "Promise.allSettled([\n  Promise.resolve(1),\n  Promise.reject('error')\n]).then(results => console.log(results.length));",
+      "options": [
+        "2",
+        "1",
+        "0",
+        "Lanza un error sin imprimir nada"
+      ],
+      "correct": 0,
+      "hint": "A diferencia de Promise.all, allSettled espera a que todas las promesas terminen, sin importar si alguna fue rechazada.",
+      "explanation": "Promise.allSettled() espera a que todas las promesas terminen (resueltas o rechazadas) y devuelve un array con un resultado por cada una, sin detenerse ante un rechazo; aqui el array final tiene 2 elementos."
+    },
+    {
+      "type": "identify",
+      "lang": "TypeScript",
+      "question": "¿Que imprime este codigo?",
+      "code": "const obj: { greet?: () => string } = {};\nconsole.log(obj.greet?.());",
+      "options": [
+        "undefined",
+        "Lanza un error en tiempo de ejecucion",
+        "Un string vacio",
+        "Error de compilacion"
+      ],
+      "correct": 0,
+      "hint": "El operador ?. tambien se puede usar justo antes de una llamada a funcion, como en greet?.().",
+      "explanation": "obj.greet?.() es una llamada opcional: como greet no existe en el objeto, la expresion completa se detiene ahi y devuelve undefined en lugar de lanzar un error por intentar llamar a algo que no es una funcion."
+    },
+    {
+      "type": "identify",
+      "lang": "SQL",
+      "question": "¿Que devuelve esta consulta?",
+      "code": "SELECT name FROM customers c\nWHERE NOT EXISTS (\n  SELECT 1 FROM orders o WHERE o.customer_id = c.id\n);",
+      "options": [
+        "Los clientes que nunca han hecho ningun pedido",
+        "Los clientes que tienen al menos un pedido",
+        "El numero total de pedidos por cliente",
+        "Todos los clientes ordenados por nombre"
+      ],
+      "correct": 0,
+      "hint": "NOT EXISTS es verdadero cuando la subconsulta no encuentra ninguna fila que coincida.",
+      "explanation": "NOT EXISTS invierte la logica de EXISTS: la fila de customers se incluye solo cuando la subconsulta no encuentra ningun pedido asociado a ese cliente, es decir, clientes sin pedidos."
+    },
+    {
+      "type": "complete",
+      "lang": "Bash",
+      "question": "¿Que falta para que esto imprima \"ana\" en minusculas?",
+      "code": "nombre=\"ANA\"\necho \"${nombre____}\"",
+      "options": [
+        ",,",
+        "^^",
+        "%%",
+        "##"
+      ],
+      "correct": 0,
+      "hint": "La version en minusculas de ${variable^^} usa comas en lugar de acentos circunflejos.",
+      "explanation": "${variable,,} convierte a minusculas todos los caracteres del valor, a diferencia de ${variable^^}, que los convierte a mayusculas; aqui transforma \"ANA\" en \"ana\"."
+    }
+  ],
+  "tips": [
+    {
+      "text": "No subas al repositorio compartido los archivos de configuracion personal de tu editor, como la carpeta .vscode/ o .idea/.",
+      "explanation": "Cada persona del equipo suele tener sus propias preferencias de editor (tema, atajos, extensiones), y mezclar esa configuracion personal con el codigo del proyecto genera conflictos de merge sin ningun valor real. Lo habitual es anadir esas carpetas al .gitignore y, si hace falta compartir alguna configuracion util para todos, hacerlo aparte de forma explicita.",
+      "link": "https://git-scm.com/docs/gitignore",
+      "linkLabel": "Git SCM: documentacion de .gitignore"
+    },
+    {
+      "text": "Cierra siempre los archivos, sockets o conexiones que abras explicitamente, en vez de confiar en que el recolector de basura lo hara por ti.",
+      "explanation": "El recolector de basura de un lenguaje libera memoria, pero no garantiza cuando (ni si) cerrara un recurso externo como un archivo o una conexion de red, lo que puede dejar descriptores de archivo abiertos o bloqueados hasta que el programa termine. Usar un bloque que garantice la liberacion, como 'with' en Python o 'try-with-resources' en Java, asegura que el recurso se cierra incluso si ocurre un error a mitad de camino.",
+      "link": "https://docs.python.org/3/reference/compound_stmts.html#the-with-statement",
+      "linkLabel": "Documentacion oficial de Python: la sentencia with"
+    },
+    {
+      "text": "Usa un pool de conexiones a la base de datos en lugar de abrir una conexion nueva en cada peticion de tu aplicacion.",
+      "explanation": "Abrir una conexion a la base de datos es una operacion relativamente lenta, y hacerlo en cada peticion desperdicia tiempo y puede agotar el numero maximo de conexiones que el motor permite a la vez. Un pool mantiene un grupo de conexiones ya abiertas y las reparte entre las peticiones que las necesitan, reutilizandolas en lugar de crearlas y destruirlas constantemente.",
+      "link": "https://www.postgresql.org/docs/current/runtime-config-connection.html",
+      "linkLabel": "Documentacion de PostgreSQL: configuracion de conexiones"
+    },
+    {
+      "text": "Si necesitas construir muchas cadenas de texto dentro de un bucle, usa join() (o el equivalente de tu lenguaje) en lugar de concatenar con + una y otra vez.",
+      "explanation": "Las cadenas de texto suelen ser inmutables, asi que cada vez que concatenas con + dentro de un bucle el lenguaje crea una cadena nueva completa en memoria, copiando todo el texto anterior; con miles de vueltas esto se vuelve notablemente lento. join() (o un StringBuilder en Java) construye el resultado final de una sola vez, de forma mucho mas eficiente.",
+      "link": "https://docs.python.org/3/library/stdtypes.html#str.join",
+      "linkLabel": "Documentacion oficial de Python: str.join()"
+    },
+    {
+      "text": "Si tu aplicacion deja que el usuario indique un nombre de archivo o una ruta, comprueba que no pueda 'escapar' fuera de la carpeta permitida.",
+      "explanation": "Un atacante puede escribir algo como '../../etc/passwd' en un campo que esperaba solo un nombre de archivo, y si tu codigo no lo valida, termina leyendo o sobrescribiendo archivos del sistema que nunca deberia poder tocar, un fallo conocido como path traversal. Normalizar la ruta resultante y comprobar que sigue dentro de la carpeta esperada antes de usarla evita este tipo de ataque.",
+      "link": "https://owasp.org/www-community/attacks/Path_Traversal",
+      "linkLabel": "OWASP: ataques de Path Traversal"
+    }
+  ]
+}

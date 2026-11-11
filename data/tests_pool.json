@@ -527,6 +527,17 @@
       ],
       "correct": 0,
       "explanation": "range(2, 10, 3) empieza en 2, avanza de 3 en 3 y se detiene antes de llegar a 10, dando como resultado 2, 5 y 8."
+    },
+    {
+      "q": "¿Que devuelve `list(enumerate(['a', 'b'], start=5))` en Python?",
+      "opts": [
+        "[(5, 'a'), (6, 'b')]",
+        "[(0, 'a'), (1, 'b')]",
+        "[('a', 5), ('b', 6)]",
+        "Error de sintaxis"
+      ],
+      "correct": 0,
+      "explanation": "enumerate() acepta un parametro start que fija el indice inicial; aqui empieza en 5, por lo que los pares resultantes son (5, 'a') y (6, 'b')."
     }
   ],
   "javascript": [
@@ -1057,6 +1068,17 @@
       ],
       "correct": 0,
       "explanation": "typeof null devuelve 'object' por un error historico de diseno del lenguaje que nunca se corrigio para no romper codigo existente, aunque null no es realmente un objeto."
+    },
+    {
+      "q": "¿Que imprime este codigo?\nconsole.log(typeof null);",
+      "opts": [
+        "object",
+        "null",
+        "undefined",
+        "number"
+      ],
+      "correct": 0,
+      "explanation": "Por un error historico del lenguaje nunca corregido por compatibilidad, typeof null devuelve 'object' en JavaScript, aunque null no sea realmente un objeto."
     }
   ],
   "typescript": [
@@ -1587,6 +1609,17 @@
       ],
       "correct": 0,
       "explanation": "El operador de asercion no nula (!) solo afecta a la comprobacion de tipos en tiempo de compilacion; no realiza ninguna comprobacion real cuando el programa se ejecuta."
+    },
+    {
+      "q": "¿Que hace el operador de asercion no nula (!) en TypeScript, usado como en `valor!.propiedad`?",
+      "opts": [
+        "Le dice al compilador que confie en que 'valor' no es null ni undefined en ese punto, sin comprobarlo en tiempo de ejecucion",
+        "Comprueba en tiempo de ejecucion que 'valor' no sea null, lanzando un error si lo es",
+        "Convierte 'valor' a un booleano",
+        "Declara que 'propiedad' es opcional"
+      ],
+      "correct": 0,
+      "explanation": "El operador ! es solo una instruccion para el compilador, no genera ninguna comprobacion real en el codigo compilado; si 'valor' resulta ser null en tiempo de ejecucion, el programa fallara igualmente."
     }
   ],
   "java": [
@@ -2117,6 +2150,17 @@
       ],
       "correct": 0,
       "explanation": "Una clase declarada como 'final' no puede ser extendida por ninguna subclase; 'sealed', incorporada mas tarde, en cambio permite elegir explicitamente que clases si pueden heredarla."
+    },
+    {
+      "q": "¿Que palabra clave de Java impide que una clase pueda ser heredada por otra?",
+      "opts": [
+        "final",
+        "static",
+        "private",
+        "abstract"
+      ],
+      "correct": 0,
+      "explanation": "Una clase marcada como 'final' no puede extenderse mediante herencia; intentarlo produce un error de compilacion."
     }
   ],
   "kotlin": [
@@ -2647,6 +2691,17 @@
       ],
       "correct": 0,
       "explanation": "A diferencia del operador 'as' normal, que lanza una excepcion si la conversion no es posible, 'as?' devuelve null en ese caso, lo que permite manejar el fallo sin un bloque try/catch."
+    },
+    {
+      "q": "¿Que devuelve `\"Hola\".repeat(3)` en Kotlin?",
+      "opts": [
+        "HolaHolaHola",
+        "Hola Hola Hola",
+        "HHHooollaaa",
+        "Error de compilacion"
+      ],
+      "correct": 0,
+      "explanation": "El metodo repeat(n) de String en Kotlin devuelve el texto repetido n veces de forma consecutiva, sin ningun separador entre las copias."
     }
   ],
   "sql": [
@@ -3177,6 +3232,17 @@
       ],
       "correct": 0,
       "explanation": "LIMIT indica el numero maximo de filas que debe devolver la consulta, independientemente de cuantas cumplan la condicion del WHERE."
+    },
+    {
+      "q": "¿Que hace `SELECT DISTINCT ON (cliente_id) * FROM pedidos ORDER BY cliente_id, fecha DESC;` en PostgreSQL?",
+      "opts": [
+        "Devuelve una sola fila por cliente, la de fecha mas reciente, gracias al ORDER BY dentro de cada grupo",
+        "Elimina todos los pedidos duplicados exactos de la tabla",
+        "Cuenta cuantos pedidos distintos tiene cada cliente",
+        "Es un error de sintaxis, DISTINCT ON no existe en SQL"
+      ],
+      "correct": 0,
+      "explanation": "DISTINCT ON (columna), una extension propia de PostgreSQL, conserva solo la primera fila de cada grupo segun el ORDER BY indicado; combinado con ORDER BY fecha DESC devuelve el pedido mas reciente de cada cliente."
     }
   ],
   "git": [
@@ -3707,6 +3773,17 @@
       ],
       "correct": 0,
       "explanation": "git diff sin argumentos compara el directorio de trabajo con el area de staging (o con el ultimo commit si no hay nada en staging); git status solo resume que archivos cambiaron, sin mostrar las lineas exactas."
+    },
+    {
+      "q": "¿Que hace el comando `git worktree add ../hotfix hotfix`?",
+      "opts": [
+        "Crea una carpeta nueva aparte con la rama 'hotfix' ya extraida, para trabajar en paralelo sin cambiar de rama en tu carpeta actual",
+        "Combina la rama hotfix con la rama actual",
+        "Elimina la rama hotfix del repositorio",
+        "Crea una copia completa del repositorio en otro servidor"
+      ],
+      "correct": 0,
+      "explanation": "git worktree permite tener varias ramas extraidas (checked out) al mismo tiempo en carpetas distintas del mismo repositorio, sin tener que hacer stash ni cambiar de rama en la carpeta principal."
     }
   ],
   "htmlcss": [
@@ -4237,6 +4314,17 @@
       ],
       "correct": 0,
       "explanation": "overflow: hidden recorta y oculta el contenido que sobrepasa el tamano del elemento, sin mostrar ninguna barra de desplazamiento para acceder a esa parte."
+    },
+    {
+      "q": "¿Para que sirve la propiedad CSS `aspect-ratio: 16 / 9;` aplicada a una imagen o un contenedor?",
+      "opts": [
+        "Fija la proporcion entre ancho y alto del elemento, para que mantenga esa forma aunque cambie el tamano de la pantalla",
+        "Rota el elemento 16 grados sobre su eje",
+        "Limita el elemento a un maximo de 16 colores",
+        "Divide el elemento en 9 columnas de igual ancho"
+      ],
+      "correct": 0,
+      "explanation": "aspect-ratio fija la relacion entre el ancho y el alto de un elemento, muy util para que un video o una imagen reserven el espacio correcto en la pagina antes de cargar, evitando saltos en el diseno."
     }
   ],
   "bash": [
@@ -4767,6 +4855,17 @@
       ],
       "correct": 0,
       "explanation": "chmod +x anade el permiso de ejecucion al archivo, necesario para poder ejecutarlo directamente como un programa (./archivo.sh) en lugar de solo leerlo."
+    },
+    {
+      "q": "¿Que hace el comando `diff <(sort archivo1.txt) <(sort archivo2.txt)`?",
+      "opts": [
+        "Compara el contenido ordenado de ambos archivos sin necesidad de guardar los resultados ordenados en archivos temporales",
+        "Ordena ambos archivos y los guarda con el mismo nombre",
+        "Combina ambos archivos en uno solo ordenado",
+        "Elimina las lineas duplicadas de archivo1.txt"
+      ],
+      "correct": 0,
+      "explanation": "La sintaxis <(comando), llamada sustitucion de proceso, trata la salida de un comando como si fuera un archivo temporal; aqui permite comparar los archivos ya ordenados con diff sin crear archivos intermedios a mano."
     }
   ],
   "ia": [
@@ -5286,6 +5385,17 @@
       ],
       "correct": 0,
       "explanation": "La ventana de contexto es la cantidad maxima de texto, medida en tokens, que un modelo puede procesar y tener en cuenta a la vez dentro de una misma conversacion o documento."
+    },
+    {
+      "q": "En el contexto de los modelos de lenguaje, ¿que es el 'context window' (ventana de contexto)?",
+      "opts": [
+        "La cantidad maxima de texto, medida en tokens, que el modelo puede tener en cuenta a la vez al generar una respuesta",
+        "El tiempo maximo que tarda el modelo en responder",
+        "El numero de parametros que tiene el modelo",
+        "La cantidad de idiomas distintos que el modelo entiende"
+      ],
+      "correct": 0,
+      "explanation": "La ventana de contexto es el limite de tokens (texto de entrada mas lo que el modelo lleva generado) que un modelo puede procesar de una vez; todo lo que exceda ese limite queda fuera de su memoria inmediata."
     }
   ]
 }

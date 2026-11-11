@@ -1,0 +1,65 @@
+{
+  "date": "2026-11-11",
+  "items": [
+    {
+      "tag": "Lanzamiento",
+      "title": "OpenAI lanza GPT-6 Cyber, un modelo de ciberseguridad muy restringido y clasificado como riesgo critico",
+      "url": "https://openai.com/index/introducing-gpt-6-cyber/",
+      "summary": "OpenAI presento el 5 de noviembre GPT-6 Cyber, una variante de GPT-6 Astra especializada en encontrar y validar vulnerabilidades reales, pensada solo para pruebas de seguridad autorizadas. La empresa lo clasifica como riesgo 'critico' en ciberseguridad, un nivel por encima de su predecesor, y de momento solo lo pueden usar clientes verificados de su programa restringido Daybreak Red."
+    },
+    {
+      "tag": "Lanzamiento",
+      "title": "Anthropic lanza Personal Finance, una funcion de Claude que analiza tus cuentas bancarias conectadas",
+      "url": "https://www.bleepingcomputer.com/news/artificial-intelligence/anthropic-wants-claude-to-analyze-your-bank-account-and-financial-data",
+      "summary": "Anthropic abrio el 5 de noviembre una vista previa en EEUU que permite conectar cuentas bancarias, tarjetas o inversiones a Claude a traves de Plaid para hacer preguntas sobre los propios gastos. El acceso es de solo lectura, Claude no puede mover dinero ni dar asesoramiento de inversion, y la empresa asegura que esas conversaciones no se usan para entrenar sus modelos."
+    },
+    {
+      "tag": "Impacto",
+      "title": "Un robot repartidor autonomo choca contra un autobus en Tallin y hiere a nueve pasajeros",
+      "url": "https://www.eltiempo.com/mundo/europa/el-fallo-que-hizo-que-un-robot-repartidor-se-pasara-un-semaforo-en-rojo-y-chocara-contra-un-bus-en-estonia-nueve-pasajeros-resultaron-heridos-3598392",
+      "summary": "Un robot de reparto de Starship Technologies entro en un cruce de Tallin, Estonia, e impacto contra un autobus durante la hora punta, segun informo la empresa de transporte publico TLT a comienzos de noviembre. El vehiculo autonomo siguio su camino sin detenerse tras el choque, y Starship atribuyo el fallo a que las luces publicitarias y los semaforos cercanos confundieron a sus sensores."
+    },
+    {
+      "tag": "Impacto",
+      "title": "Varias aseguradoras de salud de EEUU enfrentan demandas y ordenes judiciales por usar IA para denegar tratamientos",
+      "url": "https://natlawreview.com/article/court-allows-discovery-insurers-use-ai-deny-claims",
+      "summary": "Tribunales de EEUU estan permitiendo que avancen demandas contra UnitedHealth, Cigna y Humana que acusan a estas aseguradoras de usar algoritmos de IA para rechazar en masa reclamaciones medicas sin que un profesional sanitario revise cada caso. Una jueza ya ordeno a UnitedHealth entregar documentos internos sobre su sistema nH Predict, en un litigio que podria sentar precedente sobre cuanta supervision humana exige la ley cuando una IA decide sobre la salud de un paciente."
+    },
+    {
+      "tag": "Impacto",
+      "title": "Un juez permite que una demanda colectiva contra Workday por discriminacion de su IA de contratacion siga adelante",
+      "url": "https://www.hcamag.com/us/specialization/recruitment/workday-ai-bias-case-moves-forward-putting-hr-hiring-tools-on-notice/580004",
+      "summary": "Una jueza federal de California autorizo que la demanda Mobley contra Workday avance como demanda colectiva a nivel nacional, centrada en candidatos de mas de 40 anos presuntamente descartados por su herramienta de IA para filtrar currículums. El caso es el primero que pone a prueba si una empresa que vende software de contratacion con IA, y no solo quien la usa, puede ser responsable legal de una discriminacion automatizada."
+    },
+    {
+      "tag": "Interactivo",
+      "title": "Exercism: practica Python con ejercicios interactivos y mentoria gratuita",
+      "url": "https://exercism.org/tracks/python",
+      "summary": "Este recorrido gratuito de Exercism ofrece mas de 140 ejercicios de Python organizados en 17 conceptos del lenguaje, con correccion automatica de tu codigo nada mas enviarlo. Como en el resto de la plataforma, tambien puedes pedir mentoria gratuita de programadores voluntarios que comentan tu solucion y sugieren formas mas idiomaticas de resolverla."
+    },
+    {
+      "tag": "Interactivo",
+      "title": "WarriorJS: aprende JavaScript guiando a un guerrero a traves de una torre llena de enemigos",
+      "url": "https://warrior.js.org/",
+      "summary": "WarriorJS es un juego gratuito y de codigo abierto en el que escribes JavaScript real (con soporte completo de ES2015) para decirle a un guerrero como moverse, atacar y rescatar prisioneros mientras sube piso a piso una torre. Se instala con un simple comando de npm y cada nivel anade un reto nuevo, pensado tanto para quien empieza como para quien ya programa y quiere un reto mas lúdico."
+    },
+    {
+      "tag": "Curso",
+      "title": "freeCodeCamp: certificacion gratuita de diseno web responsive",
+      "url": "https://www.freecodecamp.org/learn/responsive-web-design/",
+      "summary": "Esta certificacion gratuita de freeCodeCamp ensena HTML semantico, accesibilidad, Flexbox, CSS Grid y diseno responsive a traves de varios proyectos practicos evaluados automaticamente. Al completar los proyectos y aprobar un examen final de 50 preguntas se obtiene una certificacion gratuita y verificable para anadir al portafolio."
+    },
+    {
+      "tag": "Interactivo",
+      "title": "Codenauts: aprende Python y JavaScript con misiones espaciales gratuitas en el navegador",
+      "url": "https://codenauts.pages.dev/",
+      "summary": "Codenauts plantea el aprendizaje de Python y JavaScript como una serie de misiones espaciales de 5 a 10 minutos cada una, pensadas para quien ya conoce la programacion por bloques y quiere escribir codigo real por primera vez. No pide crear una cuenta para empezar las primeras misiones, y todo se ejecuta directamente en el navegador sin instalar nada."
+    },
+    {
+      "tag": "Curso",
+      "title": "Microsoft Learn: da tus primeros pasos con JavaScript, la ruta gratuita de Microsoft",
+      "url": "https://learn.microsoft.com/en-us/training/paths/web-development-101/",
+      "summary": "Esta ruta de aprendizaje gratuita de Microsoft ensena los fundamentos de JavaScript (variables, funciones, bucles, el DOM) sin necesidad de experiencia previa en programacion. Cada modulo combina una breve explicacion con una comprobacion de conocimientos al final para verificar lo aprendido antes de avanzar."
+    }
+  ]
+}
