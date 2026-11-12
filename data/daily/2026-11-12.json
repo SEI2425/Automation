@@ -1,0 +1,92 @@
+{
+  "date": "2026-11-12",
+  "questions": [
+    {
+      "type": "identify",
+      "lang": "Python",
+      "question": "¿Qué imprime este código?",
+      "code": "class Contador:\n    def __init__(self):\n        self.valor = 0\n    def __call__(self):\n        self.valor += 1\n        return self.valor\n\nc = Contador()\nprint(c(), c())",
+      "options": ["1 2", "2 2", "0 1", "Error"],
+      "correct": 0,
+      "hint": "Python evalúa los argumentos de print() de izquierda a derecha antes de llamarlo, y cada llamada a c() incrementa el contador interno.",
+      "explanation": "El método __call__ permite usar una instancia como si fuera una función; cada vez que se llama a c(), self.valor aumenta en uno y se devuelve. La primera llamada da 1 y la segunda da 2, así que se imprime '1 2'."
+    },
+    {
+      "type": "complete",
+      "lang": "JavaScript",
+      "question": "¿Qué método estático falta para agrupar las palabras según su longitud?",
+      "code": "const palabras = [\"ana\", \"bob\", \"eva\", \"luis\"];\nconst grupos = Object.____(palabras, p => p.length);\nconsole.log(grupos[3]); // [\"ana\", \"bob\", \"eva\"]",
+      "options": ["groupBy", "fromEntries", "assign", "entries"],
+      "correct": 0,
+      "hint": "Es un método estático añadido en 2024 que agrupa los elementos de un array según el resultado de una función.",
+      "explanation": "Object.groupBy(array, fn) agrupa los elementos en un objeto cuyas claves son el resultado de la función para cada uno; aquí agrupa por longitud, y las tres palabras de 3 letras quedan juntas bajo la clave 3."
+    },
+    {
+      "type": "identify",
+      "lang": "TypeScript",
+      "question": "¿Qué imprime este código?",
+      "code": "function esPar(n: number): boolean {\n  return n % 2 === 0;\n}\n\ntype Validador<T> = (valor: T) => boolean;\nconst v: Validador<number> = esPar;\nconsole.log(v(7));",
+      "options": ["false", "true", "Error de compilación", "undefined"],
+      "correct": 0,
+      "hint": "Validador<T> es solo un alias para un tipo de función; v(7) equivale a llamar esPar(7).",
+      "explanation": "Validador<number> describe una función que recibe un number y devuelve boolean; esPar cumple esa forma, así que v(7) simplemente ejecuta esPar(7), y como 7 no es par, el resultado es false."
+    },
+    {
+      "type": "identify",
+      "lang": "SQL",
+      "question": "¿Qué devuelve esta consulta?",
+      "code": "SELECT email FROM newsletter_2025\nEXCEPT\nSELECT email FROM newsletter_2026;",
+      "options": [
+        "Los correos que estaban suscritos en 2025 pero ya no en 2026",
+        "Los correos suscritos en ambos años",
+        "Los correos suscritos solo en 2026",
+        "Todos los correos de ambas tablas sin duplicados"
+      ],
+      "correct": 0,
+      "hint": "EXCEPT (o MINUS en Oracle) resta los resultados de la segunda consulta de los de la primera.",
+      "explanation": "EXCEPT devuelve las filas de la primera consulta que no aparecen en los resultados de la segunda, por lo que selecciona los correos suscritos en 2025 que no están en la lista de 2026."
+    },
+    {
+      "type": "complete",
+      "lang": "Bash",
+      "question": "¿Qué falta para que esto imprima 'Tiene 6 caracteres'?",
+      "code": "nombre=\"Claude\"\necho \"Tiene ${____} caracteres\"",
+      "options": ["#nombre", "nombre#", "%nombre", "!nombre"],
+      "correct": 0,
+      "hint": "El símbolo # delante del nombre de la variable, dentro de las llaves, da su longitud en caracteres.",
+      "explanation": "${#variable} devuelve la longitud en caracteres del valor guardado en esa variable; 'Claude' tiene 6 letras, así que ${#nombre} vale 6."
+    }
+  ],
+  "tips": [
+    {
+      "text": "Usa 'git log --grep' para buscar commits por palabras del mensaje, en lugar de leer todo el historial a mano.",
+      "explanation": "Cuando buscas en qué commit se introdujo un cambio concreto pero no recuerdas la fecha ni el hash, filtrar el historial por una palabra del mensaje de commit es mucho más rápido que desplazarte commit a commit. Es especialmente útil en proyectos con meses o años de historial acumulado.",
+      "link": "https://git-scm.com/book/en/v2/Git-Basics-Viewing-the-Commit-History",
+      "linkLabel": "Pro Git: viendo el historial de commits"
+    },
+    {
+      "text": "Si un bucle puede tardar demasiado o quedarse colgado, añade un contador con un límite máximo de iteraciones en lugar de confiar solo en su condición de salida.",
+      "explanation": "Un bucle cuya condición de salida está mal calculada puede ejecutarse para siempre y bloquear tu programa sin ningún mensaje de error visible. Un límite de seguridad hace que, si algo va mal, el programa falle de forma clara y controlada en lugar de quedarse congelado sin explicación.",
+      "link": "https://dev.to/jankapunkt/prevent-infinite-loops-in-javascript-4n5o",
+      "linkLabel": "DEV Community: cómo evitar bucles infinitos en JavaScript"
+    },
+    {
+      "text": "Si copias un fragmento de código de un tutorial, un foro o una IA, cambia los nombres de sus variables a los de tu propio proyecto antes de usarlo.",
+      "explanation": "Si no sabes cómo renombrar una variable de ese fragmento con sentido, es la señal más clara de que todavía no entiendes del todo qué hace. Detenerte a renombrarla obliga a pensar en el propósito real de cada parte, en lugar de limitarte a pegar el código y confiar en que funcione.",
+      "link": "https://books.codepath.org/student-handbook/software-engineering/success-as-a-software-engineer/dont-just-copy-and-paste",
+      "linkLabel": "CodePath: no te limites a copiar y pegar"
+    },
+    {
+      "text": "Guarda en una nota propia el mensaje exacto de cualquier error poco habitual que consigas resolver, junto con la solución.",
+      "explanation": "Los errores extraños suelen repetirse meses después, cuando ya no recuerdas los detalles que te costó tanto averiguar la primera vez. Buscar primero en tus propias notas, antes que en internet, suele ser mucho más rápido porque ya sabes de antemano que esa solución funcionó en tu propio proyecto.",
+      "link": "https://stackoverflow.blog/2024/05/22/you-should-keep-a-developer-s-journal/",
+      "linkLabel": "Stack Overflow Blog: deberías llevar un diario de desarrollador"
+    },
+    {
+      "text": "Antes de borrar o modificar una parte del código que no reconoces en un proyecto que no empezaste tú, averigua primero por qué está ahí.",
+      "explanation": "Un fragmento extraño, como una comprobación redundante o una configuración rara, puede existir porque alguien ya se topó con un problema real en el pasado y esa fue la forma en que lo resolvió. Borrarlo sin entenderlo puede traer de vuelta un fallo que ya estaba solucionado.",
+      "link": "https://dev.to/william_geo/chesterton-fence-never-remove-something-until-you-understand-why-it-exists-4j3o",
+      "linkLabel": "DEV Community: la valla de Chesterton"
+    }
+  ]
+}

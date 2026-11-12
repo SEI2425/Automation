@@ -1,0 +1,65 @@
+{
+  "date": "2026-11-12",
+  "items": [
+    {
+      "tag": "Impacto",
+      "title": "El robo de 6.300 millones de dólares a Binance empezó con una falsa entrevista de trabajo y una herramienta de codificación con IA manipulada",
+      "url": "https://www.govinfosecurity.com/how-north-korean-hackers-interviewed-their-way-into-binance-a-33290",
+      "summary": "Binance reveló el 3 de noviembre que el mayor robo de criptomonedas de su historia empezó cuando un atacante vinculado a Corea del Norte consiguió, a través de una entrevista de trabajo falsa, que un ingeniero instalara una herramienta de programación con IA manipulada que dio acceso a los sistemas internos de la empresa. Binance dijo que cubrirá las pérdidas con fondos propios y que ya ha logrado congelar o interceptar parte del dinero robado."
+    },
+    {
+      "tag": "Impacto",
+      "title": "OpenAI corta el acceso de Cursor a sus modelos de IA tras la compra de la empresa por parte de SpaceX",
+      "url": "https://openai.com/index/our-decision-on-cursor-following-its-acquisition-by-spacex/",
+      "summary": "OpenAI confirmó que a partir del 12 de noviembre deja de dar a Cursor acceso a sus modelos de IA, después de que SpaceX completara la compra de su empresa matriz por unos 60.000 millones de dólares. La empresa invocó una cláusula de cambio de control de su contrato y dijo no confiar en que SpaceX respete sus condiciones de uso; Cursor seguirá funcionando con otros modelos como Claude, Gemini o Grok."
+    },
+    {
+      "tag": "Impacto",
+      "title": "La farmacéutica Pierre Fabre se asocia con la IA de XtalPi para diseñar fármacos contra el cáncer desde cero",
+      "url": "https://letsdatascience.com/news/xtalpi-and-pierre-fabre-partner-on-ai-cancer-drug-discovery-c27f24d0",
+      "summary": "Pierre Fabre y la empresa de inteligencia artificial XtalPi anunciaron el 9 de noviembre una colaboración para diseñar con IA nuevas moléculas de molécula pequeña contra el cáncer, en lugar de partir de compuestos ya conocidos. El acuerdo se suma a una ola de pactos similares entre grandes farmacéuticas y startups de IA, en un mercado de licencias de descubrimiento de fármacos con IA que ya supera los 47.000 millones de dólares en lo que va de 2026."
+    },
+    {
+      "tag": "Lanzamiento",
+      "title": "Google amplía el acceso a Gemini 4 Carbon, su modelo más avanzado centrado en ciberseguridad",
+      "url": "https://businesstoday.in/technology/news/story/google-gemini-4-carbon-now-available-who-can-use-the-new-ai-model-and-how-much-does-it-cost-566790-2026-11-11",
+      "summary": "Google abrió el 11 de noviembre el acceso a Gemini 4 Carbon a desarrolladores, empresas y suscriptores de pago, después de limitarlo durante semanas a un grupo reducido de 'ciberdefensores de confianza'. El modelo, que la empresa describe como su más avanzado hasta ahora, ya se puede probar desde la app Gemini, el modo IA de la Búsqueda y Google Antigravity."
+    },
+    {
+      "tag": "Lanzamiento",
+      "title": "Google DeepMind presenta un nuevo modelo de robótica y una nueva versión de su IA de genómica",
+      "url": "https://siliconangle.com/2026/11/11/google-deepmind-releases-new-advanced-robotics-ai-model-and-next-generation-gene-prediction-model",
+      "summary": "Google DeepMind anunció el 11 de noviembre una actualización de su familia de modelos de robótica, pensada para que robots de socios como Boston Dynamics o Apptronik entiendan mejor su entorno físico, junto a una nueva versión de su modelo de genómica que predice cómo ciertos cambios en el ADN afectan a tipos concretos de células. El acceso a la parte de genómica se ofrece por ahora solo para investigación académica no comercial."
+    },
+    {
+      "tag": "Interactivo",
+      "title": "Exercism: practica JavaScript con ejercicios interactivos y mentoría gratuita",
+      "url": "https://exercism.org/tracks/javascript",
+      "summary": "Este recorrido gratuito de Exercism ofrece decenas de ejercicios de JavaScript ordenados por dificultad, con corrección automática de tu código nada más enviarlo. Como en el resto de la plataforma, también puedes pedir mentoría gratuita de programadores voluntarios que comentan tu solución."
+    },
+    {
+      "tag": "Interactivo",
+      "title": "Khan Academy: aprende a consultar bases de datos con SQL de forma gratuita",
+      "url": "https://www.khanacademy.org/computing/computer-programming/sql",
+      "summary": "Este curso gratuito de Khan Academy enseña los fundamentos de SQL (SELECT, INSERT, UPDATE, DELETE) con vídeos cortos y un editor integrado donde se ejecutan consultas reales sobre una base de datos de ejemplo. Está pensado para quien nunca ha tocado una base de datos, sin necesidad de instalar nada."
+    },
+    {
+      "tag": "Interactivo",
+      "title": "Advent of Code: resuelve un puzzle de programación gratuito cada día",
+      "url": "https://adventofcode.com/",
+      "summary": "Advent of Code es una colección gratuita de puzzles de programación, uno por día, que se resuelven con el lenguaje que prefieras y se corrigen con tu propia respuesta numérica. Además de la edición de diciembre, todos los archivos de años anteriores siguen disponibles gratis para practicar en cualquier momento del año."
+    },
+    {
+      "tag": "Curso",
+      "title": "freeCodeCamp: certificación gratuita de bases de datos relacionales",
+      "url": "https://www.freecodecamp.org/learn/relational-database/",
+      "summary": "Esta certificación gratuita de freeCodeCamp enseña a diseñar y consultar bases de datos relacionales con PostgreSQL y la terminal de Bash, a través de proyectos prácticos evaluados automáticamente. Al completar los proyectos obligatorios y el examen final se obtiene una certificación gratuita y verificable."
+    },
+    {
+      "tag": "Interactivo",
+      "title": "TypeHero: resuelve retos de tipos de TypeScript directamente en el navegador",
+      "url": "https://typehero.dev/",
+      "summary": "TypeHero propone decenas de retos gratuitos centrados solo en el sistema de tipos de TypeScript, desde genéricos básicos hasta tipos condicionales avanzados, con corrección automática al enviar tu solución. También puedes ver cómo otros usuarios resolvieron el mismo reto para comparar enfoques distintos."
+    }
+  ]
+}

@@ -538,6 +538,17 @@
       ],
       "correct": 0,
       "explanation": "enumerate() acepta un parametro start que fija el indice inicial; aqui empieza en 5, por lo que los pares resultantes son (5, 'a') y (6, 'b')."
+    },
+    {
+      "q": "¿Qué devuelve `len(range(3, 20, 5))`?",
+      "opts": [
+        "4",
+        "3",
+        "5",
+        "Error"
+      ],
+      "correct": 0,
+      "explanation": "range(3, 20, 5) genera los valores 3, 8, 13 y 18 (se detiene antes de llegar a 20), un total de 4 elementos; len() los cuenta sin necesidad de convertir el rango en una lista."
     }
   ],
   "javascript": [
@@ -1079,6 +1090,17 @@
       ],
       "correct": 0,
       "explanation": "Por un error historico del lenguaje nunca corregido por compatibilidad, typeof null devuelve 'object' en JavaScript, aunque null no sea realmente un objeto."
+    },
+    {
+      "q": "¿Qué imprime `console.log(typeof function(){})`?",
+      "opts": [
+        "function",
+        "object",
+        "undefined",
+        "Error"
+      ],
+      "correct": 0,
+      "explanation": "En JavaScript, typeof aplicado a una función siempre devuelve la cadena 'function', aunque internamente las funciones sean un tipo especial de objeto."
     }
   ],
   "typescript": [
@@ -1620,6 +1642,17 @@
       ],
       "correct": 0,
       "explanation": "El operador ! es solo una instruccion para el compilador, no genera ninguna comprobacion real en el codigo compilado; si 'valor' resulta ser null en tiempo de ejecucion, el programa fallara igualmente."
+    },
+    {
+      "q": "¿Qué tipo tiene la variable `resultado` tras `const resultado = [1, 2, 3] as const;`?",
+      "opts": [
+        "Una tupla de solo lectura con los valores literales 1, 2 y 3",
+        "number[]",
+        "Array<number>",
+        "any"
+      ],
+      "correct": 0,
+      "explanation": "'as const' congela el array en su forma más específica, una tupla de solo lectura con los valores literales exactos, en lugar de inferirlo como el tipo genérico number[]."
     }
   ],
   "java": [
@@ -2161,6 +2194,17 @@
       ],
       "correct": 0,
       "explanation": "Una clase marcada como 'final' no puede extenderse mediante herencia; intentarlo produce un error de compilacion."
+    },
+    {
+      "q": "¿Qué imprime este código?\npublic class Main {\n  public static void main(String[] args) {\n    int[] a = {1, 2, 3};\n    int[] b = a;\n    b[0] = 99;\n    System.out.println(a[0]);\n  }\n}",
+      "opts": [
+        "99",
+        "1",
+        "0",
+        "Error de compilación"
+      ],
+      "correct": 0,
+      "explanation": "En Java, los arrays son objetos: 'b = a' copia la referencia, no el contenido, así que ambas variables apuntan al mismo array en memoria y modificar b[0] también cambia a[0]."
     }
   ],
   "kotlin": [
@@ -2702,6 +2746,17 @@
       ],
       "correct": 0,
       "explanation": "El metodo repeat(n) de String en Kotlin devuelve el texto repetido n veces de forma consecutiva, sin ningun separador entre las copias."
+    },
+    {
+      "q": "¿Qué imprime `println(listOf(1, 2, 3).sum())`?",
+      "opts": [
+        "6",
+        "3",
+        "0",
+        "Error de compilación"
+      ],
+      "correct": 0,
+      "explanation": "La función sum() de la biblioteca estándar de Kotlin suma todos los elementos numéricos de la lista: 1 + 2 + 3 = 6."
     }
   ],
   "sql": [
@@ -3243,6 +3298,17 @@
       ],
       "correct": 0,
       "explanation": "DISTINCT ON (columna), una extension propia de PostgreSQL, conserva solo la primera fila de cada grupo segun el ORDER BY indicado; combinado con ORDER BY fecha DESC devuelve el pedido mas reciente de cada cliente."
+    },
+    {
+      "q": "¿Qué devuelve `SELECT 10 % 3;` en la mayoría de motores SQL?",
+      "opts": [
+        "1",
+        "3",
+        "0",
+        "Error"
+      ],
+      "correct": 0,
+      "explanation": "El operador % calcula el resto de la división entera; 10 dividido entre 3 da 3 con un resto de 1."
     }
   ],
   "git": [
@@ -3784,6 +3850,17 @@
       ],
       "correct": 0,
       "explanation": "git worktree permite tener varias ramas extraidas (checked out) al mismo tiempo en carpetas distintas del mismo repositorio, sin tener que hacer stash ni cambiar de rama en la carpeta principal."
+    },
+    {
+      "q": "¿Qué hace el comando `git restore --staged archivo.txt`?",
+      "opts": [
+        "Quita el archivo del área de staging sin tocar los cambios ya escritos en el directorio de trabajo",
+        "Elimina el archivo por completo del disco",
+        "Deshace todos los cambios no confirmados de ese archivo",
+        "Crea una copia del archivo dentro del área de staging"
+      ],
+      "correct": 0,
+      "explanation": "git restore --staged saca el archivo del área de preparación (lo 'despreparara'), pero conserva intactos los cambios que ya estaban escritos en el directorio de trabajo."
     }
   ],
   "htmlcss": [
@@ -4325,6 +4402,17 @@
       ],
       "correct": 0,
       "explanation": "aspect-ratio fija la relacion entre el ancho y el alto de un elemento, muy util para que un video o una imagen reserven el espacio correcto en la pagina antes de cargar, evitando saltos en el diseno."
+    },
+    {
+      "q": "¿Qué hace la propiedad CSS `overflow: hidden` en un contenedor?",
+      "opts": [
+        "Oculta cualquier contenido del elemento que se desborde fuera de su área visible",
+        "Hace invisible el elemento entero, como display: none",
+        "Añade barras de scroll siempre, aunque el contenido no se desborde",
+        "Solo afecta al texto, no a imágenes ni otros elementos"
+      ],
+      "correct": 0,
+      "explanation": "overflow: hidden recorta cualquier contenido que sobresalga del área del contenedor, sin mostrar barras de desplazamiento ni ningún aviso visual de que falta contenido."
     }
   ],
   "bash": [
@@ -4866,6 +4954,17 @@
       ],
       "correct": 0,
       "explanation": "La sintaxis <(comando), llamada sustitucion de proceso, trata la salida de un comando como si fuera un archivo temporal; aqui permite comparar los archivos ya ordenados con diff sin crear archivos intermedios a mano."
+    },
+    {
+      "q": "¿Qué hace el comando `comando1 && comando2`?",
+      "opts": [
+        "Ejecuta comando2 solo si comando1 termina con éxito (código de salida 0)",
+        "Ejecuta ambos comandos siempre, uno detrás del otro",
+        "Ejecuta comando2 solo si comando1 falla",
+        "Combina la salida de ambos comandos en una sola línea"
+      ],
+      "correct": 0,
+      "explanation": "El operador && ejecuta el segundo comando únicamente si el primero terminó con éxito; si comando1 falla, Bash nunca llega a ejecutar comando2."
     }
   ],
   "ia": [
@@ -5396,6 +5495,17 @@
       ],
       "correct": 0,
       "explanation": "La ventana de contexto es el limite de tokens (texto de entrada mas lo que el modelo lleva generado) que un modelo puede procesar de una vez; todo lo que exceda ese limite queda fuera de su memoria inmediata."
+    },
+    {
+      "q": "¿Qué mide el 'Chatbot Arena', creado por investigadores de la Universidad de Berkeley?",
+      "opts": [
+        "Clasifica modelos de lenguaje según votos de usuarios reales que comparan dos respuestas anónimas",
+        "El número de parámetros de cada modelo",
+        "La velocidad en tokens por segundo de cada modelo",
+        "El consumo energético del entrenamiento de cada modelo"
+      ],
+      "correct": 0,
+      "explanation": "Chatbot Arena, lanzado en 2023, pide a personas reales que comparen dos respuestas anónimas de distintos modelos y votan cuál prefieren, y con esos votos construye una clasificación, en lugar de usar solo exámenes de opción múltiple."
     }
   ]
 }
