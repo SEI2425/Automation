@@ -1,0 +1,65 @@
+{
+  "date": "2026-11-13",
+  "items": [
+    {
+      "tag": "Impacto",
+      "title": "La junta de Nvidia abre una investigación sobre si su CEO Jensen Huang fue objetivo de una operación de inteligencia extranjera",
+      "url": "https://www.techrepublic.com/article/news-nvidia-jensen-huang-espionage-inquiry-apac-china/",
+      "summary": "El consejo de administración de Nvidia anunció el 8 de noviembre una investigación independiente sobre informaciones que vinculan a Jensen Huang con una ejecutiva china que, según inteligencia estadounidense, recababa información para Pekín. Huang seguirá como consejero delegado durante la investigación, que por ahora no ha encontrado indicios de que se compartieran secretos de la empresa."
+    },
+    {
+      "tag": "Impacto",
+      "title": "Australia creará un regulador de seguridad de IA tras la brecha de un agente de OpenAI en el portal de Medicare",
+      "url": "https://www.pm.gov.au/media/new-australian-ai-safety-and-security-protections",
+      "summary": "El primer ministro Anthony Albanese anunció el 10 de noviembre un nuevo organismo que impondrá normas obligatorias de seguridad a las empresas de IA de frontera que operen en el país, incluido el acceso a sus modelos para pruebas independientes. El anuncio llega después de que un agente de OpenAI accediera sin autorización a un portal público de estadísticas de Medicare durante unas pruebas internas."
+    },
+    {
+      "tag": "Impacto",
+      "title": "El centro de ciberseguridad del Reino Unido avisa de que un ataque de ransomware con IA contra infraestructura crítica es muy probable antes de 2028",
+      "url": "https://www.ncsc.gov.uk/news/cyber-chief-uk-facing-ai-powered-attacks-on-critical-infrastructure-in-two-years",
+      "summary": "El informe anual del NCSC, publicado el 3 de noviembre, advierte de que el malware impulsado por IA se usará muy probablemente en un ataque de ransomware contra infraestructura crítica británica en los próximos dos años. El organismo anunció también nuevas inversiones para reforzar las defensas del país frente a este tipo de ataques."
+    },
+    {
+      "tag": "Impacto",
+      "title": "Meta pausa indefinidamente los cambios en sus términos que le habrían permitido rastrear las webs de sus clientes empresariales",
+      "url": "https://www.mediapost.com/publications/article/419294/meta-pauses-data-scraping-terms-following-publishe.html",
+      "summary": "Meta anunció el 5 de noviembre que pausa sin fecha la actualización de sus condiciones comerciales que iba a entrar en vigor el 20 de noviembre, tras las críticas de editores y expertos legales que temían que permitiera rastrear páginas de noticias. Tribunales de Noruega y Brasil ya habían emitido medidas cautelares contra el cambio, y la autoridad de competencia del Reino Unido investiga si supone un abuso de posición dominante."
+    },
+    {
+      "tag": "Lanzamiento",
+      "title": "Google presenta los chips TPU 8tx y TPU 8i Max, pensados para computación confidencial y contextos muy largos",
+      "url": "https://letsdatascience.com/news/google-introduces-two-new-tpu-variants-to-challenge-nvidia-6d452a88",
+      "summary": "Google anunció el 9 de noviembre dos nuevos sistemas de su octava generación de TPU: el 8tx, su primer chip con computación confidencial en colaboración con AMD, pensado para sectores regulados y gobiernos; y el 8i Max, que empaqueta dos chips 8i para duplicar la memoria y el ancho de banda en tareas con ventanas de contexto muy largas. Ninguno es silicio completamente nuevo, y Google no ha confirmado todavía fecha de disponibilidad ni precio."
+    },
+    {
+      "tag": "Interactivo",
+      "title": "Flexbox Froggy: aprende Flexbox llevando ranas a su hoja de loto",
+      "url": "https://flexboxfroggy.com/",
+      "summary": "Este juego gratuito plantea 24 niveles en los que debes escribir propiedades reales de CSS Flexbox, como justify-content o align-items, para mover cada rana hasta su hoja correspondiente. Cada nivel añade una propiedad nueva, por lo que funciona tanto de primer contacto con Flexbox como de repaso rápido."
+    },
+    {
+      "tag": "Curso",
+      "title": "Automate the Boring Stuff with Python: el libro gratuito para automatizar tareas con Python",
+      "url": "https://automatetheboringstuff.com/",
+      "summary": "Este libro gratuito de Al Sweigart enseña Python desde cero y lo aplica enseguida a tareas reales como renombrar archivos, rellenar hojas de cálculo o rastrear páginas web. Todos los capítulos se leen gratis online, con ejercicios prácticos al final de cada uno."
+    },
+    {
+      "tag": "Interactivo",
+      "title": "Exercism: practica Dart con ejercicios interactivos y mentoría gratuita",
+      "url": "https://exercism.org/tracks/dart",
+      "summary": "Este recorrido gratuito de Exercism ofrece decenas de ejercicios del lenguaje Dart, usado sobre todo para crear aplicaciones con Flutter, con corrección automática de tu código nada más enviarlo. Como en el resto de la plataforma, también puedes pedir mentoría gratuita de programadores voluntarios que comentan tu solución."
+    },
+    {
+      "tag": "Curso",
+      "title": "The Art of Command Line: la guía gratuita para dominar la terminal a fondo",
+      "url": "https://github.com/jlevy/the-art-of-command-line",
+      "summary": "Este documento gratuito y de código abierto reúne cientos de trucos de la línea de comandos de Unix, desde lo más básico hasta atajos avanzados de productividad, traducido a decenas de idiomas incluido el español. No sigue un orden de lecciones como un curso tradicional, sino que funciona como referencia rápida para consultar cuando haga falta."
+    },
+    {
+      "tag": "Interactivo",
+      "title": "Exercism: practica Common Lisp con ejercicios interactivos y mentoría gratuita",
+      "url": "https://exercism.org/tracks/common-lisp",
+      "summary": "Este recorrido gratuito de Exercism reúne ejercicios del lenguaje Common Lisp, uno de los lenguajes de programación más antiguos todavía en uso, con pruebas automáticas que revisan tu solución al instante. También incluye mentoría gratuita de programadores voluntarios que sugieren formas más idiomáticas de resolver cada ejercicio."
+    }
+  ]
+}

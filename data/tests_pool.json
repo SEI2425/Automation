@@ -549,6 +549,12 @@
       ],
       "correct": 0,
       "explanation": "range(3, 20, 5) genera los valores 3, 8, 13 y 18 (se detiene antes de llegar a 20), un total de 4 elementos; len() los cuenta sin necesidad de convertir el rango en una lista."
+    },
+    {
+      "q": "¿Cuál de las siguientes estructuras de datos de Python es inmutable?",
+      "opts": ["list", "dict", "tuple", "set"],
+      "correct": 2,
+      "explanation": "Las tuplas no se pueden modificar una vez creadas, a diferencia de las listas, los diccionarios o los sets, que sí admiten añadir, quitar o cambiar elementos."
     }
   ],
   "javascript": [
@@ -1101,6 +1107,12 @@
       ],
       "correct": 0,
       "explanation": "En JavaScript, typeof aplicado a una función siempre devuelve la cadena 'function', aunque internamente las funciones sean un tipo especial de objeto."
+    },
+    {
+      "q": "¿Qué devuelve la expresión '5' == 5 en JavaScript?",
+      "opts": ["true", "false", "undefined", "Lanza un error"],
+      "correct": 0,
+      "explanation": "El operador == convierte los tipos antes de comparar (coerción), así que la cadena '5' y el número 5 se consideran iguales; el operador === sí distinguiría el tipo y daría false."
     }
   ],
   "typescript": [
@@ -1653,6 +1665,12 @@
       ],
       "correct": 0,
       "explanation": "'as const' congela el array en su forma más específica, una tupla de solo lectura con los valores literales exactos, en lugar de inferirlo como el tipo genérico number[]."
+    },
+    {
+      "q": "¿Qué modificador de TypeScript impide reasignar una propiedad después de inicializarla?",
+      "opts": ["readonly", "const", "final", "static"],
+      "correct": 0,
+      "explanation": "readonly marca una propiedad de una interfaz o clase como de solo lectura tras su inicialización; const se usa para variables, no para propiedades de un objeto."
     }
   ],
   "java": [
@@ -2205,6 +2223,12 @@
       ],
       "correct": 0,
       "explanation": "En Java, los arrays son objetos: 'b = a' copia la referencia, no el contenido, así que ambas variables apuntan al mismo array en memoria y modificar b[0] también cambia a[0]."
+    },
+    {
+      "q": "¿Cuál de estos modificadores de acceso en Java hace que un miembro solo sea visible dentro de su propia clase?",
+      "opts": ["public", "protected", "private", "default (sin modificador)"],
+      "correct": 2,
+      "explanation": "private restringe el acceso exclusivamente a la propia clase; protected permite acceso también a subclases y al resto del mismo paquete."
     }
   ],
   "kotlin": [
@@ -2757,6 +2781,12 @@
       ],
       "correct": 0,
       "explanation": "La función sum() de la biblioteca estándar de Kotlin suma todos los elementos numéricos de la lista: 1 + 2 + 3 = 6."
+    },
+    {
+      "q": "¿Qué palabra clave de Kotlin se usa para declarar una referencia cuyo valor no se puede reasignar?",
+      "opts": ["var", "val", "let", "const"],
+      "correct": 1,
+      "explanation": "val declara una referencia de asignación única, similar a 'final' en Java; var permite reasignar el valor más adelante."
     }
   ],
   "sql": [
@@ -3309,6 +3339,12 @@
       ],
       "correct": 0,
       "explanation": "El operador % calcula el resto de la división entera; 10 dividido entre 3 da 3 con un resto de 1."
+    },
+    {
+      "q": "¿Qué tipo de clave en SQL garantiza que cada fila de una tabla se pueda identificar de forma única?",
+      "opts": ["Clave foránea (foreign key)", "Clave primaria (primary key)", "Índice (index)", "Restricción CHECK"],
+      "correct": 1,
+      "explanation": "La clave primaria identifica de forma única cada fila de una tabla; la clave foránea solo referencia la clave primaria de otra tabla, sin garantizar unicidad por sí misma."
     }
   ],
   "git": [
@@ -3861,6 +3897,12 @@
       ],
       "correct": 0,
       "explanation": "git restore --staged saca el archivo del área de preparación (lo 'despreparara'), pero conserva intactos los cambios que ya estaban escritos en el directorio de trabajo."
+    },
+    {
+      "q": "¿Qué diferencia principal hay entre 'git fetch' y 'git pull'?",
+      "opts": ["fetch descarga y fusiona, pull solo descarga", "pull descarga y fusiona, fetch solo descarga", "Son exactamente el mismo comando", "fetch solo funciona con ramas remotas nuevas"],
+      "correct": 1,
+      "explanation": "git fetch solo trae los cambios del remoto sin tocar tu rama actual; git pull hace un fetch seguido de un merge (o rebase) automático sobre tu rama."
     }
   ],
   "htmlcss": [
@@ -4413,6 +4455,12 @@
       ],
       "correct": 0,
       "explanation": "overflow: hidden recorta cualquier contenido que sobresalga del área del contenedor, sin mostrar barras de desplazamiento ni ningún aviso visual de que falta contenido."
+    },
+    {
+      "q": "¿Cuál de estas etiquetas HTML es semántica, es decir, describe el significado de su contenido?",
+      "opts": ["<div>", "<span>", "<article>", "<b>"],
+      "correct": 2,
+      "explanation": "<article> indica que el contenido es una pieza independiente y reutilizable, mientras que <div> y <span> son genéricos y no transmiten ningún significado por sí mismos."
     }
   ],
   "bash": [
@@ -4965,6 +5013,12 @@
       ],
       "correct": 0,
       "explanation": "El operador && ejecuta el segundo comando únicamente si el primero terminó con éxito; si comando1 falla, Bash nunca llega a ejecutar comando2."
+    },
+    {
+      "q": "¿Qué comando de Bash hace que una variable esté disponible también para los procesos hijos que lance el script?",
+      "opts": ["local", "export", "readonly", "declare -i"],
+      "correct": 1,
+      "explanation": "export marca una variable como parte del entorno, de forma que los procesos que el script ejecute después también pueden leerla; sin export, la variable solo existe en el propio shell."
     }
   ],
   "ia": [
@@ -5506,6 +5560,12 @@
       ],
       "correct": 0,
       "explanation": "Chatbot Arena, lanzado en 2023, pide a personas reales que comparen dos respuestas anónimas de distintos modelos y votan cuál prefieren, y con esos votos construye una clasificación, en lugar de usar solo exámenes de opción múltiple."
+    },
+    {
+      "q": "¿Qué término describe cuando un modelo de IA memoriza los datos de entrenamiento pero rinde mal con datos nuevos que no ha visto?",
+      "opts": ["Underfitting", "Overfitting (sobreajuste)", "Fine-tuning", "Few-shot learning"],
+      "correct": 1,
+      "explanation": "El sobreajuste ocurre cuando el modelo se ajusta demasiado a las particularidades de los datos de entrenamiento y pierde capacidad de generalizar a casos nuevos."
     }
   ]
 }

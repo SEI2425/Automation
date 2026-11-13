@@ -1,0 +1,97 @@
+{
+  "date": "2026-11-13",
+  "questions": [
+    {
+      "type": "identify",
+      "lang": "Python",
+      "question": "¿Cuántos elementos contiene la variable result?",
+      "code": "nums = [1, 2, 3, 4, 5, 6, 7, 8]\nresult = [n for n in nums if n % 3 == 0 or n % 2 == 0]\nprint(len(result))",
+      "options": ["5", "6", "4", "8"],
+      "correct": 0,
+      "hint": "Cuenta los números divisibles por 2 o por 3 entre 1 y 8.",
+      "explanation": "El filtro conserva los números divisibles por 2 o por 3: 2, 3, 4, 6 y 8, es decir 5 elementos."
+    },
+    {
+      "type": "complete",
+      "lang": "JavaScript",
+      "question": "¿Qué método falta para transformar y aplanar el array en una sola llamada?",
+      "code": "const arr = [1, 2, 3];\nconst result = arr.____(n => [n, n * 10]);\nconsole.log(result); // [1, 10, 2, 20, 3, 30]",
+      "options": ["flatMap", "map", "flat", "reduce"],
+      "correct": 0,
+      "hint": "Necesitas transformar cada elemento en un array y luego aplanar el resultado un nivel.",
+      "explanation": "flatMap aplica una función que devuelve un array por cada elemento y después aplana un nivel el resultado, combinando map y flat en una sola llamada."
+    },
+    {
+      "type": "identify",
+      "lang": "SQL",
+      "question": "¿Qué devuelve esta consulta?",
+      "code": "SELECT product_id FROM inventory\nWHERE quantity < 10\nEXCEPT\nSELECT product_id FROM discontinued;",
+      "options": [
+        "Los productos con poco stock que no están descatalogados",
+        "Los productos descatalogados con poco stock",
+        "Todos los productos con poco stock, incluidos los descatalogados",
+        "Los productos descatalogados sin importar el stock"
+      ],
+      "correct": 0,
+      "hint": "EXCEPT devuelve las filas de la primera consulta que no aparecen en la segunda.",
+      "explanation": "EXCEPT elimina de los resultados de la primera consulta cualquier fila que también aparezca en la segunda, dejando solo los productos con poco stock que no están en la lista de descatalogados."
+    },
+    {
+      "type": "complete",
+      "lang": "Git",
+      "question": "¿Qué falta para mostrar un resumen de una sola línea por cada commit de las últimas dos semanas?",
+      "code": "git log --since=\"2 weeks ago\" --____\n# muestra solo un resumen de una línea por cada commit",
+      "options": ["oneline", "graph", "stat", "all"],
+      "correct": 0,
+      "hint": "Necesitas el formato que resume cada commit en una sola línea.",
+      "explanation": "--oneline reduce cada commit a su hash corto y el primer renglón del mensaje, útil para revisar rápido el historial de las últimas dos semanas."
+    },
+    {
+      "type": "identify",
+      "lang": "Bash",
+      "question": "¿Qué hace este comando?",
+      "code": "ps aux | awk '{print $1, $11}' | sort -u | head -5",
+      "options": [
+        "Muestra, sin repetir, hasta 5 combinaciones distintas de usuario y comando en ejecución",
+        "Elimina los 5 procesos que más memoria consumen",
+        "Cuenta cuántos procesos hay en ejecución",
+        "Muestra solo los procesos del usuario actual"
+      ],
+      "correct": 0,
+      "hint": "awk extrae dos columnas, sort -u quita líneas repetidas, y head -5 limita el resultado.",
+      "explanation": "ps aux lista los procesos, awk se queda solo con el usuario y el comando (columnas 1 y 11), sort -u elimina combinaciones repetidas, y head -5 muestra como mucho las primeras cinco."
+    }
+  ],
+  "tips": [
+    {
+      "text": "Instala una herramienta de accesibilidad automática como axe DevTools, además de probar a mano, antes de dar una página por terminada.",
+      "explanation": "Las herramientas automáticas detectan en segundos cientos de problemas de contraste, etiquetas o estructura que una revisión visual pasa por alto, aunque no sustituyen por completo una prueba real con teclado o lector de pantalla. Combinarlas con pruebas manuales cubre mucho más terreno que confiar solo en una de las dos.",
+      "link": "https://www.deque.com/axe/devtools/",
+      "linkLabel": "Deque: axe DevTools"
+    },
+    {
+      "text": "Usa console.trace() en JavaScript cuando necesites saber qué parte del código llamó a una función, en lugar de ir añadiendo console.log por todas partes.",
+      "explanation": "console.trace() imprime la pila de llamadas completa hasta ese punto, mostrando de un vistazo la cadena de funciones que llevó hasta ahí, algo que un simple console.log no puede mostrar por sí solo. Es especialmente útil cuando una misma función se llama desde muchos sitios distintos del código y no sabes cuál de ellos está causando el problema.",
+      "link": "https://developer.mozilla.org/en-US/docs/Web/API/console/trace",
+      "linkLabel": "MDN: console.trace()"
+    },
+    {
+      "text": "Antes de elegir entre una lista y un diccionario para guardar tus datos, piensa en cómo vas a buscar dentro de ellos, no solo en cómo los vas a guardar.",
+      "explanation": "Buscar un elemento por su posición es rápido en una lista, pero buscarlo por un valor concreto obliga a recorrerla entera; un diccionario, en cambio, encuentra ese mismo valor casi al instante si lo organizas por la clave correcta. Elegir la estructura según cómo se va a consultar después, y no solo según cómo se va a llenar al principio, evita tener que reescribir esa parte del código más adelante.",
+      "link": "https://docs.python.org/3/tutorial/datastructures.html",
+      "linkLabel": "Documentación oficial de Python: estructuras de datos"
+    },
+    {
+      "text": "Si tu programa interactúa con el sistema de archivos, comprueba qué pasa si la ruta no existe o no tienes permiso para leerla, no solo el caso en que todo sale bien.",
+      "explanation": "Un archivo que no existe, una carpeta sin permisos de lectura o un disco lleno son errores habituales en cualquier sistema real, y un programa que no los contempla se cae con un mensaje confuso en el peor momento. Comprobarlo con antelación, aunque sea lanzando un error claro en lugar de silencioso, ahorra mucho tiempo de soporte más adelante.",
+      "link": "https://docs.python.org/3/library/exceptions.html#OSError",
+      "linkLabel": "Documentación oficial de Python: OSError"
+    },
+    {
+      "text": "Cuando unas muchas cadenas de texto dentro de un bucle grande, usa un método pensado para concatenar en bloque, no el operador + repetido muchas veces.",
+      "explanation": "Concatenar cadenas con + dentro de un bucle muy largo puede volverse mucho más lento de lo esperado en algunos lenguajes, porque cada vez se crea una cadena nueva completa en memoria en lugar de añadir al final de la existente. Métodos como ''.join(lista) en Python o un StringBuilder en Java están pensados específicamente para evitar ese coste.",
+      "link": "https://docs.python.org/3/library/stdtypes.html#str.join",
+      "linkLabel": "Documentación oficial de Python: str.join()"
+    }
+  ]
+}
