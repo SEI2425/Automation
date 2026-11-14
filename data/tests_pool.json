@@ -552,9 +552,25 @@
     },
     {
       "q": "¿Cuál de las siguientes estructuras de datos de Python es inmutable?",
-      "opts": ["list", "dict", "tuple", "set"],
+      "opts": [
+        "list",
+        "dict",
+        "tuple",
+        "set"
+      ],
       "correct": 2,
       "explanation": "Las tuplas no se pueden modificar una vez creadas, a diferencia de las listas, los diccionarios o los sets, que sí admiten añadir, quitar o cambiar elementos."
+    },
+    {
+      "q": "Que devuelve len(range(3, 20, 5))?",
+      "opts": [
+        "4",
+        "3",
+        "5",
+        "Error"
+      ],
+      "correct": 0,
+      "explanation": "range(3, 20, 5) genera los valores 3, 8, 13 y 18 (se detiene antes de 20), asi que su longitud es 4."
     }
   ],
   "javascript": [
@@ -1110,9 +1126,25 @@
     },
     {
       "q": "¿Qué devuelve la expresión '5' == 5 en JavaScript?",
-      "opts": ["true", "false", "undefined", "Lanza un error"],
+      "opts": [
+        "true",
+        "false",
+        "undefined",
+        "Lanza un error"
+      ],
       "correct": 0,
       "explanation": "El operador == convierte los tipos antes de comparar (coerción), así que la cadena '5' y el número 5 se consideran iguales; el operador === sí distinguiría el tipo y daría false."
+    },
+    {
+      "q": "Que muestra console.log(typeof function(){})?",
+      "opts": [
+        "'function'",
+        "'object'",
+        "'undefined'",
+        "Error"
+      ],
+      "correct": 0,
+      "explanation": "En JavaScript, typeof aplicado a una funcion devuelve siempre la cadena 'function', aunque las funciones sean tambien un tipo de objeto internamente."
     }
   ],
   "typescript": [
@@ -1668,9 +1700,25 @@
     },
     {
       "q": "¿Qué modificador de TypeScript impide reasignar una propiedad después de inicializarla?",
-      "opts": ["readonly", "const", "final", "static"],
+      "opts": [
+        "readonly",
+        "const",
+        "final",
+        "static"
+      ],
       "correct": 0,
       "explanation": "readonly marca una propiedad de una interfaz o clase como de solo lectura tras su inicialización; const se usa para variables, no para propiedades de un objeto."
+    },
+    {
+      "q": "Que tipo utilitario de TypeScript convierte todas las propiedades de un tipo en opcionales?",
+      "opts": [
+        "Partial<T>",
+        "Required<T>",
+        "Readonly<T>",
+        "Pick<T, K>"
+      ],
+      "correct": 0,
+      "explanation": "Partial<T> genera un nuevo tipo donde cada propiedad de T se vuelve opcional, util por ejemplo para funciones que actualizan solo parte de un objeto."
     }
   ],
   "java": [
@@ -2226,9 +2274,25 @@
     },
     {
       "q": "¿Cuál de estos modificadores de acceso en Java hace que un miembro solo sea visible dentro de su propia clase?",
-      "opts": ["public", "protected", "private", "default (sin modificador)"],
+      "opts": [
+        "public",
+        "protected",
+        "private",
+        "default (sin modificador)"
+      ],
       "correct": 2,
       "explanation": "private restringe el acceso exclusivamente a la propia clase; protected permite acceso también a subclases y al resto del mismo paquete."
+    },
+    {
+      "q": "Que palabra clave de Java permite declarar una constante cuyo valor no se puede reasignar tras su inicializacion?",
+      "opts": [
+        "final",
+        "const",
+        "static",
+        "readonly"
+      ],
+      "correct": 0,
+      "explanation": "Java usa 'final' para declarar variables cuyo valor no puede cambiar una vez asignado; 'const' esta reservada como palabra clave pero no tiene ningun uso real en el lenguaje."
     }
   ],
   "kotlin": [
@@ -2784,9 +2848,25 @@
     },
     {
       "q": "¿Qué palabra clave de Kotlin se usa para declarar una referencia cuyo valor no se puede reasignar?",
-      "opts": ["var", "val", "let", "const"],
+      "opts": [
+        "var",
+        "val",
+        "let",
+        "const"
+      ],
       "correct": 1,
       "explanation": "val declara una referencia de asignación única, similar a 'final' en Java; var permite reasignar el valor más adelante."
+    },
+    {
+      "q": "En Kotlin, que modificador hay que anadir a una clase para que otra clase pueda heredar de ella?",
+      "opts": [
+        "open",
+        "public",
+        "final",
+        "virtual"
+      ],
+      "correct": 0,
+      "explanation": "A diferencia de Java, en Kotlin las clases son 'final' (no heredables) por defecto; hay que marcarlas explicitamente con 'open' para permitir que otra clase herede de ellas."
     }
   ],
   "sql": [
@@ -3342,9 +3422,25 @@
     },
     {
       "q": "¿Qué tipo de clave en SQL garantiza que cada fila de una tabla se pueda identificar de forma única?",
-      "opts": ["Clave foránea (foreign key)", "Clave primaria (primary key)", "Índice (index)", "Restricción CHECK"],
+      "opts": [
+        "Clave foránea (foreign key)",
+        "Clave primaria (primary key)",
+        "Índice (index)",
+        "Restricción CHECK"
+      ],
       "correct": 1,
       "explanation": "La clave primaria identifica de forma única cada fila de una tabla; la clave foránea solo referencia la clave primaria de otra tabla, sin garantizar unicidad por sí misma."
+    },
+    {
+      "q": "Que hace la clausula ON DELETE CASCADE al definir una clave foranea en SQL?",
+      "opts": [
+        "Borra automaticamente las filas relacionadas en la tabla hija cuando se borra la fila padre",
+        "Impide borrar la fila padre si tiene filas hijas",
+        "Borra la tabla completa",
+        "Solo funciona con UPDATE, no con DELETE"
+      ],
+      "correct": 0,
+      "explanation": "ON DELETE CASCADE hace que, al borrar una fila de la tabla padre, el motor borre automaticamente todas las filas de la tabla hija que la referencian mediante esa clave foranea."
     }
   ],
   "git": [
@@ -3900,9 +3996,25 @@
     },
     {
       "q": "¿Qué diferencia principal hay entre 'git fetch' y 'git pull'?",
-      "opts": ["fetch descarga y fusiona, pull solo descarga", "pull descarga y fusiona, fetch solo descarga", "Son exactamente el mismo comando", "fetch solo funciona con ramas remotas nuevas"],
+      "opts": [
+        "fetch descarga y fusiona, pull solo descarga",
+        "pull descarga y fusiona, fetch solo descarga",
+        "Son exactamente el mismo comando",
+        "fetch solo funciona con ramas remotas nuevas"
+      ],
       "correct": 1,
       "explanation": "git fetch solo trae los cambios del remoto sin tocar tu rama actual; git pull hace un fetch seguido de un merge (o rebase) automático sobre tu rama."
+    },
+    {
+      "q": "Que comando de Git muestra las diferencias entre dos ramas sin cambiar de rama?",
+      "opts": [
+        "git diff rama1 rama2",
+        "git checkout rama1 rama2",
+        "git merge rama1 rama2",
+        "git branch rama1 rama2"
+      ],
+      "correct": 0,
+      "explanation": "git diff acepta dos referencias (ramas, commits o tags) y muestra las diferencias entre ambas sin moverte de la rama en la que estas, a diferencia de checkout o merge, que si cambian el estado del repositorio."
     }
   ],
   "htmlcss": [
@@ -4458,9 +4570,25 @@
     },
     {
       "q": "¿Cuál de estas etiquetas HTML es semántica, es decir, describe el significado de su contenido?",
-      "opts": ["<div>", "<span>", "<article>", "<b>"],
+      "opts": [
+        "<div>",
+        "<span>",
+        "<article>",
+        "<b>"
+      ],
       "correct": 2,
       "explanation": "<article> indica que el contenido es una pieza independiente y reutilizable, mientras que <div> y <span> son genéricos y no transmiten ningún significado por sí mismos."
+    },
+    {
+      "q": "Que hace la propiedad CSS object-position cuando se usa junto a object-fit: cover?",
+      "opts": [
+        "Controla que parte de la imagen queda visible dentro de su contenedor",
+        "Cambia el tamano del contenedor",
+        "Rota la imagen un numero de grados",
+        "Solo funciona en elementos svg"
+      ],
+      "correct": 0,
+      "explanation": "object-position funciona como background-position pero para elementos reemplazados como img o video, indicando que parte de la imagen recortada por object-fit: cover debe quedar visible."
     }
   ],
   "bash": [
@@ -5016,9 +5144,25 @@
     },
     {
       "q": "¿Qué comando de Bash hace que una variable esté disponible también para los procesos hijos que lance el script?",
-      "opts": ["local", "export", "readonly", "declare -i"],
+      "opts": [
+        "local",
+        "export",
+        "readonly",
+        "declare -i"
+      ],
       "correct": 1,
       "explanation": "export marca una variable como parte del entorno, de forma que los procesos que el script ejecute después también pueden leerla; sin export, la variable solo existe en el propio shell."
+    },
+    {
+      "q": "Que hace el operador || entre dos comandos en Bash, como en 'comando1 || comando2'?",
+      "opts": [
+        "Ejecuta comando2 solo si comando1 falla (codigo de salida distinto de cero)",
+        "Ejecuta ambos comandos siempre, uno detras de otro",
+        "Ejecuta comando2 solo si comando1 tiene exito",
+        "Combina la salida de ambos comandos en una sola linea"
+      ],
+      "correct": 0,
+      "explanation": "El operador || ejecuta el comando de la derecha unicamente si el de la izquierda falla, al contrario que && que lo ejecuta solo si el anterior tuvo exito."
     }
   ],
   "ia": [
@@ -5563,9 +5707,25 @@
     },
     {
       "q": "¿Qué término describe cuando un modelo de IA memoriza los datos de entrenamiento pero rinde mal con datos nuevos que no ha visto?",
-      "opts": ["Underfitting", "Overfitting (sobreajuste)", "Fine-tuning", "Few-shot learning"],
+      "opts": [
+        "Underfitting",
+        "Overfitting (sobreajuste)",
+        "Fine-tuning",
+        "Few-shot learning"
+      ],
       "correct": 1,
       "explanation": "El sobreajuste ocurre cuando el modelo se ajusta demasiado a las particularidades de los datos de entrenamiento y pierde capacidad de generalizar a casos nuevos."
+    },
+    {
+      "q": "Que significa que un modelo de IA sea 'multimodal'?",
+      "opts": [
+        "Que puede procesar y combinar distintos tipos de datos de entrada, como texto, imagen o audio",
+        "Que puede ejecutarse en varios ordenadores a la vez",
+        "Que tiene varias versiones distintas con nombres diferentes",
+        "Que solo funciona con datos en varios idiomas"
+      ],
+      "correct": 0,
+      "explanation": "Un modelo multimodal puede recibir (y a veces generar) mas de un tipo de dato a la vez, por ejemplo texto e imagen juntos, a diferencia de un modelo que solo trabaja con un unico tipo de entrada."
     }
   ]
 }

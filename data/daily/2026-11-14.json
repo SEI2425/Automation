@@ -1,0 +1,112 @@
+{
+  "date": "2026-11-14",
+  "questions": [
+    {
+      "type": "identify",
+      "lang": "Python",
+      "question": "Que imprime este codigo?",
+      "code": "print([x if x % 2 == 0 else -x for x in range(5)])",
+      "options": [
+        "[0, -1, 2, -3, 4]",
+        "[0, 1, 2, 3, 4]",
+        "[-0, -1, -2, -3, -4]",
+        "Error de sintaxis"
+      ],
+      "correct": 0,
+      "hint": "La comprension aplica un if/else distinto a cada numero: par se queda igual, impar se vuelve negativo.",
+      "explanation": "range(5) genera 0,1,2,3,4; los pares (0,2,4) se dejan igual y los impares (1,3) se convierten en negativos, dando [0, -1, 2, -3, 4]."
+    },
+    {
+      "type": "complete",
+      "lang": "JavaScript",
+      "question": "Que metodo falta para obtener el ultimo numero par del array?",
+      "code": "const arr = [3, 7, 10, 15, 20];\nconst lastEven = arr.____(n => n % 2 === 0);\nconsole.log(lastEven); // 20",
+      "options": [
+        "findLast",
+        "find",
+        "filter",
+        "reduce"
+      ],
+      "correct": 0,
+      "hint": "Necesitas recorrer el array desde el final, no desde el principio.",
+      "explanation": "findLast(), anadido en ES2023, recorre el array de atras hacia adelante y devuelve el primer elemento que cumple la condicion; los pares son 10 y 20, y el ultimo es 20. find() habria devuelto 10."
+    },
+    {
+      "type": "identify",
+      "lang": "TypeScript",
+      "question": "Que imprime este codigo?",
+      "code": "interface User { id: number; name: string; password: string; }\ntype PublicUser = Omit<User, \"password\">;\nconst u: PublicUser = { id: 1, name: \"Ana\" };\nconsole.log(Object.keys(u).length);",
+      "options": [
+        "2",
+        "3",
+        "1",
+        "Error de compilacion"
+      ],
+      "correct": 0,
+      "hint": "Omit<User, \"password\"> quita esa propiedad del tipo, no del objeto en si.",
+      "explanation": "Omit<User, \"password\"> crea un tipo igual a User pero sin password, asi que PublicUser solo exige id y name; el objeto u tiene exactamente esas dos claves."
+    },
+    {
+      "type": "identify",
+      "lang": "SQL",
+      "question": "Si dos estudiantes empatan en el primer puesto, que puesto recibe el siguiente con DENSE_RANK(), a diferencia de RANK()?",
+      "code": "SELECT name, score,\n       DENSE_RANK() OVER (ORDER BY score DESC) AS puesto\nFROM students;",
+      "options": [
+        "El siguiente numero sin huecos (por ejemplo, puesto 2, no 3)",
+        "Salta el numero 2 y asigna el 3, dejando un hueco",
+        "Siempre asigna puestos consecutivos ignorando los empates",
+        "Da error porque no se puede usar con ORDER BY"
+      ],
+      "correct": 0,
+      "hint": "RANK() deja huecos tras un empate (1,1,3); DENSE_RANK() no.",
+      "explanation": "A diferencia de RANK(), que deja huecos tras un empate (1,1,3), DENSE_RANK() asigna puestos consecutivos sin saltos (1,1,2) aunque haya empates."
+    },
+    {
+      "type": "complete",
+      "lang": "Git",
+      "question": "Que falta para anadir un archivo olvidado al ultimo commit conservando su mismo mensaje?",
+      "code": "git add archivo_olvidado.txt\ngit commit --amend --____\n# mantiene el mismo mensaje del commit anterior",
+      "options": [
+        "no-edit",
+        "no-verify",
+        "reuse-message",
+        "amend"
+      ],
+      "correct": 0,
+      "hint": "Necesitas evitar que se abra el editor para escribir un mensaje nuevo.",
+      "explanation": "--amend modifica el ultimo commit incorporando los cambios ya preparados, y --no-edit evita que se abra el editor, manteniendo el mensaje original tal cual."
+    }
+  ],
+  "tips": [
+    {
+      "text": "No uses await dentro de un array.forEach(): el metodo no espera a que las promesas terminen.",
+      "explanation": "forEach() ignora por completo el valor que devuelve la funcion que le pasas, incluida una promesa, asi que el bucle 'termina' antes de que las llamadas asincronas realmente se resuelvan. Para esperar cada paso en orden hay que usar un bucle for...of con await, o Promise.all si las llamadas son independientes entre si.",
+      "link": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach",
+      "linkLabel": "MDN: Array.prototype.forEach()"
+    },
+    {
+      "text": "Anade un linter de accesibilidad a tu proyecto web, no solo uno de estilo de codigo.",
+      "explanation": "Un linter normal detecta errores de sintaxis o variables sin usar, pero no avisa de un boton sin texto accesible o una imagen sin atributo alt. Herramientas como eslint-plugin-jsx-a11y revisan justo esos problemas mientras escribes, antes de que lleguen a produccion.",
+      "link": "https://github.com/jsx-eslint/eslint-plugin-jsx-a11y",
+      "linkLabel": "GitHub: eslint-plugin-jsx-a11y"
+    },
+    {
+      "text": "Instala un hook que revise tus commits en busca de secretos antes de subirlos al repositorio.",
+      "explanation": "Es facil pegar por error una clave de API o una contrasena en un archivo de configuracion y confirmarla sin darte cuenta. Herramientas gratuitas como gitleaks se ejecutan automaticamente en cada commit y bloquean la subida si detectan un patron que parece una credencial.",
+      "link": "https://github.com/gitleaks/gitleaks",
+      "linkLabel": "GitHub: gitleaks"
+    },
+    {
+      "text": "Si una peticion de red falla de forma rara, repitela con 'curl -v' para ver que pasa fuera de tu codigo.",
+      "explanation": "El modo detallado de curl muestra la conexion TLS, las cabeceras reales enviadas y recibidas, y en que paso exacto falla la peticion, informacion que tu propio codigo a veces oculta o simplifica. Asi sabes rapido si el problema esta en tu programa o en el servidor, la red o un certificado caducado.",
+      "link": "https://curl.se/docs/manpage.html",
+      "linkLabel": "curl: pagina de manual oficial"
+    },
+    {
+      "text": "Anota las decisiones de arquitectura importantes en un documento corto, no solo en tu memoria o en un chat.",
+      "explanation": "Un ADR (Architecture Decision Record) de pocas lineas explica que se decidio, por que y que alternativas se descartaron, asi que meses despues nadie tiene que adivinar el motivo de una eleccion ni repetir una discusion ya cerrada. Es especialmente util cuando el equipo crece y no todos estuvieron en la conversacion original.",
+      "link": "https://adr.github.io/",
+      "linkLabel": "adr.github.io: guia de Architecture Decision Records"
+    }
+  ]
+}
