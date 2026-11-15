@@ -1,0 +1,87 @@
+{
+  "date": "2026-11-15",
+  "questions": [
+    {
+      "type": "identify",
+      "lang": "Python",
+      "question": "¿Qué imprime este código?",
+      "code": "nums = [1, 2, 3]\nnums.extend([4, 5])\nprint(nums)",
+      "options": ["[1, 2, 3, 4, 5]", "[1, 2, 3, [4, 5]]", "[4, 5, 1, 2, 3]", "Error"],
+      "correct": 0,
+      "hint": "extend() añade cada elemento del iterable por separado, a diferencia de append().",
+      "explanation": "extend() agrega cada elemento de la lista [4, 5] de forma individual al final de nums, dando como resultado [1, 2, 3, 4, 5]; append() en cambio habría añadido la lista completa como un único elemento anidado."
+    },
+    {
+      "type": "complete",
+      "lang": "JavaScript",
+      "question": "¿Qué método falta para que hasNegative sea true?",
+      "code": "const arr = [1, -2, 3];\nconst hasNegative = arr.____(n => n < 0);\nconsole.log(hasNegative); // true",
+      "options": ["some", "every", "find", "filter"],
+      "correct": 0,
+      "hint": "Necesitas true o false, no un elemento ni un array; basta que uno cumpla la condición.",
+      "explanation": "some() devuelve true en cuanto al menos un elemento cumple la condición; aquí -2 es negativo, así que el resultado es true. find() devolvería el elemento (-2), no un booleano, y filter() devolvería un array."
+    },
+    {
+      "type": "identify",
+      "lang": "SQL",
+      "question": "¿Qué devuelve esta consulta?",
+      "code": "SELECT city, COUNT(*) AS total FROM customers WHERE country = 'España' GROUP BY city ORDER BY total DESC LIMIT 3;",
+      "options": ["Las 3 ciudades españolas con más clientes, de mayor a menor", "Los 3 clientes más recientes de España", "El número total de clientes de España", "Todas las ciudades de España ordenadas alfabéticamente"],
+      "correct": 0,
+      "hint": "WHERE filtra por país antes de agrupar por ciudad y contar.",
+      "explanation": "WHERE country = 'España' deja solo los clientes españoles, GROUP BY city los agrupa por ciudad y COUNT(*) cuenta cuántos hay en cada una; ORDER BY total DESC LIMIT 3 se queda con las tres ciudades con más clientes."
+    },
+    {
+      "type": "complete",
+      "lang": "Git",
+      "question": "¿Qué comando falta para mostrar el mensaje y el diff del commit \"feature A\"?",
+      "code": "git commit -m \"feature A\"\ngit commit -m \"feature B\"\ngit ____ HEAD~1\n# muestra el mensaje y el diff del commit \"feature A\"",
+      "options": ["show", "log", "diff", "status"],
+      "correct": 0,
+      "hint": "Necesitas inspeccionar un commit concreto, no solo listar el historial.",
+      "explanation": "git show HEAD~1 muestra el commit anterior al actual (HEAD~1), que es \"feature A\", junto con su mensaje completo y el diff de sus cambios."
+    },
+    {
+      "type": "identify",
+      "lang": "Bash",
+      "question": "¿Qué hace este comando?",
+      "code": "mkdir -p proyecto/{src,tests,docs}",
+      "options": ["Crea la carpeta proyecto y, dentro, las subcarpetas src, tests y docs de una vez", "Crea tres carpetas separadas llamadas proyecto, src y tests", "Elimina las carpetas src, tests y docs dentro de proyecto", "Muestra el contenido de las carpetas src, tests y docs"],
+      "correct": 0,
+      "hint": "La expansión de llaves {a,b,c} genera varias rutas a la vez; -p crea también las carpetas padre que falten.",
+      "explanation": "mkdir -p proyecto/{src,tests,docs} usa la expansión de llaves de Bash para crear de una sola vez proyecto/src, proyecto/tests y proyecto/docs, y -p evita un error si proyecto todavía no existe."
+    }
+  ],
+  "tips": [
+    {
+      "text": "Si tu programa muestra caracteres raros como 'Ã±' en vez de 'ñ' al leer un archivo de texto, sospecha primero de la codificación de caracteres, no de tu lógica.",
+      "explanation": "La mayoría de estos errores desaparecen al abrir el archivo especificando explícitamente la codificación UTF-8, en lugar de confiar en la que tu sistema operativo usa por defecto, que varía entre Windows, macOS y Linux. Es uno de los errores más comunes al compartir un script entre ordenadores distintos.",
+      "link": "https://docs.python.org/3/howto/unicode.html",
+      "linkLabel": "Documentación oficial de Python: guía de Unicode"
+    },
+    {
+      "text": "Cuando aprendas una sintaxis nueva, escribe tú mismo el ejemplo del tutorial a mano en vez de copiarlo y pegarlo.",
+      "explanation": "Teclear el código obliga a prestar atención a cada símbolo y cada palabra clave, en lugar de pasar la vista por encima como al copiar y pegar, lo que ayuda a que la sintaxis se quede de verdad en la memoria. Una vez entiendas bien un concepto, copiar código ya probado para ahorrar tiempo deja de ser un problema.",
+      "link": "https://www.freecodecamp.org/news/the-benefits-of-typing-instead-of-copying-54ed734ad849/",
+      "linkLabel": "freeCodeCamp: las ventajas de escribir el código en vez de copiarlo"
+    },
+    {
+      "text": "En un formulario HTML, usa el atributo type adecuado del input (email, tel, date) en lugar de un simple type=\"text\".",
+      "explanation": "El navegador valida automáticamente el formato básico de ese campo antes de enviarlo, y en el móvil muestra un teclado adaptado, como el numérico para type=\"tel\". No sustituye una validación propia en el servidor, pero mejora la experiencia sin que tengas que escribir una sola línea de código.",
+      "link": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/input",
+      "linkLabel": "MDN: referencia del elemento input y sus tipos"
+    },
+    {
+      "text": "Si tu código divide por una variable que podría valer cero, comprueba ese caso explícitamente antes de dividir.",
+      "explanation": "La mayoría de lenguajes lanzan un error en cuanto el programa intenta dividir entre cero, como ZeroDivisionError en Python o ArithmeticException en Java, en lugar de devolver un resultado. Decidir tú mismo qué hacer en ese caso, como devolver cero o un valor por defecto, evita que tu programa se detenga de golpe con un error que no esperabas.",
+      "link": "https://docs.python.org/3/library/exceptions.html#ZeroDivisionError",
+      "linkLabel": "Documentación oficial de Python: la excepción ZeroDivisionError"
+    },
+    {
+      "text": "No uses && u || para ejecutar una acción con efectos secundarios donde un if normal se entendería mejor.",
+      "explanation": "El cortocircuito (short-circuit) de && y || es perfecto para dar un valor por defecto o evitar un error al acceder a una propiedad, pero usarlo para decidir si se ejecuta una función que cambia algo (como guardar un dato o mostrar un mensaje) hace que el código sea más difícil de leer para quien no conozca bien ese truco. Un if explícito deja clara la intención sin necesidad de descifrar un operador lógico.",
+      "link": "https://dev.to/mainulspace/short-circuit-evaluation-making-your-code-more-concise-2jne",
+      "linkLabel": "DEV Community: cortocircuito en JavaScript, cuidado con los efectos secundarios"
+    }
+  ]
+}

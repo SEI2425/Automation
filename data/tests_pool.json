@@ -571,6 +571,17 @@
       ],
       "correct": 0,
       "explanation": "range(3, 20, 5) genera los valores 3, 8, 13 y 18 (se detiene antes de 20), asi que su longitud es 4."
+    },
+    {
+      "q": "¿Qué tipo tiene el resultado de `5 / 2` en Python 3?",
+      "opts": [
+        "float (2.5)",
+        "int (2)",
+        "complex",
+        "Error de tipos"
+      ],
+      "correct": 0,
+      "explanation": "El operador / en Python 3 siempre realiza division real y devuelve un float, incluso si ambos operandos son enteros y el resultado es exacto; para division entera se usa //."
     }
   ],
   "javascript": [
@@ -1145,6 +1156,17 @@
       ],
       "correct": 0,
       "explanation": "En JavaScript, typeof aplicado a una funcion devuelve siempre la cadena 'function', aunque las funciones sean tambien un tipo de objeto internamente."
+    },
+    {
+      "q": "¿Qué devuelve `typeof function(){}` en JavaScript?",
+      "opts": [
+        "'function'",
+        "'object'",
+        "'undefined'",
+        "'Function'"
+      ],
+      "correct": 0,
+      "explanation": "A diferencia de los objetos normales, typeof devuelve especificamente 'function' para cualquier funcion, aunque internamente las funciones son tambien un tipo de objeto."
     }
   ],
   "typescript": [
@@ -1719,6 +1741,17 @@
       ],
       "correct": 0,
       "explanation": "Partial<T> genera un nuevo tipo donde cada propiedad de T se vuelve opcional, util por ejemplo para funciones que actualizan solo parte de un objeto."
+    },
+    {
+      "q": "Dado `let x: string | number = 'hola'; if (typeof x === 'string') { /* aqui */ }`, ¿qué tipo tiene x dentro del bloque if?",
+      "opts": [
+        "string",
+        "number",
+        "string | number",
+        "any"
+      ],
+      "correct": 0,
+      "explanation": "Dentro del bloque if, TypeScript reduce (narrows) el tipo de x a string gracias a la comprobacion typeof, aunque fuera del if sigue siendo string | number."
     }
   ],
   "java": [
@@ -2293,6 +2326,17 @@
       ],
       "correct": 0,
       "explanation": "Java usa 'final' para declarar variables cuyo valor no puede cambiar una vez asignado; 'const' esta reservada como palabra clave pero no tiene ningun uso real en el lenguaje."
+    },
+    {
+      "q": "¿Qué palabra clave se usa en Java para impedir que una clase sea heredada por otra?",
+      "opts": [
+        "final",
+        "static",
+        "sealed",
+        "abstract"
+      ],
+      "correct": 0,
+      "explanation": "Una clase declarada como 'final' no puede extenderse; 'sealed', introducida en Java 17, permite en cambio restringir que clases concretas pueden heredarla, en vez de prohibirlo por completo."
     }
   ],
   "kotlin": [
@@ -2867,6 +2911,17 @@
       ],
       "correct": 0,
       "explanation": "A diferencia de Java, en Kotlin las clases son 'final' (no heredables) por defecto; hay que marcarlas explicitamente con 'open' para permitir que otra clase herede de ellas."
+    },
+    {
+      "q": "¿Qué devuelve `listOf(1,2,3).lastOrNull { it > 5 }` en Kotlin?",
+      "opts": [
+        "null",
+        "3",
+        "Lanza una excepcion",
+        "0"
+      ],
+      "correct": 0,
+      "explanation": "lastOrNull con una condicion devuelve el ultimo elemento que la cumple, o null si ninguno la cumple; como ningun elemento es mayor que 5, el resultado es null."
     }
   ],
   "sql": [
@@ -3441,6 +3496,17 @@
       ],
       "correct": 0,
       "explanation": "ON DELETE CASCADE hace que, al borrar una fila de la tabla padre, el motor borre automaticamente todas las filas de la tabla hija que la referencian mediante esa clave foranea."
+    },
+    {
+      "q": "¿Qué diferencia principal hay entre `WHERE EXISTS (subconsulta)` y `WHERE IN (subconsulta)`?",
+      "opts": [
+        "EXISTS solo comprueba si la subconsulta devuelve alguna fila, sin importar su valor; IN compara directamente los valores devueltos",
+        "Son exactamente equivalentes en todos los casos",
+        "EXISTS exige que la subconsulta devuelva una sola columna, IN no",
+        "IN es siempre mas rapido que EXISTS"
+      ],
+      "correct": 0,
+      "explanation": "EXISTS se detiene en cuanto encuentra una fila que cumple la condicion, sin importar que valor tenga, mientras que IN compara explicitamente cada valor devuelto por la subconsulta con el de la fila externa."
     }
   ],
   "git": [
@@ -4015,6 +4081,17 @@
       ],
       "correct": 0,
       "explanation": "git diff acepta dos referencias (ramas, commits o tags) y muestra las diferencias entre ambas sin moverte de la rama en la que estas, a diferencia de checkout o merge, que si cambian el estado del repositorio."
+    },
+    {
+      "q": "¿Qué diferencia hay entre `git fetch` y `git pull`?",
+      "opts": [
+        "fetch descarga los cambios remotos sin fusionarlos; pull los descarga y los fusiona automaticamente",
+        "fetch sube cambios locales al remoto; pull los descarga",
+        "No hay ninguna diferencia real entre ambos",
+        "pull solo funciona con ramas remotas nuevas"
+      ],
+      "correct": 0,
+      "explanation": "git fetch actualiza las referencias remotas locales sin tocar tu rama de trabajo, mientras que git pull es en esencia un fetch seguido automaticamente de un merge (o rebase, segun configuracion)."
     }
   ],
   "htmlcss": [
@@ -4589,6 +4666,17 @@
       ],
       "correct": 0,
       "explanation": "object-position funciona como background-position pero para elementos reemplazados como img o video, indicando que parte de la imagen recortada por object-fit: cover debe quedar visible."
+    },
+    {
+      "q": "¿Qué hace la propiedad CSS `overflow: hidden` en un contenedor con texto más grande que su tamaño?",
+      "opts": [
+        "Recorta el contenido que no cabe, sin mostrar barras de desplazamiento",
+        "Anade automaticamente una barra de desplazamiento",
+        "Hace que el contenedor crezca para mostrar todo el contenido",
+        "Oculta por completo el contenedor"
+      ],
+      "correct": 0,
+      "explanation": "overflow: hidden recorta cualquier contenido que se salga de los limites del elemento sin ofrecer ninguna forma de desplazarse para verlo, a diferencia de overflow: scroll o auto."
     }
   ],
   "bash": [
@@ -5163,6 +5251,17 @@
       ],
       "correct": 0,
       "explanation": "El operador || ejecuta el comando de la derecha unicamente si el de la izquierda falla, al contrario que && que lo ejecuta solo si el anterior tuvo exito."
+    },
+    {
+      "q": "¿Qué hace el comando `chmod +x script.sh`?",
+      "opts": [
+        "Anade permiso de ejecucion al archivo para poder lanzarlo directamente",
+        "Cambia el propietario del archivo",
+        "Elimina el archivo",
+        "Hace una copia ejecutable del archivo"
+      ],
+      "correct": 0,
+      "explanation": "chmod +x anade el permiso de ejecucion al archivo sin tocar los permisos de lectura o escritura existentes, lo que permite ejecutarlo como './script.sh' en lugar de pasarlo como argumento a un interprete."
     }
   ],
   "ia": [
@@ -5726,6 +5825,17 @@
       ],
       "correct": 0,
       "explanation": "Un modelo multimodal puede recibir (y a veces generar) mas de un tipo de dato a la vez, por ejemplo texto e imagen juntos, a diferencia de un modelo que solo trabaja con un unico tipo de entrada."
+    },
+    {
+      "q": "¿Qué significa que un modelo de lenguaje tenga una ventana de contexto de 128.000 tokens?",
+      "opts": [
+        "Que puede tener en cuenta hasta 128.000 tokens de texto (entrada y salida combinadas) en una misma peticion",
+        "Que fue entrenado con 128.000 ejemplos de texto",
+        "Que solo puede responder con un maximo de 128.000 caracteres de una vez",
+        "Que tiene 128.000 parametros en total"
+      ],
+      "correct": 0,
+      "explanation": "La ventana de contexto limita cuanto texto, medido en tokens, puede 'ver' el modelo a la vez entre la conversacion previa, las instrucciones y la respuesta; no tiene relacion directa con el numero de parametros del modelo ni con sus datos de entrenamiento."
     }
   ]
 }

@@ -1,0 +1,65 @@
+{
+  "date": "2026-11-15",
+  "items": [
+    {
+      "tag": "Impacto",
+      "title": "Un fallo de ejecucion remota en el motor de IA SGLang provoca una brecha de datos en la startup NEAR AI",
+      "url": "https://thehackernews.com/2026/11/sglang-rce-exploit-breaches-near-ai.html",
+      "summary": "NEAR AI confirmo que el 8 de noviembre un atacante exploto una vulnerabilidad de ejecucion remota de codigo en SGLang, el motor de inferencia de codigo abierto que corre en sus servidores, y accedio a los datos de unos 100 usuarios y a los registros de 18 agentes antiguos. La empresa revoco credenciales y claves de API expuestas, y reconoce que el atacante pudo ver peticiones de IA confidenciales procesadas en uno de sus servidores, aunque dice no tener pruebas de que se accediera al contenido de su chat privado."
+    },
+    {
+      "tag": "Impacto",
+      "title": "Los despidos vinculados a la IA siguen creciendo en EEUU pese a la resiliencia general del mercado laboral",
+      "url": "https://www.aa.com.tr/en/americas/us-labor-market-remains-resilient-though-ai-driven-layoffs-continue/4120784",
+      "summary": "Un analisis de Anadolu Agency publicado el 11 de noviembre senala que el mercado laboral estadounidense se mantiene fuerte en conjunto, aunque los despidos atribuidos a la inteligencia artificial continuan, con Omnicom Group recortando 15.000 empleos tras su fusion con Interpublic Group. Datos de la consultora Challenger, Gray & Christmas citados en la pieza muestran que la IA ya se menciona en mas de 100.000 despidos en EEUU a lo largo de 2026."
+    },
+    {
+      "tag": "Impacto",
+      "title": "La Oficina de IA de la Union Europea envia sus primeras solicitudes formales de informacion a grandes desarrolladores de modelos",
+      "url": "https://www.reedsmith.com/our-insights/blogs/technology-law-dispatch/102o6as/eu-ai-act-the-ai-office-sends-its-first-requests-for-information-to-leading-ai/",
+      "summary": "Bajo los nuevos poderes de aplicacion de la ley de IA de la UE, activos desde agosto, la Oficina de IA de la Comision Europea pidio a varias empresas de modelos de frontera documentacion sobre ciberseguridad, seguridad y derechos de autor, con una consulta publica que se cerro el 9 de noviembre. Las empresas que incumplan podrian enfrentar multas de hasta el 3% de su facturacion global anual."
+    },
+    {
+      "tag": "Impacto",
+      "title": "Anthropic eleva a casi 17.000 millones de dolares sus ingresos trimestrales en la documentacion de su salida a bolsa",
+      "url": "https://fortune.com/2026/11/10/anthropic-launches-office-knowledge-worker-product-launch-ahead-of-ipo/",
+      "summary": "Segun una enmienda a su formulario S-1, Anthropic registro unos 16.960 millones de dolares de ingresos en el tercer trimestre, un 47% mas que el trimestre anterior, mientras prepara su salida a bolsa para la semana del 16 de noviembre con una valoracion cercana a los 1,3 billones de dolares. La cifra llega en medio de dudas crecientes entre inversores sobre el ritmo de gasto en infraestructura de las grandes empresas de IA."
+    },
+    {
+      "tag": "Lanzamiento",
+      "title": "Anthropic presenta dos nuevos modelos de frontera centrados en programacion, razonamiento y vision antes de su salida a bolsa",
+      "url": "https://aibusiness.com/generative-ai/anthropic-launches-new-ai-models",
+      "summary": "Anthropic anuncio el 10 de noviembre dos nuevos modelos insignia con un precio mas bajo que la generacion anterior, segun informo AI Business, en la misma semana en que la empresa ampliaba su suite de herramientas de oficina. El lanzamiento llega justo antes de que la compania debute en el Nasdaq."
+    },
+    {
+      "tag": "Interactivo",
+      "title": "Frontend Mentor: practica HTML, CSS y JavaScript con retos basados en disenos reales",
+      "url": "https://www.frontendmentor.io/",
+      "summary": "Frontend Mentor ofrece cientos de retos, la mayoria gratuitos, que piden reproducir en codigo un diseno real con sus archivos de Figma y una guia de estilos incluida, desde componentes sencillos hasta paginas completas con Flexbox y Grid. Al terminar puedes subir tu solucion para que la comunidad te de su opinion."
+    },
+    {
+      "tag": "Interactivo",
+      "title": "Exercism: practica Perl con ejercicios interactivos y mentoria gratuita",
+      "url": "https://exercism.org/tracks/perl5",
+      "summary": "Este recorrido gratuito de Exercism ofrece decenas de ejercicios del lenguaje Perl, muy usado historicamente para procesar texto y administrar sistemas, con correccion automatica de tu codigo nada mas enviarlo. Como en el resto de la plataforma, tambien puedes pedir mentoria gratuita de programadores voluntarios que comentan tu solucion."
+    },
+    {
+      "tag": "Interactivo",
+      "title": "Rust by Example: aprende Rust editando y ejecutando ejemplos de codigo en el navegador",
+      "url": "https://doc.rust-lang.org/rust-by-example/",
+      "summary": "Esta guia gratuita y oficial del equipo de Rust explica cada concepto del lenguaje con un ejemplo de codigo real que se puede editar y ejecutar directamente en el navegador, sin instalar nada. Es un complemento mas practico al libro oficial, pensado para quien aprende mejor viendo codigo funcionando que leyendo teoria."
+    },
+    {
+      "tag": "Curso",
+      "title": "App Academy Open: el curriculo gratuito de un bootcamp real de desarrollo full stack",
+      "url": "https://www.appacademy.io/course/app-academy-open",
+      "summary": "App Academy Open ofrece de forma gratuita y sin necesidad de tarjeta de credito buena parte del temario que la escuela usa en su bootcamp de pago, con cientos de horas de lecturas, videos y proyectos sobre JavaScript, Python, SQL y React. Incluye tambien acceso a una comunidad de Discord para resolver dudas mientras avanzas a tu propio ritmo."
+    },
+    {
+      "tag": "Interactivo",
+      "title": "LeetCode: miles de problemas gratuitos de algoritmos para prepararte para entrevistas tecnicas",
+      "url": "https://leetcode.com/",
+      "summary": "LeetCode reune miles de problemas de algoritmos y estructuras de datos, muchos inspirados en entrevistas reales de grandes empresas tecnologicas, con un editor integrado que corrige tu codigo en decenas de lenguajes. La mayoria de los problemas se pueden resolver de forma gratuita sin necesidad de pagar la suscripcion premium."
+    }
+  ]
+}
