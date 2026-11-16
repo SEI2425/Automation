@@ -582,6 +582,17 @@
       ],
       "correct": 0,
       "explanation": "El operador / en Python 3 siempre realiza division real y devuelve un float, incluso si ambos operandos son enteros y el resultado es exacto; para division entera se usa //."
+    },
+    {
+      "q": "¿Qué devuelve la expresión `len({1, 2, 2, 3, 3, 3})` en Python?",
+      "opts": [
+        "3",
+        "6",
+        "5",
+        "Error de sintaxis"
+      ],
+      "correct": 0,
+      "explanation": "La expresión crea un set, que elimina automáticamente los duplicados, dejando {1, 2, 3}; len() de ese conjunto es 3."
     }
   ],
   "javascript": [
@@ -1167,6 +1178,17 @@
       ],
       "correct": 0,
       "explanation": "A diferencia de los objetos normales, typeof devuelve especificamente 'function' para cualquier funcion, aunque internamente las funciones son tambien un tipo de objeto."
+    },
+    {
+      "q": "¿Qué muestra `console.log(typeof function(){})` en JavaScript?",
+      "opts": [
+        "function",
+        "object",
+        "undefined",
+        "Error"
+      ],
+      "correct": 0,
+      "explanation": "Aunque las funciones son un tipo de objeto internamente, el operador typeof devuelve 'function' para ellas como caso especial."
     }
   ],
   "typescript": [
@@ -1752,6 +1774,17 @@
       ],
       "correct": 0,
       "explanation": "Dentro del bloque if, TypeScript reduce (narrows) el tipo de x a string gracias a la comprobacion typeof, aunque fuera del if sigue siendo string | number."
+    },
+    {
+      "q": "Con strictNullChecks activado, ¿qué ocurre al compilar `function f(x: number) { return x + 1; } f(null);`?",
+      "opts": [
+        "Error de compilación, porque null no es asignable a number",
+        "Compila y devuelve NaN",
+        "Compila y devuelve 1",
+        "Solo falla en tiempo de ejecución"
+      ],
+      "correct": 0,
+      "explanation": "Con strictNullChecks, null solo es asignable a tipos que lo incluyan explícitamente (como number | null), así que pasarlo a un parámetro number da error de compilación."
     }
   ],
   "java": [
@@ -2337,6 +2370,17 @@
       ],
       "correct": 0,
       "explanation": "Una clase declarada como 'final' no puede extenderse; 'sealed', introducida en Java 17, permite en cambio restringir que clases concretas pueden heredarla, en vez de prohibirlo por completo."
+    },
+    {
+      "q": "¿Qué imprime este código?\nint[] arr = new int[3];\nSystem.out.println(arr[0]);",
+      "opts": [
+        "0",
+        "null",
+        "Error de compilación",
+        "undefined"
+      ],
+      "correct": 0,
+      "explanation": "Java inicializa automáticamente los elementos de un array de tipo primitivo int con el valor 0."
     }
   ],
   "kotlin": [
@@ -2922,6 +2966,17 @@
       ],
       "correct": 0,
       "explanation": "lastOrNull con una condicion devuelve el ultimo elemento que la cumple, o null si ninguno la cumple; como ningun elemento es mayor que 5, el resultado es null."
+    },
+    {
+      "q": "¿Qué imprime `println(1 to 2)` en Kotlin?",
+      "opts": [
+        "(1, 2)",
+        "1 to 2",
+        "[1, 2]",
+        "Error de compilación"
+      ],
+      "correct": 0,
+      "explanation": "El infijo 'to' crea un objeto Pair, y su toString() lo representa como '(primero, segundo)', es decir '(1, 2)'."
     }
   ],
   "sql": [
@@ -3507,6 +3562,17 @@
       ],
       "correct": 0,
       "explanation": "EXISTS se detiene en cuanto encuentra una fila que cumple la condicion, sin importar que valor tenga, mientras que IN compara explicitamente cada valor devuelto por la subconsulta con el de la fila externa."
+    },
+    {
+      "q": "¿Qué devuelve `SELECT 10 % 3;` en SQL?",
+      "opts": [
+        "1",
+        "3",
+        "3.33",
+        "0"
+      ],
+      "correct": 0,
+      "explanation": "El operador % calcula el resto de la división entera; 10 dividido entre 3 da 3 con resto 1."
     }
   ],
   "git": [
@@ -4092,6 +4158,17 @@
       ],
       "correct": 0,
       "explanation": "git fetch actualiza las referencias remotas locales sin tocar tu rama de trabajo, mientras que git pull es en esencia un fetch seguido automaticamente de un merge (o rebase, segun configuracion)."
+    },
+    {
+      "q": "¿Qué hace el comando `git diff --staged`?",
+      "opts": [
+        "Muestra los cambios que están en el área de staging, listos para el próximo commit",
+        "Muestra los cambios ya confirmados en el último commit",
+        "Elimina los cambios en staging",
+        "Compara dos ramas remotas"
+      ],
+      "correct": 0,
+      "explanation": "git diff sin opciones compara el directorio de trabajo con el staging; con --staged (o --cached) compara el staging con el último commit, mostrando lo que se incluirá en el próximo commit."
     }
   ],
   "htmlcss": [
@@ -4677,6 +4754,17 @@
       ],
       "correct": 0,
       "explanation": "overflow: hidden recorta cualquier contenido que se salga de los limites del elemento sin ofrecer ninguna forma de desplazarse para verlo, a diferencia de overflow: scroll o auto."
+    },
+    {
+      "q": "¿Qué hace la propiedad CSS `object-fit: cover;` aplicada a una etiqueta <img>?",
+      "opts": [
+        "Escala la imagen para cubrir todo el contenedor, recortando el exceso si no coincide la proporción",
+        "Estira la imagen para llenar el contenedor, deformándola si hace falta",
+        "Muestra la imagen a su tamaño original sin importar el contenedor",
+        "Oculta la imagen si no cabe exactamente"
+      ],
+      "correct": 0,
+      "explanation": "object-fit: cover escala la imagen manteniendo su proporción para cubrir todo el espacio del contenedor, recortando las partes que sobresalgan."
     }
   ],
   "bash": [
@@ -5262,6 +5350,17 @@
       ],
       "correct": 0,
       "explanation": "chmod +x anade el permiso de ejecucion al archivo sin tocar los permisos de lectura o escritura existentes, lo que permite ejecutarlo como './script.sh' en lugar de pasarlo como argumento a un interprete."
+    },
+    {
+      "q": "¿Qué hace el comando `chmod +x script.sh`?",
+      "opts": [
+        "Da permiso de ejecución al archivo script.sh",
+        "Cambia el propietario del archivo",
+        "Lo hace de solo lectura",
+        "Lo elimina si no es un script válido"
+      ],
+      "correct": 0,
+      "explanation": "chmod +x añade el permiso de ejecución al archivo, necesario para poder ejecutarlo directamente con ./script.sh."
     }
   ],
   "ia": [
@@ -5836,6 +5935,17 @@
       ],
       "correct": 0,
       "explanation": "La ventana de contexto limita cuanto texto, medido en tokens, puede 'ver' el modelo a la vez entre la conversacion previa, las instrucciones y la respuesta; no tiene relacion directa con el numero de parametros del modelo ni con sus datos de entrenamiento."
+    },
+    {
+      "q": "¿Qué significa la sigla 'LLM' en el contexto de la inteligencia artificial?",
+      "opts": [
+        "Large Language Model (modelo grande de lenguaje)",
+        "Linear Learning Machine",
+        "Logic-based Learning Method",
+        "Limited Lexical Memory"
+      ],
+      "correct": 0,
+      "explanation": "LLM significa 'Large Language Model', el tipo de modelo de IA entrenado con grandes cantidades de texto para generar y comprender lenguaje natural."
     }
   ]
 }

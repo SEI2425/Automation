@@ -1,0 +1,112 @@
+{
+  "date": "2026-11-16",
+  "questions": [
+    {
+      "type": "identify",
+      "lang": "Python",
+      "question": "¿Qué imprime este código?",
+      "code": "nums = [1, 2, 3]\nnums += [4, 5]\nprint(nums)",
+      "options": [
+        "[1, 2, 3, 4, 5]",
+        "[1, 2, 3, [4, 5]]",
+        "[4, 5]",
+        "Error"
+      ],
+      "correct": 0,
+      "hint": "El operador += sobre una lista extiende sus elementos, no la anida.",
+      "explanation": "nums += [4, 5] equivale a nums.extend([4, 5]), añadiendo cada elemento por separado: [1, 2, 3, 4, 5]."
+    },
+    {
+      "type": "complete",
+      "lang": "JavaScript",
+      "question": "¿Qué método falta para que total sea 16?",
+      "code": "const arr = [1, 2, 3];\nconst total = arr.____((a, b) => a + b, 10);\nconsole.log(total); // 16",
+      "options": [
+        "reduce",
+        "map",
+        "filter",
+        "forEach"
+      ],
+      "correct": 0,
+      "hint": "Necesitas acumular un valor inicial de 10 más la suma de los elementos.",
+      "explanation": "reduce con valor inicial 10 suma 10+1+2+3=16."
+    },
+    {
+      "type": "identify",
+      "lang": "SQL",
+      "question": "¿Qué cuenta esta consulta?",
+      "code": "SELECT COUNT(*) FROM orders WHERE customer_id IS NOT NULL;",
+      "options": [
+        "Los pedidos que tienen un cliente asignado",
+        "Todos los pedidos sin excepción",
+        "Los clientes sin pedidos",
+        "Los pedidos duplicados"
+      ],
+      "correct": 0,
+      "hint": "IS NOT NULL filtra las filas donde esa columna sí tiene valor.",
+      "explanation": "La condición WHERE customer_id IS NOT NULL deja solo los pedidos que tienen un id de cliente asignado, y COUNT(*) los cuenta."
+    },
+    {
+      "type": "complete",
+      "lang": "Git",
+      "question": "¿Qué falta para subir también las etiquetas al remoto?",
+      "code": "git commit -m \"fix\"\ngit tag v1.0.1\ngit ____ --tags\n# sube tanto los commits como las etiquetas",
+      "options": [
+        "push",
+        "fetch",
+        "pull",
+        "clone"
+      ],
+      "correct": 0,
+      "hint": "git push normalmente no sube etiquetas salvo que se lo pidas explícitamente.",
+      "explanation": "git push --tags envía todas las etiquetas locales al repositorio remoto, algo que un push normal no hace por defecto."
+    },
+    {
+      "type": "identify",
+      "lang": "Kotlin",
+      "question": "¿Qué imprime este código?",
+      "code": "val texto: String? = null\nval longitud = texto?.length ?: 0\nprintln(longitud)",
+      "options": [
+        "0",
+        "null",
+        "Error de compilación",
+        "NullPointerException"
+      ],
+      "correct": 0,
+      "hint": "?: usa el valor de la derecha cuando lo de la izquierda es null.",
+      "explanation": "texto?.length da null porque texto es null; el operador elvis ?: sustituye ese null por 0."
+    }
+  ],
+  "tips": [
+    {
+      "text": "Usa 'git log --grep=\"texto\"' para buscar commits por palabra clave en su mensaje, en vez de leerlos todos de arriba a abajo.",
+      "explanation": "Cuando un proyecto lleva cientos de commits, no recordarás en cuál se hizo un cambio concreto; buscar por una palabra del mensaje (como 'login' o 'fix') te lleva directo a los commits relevantes sin revisar el historial entero a mano.",
+      "link": "https://git-scm.com/docs/git-log",
+      "linkLabel": "Git SCM: documentación de git log (--grep)"
+    },
+    {
+      "text": "No asumas que una librería de fechas hace lo correcto con zonas horarias y años bisiestos sin comprobarlo con un caso real.",
+      "explanation": "Sumar 'un mes' a una fecha se comporta de forma distinta según el día de partida (31 de enero + 1 mes no es un día que exista en febrero), y cada librería resuelve ese caso de forma diferente; probarlo con un caso límite real evita sorpresas en producción.",
+      "link": "https://docs.python.org/3/library/datetime.html",
+      "linkLabel": "Documentación oficial de Python: el módulo datetime"
+    },
+    {
+      "text": "Antes de instalar una librería diminuta solo para una función de pocas líneas, pregúntate si no sería más simple escribirla tú mismo.",
+      "explanation": "Añadir una dependencia para algo tan sencillo como comprobar si un número es par suma una pieza más que puede romperse, quedar sin mantenimiento o incluso resultar maliciosa; copiar esas pocas líneas a tu propio código suele ser más seguro y más simple.",
+      "link": "https://research.swtch.com/deps",
+      "linkLabel": "research!rsc: nuestro problema de software se llama dependencias"
+    },
+    {
+      "text": "No le pongas a una función un nombre que empiece por 'procesar' o 'manejar' sin decir qué procesa: esos verbos no dicen nada sobre lo que realmente hace.",
+      "explanation": "Nombres como 'procesarDatos' o 'manejarEvento' obligan a abrir la función para saber qué hace, mientras que un nombre como 'calcularDescuento' o 'validarEmail' lo deja claro sin leer una sola línea más.",
+      "link": "https://github.com/ryanmcdermott/clean-code-javascript#functions",
+      "linkLabel": "Clean Code JavaScript: buenas prácticas para nombrar funciones"
+    },
+    {
+      "text": "Revisa qué pasa en tu aplicación cuando el usuario pulsa 'atrás' en el navegador justo después de enviar un formulario, no solo el camino en el que todo sale bien.",
+      "explanation": "El botón 'atrás' puede reenviar un formulario ya procesado o mostrar una página con datos obsoletos desde la caché del navegador, un caso que casi nadie prueba a propósito pero que los usuarios reales encuentran constantemente.",
+      "link": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Caching",
+      "linkLabel": "MDN: guía de caché HTTP"
+    }
+  ]
+}

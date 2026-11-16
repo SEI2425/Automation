@@ -1,0 +1,65 @@
+{
+  "date": "2026-11-16",
+  "items": [
+    {
+      "tag": "Impacto",
+      "title": "El rector académico de Dartmouth dimite tras confirmarse que usó IA sin avisar en sus propios escritos",
+      "url": "https://letsdatascience.com/news/dartmouth-provost-santiago-schnell-resigns-after-review-find-ea952098",
+      "summary": "Un comité de la Universidad de Dartmouth confirmó el 28 de octubre que el rector académico Santiago Schnell usó IA para alterar de forma significativa al menos una publicación suya sin reconocerlo, después de que una herramienta de detección marcara como generado por IA un artículo de opinión suyo en el Washington Post. Schnell dimitió del cargo, aunque el comité no recomendó ninguna sanción disciplinaria adicional."
+    },
+    {
+      "tag": "Impacto",
+      "title": "Un informe de Stanford a cien años vista advierte de que el impacto económico real de la IA todavía no aparece en los datos",
+      "url": "https://hai.stanford.edu/news/latest-chapter-100-year-study-says-ais-promises-and-perils-are-getting-real",
+      "summary": "El tercer informe del panel AI100 de Stanford, publicado el 10 de noviembre y dirigido por el investigador de Oxford Michael Wooldridge, concluye que el beneficio económico de la IA generativa todavía no se refleja de forma clara en los datos macroeconómicos ni en el retorno de inversión de las empresas. El informe también señala la concentración del desarrollo de modelos de frontera en pocas compañías, el uso militar activo de la IA y el deterioro de la confianza en los medios digitales."
+    },
+    {
+      "tag": "Impacto",
+      "title": "Anthropic fija el rango de precio de su salida a bolsa y suma 26.000 millones de dólares de Nvidia, Google y Microsoft",
+      "url": "https://letsdatascience.com/news/anthropic-sets-ipo-range-and-adds-26-billion-private-placeme-f6c67619",
+      "summary": "Anthropic presentó el 10 de noviembre una enmienda a su S-1 con un rango de precio de entre 70 y 78 dólares por acción para su salida a bolsa en el Nasdaq bajo el símbolo ANT, junto a una colocación privada paralela de 26.000 millones de dólares en la que participan Nvidia, Google y Microsoft. La operación podría convertirse en la segunda mayor salida a bolsa de la historia, solo por detrás de SpaceX."
+    },
+    {
+      "tag": "Impacto",
+      "title": "La aplicación de agentes de IA de DeepSeek supera el millón y medio de usuarios diarios a los tres meses de su lanzamiento",
+      "url": "https://letsdatascience.com/news/deepseek-harness-agent-app-reaches-154-million-daily-users-83394bf7",
+      "summary": "DeepSeek anunció el 4 de noviembre que su aplicación de agentes de código abierto Harness alcanzó 1,54 millones de usuarios activos diarios, frente a unos 271.000 a finales de septiembre, y que la comunidad ya ha creado unos 35.000 complementos de terceros para la herramienta. La empresa reconoce en sus propias condiciones de uso que la aplicación todavía no está pensada para entornos de producción."
+    },
+    {
+      "tag": "Lanzamiento",
+      "title": "Meta lanza Muse Ember, un modelo de IA barato pensado para ejecutar las tareas repetitivas de otros agentes",
+      "url": "https://letsdatascience.com/news/meta-releases-muse-ember-a-low-cost-model-for-agent-executio-7b564cff",
+      "summary": "Meta presentó el 9 de noviembre Muse Ember, el modelo más ligero de su familia Muse, pensado para encargarse de los pasos repetitivos de un agente de IA mientras un modelo mayor como Muse Wonder se ocupa de planificar. El modelo admite una ventana de contexto de más de un millón de tokens y cuesta 0,10 dólares por millón de tokens de entrada, aunque Meta no ha publicado sus pesos ni pruebas independientes de rendimiento."
+    },
+    {
+      "tag": "Curso",
+      "title": "Think Python: el libro gratuito de Allen Downey para aprender a pensar como programador con Python",
+      "url": "https://greenteapress.com/wp/think-python-3rd-edition/",
+      "summary": "Esta tercera edición, gratuita y disponible íntegramente online como una serie de cuadernos Jupyter, enseña Python desde cero poniendo el énfasis en cómo diseñar la solución a un problema, no solo en la sintaxis del lenguaje. Cada capítulo se puede ejecutar y modificar directamente en el navegador, sin instalar nada."
+    },
+    {
+      "tag": "Curso",
+      "title": "CS50 SQL: el curso gratuito de Harvard dedicado por completo a bases de datos y SQL",
+      "url": "https://cs50.harvard.edu/sql/",
+      "summary": "Esta rama de CS50, impartida por el propio David J. Malan, enseña a diseñar, consultar y optimizar bases de datos relacionales usando SQL, con siete semanas de clases en vídeo y problemas prácticos evaluados automáticamente. Se puede seguir de forma gratuita a través de edX, con un certificado de pago opcional al terminar."
+    },
+    {
+      "tag": "Interactivo",
+      "title": "SQL Murder Mystery: resuelve un asesinato ficticio escribiendo tus propias consultas SQL",
+      "url": "https://mystery.knightlab.com",
+      "summary": "Creado por el Knight Lab de la Universidad Northwestern, este juego gratuito y de código abierto plantea un crimen que solo se puede resolver investigando pistas en una base de datos real mediante consultas SQL cada vez más complejas. Incluye una guía para quien nunca ha escrito una consulta, pensada para aprender lo justo y necesario mientras avanza el caso."
+    },
+    {
+      "tag": "Interactivo",
+      "title": "Exercism: practica el lenguaje C con ejercicios interactivos y mentoría gratuita",
+      "url": "https://exercism.org/tracks/c",
+      "summary": "Este recorrido gratuito de Exercism ofrece decenas de ejercicios del lenguaje C, muy usado en sistemas operativos y software de bajo nivel, con corrección automática de tu código nada más enviarlo. Como en el resto de la plataforma, también puedes pedir mentoría gratuita de programadores voluntarios que comentan tu solución."
+    },
+    {
+      "tag": "Interactivo",
+      "title": "Exercism: practica C++ con ejercicios interactivos y mentoría gratuita",
+      "url": "https://exercism.org/tracks/cpp",
+      "summary": "Este recorrido gratuito de Exercism reúne decenas de ejercicios de C++, desde conceptos básicos hasta plantillas y gestión de memoria, con pruebas automáticas que revisan tu solución al instante. También incluye mentoría gratuita de programadores voluntarios que sugieren formas más idiomáticas de resolver cada ejercicio."
+    }
+  ]
+}
