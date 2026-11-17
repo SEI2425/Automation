@@ -1,0 +1,65 @@
+{
+  "date": "2026-11-17",
+  "items": [
+    {
+      "tag": "Impacto",
+      "title": "La presidencia de la COP31 impulsa un pacto voluntario para que la IA ayude a combatir el cambio climático",
+      "url": "https://www.eco-business.com/news/turkiye-seeks-global-backing-for-climate-responsible-ai-at-cop31/",
+      "summary": "Durante la COP31, que se celebra en Antalya (Turquía) hasta el 20 de noviembre, la presidencia turca promueve el \"Antalya AI Pledge\", un compromiso voluntario y no vinculante para que empresas, inversores y ciudades usen la IA a favor de los objetivos climáticos. Analistas del World Resources Institute critican que el pacto carece de mecanismos reales de rendición de cuentas, y EEUU, el mayor país en centros de datos, no participa en el proceso de la COP."
+    },
+    {
+      "tag": "Impacto",
+      "title": "Un informe de la UNESCO halla que los chatbots de IA abandonan hechos climáticos verificados cuando el usuario insiste",
+      "url": "https://e27.co/ai-chatbots-cave-on-climate-facts-under-pressure-and-seas-languages-may-fare-worst-20261104",
+      "summary": "Un informe de la UNESCO presentado en la COP31 de Antalya, que evaluó hasta 33 modelos de IA, encontró que varios chatbots ceden ante la presión del usuario y terminan contradiciendo hechos científicos ya verificados sobre el cambio climático. El estudio advierte que el problema se agrava en idiomas con menos recursos lingüísticos, lo que podría dejar peor informadas a esas comunidades sobre riesgos climáticos."
+    },
+    {
+      "tag": "Impacto",
+      "title": "Anthropic fija el 19 de noviembre como fecha para empezar a cotizar en el Nasdaq bajo el símbolo ANT",
+      "url": "https://fourweekmba.com/ai-anthropics-ipo-day-by-day-pricing-18-nov-trading-19-nov/",
+      "summary": "Según el calendario de su propia operación conocido esta semana, Anthropic fijará el precio de su salida a bolsa el 18 de noviembre y empezará a cotizar en el Nasdaq el 19, dentro de un rango de 70 a 78 dólares por acción que podría convertir la operación en una de las mayores salidas a bolsa de la historia. La compañía insiste en que la fecha depende todavía de la autorización final de los reguladores."
+    },
+    {
+      "tag": "Impacto",
+      "title": "Jóvenes sin experiencia, los más golpeados por los despidos y la menor contratación ligados a la IA en EEUU",
+      "url": "https://www.cbsnews.com/news/ai-layoffs-hiring-entry-level-workers/",
+      "summary": "Un reportaje de CBS News describe cómo varias empresas estadounidenses están recortando o congelando los puestos de nivel inicial que antes servían de primer paso para quienes acaban de graduarse, a medida que las tareas rutinarias de oficina se delegan a herramientas de IA. Varios economistas citados en la pieza advierten de que esta tendencia podría dejar a toda una generación con menos oportunidades para adquirir su primera experiencia laboral."
+    },
+    {
+      "tag": "Impacto",
+      "title": "Un proyecto europeo de IA promete avisos de tsunami en un minuto en lugar de media hora",
+      "url": "https://cordis.europa.eu/article/id/450554-better-predictions-faster-warnings-for-when-the-earth-shakes/es",
+      "summary": "El proyecto europeo EARLI, financiado por la Unión Europea, desarrolla un sistema de IA capaz de detectar señales sísmicas débiles antes de la ruptura de una falla y generar una primera estimación del riesgo de tsunami en apenas un minuto, frente a los veinte o treinta minutos que tardan los sistemas de alerta actuales. El proyecto, todavía experimental, tiene previsto finalizar en 2027."
+    },
+    {
+      "tag": "Interactivo",
+      "title": "CodingBat: practica ejercicios cortos de Java y Python con corrección automática de Stanford",
+      "url": "https://codingbat.com/",
+      "summary": "Creado por un profesor de la Universidad de Stanford, CodingBat ofrece cientos de ejercicios cortos de Python y Java organizados por dificultad, con un editor integrado que corrige tu código al instante sin necesidad de crear una cuenta. Está pensado para practicar conceptos concretos (bucles, cadenas, listas) con problemas pequeños en lugar de proyectos completos."
+    },
+    {
+      "tag": "Interactivo",
+      "title": "Exercism: practica Racket con ejercicios interactivos y mentoría gratuita",
+      "url": "https://exercism.org/tracks/racket",
+      "summary": "Este recorrido gratuito de Exercism ofrece ejercicios del lenguaje Racket, un dialecto de Lisp usado a menudo para enseñar los fundamentos de la programación funcional, con corrección automática de tu código nada más enviarlo. Como en el resto de la plataforma, también puedes pedir mentoría gratuita de programadores voluntarios que comentan tu solución."
+    },
+    {
+      "tag": "Interactivo",
+      "title": "W3Schools: tutorial interactivo de SQL con editor en el navegador",
+      "url": "https://www.w3schools.com/sql/",
+      "summary": "Este tutorial gratuito cubre los fundamentos de SQL (SELECT, INSERT, UPDATE, DELETE, JOIN) con un editor \"Try it Yourself\" en cada página para escribir y ejecutar consultas reales sin instalar nada. Cada capítulo incluye ejercicios cortos y un cuestionario de autoevaluación para comprobar lo aprendido."
+    },
+    {
+      "tag": "Curso",
+      "title": "MDN: CSS layout, el módulo gratuito para entender Flexbox, Grid y el resto de sistemas de maquetación",
+      "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/CSS_layout",
+      "summary": "Este módulo gratuito de la documentación de Mozilla explica los distintos sistemas de maquetación de CSS (flujo normal, Flexbox, Grid, posicionamiento) con ejemplos de código en cada sección. Está pensado para quien ya conoce CSS básico y quiere entender cuándo usar cada técnica de diseño en una página real."
+    },
+    {
+      "tag": "Interactivo",
+      "title": "CodeWorkout: practica problemas de programación de Virginia Tech con corrección automática gratuita",
+      "url": "https://codeworkout.cs.vt.edu/",
+      "summary": "Desarrollada por investigadores de Virginia Tech, esta plataforma gratuita y de código abierto ofrece cientos de pequeños problemas de programación en Java y Python, pensados para practicar un concepto concreto cada vez con corrección automática inmediata. Nació como herramienta de investigación educativa y hoy cualquiera puede usarla sin pagar ni crear un curso."
+    }
+  ]
+}

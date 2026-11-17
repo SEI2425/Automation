@@ -593,6 +593,17 @@
       ],
       "correct": 0,
       "explanation": "La expresión crea un set, que elimina automáticamente los duplicados, dejando {1, 2, 3}; len() de ese conjunto es 3."
+    },
+    {
+      "q": "¿Qué imprime este código?\npersonas = [('Ana', 30), ('Leo', 25), ('Eva', 25)]\nprint(sorted(personas, key=lambda p: (p[1], p[0])))",
+      "opts": [
+        "[('Eva', 25), ('Leo', 25), ('Ana', 30)]",
+        "[('Leo', 25), ('Eva', 25), ('Ana', 30)]",
+        "[('Ana', 30), ('Leo', 25), ('Eva', 25)]",
+        "Error de sintaxis"
+      ],
+      "correct": 0,
+      "explanation": "sorted con key=lambda p: (p[1], p[0]) ordena primero por edad (segundo elemento) y, en caso de empate, por nombre alfabéticamente; Eva y Leo tienen 25 años, así que se ordenan entre sí por nombre: Eva antes que Leo."
     }
   ],
   "javascript": [
@@ -1189,6 +1200,17 @@
       ],
       "correct": 0,
       "explanation": "Aunque las funciones son un tipo de objeto internamente, el operador typeof devuelve 'function' para ellas como caso especial."
+    },
+    {
+      "q": "¿Qué imprime este código?\nPromise.allSettled([\n  Promise.resolve(1),\n  Promise.reject('error')\n]).then(r => console.log(r.length));",
+      "opts": [
+        "2",
+        "1",
+        "Error no capturado",
+        "undefined"
+      ],
+      "correct": 0,
+      "explanation": "Promise.allSettled espera a que todas las promesas terminen, sea con éxito o con error, y siempre devuelve un array con un resultado por cada promesa original; aquí la longitud es 2, aunque la segunda se rechace."
     }
   ],
   "typescript": [
@@ -1785,6 +1807,17 @@
       ],
       "correct": 0,
       "explanation": "Con strictNullChecks, null solo es asignable a tipos que lo incluyan explícitamente (como number | null), así que pasarlo a un parámetro number da error de compilación."
+    },
+    {
+      "q": "¿Qué imprime este código?\nfunction crearPar<T = string>(valor: T): [T, T] {\n  return [valor, valor];\n}\nconsole.log(crearPar(5));",
+      "opts": [
+        "[5, 5]",
+        "['5','5']",
+        "Error de compilación porque T por defecto es string",
+        "[5]"
+      ],
+      "correct": 0,
+      "explanation": "Aunque T tiene string como valor por defecto, al llamar crearPar(5) TypeScript infiere T como number a partir del argumento; el valor por defecto solo se aplicaría si no hubiera nada que inferir. En tiempo de ejecución simplemente devuelve [5, 5]."
     }
   ],
   "java": [
@@ -2381,6 +2414,17 @@
       ],
       "correct": 0,
       "explanation": "Java inicializa automáticamente los elementos de un array de tipo primitivo int con el valor 0."
+    },
+    {
+      "q": "¿Qué imprime este código?\nList<Integer> nums = List.of(3, 1, 2);\nList<Integer> ordenada = nums.stream().sorted().toList();\nSystem.out.println(nums);\nSystem.out.println(ordenada);",
+      "opts": [
+        "[3, 1, 2]\n[1, 2, 3]",
+        "[1, 2, 3]\n[1, 2, 3]",
+        "[3, 1, 2]\n[3, 1, 2]",
+        "Error de compilación"
+      ],
+      "correct": 0,
+      "explanation": "stream().sorted() genera un nuevo stream ordenado sin modificar la lista original nums, que sigue siendo [3, 1, 2]; toList() (añadido en Java 16) recoge ese stream ordenado en una nueva lista inmutable [1, 2, 3]."
     }
   ],
   "kotlin": [
@@ -2977,6 +3021,17 @@
       ],
       "correct": 0,
       "explanation": "El infijo 'to' crea un objeto Pair, y su toString() lo representa como '(primero, segundo)', es decir '(1, 2)'."
+    },
+    {
+      "q": "¿Qué imprime este código?\nfun describir(x: Any) {\n    if (x is String) {\n        println(x.length)\n    }\n}\ndescribir(\"hola\")",
+      "opts": [
+        "4",
+        "hola",
+        "Error de compilación",
+        "null"
+      ],
+      "correct": 0,
+      "explanation": "Tras comprobar 'x is String', Kotlin aplica un smart cast y permite usar x.length directamente sin cast explícito; 'hola' tiene 4 caracteres."
     }
   ],
   "sql": [
@@ -3573,6 +3628,17 @@
       ],
       "correct": 0,
       "explanation": "El operador % calcula el resto de la división entera; 10 dividido entre 3 da 3 con resto 1."
+    },
+    {
+      "q": "¿Qué devuelve esta consulta?\nSELECT name FROM employees e\nWHERE salary > (\n  SELECT AVG(salary) FROM employees WHERE department = e.department\n);",
+      "opts": [
+        "Los empleados que ganan más que el salario promedio de su propio departamento",
+        "Los empleados que ganan más que el salario promedio de toda la empresa",
+        "El salario promedio de cada departamento",
+        "Los empleados con el salario más alto de la empresa"
+      ],
+      "correct": 0,
+      "explanation": "Al referenciar e.department dentro de la subconsulta, esta se vuelve correlacionada: para cada empleado calcula el salario promedio de SU departamento, no el de toda la empresa, y compara contra ese valor."
     }
   ],
   "git": [
@@ -4169,6 +4235,17 @@
       ],
       "correct": 0,
       "explanation": "git diff sin opciones compara el directorio de trabajo con el staging; con --staged (o --cached) compara el staging con el último commit, mostrando lo que se incluirá en el próximo commit."
+    },
+    {
+      "q": "¿Qué muestra este comando?\ngit log --since=\"2 weeks ago\" --oneline",
+      "opts": [
+        "Los commits realizados en las últimas dos semanas, resumidos en una línea cada uno",
+        "Los commits de hace exactamente dos semanas",
+        "Elimina los commits de más de dos semanas de antigüedad",
+        "Programa un commit para dentro de dos semanas"
+      ],
+      "correct": 0,
+      "explanation": "--since filtra el historial mostrando solo los commits posteriores a la fecha relativa indicada; --oneline resume cada uno en una sola línea."
     }
   ],
   "htmlcss": [
@@ -4765,6 +4842,17 @@
       ],
       "correct": 0,
       "explanation": "object-fit: cover escala la imagen manteniendo su proporción para cubrir todo el espacio del contenedor, recortando las partes que sobresalgan."
+    },
+    {
+      "q": "¿Qué permite la propiedad flex-wrap: wrap en este contenedor flex?\n<style>\n.card { display: flex; flex-wrap: wrap; gap: 10px; }\n</style>",
+      "opts": [
+        "Que los elementos hijos pasen a una nueva línea cuando no caben todos en una sola fila",
+        "Que el texto dentro de cada hijo se ajuste automáticamente",
+        "Que los hijos se oculten si no caben en el contenedor",
+        "Que el contenedor cambie de flex a grid automáticamente"
+      ],
+      "correct": 0,
+      "explanation": "Por defecto, flex-direction mantiene a todos los elementos en una sola fila (o columna) aunque se desborden; flex-wrap: wrap permite que, cuando no quepan, los elementos continúen en una nueva línea."
     }
   ],
   "bash": [
@@ -5361,6 +5449,17 @@
       ],
       "correct": 0,
       "explanation": "chmod +x añade el permiso de ejecución al archivo, necesario para poder ejecutarlo directamente con ./script.sh."
+    },
+    {
+      "q": "¿Qué imprime este script?\nIFS=\",\"\nread -ra partes <<< \"rojo,verde,azul\"\necho \"${partes[1]}\"",
+      "opts": [
+        "verde",
+        "rojo",
+        "rojo,verde,azul",
+        "azul"
+      ],
+      "correct": 0,
+      "explanation": "Al fijar IFS=\",\", read -ra divide la cadena por comas en el array partes: partes[0]='rojo', partes[1]='verde', partes[2]='azul'; por eso se imprime 'verde'."
     }
   ],
   "ia": [
@@ -5946,6 +6045,17 @@
       ],
       "correct": 0,
       "explanation": "LLM significa 'Large Language Model', el tipo de modelo de IA entrenado con grandes cantidades de texto para generar y comprender lenguaje natural."
+    },
+    {
+      "q": "¿Qué es un 'system prompt' en un modelo de lenguaje?",
+      "opts": [
+        "Una instrucción inicial, normalmente invisible para el usuario, que define el comportamiento o el rol del modelo antes de la conversación",
+        "El mensaje que escribe el usuario en cada turno de la conversación",
+        "Un mensaje de error que el modelo muestra cuando no entiende la pregunta",
+        "El nombre técnico del servidor que ejecuta el modelo"
+      ],
+      "correct": 0,
+      "explanation": "El system prompt es una instrucción previa, separada de los mensajes del usuario, que configura el tono, el rol o las reglas que debe seguir el modelo durante toda la conversación."
     }
   ]
 }

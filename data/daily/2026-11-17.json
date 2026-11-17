@@ -1,0 +1,92 @@
+{
+  "date": "2026-11-17",
+  "questions": [
+    {
+      "type": "identify",
+      "lang": "Python",
+      "question": "¿Qué imprime este código?",
+      "code": "from collections import Counter\npalabras = [\"sol\", \"luna\", \"sol\", \"estrella\", \"luna\", \"sol\"]\nc = Counter(palabras)\nprint(c.most_common(1))",
+      "options": ["[('sol', 3)]", "[('luna', 2)]", "{'sol': 3, 'luna': 2, 'estrella': 1}", "Error"],
+      "correct": 0,
+      "hint": "most_common(1) devuelve el elemento con mayor frecuencia, como una lista de un único tuple (elemento, conteo).",
+      "explanation": "Counter cuenta las apariciones de cada palabra; most_common(1) devuelve el más frecuente como lista de un tuple: 'sol' aparece 3 veces, más que 'luna' (2) o 'estrella' (1)."
+    },
+    {
+      "type": "complete",
+      "lang": "JavaScript",
+      "question": "¿Qué método falta para transformar y aplanar un nivel en un solo paso?",
+      "code": "const palabras = [\"hola\", \"adios\"];\nconst letras = palabras.____(w => w.split(\"\"));\nconsole.log(letras.length); // 9",
+      "options": ["flatMap", "map", "filter", "reduce"],
+      "correct": 0,
+      "hint": "Necesitas transformar cada elemento en un array y luego aplanar un nivel ese resultado.",
+      "explanation": "flatMap aplica la función a cada elemento y aplana un nivel el resultado, uniendo las letras de ambas palabras en un solo array de 9 elementos; map() en cambio devolvería un array de arrays anidado."
+    },
+    {
+      "type": "identify",
+      "lang": "SQL",
+      "question": "¿Qué hace esta consulta?",
+      "code": "SELECT a.name AS empleado, b.name AS jefe\nFROM employees a\nJOIN employees b ON a.manager_id = b.id;",
+      "options": [
+        "Combina cada empleado con el nombre de su propio jefe, usando un self join sobre la misma tabla",
+        "Lista solo a los jefes sin empleados a su cargo",
+        "Cuenta cuántos empleados tiene cada jefe",
+        "Elimina a los empleados que no tienen jefe asignado"
+      ],
+      "correct": 0,
+      "hint": "La tabla employees se usa dos veces con distintos alias (a y b): es un self join.",
+      "explanation": "Un self join combina una tabla con una copia de sí misma; aquí 'a' representa al empleado y 'b', mediante manager_id = b.id, representa a su jefe."
+    },
+    {
+      "type": "complete",
+      "lang": "Git",
+      "question": "¿Qué comando falta para borrar las referencias locales a ramas remotas que ya no existen en origin?",
+      "code": "git ____ --prune origin\n# borra las referencias locales a ramas remotas que ya se eliminaron en origin",
+      "options": ["fetch", "pull", "push", "clone"],
+      "correct": 0,
+      "hint": "--prune limpia referencias remotas obsoletas al descargar los cambios.",
+      "explanation": "git fetch --prune origin descarga las referencias del remoto y borra las ramas de seguimiento (como origin/rama) que ya no existen ahí, sin tocar tus ramas locales."
+    },
+    {
+      "type": "identify",
+      "lang": "Kotlin",
+      "question": "¿Qué imprime este código?",
+      "code": "sealed class Resultado\nclass Exito(val valor: Int): Resultado()\nclass Fracaso(val error: String): Resultado()\n\nfun procesar(r: Resultado): String = when (r) {\n    is Exito -> \"OK: ${r.valor}\"\n    is Fracaso -> \"ERROR: ${r.error}\"\n}\nprintln(procesar(Exito(42)))",
+      "options": ["OK: 42", "ERROR: 42", "Error de compilación porque falta un else", "null"],
+      "correct": 0,
+      "hint": "when sobre una sealed class es exhaustivo sin necesitar else si cubre todas sus subclases.",
+      "explanation": "Como Resultado es sealed y el when cubre sus dos únicas subclases, no hace falta else; al pasar Exito(42), coincide la rama is Exito y devuelve 'OK: 42'."
+    }
+  ],
+  "tips": [
+    {
+      "text": "Cuida tu postura y haz descansos físicos regulares al programar, no solo pausas mentales.",
+      "explanation": "Pasar horas sentado con mala postura frente a una pantalla puede causar dolor de cuello, espalda o muñecas a medio plazo, molestias que no se notan de golpe sino que se acumulan sesión tras sesión. Levantarte, estirarte y ajustar la altura de pantalla y silla es un hábito tan importante como cualquier técnica de productividad mental.",
+      "link": "https://www.mayoclinic.org/healthy-lifestyle/adult-health/in-depth/office-ergonomics/art-20046169",
+      "linkLabel": "Mayo Clinic: ergonomía de oficina"
+    },
+    {
+      "text": "Guarda tus fragmentos de código reutilizables en un gist o repositorio personal, no solo en tu memoria.",
+      "explanation": "Es habitual resolver el mismo pequeño problema (parsear una fecha, formatear un número) varias veces en proyectos distintos sin acordarte de cómo lo solucionaste la última vez. Un gist o un repositorio propio de snippets te permite copiar y pegar esa solución ya probada en segundos, en lugar de reinventarla cada vez.",
+      "link": "https://docs.github.com/en/get-started/writing-on-github/editing-and-sharing-content-with-gists/creating-gists",
+      "linkLabel": "GitHub Docs: crear gists"
+    },
+    {
+      "text": "Para trabajar con fechas, usa una librería especializada en lugar de calcularlas a mano con matemáticas de milisegundos.",
+      "explanation": "Las fechas tienen trampas que no son evidentes a simple vista: meses con distinta cantidad de días, años bisiestos, cambios de horario de verano o zonas horarias con medias horas de diferencia. Librerías como date-fns o Luxon ya resolvieron esos casos límite por ti, mientras que sumar milisegundos a mano casi siempre falla en algún caso que no probaste.",
+      "link": "https://date-fns.org/",
+      "linkLabel": "date-fns: librería de fechas para JavaScript"
+    },
+    {
+      "text": "Revisa la licencia de cualquier imagen, icono o fuente que copies de internet para tu proyecto, no solo la del código.",
+      "explanation": "Es fácil pensar en la licencia solo cuando se trata de una librería de código, pero una imagen o una fuente tipográfica también tienen derechos de autor, y usarlas sin permiso en un proyecto público puede traer el mismo tipo de problema legal. Páginas como Creative Commons explican con claridad qué puedes hacer con cada tipo de licencia antes de publicar nada.",
+      "link": "https://creativecommons.org/share-your-work/cclicenses/",
+      "linkLabel": "Creative Commons: tipos de licencia"
+    },
+    {
+      "text": "Activa el modo 'watch' de tu framework de tests para que se reejecuten solos al guardar un archivo.",
+      "explanation": "Relanzar manualmente la suite de tests cada vez que cambias una línea rompe el ritmo de trabajo y hace que, sin darte cuenta, dejes de comprobar tu código con la frecuencia que deberías. El modo watch de herramientas como Jest ejecuta automáticamente solo los tests afectados en cuanto guardas, dándote feedback casi instantáneo sobre si acabas de romper algo.",
+      "link": "https://jestjs.io/docs/cli#--watch",
+      "linkLabel": "Jest: modo watch"
+    }
+  ]
+}

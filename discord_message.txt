@@ -1,1 +1,1 @@
-Hoy la IA vuelve a tocar la bolsa, la ciencia y hasta quién conserva su puesto por usarla sin avisarlo. La imagen de arriba resume lo esencial, pero en la web está todo completo: noticias, tips y preguntas de código. [Abrir PilaPila News](<https://sei2425.github.io/Automation/>)
+Boletín nuevo en PilaPila News: la imagen de arriba trae las 3 noticias del día y el tip estrella, y en la web tienes todo completo, con el resto de noticias, recursos, tips y preguntas para practicar. [Abrir PilaPila News](<https://sei2425.github.io/Automation/>)
