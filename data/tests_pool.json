@@ -604,6 +604,17 @@
       ],
       "correct": 0,
       "explanation": "sorted con key=lambda p: (p[1], p[0]) ordena primero por edad (segundo elemento) y, en caso de empate, por nombre alfabéticamente; Eva y Leo tienen 25 años, así que se ordenan entre sí por nombre: Eva antes que Leo."
+    },
+    {
+      "q": "¿Cuántos elementos tiene el conjunto `{x for x in range(10) if x % 3 == 0}`?",
+      "opts": [
+        "4",
+        "3",
+        "10",
+        "9"
+      ],
+      "correct": 0,
+      "explanation": "range(10) genera 0 a 9; los múltiplos de 3 en ese rango son 0, 3, 6 y 9, cuatro valores en total, y un set nunca repite elementos."
     }
   ],
   "javascript": [
@@ -1211,6 +1222,17 @@
       ],
       "correct": 0,
       "explanation": "Promise.allSettled espera a que todas las promesas terminen, sea con éxito o con error, y siempre devuelve un array con un resultado por cada promesa original; aquí la longitud es 2, aunque la segunda se rechace."
+    },
+    {
+      "q": "¿Qué imprime `console.log([1, 2, 3]?.[5] ?? 'nada')`?",
+      "opts": [
+        "nada",
+        "undefined",
+        "3",
+        "Error"
+      ],
+      "correct": 0,
+      "explanation": "El array existe, así que el encadenamiento opcional ?. no actúa; el índice 5 no existe y da undefined, y el operador ?? sustituye ese undefined por el texto 'nada'."
     }
   ],
   "typescript": [
@@ -1818,6 +1840,17 @@
       ],
       "correct": 0,
       "explanation": "Aunque T tiene string como valor por defecto, al llamar crearPar(5) TypeScript infiere T como number a partir del argumento; el valor por defecto solo se aplicaría si no hubiera nada que inferir. En tiempo de ejecución simplemente devuelve [5, 5]."
+    },
+    {
+      "q": "¿Qué ocurre al intentar compilar `function f(x: unknown) { return x.length; }`?",
+      "opts": [
+        "Error de compilación, porque no se puede acceder a una propiedad de un valor 'unknown' sin comprobar antes su tipo",
+        "Compila sin problemas y devuelve x.length",
+        "TypeScript convierte x en 'any' automáticamente",
+        "Solo falla en tiempo de ejecución, no al compilar"
+      ],
+      "correct": 0,
+      "explanation": "El tipo 'unknown' obliga a comprobar o convertir el valor antes de usarlo; acceder directamente a una propiedad como .length sin ninguna comprobación previa es un error de compilación, a diferencia de lo que ocurriría con 'any'."
     }
   ],
   "java": [
@@ -2425,6 +2458,17 @@
       ],
       "correct": 0,
       "explanation": "stream().sorted() genera un nuevo stream ordenado sin modificar la lista original nums, que sigue siendo [3, 1, 2]; toList() (añadido en Java 16) recoge ese stream ordenado en una nueva lista inmutable [1, 2, 3]."
+    },
+    {
+      "q": "¿Qué imprime este código?\n```java\nint[] arr = new int[3];\nSystem.out.println(arr[0]);\n```",
+      "opts": [
+        "0",
+        "null",
+        "Error de compilación",
+        "undefined"
+      ],
+      "correct": 0,
+      "explanation": "Java inicializa automáticamente los elementos de un array de tipo primitivo como int a su valor por defecto, que es 0, no null (null solo se usa para tipos de referencia)."
     }
   ],
   "kotlin": [
@@ -3032,6 +3076,17 @@
       ],
       "correct": 0,
       "explanation": "Tras comprobar 'x is String', Kotlin aplica un smart cast y permite usar x.length directamente sin cast explícito; 'hola' tiene 4 caracteres."
+    },
+    {
+      "q": "¿Qué imprime este código?\n```kotlin\ndata class Punto(val x: Int, val y: Int)\nval (a, b) = Punto(3, 7)\nprintln(a + b)\n```",
+      "opts": [
+        "10",
+        "37",
+        "Error de compilación",
+        "3"
+      ],
+      "correct": 0,
+      "explanation": "Las data class generan automáticamente funciones component1() y component2(), lo que permite desestructurar la instancia en a y b directamente; 3 + 7 da 10."
     }
   ],
   "sql": [
@@ -3639,6 +3694,17 @@
       ],
       "correct": 0,
       "explanation": "Al referenciar e.department dentro de la subconsulta, esta se vuelve correlacionada: para cada empleado calcula el salario promedio de SU departamento, no el de toda la empresa, y compara contra ese valor."
+    },
+    {
+      "q": "¿Qué devuelve `SELECT 10 + NULL;`?",
+      "opts": [
+        "NULL",
+        "10",
+        "0",
+        "Error"
+      ],
+      "correct": 0,
+      "explanation": "NULL representa un valor desconocido, no cero; cualquier operación aritmética que lo involucre, como una suma, da como resultado NULL en lugar de un número concreto."
     }
   ],
   "git": [
@@ -4246,6 +4312,17 @@
       ],
       "correct": 0,
       "explanation": "--since filtra el historial mostrando solo los commits posteriores a la fecha relativa indicada; --oneline resume cada uno en una sola línea."
+    },
+    {
+      "q": "¿Qué muestra el comando `git diff --staged`?",
+      "opts": [
+        "Las diferencias entre el área de preparación (staging) y el último commit",
+        "Las diferencias entre el directorio de trabajo y el área de preparación",
+        "El historial completo de commits de la rama",
+        "Las diferencias entre dos ramas distintas"
+      ],
+      "correct": 0,
+      "explanation": "git diff sin opciones compara el directorio de trabajo con el área de preparación; --staged (o su alias --cached) compara en cambio lo que ya está preparado para confirmarse contra el último commit."
     }
   ],
   "htmlcss": [
@@ -4853,6 +4930,17 @@
       ],
       "correct": 0,
       "explanation": "Por defecto, flex-direction mantiene a todos los elementos en una sola fila (o columna) aunque se desborden; flex-wrap: wrap permite que, cuando no quepan, los elementos continúen en una nueva línea."
+    },
+    {
+      "q": "¿Cuál es la diferencia principal entre las unidades CSS 'em' y 'rem'?",
+      "opts": [
+        "'em' es relativo al tamaño de fuente del elemento (o su padre), y 'rem' siempre es relativo al tamaño de fuente del elemento raíz del documento",
+        "'em' es un valor fijo en píxeles y 'rem' no",
+        "'rem' solo puede usarse dentro de una media query",
+        "Son exactamente la misma unidad con dos nombres distintos"
+      ],
+      "correct": 0,
+      "explanation": "'em' se calcula según el tamaño de fuente del propio elemento o el de su padre, por lo que puede acumularse al anidar elementos; 'rem' siempre toma como referencia el tamaño de fuente del elemento raíz (html), evitando ese efecto acumulativo."
     }
   ],
   "bash": [
@@ -5460,6 +5548,17 @@
       ],
       "correct": 0,
       "explanation": "Al fijar IFS=\",\", read -ra divide la cadena por comas en el array partes: partes[0]='rojo', partes[1]='verde', partes[2]='azul'; por eso se imprime 'verde'."
+    },
+    {
+      "q": "¿Qué comprueba la condición `[ -d \"$ruta\" ]` en un script de Bash?",
+      "opts": [
+        "Que la ruta exista y sea un directorio",
+        "Que la ruta exista y sea un archivo regular",
+        "Que la ruta tenga permisos de escritura",
+        "Que la variable ruta esté vacía"
+      ],
+      "correct": 0,
+      "explanation": "El operador -d de test comprueba específicamente que la ruta indicada exista y sea un directorio, a diferencia de -f, que comprueba que sea un archivo regular."
     }
   ],
   "ia": [
@@ -6056,6 +6155,17 @@
       ],
       "correct": 0,
       "explanation": "El system prompt es una instrucción previa, separada de los mensajes del usuario, que configura el tono, el rol o las reglas que debe seguir el modelo durante toda la conversación."
+    },
+    {
+      "q": "¿Qué hace la técnica conocida como RAG (Retrieval-Augmented Generation) en un sistema de IA?",
+      "opts": [
+        "Busca información relevante en una base de datos externa antes de generar la respuesta, en vez de depender solo de lo aprendido durante el entrenamiento",
+        "Reduce el tamaño del modelo eliminando parámetros poco usados",
+        "Genera automáticamente datos sintéticos para entrenar otro modelo",
+        "Acelera la generación de texto usando menos memoria de la GPU"
+      ],
+      "correct": 0,
+      "explanation": "RAG combina un modelo de lenguaje con una búsqueda previa en una fuente externa de datos, lo que le permite responder con información actualizada o específica sin necesidad de reentrenar el modelo desde cero."
     }
   ]
 }

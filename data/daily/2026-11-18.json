@@ -1,0 +1,87 @@
+{
+  "date": "2026-11-18",
+  "questions": [
+    {
+      "type": "identify",
+      "lang": "Python",
+      "question": "¿Qué imprime este código?",
+      "code": "nums = [3, 7, 2, 9, 4]\nprint(any(n > 8 for n in nums))",
+      "options": ["True", "False", "9", "Error"],
+      "correct": 0,
+      "hint": "any() devuelve True en cuanto un elemento cumple la condición.",
+      "explanation": "any() recorre el generador y devuelve True en cuanto encuentra un elemento que cumple la condición; 9 es mayor que 8, así que el resultado es True sin necesidad de revisar el resto."
+    },
+    {
+      "type": "complete",
+      "lang": "JavaScript",
+      "question": "¿Qué método falta para invertir el array sin modificar el original?",
+      "code": "const arr = [1, 2, 3];\nconst rev = arr.____();\nconsole.log(arr);  // [1, 2, 3]\nconsole.log(rev);  // [3, 2, 1]",
+      "options": ["toReversed", "reverse", "toSorted", "flat"],
+      "correct": 0,
+      "hint": "Necesitas una versión inmutable de reverse(), que no toque el array original.",
+      "explanation": "toReversed(), añadido en 2023 (ES2023), devuelve una copia invertida del array sin modificar el original; reverse() en cambio invertiría arr directamente."
+    },
+    {
+      "type": "identify",
+      "lang": "SQL",
+      "question": "¿Qué devuelve esta consulta?",
+      "code": "SELECT name, salary,\n       LEAD(salary) OVER (ORDER BY salary) AS siguiente\nFROM employees;",
+      "options": ["Para cada empleado, el salario del siguiente empleado en ese orden (NULL para el último)", "El salario del empleado anterior en ese orden", "El salario más alto de toda la tabla", "Agrupa a los empleados por salario"],
+      "correct": 0,
+      "hint": "LEAD() mira hacia la fila siguiente según el ORDER BY indicado, al contrario que LAG().",
+      "explanation": "LEAD(salary) OVER (ORDER BY salary) devuelve, para cada fila, el valor de salary de la fila siguiente en ese orden; la última fila no tiene una siguiente, así que su resultado es NULL."
+    },
+    {
+      "type": "identify",
+      "lang": "Java",
+      "question": "¿Qué imprime este código?",
+      "code": "List<Integer> nums = List.of(4, 8, 2);\nint max = nums.stream().max(Integer::compareTo).orElse(0);\nSystem.out.println(max);",
+      "options": ["8", "0", "14", "Error de compilación"],
+      "correct": 0,
+      "hint": "max() con un comparador devuelve el mayor elemento del stream, envuelto en un Optional.",
+      "explanation": "stream().max(Integer::compareTo) recorre la lista y devuelve el valor más alto (8) envuelto en un Optional; como sí hay un máximo, orElse(0) no se usa y se imprime 8."
+    },
+    {
+      "type": "complete",
+      "lang": "Kotlin",
+      "question": "¿Qué función de ámbito falta para que esto imprima 'Hola Mundo'?",
+      "code": "val sb = StringBuilder().____ {\n    append(\"Hola\")\n    append(\" Mundo\")\n}\nprintln(sb)",
+      "options": ["apply", "also", "let", "run"],
+      "correct": 0,
+      "hint": "Dentro del bloque se llama a append() directamente, sin escribir 'it.' delante.",
+      "explanation": "apply ejecuta el bloque usando el propio objeto como receptor implícito (this), lo que permite llamar a append() sin prefijo, y después devuelve ese mismo objeto; also haría lo mismo pero exigiría escribir it.append(...)."
+    }
+  ],
+  "tips": [
+    {
+      "text": "Cuando lleves un rato atascado con un bug, explícaselo en voz alta a alguien (o a un objeto cualquiera) antes de pedir ayuda.",
+      "explanation": "Esta técnica se conoce como 'rubber duck debugging': obligarte a poner en palabras, paso a paso, qué hace tu código y qué esperabas que hiciera suele revelar la parte donde tu explicación deja de tener sentido, que casi siempre es donde está el fallo. Funciona porque quien escucha no necesita entender de programación, lo importante es la disciplina de explicarlo todo sin saltarte ningún paso.",
+      "link": "https://www.freecodecamp.org/news/rubber-duck-debugging/",
+      "linkLabel": "freeCodeCamp: qué es el rubber duck debugging"
+    },
+    {
+      "text": "Escribe tus mensajes de commit en modo imperativo, como si completaran la frase 'Si se aplica, este commit...'.",
+      "explanation": "Un mensaje como 'Arregla el login' completa de forma natural esa frase, mientras que 'Arreglado el login' o 'Arreglando el login' no lo hacen; esta es la misma prueba que propuso Chris Beams en su guía muy citada sobre cómo escribir buenos mensajes de commit. Mantener ese estilo en todo el proyecto hace que el historial se lea de forma mucho más consistente.",
+      "link": "https://chris.beams.io/posts/git-commit/",
+      "linkLabel": "Chris Beams: cómo escribir un mensaje de commit de Git"
+    },
+    {
+      "text": "Si llevas meses siguiendo tutoriales pero te bloqueas al intentar programar algo propio desde cero, construye un proyecto pequeño sin seguir ninguna guía.",
+      "explanation": "A este bloqueo se le llama 'tutorial hell': se completan cursos y tutoriales uno tras otro sin llegar nunca a construir nada por cuenta propia, porque cada tutorial ya trae resueltas las decisiones difíciles. Elegir un proyecto pequeño y resolverlo solo, aunque te atasques y tengas que buscar ayuda puntual, es lo que de verdad convierte la teoría en una habilidad propia.",
+      "link": "https://www.freecodecamp.org/news/how-to-break-free-from-tutorial-hell/",
+      "linkLabel": "freeCodeCamp: cómo escapar del tutorial hell"
+    },
+    {
+      "text": "Nombra tus variables booleanas como si fueran una pregunta de sí o no, con prefijos como 'is', 'has' o 'puede'.",
+      "explanation": "Un nombre como 'activo' puede confundirse con un sustantivo o una acción, mientras que 'isActivo' o 'estaActivo' deja claro de inmediato que la variable solo puede valer verdadero o falso. Mantener el mismo prefijo en todo el proyecto, en lugar de mezclar estilos distintos, hace que cualquiera pueda adivinar el tipo de una variable solo por su nombre.",
+      "link": "https://www.samanthaming.com/tidbits/34-better-boolean-variable-names",
+      "linkLabel": "Samantha Ming: mejores nombres para variables booleanas"
+    },
+    {
+      "text": "En Python, lee el traceback de un error empezando por la última línea, no por la primera.",
+      "explanation": "La última línea de un traceback de Python contiene el tipo de error y el mensaje real, mientras que las líneas de encima muestran la cadena de llamadas que llevó hasta ahí; subir desde el final es la forma más rápida de encontrar primero qué pasó y después por qué. En otros lenguajes como Java el orden puede ser distinto, pero el truco de localizar primero el mensaje de error y luego buscar la primera línea que pertenece a tu propio código funciona casi siempre.",
+      "link": "https://bitecode.dev/p/reading-the-stack-trace-to-understand",
+      "linkLabel": "bitecode.dev: cómo leer un traceback de Python"
+    }
+  ]
+}
