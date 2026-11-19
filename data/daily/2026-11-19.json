@@ -1,0 +1,87 @@
+{
+  "date": "2026-11-19",
+  "questions": [
+    {
+      "type": "complete",
+      "lang": "Python",
+      "question": "¿Qué método falta para que nums termine conteniendo [1, 2, 3, 4, 5]?",
+      "code": "nums = [1, 2, 3]\nnums.____([4, 5])\nprint(nums)",
+      "options": ["extend", "append", "insert", "update"],
+      "correct": 0,
+      "hint": "Necesitas añadir cada elemento de la segunda lista por separado, no la lista entera como un único elemento.",
+      "explanation": "extend() añade cada elemento de la lista dada al final de la lista original; append() habría añadido [4, 5] como un único elemento anidado."
+    },
+    {
+      "type": "identify",
+      "lang": "JavaScript",
+      "question": "¿Qué imprime este código?",
+      "code": "function counter() {\n  let count = 0;\n  return function () {\n    count++;\n    return count;\n  };\n}\nconst c = counter();\nconsole.log(c(), c(), c());",
+      "options": ["1 2 3", "1 1 1", "0 1 2", "Error"],
+      "correct": 0,
+      "hint": "La función interna conserva acceso a la variable count de la función externa entre llamadas, gracias a un closure.",
+      "explanation": "Cada llamada a c() incrementa la misma variable count, que vive en el closure creado por counter(); por eso los valores van subiendo: 1, 2 y 3."
+    },
+    {
+      "type": "complete",
+      "lang": "SQL",
+      "question": "¿Qué operador falta para seleccionar los usuarios cuyo correo termina en @gmail.com?",
+      "code": "SELECT name FROM users\nWHERE email ____ '%@gmail.com';",
+      "options": ["LIKE", "IN", "HAS", "MATCH"],
+      "correct": 0,
+      "hint": "Necesitas comparar un patrón de texto con comodines, no una lista de valores exactos.",
+      "explanation": "LIKE compara el valor con un patrón que puede incluir el comodín %, que aquí representa cualquier texto antes de '@gmail.com'."
+    },
+    {
+      "type": "identify",
+      "lang": "Java",
+      "question": "¿Qué imprime este código?",
+      "code": "String s = \"5\" + 3 + 2;\nSystem.out.println(s);",
+      "options": ["532", "10", "55", "Error de compilación"],
+      "correct": 0,
+      "hint": "En cuanto el operador + encuentra un String, el resto de la expresión se evalúa de izquierda a derecha como concatenación de texto.",
+      "explanation": "\"5\" + 3 concatena como texto dando \"53\"; después \"53\" + 2 concatena otra vez dando \"532\", ya que una vez que aparece un String, + deja de sumar números y empieza a unir texto."
+    },
+    {
+      "type": "identify",
+      "lang": "Kotlin",
+      "question": "¿Qué imprime este código?",
+      "code": "val lista = listOf(1, 2, 3)\nval suma = lista.sumOf { it * it }\nprintln(suma)",
+      "options": ["14", "6", "9", "Error de compilación"],
+      "correct": 0,
+      "hint": "sumOf aplica la función a cada elemento antes de sumar los resultados; aquí esa función eleva cada número al cuadrado.",
+      "explanation": "sumOf suma el resultado de aplicar { it * it } a cada elemento: 1*1 + 2*2 + 3*3 = 1 + 4 + 9 = 14."
+    }
+  ],
+  "tips": [
+    {
+      "text": "No despliegues en producción la versión de desarrollo de tu aplicación: compílala siempre en modo producción antes de publicarla.",
+      "explanation": "Las versiones de desarrollo incluyen comprobaciones extra, código sin minimizar y a veces mapas de código fuente que ralentizan la aplicación y pueden dejar ver la estructura interna de tu proyecto a cualquiera. Compilar en modo producción activa optimizaciones pensadas para el uso real, no para depurar.",
+      "link": "https://legacy.reactjs.org/docs/optimizing-performance.html#use-the-production-build",
+      "linkLabel": "React: usa la versión de producción"
+    },
+    {
+      "text": "Escribe los mensajes de error pensando en quién los va a leer: uno para un usuario final no debería parecerse a uno para otro programador.",
+      "explanation": "Un usuario final necesita saber qué pasó y qué puede hacer ahora, no una traza técnica llena de nombres de funciones internas; un programador, en cambio, sí necesita ese detalle para depurar. Mezclar ambos públicos en el mismo mensaje confunde a los dos.",
+      "link": "https://www.nngroup.com/articles/error-message-guidelines/",
+      "linkLabel": "Nielsen Norman Group: guía de mensajes de error"
+    },
+    {
+      "text": "Aprende a usar la edición multicursor de tu editor (como Alt+clic o Ctrl+D en VS Code) para cambiar varias líneas parecidas a la vez.",
+      "explanation": "Repetir a mano el mismo cambio en diez líneas distintas es lento y facilita que te saltes alguna sin darte cuenta. El multicursor te permite seleccionar varias posiciones o coincidencias de texto a la vez y editarlas todas juntas en tiempo real.",
+      "link": "https://code.visualstudio.com/docs/editor/codebasics#_multiple-selections-multicursor",
+      "linkLabel": "VS Code: selecciones múltiples y multicursor"
+    },
+    {
+      "text": "Antes de escribir una sola línea de código, resume en una frase qué problema resuelve tu proyecto y para quién.",
+      "explanation": "Esa frase te ayuda a decidir qué funcionalidades son realmente imprescindibles para esa primera versión y cuáles puedes dejar para más adelante, en lugar de intentar construirlo todo a la vez. Es la misma idea detrás de un producto mínimo viable.",
+      "link": "https://www.atlassian.com/agile/product-management/minimum-viable-product",
+      "linkLabel": "Atlassian: qué es un producto mínimo viable"
+    },
+    {
+      "text": "Usa una variable de entorno (como NODE_ENV) para distinguir si tu programa corre en desarrollo o en producción, en lugar de una única configuración para todo.",
+      "explanation": "El comportamiento que quieres mientras programas (mensajes de error detallados, recarga automática) no es el que quieres cuando usuarios reales usan tu aplicación (mensajes genéricos, máximo rendimiento). Distinguir el entorno te permite activar cada comportamiento solo donde corresponde.",
+      "link": "https://nodejs.org/en/learn/getting-started/nodejs-the-difference-between-development-and-production",
+      "linkLabel": "Node.js: diferencias entre desarrollo y producción"
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "date": "2026-11-19",
+  "items": [
+    {
+      "tag": "Impacto",
+      "title": "El Google Threat Intelligence Group advierte de que los ciberataques totalmente autónomos con IA podrían llegar en unos seis meses",
+      "url": "https://bleepingcomputer.com/news/security/google-warns-that-fully-automated-ai-attacks-are-coming-soon",
+      "summary": "El 16 de noviembre, el equipo de inteligencia de amenazas de Google publicó un informe que documenta el uso creciente de marcos ofensivos basados en IA, como CAIRN y PentAGI, para automatizar el descubrimiento y la explotación de vulnerabilidades. La empresa calcula que ataques completamente autónomos, sin intervención humana en cada paso, podrían aparecer en los próximos seis meses, aunque aclara que todavía no ha detectado ninguno real."
+    },
+    {
+      "tag": "Impacto",
+      "title": "Filipinas estrena una plataforma gratuita de previsión meteorológica con IA para reforzar su preparación ante desastres",
+      "url": "https://insiderph.com/ai-weather-forecasts-to-strengthen-ph-disaster-preparedness",
+      "summary": "El 17 de noviembre, el Departamento de Ciencia y Tecnología de Filipinas y la empresa estadounidense Atmo presentaron Philippines AI Forecast, una plataforma gratuita en panahon.gov.ph que combina IA con los radares y estaciones de PAGASA para dar previsiones hasta 14 días vista con actualizaciones cada 15 minutos. Atmo afirma que pruebas independientes la señalan como especialmente precisa anticipando tifones y olas de calor, aunque esos datos los aporta la propia empresa."
+    },
+    {
+      "tag": "Impacto",
+      "title": "Un informe calcula que el fraude con deepfakes ha costado casi 4.000 millones de dólares en el mundo desde 2020",
+      "url": "https://techeconomy.ng/deepfake-fraud-has-cost-almost-4-billion-worldwide-since-2020",
+      "summary": "Un estudio de la empresa de ciberseguridad Surfshark, difundido el 16 de noviembre, contabiliza 809 incidentes de fraude con deepfakes en los tres primeros trimestres de 2026, un 24% más que en el mismo periodo de 2025, con Estados Unidos a la cabeza de las pérdidas. La mayoría de los casos usa video o voz clonada para suplantar a directivos o figuras públicas en estafas de inversión y de romance."
+    },
+    {
+      "tag": "Impacto",
+      "title": "OpenAI detecta un vacío de orientación sobre IA en los colegios europeos mientras el uso entre estudiantes se dispara",
+      "url": "https://www.eweek.com/news/emea-openai-ai-guidance-gap-european-schools/",
+      "summary": "Un informe de OpenAI publicado el 10 de noviembre, basado en una encuesta a 5.000 estudiantes de secundaria de 10 países europeos, encuentra que el uso de IA para las tareas escolares crece mucho más rápido que las normas y la formación que los centros ofrecen sobre cómo usarla bien. El propio informe advierte de que el ahorro de tiempo que perciben los alumnos no demuestra que aprendan mejor."
+    },
+    {
+      "tag": "Lanzamiento",
+      "title": "Alibaba lanza Qwen4-Max, su modelo insignia de 2,4 billones de parámetros, pero sin publicar sus pesos",
+      "url": "https://technode.com/2026/11/16/alibaba-launches-qwen4-max-with-lower-api-prices-and-a-million-token-context-window/",
+      "summary": "Alibaba presentó el 16 de noviembre Qwen4-Max, un modelo de mezcla de expertos con 2,4 billones de parámetros y una ventana de contexto de un millón de tokens, con un precio de 1,50 dólares por millón de tokens de entrada. A diferencia de la generación anterior, la empresa mantiene cerrados los pesos de este modelo insignia, aunque promete publicar en abierto versiones más pequeñas de Qwen4 más adelante."
+    },
+    {
+      "tag": "Curso",
+      "title": "CS50's Introduction to Artificial Intelligence with Python: el curso gratuito de Harvard sobre IA",
+      "url": "https://cs50.harvard.edu/ai/",
+      "summary": "Impartido por el equipo de CS50, este curso gratuito de Harvard enseña los conceptos detrás de motores de juego, reconocimiento de escritura y traducción automática, programando en Python a lo largo de siete semanas. Se puede seguir de forma gratuita en modo auditoría a través de edX, con un certificado de pago opcional al terminar."
+    },
+    {
+      "tag": "Interactivo",
+      "title": "Exercism: practica Groovy con ejercicios interactivos y mentoría gratuita",
+      "url": "https://exercism.org/tracks/groovy",
+      "summary": "Este recorrido gratuito de Exercism ofrece más de 60 ejercicios del lenguaje Groovy, usado a menudo junto a Java en herramientas de compilación como Gradle, con corrección automática de tu código nada más enviarlo. Como en el resto de la plataforma, también puedes pedir mentoría gratuita de programadores voluntarios que comentan tu solución."
+    },
+    {
+      "tag": "Curso",
+      "title": "MDN: Introduction to events, el módulo gratuito para entender cómo reacciona una página a lo que hace el usuario",
+      "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/Events",
+      "summary": "Este módulo gratuito de la documentación de Mozilla explica qué es un evento del navegador (un clic, una tecla pulsada, una página cargada) y cómo reaccionar a esos eventos con JavaScript sin bloquear el resto de la página. Incluye ejemplos de código y una evaluación práctica al final para comprobar lo aprendido."
+    },
+    {
+      "tag": "Interactivo",
+      "title": "Khan Academy: Algorithms, el curso gratuito creado con profesores de Dartmouth",
+      "url": "https://www.khanacademy.org/computing/computer-science/algorithms",
+      "summary": "Creado junto a los profesores Thomas Cormen y Devin Balkcom de Dartmouth, este curso gratuito combina artículos, animaciones y retos de código para enseñar búsqueda binaria, ordenación y grafos desde cero. No hace falta pagar nada ni crear una cuenta especial para acceder a todo el contenido."
+    },
+    {
+      "tag": "Curso",
+      "title": "Codecademy: Intro to Flutter, el curso gratuito para dar tus primeros pasos en el framework de Google",
+      "url": "https://www.codecademy.com/learn/intro-to-flutter",
+      "summary": "Este curso gratuito de Codecademy explica los conceptos básicos de Flutter, el framework de Google para crear aplicaciones móviles con Dart, y cómo construir widgets sencillos paso a paso. Las lecciones se corrigen al instante dentro del propio navegador, sin necesidad de instalar nada."
+    }
+  ]
+}

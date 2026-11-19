@@ -615,6 +615,17 @@
       ],
       "correct": 0,
       "explanation": "range(10) genera 0 a 9; los múltiplos de 3 en ese rango son 0, 3, 6 y 9, cuatro valores en total, y un set nunca repite elementos."
+    },
+    {
+      "q": "¿Qué devuelve `list(enumerate(['a', 'b'], start=1))` en Python?",
+      "opts": [
+        "[(1, 'a'), (2, 'b')]",
+        "[(0, 'a'), (1, 'b')]",
+        "['a', 'b']",
+        "Error"
+      ],
+      "correct": 0,
+      "explanation": "enumerate() con el argumento start=1 empieza a numerar desde 1 en lugar de desde 0 por defecto."
     }
   ],
   "javascript": [
@@ -1233,6 +1244,17 @@
       ],
       "correct": 0,
       "explanation": "El array existe, así que el encadenamiento opcional ?. no actúa; el índice 5 no existe y da undefined, y el operador ?? sustituye ese undefined por el texto 'nada'."
+    },
+    {
+      "q": "¿Qué imprime `console.log(typeof NaN)` en JavaScript?",
+      "opts": [
+        "number",
+        "NaN",
+        "undefined",
+        "object"
+      ],
+      "correct": 0,
+      "explanation": "NaN es, paradójicamente, de tipo 'number' en JavaScript, aunque representa un valor numérico no válido."
     }
   ],
   "typescript": [
@@ -1851,6 +1873,17 @@
       ],
       "correct": 0,
       "explanation": "El tipo 'unknown' obliga a comprobar o convertir el valor antes de usarlo; acceder directamente a una propiedad como .length sin ninguna comprobación previa es un error de compilación, a diferencia de lo que ocurriría con 'any'."
+    },
+    {
+      "q": "¿Qué hace el modificador `readonly` aplicado a una propiedad de una interfaz en TypeScript?",
+      "opts": [
+        "Impide reasignar esa propiedad después de crear el objeto",
+        "La convierte en opcional",
+        "La convierte en estática",
+        "No tiene ningún efecto en tiempo de compilación"
+      ],
+      "correct": 0,
+      "explanation": "readonly marca la propiedad como de solo lectura; TypeScript da un error de compilación si el código intenta reasignarla después de crear el objeto."
     }
   ],
   "java": [
@@ -2469,6 +2502,17 @@
       ],
       "correct": 0,
       "explanation": "Java inicializa automáticamente los elementos de un array de tipo primitivo como int a su valor por defecto, que es 0, no null (null solo se usa para tipos de referencia)."
+    },
+    {
+      "q": "¿Qué imprime este código?\nSystem.out.println(1 == 1.0);",
+      "opts": [
+        "true",
+        "false",
+        "Error de compilación",
+        "Error en tiempo de ejecución"
+      ],
+      "correct": 0,
+      "explanation": "Java promueve automáticamente el int a double antes de comparar valores numéricos de distinto tipo, así que 1 == 1.0 se evalúa como true."
     }
   ],
   "kotlin": [
@@ -3087,6 +3131,17 @@
       ],
       "correct": 0,
       "explanation": "Las data class generan automáticamente funciones component1() y component2(), lo que permite desestructurar la instancia en a y b directamente; 3 + 7 da 10."
+    },
+    {
+      "q": "¿Qué imprime este código?\nval texto: String? = \"hola\"\nprintln(texto!!.length)",
+      "opts": [
+        "4",
+        "0",
+        "null",
+        "Lanza una excepción porque texto es null"
+      ],
+      "correct": 0,
+      "explanation": "El operador !! afirma que el valor no es null; como texto sí tiene un valor, accede a length sin lanzar excepción y da 4."
     }
   ],
   "sql": [
@@ -3705,6 +3760,17 @@
       ],
       "correct": 0,
       "explanation": "NULL representa un valor desconocido, no cero; cualquier operación aritmética que lo involucre, como una suma, da como resultado NULL en lugar de un número concreto."
+    },
+    {
+      "q": "¿Qué devuelve `SELECT ROUND(3.14159, 2);` en SQL?",
+      "opts": [
+        "3.14",
+        "3.1",
+        "3.15",
+        "3"
+      ],
+      "correct": 0,
+      "explanation": "ROUND redondea el número al número de decimales indicado; 3.14159 redondeado a 2 decimales da 3.14."
     }
   ],
   "git": [
@@ -4323,6 +4389,17 @@
       ],
       "correct": 0,
       "explanation": "git diff sin opciones compara el directorio de trabajo con el área de preparación; --staged (o su alias --cached) compara en cambio lo que ya está preparado para confirmarse contra el último commit."
+    },
+    {
+      "q": "¿Qué hace el comando `git shortlog -sn`?",
+      "opts": [
+        "Muestra un resumen de cuántos commits ha hecho cada autor, ordenado por cantidad",
+        "Elimina los commits más antiguos del historial",
+        "Muestra solo los últimos 10 commits",
+        "Crea una rama nueva por cada autor"
+      ],
+      "correct": 0,
+      "explanation": "shortlog agrupa los commits por autor; -s muestra solo el número de commits de cada uno y -n los ordena de mayor a menor cantidad."
     }
   ],
   "htmlcss": [
@@ -4941,6 +5018,17 @@
       ],
       "correct": 0,
       "explanation": "'em' se calcula según el tamaño de fuente del propio elemento o el de su padre, por lo que puede acumularse al anidar elementos; 'rem' siempre toma como referencia el tamaño de fuente del elemento raíz (html), evitando ese efecto acumulativo."
+    },
+    {
+      "q": "¿Qué hace la propiedad CSS `aspect-ratio: 16 / 9;` aplicada a un elemento?",
+      "opts": [
+        "Fija la proporción entre ancho y alto del elemento, aunque solo se defina uno de los dos",
+        "Cambia el color de fondo del elemento",
+        "Oculta el elemento si no tiene esa proporción exacta",
+        "Solo afecta a las imágenes, no a otros elementos"
+      ],
+      "correct": 0,
+      "explanation": "aspect-ratio mantiene una proporción ancho/alto constante, calculando automáticamente la dimensión que falte a partir de la que sí se defina."
     }
   ],
   "bash": [
@@ -5559,6 +5647,17 @@
       ],
       "correct": 0,
       "explanation": "El operador -d de test comprueba específicamente que la ruta indicada exista y sea un directorio, a diferencia de -f, que comprueba que sea un archivo regular."
+    },
+    {
+      "q": "¿Qué hace el comando `history | tail -5`?",
+      "opts": [
+        "Muestra los últimos 5 comandos ejecutados en la terminal",
+        "Elimina los últimos 5 comandos del historial",
+        "Muestra los primeros 5 comandos ejecutados desde que se abrió la terminal",
+        "Repite los últimos 5 comandos"
+      ],
+      "correct": 0,
+      "explanation": "history lista todos los comandos del historial y tail -5 se queda solo con las últimas 5 líneas, es decir los comandos más recientes."
     }
   ],
   "ia": [
@@ -6166,6 +6265,17 @@
       ],
       "correct": 0,
       "explanation": "RAG combina un modelo de lenguaje con una búsqueda previa en una fuente externa de datos, lo que le permite responder con información actualizada o específica sin necesidad de reentrenar el modelo desde cero."
+    },
+    {
+      "q": "¿Qué significa la sigla 'RLHF' en el entrenamiento de modelos de IA?",
+      "opts": [
+        "Aprendizaje por refuerzo a partir de retroalimentación humana (Reinforcement Learning from Human Feedback)",
+        "Un formato de archivo para guardar modelos",
+        "Un tipo de red neuronal convolucional",
+        "Un protocolo de comunicación entre agentes de IA"
+      ],
+      "correct": 0,
+      "explanation": "RLHF ajusta un modelo usando las preferencias de evaluadores humanos sobre qué respuestas son mejores, en lugar de solo predecir el siguiente texto."
     }
   ]
 }
