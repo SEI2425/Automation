@@ -1,1 +1,1 @@
-Ración nueva de PilaPila News: noticias de IA, recursos para programar y preguntas para picarte con quien quieras. La imagen ya adelanta lo mas jugoso, pero en la web esta todo completo, temario y tests incluidos: [Abrir PilaPila News](<https://sei2425.github.io/Automation/>)
+Hoy la actualidad va del debut bursátil de Anthropic a un nuevo hackeo en el mundo de la IA. La imagen de arriba trae las noticias y el tip del día, y en la web tienes todo completo, con tests y temario que crecen cada día. [Abrir PilaPila News](<https://sei2425.github.io/Automation/>)

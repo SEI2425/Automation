@@ -1,0 +1,87 @@
+{
+  "date": "2026-11-20",
+  "questions": [
+    {
+      "type": "identify",
+      "lang": "Python",
+      "question": "¿Qué imprime este código?",
+      "code": "def f(n):\n    return [i for i in range(n) if i % 3 == 0 or i % 5 == 0]\n\nprint(f(10))",
+      "options": ["[0, 3, 5, 6, 9]", "[3, 5, 6, 9]", "[0, 3, 6, 9]", "[0, 5, 10]"],
+      "correct": 0,
+      "hint": "range(10) genera los números del 0 al 9; la condición conserva los que son múltiplos de 3 o de 5.",
+      "explanation": "La comprensión recorre 0 a 9 y conserva los múltiplos de 3 o de 5: 0, 3, 5, 6 y 9, ya que 6 es múltiplo de 3 y 9 también lo es, aunque ninguno de los dos sea múltiplo de 5."
+    },
+    {
+      "type": "complete",
+      "lang": "JavaScript",
+      "question": "¿Qué método falta para que total sea 106?",
+      "code": "const nums = [1, 2, 3];\nconst total = nums.____((sum, n) => sum + n, 100);\nconsole.log(total); // 106",
+      "options": ["reduce", "map", "filter", "forEach"],
+      "correct": 0,
+      "hint": "Necesitas acumular un valor inicial de 100 más la suma de los elementos del array.",
+      "explanation": "reduce() recorre el array acumulando un resultado a partir del valor inicial indicado (100); sumando 1, 2 y 3 a ese inicial se obtiene 106, algo que map, filter o forEach no hacen por sí solos."
+    },
+    {
+      "type": "identify",
+      "lang": "SQL",
+      "question": "¿Qué devuelve esta consulta?",
+      "code": "SELECT name FROM employees\nWHERE department = 'Ventas'\n  AND salary > (SELECT AVG(salary) FROM employees WHERE department = 'Ventas');",
+      "options": ["Los empleados del departamento de Ventas que ganan más que la media salarial de ese mismo departamento", "Los empleados de Ventas que ganan más que la media de toda la empresa", "El salario medio del departamento de Ventas", "Todos los empleados ordenados por salario"],
+      "correct": 0,
+      "hint": "La subconsulta calcula la media salarial solo dentro del departamento de Ventas, no de toda la empresa.",
+      "explanation": "La subconsulta devuelve la media salarial calculada únicamente entre los empleados de Ventas, y la consulta externa selecciona solo a quienes, dentro de ese mismo departamento, superan ese promedio."
+    },
+    {
+      "type": "complete",
+      "lang": "Git",
+      "question": "¿Qué comando falta para ver las diferencias de lo que ya está preparado para el commit?",
+      "code": "git add archivo.txt\ngit ____ --staged\n# muestra las diferencias de lo que ya esta preparado para el commit, no las del directorio de trabajo",
+      "options": ["diff", "status", "log", "show"],
+      "correct": 0,
+      "hint": "Necesitas ver el contenido exacto de los cambios, no solo una lista de qué archivos cambiaron.",
+      "explanation": "git diff --staged (o --cached) muestra el diff de los cambios que ya están en el área de preparación, a diferencia de git diff sin esa opción, que muestra los cambios del directorio de trabajo todavía sin preparar."
+    },
+    {
+      "type": "identify",
+      "lang": "HTML/CSS",
+      "question": "¿Qué pasa con el color de fondo de la caja?",
+      "code": "<style>\n  .box { width: 100px; height: 100px; background: red; }\n  .box:hover { background: blue; }\n</style>\n<div class=\"box\"></div>",
+      "options": ["Cambia a azul mientras el ratón está encima de la caja, y vuelve a rojo al retirarlo", "Cambia permanentemente a azul la primera vez que se pasa el ratón por encima", "Nunca cambia porque :hover no es un selector válido en CSS", "Cambia a azul solo si se hace clic dentro de la caja"],
+      "correct": 0,
+      "hint": "La pseudo-clase :hover solo se aplica mientras el cursor está encima del elemento.",
+      "explanation": "La pseudo-clase :hover aplica el estilo solo durante el tiempo en que el puntero del ratón está sobre el elemento; en cuanto el ratón se retira, el elemento vuelve a su estilo normal, en este caso el fondo rojo."
+    }
+  ],
+  "tips": [
+    {
+      "text": "Usa 'git bisect' para encontrar automáticamente qué commit introdujo un bug, en lugar de revisar el historial a mano commit por commit.",
+      "explanation": "git bisect hace una búsqueda binaria entre un commit donde el bug ya existía y otro donde todavía no, pidiéndote que marques cada punto intermedio como bueno o malo hasta señalar el commit exacto. Con un historial de cientos de commits, esto reduce a unos pocos pasos una búsqueda que a mano podría llevar horas.",
+      "link": "https://git-scm.com/docs/git-bisect",
+      "linkLabel": "Git SCM: documentación de git bisect"
+    },
+    {
+      "text": "Aplica el principio YAGNI (You Aren't Gonna Need It): no construyas ahora una función genérica o configurable para un caso futuro que todavía no existe.",
+      "explanation": "Añadir parámetros, capas de abstracción o flexibilidad para un requisito que solo imaginas hace el código más difícil de entender hoy, a cambio de una ventaja que puede que nunca llegues a necesitar. Es más barato ampliar código simple cuando el requisito real aparezca que mantener complejidad especulativa mientras tanto.",
+      "link": "https://martinfowler.com/bliki/Yagni.html",
+      "linkLabel": "Martin Fowler: YAGNI"
+    },
+    {
+      "text": "Configura un archivo .gitattributes en tu repositorio para fijar cómo se guardan los saltos de línea, evitando que Git marque un archivo como modificado solo porque Windows y Linux usan un final de línea distinto.",
+      "explanation": "Windows termina las líneas con CRLF y Linux o macOS con LF; sin una regla explícita, cada sistema puede convertir los saltos de línea a su propio formato al guardar, generando diffs enormes que no cambian ninguna línea de código real. Un archivo .gitattributes con una regla como '* text=auto' normaliza esto para todo el equipo.",
+      "link": "https://git-scm.com/docs/gitattributes",
+      "linkLabel": "Git SCM: documentación de gitattributes"
+    },
+    {
+      "text": "Si despliegas un servicio propio, añade un endpoint sencillo como /health que responda rápido con un 200 OK, para poder comprobar al instante si está vivo.",
+      "explanation": "Sin un endpoint así, saber si un servicio sigue respondiendo obliga a probar a mano una funcionalidad real o a revisar los logs del servidor, algo lento cuando necesitas una respuesta rápida durante un incidente. Herramientas de monitorización, balanceadores de carga y sistemas de arranque automático usan precisamente ese tipo de comprobación para decidir si reiniciar o redirigir tráfico.",
+      "link": "https://microservices.io/patterns/observability/health-check-api.html",
+      "linkLabel": "microservices.io: el patrón Health Check API"
+    },
+    {
+      "text": "Valida los datos solo en los límites reales de tu sistema (lo que escribe un usuario, lo que devuelve una API externa), y confía en el resto de tu propio código sin repetir la misma comprobación en cada función.",
+      "explanation": "Si una función ya comprobó que un valor es válido antes de pasarlo a otras diez funciones internas, repetir esa comprobación en cada una de ellas añade código sin ningún beneficio real, porque ese dato ya no puede llegar de otra forma. El concepto se resume en la idea de 'parsea, no valides': conviertes el dato en un tipo que garantiza su validez una sola vez, en el borde del sistema, y el resto del código ya no necesita dudar de él.",
+      "link": "https://lexi-lambda.github.io/blog/2019/11/05/parse-don-t-validate/",
+      "linkLabel": "Alexis King: Parse, don't validate"
+    }
+  ]
+}

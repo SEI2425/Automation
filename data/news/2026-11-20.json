@@ -1,0 +1,65 @@
+{
+  "date": "2026-11-20",
+  "items": [
+    {
+      "tag": "Impacto",
+      "title": "Anthropic cierra su debut en el Nasdaq con una subida del 17% sobre el precio de su salida a bolsa",
+      "url": "https://www.thenationalnews.com/business/markets/2026/11/20/anthropic-share-price-today-ant-listing/",
+      "summary": "Las acciones de Anthropic, bajo el símbolo ANT, empezaron a cotizar el 19 de noviembre a 111,50 dólares, un 34% por encima de su precio de salida de 83 dólares, antes de perder fuerza a lo largo de la sesión y cerrar en 97,17 dólares, un 17% por encima del precio inicial. La operación, que recaudó unos 107.000 millones de dólares incluyendo una colocación privada, se convierte en la mayor salida a bolsa de la historia, superando a SpaceX."
+    },
+    {
+      "tag": "Impacto",
+      "title": "La empresa de infraestructura de IA Fireworks AI revela un segundo hackeo en pocas semanas tras una brecha en un proveedor de nube externo",
+      "url": "https://www.bleepingcomputer.com/news/security/fireworks-ai-discloses-new-breach-after-cloud-provider-hack/",
+      "summary": "Fireworks AI, respaldada por Nvidia, notificó el 9 de noviembre a sus clientes que un proveedor de nube externo que alojaba sus servidores de investigación sufrió un incidente el 23 de octubre, que un atacante aprovechó para acceder a metadatos, datos de facturación y, en un número limitado de cuentas, secretos almacenados y pesos de modelos incompletos. Es el segundo incidente de seguridad que reconoce la empresa en pocas semanas, y Unit 42 de Palo Alto Networks colabora en la investigación."
+    },
+    {
+      "tag": "Impacto",
+      "title": "Unit 42 de Palo Alto Networks documenta una ola de ciberataques dirigidos con IA que ya accedieron a sistemas de al menos 10 organizaciones",
+      "url": "https://unit42.paloaltonetworks.com/ai-assisted-cyber-attack-inside-a-unit-42-investigation/",
+      "summary": "Unit 42 identificó 25 operaciones de intrusión dirigidas por IA contra al menos 19 organizaciones entre agosto y septiembre, usando una versión modificada del marco de pruebas de seguridad Cairn combinada con los modelos Zhipu GLM y DeepSeek; en 10 de esos casos, los atacantes llegaron a acceder a sistemas o extraer datos. La propia firma concluye que la IA no aporta técnicas nuevas, sino que multiplica la velocidad y el alcance de ataques que antes requerían mucho más tiempo humano."
+    },
+    {
+      "tag": "Impacto",
+      "title": "Jensen Huang asegura que la cuota de Nvidia en chips de IA en China ha caído a cero y rechaza la propuesta de Anthropic de prohibir su venta por completo",
+      "url": "https://www.tomshardware.com/tech-industry/artificial-intelligence/jensen-says-nvidia-now-has-zero-percent-market-share-in-china-says-us-export-policy-has-already-largely-backfired",
+      "summary": "En una entrevista emitida el 8 de noviembre, el consejero delegado de Nvidia afirmó que la cuota de la empresa en el mercado chino de aceleradores de IA ha bajado al 0%, y defendió que los controles de exportación de EEUU 'ya han sido contraproducentes en gran medida'. Huang rechazó además la petición del consejero delegado de Anthropic, Dario Amodei, de prohibir por completo la venta de chips avanzados a China, en medio de la disputa sobre cómo equilibrar la competencia tecnológica con la seguridad nacional."
+    },
+    {
+      "tag": "Lanzamiento",
+      "title": "Microsoft presenta en Ignite 2026 siete nuevos modelos de IA junto a una iniciativa de transparencia y nuevas herramientas para gobernar agentes",
+      "url": "https://www.thurrott.com/cloud/microsoft-ignite-2026-microsoft-ai-announces-7-new-models",
+      "summary": "En la conferencia Ignite, celebrada del 17 al 19 de noviembre, Microsoft AI anunció siete modelos propios personalizables además de ampliar Entra con herramientas para descubrir, identificar y restringir agentes de IA dentro de las empresas. La compañía presentó también una Iniciativa de Transparencia en IA, pensada para desarrollar estándares que permitan verificar de forma independiente el comportamiento de estos modelos."
+    },
+    {
+      "tag": "Curso",
+      "title": "Full Stack Open: el curso gratuito de la Universidad de Helsinki sobre desarrollo web moderno",
+      "url": "https://fullstackopen.com/en/",
+      "summary": "Este curso gratuito y en continua actualización de la Universidad de Helsinki enseña a construir aplicaciones web completas con React, Node.js, GraphQL y TypeScript, con ejercicios prácticos evaluados automáticamente al final de cada parte. Quien complete todos los ejercicios puede solicitar créditos universitarios opcionales, aunque seguir el curso y sus ejercicios es gratis para cualquiera."
+    },
+    {
+      "tag": "Curso",
+      "title": "CS50's Web Programming with Python and JavaScript: el curso gratuito de Harvard sobre desarrollo web",
+      "url": "https://cs50.harvard.edu/web/",
+      "summary": "Esta rama de CS50 enseña a construir aplicaciones web completas usando Django, JavaScript y SQL, con doce semanas de clases en vídeo y proyectos prácticos evaluados automáticamente. Se puede seguir de forma gratuita en modo auditoría a través de edX, con un certificado de pago opcional al terminar."
+    },
+    {
+      "tag": "Interactivo",
+      "title": "HackerRank: miles de problemas gratuitos de programación con corrección automática en decenas de lenguajes",
+      "url": "https://www.hackerrank.com/",
+      "summary": "HackerRank ofrece problemas de algoritmos, estructuras de datos y bases de datos organizados por dificultad y por lenguaje, muchos de ellos inspirados en pruebas técnicas reales de empresas. La mayoría de los retos se pueden resolver de forma gratuita sin necesidad de pagar ninguna suscripción."
+    },
+    {
+      "tag": "Interactivo",
+      "title": "JavaScript30: el reto gratuito de Wes Bos para construir 30 proyectos en JavaScript puro sin frameworks",
+      "url": "https://javascript30.com/",
+      "summary": "Este reto gratuito propone construir un proyecto pequeño y funcional cada día durante 30 días usando solo JavaScript, HTML y CSS, sin librerías ni frameworks externos, con el código de partida y la solución de cada reto disponibles para descargar. Está pensado para quien ya conoce lo básico del lenguaje y quiere soltura escribiendo código real en el navegador."
+    },
+    {
+      "tag": "Interactivo",
+      "title": "Edabit: miles de retos cortos de programación en decenas de lenguajes, con corrección automática",
+      "url": "https://edabit.com/challenges",
+      "summary": "Edabit ofrece miles de retos de programación muy cortos, pensados para resolverse en pocos minutos cada uno, organizados por dificultad y disponibles en Python, JavaScript, Java y muchos otros lenguajes. Tras enviar una solución correcta se pueden ver las soluciones de otros usuarios, una forma rápida de comparar distintos estilos para el mismo problema."
+    }
+  ]
+}

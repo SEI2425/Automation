@@ -626,6 +626,17 @@
       ],
       "correct": 0,
       "explanation": "enumerate() con el argumento start=1 empieza a numerar desde 1 en lugar de desde 0 por defecto."
+    },
+    {
+      "q": "¿Qué imprime este código?",
+      "opts": [
+        "Hola, Mundo",
+        "Hola, nombre",
+        "Hola, ",
+        "Error"
+      ],
+      "correct": 0,
+      "explanation": "El parámetro 'nombre' tiene un valor por defecto (\"Mundo\") que se usa automáticamente cuando la función se llama sin argumentos, por lo que f-string produce 'Hola, Mundo'."
     }
   ],
   "javascript": [
@@ -1255,6 +1266,17 @@
       ],
       "correct": 0,
       "explanation": "NaN es, paradójicamente, de tipo 'number' en JavaScript, aunque representa un valor numérico no válido."
+    },
+    {
+      "q": "¿Qué imprime este código?",
+      "opts": [
+        "[1]",
+        "[1, 2, 3]",
+        "[1, undefined, undefined]",
+        "Error"
+      ],
+      "correct": 0,
+      "explanation": "La propiedad length de un array no es solo informativa: asignarle un valor menor que la longitud actual trunca el array de inmediato, eliminando los elementos sobrantes."
     }
   ],
   "typescript": [
@@ -1884,6 +1906,17 @@
       ],
       "correct": 0,
       "explanation": "readonly marca la propiedad como de solo lectura; TypeScript da un error de compilación si el código intenta reasignarla después de crear el objeto."
+    },
+    {
+      "q": "¿Qué imprime este código?",
+      "opts": [
+        "number",
+        "T",
+        "42",
+        "Error de compilación"
+      ],
+      "correct": 0,
+      "explanation": "Al llamar a identidad(42), TypeScript infiere T como number; la función devuelve el mismo valor recibido, por lo que typeof resultado es la cadena 'number'."
     }
   ],
   "java": [
@@ -2513,6 +2546,17 @@
       ],
       "correct": 0,
       "explanation": "Java promueve automáticamente el int a double antes de comparar valores numéricos de distinto tipo, así que 1 == 1.0 se evalúa como true."
+    },
+    {
+      "q": "¿Qué imprime este código?",
+      "opts": [
+        "true",
+        "false",
+        "Error de compilación",
+        "Depende del pool de enteros"
+      ],
+      "correct": 0,
+      "explanation": "a y b son variables de tipo primitivo int, no objetos Integer, así que == compara directamente sus valores numéricos; como ambos valen 5, el resultado es true sin que el caché de enteros de Java tenga nada que ver."
     }
   ],
   "kotlin": [
@@ -3142,6 +3186,17 @@
       ],
       "correct": 0,
       "explanation": "El operador !! afirma que el valor no es null; como texto sí tiene un valor, accede a length sin lanzar excepción y da 4."
+    },
+    {
+      "q": "¿Qué imprime este código?",
+      "opts": [
+        "sin valor",
+        "null",
+        "0",
+        "Error de compilación"
+      ],
+      "correct": 0,
+      "explanation": "El operador elvis (?:) devuelve el valor de la izquierda si no es null, y el de la derecha en caso contrario; como x es null, se imprime la cadena 'sin valor'."
     }
   ],
   "sql": [
@@ -3771,6 +3826,17 @@
       ],
       "correct": 0,
       "explanation": "ROUND redondea el número al número de decimales indicado; 3.14159 redondeado a 2 decimales da 3.14."
+    },
+    {
+      "q": "¿Qué devuelve esta consulta?",
+      "opts": [
+        "La lista de países distintos de la tabla, ordenados alfabéticamente",
+        "El número de países distintos",
+        "Todos los registros de clientes sin duplicados en ninguna columna",
+        "Los clientes ordenados por país"
+      ],
+      "correct": 0,
+      "explanation": "DISTINCT elimina los valores repetidos de la columna country antes de devolverlos, y ORDER BY country los ordena alfabéticamente; no afecta a ninguna otra columna de la tabla."
     }
   ],
   "git": [
@@ -4400,6 +4466,17 @@
       ],
       "correct": 0,
       "explanation": "shortlog agrupa los commits por autor; -s muestra solo el número de commits de cada uno y -n los ordena de mayor a menor cantidad."
+    },
+    {
+      "q": "¿Qué imprime 'cat archivo.txt' tras ejecutar este script?",
+      "opts": [
+        "a",
+        "a\\nb",
+        "b",
+        "Error, no se puede usar stash aquí"
+      ],
+      "correct": 0,
+      "explanation": "git stash guarda los cambios sin confirmar (la línea añadida 'b') y devuelve el directorio de trabajo al estado del último commit, que solo contenía 'a'."
     }
   ],
   "htmlcss": [
@@ -5029,6 +5106,17 @@
       ],
       "correct": 0,
       "explanation": "aspect-ratio mantiene una proporción ancho/alto constante, calculando automáticamente la dimensión que falte a partir de la que sí se defina."
+    },
+    {
+      "q": "¿Qué estilo reciben los párrafos 'Dos' y 'Tres' con este CSS?",
+      "opts": [
+        "Un margen superior de 10px, porque cada uno va justo después de otro párrafo",
+        "Ningún margen, porque el selector + no es válido en CSS",
+        "Los tres párrafos reciben el margen superior de 10px",
+        "Solo 'Tres' recibe el margen, porque + solo afecta al último elemento"
+      ],
+      "correct": 0,
+      "explanation": "El selector de hermano adyacente 'p + p' solo selecciona un párrafo que va inmediatamente después de otro párrafo; el primero no tiene uno delante, así que solo 'Dos' y 'Tres' reciben el margen superior."
     }
   ],
   "bash": [
@@ -5658,6 +5746,17 @@
       ],
       "correct": 0,
       "explanation": "history lista todos los comandos del historial y tail -5 se queda solo con las últimas 5 líneas, es decir los comandos más recientes."
+    },
+    {
+      "q": "¿Qué imprime este código?",
+      "opts": [
+        "30 40",
+        "10 20",
+        "40",
+        "Error de sintaxis"
+      ],
+      "correct": 0,
+      "explanation": "${array[@]: -2} (con espacio antes del signo menos) toma los dos últimos elementos del array contando desde el final, es decir 30 y 40."
     }
   ],
   "ia": [
@@ -6276,6 +6375,17 @@
       ],
       "correct": 0,
       "explanation": "RLHF ajusta un modelo usando las preferencias de evaluadores humanos sobre qué respuestas son mejores, en lugar de solo predecir el siguiente texto."
+    },
+    {
+      "q": "¿Qué significa que un modelo de lenguaje 'alucine'?",
+      "opts": [
+        "Que genera una respuesta con apariencia segura y coherente pero que es falsa o no está respaldada por sus datos",
+        "Que el modelo deja de funcionar por un error técnico",
+        "Que el modelo tarda demasiado en responder",
+        "Que el modelo rechaza responder a la pregunta por motivos de seguridad"
+      ],
+      "correct": 0,
+      "explanation": "Una alucinación ocurre cuando el modelo produce una afirmación con apariencia de certeza que en realidad no se corresponde con hechos reales ni con la información en la que se basó."
     }
   ]
 }

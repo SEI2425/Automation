@@ -56,7 +56,8 @@
     "El módulo 'contextlib' permite crear gestores de contexto personalizados con un solo decorador (@contextmanager) sobre una función generadora, sin necesidad de escribir una clase con __enter__ y __exit__.",
     "Python 3.11, publicada en 2022, introdujo los grupos de excepciones y la sintaxis 'except*', pensada para manejar varias excepciones lanzadas a la vez por tareas concurrentes, algo que el try/except tradicional no podia expresar.",
     "El módulo 'difflib' de la biblioteca estándar de Python permite comparar secuencias de texto y generar diffs legibles por humanos, el mismo tipo de algoritmo que usan herramientas como 'diff' de Unix.",
-    "El operador morsa (:=), introducido en Python 3.8, permite asignar un valor a una variable y usarlo en la misma expresión, por ejemplo dentro de la condición de un bucle while."
+    "El operador morsa (:=), introducido en Python 3.8, permite asignar un valor a una variable y usarlo en la misma expresión, por ejemplo dentro de la condición de un bucle while.",
+    "El módulo 'timeit' de la biblioteca estándar de Python permite medir con precisión cuánto tarda en ejecutarse un fragmento de código, repitiendo la medición varias veces para minimizar el ruido de una sola ejecución."
   ],
   "javascript": [
     "El metodo Array.prototype.copyWithin(), disponible desde ES2015 pero poco conocido, copia una parte de un array dentro del mismo array sin crear uno nuevo, sobrescribiendo los valores en el destino.",
@@ -115,7 +116,8 @@
     "La palabra reservada 'with', aunque sigue siendo parte de la sintaxis de JavaScript, está prohibida en modo estricto porque hace imposible predecir a qué variable se refiere un nombre dentro de su bloque.",
     "El metodo console.log admite el especificador %c, que permite aplicar estilos CSS (color, tamano de fuente, fondo) directamente al texto impreso en la consola del navegador.",
     "El método Array.prototype.toSpliced(), añadido en 2023 junto a toSorted() y toReversed(), devuelve una copia del array con elementos añadidos o eliminados, sin modificar el array original como hace splice().",
-    "El método Object.groupBy(), incorporado en 2024, permite agrupar los elementos de un array en un objeto según el resultado de una función aplicada a cada uno, sin necesidad de escribir un reduce a mano."
+    "El método Object.groupBy(), incorporado en 2024, permite agrupar los elementos de un array en un objeto según el resultado de una función aplicada a cada uno, sin necesidad de escribir un reduce a mano.",
+    "La propiedad 'length' de un array en JavaScript no es solo de lectura: asignarle un valor menor que la longitud actual elimina al instante los elementos sobrantes del array."
   ],
   "typescript": [
     "El modificador 'protected' en TypeScript permite que una propiedad sea accesible desde la propia clase y desde sus subclases, pero no desde fuera de esa jerarquia, a diferencia de 'private', que la restringe solo a la clase donde se declara.",
@@ -174,7 +176,8 @@
     "TypeScript permite declarar tuplas con elementos opcionales, como [string, number?], donde el último elemento puede estar presente o ausente sin dejar de comprobar su tipo.",
     "TypeScript permite extender tipos globales ya existentes (como Window o Array) mediante la sintaxis 'declare global', util para anadir una propiedad personalizada sin modificar el archivo original de definiciones de esa libreria.",
     "TypeScript incorporó en su versión 5.2 (2023) la palabra clave 'using', que declara un recurso que se libera automáticamente al salir del bloque, inspirada en construcciones similares de C# y Python.",
-    "TypeScript incluye el tipo 'never', que representa valores que nunca pueden ocurrir, como el resultado de una función que siempre lanza una excepción o de un bucle del que nunca se sale."
+    "TypeScript incluye el tipo 'never', que representa valores que nunca pueden ocurrir, como el resultado de una función que siempre lanza una excepción o de un bucle del que nunca se sale.",
+    "El operador 'as const' de TypeScript puede aplicarse también a un objeto completo, no solo a arrays, congelando cada una de sus propiedades en su tipo literal más específico y marcándolas todas como de solo lectura."
   ],
   "java": [
     "El metodo Collectors.groupingBy(), parte de la API de Streams desde Java 8, permite agrupar los elementos de una coleccion segun una funcion clave y devolver directamente un Map con los grupos resultantes, sin necesidad de escribir el bucle manual.",
@@ -233,7 +236,8 @@
     "La clase Optional<T>, incorporada en Java 8, no implementa Serializable a propósito: sus diseñadores querían desalentar su uso como campo de una clase o parámetro, reservándolo solo como tipo de retorno.",
     "El metodo String.intern(), presente desde la primera version de Java, permite forzar que una cadena creada con 'new String(...)' se anada al pool de literales compartido, haciendo que a partir de ese momento '==' si la compare como igual a un literal identico.",
     "El método Stream.toList(), incorporado en Java 16 (2021), ofrece un atajo para convertir un stream en una lista inmutable, sin tener que escribir .collect(Collectors.toList()) cada vez.",
-    "La anotación @FunctionalInterface, incorporada en Java 8, no es obligatoria, pero le indica al compilador que debe comprobar que la interfaz tenga exactamente un método abstracto, pensado para usarse con expresiones lambda."
+    "La anotación @FunctionalInterface, incorporada en Java 8, no es obligatoria, pero le indica al compilador que debe comprobar que la interfaz tenga exactamente un método abstracto, pensado para usarse con expresiones lambda.",
+    "El bucle for-each de Java no permite modificar la estructura de la colección (añadir o quitar elementos) mientras se recorre: hacerlo lanza una ConcurrentModificationException en tiempo de ejecución."
   ],
   "kotlin": [
     "La funcion 'with(objeto) { ... }' de Kotlin permite ejecutar un bloque de codigo usando un objeto como receptor implicito, evitando repetir su nombre antes de cada llamada a sus propiedades o metodos.",
@@ -292,7 +296,8 @@
     "Kotlin permite usar destructuring declarations dentro de un bucle for, como 'for ((index, value) in lista.withIndex())', aprovechando que Pair ya implementa los métodos component1() y component2().",
     "Kotlin realiza 'smart casts' automaticos: tras comprobar con un 'is' o una condicion de null que una variable tiene cierto tipo, el compilador permite usarla directamente con ese tipo en el resto del bloque, sin necesidad de un cast explicito como en Java.",
     "Kotlin permite declarar propiedades delegadas con la palabra clave 'by', como 'val nombre: String by lazy { ... }', que retrasa el cálculo de ese valor hasta la primera vez que se usa realmente.",
-    "Kotlin permite declarar funciones de nivel superior (top-level), fuera de cualquier clase, algo que Java no permite salvo dentro de una clase con métodos estáticos."
+    "Kotlin permite declarar funciones de nivel superior (top-level), fuera de cualquier clase, algo que Java no permite salvo dentro de una clase con métodos estáticos.",
+    "Las 'data class' de Kotlin no pueden declararse como abstract ni open para herencia: el compilador genera sus métodos equals, hashCode y toString asumiendo que la clase es final."
   ],
   "sql": [
     "La clausula QUALIFY, soportada por motores como Snowflake y BigQuery pero ausente del estandar SQL oficial, permite filtrar directamente el resultado de una funcion de ventana sin tener que envolver la consulta en una subconsulta solo para aplicar ese filtro.",
@@ -351,7 +356,8 @@
     "La cláusula ORDER BY NULLS LAST (o NULLS FIRST), parte del estándar SQL, permite decidir explícitamente si los valores NULL aparecen al principio o al final de un resultado ordenado, algo que distintos motores resolvían de forma diferente sin ella.",
     "La clausula CHECK, parte del estandar SQL desde sus primeras versiones, permite exigir que los valores de una columna cumplan una condicion personalizada (como que un precio sea siempre mayor que cero) directamente en la definicion de la tabla, sin necesidad de validarlo en la aplicacion.",
     "El tipo de dato JSONB de PostgreSQL, a diferencia de JSON, guarda los datos ya analizados en un formato binario, lo que hace más rápidas las consultas aunque algo más lenta la inserción de datos.",
-    "La cláusula WITH RECURSIVE, parte del estándar SQL, permite escribir una consulta que se refiere a sí misma para recorrer estructuras jerárquicas, como un árbol de categorías o un organigrama de empresa."
+    "La cláusula WITH RECURSIVE, parte del estándar SQL, permite escribir una consulta que se refiere a sí misma para recorrer estructuras jerárquicas, como un árbol de categorías o un organigrama de empresa.",
+    "El estándar SQL no garantiza ningún orden en los resultados de una consulta si no se incluye una cláusula ORDER BY explícita, aunque muchos motores devuelvan los datos en un orden aparentemente estable por razones internas."
   ],
   "git": [
     "El comando 'git range-diff', incorporado en Git 2.19 (2018), compara dos versiones distintas de la misma serie de commits (por ejemplo antes y despues de un rebase) mostrando que cambio realmente en cada commit equivalente, en lugar de solo comparar el estado final de ambas ramas.",
@@ -410,7 +416,8 @@
     "El comando 'git bisect run' automatiza por completo la búsqueda binaria de un commit problemático: en vez de marcar manualmente cada commit como bueno o malo, le pasas un script que decide eso por ti, y Git recorre el historial sin intervención humana.",
     "El comando 'git notes' permite anadir comentarios o metadatos a un commit ya existente sin modificar su contenido ni su hash, util para anotar informacion (como el resultado de una build) despues de que el commit ya se creo.",
     "El comando 'git rerere' (reuse recorded resolution) memoriza cómo resolviste un conflicto de fusión para aplicar automáticamente la misma solución si el mismo conflicto vuelve a aparecer en otra fusión o rebase.",
-    "El comando 'git worktree' permite tener varias ramas de un mismo repositorio Git abiertas en carpetas distintas al mismo tiempo, sin clonar el repositorio ni hacer 'git stash' para cambiar de rama."
+    "El comando 'git worktree' permite tener varias ramas de un mismo repositorio Git abiertas en carpetas distintas al mismo tiempo, sin clonar el repositorio ni hacer 'git stash' para cambiar de rama.",
+    "El comando 'git stash' guarda los cambios no confirmados en una pila independiente del historial de commits, y 'git stash list' permite ver y recuperar varias tandas de cambios guardadas a la vez, no solo la última."
   ],
   "htmlcss": [
     "La pseudo-clase CSS ':has()', que permite seleccionar un elemento segun lo que contiene dentro, se conoce como el 'selector padre' que CSS no tuvo durante decadas, y llego a todos los navegadores principales recien en 2023.",
@@ -469,7 +476,8 @@
     "El atributo HTML 'loading=\"lazy\"' en una etiqueta <img>, soportado de forma nativa por los navegadores desde 2019-2020, retrasa la carga de una imagen hasta que está a punto de entrar en la pantalla, sin necesidad de ninguna librería de JavaScript.",
     "La anidacion nativa de selectores CSS (como escribir .card { .title { ... } } directamente, sin un preprocesador como Sass) llego a todos los navegadores principales en 2023, decadas despues de que Sass popularizara esa sintaxis.",
     "La propiedad CSS 'object-fit', soportada ampliamente desde 2016, controla cómo se ajusta una imagen o un vídeo dentro de su contenedor cuando las proporciones no coinciden, sin recurrir a recortes manuales con position absolute.",
-    "La propiedad CSS 'aspect-ratio', soportada ampliamente desde 2021, evita tener que calcular a mano el alto de un elemento a partir de su ancho usando trucos antiguos como el 'padding-top hack'."
+    "La propiedad CSS 'aspect-ratio', soportada ampliamente desde 2021, evita tener que calcular a mano el alto de un elemento a partir de su ancho usando trucos antiguos como el 'padding-top hack'.",
+    "El selector de hermano adyacente '+' en CSS solo selecciona un elemento si viene inmediatamente después de otro elemento del tipo indicado, dentro del mismo padre, sin ningún otro elemento intermedio entre ambos."
   ],
   "bash": [
     "El operador de redireccion '>>' en Bash anade la salida de un comando al final de un archivo existente sin borrar su contenido previo, a diferencia de un unico '>', que sobrescribe el archivo entero cada vez.",
@@ -528,7 +536,8 @@
     "El carácter especial '$$' dentro de un script de Bash se expande al identificador de proceso (PID) del propio script en ejecución, útil por ejemplo para crear nombres de archivos temporales únicos.",
     "El built-in 'command' de Bash permite ejecutar un programa ignorando cualquier funcion o alias que tenga el mismo nombre, util para llamar al binario real cuando se ha sobrescrito su nombre con un alias.",
     "El built-in 'disown' de Bash permite que un proceso lanzado en segundo plano siga ejecutándose después de cerrar la terminal, sin que reciba la señal SIGHUP que normalmente lo terminaría.",
-    "El operador '&&' entre dos comandos de Bash ejecuta el segundo solo si el primero terminó con éxito (código de salida 0), mientras que '||' ejecuta el segundo solo si el primero falló."
+    "El operador '&&' entre dos comandos de Bash ejecuta el segundo solo si el primero terminó con éxito (código de salida 0), mientras que '||' ejecuta el segundo solo si el primero falló.",
+    "En Bash, al usar un índice negativo dentro de una expansión como ${var: -2}, es obligatorio dejar un espacio antes del signo menos; sin él, Bash lo interpreta como el operador de valor por defecto (${var:-valor}) en lugar de como una posición."
   ],
   "ia": [
     "El termino 'RAG' (Retrieval-Augmented Generation, o generacion aumentada por recuperacion), que combina un modelo de lenguaje con una busqueda en una base de datos externa antes de responder, se formalizo en un articulo de investigadores de Facebook AI Research publicado en 2020.",
@@ -587,6 +596,7 @@
     "El 'test de Turing', propuesto por Alan Turing en 1950 en un artículo llamado 'Computing Machinery and Intelligence', no usaba ese nombre originalmente: Turing lo llamó 'el juego de la imitación'.",
     "La tecnica de 'chain-of-thought' (cadena de pensamiento), que consiste en pedirle a un modelo que razone paso a paso antes de dar la respuesta final, se formalizo en un articulo de investigadores de Google publicado en 2022 y mejoro notablemente los resultados en problemas de logica y matematicas.",
     "El término 'red neuronal de memoria a largo-corto plazo' (LSTM), presentado en 1997 por Sepp Hochreiter y Jürgen Schmidhuber, resolvió durante años el problema de que las redes recurrentes 'olvidaran' información de pasos muy anteriores en una secuencia.",
-    "El término 'alucinación', en el contexto de los modelos de lenguaje, describe cuando un modelo genera información que suena coherente y segura pero que es falsa o no está respaldada por ningún dato real."
+    "El término 'alucinación', en el contexto de los modelos de lenguaje, describe cuando un modelo genera información que suena coherente y segura pero que es falsa o no está respaldada por ningún dato real.",
+    "El término 'ventana de contexto' en un modelo de lenguaje se refiere a la cantidad máxima de texto, medida en tokens, que el modelo puede tener en cuenta a la vez entre lo que lee y lo que genera dentro de una misma conversación."
   ]
 }
