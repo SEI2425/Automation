@@ -1,0 +1,65 @@
+{
+  "date": "2026-11-21",
+  "items": [
+    {
+      "tag": "Impacto",
+      "title": "La IA ya se usa para hacer llamadas falsas de ‘swatting’ casi indistinguibles de una emergencia real",
+      "url": "https://www.nhpr.org/2026-11-11/swatters-are-using-ai-voices-to-deceive-911-dispatchers-and-its-only-getting-worse",
+      "summary": "Una investigación de NPR, emitida el 11 de noviembre por decenas de emisoras públicas de EEUU, describe cómo quienes hacen bromas de ‘swatting’ usan ya voces generadas por IA para engañar a los operadores del 911, incluido un falso aviso de bomba en Wheatland (California) que pedía 15.000 dólares. Una encuesta a 766 profesionales de emergencias encontró que alrededor del 14% ya fue objetivo de este tipo de llamadas, y los expertos advierten que las voces sintéticas, con pausas y muletillas, son cada vez más difíciles de distinguir de una real."
+    },
+    {
+      "tag": "Impacto",
+      "title": "Citi actualiza sus condiciones para que el cliente cargue con la responsabilidad si un agente de IA externo accede a su cuenta",
+      "url": "https://techcrunch.com/2026/11/18/more-banks-says-customers-using-ai-agents-are-on-their-own-even-if-they-get-hacked/",
+      "summary": "Citi añadió el 18 de noviembre una nueva sección a su contrato de banca online que traslada al cliente la responsabilidad de cualquier acción que haga un agente de IA de terceros al que le dé acceso a su cuenta, incluso si sus credenciales terminan filtradas. El banco se reserva además el derecho a bloquear ese acceso sin previo aviso, y se suma a JPMorgan Chase y Wells Fargo, que actualizaron normas parecidas semanas antes."
+    },
+    {
+      "tag": "Impacto",
+      "title": "Expertos en EEUU alertan sobre el repunte de estafas con IA contra personas mayores antes de la Semana de Prevención del Fraude",
+      "url": "https://www.fox10tv.com/2026/11/12/ai-scams-what-families-should-know-this-holiday-season/",
+      "summary": "De cara a la Semana Internacional de Prevención del Fraude (15-21 de noviembre), una gerontóloga entrevistada el 12 de noviembre explicó cómo las estafas con voces e imágenes clonadas por IA se dirigen cada vez más a personas mayores durante la temporada de compras navideñas, aprovechando datos personales reales para hacerse pasar por familiares. La experta recomienda a las familias acordar una palabra clave de seguridad para verificar llamadas urgentes antes de transferir dinero."
+    },
+    {
+      "tag": "Lanzamiento",
+      "title": "OpenAI lanza GPT-6.2 Astra y Sol, sus nuevos modelos insignia con un tercio del coste por tarea de la generación anterior",
+      "url": "https://letsdatascience.com/news/openai-launches-gpt-62-astra-frontier-model-and-gpt-62-sol-ccad09ba",
+      "summary": "OpenAI presentó el 17 de noviembre GPT-6.2 Astra, su modelo insignia para trabajo profesional complejo, junto a GPT-6.2 Sol, pensado para el uso diario, ya disponibles en ChatGPT y por API. La empresa asegura que Astra mejora sus marcas en evaluaciones científicas y profesionales a menos de un tercio del coste por tarea de GPT-6 Astra, aunque ambos modelos siguen clasificados en el nivel 'crítico' de riesgo de ciberseguridad de la propia OpenAI, lo que obliga a salvaguardas más estrictas."
+    },
+    {
+      "tag": "Lanzamiento",
+      "title": "Google lanza Gemini 4 Neon, un modelo intermedio centrado en programación y análisis profundo",
+      "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-neon/",
+      "summary": "Google anunció el 18 de noviembre Gemini 4 Neon, un modelo de frontera pensado para ingeniería de software, trabajo de conocimiento y ciencia, disponible ya por API y en Google AI Studio a 3 dólares por millón de tokens de entrada. La compañía lo sitúa como una opción intermedia entre Gemini 4 Hydrogen (uso diario) y Gemini 4 Carbon (tareas complejas), y ofrece además una variante centrada en ciberseguridad a un grupo reducido de 'defensores de confianza'."
+    },
+    {
+      "tag": "Curso",
+      "title": "The Missing Semester of Your CS Education: el curso gratuito del MIT sobre las herramientas que ningún profesor enseña",
+      "url": "https://missing.csail.mit.edu/",
+      "summary": "Impartido originalmente durante el periodo IAP del MIT, este curso gratuito y disponible íntegramente en vídeo enseña terminal, Git, editores de texto como Vim y depuración, herramientas que la mayoría de asignaturas de programación dan por sabidas. Todo el material se puede seguir a tu propio ritmo sin necesidad de inscribirte en el MIT ni pagar nada."
+    },
+    {
+      "tag": "Interactivo",
+      "title": "Exercism: practica Java con ejercicios interactivos y mentoría gratuita",
+      "url": "https://exercism.org/tracks/java",
+      "summary": "Este recorrido gratuito de Exercism ofrece decenas de ejercicios de Java organizados por dificultad, con corrección automática de tu código nada más enviarlo. Como en el resto de la plataforma, también puedes pedir mentoría gratuita de programadores voluntarios que comentan tu solución."
+    },
+    {
+      "tag": "Curso",
+      "title": "freeCodeCamp: certificación gratuita de desarrollo backend y APIs",
+      "url": "https://www.freecodecamp.org/learn/back-end-development-and-apis/",
+      "summary": "Esta certificación gratuita de freeCodeCamp enseña a construir aplicaciones de servidor con Node.js y npm a través de proyectos prácticos como un acortador de URLs o un rastreador de ejercicios, evaluados automáticamente. Al completar los proyectos obligatorios y el examen final se obtiene una certificación gratuita y verificable."
+    },
+    {
+      "tag": "Curso",
+      "title": "Google's Python Class: el curso gratuito de Google para aprender Python con ejercicios guiados",
+      "url": "https://developers.google.com/edu/python",
+      "summary": "Creado por un ingeniero del propio Google para formar internamente a su personal, este curso gratuito combina materiales escritos, vídeos de clase y decenas de ejercicios de código pensados para quien ya conoce lo básico de programación y quiere soltura con Python. Todo el contenido está licenciado en abierto y se puede seguir a tu propio ritmo sin ninguna cuenta de Google."
+    },
+    {
+      "tag": "Interactivo",
+      "title": "Exercism: practica Bash con ejercicios interactivos y mentoría gratuita",
+      "url": "https://exercism.org/tracks/bash",
+      "summary": "Este recorrido gratuito de Exercism ofrece unos 90 ejercicios para practicar scripts de Bash, desde comandos básicos hasta tareas más complejas de automatización, con corrección automática de tu código nada más enviarlo. Como en el resto de la plataforma, también puedes pedir mentoría gratuita de programadores voluntarios que comentan tu solución."
+    }
+  ]
+}

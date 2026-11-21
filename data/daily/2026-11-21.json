@@ -1,0 +1,112 @@
+{
+  "date": "2026-11-21",
+  "questions": [
+    {
+      "type": "identify",
+      "lang": "Python",
+      "question": "¿Qué contiene la variable result después de ejecutar este código?",
+      "code": "nums = [1, 2, 3, 4]\nresult = list(map(lambda x: x * x, filter(lambda x: x % 2 == 0, nums)))\nprint(result)",
+      "options": [
+        "[4, 16]",
+        "[1, 4, 9, 16]",
+        "[2, 4]",
+        "Error de sintaxis"
+      ],
+      "correct": 0,
+      "hint": "filter() se queda solo con los pares (2 y 4) antes de que map() los eleve al cuadrado.",
+      "explanation": "filter() conserva los numeros pares (2 y 4), y map() los eleva al cuadrado despues; list() convierte el resultado final en [4, 16]."
+    },
+    {
+      "type": "complete",
+      "lang": "JavaScript",
+      "question": "¿Qué método falta para que total sea el promedio de los elementos del array?",
+      "code": "const arr = [5, 10, 15];\nconst total = arr.____((acc, n) => acc + n, 0) / arr.length;\nconsole.log(total); // 10",
+      "options": [
+        "reduce",
+        "map",
+        "filter",
+        "forEach"
+      ],
+      "correct": 0,
+      "hint": "Necesitas acumular todos los elementos en un unico valor antes de dividir entre la longitud.",
+      "explanation": "reduce() suma todos los elementos (5+10+15=30), y al dividir ese resultado entre arr.length (3) se obtiene el promedio, 10."
+    },
+    {
+      "type": "identify",
+      "lang": "TypeScript",
+      "question": "¿Qué ocurre al intentar compilar este código?",
+      "code": "let x: never;\nx = 5;",
+      "options": [
+        "Error de compilación, porque el tipo never no acepta ningún valor asignable",
+        "Compila sin problemas y x vale 5",
+        "x queda siempre undefined",
+        "Solo falla en tiempo de ejecución, no al compilar"
+      ],
+      "correct": 0,
+      "hint": "El tipo never representa un valor que nunca puede existir, no un tipo vacio al que se le pueda asignar cualquier cosa.",
+      "explanation": "never es el tipo de los valores que nunca ocurren (como el resultado de una funcion que siempre lanza una excepcion); por eso no se le puede asignar ningun valor, ni siquiera un numero, sin que TypeScript de un error de compilacion."
+    },
+    {
+      "type": "complete",
+      "lang": "Kotlin",
+      "question": "¿Qué función falta para transformar cada número en su raíz cuadrada?",
+      "code": "val numeros = listOf(4, 9, 16, 25)\nval raices = numeros.____ { Math.sqrt(it.toDouble()) }\nprintln(raices)\n// imprime [2.0, 3.0, 4.0, 5.0]",
+      "options": [
+        "map",
+        "filter",
+        "reduce",
+        "sortedBy"
+      ],
+      "correct": 0,
+      "hint": "Necesitas transformar cada elemento en uno nuevo, sin descartar ninguno ni acumular un solo valor.",
+      "explanation": "map() aplica la funcion indicada a cada elemento de la lista y devuelve una lista nueva con los resultados, en este caso la raiz cuadrada de cada numero."
+    },
+    {
+      "type": "identify",
+      "lang": "SQL",
+      "question": "¿Qué devuelve esta consulta?",
+      "code": "SELECT department, COUNT(*) AS total\nFROM employees\nWHERE hire_date >= '2024-01-01'\nGROUP BY department\nHAVING COUNT(*) >= 2\nORDER BY total DESC;",
+      "options": [
+        "Los departamentos con al menos 2 empleados contratados desde 2024, ordenados de mayor a menor",
+        "Todos los departamentos sin excepción",
+        "Los empleados contratados antes de 2024",
+        "El departamento con menos empleados"
+      ],
+      "correct": 0,
+      "hint": "WHERE filtra las contrataciones recientes antes de agrupar; HAVING despues filtra los grupos ya formados.",
+      "explanation": "WHERE deja solo las contrataciones desde 2024; GROUP BY agrupa por departamento y COUNT(*) cuenta cuantos hay en cada uno; HAVING COUNT(*) >= 2 descarta los departamentos con menos de 2, y ORDER BY los ordena de mayor a menor."
+    }
+  ],
+  "tips": [
+    {
+      "text": "Antes de que tu proyecto dependa de una API externa importante, revisa su página de estado y su historial de caídas.",
+      "explanation": "La mayoría de servicios serios publican una 'status page' con el histórico de incidentes y el tiempo medio de recuperación, información que te ayuda a decidir si necesitas un plan B antes de construir una parte crítica de tu aplicación sobre ese servicio. Descubrirlo después de un apagón, con tu propia aplicación ya caída, es mucho más caro que comprobarlo con antelación.",
+      "link": "https://www.atlassian.com/software/statuspage/incident-communication",
+      "linkLabel": "Atlassian: por qué existen las páginas de estado"
+    },
+    {
+      "text": "Si tu programa se comporta de forma rara justo después de cambiar código, borra la caché de compilación antes de seguir depurando.",
+      "explanation": "Python guarda bytecode compilado en carpetas __pycache__, y muchas herramientas de JavaScript o de construcción web guardan su propia caché en carpetas como .cache o dist; en muy raras ocasiones esa caché queda desincronizada del código fuente y hace que pruebes un comportamiento antiguo sin saberlo. Borrarla es gratis y descarta esa posibilidad en segundos.",
+      "link": "https://docs.python.org/3/tutorial/modules.html#compiled-python-files",
+      "linkLabel": "Documentación oficial de Python: archivos compilados (__pycache__)"
+    },
+    {
+      "text": "Si tu aplicación muestra números o fechas a personas de distintos países, no asumas que todo el mundo usa el mismo formato.",
+      "explanation": "El separador decimal (punto o coma) y el orden de día y mes cambian según la región, así que un número o una fecha que se ve bien en tu propio ordenador puede confundir a un usuario en otro país. Usar las funciones de internacionalización del propio lenguaje, en lugar de formatear el texto a mano, adapta automaticamente el resultado a cada configuración regional.",
+      "link": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/NumberFormat",
+      "linkLabel": "MDN: Intl.NumberFormat"
+    },
+    {
+      "text": "Si escribes consultas SQL largas con muchos JOIN, usa un formateador específico de SQL, no solo el de tu lenguaje principal.",
+      "explanation": "Una consulta de varias líneas con múltiples uniones y condiciones es mucho más difícil de revisar si cada línea sigue una indentación distinta; un formateador como sqlfluff aplica un estilo consistente automáticamente, igual que Prettier o Black hacen con JavaScript o Python. Esto facilita detectar de un vistazo qué tabla falta en un JOIN o dónde sobra una coma.",
+      "link": "https://docs.sqlfluff.com/en/stable/",
+      "linkLabel": "Documentación oficial de sqlfluff"
+    },
+    {
+      "text": "Aprende a usar los marcadores (bookmarks) de tu editor para volver rápido a un punto exacto del código.",
+      "explanation": "Cuando estás investigando un bug y necesitas saltar entre varios archivos abiertos, buscar cada vez con Ctrl+F el mismo punto es mucho más lento que marcarlo una vez y volver a él con una tecla. La mayoría de editores modernos, como los de JetBrains o VS Code con una extensión, ofrecen esta función de forma gratuita.",
+      "link": "https://www.jetbrains.com/help/idea/bookmarks.html",
+      "linkLabel": "JetBrains: documentación de marcadores (bookmarks)"
+    }
+  ]
+}

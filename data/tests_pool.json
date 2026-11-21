@@ -637,6 +637,17 @@
       ],
       "correct": 0,
       "explanation": "El parámetro 'nombre' tiene un valor por defecto (\"Mundo\") que se usa automáticamente cuando la función se llama sin argumentos, por lo que f-string produce 'Hola, Mundo'."
+    },
+    {
+      "q": "¿Qué imprime `print(' python '.strip().capitalize())`?",
+      "opts": [
+        "Python",
+        "python",
+        " Python ",
+        "PYTHON"
+      ],
+      "correct": 0,
+      "explanation": "strip() quita los espacios al principio y al final, dejando 'python', y capitalize() convierte en mayuscula solo la primera letra, dando 'Python'."
     }
   ],
   "javascript": [
@@ -1277,6 +1288,17 @@
       ],
       "correct": 0,
       "explanation": "La propiedad length de un array no es solo informativa: asignarle un valor menor que la longitud actual trunca el array de inmediato, eliminando los elementos sobrantes."
+    },
+    {
+      "q": "¿Qué imprime `console.log(1 + '1' - 1)`?",
+      "opts": [
+        "10",
+        "1",
+        "-1",
+        "NaN"
+      ],
+      "correct": 0,
+      "explanation": "1 + '1' concatena como texto dando '11' (en cuanto aparece un string, + deja de sumar); despues '11' - 1 fuerza una resta numerica, convirtiendo '11' a 11 y restando 1, lo que da 10."
     }
   ],
   "typescript": [
@@ -1917,6 +1939,17 @@
       ],
       "correct": 0,
       "explanation": "Al llamar a identidad(42), TypeScript infiere T como number; la función devuelve el mismo valor recibido, por lo que typeof resultado es la cadena 'number'."
+    },
+    {
+      "q": "¿Qué ocurre al declarar `let x: never;` e intentar despues `x = 5;`?",
+      "opts": [
+        "Error de compilación, porque el tipo never no acepta ningún valor asignable",
+        "Compila sin problemas y x vale 5",
+        "x queda siempre undefined",
+        "Solo falla en tiempo de ejecución, no al compilar"
+      ],
+      "correct": 0,
+      "explanation": "never representa un valor que nunca puede existir (como el resultado de una funcion que siempre lanza una excepcion), por lo que TypeScript rechaza en tiempo de compilacion cualquier intento de asignarle un valor real."
     }
   ],
   "java": [
@@ -2557,6 +2590,17 @@
       ],
       "correct": 0,
       "explanation": "a y b son variables de tipo primitivo int, no objetos Integer, así que == compara directamente sus valores numéricos; como ambos valen 5, el resultado es true sin que el caché de enteros de Java tenga nada que ver."
+    },
+    {
+      "q": "¿Qué imprime este código?\nint max = Integer.MAX_VALUE;\nSystem.out.println(max + 1);",
+      "opts": [
+        "-2147483648 (se desborda y vuelve al valor mínimo)",
+        "2147483648",
+        "Lanza una excepción ArithmeticException",
+        "0"
+      ],
+      "correct": 0,
+      "explanation": "Los enteros int en Java ocupan 32 bits y no lanzan ninguna excepcion al desbordarse: al superar el valor maximo representable, el resultado da la vuelta (overflow) y aparece como el valor minimo negativo, -2147483648."
     }
   ],
   "kotlin": [
@@ -3197,6 +3241,17 @@
       ],
       "correct": 0,
       "explanation": "El operador elvis (?:) devuelve el valor de la izquierda si no es null, y el de la derecha en caso contrario; como x es null, se imprime la cadena 'sin valor'."
+    },
+    {
+      "q": "¿Qué imprime este código?\nval n = 3\nval resultado = when (n) {\n    1, 2 -> \"bajo\"\n    3, 4 -> \"medio\"\n    else -> \"alto\"\n}\nprintln(resultado)",
+      "opts": [
+        "medio",
+        "bajo",
+        "alto",
+        "Error de compilación"
+      ],
+      "correct": 0,
+      "explanation": "Una rama de 'when' puede agrupar varios valores separados por comas; como n vale 3, coincide con la rama '3, 4' y el resultado es 'medio'."
     }
   ],
   "sql": [
@@ -3837,6 +3892,17 @@
       ],
       "correct": 0,
       "explanation": "DISTINCT elimina los valores repetidos de la columna country antes de devolverlos, y ORDER BY country los ordena alfabéticamente; no afecta a ninguna otra columna de la tabla."
+    },
+    {
+      "q": "¿Qué devuelve `SELECT 'Ana' || ' ' || 'Pérez';` en SQL estándar?",
+      "opts": [
+        "'Ana Pérez'",
+        "Error de sintaxis en cualquier motor",
+        "'AnaPérez' sin espacio",
+        "NULL"
+      ],
+      "correct": 0,
+      "explanation": "En el estandar SQL (y en motores como PostgreSQL, Oracle o SQLite), el operador || concatena cadenas de texto una tras otra, por lo que el resultado es 'Ana Perez'."
     }
   ],
   "git": [
@@ -4477,6 +4543,17 @@
       ],
       "correct": 0,
       "explanation": "git stash guarda los cambios sin confirmar (la línea añadida 'b') y devuelve el directorio de trabajo al estado del último commit, que solo contenía 'a'."
+    },
+    {
+      "q": "¿Qué hace el comando `git gc`?",
+      "opts": [
+        "Limpia y optimiza el repositorio local, comprimiendo objetos y eliminando los que ya no son accesibles",
+        "Elimina permanentemente todos los commits sin etiquetar",
+        "Sincroniza automáticamente con todos los remotos configurados",
+        "Convierte el repositorio en uno más pequeño borrando archivos grandes"
+      ],
+      "correct": 0,
+      "explanation": "git gc (garbage collection) empaqueta y comprime los objetos sueltos del repositorio y elimina los que ya no son alcanzables desde ninguna rama ni referencia, reduciendo el tamano del repositorio local."
     }
   ],
   "htmlcss": [
@@ -5117,6 +5194,17 @@
       ],
       "correct": 0,
       "explanation": "El selector de hermano adyacente 'p + p' solo selecciona un párrafo que va inmediatamente después de otro párrafo; el primero no tiene uno delante, así que solo 'Dos' y 'Tres' reciben el margen superior."
+    },
+    {
+      "q": "¿Qué selecciona el pseudo-elemento `::placeholder` en CSS, como en `input::placeholder { color: gray; }`?",
+      "opts": [
+        "El texto de ejemplo que se muestra en un campo antes de que el usuario escriba nada",
+        "El propio valor que escribe el usuario",
+        "La etiqueta <label> asociada al campo",
+        "El borde del campo cuando está vacío"
+      ],
+      "correct": 0,
+      "explanation": "::placeholder permite dar estilo al texto de ejemplo (el atributo placeholder de un input), que desaparece en cuanto el usuario empieza a escribir su propio valor."
     }
   ],
   "bash": [
@@ -5757,6 +5845,17 @@
       ],
       "correct": 0,
       "explanation": "${array[@]: -2} (con espacio antes del signo menos) toma los dos últimos elementos del array contando desde el final, es decir 30 y 40."
+    },
+    {
+      "q": "¿Qué hace `set -u` al principio de un script de Bash?",
+      "opts": [
+        "Hace que el script falle con un error si se usa una variable que no ha sido definida",
+        "Activa el modo silencioso, sin mostrar ningún mensaje",
+        "Permite ejecutar comandos como administrador sin pedir contraseña",
+        "Desactiva la expansión de comodines como *"
+      ],
+      "correct": 0,
+      "explanation": "set -u (nounset) hace que Bash trate como un error el uso de cualquier variable que no se haya definido antes, en lugar de tratarla silenciosamente como una cadena vacia."
     }
   ],
   "ia": [
@@ -6386,6 +6485,17 @@
       ],
       "correct": 0,
       "explanation": "Una alucinación ocurre cuando el modelo produce una afirmación con apariencia de certeza que en realidad no se corresponde con hechos reales ni con la información en la que se basó."
+    },
+    {
+      "q": "¿Qué busca conseguir la 'cuantización' de un modelo de IA?",
+      "opts": [
+        "Reducir la precisión numérica de sus parámetros para que ocupe menos memoria y sea más rápido, a cambio de algo de precisión",
+        "Aumentar el número de parámetros del modelo para hacerlo más potente",
+        "Traducir el modelo a otro lenguaje de programación",
+        "Eliminar por completo los datos de entrenamiento usados"
+      ],
+      "correct": 0,
+      "explanation": "La cuantizacion reduce la precision numerica (por ejemplo de 16 bits a 4 u 8 bits) con la que se almacenan los parametros de un modelo, lo que reduce mucho su tamano en memoria y acelera su ejecucion, a cambio de perder algo de precision."
     }
   ]
 }

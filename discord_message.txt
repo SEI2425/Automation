@@ -1,1 +1,1 @@
-Hoy la actualidad va del debut bursátil de Anthropic a un nuevo hackeo en el mundo de la IA. La imagen de arriba trae las noticias y el tip del día, y en la web tienes todo completo, con tests y temario que crecen cada día. [Abrir PilaPila News](<https://sei2425.github.io/Automation/>)
+Hoy hay bancos que ya no se responsabilizan si un agente de IA accede a tu cuenta, y llamadas falsas al 911 con voces clonadas por IA. La imagen trae lo esencial; en la web tienes las 10 noticias, los tests y las preguntas de hoy. [Abrir PilaPila News](<https://sei2425.github.io/Automation/>)
